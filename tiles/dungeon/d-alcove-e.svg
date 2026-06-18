@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+  <rect width="40" height="40" fill="var(--tile-wall)"/>
+  <rect x="18" y="12" width="22" height="16" fill="var(--tile-floor)"/>
+</svg>

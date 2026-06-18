@@ -1,0 +1,199 @@
+    :root {
+      --bg:    #0e0c0a;
+      --sf:    #1c1917;
+      --sf2:   #252220;
+      --bd:    #3d2b1f;
+      --gold:  #c9a63c;
+      --gold2: #8a6d2a;
+      --red:   #9b1c1c;
+      --text:  #e8dcc8;
+      --muted: #9b8c7a;
+      --link:  #e8a23a;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    nav {
+      background: var(--sf);
+      border-bottom: 2px solid var(--gold2);
+      padding: .85rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .brand { font-size: 1.3rem; font-weight: 700; color: var(--gold); letter-spacing: .05em; text-transform: uppercase; }
+    .brand:hover { text-decoration: none; color: var(--link); }
+    .nav-sub { color: var(--muted); font-size: .8rem; }
+    .nav-enc {
+      margin-left: auto;
+      color: var(--gold);
+      font-size: .85rem;
+      font-weight: 600;
+      border: 1px solid var(--gold2);
+      border-radius: 4px;
+      padding: .3rem .75rem;
+      white-space: nowrap;
+    }
+    .nav-enc:hover { background: var(--sf2); text-decoration: none; }
+    .nav-enc + .nav-enc { margin-left: .5rem; }
+
+    footer {
+      background: var(--sf);
+      border-top: 1px solid var(--bd);
+      padding: 1.5rem 2rem;
+      text-align: center;
+      color: var(--muted);
+      font-size: .85rem;
+      margin-top: 2rem;
+    }
+    footer a { color: var(--link); }
+
+    /* ── Map Page Layout ── */
+    .map-page { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+    h1 { color: var(--gold); font-size: 1.8rem; margin-bottom: 1.5rem; }
+
+    /* ── Toolbar ── */
+    .map-toolbar {
+      background: var(--sf);
+      border: 1px solid var(--bd);
+      border-radius: 8px;
+      padding: .75rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
+    .toolbar-group { display: flex; align-items: center; gap: .5rem; }
+    .toolbar-label { font-size: .75rem; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; }
+    .toolbar-sep { width: 1px; height: 28px; background: var(--bd); }
+
+    .type-btn {
+      background: var(--sf2);
+      color: var(--text);
+      border: 1px solid var(--bd);
+      border-radius: 4px;
+      padding: .3rem .8rem;
+      cursor: pointer;
+      font-size: .85rem;
+      transition: background .15s, color .15s, border-color .15s;
+    }
+    .type-btn.active {
+      background: var(--gold2);
+      color: #fff;
+      border-color: var(--gold);
+    }
+    .type-btn:hover:not(.active) { background: var(--bd); }
+
+    .gen-btn {
+      background: var(--red);
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      padding: .4rem 1.2rem;
+      cursor: pointer;
+      font-size: .9rem;
+      font-weight: 600;
+      transition: opacity .15s;
+    }
+    .gen-btn:hover { opacity: .85; }
+
+    .theme-swatch {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: transform .15s, border-color .15s;
+    }
+    .theme-swatch:hover { transform: scale(1.2); }
+    .theme-swatch.active { border-color: var(--gold); transform: scale(1.15); }
+
+    .map-select {
+      background: var(--sf2);
+      color: var(--text);
+      border: 1px solid var(--bd);
+      border-radius: 4px;
+      padding: .28rem .55rem;
+      font-size: .82rem;
+      min-width: 130px;
+    }
+
+    .zoom-group { display: flex; align-items: center; gap: .4rem; margin-left: auto; }
+    .zoom-btn {
+      background: var(--sf2);
+      color: var(--text);
+      border: 1px solid var(--bd);
+      border-radius: 4px;
+      width: 28px;
+      height: 28px;
+      cursor: pointer;
+      font-size: 1rem;
+      display: flex; align-items: center; justify-content: center;
+      transition: background .15s;
+    }
+    .zoom-btn:hover { background: var(--bd); }
+    .zoom-val { font-size: .8rem; color: var(--muted); min-width: 38px; text-align: center; }
+
+    /* ── Map Viewport ── */
+    .map-viewport {
+      overflow: auto;
+      border: 1px solid var(--bd);
+      border-radius: 8px;
+      background: #111;
+      max-height: 72vh;
+      cursor: grab;
+    }
+    .map-viewport:active { cursor: grabbing; }
+    .map-zoom-wrap {
+      transform-origin: top left;
+      display: inline-block;
+      line-height: 0;
+    }
+    #map-svg {
+      display: block;
+      /* CSS vars for themes — defaults to Stone Dungeon */
+      --tile-floor:   #3a3832;
+      --tile-wall:    #1a1816;
+      --tile-accent:  #5a5248;
+      --tile-void:    #0e0c0a;
+      --water-color:  #1e3a5a;
+      --grass-color:  #2a4a22;
+      --forest-color: #1a3a18;
+      --road-color:   #5a4a32;
+      --mountain-color: #4a4040;
+      --door-color:   #8a6d2a;
+      --grid-line:    rgba(255,255,255,0.06);
+    }
+
+    #prop-layer { pointer-events: none; }
+
+    /* ── Placeholder ── */
+    .map-placeholder {
+      width: 800px;
+      height: 800px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      font-size: 1rem;
+      gap: .5rem;
+    }
+    .map-placeholder .big-icon { font-size: 4rem; }
+
+    /* ── Status bar ── */
+    .map-status {
+      margin-top: .5rem;
+      font-size: .8rem;
+      color: var(--muted);
+      min-height: 1.2em;
+    }

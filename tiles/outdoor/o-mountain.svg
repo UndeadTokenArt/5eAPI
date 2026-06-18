@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+  <rect width="40" height="40" fill="var(--mountain-color)"/>
+  <path d="M6 32 L16 12 L26 32 Z" fill="var(--tile-wall)" opacity="0.5"/>
+  <path d="M16 32 L26 8 L36 32 Z" fill="var(--tile-wall)" opacity="0.6"/>
+</svg>

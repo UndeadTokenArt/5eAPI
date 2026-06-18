@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+  <rect width="40" height="40" fill="var(--water-color)"/>
+  <path d="M0 14 Q5 10 10 14 Q15 18 20 14 Q25 10 30 14 Q35 18 40 14" fill="none" stroke="var(--tile-accent)" stroke-width="1.5" opacity="0.55"/>
+  <path d="M0 24 Q5 20 10 24 Q15 28 20 24 Q25 20 30 24 Q35 28 40 24" fill="none" stroke="var(--tile-accent)" stroke-width="1.5" opacity="0.55"/>
+</svg>

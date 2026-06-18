@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+  <rect width="40" height="40" fill="var(--grass-color)"/>
+  <circle cx="12" cy="14" r="6" fill="var(--forest-color)"/>
+  <circle cx="24" cy="12" r="7" fill="var(--forest-color)"/>
+  <circle cx="18" cy="24" r="8" fill="var(--forest-color)"/>
+</svg>

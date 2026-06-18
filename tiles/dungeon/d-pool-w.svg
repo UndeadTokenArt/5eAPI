@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+  <rect width="40" height="40" fill="var(--tile-floor)"/>
+  <rect x="0" y="0" width="16" height="40" fill="var(--water-color)"/>
+  <path d="M16 0 Q20 5 16 10 Q12 15 16 20 Q20 25 16 30 Q12 35 16 40" fill="var(--water-color)" stroke="none"/>
+</svg>

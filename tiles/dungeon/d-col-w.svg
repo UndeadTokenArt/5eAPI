@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+  <rect width="40" height="40" fill="var(--tile-wall)"/>
+  <rect x="0" y="14" width="20" height="12" fill="var(--tile-floor)"/>
+  <rect x="18" y="14" width="2" height="12" fill="var(--tile-accent)"/>
+  <rect x="12" y="16" width="8" height="8" rx="2" fill="var(--tile-accent)"/>
+</svg>
