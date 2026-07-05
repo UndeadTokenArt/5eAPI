@@ -3,7 +3,42 @@
 // ═══════════════════════════════════════════════════════════════════════════════
 const GRID = 20;
 const TILE = 40;
-let currentPropType = 'all';
+let currentMapType = 'dungeon';
+let currentTheme = null;
+let currentZoom = 1.0;
+let currentPropType = 'none';
+let currentRoomCount = 5;
+let currentRoomSizePreset = 'varied';
+
+if (typeof window !== 'undefined') {
+  window.MAP_ROOM_SETTINGS = window.MAP_ROOM_SETTINGS || {
+    count: currentRoomCount,
+    sizePreset: currentRoomSizePreset,
+  };
+}
+
+function syncRoomSettings() {
+  if (typeof window === 'undefined') return;
+  window.MAP_ROOM_SETTINGS = {
+    count: currentRoomCount,
+    sizePreset: currentRoomSizePreset,
+  };
+}
+
+function setRoomCount(value) {
+  const parsed = Number(value);
+  currentRoomCount = Number.isFinite(parsed) ? Math.max(1, Math.min(8, Math.round(parsed))) : 5;
+  const select = document.getElementById('room-count-select');
+  if (select) select.value = String(currentRoomCount);
+  syncRoomSettings();
+}
+
+function setRoomSizePreset(value) {
+  currentRoomSizePreset = ['compact', 'varied', 'broad'].includes(value) ? value : 'varied';
+  const select = document.getElementById('room-size-select');
+  if (select) select.value = currentRoomSizePreset;
+  syncRoomSettings();
+}
 
 // ═══════════════════════════════════════════════════════════════════════════════
 // COLOR THEMES
@@ -155,6 +190,8 @@ const THEMES = [
   },
 ];
 
+currentTheme = THEMES[0];
+
 
 // ═══════════════════════════════════════════════════════════════════════════════
 // MAP TYPE
@@ -172,7 +209,7 @@ function setMapType(type) {
 }
 
 function setPropType(type) {
-  currentPropType = type || 'all';
+  currentPropType = type || 'none';
 }
 
 async function fetchAvailableBiomes() {
@@ -256,7 +293,9 @@ async function generate() {
       buildPropDefs();
     }
     if (typeof generatePropPlacements === 'function' && typeof renderPropLayer === 'function') {
-      const placements = generatePropPlacements(grid, currentMapType, currentPropType);
+      const placements = currentPropType === 'none'
+        ? []
+        : generatePropPlacements(grid, currentMapType, currentPropType);
       renderPropLayer(placements);
     }
     status.textContent = currentMapType.charAt(0).toUpperCase() + currentMapType.slice(1) +
@@ -297,37 +336,49 @@ function buildThemeSwatches() {
 // ═══════════════════════════════════════════════════════════════════════════════
 function setZoom(z) {
   currentZoom = Math.max(0.5, Math.min(3.0, z));
-  document.getElementById('zoom-wrap').style.transform = 'scale(' + currentZoom + ')';
-  document.getElementById('zoom-label').textContent = Math.round(currentZoom * 100) + '%';
-  // Adjust the zoom-wrap height so the viewport scrolls correctly
+  const label = document.getElementById('zoom-label');
   const wrap = document.getElementById('zoom-wrap');
-  wrap.style.width  = (GRID * TILE * currentZoom) + 'px';
-  wrap.style.height = (GRID * TILE * currentZoom) + 'px';
+  const svg = document.getElementById('map-svg');
+  if (!label || !wrap || !svg) return;
+
+  const baseSize = GRID * TILE;
+  const size = baseSize * currentZoom;
+  label.textContent = Math.round(currentZoom * 100) + '%';
+  wrap.style.transform = 'scale(' + currentZoom + ')';
+  wrap.style.width = size + 'px';
+  wrap.style.height = size + 'px';
+  svg.style.width = baseSize + 'px';
+  svg.style.height = baseSize + 'px';
 }
 function zoomIn()    { setZoom(currentZoom + 0.25); }
 function zoomOut()   { setZoom(currentZoom - 0.25); }
 function zoomReset() { setZoom(1.0); }
 
-// Mouse-wheel zoom on viewport
-document.getElementById('map-viewport').addEventListener('wheel', function(e) {
-  e.preventDefault();
-  setZoom(currentZoom + (e.deltaY < 0 ? 0.15 : -0.15));
-}, { passive: false });
-
 // ═══════════════════════════════════════════════════════════════════════════════
 // INIT
 // ═══════════════════════════════════════════════════════════════════════════════
 (async function init() {
+  const viewport = document.getElementById('map-viewport');
+  if (viewport) {
+    viewport.addEventListener('wheel', function(e) {
+      e.preventDefault();
+      setZoom(currentZoom + (e.deltaY < 0 ? 0.15 : -0.15));
+    }, { passive: false });
+  }
+
   if (typeof loadActiveTileSetFromStorage === 'function') {
     loadActiveTileSetFromStorage();
   }
+
+  setRoomCount(document.getElementById('room-count-select').value);
+  setRoomSizePreset(document.getElementById('room-size-select').value);
 
   const biomes = await fetchAvailableBiomes();
   buildMapTypeButtons(biomes);
   if (typeof buildPropTypeOptions === 'function') {
     buildPropTypeOptions(currentMapType, currentPropType);
     const select = document.getElementById('prop-type-select');
-    if (select) currentPropType = select.value || 'all';
+    if (select) currentPropType = select.value || 'none';
   }
   try {
     await buildTileDefs();

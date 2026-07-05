@@ -220,6 +220,36 @@
       flex-wrap: wrap;
       padding: .1rem 0 .25rem;
     }
+    .zoom-group {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      margin-left: auto;
+    }
+    .zoom-btn {
+      background: var(--panel-2);
+      color: var(--text);
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      width: 28px;
+      height: 28px;
+      cursor: pointer;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background .15s;
+    }
+    .zoom-btn:hover { background: #1d2835; }
+    .zoom-val {
+      font-size: .8rem;
+      color: var(--muted);
+      min-width: 38px;
+      text-align: center;
+    }
+    .preview-zoom-group {
+      margin-left: auto;
+    }
     .preview-themebar .toolbar-label {
       font-size: .72rem;
       text-transform: uppercase;
@@ -313,4 +343,5 @@
       .tile-list { max-height: 320px; }
       .preview-frame { height: 360px; }
       .shape-template-fields { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .preview-zoom-group { margin-left: 0; }
     }

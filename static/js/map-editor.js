@@ -147,6 +147,8 @@ const THEMES = [
 
 const EDGE_VALUES = ['open', 'wall', 'water', 'grass', 'road', 'mountain'];
 const TILE_SIZE = 40;
+const PREVIEW_ZOOM_MIN = 0.5;
+const PREVIEW_ZOOM_MAX = 8;
 const SHAPE_TEMPLATES = {
   rect: {
     tag: 'rect',
@@ -176,6 +178,7 @@ const editorState = {
   source: '',
   dirty: false,
   themeId: 'stone',
+  previewZoom: 1,
   svgByAssetKey: {},
 };
 
@@ -403,6 +406,35 @@ function tileKey(type, asset) {
   return String(type || '') + '/' + String(asset || '');
 }
 
+function pathWithEncodedSegments(path) {
+  return String(path || '')
+    .split('/')
+    .map(segment => encodeURIComponent(segment))
+    .join('/');
+}
+
+function splitTileAsset(asset) {
+  const raw = String(asset || '').trim();
+  const extMatch = raw.match(/\.(svg|png)$/i);
+  if (!extMatch) {
+    return { base: raw, ext: '' };
+  }
+  return {
+    base: raw.slice(0, -extMatch[0].length),
+    ext: extMatch[1].toLowerCase(),
+  };
+}
+
+function tileUrlFor(type, assetWithExt) {
+  return '/tiles/' + pathWithEncodedSegments(type) + '/' + pathWithEncodedSegments(assetWithExt);
+}
+
+function pngPreviewSvg(url) {
+  return '<svg xmlns="http://www.w3.org/2000/svg" width="' + TILE_SIZE + '" height="' + TILE_SIZE + '" viewBox="0 0 ' + TILE_SIZE + ' ' + TILE_SIZE + '">\n' +
+    '  <image href="' + url + '" width="' + TILE_SIZE + '" height="' + TILE_SIZE + '" preserveAspectRatio="none"/>\n' +
+    '</svg>';
+}
+
 function tileKeyFromTile(tile) {
   return tileKey(tile.type, tile.asset);
 }
@@ -524,11 +556,35 @@ function renderPreview(svgText) {
   const theme = currentTheme();
   const themeCss = Object.entries(theme.vars).map(([key, value]) => key + ':' + value + ';').join(' ');
   const body = svgText && String(svgText).trim() ? svgText : blankSvg;
+  const previewZoom = Number(editorState.previewZoom) || 1;
   frame.srcdoc = '<!doctype html><html><head><meta charset="utf-8"><style>' +
     'html,body{margin:0;width:100%;height:100%;background:' + theme.vars['--tile-void'] + ';overflow:hidden;}' +
     'body{display:flex;align-items:center;justify-content:center;}' +
+    '.zoom-stage{transform:scale(' + previewZoom + ');transform-origin:center center;display:inline-flex;align-items:center;justify-content:center;}' +
     'svg{max-width:100%;max-height:100%;background:' + theme.vars['--tile-void'] + ';' + themeCss + '}' +
-    '</style></head><body>' + body + '</body></html>';
+    '</style></head><body><div class="zoom-stage">' + body + '</div></body></html>';
+}
+
+function setPreviewZoom(z) {
+  const nextZoom = Math.max(PREVIEW_ZOOM_MIN, Math.min(PREVIEW_ZOOM_MAX, z));
+  editorState.previewZoom = nextZoom;
+  const label = document.getElementById('preview-zoom-label');
+  if (label) {
+    label.textContent = Math.round(nextZoom * 100) + '%';
+  }
+  renderPreview(editorState.source || document.getElementById('svg-source').value || blankSvg);
+}
+
+function zoomPreviewIn() {
+  setPreviewZoom((Number(editorState.previewZoom) || 1) + 0.25);
+}
+
+function zoomPreviewOut() {
+  setPreviewZoom((Number(editorState.previewZoom) || 1) - 0.25);
+}
+
+function zoomPreviewReset() {
+  setPreviewZoom(1);
 }
 
 async function loadSvgSourceForTile(tile) {
@@ -538,11 +594,43 @@ async function loadSvgSourceForTile(tile) {
   }
 
   try {
-    const res = await fetch('/tiles/' + key + '.svg', { cache: 'no-store' });
-    if (!res.ok) throw new Error('HTTP ' + res.status);
-    const text = await res.text();
-    editorState.svgByAssetKey[key] = text;
-    return text;
+    const parsedAsset = splitTileAsset(tile.asset);
+
+    if (parsedAsset.ext === 'png') {
+      const pngUrl = tileUrlFor(tile.type, tile.asset);
+      const pngRes = await fetch(pngUrl, { cache: 'no-store' });
+      if (!pngRes.ok) throw new Error('HTTP ' + pngRes.status);
+      const previewSvg = pngPreviewSvg(pngUrl);
+      editorState.svgByAssetKey[key] = previewSvg;
+      return previewSvg;
+    }
+
+    if (parsedAsset.ext === 'svg') {
+      const svgUrl = tileUrlFor(tile.type, tile.asset);
+      const svgRes = await fetch(svgUrl, { cache: 'no-store' });
+      if (!svgRes.ok) throw new Error('HTTP ' + svgRes.status);
+      const svgText = await svgRes.text();
+      editorState.svgByAssetKey[key] = svgText;
+      return svgText;
+    }
+
+    const svgUrl = tileUrlFor(tile.type, parsedAsset.base + '.svg');
+    const svgRes = await fetch(svgUrl, { cache: 'no-store' });
+    if (svgRes.ok) {
+      const svgText = await svgRes.text();
+      editorState.svgByAssetKey[key] = svgText;
+      return svgText;
+    }
+
+    const pngUrl = tileUrlFor(tile.type, parsedAsset.base + '.png');
+    const pngRes = await fetch(pngUrl, { cache: 'no-store' });
+    if (pngRes.ok) {
+      const previewSvg = pngPreviewSvg(pngUrl);
+      editorState.svgByAssetKey[key] = previewSvg;
+      return previewSvg;
+    }
+
+    throw new Error('HTTP ' + svgRes.status + '/' + pngRes.status);
   } catch (_) {
     return blankSvg;
   }
@@ -813,6 +901,17 @@ function bindEditorEvents() {
     renderShapeTemplateFields(event.target.value);
   });
   document.getElementById('insert-shape-btn').addEventListener('click', insertShapeTemplateTag);
+  document.getElementById('preview-zoom-in').addEventListener('click', zoomPreviewIn);
+  document.getElementById('preview-zoom-out').addEventListener('click', zoomPreviewOut);
+  document.getElementById('preview-zoom-reset').addEventListener('click', zoomPreviewReset);
+
+  const previewFrame = document.getElementById('preview-frame');
+  if (previewFrame) {
+    previewFrame.addEventListener('wheel', event => {
+      event.preventDefault();
+      setPreviewZoom((Number(editorState.previewZoom) || 1) + (event.deltaY < 0 ? 0.15 : -0.15));
+    }, { passive: false });
+  }
 
   document.getElementById('svg-source').addEventListener('input', () => {
     editorState.source = document.getElementById('svg-source').value;
@@ -849,6 +948,7 @@ function bindEditorEvents() {
   populateTypeSelects();
   populateEdgeSelects();
   bindEditorEvents();
+  setPreviewZoom(1);
   renderTileList();
 
   if (TILES.length > 0) {

@@ -8,6 +8,7 @@ import (
 	"os"
 	"path/filepath"
 	"sort"
+	"strings"
 )
 
 var mapTmpl *template.Template
@@ -56,12 +57,25 @@ func discoverMapBiomes(root string) ([]string, error) {
 			continue
 		}
 
-		glob := filepath.Join(root, e.Name(), "*.svg")
-		matches, gErr := filepath.Glob(glob)
-		if gErr != nil {
+		biomeDir := filepath.Join(root, e.Name())
+		files, rErr := os.ReadDir(biomeDir)
+		if rErr != nil {
 			continue
 		}
-		if len(matches) == 0 {
+
+		hasSupportedTile := false
+		for _, f := range files {
+			if f.IsDir() {
+				continue
+			}
+			ext := strings.ToLower(filepath.Ext(f.Name()))
+			if ext == ".svg" || ext == ".png" {
+				hasSupportedTile = true
+				break
+			}
+		}
+
+		if !hasSupportedTile {
 			continue
 		}
 		biomes = append(biomes, e.Name())
@@ -122,6 +136,32 @@ const mapPageTemplate = `
     <div class="toolbar-group">
       <span class="toolbar-label">Props</span>
       <select id="prop-type-select" class="map-select" onchange="setPropType(this.value)"></select>
+    </div>
+
+    <div class="toolbar-sep"></div>
+
+    <!-- Rooms -->
+    <div class="toolbar-group">
+      <span class="toolbar-label">Rooms</span>
+      <select id="room-count-select" class="map-select map-select--narrow" onchange="setRoomCount(this.value)">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5" selected>5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+      </select>
+    </div>
+
+    <div class="toolbar-group">
+      <span class="toolbar-label">Room Size</span>
+      <select id="room-size-select" class="map-select" onchange="setRoomSizePreset(this.value)">
+        <option value="compact">Compact</option>
+        <option value="varied" selected>Varied</option>
+        <option value="broad">Broad</option>
+      </select>
     </div>
 
     <!-- Zoom -->
@@ -232,8 +272,14 @@ const mapEditorPageTemplate = `
         <div class="preview-themebar">
           <span class="toolbar-label">Theme</span>
           <div id="editor-theme-swatches" style="display:flex;gap:.35rem;flex-wrap:wrap;"></div>
+          <div class="zoom-group preview-zoom-group">
+            <button class="zoom-btn" id="preview-zoom-out" type="button" title="Zoom out">−</button>
+            <span class="zoom-val" id="preview-zoom-label">100%</span>
+            <button class="zoom-btn" id="preview-zoom-in" type="button" title="Zoom in">+</button>
+            <button class="zoom-btn" id="preview-zoom-reset" type="button" title="Reset zoom" style="width:auto;padding:0 .4rem;font-size:.7rem;">⌂</button>
+          </div>
         </div>
-        <div class="preview-frame"><iframe id="svg-preview" title="Tile preview"></iframe></div>
+        <div class="preview-frame" id="preview-frame"><iframe id="svg-preview" title="Tile preview"></iframe></div>
         <div class="source-box field">
           <label>Insert Shape Template</label>
           <div class="shape-template-row">

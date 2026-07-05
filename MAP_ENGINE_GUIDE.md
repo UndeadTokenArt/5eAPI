@@ -7,16 +7,17 @@ This document explains how the map generator works, how Wave Function Collapse (
 - `static/js/map-engine.js`: JavaScript engine for generation, propagation, SVG loading, and rendering.
 - `static/js/map-tiles.js`: Tile catalog (`TILES`) and lookups (`TILE_BY_ID`, groups). This is where tile rules are defined.
 - `map.go`: HTML page, UI controls, constants (`GRID`, `TILE`), map generation entrypoint (`generate()`), themes, and initialization.
-- `tiles/<biome>/<asset>.svg`: Visual assets referenced by each tile's `asset` field.
+- `tiles/<biome>/<asset>.(svg|png)`: Visual assets referenced by each tile's `asset` field.
 
 ## High-Level Flow
 
 1. UI loads and builds biome/type buttons and tile SVG `<defs>`.
 2. User clicks Generate.
 3. `generate()` calls `wfcGenerate(currentMapType)`.
-4. WFC builds a `GRID x GRID` candidate grid and collapses it with constraints.
-5. If generation succeeds, `renderGrid(grid)` paints a `<use>` for each chosen tile.
-6. If a contradiction happens, WFC retries (up to 8 attempts).
+4. For dungeon-like map types, the engine first seeds a room-and-corridor plan by biasing specific cells toward room interiors, room boundary tiles, doors, and corridor pieces.
+5. WFC then builds a `GRID x GRID` candidate grid and collapses it with constraints plus those per-cell weight biases.
+6. If generation succeeds, `renderGrid(grid)` paints a `<use>` for each chosen tile.
+7. If a contradiction happens, WFC retries (up to 8 attempts).
 
 ## Data Model
 
@@ -38,7 +39,7 @@ Meaning of each field:
 - `type`: Biome group (for example `dungeon`, `outdoor`). WFC only uses tiles with matching type.
 - `edges`: Connection tokens per side. Neighboring tiles must match compatible tokens across touching edges.
 - `weight`: Relative probability when a cell collapses.
-- `asset`: SVG file name at `/tiles/<type>/<asset>.svg`.
+- `asset`: Tile asset name under `/tiles/<type>/`; supports `.svg` and `.png` extensions (or extensionless values with svg-first/png-fallback loading).
 
 ## WFC Implementation in This Project
 
@@ -53,6 +54,27 @@ Conceptually:
 - Before collapse, each cell = many possible tiles.
 - After collapse, each cell = exactly one tile ID.
 
+### 1a) Seed room and corridor biases
+
+For room-based map types (`dungeon`, `indoor`, `castle`), the engine now performs a planning pass before collapse:
+
+- Room count is configurable from the map toolbar and defaults to 5.
+- Room size is configurable from the map toolbar via presets.
+- It paints a room footprint around each center.
+- Each room can have its own radius instead of every room using one fixed size.
+- Interior cells are strongly biased toward floor-like room tiles.
+- Room boundary cells are strongly biased toward one-wall and corner tiles.
+- It connects rooms with L-shaped corridor plans.
+- Corridor cells are biased toward straight corridors, corners, T-junctions, doors, and crosses depending on the planned path shape.
+
+This does not hard-place tiles. It only changes per-cell selection weights, then WFC still resolves the final map under normal edge constraints.
+
+Current room size presets:
+
+- `compact`: smaller rooms, tighter layouts
+- `varied`: mixed room sizes
+- `broad`: larger rooms with wider footprints
+
 ### 2) Pick next cell by entropy
 
 `minEntropyCell(grid)` finds the not-yet-collapsed cell with the fewest options (`size > 1` and minimum size).
@@ -64,6 +86,8 @@ Why: this usually reduces contradictions and search width by resolving the most 
 `weightedPick(ids)` chooses one candidate by `weight`.
 
 If a tile has weight 10 and another has weight 2, the first is roughly 5x as likely when both are allowed.
+
+Now that pick also includes seeded per-cell multipliers, so a cell inside a planned room can strongly favor floor/interior tiles while a cell on a planned corridor can strongly favor hallway pieces.
 
 ### 4) Propagate constraints (the core)
 

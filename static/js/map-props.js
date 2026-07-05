@@ -60,7 +60,8 @@ function propTypesForMapType(mapType) {
 }
 
 function prettyPropType(value) {
-  if (!value || value === 'all') return 'All';
+  if (!value || value === 'none') return 'None';
+  if (value === 'all') return 'All';
   return value.charAt(0).toUpperCase() + value.slice(1);
 }
 
@@ -68,12 +69,12 @@ function buildPropTypeOptions(mapType, selected) {
   const select = document.getElementById('prop-type-select');
   if (!select) return;
 
-  const options = ['all'].concat(propTypesForMapType(mapType));
+  const options = ['none', 'all'].concat(propTypesForMapType(mapType));
   select.innerHTML = options.map(type =>
     '<option value="' + type + '">' + prettyPropType(type) + '</option>'
   ).join('');
 
-  const nextSelected = options.includes(selected) ? selected : 'all';
+  const nextSelected = options.includes(selected) ? selected : 'none';
   select.value = nextSelected;
 }
 
@@ -106,6 +107,8 @@ function weightedPropPick(candidates) {
 
 function generatePropPlacements(grid, mapType, selectedPropType) {
   const placements = [];
+
+  if (!selectedPropType || selectedPropType === 'none') return placements;
 
   const templates = PROP_TEMPLATES.filter(template => {
     const mapOk = Array.isArray(template.allowedMapTypes) && template.allowedMapTypes.includes(mapType);

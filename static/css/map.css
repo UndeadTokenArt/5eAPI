@@ -127,6 +127,10 @@
       min-width: 130px;
     }
 
+    .map-select--narrow {
+      min-width: 72px;
+    }
+
     .zoom-group { display: flex; align-items: center; gap: .4rem; margin-left: auto; }
     .zoom-btn {
       background: var(--sf2);

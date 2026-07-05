@@ -1,8 +1,9 @@
-// Each tile references an external SVG file at /tiles/<type>/<asset>.svg.
-// Keeping metadata and assets separate lets you edit SVG files without touching JS.
+// Each tile references an external asset file under /tiles/<type>/.
+// `asset` may include an explicit extension (.svg or .png), or omit it for svg-first/png-fallback loading.
+// Keeping metadata and assets separate lets you edit tile files without touching JS.
 const TILES = [
   // ── Dungeon ──
-  { id:'d-floor',    type:'dungeon', edges:{N:'open',E:'open',S:'open',W:'open'},   weight:50, asset:'d-floor' },
+  { id:'d-floor',    type:'dungeon', edges:{N:'open',E:'open',S:'open',W:'open'},   weight:10, asset:'d-floor' },
   { id:'d-wall',     type:'dungeon', edges:{N:'wall',E:'wall',S:'wall',W:'wall'},   weight:100,  asset:'d-wall' },
   
   { id:'d-corr-h',
@@ -29,20 +30,20 @@ const TILES = [
     ],
   asset:'d-corr-v' },
   
-  { id:'d-cross',    type:'dungeon', edges:{N:'open',E:'open',S:'open',W:'open'},   weight:0,  asset:'d-cross' },
-  { id:'d-cor-ne',   type:'dungeon', edges:{N:'open',E:'open',S:'wall',W:'wall'},   weight:2,  asset:'d-cor-ne' },
-  { id:'d-cor-se',   type:'dungeon', edges:{N:'wall',E:'open',S:'open',W:'wall'},   weight:2,  asset:'d-cor-se' },
-  { id:'d-cor-sw',   type:'dungeon', edges:{N:'wall',E:'wall',S:'open',W:'open'},   weight:2,  asset:'d-cor-sw' },
-  { id:'d-cor-nw',   type:'dungeon', edges:{N:'open',E:'wall',S:'wall',W:'open'},   weight:2,  asset:'d-cor-nw' },
-  { id:'d-t-n',      type:'dungeon', edges:{N:'wall',E:'open',S:'open',W:'open'},   weight:5,  asset:'d-t-n' },
-  { id:'d-t-e',      type:'dungeon', edges:{N:'open',E:'wall',S:'open',W:'open'},   weight:5,  asset:'d-t-e' },
+  { id:'d-cross',    type:'dungeon', edges:{N:'open',E:'open',S:'open',W:'open'},   weight:10,  asset:'d-cross' },
+  { id:'d-cor-ne',   type:'dungeon', edges:{N:'open',E:'open',S:'wall',W:'wall'},   weight:10,  asset:'d-cor-ne' },
+  { id:'d-cor-se',   type:'dungeon', edges:{N:'wall',E:'open',S:'open',W:'wall'},   weight:10,  asset:'d-cor-se' },
+  { id:'d-cor-sw',   type:'dungeon', edges:{N:'wall',E:'wall',S:'open',W:'open'},   weight:10,  asset:'d-cor-sw' },
+  { id:'d-cor-nw',   type:'dungeon', edges:{N:'open',E:'wall',S:'wall',W:'open'},   weight:10,  asset:'d-cor-nw' },
+  { id:'d-t-n',      type:'dungeon', edges:{N:'wall',E:'open',S:'open',W:'open'},   weight:10,  asset:'d-t-n' },
+  { id:'d-t-e',      type:'dungeon', edges:{N:'open',E:'wall',S:'open',W:'open'},   weight:10,  asset:'d-t-e' },
   { id:'d-t-s',      type:'dungeon', edges:{N:'open',E:'open',S:'wall',W:'open'},   weight:10,  asset:'d-t-s' },
   { id:'d-t-w',      type:'dungeon', edges:{N:'open',E:'open',S:'open',W:'wall'},   weight:10,  asset:'d-t-w' },
   { id:'d-door-h',   type:'dungeon', edges:{N:'wall',E:'open',S:'wall',W:'open'},   weight:1,  asset:'d-door-h' },
   { id:'d-door-v',   type:'dungeon', edges:{N:'open',E:'wall',S:'open',W:'wall'},   weight:1,  asset:'d-door-v' },
 
   // Pillars & Columns
-  { id:'d-pillar',   type:'dungeon', edges:{N:'open',E:'open',S:'open',W:'open'},   weight:10,  asset:'d-pillar' },
+  { id:'d-pillar',   type:'dungeon', edges:{N:'open',E:'open',S:'open',W:'open'},   weight:3,  asset:'d-pillar' },
   { id:'d-col-n',    type:'dungeon', edges:{N:'open',E:'wall',S:'wall',W:'wall'},   weight:1,  asset:'d-col-n' },
   { id:'d-col-e',    type:'dungeon', edges:{N:'wall',E:'open',S:'wall',W:'wall'},   weight:1,  asset:'d-col-e' },
   { id:'d-col-s',    type:'dungeon', edges:{N:'wall',E:'wall',S:'open',W:'wall'},   weight:1,  asset:'d-col-s' },
