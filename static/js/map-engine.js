@@ -556,11 +556,16 @@ async function getTileSVG(tile) {
     : null;
   if (overrideMap && typeof overrideMap[key] === 'string' && overrideMap[key].trim()) {
     const overrideRaw = overrideMap[key];
+    // Guard against stale editor/session overrides that embed missing PNG files
+    // for tiles that should use extensionless/svg-first assets.
+    const overrideLooksLikePngImage = /<image[\s\S]*?href=["'][^"']+\.png["']/i.test(overrideRaw);
+    if (!(overrideLooksLikePngImage && parsedAsset.ext !== 'png')) {
     const overrideInner = overrideRaw
       .replace(/^[\s\S]*?<svg[^>]*>/i, '')
       .replace(/<\/svg>[\s\S]*$/i, '')
       .trim();
     return overrideInner || overrideRaw;
+    }
   }
 
   if (TILE_SVG_CACHE.has(key)) {

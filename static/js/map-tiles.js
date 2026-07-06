@@ -117,11 +117,27 @@ if (typeof window !== 'undefined' && !window.ACTIVE_SVG_BY_ASSET) {
   window.ACTIVE_SVG_BY_ASSET = {};
 }
 
+function normalizeTileAssetName(assetValue, fallbackId) {
+  const raw = String(assetValue || fallbackId || '').trim();
+  return raw.replace(/\.(svg|png)$/i, '');
+}
+
+function normalizeSvgMapKey(key) {
+  const raw = String(key || '').trim();
+  if (!raw) return '';
+  const slash = raw.indexOf('/');
+  if (slash < 0) return normalizeTileAssetName(raw, '');
+
+  const type = raw.slice(0, slash).trim();
+  const asset = raw.slice(slash + 1).trim();
+  return type + '/' + normalizeTileAssetName(asset, '');
+}
+
 function normalizeTileForRuntime(tile) {
   const out = JSON.parse(JSON.stringify(tile || {}));
   out.id = String(out.id || '').trim();
   out.type = String(out.type || 'dungeon').trim();
-  out.asset = String(out.asset || out.id || '').trim();
+  out.asset = normalizeTileAssetName(out.asset, out.id);
 
   const edges = out.edges || {};
   out.edges = {
@@ -179,7 +195,9 @@ function applyActiveTileSetBundle(bundle) {
       : {};
     const nextSvgMap = {};
     Object.keys(rawSvgMap).forEach(key => {
-      if (typeof rawSvgMap[key] === 'string') nextSvgMap[key] = rawSvgMap[key];
+      if (typeof rawSvgMap[key] !== 'string') return;
+      const normalizedKey = normalizeSvgMapKey(key);
+      if (normalizedKey) nextSvgMap[normalizedKey] = rawSvgMap[key];
     });
     window.ACTIVE_SVG_BY_ASSET = nextSvgMap;
   }

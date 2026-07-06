@@ -37,17 +37,22 @@
      fill="var(--tile-floor)"
      />
   <rect
+      id="northwall"
+      x="0"
+      y="0"
      width="40"
      fill="var(--tile-wall)"
      height="4" />
-  <rect
+   <rect
+      id="southWall"
       x="0"
       y="36"
-     width="40"
-     fill="var(--tile-wall)"
-     height="4" />
-  <rect x="20" y="0" width="8" height="8" fill="var(--tile-wall)"/>
-  <rect x="20" y="32" width="8" height="8" fill="var(--tile-wall)"/>
+      width="40"
+	   height="4"
+      fill="var(--tile-wall)"
+ />
+  <rect x="20" y="4" width="8" height="8" fill="var(--tile-wall)"/>
+  <rect x="20" y="28" width="8" height="8" fill="var(--tile-wall)"/>
 
   <!-- Stone cracks and worn areas -->
   <line x1="0" y1="20" x2="40" y2="20" stroke="var(--tile-wall)" stroke-width="0.5" opacity="0.3" />
