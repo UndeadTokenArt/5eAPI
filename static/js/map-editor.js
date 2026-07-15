@@ -576,11 +576,11 @@ function setPreviewZoom(z) {
 }
 
 function zoomPreviewIn() {
-  setPreviewZoom((Number(editorState.previewZoom) || 1) + 0.25);
+  setPreviewZoom((Number(editorState.previewZoom) || 1) + 1);
 }
 
 function zoomPreviewOut() {
-  setPreviewZoom((Number(editorState.previewZoom) || 1) - 0.25);
+  setPreviewZoom((Number(editorState.previewZoom) || 1) - 1);
 }
 
 function zoomPreviewReset() {

@@ -1,0 +1,24 @@
+{{ define "Shop.tmpl" }}
+<nav>
+    <div class="header">
+        <div class="title">{{.shop.name}}</div>
+        <div class="description">{{.shop.description}}</div>
+        <div class="type">{{.shop.type}}</div>
+        <div class="owner">{{.shop.owner.name}}</div>
+        <div class="species">{{.shop.owner.species}}</div>
+        <div class="description">{{.shop.owner.description}}</div>
+    </div>
+    <div class="items">
+        {{range .shop.items}}
+        <div class="item">
+            <div class="name">{{.name}}</div>
+            <div class="rarity">{{.rarity}}</div>
+            <div class="type">{{.type}}</div>
+            <div class="description">{{.description}}</div>
+            <div class="uses">{{.uses}}</div>
+            <div class="price">{{.price}}</div>
+            <div class="quantity">{{.quantity}}</div>
+        </div>
+        {{end}}
+</nav>
+{{end}}
