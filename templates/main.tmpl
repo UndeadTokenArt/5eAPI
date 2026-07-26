@@ -1,0 +1,888 @@
+{{define "css"}}
+<style>
+:root {
+  --bg:    #0e0c0a;
+  --sf:    #1c1917;
+  --sf2:   #252220;
+  --bd:    #3d2b1f;
+  --gold:  #c9a63c;
+  --gold2: #8a6d2a;
+  --red:   #9b1c1c;
+  --text:  #e8dcc8;
+  --muted: #9b8c7a;
+  --link:  #e8a23a;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+  line-height: 1.6;
+}
+a { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Nav ── */
+nav {
+  background: var(--sf);
+  border-bottom: 2px solid var(--gold2);
+  padding: .85rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.brand {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+.brand:hover { text-decoration: none; color: var(--link); }
+.nav-sub { color: var(--muted); font-size: .8rem; }
+.nav-enc {
+  margin-left: auto;
+  color: var(--gold);
+  font-size: .85rem;
+  font-weight: 600;
+  border: 1px solid var(--gold2);
+  border-radius: 4px;
+  padding: .3rem .75rem;
+  white-space: nowrap;
+}
+.nav-enc:hover { background: var(--sf2); text-decoration: none; }
+
+/* ── Layout ── */
+main { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+
+/* ── Footer ── */
+footer {
+  background: var(--sf);
+  border-top: 1px solid var(--bd);
+  padding: 1.5rem 2rem;
+  text-align: center;
+  color: var(--muted);
+  font-size: .85rem;
+  margin-top: 3rem;
+}
+footer a { color: var(--link); }
+
+/* ── Home ── */
+.hero { text-align: center; padding: 3rem 0 2rem; }
+.hero h1 {
+  font-size: 2.4rem;
+  color: var(--gold);
+  font-family: Georgia, 'Times New Roman', serif;
+  margin-bottom: .5rem;
+  text-shadow: 0 2px 8px rgba(0,0,0,.6);
+}
+.hero p { color: var(--muted); font-size: 1.05rem; }
+
+.cat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.cat-card {
+  background: var(--sf);
+  border: 1px solid var(--bd);
+  border-radius: 8px;
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .5rem;
+  color: var(--text);
+  transition: border-color .2s, background .2s, transform .2s, box-shadow .2s;
+}
+.cat-card:hover {
+  border-color: var(--gold);
+  background: var(--sf2);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(201,166,60,.15);
+  text-decoration: none;
+  color: var(--gold);
+}
+.cat-icon { font-size: 2.2rem; }
+.cat-name { font-size: .85rem; text-align: center; font-weight: 500; }
+
+/* ── Breadcrumb ── */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .75rem 0 1.25rem;
+  font-size: .88rem;
+  color: var(--muted);
+}
+.breadcrumb a { color: var(--link); }
+
+/* ── Category page ── */
+.page-heading {
+  font-size: 2rem;
+  color: var(--gold);
+  font-family: Georgia, serif;
+  margin-bottom: .5rem;
+}
+.count-badge {
+  background: var(--red);
+  color: #fff;
+  padding: .2rem .7rem;
+  border-radius: 20px;
+  font-size: .8rem;
+  font-weight: 600;
+  vertical-align: middle;
+  margin-left: .5rem;
+}
+.search-box {
+  display: block;
+  width: 100%;
+  padding: .7rem 1rem;
+  background: var(--sf);
+  border: 1px solid var(--bd);
+  border-radius: 6px;
+  color: var(--text);
+  font-size: 1rem;
+  margin: 1rem 0 1.5rem;
+  outline: none;
+}
+.search-box:focus { border-color: var(--gold); }
+.search-box::placeholder { color: var(--muted); }
+
+.item-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: .5rem;
+}
+.item-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--sf);
+  border: 1px solid var(--bd);
+  border-radius: 6px;
+  padding: .65rem 1rem;
+  color: var(--text);
+  font-size: .9rem;
+  transition: border-color .15s, background .15s, color .15s;
+}
+.item-link:hover {
+  border-color: var(--gold2);
+  background: var(--sf2);
+  color: var(--gold);
+  text-decoration: none;
+}
+.lvl-badge {
+  font-size: .7rem;
+  background: var(--gold2);
+  color: var(--bg);
+  padding: .1rem .4rem;
+  border-radius: 4px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.no-results { text-align: center; color: var(--muted); padding: 3rem; grid-column: 1 / -1; }
+
+/* ── Item page ── */
+.item-title {
+  font-size: 2.3rem;
+  color: var(--gold);
+  font-family: Georgia, serif;
+  margin-bottom: .2rem;
+  line-height: 1.2;
+}
+.item-cat { color: var(--muted); font-size: .9rem; margin-bottom: 1.25rem; }
+.api-link {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  font-size: .8rem;
+  color: var(--muted);
+  border: 1px solid var(--bd);
+  border-radius: 4px;
+  padding: .2rem .6rem;
+}
+.api-link:hover { color: var(--link); }
+
+.section-title {
+  font-size: .82rem;
+  color: var(--gold);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  margin-bottom: .75rem;
+}
+.description {
+  background: var(--sf);
+  border-left: 3px solid var(--red);
+  padding: 1rem 1.25rem;
+  border-radius: 0 6px 6px 0;
+  margin-bottom: 1.5rem;
+  font-size: .95rem;
+}
+.description p + p { margin-top: .7rem; }
+
+.higher-level {
+  background: var(--sf);
+  border-left: 3px solid var(--gold2);
+  padding: 1rem 1.25rem;
+  border-radius: 0 6px 6px 0;
+  margin-bottom: 1.5rem;
+  font-size: .9rem;
+}
+.higher-level-title {
+  font-size: .82rem;
+  color: var(--gold);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  margin-bottom: .5rem;
+}
+
+.props-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: .75rem;
+  margin-bottom: 1.5rem;
+}
+.prop {
+  background: var(--sf);
+  border: 1px solid var(--bd);
+  border-radius: 6px;
+  padding: .75rem 1rem;
+}
+.prop-label {
+  font-size: .75rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  margin-bottom: .3rem;
+}
+.prop-value { color: var(--text); font-size: .92rem; font-weight: 500; }
+.prop-list { list-style: none; padding: 0; }
+.prop-list li { color: var(--text); font-size: .88rem; line-height: 1.7; }
+.prop-list li::before { content: "• "; color: var(--gold2); }
+
+details {
+  background: var(--sf);
+  border: 1px solid var(--bd);
+  border-radius: 6px;
+  margin-top: 1.5rem;
+}
+details summary {
+  padding: .75rem 1rem;
+  cursor: pointer;
+  color: var(--muted);
+  font-size: .88rem;
+  user-select: none;
+  list-style: none;
+}
+details summary:hover { color: var(--text); }
+details[open] summary { border-bottom: 1px solid var(--bd); }
+details pre {
+  padding: 1rem;
+  font-size: .78rem;
+  overflow-x: auto;
+  color: var(--text);
+  line-height: 1.55;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+}
+
+@media (max-width: 640px) {
+  main { padding: 1rem; }
+  .hero h1 { font-size: 1.8rem; }
+  .cat-grid { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); }
+  .item-grid { grid-template-columns: 1fr; }
+}
+
+/* Shop Navigation and Header Styles */
+nav {
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    padding: 1rem;
+    border-bottom: 1px solid #ccc;
+}
+
+.title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.description {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.type {
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.owner {
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+.species {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Items Container and Item Styles */
+.items {
+    display: grid;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.item {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    border-radius: 4px;
+    background-color: #131010;
+}
+
+.itemName {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.rarity {
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+}
+
+.uses {
+    font-size: 0.85rem;
+    color: #555;
+    margin-bottom: 0.25rem;
+}
+
+.price {
+    font-weight: bold;
+    color: #2c5f2d;
+    margin-top: 0.5rem;
+}
+
+.quantity {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+</style>
+{{end}}
+
+{{define "nav"}}
+<nav>
+  <a href="/" class="brand">⚔ D&amp;D 5e SRD</a>
+  <span class="nav-sub">System Reference Document Explorer</span>
+  <a href="/encounter" class="nav-enc">🎲 Encounter Generator</a>
+  <a href="/map" class="nav-enc">🗺 Map Generator</a>
+</nav>
+{{end}}
+
+{{define "foot"}}
+<footer>
+  Data provided by <a href="https://www.dnd5eapi.co/" target="_blank" rel="noopener">dnd5eapi.co</a>
+  &middot; <a href="https://github.com/5e-bits/5e-srd-api" target="_blank" rel="noopener">GitHub</a>
+  &middot; 5e SRD content &copy; Wizards of the Coast
+</footer>
+</body>
+</html>
+{{end}}
+
+{{define "home"}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>D&amp;D 5e SRD Explorer</title>
+  {{template "css" .}}
+</head>
+<body>
+{{template "nav" .}}
+<main>
+  <div class="hero">
+    <h1>D&amp;D 5e SRD Explorer</h1>
+    <p>Browse the complete 5th Edition System Reference Document &mdash; spells, monsters, classes, items &amp; more.</p>
+  </div>
+  <div class="cat-grid">
+    {{range .}}
+    <a href="/{{.}}" class="cat-card">
+      <span class="cat-icon">{{iconFor .}}</span>
+      <span class="cat-name">{{prettyCat .}}</span>
+    </a>
+    {{end}}
+  </div>
+</main>
+{{template "foot" .}}
+{{end}}
+
+{{define "category"}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{prettyCat .Category}} &mdash; D&amp;D 5e SRD</title>
+  {{template "css" .}}
+</head>
+<body>
+{{template "nav" .}}
+<main>
+  <div class="breadcrumb">
+    <a href="/">Home</a> &rsaquo; {{prettyCat .Category}}
+  </div>
+  <h1 class="page-heading">
+    {{iconFor .Category}} {{prettyCat .Category}}
+    <span class="count-badge">{{.Count}}</span>
+  </h1>
+  <input
+    type="search"
+    id="search"
+    class="search-box"
+    placeholder="Filter {{prettyCat .Category}}..."
+    autocomplete="off"
+  >
+  <div class="item-grid" id="grid">
+    {{range .Results}}
+    <a href="/{{$.Category}}/{{.Index}}" class="item-link" data-name="{{.Name}}">
+      <span>{{.Name}}</span>
+      {{if .Level}}<span class="lvl-badge">Lv {{.Level}}</span>{{end}}
+    </a>
+    {{end}}
+  </div>
+</main>
+<script>
+(function () {
+  var s = document.getElementById('search');
+  var g = document.getElementById('grid');
+  var links = Array.prototype.slice.call(g.querySelectorAll('.item-link'));
+  var noResults = null;
+  s.addEventListener('input', function () {
+    var q = this.value.toLowerCase();
+    var visible = 0;
+    links.forEach(function (el) {
+      var show = el.dataset.name.toLowerCase().indexOf(q) !== -1;
+      el.style.display = show ? '' : 'none';
+      if (show) visible++;
+    });
+    if (visible === 0 && !noResults) {
+      noResults = document.createElement('div');
+      noResults.className = 'no-results';
+      noResults.textContent = 'No results for "' + s.value + '"';
+      g.appendChild(noResults);
+    } else if (visible > 0 && noResults) {
+      g.removeChild(noResults);
+      noResults = null;
+    } else if (noResults) {
+      noResults.textContent = 'No results for "' + s.value + '"';
+    }
+  });
+  s.focus();
+})();
+</script>
+{{template "foot" .}}
+{{end}}
+
+{{define "item"}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{.Name}} &mdash; D&amp;D 5e SRD</title>
+  {{template "css" .}}
+</head>
+<body>
+{{template "nav" .}}
+<main>
+  <div class="breadcrumb">
+    <a href="/">Home</a> &rsaquo;
+    <a href="/{{.Category}}">{{prettyCat .Category}}</a> &rsaquo;
+    {{.Name}}
+  </div>
+
+  <div class="item-title">{{iconFor .Category}} {{.Name}}</div>
+  <div class="item-cat">{{prettyCat .Category}}</div>
+  <a
+    href="https://www.dnd5eapi.co/api/2014/{{.Category}}/{{.Slug}}"
+    target="_blank"
+    rel="noopener"
+    class="api-link"
+  >View raw API endpoint ↗</a>
+
+  {{if .Desc}}
+  <p class="section-title">Description</p>
+  <div class="description">
+    {{range .Desc}}<p>{{.}}</p>{{end}}
+  </div>
+  {{end}}
+
+  {{if .HigherLevel}}
+  <div class="higher-level">
+    <p class="higher-level-title">At Higher Levels</p>
+    {{range .HigherLevel}}<p>{{.}}</p>{{end}}
+  </div>
+  {{end}}
+
+  {{if .Props}}
+  <p class="section-title">Properties</p>
+  <div class="props-grid">
+    {{range .Props}}
+    <div class="prop">
+      <div class="prop-label">{{.Label}}</div>
+      {{if .IsMulti}}
+      <ul class="prop-list">
+        {{range .Values}}<li>{{.}}</li>{{end}}
+      </ul>
+      {{else}}
+      <div class="prop-value">{{index .Values 0}}</div>
+      {{end}}
+    </div>
+    {{end}}
+  </div>
+  {{end}}
+
+  <details>
+    <summary>Raw JSON data</summary>
+    <pre>{{.JSON}}</pre>
+  </details>
+</main>
+{{template "foot" .}}
+{{end}}
+
+{{define "encounter"}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Encounter Generator — D&amp;D 5e SRD</title>
+  {{template "css" .}}
+  <style>
+  .enc-form {
+    background: var(--sf);
+    border: 1px solid var(--bd);
+    border-radius: 10px;
+    padding: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    align-items: flex-end;
+    margin-bottom: 2rem;
+  }
+  .form-group { display: flex; flex-direction: column; gap: .4rem; }
+  .form-label { font-size: .75rem; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
+  .form-input, .form-select {
+    background: var(--bg);
+    border: 1px solid var(--bd);
+    border-radius: 6px;
+    color: var(--text);
+    padding: .55rem .85rem;
+    font-size: .95rem;
+    min-width: 90px;
+    outline: none;
+  }
+  .form-input:focus, .form-select:focus { border-color: var(--gold); }
+  .btn-generate {
+    background: var(--red);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: .6rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background .2s;
+    white-space: nowrap;
+  }
+  .btn-generate:hover { background: #7f1d1d; }
+
+  .enc-section-title {
+    font-size: .8rem;
+    color: var(--gold);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .07em;
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    margin: 1.75rem 0 .85rem;
+  }
+  .enc-section-title::after { content: ""; flex: 1; height: 1px; background: var(--bd); }
+
+  .monster-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 1rem;
+  }
+  .monster-card {
+    background: var(--sf);
+    border: 1px solid var(--bd);
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .monster-card::before {
+    content: "";
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 3px; background: var(--red);
+  }
+  .monster-name { font-size: 1.05rem; font-weight: 600; color: var(--gold); margin-bottom: .2rem; }
+  .monster-name a { color: inherit; }
+  .monster-name a:hover { text-decoration: underline; }
+  .monster-meta { font-size: .78rem; color: var(--muted); margin-bottom: .75rem; text-transform: capitalize; }
+  .count-tag {
+    display: inline-block;
+    background: var(--red); color: #fff;
+    font-size: .7rem; font-weight: 700;
+    border-radius: 20px; padding: .1rem .5rem;
+    margin-left: .4rem; vertical-align: middle;
+  }
+  .monster-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: .5rem;
+  }
+  .stat-box { background: var(--sf2); border-radius: 4px; padding: .4rem .5rem; text-align: center; }
+  .stat-label { font-size: .62rem; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+  .stat-val { font-size: .95rem; font-weight: 700; color: var(--text); margin-top: .1rem; }
+  .stat-val.cr { color: var(--gold); }
+
+  .diff-badge {
+    font-weight: 700; font-size: .82rem;
+    border-radius: 4px; padding: .15rem .65rem;
+    background: rgba(255,255,255,.07);
+  }
+
+  .enc-summary {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
+    gap: .75rem;
+    background: var(--sf);
+    border: 1px solid var(--bd);
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+  }
+  .sum-stat { text-align: center; }
+  .sum-label { font-size: .7rem; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; }
+  .sum-val { font-size: 1.45rem; font-weight: 700; color: var(--gold); line-height: 1.2; }
+  .sum-sub { font-size: .73rem; color: var(--muted); }
+
+  .loot-wrap { display: flex; gap: 2rem; flex-wrap: wrap; align-items: flex-start; margin-top: .5rem; }
+  .gold-box { min-width: 160px; }
+  .gold-val { font-size: 2rem; font-weight: 700; color: var(--gold); }
+  .gold-sub { font-size: .82rem; color: var(--muted); margin-top: .2rem; }
+  .loot-list { display: flex; flex-direction: column; gap: .5rem; flex: 1; min-width: 240px; }
+  .loot-item {
+    display: flex; align-items: center; gap: .75rem;
+    background: var(--sf); border: 1px solid var(--bd);
+    border-radius: 6px; padding: .6rem 1rem;
+  }
+  .loot-item.magic { border-color: var(--gold2); }
+  .loot-icon { font-size: 1.25rem; }
+  .loot-name { font-size: .9rem; color: var(--text); }
+  .loot-badge {
+    margin-left: auto; font-size: .7rem; border-radius: 20px; padding: .1rem .5rem;
+    background: rgba(255,255,255,.07); color: var(--muted); white-space: nowrap;
+  }
+  .loot-badge.magic { background: rgba(201,166,60,.15); color: var(--gold); }
+
+  .enc-error {
+    background: #3b0000; border: 1px solid var(--red);
+    border-radius: 6px; padding: 1rem 1.25rem;
+    color: #fca5a5; margin-bottom: 1rem;
+  }
+  .enc-placeholder {
+    text-align: center; padding: 3.5rem 1rem;
+    color: var(--muted); font-size: 1rem;
+  }
+  .enc-placeholder .ph-icon { font-size: 3.5rem; display: block; margin-bottom: .75rem; }
+  </style>
+</head>
+<body>
+{{template "nav" .}}
+<main>
+  <div class="breadcrumb">
+    <a href="/">Home</a> &rsaquo; Encounter Generator
+  </div>
+  <h1 class="page-heading">🎲 Encounter Generator</h1>
+  <p style="color:var(--muted);margin-bottom:1.5rem">
+    Build a balanced combat encounter backed by the live D&amp;D 5e SRD, complete with loot rewards.
+  </p>
+
+  <form class="enc-form" method="get" action="/encounter">
+    <div class="form-group">
+      <label class="form-label" for="size">Party Size</label>
+      <input class="form-input" id="size" name="size" type="number" min="1" max="8" value="{{.PartySize}}">
+    </div>
+    <div class="form-group">
+      <label class="form-label" for="level">Avg Level</label>
+      <input class="form-input" id="level" name="level" type="number" min="1" max="20" value="{{.PartyLevel}}">
+    </div>
+    <div class="form-group">
+      <label class="form-label" for="difficulty">Difficulty</label>
+      <select class="form-select" id="difficulty" name="difficulty">
+        <option value="easy"   {{if eq .Difficulty "easy"}}selected{{end}}>Easy</option>
+        <option value="medium" {{if eq .Difficulty "medium"}}selected{{end}}>Medium</option>
+        <option value="hard"   {{if eq .Difficulty "hard"}}selected{{end}}>Hard</option>
+        <option value="deadly" {{if eq .Difficulty "deadly"}}selected{{end}}>Deadly</option>
+      </select>
+    </div>
+    <button class="btn-generate" type="submit">⚔ Generate Encounter</button>
+  </form>
+
+  {{if .Error}}
+  <div class="enc-error">⚠ {{.Error}}</div>
+  {{end}}
+
+  {{if .Result}}
+  {{with .Result}}
+
+  <div class="enc-section-title">
+    Encounter Composition
+    <span class="diff-badge" style="color:{{.DiffColor}}">{{.Difficulty}}</span>
+  </div>
+  <div class="monster-grid">
+    {{range .Monsters}}
+    <div class="monster-card">
+      <div class="monster-name">
+        <a href="/monsters/{{.Detail.Index}}">{{.Detail.Name}}</a>
+        {{if gt .Count 1}}<span class="count-tag">&times;{{.Count}}</span>{{end}}
+      </div>
+      <div class="monster-meta">
+        {{.Detail.Size}} {{.Detail.Type}}{{if .Detail.Alignment}} &middot; {{.Detail.Alignment}}{{end}}
+      </div>
+      <div class="monster-stats">
+        <div class="stat-box">
+          <div class="stat-label">CR</div>
+          <div class="stat-val cr">{{.CRStr}}</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">HP each</div>
+          <div class="stat-val">{{.Detail.HitPoints}}</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">Total HP</div>
+          <div class="stat-val">{{.TotalHP}}</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">XP each</div>
+          <div class="stat-val">{{.XPEach}}</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">Count</div>
+          <div class="stat-val">{{.Count}}</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">Group XP</div>
+          <div class="stat-val">{{.TotalXP}}</div>
+        </div>
+      </div>
+    </div>
+    {{end}}
+  </div>
+
+  <div class="enc-section-title">Encounter Summary</div>
+  <div class="enc-summary">
+    <div class="sum-stat">
+      <div class="sum-label">Party</div>
+      <div class="sum-val">{{.PartySize}}</div>
+      <div class="sum-sub">characters (Level {{.PartyLevel}})</div>
+    </div>
+    <div class="sum-stat">
+      <div class="sum-label">XP Budget</div>
+      <div class="sum-val">{{.Budget}}</div>
+      <div class="sum-sub">for this difficulty</div>
+    </div>
+    <div class="sum-stat">
+      <div class="sum-label">Raw XP</div>
+      <div class="sum-val">{{.TotalXP}}</div>
+      <div class="sum-sub">from all monsters</div>
+    </div>
+    <div class="sum-stat">
+      <div class="sum-label">Adjusted XP</div>
+      <div class="sum-val">{{.AdjustedXP}}</div>
+      <div class="sum-sub">with group multiplier</div>
+    </div>
+    <div class="sum-stat">
+      <div class="sum-label">XP / Player</div>
+      <div class="sum-val">{{.XPPerPC}}</div>
+      <div class="sum-sub">if victorious</div>
+    </div>
+  </div>
+
+  <div class="enc-section-title">💰 Loot &amp; Rewards</div>
+  <div class="loot-wrap">
+    <div class="gold-box">
+      <div class="gold-val">🪙 {{.Gold}} gp</div>
+      {{if gt .GoldPerPC 0}}
+      <div class="gold-sub">{{.GoldPerPC}} gp per character</div>
+      {{end}}
+    </div>
+    {{if .Loot}}
+    <div class="loot-list">
+      {{range .Loot}}
+      <div class="loot-item {{if eq .Type "magic"}}magic{{end}}">
+        <span class="loot-icon">{{.Icon}}</span>
+        <span class="loot-name">{{.Name}}</span>
+        <span class="loot-badge {{if eq .Type "magic"}}magic{{end}}">
+          {{if eq .Type "magic"}}✦ Magic Item{{else}}Gear{{end}}
+        </span>
+      </div>
+      {{end}}
+    </div>
+    {{end}}
+  </div>
+
+  {{end}}{{/* with .Result */}}
+  {{else if .ShowPlaceholder}}
+  <div class="enc-placeholder">
+    <span class="ph-icon">🎲</span>
+    Set your party details above and hit <strong>⚔ Generate Encounter</strong> to roll into battle.
+  </div>
+  {{end}}
+</main>
+{{template "foot" .}}
+{{end}}
+
+{{ define "shop.tmpl" }}
+<header>
+  {{template "css" .}}
+</header>
+<section class="shop">
+    <div class="header">
+        <div class="title">{{.shop.name}}</div>
+        <div class="description">{{.shop.description}}</div>
+        <div class="type">{{.shop.type}}</div>
+        <div class="owner">{{.shop.owner.name}}</div>
+        <div class="species">{{.shop.owner.species}}</div>
+        <div class="description">{{.shop.owner.description}}</div>
+    </div>
+    <div class="items">
+        {{range .shop.items}}
+        <div class="item">
+            <div class="itemName">{{.name}}</div>
+            <div class="rarity">{{.rarity}}</div>
+            <div class="type">{{.type}}</div>
+            <div class="description">{{.description}}</div>
+            <div class="uses">{{.uses}}</div>
+            <div class="price">{{.price}}</div>
+            <div class="quantity">{{.quantity}}</div>
+        </div>
+        {{end}}
+</section>
+{{end}}
