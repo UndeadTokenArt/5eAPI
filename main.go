@@ -34,11 +34,10 @@ var funcMap = template.FuncMap{
 var tmpl = pageTemplates
 
 func main() {
-	http.Handle("/tiles/", http.StripPrefix("/tiles/", http.FileServer(http.Dir("tiles"))))
-	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
-	http.HandleFunc("/", router)
-	log.Printf("⚔  D&D 5e SRD Interface → http://localhost%s", listenAddr)
-	log.Fatal(http.ListenAndServe(listenAddr, nil))
+	mux := setupRouter()
+
+	log.Printf("D&D 5e SRD Interface → http://localhost%s", listenAddr)
+	log.Fatal(http.ListenAndServe(listenAddr, mux))
 }
 
 // import template for website

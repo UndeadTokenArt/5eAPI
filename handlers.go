@@ -122,6 +122,32 @@ func itemHandler(w http.ResponseWriter, r *http.Request, category, slug string) 
 	}
 }
 
+func setupRouter() *http.ServeMux {
+	mux := http.NewServeMux()
+
+	// Static and exact routes
+	mux.HandleFunc("GET /", homeHandler)
+	mux.HandleFunc("GET /api/map/biomes", mapBiomesHandler)
+	mux.HandleFunc("GET /encounter", encounterHandler)
+	mux.HandleFunc("GET /map", mapHandler)
+	mux.HandleFunc("GET /map/editor", mapEditorHandler)
+	mux.HandleFunc("GET /shop", shopHandler)
+
+	// Parameterized routes using wildcards
+	mux.HandleFunc("GET /{category}", func(w http.ResponseWriter, r *http.Request) {
+		category := r.PathValue("category")
+		categoryHandler(w, r, category)
+	})
+
+	mux.HandleFunc("GET /{category}/{item}", func(w http.ResponseWriter, r *http.Request) {
+		category := r.PathValue("category")
+		item := r.PathValue("item")
+		itemHandler(w, r, category, item)
+	})
+
+	return mux
+}
+
 func router(w http.ResponseWriter, r *http.Request) {
 	if r.Method != http.MethodGet {
 		http.Error(w, "Method Not Allowed", http.StatusMethodNotAllowed)
