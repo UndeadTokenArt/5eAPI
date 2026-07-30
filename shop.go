@@ -54,7 +54,7 @@ type shopsData struct {
 func shopHandler(w http.ResponseWriter, r *http.Request) {
 	// Get the rarity and quantity from the query parameters
 	rarity := r.URL.Query().Get("rarity")
-	quantity := 5 // default quantity
+	quantity := 30 // default quantity
 	if q := r.URL.Query().Get("quantity"); q != "" {
 		fmt.Sscanf(q, "%d", &quantity)
 	}
@@ -112,6 +112,7 @@ func Shoplist(rarity string, quantity int) []item {
 	return matchingItems[:quantity]
 }
 
+// gets a list of items matching the rarity from the items.xml document
 func getItemsByRarity(rarity string) []item {
 	data, err := loadItemsXML("data/items.xml")
 	if err != nil {
@@ -131,6 +132,7 @@ func getItemsByRarity(rarity string) []item {
 	return matchingItems
 }
 
+// loads the items.xml document and returns the itemsData struct
 func loadItemsXML(filename string) (*itemsData, error) {
 	file, err := os.Open(filename)
 	if err != nil {

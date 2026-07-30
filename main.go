@@ -41,4 +41,4 @@ func main() {
 }
 
 // import template for website
-var pageTemplates = template.Must(template.ParseGlob("templates/*.tmpl"))
+var pageTemplates = template.Must(template.New("").Funcs(funcMap).ParseGlob("templates/*.tmpl"))
