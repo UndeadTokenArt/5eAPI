@@ -54,7 +54,7 @@ type shopsData struct {
 func shopHandler(w http.ResponseWriter, r *http.Request) {
 	// Get the rarity and quantity from the query parameters
 	rarity := r.URL.Query().Get("rarity")
-	quantity := 30 // default quantity
+	quantity := 15 // default quantity
 	if q := r.URL.Query().Get("quantity"); q != "" {
 		fmt.Sscanf(q, "%d", &quantity)
 	}
