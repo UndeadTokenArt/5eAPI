@@ -1,0 +1,11 @@
+.git
+.gitignore
+.vscode
+.DS_Store
+README*
+*.md
+.dockerignore
+bin/
+**/.idea/
+**/.vscode/
+**/*.test

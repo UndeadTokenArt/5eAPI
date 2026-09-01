@@ -1,0 +1,227 @@
+<shops>
+    <shop>
+        <name>The Hammer &amp; Anvil</name>
+        <description>A noisy, heat-filled smithy where the ringing of steel on iron echoes day and night.</description>
+        <type>Armory &amp; Weaponsmith</type>
+        <owner>
+            <name>Torbin Ironfoot</name>
+            <race>Dwarf</race>
+            <description>A gruff, soot-stained veteran smith with a braided red beard and a sturdy frame.</description>
+        </owner>
+        <inventory_profile>
+            <focus>Martial Weapons, Heavy Armor, &amp; Repairs</focus>
+            <price_modifier>Standard</price_modifier>
+            <restock_frequency>Weekly</restock_frequency>
+        </inventory_profile>
+    </shop>
+    <shop>
+        <name>The Whispering Crucible</name>
+        <description>A cramped apothecary filled with floating faint lights, dried herbs, and bubbling glass retorts.</description>
+        <type>Alchemy &amp; Magic Supplies</type>
+        <owner>
+            <name>Lyra Vane</name>
+            <race>Half-Elf</race>
+            <description>An eccentric scholar with silver-rimmed spectacles and ink-stained fingers.</description>
+        </owner>
+        <inventory_profile>
+            <focus>Potions, Scrolls, &amp; Spell Components</focus>
+            <price_modifier>High (+15%)</price_modifier>
+            <restock_frequency>Bi-weekly</restock_frequency>
+        </inventory_profile>
+    </shop>
+    <shop>
+        <name>The Silent Tome</name>
+        <description>A quiet, dusty bookstore smelling of old parchment and beeswax, where rare grimoires are chained to mahogany shelves.</description>
+        <type>Arcane Library &amp; Bookshop</type>
+        <owner>
+            <name>Ignatius Vance</name>
+            <race>Human</race>
+            <description>A frail, elderly man who wears thick spectacles and speaks only in hushed whispers.</description>
+        </owner>
+        <inventory_profile>
+            <focus>Spellbooks, Maps, &amp; Lore Scrolls</focus>
+            <price_modifier>High (+20%)</price_modifier>
+            <restock_frequency>Monthly</restock_frequency>
+        </inventory_profile>
+    </shop>
+    <shop>
+        <name>Curiosities &amp; Oddities</name>
+        <description>A cluttered, shadowy shop packed floor to ceiling with strange artifacts, preserved creatures, and trinkets of unknown origin.</description>
+        <type>Pawn &amp; General Goods</type>
+        <owner>
+            <name>Bimble Fizzlebang</name>
+            <race>Gnome</race>
+            <description>An energetic gnome with wild copper hair and a knack for over-explaining the history of useless items.</description>
+        </owner>
+        <inventory_profile>
+            <focus>Adventuring Gear, Trinkets, &amp; Salvage</focus>
+            <price_modifier>Discount (-10%)</price_modifier>
+            <restock_frequency>Daily</restock_frequency>
+        </inventory_profile>
+    </shop>
+    <shop>
+        <name>The Gilded Thread</name>
+        <description>An elegant tailor's establishment decorated with fine silk drapes, polished mirrors, and velvet mannequins.</description>
+        <type>Fine Tailoring &amp; Fine Apparel</type>
+        <owner>
+            <name>Seraphina Moonwhisper</name>
+            <race>High Elf</race>
+            <description>A sharp-witted elf with pristine white robes and a highly critical eye for fashion.</description>
+        </owner>
+        <inventory_profile>
+            <focus>Noble Clothing, Cloaks, &amp; Disguise Kits</focus>
+            <price_modifier>Standard</price_modifier>
+            <restock_frequency>Weekly</restock_frequency>
+        </inventory_profile>
+    </shop>
+    <shop>
+        <name>The Starlight Observatory</name>
+        <description>A grand domed tower made of polished dark marble, featuring a massive bronze telescope pointed at the heavens.</description>
+        <type>Astrology &amp; Divination</type>
+        <owner>
+            <name>Elowen Astral</name>
+            <race>Aasimar</race>
+            <description>A serene woman with glowing silver eyes and robes woven from threads that faint shimmer like constellations.</description>
+        </owner>
+        <inventory_profile>
+            <focus>Divination Tools, Star Charts, &amp; Scrying Mirrors</focus>
+            <price_modifier>High (+15%)</price_modifier>
+            <restock_frequency>Monthly</restock_frequency>
+        </inventory_profile>
+    </shop>
+    <shop>
+        <name>The Sunken Anchor</name>
+        <description>A salty, barnacle-encrusted tavern basement turned shop, smelling strongly of sea brine, pipe smoke, and old rum.</description>
+        <type>Nautical &amp; Salvage</type>
+        <owner>
+            <name>Captain "Salty" Barnaby</name>
+            <race>Human</race>
+            <description>A grizzled, one-eyed old sailor with a peg leg and a foul-mouthed parrot perched on his shoulder.</description>
+        </owner>
+        <inventory_profile>
+            <focus>Navigational Gear, Ship Supplies, &amp; Deep-Sea Salvage</focus>
+            <price_modifier>Standard</price_modifier>
+            <restock_frequency>Weekly</restock_frequency>
+        </inventory_profile>
+    </shop>
+    <shop>
+        <name>The Wandering Feast</name>
+        <description>A bustling, aromatic bakery and butcher shop lined with smoked meats, exotic spices, and freshly baked iron-ration biscuits.</description>
+        <type>Provisions &amp; Rations</type>
+        <owner>
+            <name>Milo Tealeaf</name>
+            <race>Halfling</race>
+            <description>A cheerful, round halfling chef who wears a flour-dusted apron and offers free samples to every customer.</description>
+        </owner>
+        <inventory_profile>
+            <focus>Trail Rations, Exotic Ingredients, &amp; Field Cooking Gear</focus>
+            <price_modifier>Discount (-5%)</price_modifier>
+            <restock_frequency>Daily</restock_frequency>
+        </inventory_profile>
+    </shop>
+    <shop>
+        <name>The Howling Fang</name>
+        <description>A shadowy, pelt-adorned hut filled with preserved beast heads, bone charms, and taxidermy monsters.</description>
+        <type>Monster Hunter Supplies</type>
+        <owner>
+            <name>Kraghorn Ironhide</name>
+            <race>Half-Orc</race>
+            <description>A scarred hunter clad in dire wolf furs, sporting a necklace of manticore teeth.</description>
+        </owner>
+        <inventory_profile>
+            <focus>Traps, Monster Baits, Silvered Weapons, &amp; Poisons</focus>
+            <price_modifier>Standard</price_modifier>
+            <restock_frequency>Bi-weekly</restock_frequency>
+        </inventory_profile>
+    </shop>
+    <shop>
+        <name>The Whispering Willow</name>
+        <description>An open-air garden nursery integrated into a hollowed-out ancient oak tree, thick with glowing flora and humming insects.</description>
+        <type>Herbalism &amp; Nature Supplies</type>
+        <owner>
+            <name>Thorne Mossfoot</name>
+            <race>Firbolg</race>
+            <description>A gentle, towering firbolg who speaks softly to the potted plants and wears a crown of fresh ivy.</description>
+        </owner>
+        <inventory_profile>
+            <focus>Rare Herbs, Antidotes, Herbalism Kits, &amp; Plant Seeds</focus>
+            <price_modifier>Standard</price_modifier>
+            <restock_frequency>Weekly</restock_frequency>
+        </inventory_profile>
+    </shop>
+    <shop>
+        <name>The Iron Bark Menagerie</name>
+        <description>A noisy courtyard surrounded by sturdy iron cages and wooden pens, filled with squawking birds and exotic beasts.</description>
+        <type>Mounts &amp; Companions</type>
+        <owner>
+            <name>Vespera Duskwing</name>
+            <race>Tiefling</race>
+            <description>A sharp, leather-clad beast tamer with curved horns and a whip curled at her waist.</description>
+        </owner>
+        <inventory_profile>
+            <focus>Exotic Mounts, Guard Animals, &amp; Barding</focus>
+            <price_modifier>High (+25%)</price_modifier>
+            <restock_frequency>Monthly</restock_frequency>
+        </inventory_profile>
+    </shop>
+    <shop>
+        <name>The Clockwork Heart</name>
+        <description>A workshop filled with ticking gears, steam pipes, mechanical toys, and brass gizmos strewn across metal workbenches.</description>
+        <type>Tinkerer &amp; Engineering</type>
+        <owner>
+            <name>Zook Sparkspindle</name>
+            <race>Rock Gnome</race>
+            <description>A manic inventor wearing brass magnifying goggles and a leather apron stuffed with dozens of small tools.</description>
+        </owner>
+        <inventory_profile>
+            <focus>Tinker Tools, Clockwork Devices, &amp; Explosives</focus>
+            <price_modifier>Standard</price_modifier>
+            <restock_frequency>Bi-weekly</restock_frequency>
+        </inventory_profile>
+    </shop>
+    <shop>
+        <name>The Shrouded Veil</name>
+        <description>A hidden back-alley shop behind a heavy velvet curtain, dimly lit by purple candles and smelling of incense.</description>
+        <type>Black Market &amp; Contraband</type>
+        <owner>
+            <name>Soren the Pale</name>
+            <race>Changeling</race>
+            <description>A mysterious figure with featureless skin whose voice and posture seem to subtly change every few minutes.</description>
+        </owner>
+        <inventory_profile>
+            <focus>Poisons, Thieves' Tools, Forged Documents, &amp; Stolen Goods</focus>
+            <price_modifier>Very High (+30%)</price_modifier>
+            <restock_frequency>Irregular</restock_frequency>
+        </inventory_profile>
+    </shop>
+    <shop>
+        <name>The Copper Whistle</name>
+        <description>A vibrant shop filled with hanging lutes, harps, polished brass horns, and colorful stage costumes.</description>
+        <type>Musical Instruments &amp; Performance</type>
+        <owner>
+            <name>Dorian Melody</name>
+            <race>Tabaxi</race>
+            <description>A flamboyant spotted cat-folk wearing a feathered cap, constantly strumming a miniature mandolin.</description>
+        </owner>
+        <inventory_profile>
+            <focus>Instruments, Disguise Supplies, &amp; Sheet Music</focus>
+            <price_modifier>Standard</price_modifier>
+            <restock_frequency>Weekly</restock_frequency>
+        </inventory_profile>
+    </shop>
+    <shop>
+        <name>The Rune &amp; Relic</name>
+        <description>A reinforced stone vault filled with glowing protective wards, iron-bound chests, and enchanted armor stands.</description>
+        <type>Enchantments &amp; Warding</type>
+        <owner>
+            <name>Rurik Stonehearth</name>
+            <race>Dwarf</race>
+            <description>A solemn dwarven runesmith with glowing blue tattoos etched across his bald head and arms.</description>
+        </owner>
+        <inventory_profile>
+            <focus>Enchanted Armor, Glyphs, &amp; Protective Amulets</focus>
+            <price_modifier>High (+20%)</price_modifier>
+            <restock_frequency>Monthly</restock_frequency>
+        </inventory_profile>
+    </shop>
+</shops>

@@ -58,3 +58,17 @@ func TestRouterMapBiomesRoute(t *testing.T) {
 		t.Fatalf("router /api/map/biomes content-type = %q", got)
 	}
 }
+
+func TestRouterStaticAssetRoute(t *testing.T) {
+	req := httptest.NewRequest(http.MethodGet, "/static/js/map.js", nil)
+	rr := httptest.NewRecorder()
+
+	setupRouter().ServeHTTP(rr, req)
+
+	if rr.Code != http.StatusOK {
+		t.Fatalf("router /static/js/map.js status = %d, want %d", rr.Code, http.StatusOK)
+	}
+	if got := rr.Header().Get("Content-Type"); got == "" {
+		t.Fatalf("router /static/js/map.js missing content-type header")
+	}
+}
