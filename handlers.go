@@ -122,27 +122,42 @@ func itemHandler(w http.ResponseWriter, r *http.Request, category, slug string) 
 	}
 }
 
+func serveStaticAsset(w http.ResponseWriter, r *http.Request, prefix, root string) {
+	http.StripPrefix(prefix, http.FileServer(http.Dir(root))).ServeHTTP(w, r)
+}
+
 func setupRouter() *http.ServeMux {
 	mux := http.NewServeMux()
 
-	// Static and exact routes
-	mux.HandleFunc("GET /", homeHandler)
-	mux.HandleFunc("GET /api/map/biomes", mapBiomesHandler)
-	mux.HandleFunc("GET /encounter", encounterHandler)
-	mux.HandleFunc("GET /map", mapHandler)
-	mux.HandleFunc("GET /map/editor", mapEditorHandler)
-	mux.HandleFunc("GET /shop", shopHandler)
-
-	// Parameterized routes using wildcards
-	mux.HandleFunc("GET /{category}", func(w http.ResponseWriter, r *http.Request) {
-		category := r.PathValue("category")
-		categoryHandler(w, r, category)
-	})
-
-	mux.HandleFunc("GET /{category}/{item}", func(w http.ResponseWriter, r *http.Request) {
-		category := r.PathValue("category")
-		item := r.PathValue("item")
-		itemHandler(w, r, category, item)
+	mux.HandleFunc("GET /", func(w http.ResponseWriter, r *http.Request) {
+		switch {
+		case strings.HasPrefix(r.URL.Path, "/static/"):
+			serveStaticAsset(w, r, "/static/", "static")
+		case strings.HasPrefix(r.URL.Path, "/tiles/"):
+			serveStaticAsset(w, r, "/tiles/", "tiles")
+		case r.URL.Path == "/":
+			homeHandler(w, r)
+		case r.URL.Path == "/api/map/biomes":
+			mapBiomesHandler(w, r)
+		case r.URL.Path == "/encounter":
+			encounterHandler(w, r)
+		case r.URL.Path == "/map":
+			mapHandler(w, r)
+		case r.URL.Path == "/map/editor":
+			mapEditorHandler(w, r)
+		case r.URL.Path == "/shop":
+			shopHandler(w, r)
+		default:
+			parts := strings.Split(strings.Trim(r.URL.Path, "/"), "/")
+			switch len(parts) {
+			case 1:
+				categoryHandler(w, r, parts[0])
+			case 2:
+				itemHandler(w, r, parts[0], parts[1])
+			default:
+				http.NotFound(w, r)
+			}
+		}
 	})
 
 	return mux
@@ -153,6 +168,16 @@ func router(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "Method Not Allowed", http.StatusMethodNotAllowed)
 		return
 	}
+
+	if strings.HasPrefix(r.URL.Path, "/static/") {
+		serveStaticAsset(w, r, "/static/", "static")
+		return
+	}
+	if strings.HasPrefix(r.URL.Path, "/tiles/") {
+		serveStaticAsset(w, r, "/tiles/", "tiles")
+		return
+	}
+
 	path := strings.Trim(r.URL.Path, "/")
 	if path == "" {
 		homeHandler(w, r)

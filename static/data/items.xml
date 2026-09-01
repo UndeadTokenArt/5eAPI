@@ -1,0 +1,398 @@
+<items>
+    <item>
+        <name>Flame-Tongue Longsword</name>
+        <rarity>Rare</rarity>
+        <type>Weapon</type>
+        <description>A finely crafted steel longsword engraved with runes that glow red when drawn.</description>
+        <uses>Bonus action command word ignites blade, dealing +2d6 fire damage on hit.</uses>
+        <price>5000 gp</price>
+        <quantity>1</quantity>
+    </item>
+    <item>
+        <name>Potion of Healing</name>
+        <rarity>Common</rarity>
+        <type>Potion</type>
+        <description>A shimmering red liquid that smells faintly of cinnamon and honey.</description>
+        <uses>Action to drink or administer to regain 2d4+2 hit points.</uses>
+        <price>50 gp</price>
+        <quantity>12</quantity>
+    </item>
+    <item>
+        <name>Cloak of Elvenkind</name>
+        <rarity>Uncommon</rarity>
+        <type>Wondrous Item</type>
+        <description>A lightweight green cloak that shifts color to match your surrounding terrain.</description>
+        <uses>Grants advantage on Stealth checks to hide while the hood is drawn.</uses>
+        <price>400 gp</price>
+        <quantity>2</quantity>
+    </item>
+    <item>
+        <name>Bag of Holding</name>
+        <rarity>Uncommon</rarity>
+        <type>Wondrous Item</type>
+        <description>A cloth sack that opens into a non-dimensional space roughly 2 feet in diameter at the mouth and 4 feet deep.</description>
+        <uses>Holds up to 500 pounds, not exceeding a volume of 64 cubic feet, while always weighing 15 pounds.</uses>
+        <price>500 gp</price>
+        <quantity>1</quantity>
+    </item>
+    <item>
+        <name>Boots of Elvenkind</name>
+        <rarity>Uncommon</rarity>
+        <type>Wondrous Item</type>
+        <description>Soft leather boots embroidered with subtle leaf patterns that seem to absorb sound.</description>
+        <uses>Your steps make no sound regardless of the surface, granting advantage on Stealth checks that rely on moving silently.</uses>
+        <price>350 gp</price>
+        <quantity>1</quantity>
+    </item>
+    <item>
+        <name>Wand of Magic Missiles</name>
+        <rarity>Uncommon</rarity>
+        <type>Wand</type>
+        <description>A smooth mahogany wand tipped with a small, glowing blue sapphire.</description>
+        <uses>Action to expend 1 or more charges to cast Magic Missile. Has 7 charges and regains 1d6+1 daily at dawn.</uses>
+        <price>450 gp</price>
+        <quantity>2</quantity>
+    </item>
+    <item>
+        <name>Ring of Protection</name>
+        <rarity>Rare</rarity>
+        <type>Ring</type>
+        <description>A simple gold band etched with delicate protective runes along the inner rim.</description>
+        <uses>Grants a +1 bonus to AC and saving throws while worn.</uses>
+        <price>3500 gp</price>
+        <quantity>1</quantity>
+    </item>
+    <item>
+        <name>Immovable Rod</name>
+        <rarity>Uncommon</rarity>
+        <type>Rod</type>
+        <description>A flat iron rod with a small brass button on one end.</description>
+        <uses>Action to press the button, fixing the rod in place in mid-air until pressed again. Supports up to 8,000 lbs.</uses>
+        <price>400 gp</price>
+        <quantity>1</quantity>
+    </item>
+    <item>
+        <name>Driftglobe</name>
+        <rarity>Uncommon</rarity>
+        <type>Wondrous Item</type>
+        <description>A small, heavy glass sphere that hums faintly with arcane energy.</description>
+        <uses>Command word causes it to float and shed Light (or Daylight once per day) while following you.</uses>
+        <price>250 gp</price>
+        <quantity>3</quantity>
+    </item>
+    <item>
+        <name>Spell Scroll (Invisibility)</name>
+        <rarity>Uncommon</rarity>
+        <type>Scroll</type>
+        <description>A ribbon-tied parchment sheet bearing glowing silver ink runes.</description>
+        <uses>Action to read and cast the Invisibility spell. The scroll crumbles to dust upon completion.</uses>
+        <price>150 gp</price>
+        <quantity>5</quantity>
+    </item>
+    <item>
+        <name>Amulet of Health</name>
+        <rarity>Rare</rarity>
+        <type>Amulet</type>
+        <description>A thick platinum medallion set with a large, polished bloodstone.</description>
+        <uses>Your Constitution score becomes 19 while wearing this amulet. Has no effect if Constitution is already 19 or higher.</uses>
+        <price>4000 gp</price>
+        <quantity>1</quantity>
+    </item>
+    <item>
+        <name>Dust of Disappearance</name>
+        <rarity>Uncommon</rarity>
+        <type>Wondrous Item</type>
+        <description>A small pouch filled with glittering, translucent sand that slips through your fingers.</description>
+        <uses>Action to throw into the air; renders creatures and objects within a 10-foot radius invisible for 2d4 minutes.</uses>
+        <price>300 gp</price>
+        <quantity>4</quantity>
+    </item>
+    <item>
+        <name>Shield +1</name>
+        <rarity>Uncommon</rarity>
+        <type>Armor</type>
+        <description>A heavy steel shield polished to a mirror shine, adorned with a crest of a griffon.</description>
+        <uses>Grants an additional +1 bonus to AC over a standard shield (total +3 AC).</uses>
+        <price>500 gp</price>
+        <quantity>2</quantity>
+    </item>
+    <item>
+        <name>Alchemy Jug</name>
+        <rarity>Uncommon</rarity>
+        <type>Wondrous Item</type>
+        <description>A heavy ceramic vessel that sloshes continuously even when empty.</description>
+        <uses>Action to name a liquid (e.g., water, wine, honey, acid, mayonnaise) to produce up to its daily limit.</uses>
+        <price>300 gp</price>
+        <quantity>1</quantity>
+    </item>
+<item>
+        <name>Bag of Tricks (Gray)</name>
+        <rarity>Uncommon</rarity>
+        <type>Wondrous Item</type>
+        <description>A small, fuzzy cloth sack that feels oddly heavy and rumbles when shaken.</description>
+        <uses>Action to pull a fuzzy ball and throw it up to 20 feet to summon a friendly random beast (e.g., giant rat, badger, dire wolf).</uses>
+        <price>300 gp</price>
+        <quantity>1</quantity>
+    </item>
+    <item>
+        <name>Sentinel Shield</name>
+        <rarity>Uncommon</rarity>
+        <type>Armor</type>
+        <description>A round wooden shield painted with an open, vigilant eye that never blinks.</description>
+        <uses>Grants advantage on initiative checks and Wisdom (Perception) checks while held.</uses>
+        <price>450 gp</price>
+        <quantity>1</quantity>
+    </item>
+    <item>
+        <name>Decanter of Endless Water</name>
+        <rarity>Uncommon</rarity>
+        <type>Wondrous Item</type>
+        <description>An flask-shaped stoppered urn made of carved blue stone and silver trim.</description>
+        <uses>Command word unstoppers the vessel to produce stream, fountain, or geyser amounts of fresh or salt water.</uses>
+        <price>150 gp</price>
+        <quantity>2</quantity>
+    </item>
+    <item>
+        <name>Periapt of Wound Closure</name>
+        <rarity>Uncommon</rarity>
+        <type>Amulet</type>
+        <description>A silver chain holding a polished red jasper pendant shaped like a beating heart.</description>
+        <uses>Stabilizes you automatically when dying, and doubles the hit points regained whenever you spend a Hit Die.</uses>
+        <price>300 gp</price>
+        <quantity>1</quantity>
+    </item>
+    <item>
+        <name>Goggles of Night</name>
+        <rarity>Uncommon</rarity>
+        <type>Wondrous Item</type>
+        <description>Dark leather goggles set with polished dark glass lenses encased in brass rims.</description>
+        <uses>Grants darkvision out to a range of 60 feet (or increases existing darkvision range by 60 feet).</uses>
+        <price>200 gp</price>
+        <quantity>3</quantity>
+    </item>
+    <item>
+        <name>Cloak of Protection</name>
+        <rarity>Uncommon</rarity>
+        <type>Wondrous Item</type>
+        <description>A heavy, dark blue mantle reinforced with subtle metallic threading along the seams.</description>
+        <uses>Grants a +1 bonus to AC and saving throws while worn.</uses>
+        <price>400 gp</price>
+        <quantity>2</quantity>
+    </item>
+    <item>
+        <name>Ring of Mind Shielding</name>
+        <rarity>Uncommon</rarity>
+        <type>Ring</type>
+        <description>A plain silver ring mounted with a clear quartz gem that flickers with faint light.</description>
+        <uses>Immunizes you to telepathy and thought-reading; allows your soul to inhabit the ring if you die while wearing it.</uses>
+        <price>500 gp</price>
+        <quantity>1</quantity>
+    </item>
+    <item>
+        <name>Eversmoking Bottle</name>
+        <rarity>Uncommon</rarity>
+        <type>Wondrous Item</type>
+        <description>A heavy brass lead-plugged urn that feels warm to the touch and hums softly.</description>
+        <uses>Unplugging the bottle releases thick smoke, creating a 60-foot radius heavily obscured area in minutes.</uses>
+        <price>250 gp</price>
+        <quantity>1</quantity>
+    </item>
+    <item>
+        <name>Dagger +1</name>
+        <rarity>Uncommon</rarity>
+        <type>Weapon</type>
+        <description>A razor-sharp obsidian dagger with a pommel carved in the shape of a serpent head.</description>
+        <uses>Grants a +1 bonus to attack and damage rolls made with this magic weapon.</uses>
+        <price>200 gp</price>
+        <quantity>4</quantity>
+    </item>
+    <item>
+        <name>Keoghtom's Ointment</name>
+        <rarity>Uncommon</rarity>
+        <type>Wondrous Item</type>
+        <description>A small wooden jar containing a thick, sweet-smelling ointment that glimmers faintly.</description>
+        <uses>Contains 1d4+2 doses. Applying a dose cures 2d8+2 hit points, neutralizes poison, and cures disease.</uses>
+        <price>120 gp</price>
+        <quantity>3</quantity>
+    </item>
+    <item>
+        <name>Winged Boots</name>
+        <rarity>Uncommon</rarity>
+        <type>Wondrous Item</type>
+        <description>Supple leather boots adorned with small, feather-like silver wings along the ankles.</description>
+        <uses>Grants a flying speed equal to your walking speed for up to 4 hours per day.</uses>
+        <price>500 gp</price>
+        <quantity>1</quantity>
+    </item>
+    <item>
+        <name>Saddle of the Cavalier</name>
+        <rarity>Uncommon</rarity>
+        <type>Wondrous Item</type>
+        <description>A dark leather military saddle etched with protective runes along the stirrups.</description>
+        <uses>Prevents you from being dismounted against your will, and attack rolls against your mount have disadvantage.</uses>
+        <price>250 gp</price>
+        <quantity>2</quantity>
+    </item>
+    <item>
+        <name>Lantern of Revealing</name>
+        <rarity>Uncommon</rarity>
+        <type>Wondrous Item</type>
+        <description>A heavy brass hood-lantern fitted with stained green glass panes.</description>
+        <uses>Sheds bright light in a 30-foot radius that reveals invisible creatures and objects.</uses>
+        <price>300 gp</price>
+        <quantity>2</quantity>
+    </item>
+    <item>
+        <name>Gem of Seeing</name>
+        <rarity>Rare</rarity>
+        <type>Wondrous Item</type>
+        <description>A finely cut, polished diamond that glimmers with an inner, pale blue spark.</description>
+        <uses>Action to look through the gem to gain truesight out to 120 feet for 10 minutes (3 charges daily).</uses>
+        <price>4500 gp</price>
+        <quantity>1</quantity>
+    </item>
+    <item>
+        <name>Bracers of Archery</name>
+        <rarity>Uncommon</rarity>
+        <type>Wondrous Item</type>
+        <description>Reinforced leather armguards stamped with the crest of a silver stag.</description>
+        <uses>Grants proficiency with longbows/shortbows and a +2 bonus to damage rolls with them.</uses>
+        <price>300 gp</price>
+        <quantity>2</quantity>
+    </item>
+    <item>
+        <name>Brooch of Shielding</name>
+        <rarity>Uncommon</rarity>
+        <type>Wondrous Item</type>
+        <description>A heavy gold clasp shaped like a miniature kite shield.</description>
+        <uses>Grants resistance to force damage and total immunity to damage from the Magic Missile spell.</uses>
+        <price>400 gp</price>
+        <quantity>1</quantity>
+    </item>
+    <item>
+        <name>Staff of the Adder</name>
+        <rarity>Uncommon</rarity>
+        <type>Staff</type>
+        <description>A gnarled wooden quarterstaff carved to resemble a coiled viper at the tip.</description>
+        <uses>Bonus action turns the head into a venomous snake that bites for 1d6 piercing + 3d6 poison damage.</uses>
+        <price>350 gp</price>
+        <quantity>1</quantity>
+    </item>
+    <item>
+        <name>Elixir of Health</name>
+        <rarity>Rare</rarity>
+        <type>Potion</type>
+        <description>A thick, milky-white potion that smells faintly of peppermint and fresh rain.</description>
+        <uses>Drinking cures all diseases, neutralizes all poisons, and removes the blinded, deafened, and paralyzed conditions.</uses>
+        <price>500 gp</price>
+        <quantity>3</quantity>
+    </item>
+    <item>
+        <name>Chime of Opening</name>
+        <rarity>Rare</rarity>
+        <type>Wondrous Item</type>
+        <description>A hollow metal tube etched with delicate keyhole patterns along its length.</description>
+        <uses>Action to strike the chime; emits a clear tone that automatically unlocks a nonmagical lock or suppression ward.</uses>
+        <price>1500 gp</price>
+        <quantity>1</quantity>
+    </item>
+    <item>
+        <name>Mantle of Spell Resistance</name>
+        <rarity>Rare</rarity>
+        <type>Wondrous Item</type>
+        <description>A flowing velvet cloak embroidered with glowing silver wards along the hem.</description>
+        <uses>Grants advantage on saving throws against spells and other magical effects while worn.</uses>
+        <price>4000 gp</price>
+        <quantity>1</quantity>
+    </item>
+    <item>
+        <name>Quaal's Feather Token (Tree)</name>
+        <rarity>Uncommon</rarity>
+        <type>Wondrous Item</type>
+        <description>A small, dried bird feather dyed deep forest green.</description>
+        <uses>Action to touch to the ground, instantly sprouting an 60-foot tall oak tree that bursts nonmagical stone.</uses>
+        <price>200 gp</price>
+        <quantity>4</quantity>
+    </item>
+    <item>
+        <name>Robe of Useful Items</name>
+        <rarity>Uncommon</rarity>
+        <type>Wondrous Item</type>
+        <description>A plain cloth robe covered in dozens of odd, brightly colored cloth patches.</description>
+        <uses>Detaching a patch transforms it into a real item (e.g., daggers, lanterns, 24-foot wooden ladder, rowboat).</uses>
+        <price>350 gp</price>
+        <quantity>1</quantity>
+    </item>
+    <item>
+        <name>Slippers of Spider Climbing</name>
+        <rarity>Uncommon</rarity>
+        <type>Wondrous Item</type>
+        <description>Light cloth shoes with soles that feel strangely tacky to the touch.</description>
+        <uses>Allows you to move up, down, and across vertical surfaces and upside down along ceilings, leaving hands free.</uses>
+        <price>300 gp</price>
+        <quantity>2</quantity>
+    </item>
+    <item>
+        <name>Stone of Good Luck</name>
+        <rarity>Uncommon</rarity>
+        <type>Wondrous Item</type>
+        <description>An unpolished piece of green agate that feels smooth and warm in your palm.</description>
+        <uses>Grants a +1 bonus to ability checks and saving throws while carried.</uses>
+        <price>400 gp</price>
+        <quantity>1</quantity>
+    </item>
+    <item>
+        <name>Wand of Web</name>
+        <rarity>Uncommon</rarity>
+        <type>Wand</type>
+        <description>A slender wand made of petrified wood wrapped tightly in thick spider silk.</description>
+        <uses>Action to expend 1 charge to cast the Web spell (7 charges daily, regains 1d6+1 at dawn).</uses>
+        <price>300 gp</price>
+        <quantity>2</quantity>
+    </item>
+    <item>
+        <name>Horn of Blasting</name>
+        <rarity>Rare</rarity>
+        <type>Wondrous Item</type>
+        <description>A curved war horn crafted from the polished horn of a red dragon, bound in brass.</description>
+        <uses>Action to blow, emitting a thunderous blast dealing 5d6 thunder damage in a 30-foot cone (20% chance to shatter).</uses>
+        <price>2000 gp</price>
+        <quantity>1</quantity>
+    </item>
+    <item>
+        <name>Pipes of Haunting</name>
+        <rarity>Uncommon</rarity>
+        <type>Wondrous Item</type>
+        <description>Pan pipes carved from bleached bone that produce an eerie, echoing whisper when held.</description>
+        <uses>Playing the pipes forces creatures within 30 feet to make a Wisdom save or become frightened for 1 minute.</uses>
+        <price>250 gp</price>
+        <quantity>2</quantity>
+    </item>
+    <item>
+        <name>Ring of Water Walking</name>
+        <rarity>Uncommon</rarity>
+        <type>Ring</type>
+        <description>A band of coral setting a clear aquamarine gemstone.</description>
+        <uses>Allows you to walk on liquid surfaces (water, mud, oil, snow, lava) as if they were solid ground.</uses>
+        <price>200 gp</price>
+        <quantity>3</quantity>
+    </item>
+    <item>
+        <name>Boots of Levitation</name>
+        <rarity>Rare</rarity>
+        <type>Wondrous Item</type>
+        <description>High leather riding boots lined with soft blue velvet and silver stitching.</description>
+        <uses>Action to activate, casting the Levitate spell on yourself at will.</uses>
+        <price>2000 gp</price>
+        <quantity>1</quantity>
+    </item>
+    <item>
+        <name>Bag of Devouring</name>
+        <rarity>Very Rare</rarity>
+        <type>Wondrous Item</type>
+        <description>An innocuous cloth sack that resembles a Bag of Holding, but feels faintly warm and wet inside.</description>
+        <uses>Consumes any organic material placed inside; creatures pulled inside take continuous acid damage and risk being digested.</uses>
+        <price>5000 gp</price>
+        <quantity>1</quantity>
+    </item>
+</items>

@@ -114,7 +114,7 @@ func Shoplist(rarity string, quantity int) []item {
 
 // gets a list of items matching the rarity from the items.xml document
 func getItemsByRarity(rarity string) []item {
-	data, err := loadItemsXML("data/items.xml")
+	data, err := loadItemsXML("static/data/items.xml")
 	if err != nil {
 		log.Fatalf("Error loading items.xml: %v", err)
 	}
@@ -167,7 +167,7 @@ func loadShopsXML(filename string) (*shopsData, error) {
 }
 
 func getRandomShop(rarity string) (shop, error) {
-	data, err := loadShopsXML("data/shop.xml")
+	data, err := loadShopsXML("static/data/shop.xml")
 	if err != nil {
 		return shop{}, err
 	}
