@@ -10,7 +10,7 @@ func TestRouterRejectsNonGET(t *testing.T) {
 	req := httptest.NewRequest(http.MethodPost, "/map", nil)
 	rr := httptest.NewRecorder()
 
-	router(rr, req)
+	routerTest(rr, req)
 
 	if rr.Code != http.StatusMethodNotAllowed {
 		t.Fatalf("router status = %d, want %d", rr.Code, http.StatusMethodNotAllowed)
@@ -21,7 +21,7 @@ func TestRouterMapRoute(t *testing.T) {
 	req := httptest.NewRequest(http.MethodGet, "/map", nil)
 	rr := httptest.NewRecorder()
 
-	router(rr, req)
+	routerTest(rr, req)
 
 	if rr.Code != http.StatusOK {
 		t.Fatalf("router /map status = %d, want %d", rr.Code, http.StatusOK)
@@ -35,7 +35,7 @@ func TestRouterMapEditorRoute(t *testing.T) {
 	req := httptest.NewRequest(http.MethodGet, "/map/editor", nil)
 	rr := httptest.NewRecorder()
 
-	router(rr, req)
+	routerTest(rr, req)
 
 	if rr.Code != http.StatusOK {
 		t.Fatalf("router /map/editor status = %d, want %d", rr.Code, http.StatusOK)
@@ -49,7 +49,7 @@ func TestRouterMapBiomesRoute(t *testing.T) {
 	req := httptest.NewRequest(http.MethodGet, "/api/map/biomes", nil)
 	rr := httptest.NewRecorder()
 
-	router(rr, req)
+	routerTest(rr, req)
 
 	if rr.Code != http.StatusOK {
 		t.Fatalf("router /api/map/biomes status = %d, want %d", rr.Code, http.StatusOK)

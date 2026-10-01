@@ -129,41 +129,43 @@ func serveStaticAsset(w http.ResponseWriter, r *http.Request, prefix, root strin
 func setupRouter() *http.ServeMux {
 	mux := http.NewServeMux()
 
-	mux.HandleFunc("GET /", func(w http.ResponseWriter, r *http.Request) {
-		switch {
-		case strings.HasPrefix(r.URL.Path, "/static/"):
-			serveStaticAsset(w, r, "/static/", "static")
-		case strings.HasPrefix(r.URL.Path, "/tiles/"):
-			serveStaticAsset(w, r, "/tiles/", "tiles")
-		case r.URL.Path == "/":
-			homeHandler(w, r)
-		case r.URL.Path == "/api/map/biomes":
-			mapBiomesHandler(w, r)
-		case r.URL.Path == "/encounter":
-			encounterHandler(w, r)
-		case r.URL.Path == "/map":
-			mapHandler(w, r)
-		case r.URL.Path == "/map/editor":
-			mapEditorHandler(w, r)
-		case r.URL.Path == "/shop":
-			shopHandler(w, r)
+	// Static files
+	mux.HandleFunc("GET /static/", func(w http.ResponseWriter, r *http.Request) {
+		serveStaticAsset(w, r, "/static/", "static")
+	})
+	mux.HandleFunc("GET /tiles/", func(w http.ResponseWriter, r *http.Request) {
+		serveStaticAsset(w, r, "/tiles/", "tiles")
+	})
+
+	// Exact routes
+	mux.HandleFunc("GET /{$}", homeHandler)
+	mux.HandleFunc("GET /neotokyo", NeoTokyoHandler)
+	mux.HandleFunc("GET /api/map/biomes", mapBiomesHandler)
+	mux.HandleFunc("GET /encounter", encounterHandler)
+	mux.HandleFunc("GET /map", mapHandler)
+	mux.HandleFunc("GET /map/editor", mapEditorHandler)
+	mux.HandleFunc("GET /shop", shopHandler)
+
+	// Wildcard path route for Neo Tokyo
+	mux.HandleFunc("GET /neotokyo/{category...}", NeoTokyoHandler)
+
+	// Fallback catch-all for remaining dynamic paths
+	mux.HandleFunc("GET /{path...}", func(w http.ResponseWriter, r *http.Request) {
+		parts := strings.Split(strings.Trim(r.URL.Path, "/"), "/")
+		switch len(parts) {
+		case 1:
+			categoryHandler(w, r, parts[0])
+		case 2:
+			itemHandler(w, r, parts[0], parts[1])
 		default:
-			parts := strings.Split(strings.Trim(r.URL.Path, "/"), "/")
-			switch len(parts) {
-			case 1:
-				categoryHandler(w, r, parts[0])
-			case 2:
-				itemHandler(w, r, parts[0], parts[1])
-			default:
-				http.NotFound(w, r)
-			}
+			http.NotFound(w, r)
 		}
 	})
 
 	return mux
 }
 
-func router(w http.ResponseWriter, r *http.Request) {
+func routerTest(w http.ResponseWriter, r *http.Request) {
 	if r.Method != http.MethodGet {
 		http.Error(w, "Method Not Allowed", http.StatusMethodNotAllowed)
 		return
