@@ -456,10 +456,10 @@
     ],
     "classes": [
       {
-        "name": "Fighter",
+        "name": "Street Samurai / Corporate Enforcer",
         "features": [
           {
-            "name": "Core Fighter Class Features"
+            "name": "Core Street Samurai / Corporate Enforcer Class Features"
           },
           {
             "name": "1. Combat Augment Protocol (Level 1)",
@@ -544,7 +544,7 @@
         ]
       },
       {
-        "name": "Fighter Subclasses",
+        "name": "Street Samurai / Corporate Enforcer Subclasses",
         "features": [
           {
             "name": "Street Samurai",
@@ -653,7 +653,7 @@
         ]
       },
       {
-        "name": "Street Shaman",
+        "name": "Street Shaman / Bio-Tech Specialist",
         "features": [
           {
             "name": "1. Spellcasting: Spirit Conduit",
@@ -818,7 +818,7 @@
         ]
       },
       {
-        "name": "Decker",
+        "name": "Street Operative / Decker / Infiltrator",
         "features": [
           {
             "name": "Specialized Firmware (Levels 1 & 6)",
@@ -948,7 +948,7 @@
         ]
       },
       {
-        "name": "Decker subclass",
+        "name": "Street Operative / Decker / Infiltrator Subclasses",
         "features": [
           {
             "name": "The Decker (Matrix Specialist / Hacker)",
@@ -1038,7 +1038,7 @@
         ]
       },
       {
-        "name": "Palidan",
+        "name": "Aegis Corporate Enforcer / Vow-Bound Operative",
         "features": [
           {
             "name": "1. Threat-Sense Sweep (Level 1)",
@@ -1306,7 +1306,7 @@
         ]
       },
       {
-        "name": "Hermetic Mage",
+        "name": "Corporate Decker / Cyber-Mage",
         "features": [
           {
             "name": "1. Spellcasting: Arcane Algorithms & Data-Decks",
@@ -1444,7 +1444,7 @@
         ]
       },
       {
-        "name": "Monk",
+        "name": "Cyber-Monk / Kinetic Acrobat",
         "features": [
           {
             "name": "1. Kinetic Reflex Weave (Level 1)",
@@ -1720,7 +1720,7 @@
         ]
       },
       {
-        "name": "Awakened Mutant",
+        "name": "Glitch-Born / Awakened Mutant",
         "features": [
           {
             "name": "1. Spellcasting: Innate Mana Surge",
@@ -1890,7 +1890,7 @@
         ]
       },
       {
-        "name": "Corporate pact agent",
+        "name": "Corporate Pact Agent / AI Host",
         "features": [
           {
             "name": "1. Contracting Entity (Otherworldly Patron - Level 1)",
@@ -2057,7 +2057,7 @@
         ]
       },
       {
-        "name": "Idol / Media Influencer",
+        "name": "Neon Idol / Net-Hype",
         "features": [
           {
             "name": "1. Spellcasting: Mesh Broadcast & Neural Tuning",
@@ -2228,7 +2228,7 @@
         "features": []
       },
       {
-        "name": "Bounty Hunter",
+        "name": "Urban Hunter / Recon Drone Master",
         "features": [
           {
             "name": "1. Specialized Contract Target (Level 1)",
@@ -2589,10 +2589,10 @@
             "name": "Cross-Net Code Pirate",
             "description": "You have pirated proprietary spell code and matrix routines from corporate servers.",
             "details": [
-              "You learn two cantrips of your choice from the Corporate Wizard or Street Shaman spell list.",
+              "You learn two cantrips of your choice from the Corporate Decker / Cyber-Mage or Street Shaman / Bio-Tech Specialist spell list.",
               "You learn one 1st-level spell from the same list. You can cast it once without expending a spell slot per long rest, or cast it using any spell slots you possess. Your spellcasting ability for these spells is Intelligence, Wisdom, or Charisma (chosen when taking this feat)."
             ],
-            "content": "* You have pirated proprietary spell code and matrix routines from corporate servers.\n* You learn two cantrips of your choice from the Corporate Wizard or Street Shaman spell list.\n* You learn one 1st-level spell from the same list. You can cast it once without expending a spell slot per long rest, or cast it using any spell slots you possess. Your spellcasting ability for these spells is Intelligence, Wisdom, or Charisma (chosen when taking this feat)."
+            "content": "* You have pirated proprietary spell code and matrix routines from corporate servers.\n* You learn two cantrips of your choice from the Corporate Decker / Cyber-Mage or Street Shaman / Bio-Tech Specialist spell list.\n* You learn one 1st-level spell from the same list. You can cast it once without expending a spell slot per long rest, or cast it using any spell slots you possess. Your spellcasting ability for these spells is Intelligence, Wisdom, or Charisma (chosen when taking this feat)."
           },
           {
             "name": "System Forensics Specialist",
@@ -2625,10 +2625,10 @@
             "prerequisite": "The ability to cast spells or channel mana*",
             "description": "Your biological aura is mutated or modified to alter spell structures on the fly.",
             "details": [
-              "You learn two Metamagic options of your choice from the Awakened Mutant (Sorcerer) class list.",
+              "You learn two Metamagic options of your choice from the Glitch-Born / Awakened Mutant class list.",
               "You gain 2 Surge Points to spend on Metamagic subroutines (replenished on a long rest). If you already have Surge Points, these are added to your existing pool."
             ],
-            "content": "Prerequisite: The ability to cast spells or channel mana\n* Your biological aura is mutated or modified to alter spell structures on the fly.\n* You learn two Metamagic options of your choice from the Awakened Mutant (Sorcerer) class list.\n* You gain 2 Surge Points to spend on Metamagic subroutines (replenished on a long rest). If you already have Surge Points, these are added to your existing pool."
+            "content": "Prerequisite: The ability to cast spells or channel mana\n* Your biological aura is mutated or modified to alter spell structures on the fly.\n* You learn two Metamagic options of your choice from the Glitch-Born / Awakened Mutant class list.\n* You gain 2 Surge Points to spend on Metamagic subroutines (replenished on a long rest). If you already have Surge Points, these are added to your existing pool."
           }
         ]
       },
@@ -3571,72 +3571,72 @@
       {
         "name": "Insulated Sub-Dermal Vest",
         "price": "50",
-        "description": "Light fabric armor padded with gel to absorb kinetic impact and insulate against cold."
+        "description": "Light fabric armor padded with gel to absorb kinetic impact and insulate against cold. AC: 11 + Dex modifier. Light armor. Stealth: disadvantage."
       },
       {
         "name": "Kevlar Street Jacket",
         "price": "100",
-        "description": "Flexible leather-style jacket reinforced with internal Kevlar weave for discreet protection."
+        "description": "Flexible leather-style jacket reinforced with internal Kevlar weave for discreet protection. AC: 11 + Dex modifier. Light armor. No Stealth penalty."
       },
       {
         "name": "Reinforced Ballistic Weave",
         "price": "450",
-        "description": "A heavy leather jacket studded with titanium plates and ballistic fiber for street combat."
+        "description": "A heavy leather jacket studded with titanium plates and ballistic fiber for street combat. AC: 12 + Dex modifier. Light armor. No Stealth penalty."
       },
       {
         "name": "Chitinous Mutated-Critter Leather",
         "price": "150",
-        "description": "Tough armor crafted from the thick hides of mutated beasts harvested in Sector 17."
+        "description": "Tough armor crafted from the thick hides of mutated beasts harvested in Sector 17. AC: 12 + Dex modifier (max +2). Medium armor. No Stealth penalty."
       },
       {
         "name": "Flexible Carbon-Chain Weave",
         "price": "800",
-        "description": "A lightweight shirt of interlocking carbon-fiber rings worn under street clothes."
+        "description": "A lightweight shirt of interlocking carbon-fiber rings worn under street clothes. AC: 13 + Dex modifier (max +2). Medium armor. No Stealth penalty."
       },
       {
         "name": "Tactical Chain Mesh",
         "price": "750",
-        "description": "A full suit of flexible steel-mesh armor designed to stop edged weapons and fragmentation."
+        "description": "A full suit of flexible steel-mesh armor designed to stop edged weapons and fragmentation. AC: 16 (Dex modifier not added). Heavy armor. Stealth: disadvantage. Requires Strength 13 or your speed drops by 10 ft."
       },
       {
         "name": "Industrial Composite Mesh",
         "price": "300",
-        "description": "A heavy ring-mail suit designed for industrial workers and heavy security guards."
+        "description": "A heavy ring-mail suit designed for industrial workers and heavy security guards. AC: 14 (Dex modifier not added). Heavy armor. Stealth: disadvantage."
       },
       {
         "name": "Overlapping Composite Plate Vest",
         "price": "500",
-        "description": "A vest featuring overlapping ceramic scales that absorb kinetic and thermal strikes."
+        "description": "A vest featuring overlapping ceramic scales that absorb kinetic and thermal strikes. AC: 14 + Dex modifier (max +2). Medium armor. Stealth: disadvantage."
       },
       {
         "name": "Articulated Alloy Armor",
         "price": "2,000",
-        "description": "Heavy armor made of metal strips riveted together to shield vital organs without restricting movement."
+        "description": "Heavy armor made of metal strips riveted together to shield vital organs without restricting movement. AC: 17 (Dex modifier not added). Heavy armor. Stealth: disadvantage. Requires Strength 15 or your speed drops by 10 ft."
       },
       {
         "name": "Titanium Chest Rig",
         "price": "4,000",
-        "description": "A molded metal plate covering the torso to protect the heart and lungs from high-caliber fire."
+        "description": "A molded metal plate covering the torso to protect the heart and lungs from high-caliber fire. AC: 14 + Dex modifier (max +2). Medium armor. No Stealth penalty."
       },
       {
         "name": "Reinforced Riot Exo-Armor",
         "price": "7,500",
-        "description": "Heavy half-plate armor equipped with articulated shoulder and thigh guards for riot control."
+        "description": "Heavy half-plate armor equipped with articulated shoulder and thigh guards for riot control. AC: 15 + Dex modifier (max +2). Medium armor. Stealth: disadvantage."
       },
       {
         "name": "Aegis Heavy Powered Exoskeleton",
         "price": "15,000",
-        "description": "Full-body motorized plate armor that grants immense protection and integrated hydraulic power."
+        "description": "Full-body motorized plate armor that grants immense protection and integrated hydraulic power. AC: 18 (Dex modifier not added). Heavy armor. Stealth: disadvantage. Requires Strength 15 or your speed drops by 10 ft."
       },
       {
         "name": "Hard-Light Riot Shield",
         "price": "100",
-        "description": "A wrist-mounted energy projector that creates a solid-state blue barrier against incoming fire."
+        "description": "A wrist-mounted energy projector that creates a solid-state blue barrier against incoming fire. AC: +2 while wielded (Shield). Stacks with body armor; requires one free hand, so it can't be used with two-handed weapons or while both hands are occupied."
       },
       {
         "name": "Bio-Drone Exo-Armor",
         "price": "Varies",
-        "description": "Custom-fitted ceramic and Kevlar armor designed to protect security hounds and combat drones (priced matching base armor type)."
+        "description": "Custom-fitted ceramic and Kevlar armor designed to protect security hounds and combat drones (priced matching base armor type). AC: matches the base armor type it is built from (see the armor above); a drone or hound uses that armor's AC formula."
       }
     ],
     "mounts vehicles and harnesses": [

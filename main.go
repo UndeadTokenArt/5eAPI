@@ -5,6 +5,7 @@ import (
 	"io"
 	"log"
 	"net/http"
+	"strings"
 )
 
 const (
@@ -29,6 +30,7 @@ func fetchAPI(path string) ([]byte, int, error) {
 var funcMap = template.FuncMap{
 	"prettyCat": prettyCat,
 	"iconFor":   iconFor,
+	"label":     humanLabel,
 }
 
 var tmpl = pageTemplates
@@ -42,3 +44,12 @@ func main() {
 
 // import template for website
 var pageTemplates = template.Must(template.New("").Funcs(funcMap).ParseGlob("templates/*.tmpl"))
+
+// humanLabel turns keys such as "skill_proficiencies" into "Skill proficiencies".
+func humanLabel(key string) string {
+	key = strings.TrimSpace(strings.ReplaceAll(key, "_", " "))
+	if key == "" {
+		return key
+	}
+	return strings.ToUpper(key[:1]) + key[1:]
+}

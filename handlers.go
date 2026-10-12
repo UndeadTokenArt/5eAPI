@@ -139,7 +139,15 @@ func setupRouter() *http.ServeMux {
 
 	// Exact routes
 	mux.HandleFunc("GET /{$}", homeHandler)
+	mux.HandleFunc("GET /api/account", accountHandler)
+	mux.HandleFunc("GET /characters", charactersPageHandler)
+	mux.HandleFunc("GET /api/character-options", characterOptionsHandler)
+	mux.HandleFunc("GET /api/characters", charactersAPIHandler)
+	mux.HandleFunc("POST /api/characters", charactersAPIHandler)
+	mux.HandleFunc("PUT /api/characters/{id}", characterAPIHandler)
+	mux.HandleFunc("DELETE /api/characters/{id}", characterAPIHandler)
 	mux.HandleFunc("GET /neotokyo", NeoTokyoHandler)
+	mux.HandleFunc("GET /api/neotokyo/search", neoTokyoSearchHandler)
 	mux.HandleFunc("GET /api/map/biomes", mapBiomesHandler)
 	mux.HandleFunc("GET /encounter", encounterHandler)
 	mux.HandleFunc("GET /map", mapHandler)

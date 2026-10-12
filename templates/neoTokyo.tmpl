@@ -1,0 +1,623 @@
+<!-- NeoTokyo.tmpl Styling -->
+{{ define "NeoTokyo_css" }}
+<style>
+:root {
+  color-scheme: dark;
+  --page: #101311;
+  --panel: #191e1a;
+  --line: #39433b;
+  --green: #9fc777;
+  --red: #cb7466;
+  --text: #e4e9df;
+  --muted: #a5b0a1;
+  --field: #111612;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--page); color: var(--text); font: 15px/1.5 Georgia, 'Times New Roman', serif; }
+a { color: var(--green); text-decoration: none; }
+a:hover { text-decoration: underline; }
+[hidden] { display: none !important; }
+
+.sheet-nav { display: flex; align-items: center; gap: 1.25rem; padding: .8rem clamp(1rem, 4vw, 3rem); background: var(--panel); border-bottom: 1px solid var(--line); font: .9rem/1.4 system-ui, sans-serif; }
+.sheet-brand { margin-right: auto; color: var(--green); font-weight: 700; }
+
+.guide-page { width: min(1240px, 100%); margin: 0 auto; padding: 1.4rem clamp(1rem, 3vw, 2rem) 3rem; }
+.guide-layout { display: grid; grid-template-columns: minmax(0, 1fr) 260px; gap: 2rem; align-items: start; }
+.content-container { min-width: 0; }
+
+.breadcrumb { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem; margin-bottom: 1rem; color: var(--muted); font: .85rem system-ui, sans-serif; }
+
+.page-head { display: flex; align-items: end; justify-content: space-between; gap: 1rem; flex-wrap: wrap; padding-bottom: 1rem; margin-bottom: 1.25rem; border-bottom: 2px solid var(--green); }
+.page-head h1 { margin: 0; font-size: 2rem; font-weight: 600; overflow-wrap: anywhere; }
+.page-head p { margin: .25rem 0 0; color: var(--muted); font: .9rem system-ui, sans-serif; }
+.badge { padding: .2rem .6rem; border: 1px solid var(--green); border-radius: 4px; color: var(--green); font: 600 .78rem system-ui, sans-serif; letter-spacing: .04em; text-transform: uppercase; white-space: nowrap; }
+
+.field-label, .global-search label, .node-search label, .spell-filters label { display: block; margin-bottom: .3rem; color: var(--muted); font: .73rem/1.3 system-ui, sans-serif; letter-spacing: .04em; text-transform: uppercase; }
+input[type="search"], select { width: 100%; min-height: 40px; padding: .55rem .65rem; border: 1px solid var(--line); border-radius: 4px; background: var(--field); color: var(--text); font: .95rem system-ui, sans-serif; }
+input:focus, select:focus, button:focus-visible, summary:focus-visible { outline: 2px solid var(--green); outline-offset: 1px; }
+button { min-height: 40px; padding: .5rem .85rem; border: 1px solid var(--green); border-radius: 4px; background: transparent; color: var(--green); font: 600 .85rem system-ui, sans-serif; cursor: pointer; }
+button:hover { background: rgba(159, 199, 119, .12); }
+
+.global-search { margin-bottom: 1.25rem; }
+.search-status { min-height: 1.2rem; margin-top: .3rem; color: var(--muted); font: .8rem system-ui, sans-serif; }
+.global-results { list-style: none; margin: .4rem 0 0; padding: 0; max-height: 24rem; overflow-y: auto; border: 1px solid var(--green); border-radius: 4px; background: var(--panel); }
+.global-results li + li { border-top: 1px solid var(--line); }
+.global-results a { display: block; padding: .55rem .8rem .15rem; color: var(--text); text-decoration: none; }
+.global-results a:hover, .global-results a:focus { background: rgba(159, 199, 119, .15); }
+.global-results a strong { display: block; overflow-wrap: anywhere; }
+.global-results a small { display: block; color: var(--muted); font: .75rem system-ui, sans-serif; overflow-wrap: anywhere; }
+.global-result-snippet { display: block; padding: 0 .8rem .55rem; color: var(--muted); font: .82rem/1.4 system-ui, sans-serif; overflow-wrap: anywhere; }
+
+.category-menu { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: .7rem; }
+.category-card { display: flex; min-height: 72px; align-items: center; justify-content: space-between; gap: .75rem; padding: .85rem 1rem; border: 1px solid var(--line); border-left: 3px solid var(--green); border-radius: 4px; background: var(--panel); color: var(--text); }
+.category-card:hover { border-color: var(--green); background: rgba(159, 199, 119, .1); text-decoration: none; }
+.category-card-title { font-weight: 600; overflow-wrap: anywhere; }
+.category-card-count { flex: 0 0 auto; color: var(--muted); font: .78rem system-ui, sans-serif; }
+
+.spell-filters { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)) auto; align-items: end; gap: .75rem; margin-bottom: 1rem; padding: 1rem; border: 1px solid var(--line); border-radius: 4px; background: var(--panel); }
+.spell-filter-status { grid-column: 1 / -1; min-height: 1rem; color: var(--muted); font: .82rem system-ui, sans-serif; }
+
+.guide-tools { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; margin-bottom: 1rem; }
+.guide-tools span { margin-left: auto; color: var(--muted); font: .8rem system-ui, sans-serif; }
+
+/* Entries */
+.sections-wrapper { display: flex; flex-direction: column; gap: .6rem; }
+.root-intro { margin: 0 0 1rem; color: var(--muted); }
+.entry { border: 1px solid var(--line); border-left: 3px solid var(--green); border-radius: 4px; background: var(--panel); scroll-margin-top: 1rem; }
+.entry > summary { display: flex; flex-wrap: wrap; align-items: baseline; gap: .25rem .75rem; padding: .75rem 1rem; cursor: pointer; list-style: none; }
+.entry > summary::-webkit-details-marker { display: none; }
+.entry > summary::before { content: '\25B8'; flex: 0 0 auto; color: var(--green); transition: transform .15s; }
+.entry[open] > summary::before { transform: rotate(90deg); }
+.entry > summary:hover { background: rgba(159, 199, 119, .07); }
+.entry-body { padding: .25rem 1rem 1rem; border-top: 1px solid var(--line); }
+.entry.is-target { border-color: var(--green); box-shadow: 0 0 0 2px rgba(159, 199, 119, .55); animation: target-pulse 2.4s ease-out 1; }
+@keyframes target-pulse { from { background: rgba(159, 199, 119, .22); } to { background: var(--panel); } }
+
+.entry > summary .node-title { flex: 1 1 0; min-width: 0; }
+.entry > summary .node-subtitle { flex: 1 0 100%; padding-left: 1.3rem; }
+.node-title { margin: 0; color: var(--text); font-size: 1.1rem; font-weight: 600; overflow-wrap: anywhere; }
+.node-subtitle { margin: 0; color: var(--muted); font: .85rem system-ui, sans-serif; font-weight: 400; }
+.node-description, .node-content { margin: .6rem 0 0; line-height: 1.55; white-space: pre-line; overflow-wrap: anywhere; }
+.node-content { color: var(--text); }
+.node-tags { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .6rem; }
+.tag-chip { padding: .1rem .55rem; border: 1px solid var(--line); border-radius: 12px; background: var(--field); color: var(--green); font: .72rem system-ui, sans-serif; text-transform: lowercase; }
+
+.node-attributes { display: grid; grid-template-columns: minmax(120px, 28%) minmax(0, 1fr); gap: .35rem 1rem; margin: .75rem 0 0; padding: .75rem; border: 1px solid var(--line); border-radius: 4px; background: var(--field); font: .88rem/1.45 system-ui, sans-serif; }
+.node-attributes dt { color: var(--muted); font-weight: 600; overflow-wrap: anywhere; }
+.node-attributes dd { margin: 0; overflow-wrap: anywhere; }
+
+.sub-node { margin-top: .9rem; padding-left: .9rem; border-left: 2px solid var(--line); scroll-margin-top: 1rem; }
+.sub-node > .node-header .node-title { color: var(--green); font-size: 1rem; }
+.sub-node.is-target { border-left-color: var(--green); animation: target-pulse 2.4s ease-out 1; }
+.sub-node .sub-node > .node-header .node-title { color: var(--text); font-size: .95rem; }
+
+/* Table of contents */
+.toc { position: sticky; top: 1rem; max-height: calc(100vh - 2rem); overflow-y: auto; border: 1px solid var(--line); border-radius: 4px; background: var(--panel); }
+.toc > summary { padding: .75rem 1rem; color: var(--green); font: 600 1rem Georgia, serif; cursor: pointer; list-style: none; }
+.toc > summary::-webkit-details-marker { display: none; }
+.toc-body { padding: 0 1rem 1rem; }
+.node-search { position: relative; margin-bottom: .75rem; }
+.search-suggestions { position: absolute; z-index: 5; top: 100%; right: 0; left: 0; max-height: 16rem; overflow-y: auto; margin-top: .3rem; padding: .25rem; border: 1px solid var(--green); border-radius: 4px; background: var(--panel); box-shadow: 0 8px 20px rgba(0, 0, 0, .45); }
+.search-option { display: block; width: 100%; min-height: 0; padding: .5rem .6rem; border: 0; border-radius: 3px; background: transparent; color: var(--text); font: .9rem system-ui, sans-serif; text-align: left; }
+.search-option small { display: block; margin-top: .1rem; color: var(--muted); font-size: .75rem; font-weight: 400; }
+.search-option[aria-selected="true"], .search-option:hover { background: rgba(159, 199, 119, .18); }
+.toc-list, .toc-list ul { list-style: none; margin: 0; padding: 0; }
+.toc-list li + li { margin-top: .3rem; }
+.toc-list a { display: block; padding: .15rem 0; font: .85rem/1.35 system-ui, sans-serif; overflow-wrap: anywhere; }
+
+footer { padding: 1.5rem; border-top: 1px solid var(--line); color: var(--muted); font: .8rem system-ui, sans-serif; text-align: center; }
+
+@media (max-width: 900px) {
+  .guide-layout { grid-template-columns: minmax(0, 1fr); gap: 1rem; }
+  .toc { position: static; max-height: none; order: -1; }
+  .toc-body { max-height: 16rem; overflow-y: auto; }
+}
+@media (max-width: 640px) {
+  .sheet-nav { gap: .8rem; flex-wrap: wrap; }
+  .guide-page { padding: 1rem .75rem 2rem; }
+  .page-head h1 { font-size: 1.6rem; }
+  .spell-filters { grid-template-columns: minmax(0, 1fr); }
+  .category-menu { grid-template-columns: minmax(0, 1fr); }
+  .entry > summary { padding: .7rem .75rem; }
+  .entry-body { padding: .25rem .75rem .85rem; }
+  .node-attributes { grid-template-columns: minmax(0, 1fr); gap: .1rem; }
+  .node-attributes dd { margin-bottom: .5rem; }
+  .sub-node { padding-left: .65rem; }
+  .guide-tools button { flex: 1 1 auto; }
+  .guide-tools span { flex-basis: 100%; margin-left: 0; }
+}
+@media print {
+  .sheet-nav, .toc, .global-search, .guide-tools, .spell-filters, footer { display: none !important; }
+  body { background: #fff; color: #111; }
+  .entry { border-color: #999; background: #fff; }
+}
+  .table-scroll { overflow-x: auto; max-width: 100%; margin: 0.75rem 0; -webkit-overflow-scrolling: touch; }
+  .node-table { border-collapse: collapse; width: 100%; font-size: 0.9rem; }
+  .node-table caption { text-align: left; padding: 0 0 0.5rem; color: var(--muted, #b7c3ad); font-size: 0.85rem; }
+  .node-table th, .node-table td { border: 1px solid rgba(159, 199, 119, 0.25); padding: 0.3rem 0.6rem; text-align: center; white-space: nowrap; }
+  .node-table thead th { background: rgba(159, 199, 119, 0.12); color: var(--green, #9fc777); }
+  .link-chips a.tag-chip { text-decoration: none; text-transform: none; font-size: .8rem; }
+  .link-chips a.tag-chip:hover { border-color: var(--green, #9fc777); }
+</style>
+{{end}}
+
+
+<!-- NeoTokyo.tmpl -->
+{{ define "NeoTokyo.tmpl"}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{if .CurrentCategory}}{{.CurrentCategory}} | {{end}}NeoTokyo Starter Guide</title>
+{{template "NeoTokyo_css" .}}
+</head>
+<body>
+<nav class="sheet-nav" aria-label="Main navigation">
+  <a class="sheet-brand" href="/">D&amp;D 5e SRD</a>
+  <a href="/neotokyo"{{if not .CurrentCategory}} aria-current="page"{{end}}>NeoTokyo</a>
+  <a href="/characters">Characters</a>
+  {{template "account_nav" .}}
+</nav>
+
+<main class="guide-page">
+  <div class="guide-layout">
+    <div class="content-container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span aria-hidden="true">/</span>
+        {{if .CurrentCategory}}
+          <a href="/neotokyo">NeoTokyo Starter Guide</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">{{.CurrentCategory}}</span>
+        {{else}}
+          <span aria-current="page">NeoTokyo Starter Guide</span>
+        {{end}}
+      </nav>
+
+      <section class="global-search" aria-label="Search the whole starter guide">
+        <label for="global-search-input">Search the whole guide</label>
+        <input id="global-search-input" type="search" autocomplete="off" placeholder="Search classes, spells, items, rules..."
+          aria-describedby="global-search-status" aria-controls="global-search-results">
+        <div id="global-search-status" class="search-status" role="status" aria-live="polite"></div>
+        <ul id="global-search-results" class="global-results" hidden></ul>
+      </section>
+
+      {{if .CurrentCategory}}
+      <header class="page-head">
+        <div>
+          <h1>{{.CurrentCategory}}</h1>
+          <p>NeoTokyo Starter Guide</p>
+        </div>
+        {{if eq .Total 1}}{{with index .Sections 0}}{{if .Children}}<span class="badge">{{len .Children}} entries</span>{{end}}{{end}}{{else}}<span class="badge">{{.Total}} entries</span>{{end}}
+      </header>
+
+      {{if .HasSpells}}
+      <section class="spell-filters" aria-label="Filter spells">
+        <div>
+          <label for="spell-class-filter">Class</label>
+          <select id="spell-class-filter">
+            <option value="">All classes</option>
+            {{range .SpellClassOptions}}
+            <option value="{{.Original}}">{{.Reskinned}}</option>
+            {{end}}
+          </select>
+        </div>
+        <div>
+          <label for="spell-level-filter">Spell level</label>
+          <select id="spell-level-filter">
+            <option value="">All levels</option>
+            <option value="0">Cantrip</option>
+            <option value="1">Level 1</option>
+            <option value="2">Level 2</option>
+            <option value="3">Level 3</option>
+            <option value="4">Level 4</option>
+            <option value="5">Level 5</option>
+            <option value="6">Level 6</option>
+            <option value="7">Level 7</option>
+            <option value="8">Level 8</option>
+            <option value="9">Level 9</option>
+          </select>
+        </div>
+        <button id="reset-spell-filters" type="button">Reset filters</button>
+        <div id="spell-filter-status" class="spell-filter-status" role="status" aria-live="polite"></div>
+      </section>
+      {{end}}
+
+      <div class="guide-tools">
+        <button type="button" id="expand-all">Expand all</button>
+        <button type="button" id="collapse-all">Collapse all</button>
+      </div>
+
+      <div class="sections-wrapper" id="guide-entries">
+        {{range .Sections}}
+          {{if .Children}}
+            {{if .Description}}<p class="root-intro">{{.Description}}</p>{{end}}
+            {{range .Children}}{{template "section_node" .}}{{end}}
+          {{else}}
+            {{template "section_node" .}}
+          {{end}}
+        {{end}}
+      </div>
+      {{else}}
+      <header class="page-head">
+        <div>
+          <h1>NeoTokyo</h1>
+          <p>Choose a category to browse the starter guide.</p>
+        </div>
+      </header>
+      <nav class="category-menu" aria-label="NeoTokyo categories">
+        {{range .Categories}}
+        <a class="category-card" href="{{.Path}}">
+          <span class="category-card-title">{{.Title}}</span>
+          <span class="category-card-count">{{.Count}} entries</span>
+        </a>
+        {{end}}
+      </nav>
+      {{end}}
+    </div>
+
+    {{if .Sections}}
+    <details class="toc" id="toc" aria-label="Table of contents" open>
+      <summary>On this page</summary>
+      <div class="toc-body">
+        <div class="node-search">
+          <label for="node-search-input">Find a section</label>
+          <input id="node-search-input" type="search" role="combobox" aria-autocomplete="list"
+            aria-expanded="false" aria-controls="node-search-suggestions" aria-describedby="node-search-status"
+            placeholder="Search this page..." autocomplete="off">
+          <div id="node-search-suggestions" class="search-suggestions" role="listbox" hidden></div>
+          <div id="node-search-status" class="search-status" role="status" aria-live="polite"></div>
+        </div>
+        <ul class="toc-list">
+          {{range .Sections}}
+            {{if .Children}}
+              {{range .Children}}<li><a href="#{{.ID}}">{{.Title}}</a></li>{{end}}
+            {{else}}
+              <li><a href="#{{.ID}}">{{.Title}}</a></li>
+            {{end}}
+          {{end}}
+        </ul>
+      </div>
+    </details>
+    {{end}}
+  </div>
+</main>
+
+<footer>
+  Data provided by <a href="https://www.dnd5eapi.co/" target="_blank" rel="noopener">dnd5eapi.co</a>
+  &middot; 5e SRD content &copy; Wizards of the Coast
+</footer>
+
+{{if .HasSpells}}
+<script>
+(function () {
+  var classFilter = document.getElementById('spell-class-filter');
+  var levelFilter = document.getElementById('spell-level-filter');
+  var resetButton = document.getElementById('reset-spell-filters');
+  var status = document.getElementById('spell-filter-status');
+  var spells = Array.prototype.slice.call(document.querySelectorAll('.section-node[data-spell-classes]'));
+  if (!classFilter || !levelFilter || !resetButton || !status) return;
+
+  function applyFilters() {
+    var selectedClass = classFilter.value;
+    var selectedLevel = levelFilter.value;
+    var visible = 0;
+    spells.forEach(function (spell) {
+      var spellClasses = (spell.dataset.spellClasses || '').split(',');
+      var classMatches = !selectedClass || spellClasses.indexOf(selectedClass) !== -1;
+      var levelMatches = selectedLevel === '' || spell.dataset.spellLevel === selectedLevel;
+      var matches = classMatches && levelMatches;
+      spell.hidden = !matches;
+      if (matches) visible++;
+    });
+    status.textContent = 'Showing ' + visible + ' of ' + spells.length + ' spells';
+  }
+
+  classFilter.addEventListener('change', applyFilters);
+  levelFilter.addEventListener('change', applyFilters);
+  resetButton.addEventListener('click', function () {
+    classFilter.value = '';
+    levelFilter.value = '';
+    applyFilters();
+  });
+  applyFilters();
+})();
+</script>
+{{end}}
+
+<script>
+(function () {
+  var input = document.getElementById('global-search-input');
+  var list = document.getElementById('global-search-results');
+  var status = document.getElementById('global-search-status');
+  if (!input || !list || !status) return;
+  var timer = null;
+  var requestID = 0;
+
+  function clearResults() {
+    list.replaceChildren();
+    list.hidden = true;
+  }
+
+  function render(data) {
+    list.replaceChildren();
+    data.results.forEach(function (result) {
+      var item = document.createElement('li');
+      var link = document.createElement('a');
+      link.href = result.url;
+      var title = document.createElement('strong');
+      title.textContent = result.title;
+      var path = document.createElement('small');
+      path.textContent = result.path;
+      link.append(title, path);
+      item.appendChild(link);
+      if (result.snippet) {
+        var snippet = document.createElement('span');
+        snippet.className = 'global-result-snippet';
+        snippet.textContent = result.snippet;
+        item.appendChild(snippet);
+      }
+      list.appendChild(item);
+    });
+    list.hidden = data.results.length === 0;
+    status.textContent = data.results.length
+      ? (data.total > data.results.length ? 'Showing ' + data.results.length + ' of ' + data.total + ' matches' : data.total + (data.total === 1 ? ' match' : ' matches'))
+      : 'No matches found';
+  }
+
+  function run() {
+    var query = input.value.trim();
+    if (query.length < 2) { clearResults(); status.textContent = query ? 'Keep typing...' : ''; return; }
+    var current = ++requestID;
+    fetch('/api/neotokyo/search?q=' + encodeURIComponent(query))
+      .then(function (response) { if (!response.ok) throw new Error('search failed'); return response.json(); })
+      .then(function (data) { if (current === requestID) render(data); })
+      .catch(function () { if (current === requestID) { clearResults(); status.textContent = 'Search is unavailable right now.'; } });
+  }
+
+  input.addEventListener('input', function () { window.clearTimeout(timer); timer = window.setTimeout(run, 200); });
+  input.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') { input.value = ''; clearResults(); status.textContent = ''; }
+  });
+})();
+</script>
+
+<script>
+(function () {
+  var input = document.getElementById('node-search-input');
+  var suggestions = document.getElementById('node-search-suggestions');
+  var status = document.getElementById('node-search-status');
+  if (!input || !suggestions || !status) return;
+
+  function normalize(value) {
+    return value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase()
+      .replace(/[^a-z0-9]+/g, ' ').trim();
+  }
+
+  var nodes = Array.prototype.map.call(document.querySelectorAll('.section-node[id]'), function (node) {
+    var title = node.querySelector(':scope > .node-header .node-title');
+    var labels = [title ? title.textContent.trim() : ''];
+    var parent = node.parentElement.closest('.section-node');
+    while (parent) {
+      var parentTitle = parent.querySelector(':scope > .node-header .node-title');
+      if (parentTitle) labels.unshift(parentTitle.textContent.trim());
+      parent = parent.parentElement.closest('.section-node');
+    }
+    return { id: node.id, title: labels[labels.length - 1], path: labels.join(' / ') };
+  }).filter(function (node) { return node.title; });
+
+  var options = [];
+  var optionNodes = [];
+  var activeIndex = -1;
+
+  function closeSuggestions() {
+    suggestions.hidden = true;
+    input.setAttribute('aria-expanded', 'false');
+    input.removeAttribute('aria-activedescendant');
+    activeIndex = -1;
+  }
+
+  function selectNode(node) {
+    input.value = node.title;
+    closeSuggestions();
+    status.textContent = 'Jumping to ' + node.path;
+    if (window.location.hash === '#' + node.id) window.dispatchEvent(new HashChangeEvent('hashchange'));
+    else window.location.hash = node.id;
+  }
+
+  function setActive(index) {
+    if (!options.length) return;
+    activeIndex = (index + options.length) % options.length;
+    options.forEach(function (option, optionIndex) {
+      option.setAttribute('aria-selected', optionIndex === activeIndex ? 'true' : 'false');
+    });
+    input.setAttribute('aria-activedescendant', options[activeIndex].id);
+    options[activeIndex].scrollIntoView({ block: 'nearest' });
+  }
+
+  function renderSuggestions() {
+    var query = normalize(input.value);
+    suggestions.replaceChildren();
+    options = [];
+    optionNodes = [];
+    activeIndex = -1;
+    input.removeAttribute('aria-activedescendant');
+    if (!query) {
+      closeSuggestions();
+      status.textContent = '';
+      return;
+    }
+
+    var terms = query.split(' ');
+    var matches = nodes.map(function (node) {
+      var title = normalize(node.title);
+      var path = normalize(node.path);
+      var score = -1;
+      if (title === query) score = 0;
+      else if (title.indexOf(query) === 0) score = 1;
+      else if (path.indexOf(query) === 0) score = 2;
+      else if (title.indexOf(query) !== -1) score = 3;
+      else if (terms.every(function (term) { return path.indexOf(term) !== -1; })) score = 4;
+      return { node: node, score: score };
+    }).filter(function (match) { return match.score >= 0; })
+      .sort(function (left, right) {
+        return left.score - right.score || left.node.title.localeCompare(right.node.title);
+      }).slice(0, 8);
+
+    matches.forEach(function (match, index) {
+      var option = document.createElement('button');
+      option.type = 'button';
+      option.className = 'search-option';
+      option.id = 'node-search-option-' + index;
+      option.setAttribute('role', 'option');
+      option.setAttribute('aria-selected', 'false');
+      option.appendChild(document.createTextNode(match.node.title));
+      var path = document.createElement('small');
+      path.textContent = match.node.path;
+      option.appendChild(path);
+      option.addEventListener('click', function () { selectNode(match.node); });
+      suggestions.appendChild(option);
+      options.push(option);
+      optionNodes.push(match.node);
+    });
+
+    suggestions.hidden = matches.length === 0;
+    input.setAttribute('aria-expanded', matches.length ? 'true' : 'false');
+    status.textContent = matches.length ? matches.length + ' matching nodes' : 'No matching nodes';
+  }
+
+  input.addEventListener('input', renderSuggestions);
+  input.addEventListener('keydown', function (event) {
+    if (event.key === 'ArrowDown' && options.length) {
+      event.preventDefault();
+      setActive(activeIndex + 1);
+    } else if (event.key === 'ArrowUp' && options.length) {
+      event.preventDefault();
+      setActive(activeIndex < 0 ? options.length - 1 : activeIndex - 1);
+    } else if (event.key === 'Enter' && activeIndex >= 0) {
+      event.preventDefault();
+      selectNode(optionNodes[activeIndex]);
+    } else if (event.key === 'Escape') {
+      closeSuggestions();
+    }
+  });
+  input.addEventListener('blur', function () {
+    window.setTimeout(closeSuggestions, 120);
+  });
+})();
+</script>
+
+<script>
+(function () {
+  var entries = Array.prototype.slice.call(document.querySelectorAll('details.entry'));
+  var toc = document.getElementById('toc');
+  var expand = document.getElementById('expand-all');
+  var collapse = document.getElementById('collapse-all');
+
+  // Small categories start expanded; large ones (e.g. spells) start collapsed.
+  var topLevel = document.querySelectorAll('#guide-entries > details.entry');
+  var startOpen = topLevel.length <= 12;
+  topLevel.forEach(function (entry) { entry.open = startOpen; });
+  if (toc && window.matchMedia('(max-width: 900px)').matches) toc.open = false;
+
+  if (expand) expand.addEventListener('click', function () { entries.forEach(function (e) { e.open = true; }); });
+  if (collapse) collapse.addEventListener('click', function () { entries.forEach(function (e) { e.open = false; }); });
+
+  // Shows the whole category, opens whatever contains the target, and highlights it.
+  function showTarget() {
+    document.querySelectorAll('.is-target').forEach(function (el) { el.classList.remove('is-target'); });
+    var id = decodeURIComponent(window.location.hash.slice(1));
+    var target = id && document.getElementById(id);
+    if (!target) return;
+    var node = target;
+    while (node) {
+      if (node.tagName === 'DETAILS') node.open = true;
+      node = node.parentElement;
+    }
+    target.hidden = false;
+    target.classList.add('is-target');
+    window.requestAnimationFrame(function () { target.scrollIntoView({ block: 'start' }); });
+    if (toc && window.matchMedia('(max-width: 900px)').matches) toc.open = false;
+  }
+  window.addEventListener('hashchange', showTarget);
+  showTarget();
+
+  document.addEventListener('click', function (event) {
+    var link = event.target.closest && event.target.closest('#global-search-results a');
+    if (!link) return;
+    var url = new URL(link.href, window.location.href);
+    if (url.pathname === window.location.pathname) {
+      event.preventDefault();
+      if (url.hash === window.location.hash) showTarget(); else window.location.hash = url.hash;
+    }
+  });
+})();
+</script>
+</body>
+</html>
+{{end}}
+
+<!-- Recursive Section Node Definition -->
+{{define "section_node"}}
+{{if .Children}}
+<details class="section-node entry" id="{{.ID}}"{{if .SpellClasses}} data-spell-classes="{{range $index, $class := .SpellClasses}}{{if $index}},{{end}}{{$class}}{{end}}" data-spell-level="{{.SpellLevel}}"{{end}}>
+  <summary class="node-header">
+    <h2 class="node-title">{{.Title}}</h2>
+    {{if .Subtitle}}<span class="node-subtitle">{{.Subtitle}}</span>{{end}}
+  </summary>
+  <div class="entry-body">
+    {{template "node_body" .}}
+    {{range .Children}}{{template "sub_node" .}}{{end}}
+  </div>
+</details>
+{{else}}
+<details class="section-node entry" id="{{.ID}}"{{if .SpellClasses}} data-spell-classes="{{range $index, $class := .SpellClasses}}{{if $index}},{{end}}{{$class}}{{end}}" data-spell-level="{{.SpellLevel}}"{{end}}>
+  <summary class="node-header">
+    <h2 class="node-title">{{.Title}}</h2>
+    {{if .Subtitle}}<span class="node-subtitle">{{.Subtitle}}</span>{{end}}
+  </summary>
+  <div class="entry-body">{{template "node_body" .}}</div>
+</details>
+{{end}}
+{{end}}
+
+{{define "sub_node"}}
+<div class="section-node sub-node" id="{{.ID}}">
+  <div class="node-header">
+    <h3 class="node-title">{{.Title}}</h3>
+    {{if .Subtitle}}<span class="node-subtitle">{{.Subtitle}}</span>{{end}}
+  </div>
+  {{template "node_body" .}}
+  {{range .Children}}{{template "sub_node" .}}{{end}}
+</div>
+{{end}}
+
+{{define "node_body"}}
+  {{if .Description}}<p class="node-description">{{.Description}}</p>{{end}}
+  {{if .Content}}<div class="node-content">{{.Content}}</div>{{end}}
+  {{if .Tags}}
+    <div class="node-tags">{{range .Tags}}<span class="tag-chip">{{.}}</span>{{end}}</div>
+  {{end}}
+  {{if .Attributes}}
+    <dl class="node-attributes">
+      {{range $key, $val := .Attributes}}
+        <dt>{{label $key}}</dt>
+        <dd>{{$val}}</dd>
+      {{end}}
+    </dl>
+  {{end}}
+  {{range .Tables}}
+    <div class="table-scroll" tabindex="0">
+      <table class="node-table">
+        {{if .Caption}}<caption>{{.Caption}}</caption>{{end}}
+        <thead><tr>{{range .Headers}}<th scope="col">{{.}}</th>{{end}}</tr></thead>
+        <tbody>{{range .Rows}}<tr>{{range $i, $cell := .}}{{if eq $i 0}}<th scope="row">{{$cell}}</th>{{else}}<td>{{$cell}}</td>{{end}}{{end}}</tr>{{end}}</tbody>
+      </table>
+    </div>
+  {{end}}
+  {{if .Links}}
+    <div class="node-tags link-chips">{{range .Links}}<a class="tag-chip" href="{{.URL}}">{{.Title}}</a>{{end}}</div>
+  {{end}}
+{{end}}

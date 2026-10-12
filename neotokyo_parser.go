@@ -6,7 +6,9 @@ import (
 	"fmt"
 	"net/http"
 	"os"
+	"sort"
 	"strings"
+	"unicode"
 )
 
 func NeoTokyoHandler(w http.ResponseWriter, r *http.Request) {
@@ -25,6 +27,15 @@ func NeoTokyoHandler(w http.ResponseWriter, r *http.Request) {
 		http.NotFound(w, r)
 		return
 	}
+	if response.HasSpells {
+		spellIndex, err := loadSpellReskinIndex("static/data/cyberpunk-class-and-spell-reskins.json")
+		if err != nil {
+			http.Error(w, fmt.Sprintf("error loading spell class mappings: %v", err), http.StatusInternalServerError)
+			return
+		}
+		applySpellReskinMetadata(response.Sections, spellIndex)
+		response.SpellClassOptions = spellClassOptions(response.Sections, spellIndex)
+	}
 
 	var rendered bytes.Buffer
 	if err := tmpl.ExecuteTemplate(&rendered, "NeoTokyo.tmpl", response); err != nil {
@@ -33,6 +44,74 @@ func NeoTokyoHandler(w http.ResponseWriter, r *http.Request) {
 	}
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
 	_, _ = w.Write(rendered.Bytes())
+}
+
+type spellReskinLookup struct {
+	Spells      map[string]SpellReskin
+	ClassLabels map[string]string
+}
+
+func loadSpellReskinIndex(filename string) (spellReskinLookup, error) {
+	data, err := os.ReadFile(filename)
+	if err != nil {
+		return spellReskinLookup{}, fmt.Errorf("failed to open spell class mappings: %w", err)
+	}
+	var index SpellReskinIndex
+	if err := json.Unmarshal(data, &index); err != nil {
+		return spellReskinLookup{}, fmt.Errorf("failed to decode spell class mappings: %w", err)
+	}
+	lookup := spellReskinLookup{
+		Spells:      make(map[string]SpellReskin, len(index.Spells)),
+		ClassLabels: make(map[string]string, len(index.ClassReskins)),
+	}
+	for _, spell := range index.Spells {
+		lookup.Spells[spell.Reskinned] = spell
+	}
+	for _, class := range index.ClassReskins {
+		lookup.ClassLabels[class.OriginalClass] = class.ReskinnedClass
+	}
+	return lookup, nil
+}
+
+func applySpellReskinMetadata(sections []SectionNode, index spellReskinLookup) {
+	for sectionIndex := range sections {
+		for spellIndex := range sections[sectionIndex].Children {
+			spell := &sections[sectionIndex].Children[spellIndex]
+			mapping, ok := index.Spells[spell.Title]
+			if !ok {
+				continue
+			}
+			spell.SpellLevel = mapping.Level
+			spell.SpellClasses = mapping.Classes
+		}
+	}
+}
+
+func spellClassOptions(sections []SectionNode, index spellReskinLookup) []SpellClassOption {
+	labelsByOriginal := make(map[string]string)
+	for _, section := range sections {
+		for _, spell := range section.Children {
+			mapping, ok := index.Spells[spell.Title]
+			if !ok {
+				continue
+			}
+			for _, className := range mapping.Classes {
+				label := index.ClassLabels[className]
+				if label == "" {
+					label = className
+				}
+				labelsByOriginal[className] = label
+			}
+		}
+	}
+	options := make([]SpellClassOption, 0, len(labelsByOriginal))
+	for original, reskinned := range labelsByOriginal {
+		options = append(options, SpellClassOption{Original: original, Reskinned: reskinned})
+	}
+	sort.Slice(options, func(i, j int) bool {
+		return options[i].Reskinned < options[j].Reskinned
+	})
+	return options
 }
 
 func loadJSON(filename string) (*StarterGuide, error) {
@@ -58,16 +137,16 @@ func categoryFromPath(path string) string {
 func buildResponse(data *StarterGuide, category string) *StandardResponse {
 	cleanCategory := strings.TrimSpace(category)
 	var sections []SectionNode
+	var categories []CategoryOption
 
 	if cleanCategory == "" {
-		for _, name := range []string{
-			"Abilities", "Backgrounds", "Species", "Classes", "Feats",
-			"Adventuring Gear & Containers", "Tools, Kits & Consumables", "Ammunition",
-			"Weapons", "Armor & Shields", "Mounts, Vehicles & Harnesses", "Foci & Instruments",
-			"Spells", "Conditions",
-		} {
+		for _, name := range neoTokyoCategoryNames {
 			if node, ok := mapCategory(name, data); ok {
-				sections = append(sections, node)
+				categories = append(categories, CategoryOption{
+					Title: name,
+					Path:  "/neotokyo/" + categorySlug(name),
+					Count: len(node.Children),
+				})
 			}
 		}
 	} else {
@@ -76,17 +155,62 @@ func buildResponse(data *StarterGuide, category string) *StandardResponse {
 			sections = append(sections, node)
 		}
 	}
+	assignSectionIDs(sections, "")
+	hasSpells := cleanCategory != "" && len(sections) > 0 && sections[0].Title == "Spells"
 
 	title := "Neo Tokyo Starter Guide"
+	currentCategory := ""
 	if cleanCategory != "" && len(sections) > 0 {
-		title = fmt.Sprintf("Neo Tokyo Starter Guide - %s", sections[0].Title)
+		currentCategory = sections[0].Title
+		title = fmt.Sprintf("Neo Tokyo Starter Guide - %s", currentCategory)
 	}
 
 	return &StandardResponse{
-		Category: title,
-		Total:    len(sections),
-		Sections: sections,
+		Category:        title,
+		CurrentCategory: currentCategory,
+		HasSpells:       hasSpells,
+		Total:           len(sections),
+		Categories:      categories,
+		Sections:        sections,
 	}
+}
+
+var neoTokyoCategoryNames = []string{
+	"Abilities", "Backgrounds", "Species", "Classes", "Feats",
+	"Adventuring Gear & Containers", "Tools, Kits & Consumables", "Ammunition",
+	"Weapons", "Armor & Shields", "Mounts, Vehicles & Harnesses", "Foci & Instruments",
+	"Spells", "Conditions",
+}
+
+func categorySlug(category string) string {
+	normalized := normalizeCategory(category)
+	return strings.ReplaceAll(normalized, " ", "-")
+}
+
+func assignSectionIDs(sections []SectionNode, parentID string) {
+	for index := range sections {
+		id := slugifySectionTitle(sections[index].Title)
+		if parentID != "" {
+			id = parentID + "-" + id
+		}
+		sections[index].ID = fmt.Sprintf("%s-%d", id, index+1)
+		assignSectionIDs(sections[index].Children, sections[index].ID)
+	}
+}
+
+func slugifySectionTitle(title string) string {
+	var slug strings.Builder
+	lastWasSeparator := false
+	for _, character := range strings.ToLower(title) {
+		if unicode.IsLetter(character) || unicode.IsDigit(character) {
+			slug.WriteRune(character)
+			lastWasSeparator = false
+		} else if !lastWasSeparator && slug.Len() > 0 {
+			slug.WriteByte('-')
+			lastWasSeparator = true
+		}
+	}
+	return strings.Trim(slug.String(), "-")
 }
 
 // Master function routing mapping logic based on category type
@@ -114,7 +238,9 @@ func mapCategory(category string, data *StarterGuide) (SectionNode, bool) {
 		if len(data.Category.Classes) == 0 {
 			return SectionNode{}, false
 		}
-		return mapClasses(data.Category.Classes), true
+		node := mapClasses(data.Category.Classes)
+		addSpellcastingNodes(&node, data)
+		return node, true
 
 	case "feats":
 		if len(data.Category.Feats) == 0 {
@@ -127,6 +253,12 @@ func mapCategory(category string, data *StarterGuide) (SectionNode, bool) {
 
 	case "tools kits and consumables":
 		return mapBasicItems("Tools, Kits & Consumables", data.Category.ToolsKitsAndConsumables)
+
+	case "ammunition":
+		return mapBasicItems("Ammunition", data.Category.Ammunition)
+
+	case "armor and shields":
+		return mapBasicItems("Armor & Shields", data.Category.ArmorAndShields)
 
 	case "mounts vehicles and harnesses":
 		return mapBasicItems("Mounts, Vehicles & Harnesses", data.Category.MountsVehiclesAndHarnesses)

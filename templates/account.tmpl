@@ -1,0 +1,30 @@
+{{define "account_nav"}}
+<span class="account-nav" data-account-nav hidden style="margin-left:auto;display:inline-flex;align-items:center;gap:.6rem;font:.85rem system-ui,sans-serif;white-space:nowrap">
+  <span data-account-label></span>
+  <a data-account-link href="/characters"></a>
+</span>
+<script>
+(function () {
+  var box = document.querySelector('[data-account-nav]');
+  if (!box) return;
+  fetch('/api/account', { credentials: 'same-origin' }).then(function (r) { return r.ok ? r.json() : null; }).then(function (info) {
+    if (!info) return;
+    var label = box.querySelector('[data-account-label]');
+    var link = box.querySelector('[data-account-link]');
+    if (info.signed_in) {
+      label.textContent = info.user + (info.character_count ? ' · ' + info.character_count + (info.character_count === 1 ? ' character' : ' characters') : '');
+      link.textContent = 'Sign out';
+      link.href = info.logout_url || '/characters';
+      if (!info.logout_url) link.hidden = true;
+    } else {
+      label.textContent = info.guest ? 'Guest' + (info.character_count ? ' · ' + info.character_count + ' saved here' : '') : '';
+      link.textContent = 'Sign in';
+      link.title = 'Sign in to keep your characters with your account';
+      link.href = info.login_url || '/characters';
+    }
+    box.hidden = false;
+    box.style.display = 'inline-flex';
+  }).catch(function () {});
+})();
+</script>
+{{end}}

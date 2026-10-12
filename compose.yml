@@ -1,0 +1,75 @@
+services:
+  caddy:
+    image: caddy:latest
+    container_name: caddy
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+      - caddy_config:/config
+    networks:
+      - dockerNetwork
+
+  undeadtoken:
+    image: undeadtokenart/undeadtoken
+    container_name: undeadtoken
+    restart: unless-stopped
+    volumes:
+      - groups:/groups
+      - ./data/undeadtoken:/app/data
+    networks:
+      - dockerNetwork
+
+  true2you:
+    image: undeadtokenart/true2you
+    container_name: true2you
+    restart: unless-stopped
+    volumes:
+      - ./data/true2you:/app/data
+      - ./opt/true2you/prod.env:/app/.env
+    networks:
+      - dockerNetwork
+    env_file:
+     - opt/true2you/prod.env
+
+  5etools:
+    image: undeadtokenart/5etools:staging
+    container_name: 5etools
+    restart: unless-stopped
+    environment:
+      CHARACTER_DATA_FILE: /app/data/characters.json
+      CHARACTER_GUEST_ACCESS: "true"
+      AUTHELIA_URL: https://login.undeadtoken.com
+    volumes:
+      - ./data/5etools:/app/data
+    networks:
+      - dockerNetwork
+
+  authelia:
+    image: authelia/authelia:4.39.25
+    container_name: authelia
+    volumes:
+      - ./config:/config
+    networks:
+      - dockerNetwork
+
+  staging:
+    image: undeadtokenart/undeadtoken
+    container_name: undeadtoken-staging
+    restart: unless-stopped
+    volumes:
+      - groups:/groups
+      - ./data/undeadtoken:/app/data
+    networks:
+      - dockerNetwork
+
+networks:
+  dockerNetwork:
+
+volumes:
+  caddy_data:
+  caddy_config:
+  groups:

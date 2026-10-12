@@ -731,11 +731,14 @@ details > summary::-webkit-details-marker {
 {{define "nav"}}
 <nav>
   <a href="/" class="brand">⚔ D&amp;D 5e SRD</a>
+  <a href="/neotokyo">NeoTokyo</a>
   <span class="nav-sub">System Reference Document Explorer</span>
   <a href="/encounter" class="nav-enc">🎲 Encounter Generator</a>
   <a href="/map" class="nav-enc">🗺 Map Generator</a>
   <a href="/shop" class="nav-enc">🛒 Shop</a>
-</nav>
+  <a href="/characters" class="nav-enc">Character Sheets</a>
+  {{template "account_nav" .}}
+</nav> 
 {{end}}
 
 {{define "foot"}}
@@ -779,6 +782,7 @@ details > summary::-webkit-details-marker {
   </main>
   {{template "foot" .}}
   {{end}}
+        <a href="/characters" class="nav-enc">Character Sheets</a>
 
   {{define "category"}}
   <!DOCTYPE html>
@@ -1408,68 +1412,3 @@ details > summary::-webkit-details-marker {
         {{template "foot" .}}
         {{end}}
 
-<!-- NeoTokyo.tmpl -->
-{{define "NeoTokyo.tmpl"}}
-<header>{{template "css" .}}</header>
-{{template "nav" .}}
-
-<section class="center_align">
-  <main class="content-container">
-    <header class="category-header">
-      <h1>{{.Category}}</h1>
-      <span class="badge">Total Sections: {{.Total}}</span>
-    </header>
-
-    <div class="sections-wrapper">
-      {{range .Sections}}
-        {{template "section_node" .}}
-      {{end}}
-    </div>
-  </main>
-</section>
-
-{{template "foot" .}}
-{{end}}
-
-<!-- Recursive Section Node Definition -->
-{{define "section_node"}}
-<article class="section-node">
-  <header class="node-header">
-    {{if .Title}}<h2 class="node-title">{{.Title}}</h2>{{end}}
-    {{if .Subtitle}}<h3 class="node-subtitle">{{.Subtitle}}</h3>{{end}}
-  </header>
-
-  {{if .Description}}
-    <p class="node-description">{{.Description}}</p>
-  {{end}}
-
-  {{if .Content}}
-    <div class="node-content">{{.Content}}</div>
-  {{end}}
-
-  {{if .Tags}}
-    <div class="node-tags">
-      {{range .Tags}}
-        <span class="tag-chip">{{.}}</span>
-      {{end}}
-    </div>
-  {{end}}
-
-  {{if .Attributes}}
-    <dl class="node-attributes">
-      {{range $key,$val := .Attributes}}
-        <dt>{{$key}}</dt>
-        <dd>{{$val}}</dd>
-      {{end}}
-    </dl>
-  {{end}}
-
-  {{if .Children}}
-    <div class="node-children">
-      {{range .Children}}
-        {{template "section_node" .}}
-      {{end}}
-    </div>
-  {{end}}
-</article>
-{{end}}

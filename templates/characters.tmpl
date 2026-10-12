@@ -1,0 +1,1200 @@
+{{define "characters"}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Character Sheets | D&amp;D 5e SRD</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --page: #101311;
+      --panel: #191e1a;
+      --line: #39433b;
+      --green: #9fc777;
+      --red: #cb7466;
+      --text: #e4e9df;
+      --muted: #a5b0a1;
+      --field: #111612;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--page); color: var(--text); font: 15px/1.5 Georgia, 'Times New Roman', serif; }
+    a { color: var(--green); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .sheet-nav { display:flex; align-items:center; gap:1.25rem; padding:.8rem clamp(1rem, 4vw, 3rem); background:var(--panel); border-bottom:1px solid var(--line); font: .9rem/1.4 system-ui, sans-serif; }
+    .sheet-brand { margin-right:auto; color:var(--green); font-weight:700; }
+    .sheet-page { width:min(1160px, 100%); margin:0 auto; padding:1.4rem clamp(1rem, 3vw, 2rem) 3rem; }
+    .page-head { display:flex; align-items:end; justify-content:space-between; gap:1rem; flex-wrap:wrap; padding-bottom:1rem; border-bottom:2px solid var(--green); }
+    h1 { margin:0; font-size:2rem; font-weight:600; }
+    .account { color:var(--muted); font: .85rem system-ui, sans-serif; }
+    .guest-notice { margin:1rem 0; padding:.75rem 1rem; border-left:3px solid #d7a14a; background:#282218; color:#f0d5a0; font: .9rem/1.45 system-ui, sans-serif; }
+    .character-toolbar { display:flex; align-items:end; gap:.65rem; flex-wrap:wrap; margin:1.25rem 0; padding:1rem 0; border-bottom:1px solid var(--line); }
+    .field { display:flex; flex-direction:column; gap:.3rem; min-width:0; }
+    .field label, .field-label { color:var(--muted); font: .73rem/1.3 system-ui, sans-serif; letter-spacing:.04em; text-transform:uppercase; }
+    input, select, textarea { width:100%; min-height:40px; padding:.55rem .65rem; border:1px solid var(--line); border-radius:4px; background:var(--field); color:var(--text); font: .95rem system-ui, sans-serif; }
+    textarea { min-height:110px; resize:vertical; }
+    input:focus, select:focus, textarea:focus { outline:2px solid var(--green); outline-offset:1px; }
+    button { min-height:40px; padding:.55rem .85rem; border:1px solid var(--green); border-radius:4px; background:transparent; color:var(--green); font:600 .88rem system-ui, sans-serif; cursor:pointer; }
+    button:hover { background:rgba(159,199,119,.12); }
+    button.primary { background:var(--green); color:#101311; }
+    button.primary:hover { background:#b3d78f; }
+    button.danger { border-color:var(--red); color:#efa094; }
+    button:disabled { opacity:.55; cursor:wait; }
+    #character-picker { flex:1 1 230px; max-width:420px; }
+    .save-actions { display:flex; gap:.5rem; margin-left:auto; }
+    .status { min-height:1.4rem; margin:.3rem 0 1rem; color:var(--muted); font: .9rem system-ui, sans-serif; }
+    .status.error { color:#efa094; }
+    .sheet-section { padding:1.35rem 0; border-bottom:1px solid var(--line); }
+    .section-head { display:flex; align-items:center; justify-content:space-between; gap:1rem; margin-bottom:1rem; }
+    h2 { margin:0; color:var(--green); font-size:1.2rem; font-weight:600; }
+    .identity-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:.8rem; }
+    .identity-grid .name-field { grid-column:span 2; }
+    .score-grid { display:grid; grid-template-columns:repeat(6,minmax(80px,1fr)); gap:.7rem; }
+    .score { text-align:center; }
+    .score input { text-align:center; font-size:1.1rem; font-weight:700; }
+    .modifier { color:var(--green); font: .8rem system-ui, sans-serif; }
+    .combat-grid { display:grid; grid-template-columns:repeat(6,minmax(85px,1fr)); gap:.7rem; margin-top:1rem; }
+    .entry-list { display:flex; flex-direction:column; gap:.6rem; }
+    .entry-row { display:grid; grid-template-columns:minmax(150px, .8fr) minmax(180px, 1.4fr) 42px; align-items:end; gap:.55rem; }
+    .suggest-wrap { position:relative; }
+    .suggest-list { position:absolute; z-index:20; left:0; right:0; top:100%; max-height:260px; overflow-y:auto; margin:2px 0 0; padding:0; list-style:none; border:1px solid var(--green); border-radius:4px; background:var(--panel); box-shadow:0 6px 18px rgba(0,0,0,.5); font: .9rem system-ui, sans-serif; }
+    .suggest-list li { padding:.4rem .65rem; cursor:pointer; }
+    .suggest-list li small { display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; color:var(--muted); }
+    .suggest-list li.active, .suggest-list li:hover { background:rgba(159,199,119,.18); }
+    .suggest-list li.group-heading { padding:.3rem .65rem; background:var(--field); color:var(--green); font:600 .7rem system-ui, sans-serif; letter-spacing:.05em; text-transform:uppercase; cursor:default; position:sticky; top:0; }
+    .suggest-list li.group-heading:hover { background:var(--field); }
+    .item-link-cell { display:flex; flex-direction:column; gap:.3rem; min-width:0; }
+    .item-link { display:flex; align-items:center; min-height:40px; padding:.55rem .65rem; border:1px solid var(--line); border-radius:4px; background:var(--field); font:600 .95rem system-ui, sans-serif; overflow-wrap:anywhere; }
+    .item-link::after { content:'\2197'; margin-left:.4rem; color:var(--muted); font-weight:400; }
+    .remove-entry { width:42px; padding:0; border-color:var(--line); color:var(--muted); font-size:1.15rem; }
+    .remove-entry:hover { border-color:var(--red); color:#efa094; }
+    .reference-hint { margin:0 0 .6rem; color:var(--muted); font:.85rem system-ui, sans-serif; }
+    .reference-group { margin:0 0 .8rem; padding:.6rem .8rem; border:1px solid var(--line); border-radius:4px; background:var(--field); }
+    .reference-group h3 { margin:0 0 .4rem; font:700 .95rem system-ui, sans-serif; }
+    .reference-group h3 small { margin-right:.4rem; color:var(--muted); font-weight:400; text-transform:uppercase; letter-spacing:.04em; }
+    .reference-group h3 a { text-decoration:underline; }
+    .reference-group dl { margin:0; }
+    .reference-group dt { margin-top:.4rem; font:600 .85rem system-ui, sans-serif; }
+    .reference-group dd { margin:.1rem 0 0; font:.85rem/1.4 system-ui, sans-serif; overflow-wrap:anywhere; }
+    .notes-field { max-width:900px; }
+    .prof-readout { color:var(--muted); font:.9rem system-ui, sans-serif; }
+    .prof-readout output { color:var(--green); font-weight:700; }
+    .roll-bar { display:flex; flex-wrap:wrap; align-items:end; gap:.8rem; margin-bottom:1rem; }
+    .roll-bar .field { min-width:170px; }
+    .roll-result { flex:1 1 220px; min-height:40px; padding:.45rem .7rem; border:1px solid var(--line); border-radius:4px; background:var(--field); font:600 1rem system-ui, sans-serif; }
+    .roll-result small { display:block; color:var(--muted); font-weight:400; }
+    .roll-result .crit { color:var(--green); }
+    .roll-bar { position:relative; }
+    .section-toggle { display:inline-flex; align-items:center; justify-content:center; width:34px; min-height:34px; padding:0; border-color:var(--line); color:var(--muted); font-size:1rem; line-height:1; }
+    .section-toggle::before { content:'\25BE'; transition:transform .15s; }
+    .section-toggle[aria-expanded="false"]::before { transform:rotate(-90deg); }
+    .section-head h2 { flex:1; }
+    .sheet-section.is-collapsed > .section-body { display:none; }
+    .sheet-section.is-collapsed .section-head { margin-bottom:0; }
+    .collapse-tools { display:flex; gap:.5rem; margin:0 0 .6rem; }
+    .collapse-tools button { min-height:34px; padding:.3rem .7rem; font-size:.8rem; }
+    .roll-toast { position:fixed; z-index:100; right:1rem; bottom:1rem; width:min(360px, calc(100vw - 2rem)); padding:.8rem 2.4rem .8rem 1rem; border:1px solid var(--green); border-radius:6px; background:var(--panel); box-shadow:0 8px 24px rgba(0,0,0,.6); font:700 1.1rem system-ui, sans-serif; animation:toast-in .15s ease-out; }
+    .roll-toast[hidden] { display:none; }
+    .roll-toast small { display:block; margin-top:.2rem; color:var(--muted); font:400 .85rem/1.4 system-ui, sans-serif; overflow-wrap:anywhere; }
+    .roll-toast .crit { color:var(--green); font-weight:700; }
+    .roll-toast .toast-close { position:absolute; top:.3rem; right:.3rem; width:30px; min-height:30px; padding:0; border-color:transparent; color:var(--muted); font-size:1.1rem; }
+    .roll-toast .toast-timer { position:absolute; left:0; bottom:0; height:3px; background:var(--green); animation:toast-timer 10s linear forwards; }
+    @keyframes toast-in { from { transform:translateY(12px); opacity:0; } to { transform:none; opacity:1; } }
+    @keyframes toast-timer { from { width:100%; } to { width:0; } }
+    @media (prefers-reduced-motion: reduce) { .roll-toast, .roll-toast .toast-timer { animation:none; } }
+    .history-wrap { position:relative; }
+    .roll-log { position:absolute; z-index:30; right:0; top:100%; width:min(360px, 86vw); max-height:300px; overflow-y:auto; margin:.3rem 0 0; padding:.6rem .8rem .6rem 2rem; border:1px solid var(--green); border-radius:4px; background:var(--panel); box-shadow:0 6px 18px rgba(0,0,0,.5); color:var(--text); font:.8rem/1.5 system-ui, sans-serif; }
+    .roll-log[hidden] { display:none; }
+    .skill-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:.5rem; margin-top:1.1rem; }
+    .skill-grid h3 { grid-column:1 / -1; margin:0; font:700 .95rem system-ui, sans-serif; }
+    .skill { display:grid; grid-template-columns:auto 1fr auto; align-items:center; gap:.5rem; padding:.35rem .5rem; border:1px solid var(--line); border-radius:4px; background:var(--field); font:.85rem system-ui, sans-serif; }
+    .skill small { color:var(--muted); display:block; }
+    .skill button { min-height:34px; padding:.3rem .5rem; font-size:.78rem; }
+    .save-line { margin-top:.2rem; color:var(--muted); font:.75rem system-ui, sans-serif; }
+    .save-line output { color:var(--green); font-weight:700; }
+    .score-actions { display:flex; flex-direction:column; gap:.3rem; margin-top:.5rem; }
+    .score-actions button, .roll-actions button, .slot button { min-height:34px; padding:.3rem .5rem; font-size:.78rem; }
+    button[aria-pressed="true"] { background:var(--green); color:#101311; }
+    .roll-actions { grid-column:1 / -1; display:flex; flex-wrap:wrap; gap:.4rem; }
+    .slot-tracker { margin-bottom:1rem; padding:.7rem .8rem; border:1px solid var(--line); border-radius:4px; background:var(--field); }
+    .spell-info { margin:0 0 .7rem; color:var(--muted); font:.85rem/1.5 system-ui, sans-serif; }
+    .slot-grid { display:grid; grid-template-columns:repeat(9,minmax(70px,1fr)); gap:.5rem; }
+    .slot { text-align:center; }
+    .slot .field-label { display:block; }
+    .slot-values { display:flex; align-items:center; justify-content:center; gap:.2rem; }
+    .slot-values input { width:100%; min-width:0; padding:.3rem .2rem; text-align:center; }
+    .slot button { width:100%; margin-top:.3rem; }
+    .slot-actions { display:flex; flex-wrap:wrap; align-items:center; gap:.5rem; margin-top:.7rem; }
+    .slot-actions label { display:flex; align-items:center; gap:.4rem; color:var(--muted); font:.85rem system-ui, sans-serif; }
+    .slot-actions input[type=checkbox] { width:auto; min-height:0; }
+    .empty-state { color:var(--muted); font: .9rem system-ui, sans-serif; }
+    footer { padding:1.5rem; color:var(--muted); text-align:center; font: .8rem system-ui, sans-serif; border-top:1px solid var(--line); }
+    @media(max-width:760px) {
+      .identity-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+      .score-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
+      .slot-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
+      .combat-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
+      .save-actions { margin-left:0; }
+      .entry-row { grid-template-columns:minmax(0,1fr) 42px; }
+      .entry-row .detail-field { grid-column:1; }
+      .entry-row .remove-entry { grid-column:2; grid-row:1 / span 2; }
+      .sheet-nav { gap:.8rem; }
+    }
+    @media(max-width:420px) {
+      .identity-grid { grid-template-columns:1fr 1fr; }
+      .identity-grid .name-field { grid-column:span 2; }
+      .page-head { align-items:start; flex-direction:column; }
+      h1 { font-size:1.7rem; }
+    }
+    @page { size: letter; margin: 0.55in; }
+    @media print {
+      :root { color-scheme: light; --page:#fff; --panel:#fff; --line:#777; --green:#263b25; --red:#7d2118; --text:#111; --muted:#444; --field:#fff; }
+      body { background:#fff !important; color:#111 !important; font:10pt/1.35 Georgia, 'Times New Roman', serif; }
+      .sheet-nav, .character-toolbar, .status, footer, button, #saved-characters, .account, .suggest-list { display:none !important; }
+      .item-link { min-height:0; padding:.12rem .2rem; border-color:#aaa; border-radius:0; background:#fff; font:9pt Georgia, 'Times New Roman', serif; }
+      .item-link::after { content:''; }
+      .sheet-page { width:100%; max-width:none; padding:0; }
+      .page-head { padding-bottom:.35rem; border-bottom:2px solid #333; }
+      h1 { font-size:20pt; }
+      .sheet-section { padding:.55rem 0; border-bottom:1px solid #999; break-inside:avoid; }
+      h2 { color:#222; font-size:12pt; }
+      .field label, .field-label { color:#333; font-size:7pt; }
+      input, select, textarea { min-height:0; padding:.12rem .2rem; border-color:#aaa; border-radius:0; background:#fff !important; color:#111 !important; font:9pt Georgia, 'Times New Roman', serif; }
+      textarea { min-height:55px; }
+      .identity-grid, .score-grid, .combat-grid { gap:.35rem; }
+      .entry-list { gap:.2rem; }
+      .entry-row { break-inside:avoid; }
+      .remove-entry { display:none !important; }
+      .modifier { color:#222; }
+      .sheet-section.is-collapsed > .section-body { display:block !important; }
+      .section-toggle, .collapse-tools, .roll-toast, #rolls-section { display:none !important; }
+      .roll-bar, .roll-log, .skill button, .slot-actions, .slot button { display:none !important; }
+      .slot-tracker { border-color:#aaa; background:#fff; }
+      a { color:#111; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="sheet-nav" aria-label="Main navigation">
+    <a class="sheet-brand" href="/">D&amp;D 5e SRD</a>
+    <a href="/neotokyo">NeoTokyo</a>
+    <a href="/characters" aria-current="page">Characters</a>
+    {{template "account_nav" .}}
+  </nav>
+  <main class="sheet-page">
+    <header class="page-head">
+      <h1>Character Sheets</h1>
+      <div class="account">{{if .Guest}}{{.User}}{{else}}Signed in as {{.User}}{{end}}</div>
+    </header>
+    {{if .Guest}}<div class="guest-notice" role="status">Temporary guest access is enabled. Sheets are saved in this browser and may be lost if its guest cookie is cleared. This mode is not a substitute for Authelia.</div>{{end}}
+    <div class="character-toolbar">
+      <div class="field" id="character-picker">
+        <label for="saved-characters">Saved characters</label>
+        <select id="saved-characters"><option value="">New character</option></select>
+      </div>
+      <button id="new-character" type="button">New</button>
+      <div class="save-actions">
+        <button id="print-character" type="button" title="Print or save this sheet as PDF">Save as PDF</button>
+        <button id="delete-character" class="danger" type="button" hidden>Delete</button>
+        <button id="save-character" class="primary" type="button">Save character</button>
+      </div>
+    </div>
+    <div id="save-status" class="status" role="status" aria-live="polite"></div>
+
+    <form id="character-form" autocomplete="off">
+      <section class="sheet-section" aria-labelledby="identity-title">
+        <div class="section-head"><h2 id="identity-title">Identity</h2></div>
+        <div class="identity-grid">
+          <div class="field name-field"><label for="name">Character name</label><input id="name" name="name" maxlength="100" required></div>
+          <div class="field"><label for="species">Species</label><select id="species" name="species"><option value=""></option></select></div>
+          <div class="field"><label for="class">Class</label><select id="class" name="class"><option value=""></option></select></div>
+          <div class="field"><label for="subclass">Subclass</label><select id="subclass" name="subclass" disabled><option value=""></option></select></div>
+          <div class="field"><label for="background">Background</label><select id="background" name="background"><option value=""></option></select></div>
+          <div class="field"><label for="level">Level</label><input id="level" name="level" type="number" min="1" max="20" value="1" required></div>
+          <div class="field"><label for="experience-points">Experience points</label><input id="experience-points" name="experience_points" type="number" min="0" max="10000000" value="0"></div>
+          <div class="field"><label for="alignment">Alignment</label><input id="alignment" name="alignment" maxlength="80"></div>
+        </div>
+      </section>
+
+      <section class="sheet-section" id="rolls-section" aria-labelledby="rolls-title">
+        <div class="section-head"><h2 id="rolls-title">Dice rolls</h2></div>
+        <div class="roll-bar">
+          <div class="field"><label for="roll-mode">Roll with</label><select id="roll-mode"><option value="normal">Normal</option><option value="advantage">Advantage</option><option value="disadvantage">Disadvantage</option></select></div>
+          <div id="roll-result" class="roll-result">Use the Check, Save, Attack and Damage buttons to roll.</div>
+          <div class="history-wrap">
+            <button type="button" id="roll-history-toggle" aria-expanded="false" aria-controls="roll-log">Roll history</button>
+            <ol id="roll-log" class="roll-log" aria-label="Recent rolls" hidden></ol>
+          </div>
+        </div>
+      </section>
+
+      <section class="sheet-section" aria-labelledby="abilities-title">
+        <div class="section-head"><h2 id="abilities-title">Ability scores</h2><span class="prof-readout">Proficiency bonus <output id="prof-bonus">+2</output></span></div>
+        <div class="score-grid">
+          <div class="field score"><label for="strength">Strength</label><input id="strength" data-score="strength" type="number" min="1" max="30" value="10"><output class="modifier" data-modifier="strength">+0</output></div>
+          <div class="field score"><label for="dexterity">Dexterity</label><input id="dexterity" data-score="dexterity" type="number" min="1" max="30" value="10"><output class="modifier" data-modifier="dexterity">+0</output></div>
+          <div class="field score"><label for="constitution">Constitution</label><input id="constitution" data-score="constitution" type="number" min="1" max="30" value="10"><output class="modifier" data-modifier="constitution">+0</output></div>
+          <div class="field score"><label for="intelligence">Intelligence</label><input id="intelligence" data-score="intelligence" type="number" min="1" max="30" value="10"><output class="modifier" data-modifier="intelligence">+0</output></div>
+          <div class="field score"><label for="wisdom">Wisdom</label><input id="wisdom" data-score="wisdom" type="number" min="1" max="30" value="10"><output class="modifier" data-modifier="wisdom">+0</output></div>
+          <div class="field score"><label for="charisma">Charisma</label><input id="charisma" data-score="charisma" type="number" min="1" max="30" value="10"><output class="modifier" data-modifier="charisma">+0</output></div>
+        </div>
+        <div class="skill-grid" id="skill-grid"><h3>Skill checks</h3></div>
+      </section>
+
+      <section class="sheet-section" aria-labelledby="combat-title">
+        <div class="section-head"><h2 id="combat-title">Combat</h2></div>
+        <div class="combat-grid">
+          <div class="field"><label for="armor-class">Armor class</label><input id="armor-class" name="armor_class" type="number" min="0" max="100" value="10"></div>
+          <div class="field"><label for="initiative">Initiative</label><input id="initiative" name="initiative" type="number" min="-20" max="50" value="0"></div>
+          <div class="field"><label for="speed">Speed</label><input id="speed" name="speed" type="number" min="0" max="1000" value="30"></div>
+          <div class="field"><label for="current-hp">Current HP</label><input id="current-hp" name="current_hp" type="number" min="0" max="9999" value="0"></div>
+          <div class="field"><label for="max-hp">Maximum HP</label><input id="max-hp" name="max_hp" type="number" min="0" max="9999" value="0"></div>
+          <div class="field"><label for="temporary-hp">Temporary HP</label><input id="temporary-hp" name="temporary_hp" type="number" min="0" max="9999" value="0"></div>
+          <div class="field"><label for="hit-dice">Hit dice</label><input id="hit-dice" name="hit_dice" maxlength="40" placeholder="e.g. 5d10"></div>
+        </div>
+      </section>
+
+      <section class="sheet-section" data-list-section="weapons">
+        <div class="section-head"><h2>Weapons</h2><button type="button" data-add-entry="weapons">Add weapon</button></div>
+        <div class="entry-list" data-entry-list="weapons"></div>
+      </section>
+      <section class="sheet-section" data-list-section="spells">
+        <div class="section-head"><h2>Spells</h2><button type="button" data-add-entry="spells">Add spell</button></div>
+        <div class="slot-tracker" id="slot-tracker">
+          <p class="spell-info" id="spell-info"></p>
+          <div class="slot-grid" id="slot-grid"></div>
+          <div class="slot-actions">
+            <button type="button" id="long-rest">Long rest</button>
+            <button type="button" id="short-rest" hidden>Short rest (pact slots)</button>
+            <button type="button" id="reset-slots">Set slots from class level</button>
+            <button type="button" id="spell-attack">Spell attack</button>
+            <label><input type="checkbox" id="spell-filter"> Only suggest spells on my class list that I can cast</label>
+          </div>
+        </div>
+        <div class="entry-list" data-entry-list="spells"></div>
+      </section>
+      <section class="sheet-section" data-list-section="feats">
+        <div class="section-head"><h2>Feats</h2><button type="button" data-add-entry="feats">Add feat</button></div>
+        <div class="entry-list" data-entry-list="feats"></div>
+      </section>
+      <section class="sheet-section" data-list-section="equipment">
+        <div class="section-head"><h2>Equipment</h2><button type="button" data-add-entry="equipment">Add item</button></div>
+        <div class="entry-list" data-entry-list="equipment"></div>
+      </section>
+      <section class="sheet-section reference-section" id="reference-section" hidden>
+        <div class="section-head"><h2>Class &amp; Origin Notes</h2></div>
+        <p class="reference-hint">Rules summary from your chosen species, class, subclass and background. Read-only; it updates when you change them.</p>
+        <div id="reference-list"></div>
+      </section>
+      <section class="sheet-section">
+        <div class="section-head"><h2>Notes</h2></div>
+        <div class="field notes-field"><label for="notes">Notes</label><textarea id="notes" name="notes" maxlength="20000"></textarea></div>
+      </section>
+    </form>
+  </main>
+  <div id="roll-toast" class="roll-toast" role="status" aria-live="polite" hidden></div>
+  <footer>Character sheets are private to your authenticated account.</footer>
+  <script>
+  (function () {
+    var form = document.getElementById('character-form');
+    var picker = document.getElementById('saved-characters');
+    var saveButton = document.getElementById('save-character');
+    var deleteButton = document.getElementById('delete-character');
+    var status = document.getElementById('save-status');
+    var activeID = '';
+    var busy = false;
+    var lists = ['weapons', 'spells', 'feats', 'equipment'];
+    var options = {};
+    var classSelect = document.getElementById('class');
+    var subclassSelect = document.getElementById('subclass');
+    var draftKey = 'dnd5e-character-draft:' + {{.User}};
+    var restoring = true;
+    var draftTimer = null;
+
+    function setSelectValue(select, value) {
+      if (value && !Array.prototype.some.call(select.options, function (o) { return o.value === value; })) {
+        select.add(new Option(value, value));
+      }
+      select.value = value || '';
+    }
+
+    function populateSelect(id, items) {
+      var select = document.getElementById(id);
+      var current = select.value;
+      select.replaceChildren(new Option('', ''));
+      (items || []).forEach(function (item) { select.add(new Option(item.name, item.name)); });
+      setSelectValue(select, current);
+    }
+
+    var ABILITIES = ['strength', 'dexterity', 'constitution', 'intelligence', 'wisdom', 'charisma'];
+    var levelInput = document.getElementById('level');
+    var rollMode = document.getElementById('roll-mode');
+    var spellFilter = document.getElementById('spell-filter');
+    var autoMax = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+    function signed(n) { return n >= 0 ? '+' + n : '\u2212' + Math.abs(n); }
+    function scoreInput(ability) { return document.querySelector('[data-score="' + ability + '"]'); }
+    function abilityMod(ability) {
+      var value = Number(scoreInput(ability).value);
+      return Math.floor(((isNaN(value) ? 10 : value) - 10) / 2);
+    }
+    function profBonus() {
+      var level = Math.min(20, Math.max(1, Number(levelInput.value) || 1));
+      return 2 + Math.floor((level - 1) / 4);
+    }
+    function titleCase(text) { return text.charAt(0).toUpperCase() + text.slice(1); }
+    function saveToggle(ability) { return document.querySelector('[data-save-toggle="' + ability + '"]'); }
+    function saveBonus(ability) { return abilityMod(ability) + (saveToggle(ability).getAttribute('aria-pressed') === 'true' ? profBonus() : 0); }
+
+    function rollDie(sides) {
+      var buffer = new Uint32Array(1);
+      var limit = Math.floor(4294967296 / sides) * sides;
+      do { crypto.getRandomValues(buffer); } while (buffer[0] >= limit);
+      return buffer[0] % sides + 1;
+    }
+
+    function logRoll(label, detail, total, note) {
+      var result = document.getElementById('roll-result');
+      result.replaceChildren();
+      result.append(label + ': ' + (total == null ? '' : total));
+      var small = document.createElement('small');
+      small.textContent = detail;
+      if (note) { var flag = document.createElement('span'); flag.className = 'crit'; flag.textContent = ' ' + note; small.appendChild(flag); }
+      result.appendChild(small);
+      var log = document.getElementById('roll-log');
+      if (!log.querySelector('li')) log.replaceChildren();
+      var item = document.createElement('li');
+      item.textContent = label + ': ' + detail + (note ? ' (' + note + ')' : '');
+      log.insertBefore(item, log.firstChild);
+      while (log.children.length > 10) log.removeChild(log.lastChild);
+      showToast(label, detail, total, note);
+    }
+
+    var toastTimer = null;
+    function hideToast() {
+      window.clearTimeout(toastTimer);
+      document.getElementById('roll-toast').hidden = true;
+    }
+
+    // Shows only the latest roll and restarts the 10 second countdown each time.
+    function showToast(label, detail, total, note) {
+      var toast = document.getElementById('roll-toast');
+      toast.replaceChildren();
+      toast.append(label + (total == null ? '' : ': ' + total));
+      var small = document.createElement('small');
+      small.textContent = detail;
+      if (note) { var flag = document.createElement('span'); flag.className = 'crit'; flag.textContent = ' ' + note; small.appendChild(flag); }
+      var close = document.createElement('button');
+      close.type = 'button';
+      close.className = 'toast-close';
+      close.setAttribute('aria-label', 'Dismiss roll result');
+      close.textContent = '\u00d7';
+      close.addEventListener('click', hideToast);
+      var timer = document.createElement('div');
+      timer.className = 'toast-timer';
+      toast.append(small, close, timer);
+      toast.hidden = false;
+      window.clearTimeout(toastTimer);
+      toastTimer = window.setTimeout(hideToast, 10000);
+    }
+
+    var collapseKey = 'dnd5e-sheet-collapsed';
+    function readCollapsed() {
+      try { return JSON.parse(localStorage.getItem(collapseKey)) || {}; } catch (error) { return {}; }
+    }
+
+    function setCollapsed(section, collapsed, remember) {
+      section.classList.toggle('is-collapsed', collapsed);
+      section.querySelector('.section-toggle').setAttribute('aria-expanded', String(!collapsed));
+      if (!remember) return;
+      var saved = readCollapsed();
+      if (collapsed) saved[section.dataset.sectionKey] = true; else delete saved[section.dataset.sectionKey];
+      try { localStorage.setItem(collapseKey, JSON.stringify(saved)); } catch (error) { /* storage unavailable */ }
+    }
+
+    function buildCollapsibleSections() {
+      var saved = readCollapsed();
+      var sections = Array.prototype.slice.call(document.querySelectorAll('#character-form > .sheet-section'));
+      sections.forEach(function (section, index) {
+        var head = section.querySelector('.section-head');
+        var heading = head.querySelector('h2');
+        var key = (heading.id || heading.textContent).trim();
+        section.dataset.sectionKey = key;
+        var body = document.createElement('div');
+        body.className = 'section-body';
+        body.id = 'section-body-' + index;
+        while (head.nextSibling) body.appendChild(head.nextSibling);
+        section.appendChild(body);
+        var toggle = document.createElement('button');
+        toggle.type = 'button';
+        toggle.className = 'section-toggle';
+        toggle.setAttribute('aria-controls', body.id);
+        toggle.setAttribute('aria-label', 'Toggle ' + heading.textContent + ' section');
+        toggle.addEventListener('click', function () { setCollapsed(section, !section.classList.contains('is-collapsed'), true); });
+        head.insertBefore(toggle, head.firstChild);
+        setCollapsed(section, Boolean(saved[key]), false);
+      });
+      var tools = document.createElement('div');
+      tools.className = 'collapse-tools';
+      [['Collapse all', true], ['Expand all', false]].forEach(function (pair) {
+        var button = document.createElement('button');
+        button.type = 'button';
+        button.textContent = pair[0];
+        button.addEventListener('click', function () {
+          sections.forEach(function (section) { setCollapsed(section, pair[1], true); });
+        });
+        tools.appendChild(button);
+      });
+      form.insertBefore(tools, form.firstChild);
+    }
+
+    function rollD20(label, bonus) {
+      var mode = rollMode.value;
+      var first = rollDie(20);
+      var second = mode === 'normal' ? null : rollDie(20);
+      var kept = second === null ? first : mode === 'advantage' ? Math.max(first, second) : Math.min(first, second);
+      var dice = second === null ? 'd20 [' + first + ']' : 'd20 [' + first + ', ' + second + '] keep ' + kept + ' (' + mode + ')';
+      var total = kept + bonus;
+      logRoll(label, dice + (bonus ? ' ' + signed(bonus) : '') + ' = ' + total, total, kept === 20 ? 'Natural 20' : kept === 1 ? 'Natural 1' : '');
+      return kept;
+    }
+
+    function rollDamage(label, detail, bonus, crit) {
+      var match = /(\d+)d(\d+)/i.exec(detail || '');
+      if (!match) { logRoll(label, 'No damage dice (like 1d8) found in the weapon details.', null, ''); return; }
+      var count = Math.min(100, Number(match[1]) * (crit ? 2 : 1));
+      var sides = Number(match[2]);
+      var rolls = [];
+      var sum = 0;
+      for (var i = 0; i < count; i++) { var value = rollDie(sides); rolls.push(value); sum += value; }
+      var total = sum + bonus;
+      logRoll(label, count + 'd' + sides + ' [' + rolls.join(', ') + ']' + (bonus ? ' ' + signed(bonus) : '') + ' = ' + total, total, crit ? 'Critical dice doubled' : '');
+    }
+
+    // Finesse weapons list both STR and DEX; use whichever modifier is higher.
+    function weaponAbility(detail) {
+      var found = [];
+      if (/\bSTR\b/i.test(detail)) found.push('strength');
+      if (/\bDEX\b/i.test(detail)) found.push('dexterity');
+      if (!found.length) found.push('strength');
+      return found.reduce(function (best, ability) { return abilityMod(ability) > abilityMod(best) ? ability : best; });
+    }
+
+    function activeSpellcasting() {
+      var sub = (options.subclasses || []).filter(function (item) { return item.class === classSelect.value && item.name === subclassSelect.value; })[0];
+      var cls = (options.classes || []).filter(function (item) { return item.name === classSelect.value; })[0];
+      var sc = (sub && sub.spellcasting) || (cls && cls.spellcasting);
+      if (!sc) return null;
+      var level = Math.min(20, Math.max(1, Number(levelInput.value) || 1));
+      return { sc: sc, row: sc.rows[level - 1], level: level };
+    }
+
+    function slotInputs(level) {
+      var cell = document.querySelector('[data-slot="' + level + '"]');
+      return { current: cell.querySelector('[data-slot-current]'), max: cell.querySelector('[data-slot-max]') };
+    }
+
+    function slotTargets() {
+      var active = activeSpellcasting();
+      return [0].concat([1, 2, 3, 4, 5, 6, 7, 8, 9].map(function (level) { return active && active.row.slots[level - 1] || 0; }));
+    }
+
+    function syncSlots() {
+      var targets = slotTargets();
+      for (var level = 1; level <= 9; level++) {
+        var inputs = slotInputs(level);
+        var max = Number(inputs.max.value) || 0;
+        if (max === autoMax[level] && targets[level] !== max) {
+          inputs.current.value = Math.min(targets[level], Math.max(0, (Number(inputs.current.value) || 0) + targets[level] - max));
+          inputs.max.value = targets[level];
+        }
+        autoMax[level] = targets[level];
+      }
+    }
+
+    function updateSpellInfo() {
+      var info = document.getElementById('spell-info');
+      var active = activeSpellcasting();
+      document.getElementById('short-rest').hidden = !(active && active.sc.kind === 'pact');
+      if (!active) {
+        info.textContent = 'Pick a spellcasting class (or a casting subclass such as Cyber-Mage Ronin or The Decker) to fill slots automatically. You can also enter slots by hand.';
+        return;
+      }
+      var mod = abilityMod(active.sc.ability);
+      var parts = [titleCase(active.sc.ability) + ' casting', 'Spell save DC ' + (8 + profBonus() + mod), 'Spell attack ' + signed(profBonus() + mod)];
+      if (active.row.cantrips) parts.push('Cantrips known ' + active.row.cantrips);
+      if (active.row.known) parts.push('Spells known ' + active.row.known);
+      if (active.sc.prepared_mode === 'full_level') parts.push('Prepare ' + Math.max(1, mod + active.level));
+      if (active.sc.prepared_mode === 'half_level') parts.push('Prepare ' + Math.max(1, mod + Math.floor(active.level / 2)));
+      if (active.row.pact_slots) parts.push('Pact slots ' + active.row.pact_slots + ' at level ' + active.row.pact_level);
+      parts.push(active.row.max_spell_level ? 'Highest spell level ' + active.row.max_spell_level : 'No spell slots yet at this level');
+      info.textContent = parts.join(' \u00b7 ');
+    }
+
+    var SKILLS = [
+      ['Hydraulic Prowess', 'strength'], ['Vector Agility', 'dexterity'], ['Palm-Hack', 'dexterity'], ['Optic Scrub', 'dexterity'],
+      ['Cyber-Arcana', 'intelligence'], ['Data Archives', 'intelligence'], ['System Forensics', 'intelligence'],
+      ['Awakened Ecology', 'intelligence'], ['Spirit & Tech Cults', 'intelligence'],
+      ['Bio-Drone Control', 'wisdom'], ['Subtext Scan', 'wisdom'], ['Street Doc', 'wisdom'], ['Threat Scan', 'wisdom'], ['Street Navigation', 'wisdom'],
+      ['Deep Fake', 'charisma'], ['Threat Display', 'charisma'], ['Performance', 'charisma'], ['Corporate Protocol', 'charisma']
+    ];
+    function skillToggle(name) { return document.querySelector('[data-skill-toggle="' + name + '"]'); }
+    function skillBonus(skill) { return abilityMod(skill[1]) + (skillToggle(skill[0]).getAttribute('aria-pressed') === 'true' ? profBonus() : 0); }
+
+    function buildSkillUI() {
+      var grid = document.getElementById('skill-grid');
+      SKILLS.forEach(function (skill) {
+        var cell = document.createElement('div');
+        cell.className = 'skill';
+        var toggle = document.createElement('button');
+        toggle.type = 'button';
+        toggle.dataset.skillToggle = skill[0];
+        toggle.setAttribute('aria-pressed', 'false');
+        toggle.textContent = 'Prof';
+        toggle.title = 'Add your proficiency bonus to ' + skill[0];
+        toggle.addEventListener('click', function () {
+          toggle.setAttribute('aria-pressed', toggle.getAttribute('aria-pressed') === 'true' ? 'false' : 'true');
+          updateModifiers();
+          scheduleDraft();
+        });
+        var label = document.createElement('span');
+        label.append(skill[0]);
+        var ability = document.createElement('small');
+        ability.textContent = titleCase(skill[1]);
+        label.appendChild(ability);
+        var roll = document.createElement('button');
+        roll.type = 'button';
+        roll.dataset.skillRoll = skill[0];
+        roll.addEventListener('click', function () { rollD20(skill[0] + ' check', skillBonus(skill)); });
+        cell.append(toggle, label, roll);
+        grid.appendChild(cell);
+      });
+      var history = document.getElementById('roll-history-toggle');
+      var log = document.getElementById('roll-log');
+      history.addEventListener('click', function () {
+        log.hidden = !log.hidden;
+        history.setAttribute('aria-expanded', String(!log.hidden));
+        if (!log.children.length && !log.hidden) log.textContent = 'No rolls yet.';
+      });
+      document.addEventListener('click', function (event) {
+        if (!log.hidden && !event.target.closest('.history-wrap')) { log.hidden = true; history.setAttribute('aria-expanded', 'false'); }
+      });
+    }
+
+    function buildRollUI() {
+      buildSkillUI();
+      ABILITIES.forEach(function (ability) {
+        var cell = scoreInput(ability).closest('.score');
+        var line = document.createElement('div');
+        line.className = 'save-line';
+        line.append('Save ');
+        var out = document.createElement('output');
+        out.dataset.saveTotal = ability;
+        line.appendChild(out);
+        var actions = document.createElement('div');
+        actions.className = 'score-actions';
+        var toggle = document.createElement('button');
+        toggle.type = 'button';
+        toggle.dataset.saveToggle = ability;
+        toggle.setAttribute('aria-pressed', 'false');
+        toggle.textContent = 'Save proficiency';
+        toggle.title = 'Add your proficiency bonus to ' + titleCase(ability) + ' saving throws';
+        toggle.addEventListener('click', function () {
+          toggle.setAttribute('aria-pressed', toggle.getAttribute('aria-pressed') === 'true' ? 'false' : 'true');
+          updateModifiers();
+          scheduleDraft();
+        });
+        var check = document.createElement('button');
+        check.type = 'button';
+        check.dataset.rollCheck = ability;
+        check.addEventListener('click', function () { rollD20(titleCase(ability) + ' check', abilityMod(ability)); });
+        var save = document.createElement('button');
+        save.type = 'button';
+        save.dataset.rollSave = ability;
+        save.addEventListener('click', function () { rollD20(titleCase(ability) + ' save', saveBonus(ability)); });
+        actions.append(toggle, check, save);
+        cell.append(line, actions);
+      });
+      var grid = document.getElementById('slot-grid');
+      var ordinals = ['1st', '2nd', '3rd', '4th', '5th', '6th', '7th', '8th', '9th'];
+      for (var level = 1; level <= 9; level++) {
+        (function (level) {
+          var cell = document.createElement('div');
+          cell.className = 'slot';
+          cell.dataset.slot = level;
+          var label = document.createElement('span');
+          label.className = 'field-label';
+          label.textContent = ordinals[level - 1];
+          var values = document.createElement('div');
+          values.className = 'slot-values';
+          var current = document.createElement('input');
+          var max = document.createElement('input');
+          [[current, 'current', 'remaining'], [max, 'max', 'maximum']].forEach(function (pair) {
+            pair[0].type = 'number'; pair[0].min = 0; pair[0].max = 99; pair[0].value = 0;
+            pair[0].dataset['slot' + titleCase(pair[1])] = '';
+            pair[0].setAttribute('aria-label', ordinals[level - 1] + '-level slots ' + pair[2]);
+          });
+          values.append(current, '/', max);
+          var use = document.createElement('button');
+          use.type = 'button';
+          use.textContent = 'Use';
+          use.setAttribute('aria-label', 'Use one ' + ordinals[level - 1] + '-level slot');
+          use.addEventListener('click', function () {
+            current.value = Math.max(0, (Number(current.value) || 0) - 1);
+            scheduleDraft();
+          });
+          cell.append(label, values, use);
+          grid.appendChild(cell);
+        })(level);
+      }
+      document.getElementById('long-rest').addEventListener('click', function () {
+        for (var level = 1; level <= 9; level++) { var inputs = slotInputs(level); inputs.current.value = inputs.max.value; }
+        scheduleDraft();
+      });
+      document.getElementById('short-rest').addEventListener('click', function () {
+        var active = activeSpellcasting();
+        if (!active || !active.row.pact_level) return;
+        var inputs = slotInputs(active.row.pact_level);
+        inputs.current.value = Math.max(Number(inputs.current.value) || 0, Math.min(Number(inputs.max.value) || 0, active.row.pact_slots));
+        scheduleDraft();
+      });
+      document.getElementById('reset-slots').addEventListener('click', function () {
+        var targets = slotTargets();
+        for (var level = 1; level <= 9; level++) {
+          var inputs = slotInputs(level);
+          inputs.max.value = targets[level];
+          inputs.current.value = targets[level];
+          autoMax[level] = targets[level];
+        }
+        scheduleDraft();
+      });
+      document.getElementById('spell-attack').addEventListener('click', function () {
+        var active = activeSpellcasting();
+        if (!active) { logRoll('Spell attack', 'Choose a spellcasting class first.', null, ''); return; }
+        rollD20('Spell attack', profBonus() + abilityMod(active.sc.ability));
+      });
+    }
+
+    // Ranks prefix matches first, then substring, then in-order character matches.
+    function score(name, query) {
+      var n = name.toLowerCase();
+      if (n === query) return 0;
+      if (n.startsWith(query)) return 1;
+      var words = n.split(/[^a-z0-9]+/);
+      if (words.some(function (w) { return w.startsWith(query); })) return 2;
+      if (n.includes(query)) return 3;
+      var i = 0;
+      for (var k = 0; k < n.length && i < query.length; k++) if (n[k] === query[i]) i++;
+      return i === query.length ? 4 : -1;
+    }
+
+    function search(listName, query) {
+      var q = query.trim().toLowerCase();
+      var items = options[listName] || [];
+      if (listName === 'spells' && spellFilter.checked) {
+        var active = activeSpellcasting();
+        if (active && (active.row.max_spell_level || active.row.cantrips)) {
+          items = items.filter(function (item) {
+            return (item.spell_classes || []).indexOf(active.sc.spell_list_from) >= 0 && item.spell_level != null && item.spell_level <= active.row.max_spell_level;
+          });
+        }
+      }
+      if (!q) return items.slice();
+      return items.map(function (item) { return { item: item, s: score(item.name, q) }; })
+        .filter(function (r) { return r.s >= 0; })
+        .sort(function (a, b) { return a.s - b.s || a.item.name.length - b.item.name.length; })
+        .map(function (r) { return r.item; });
+    }
+
+    function findOption(listName, name) {
+      var n = (name || '').trim().toLowerCase();
+      if (!n) return null;
+      var items = options[listName] || [];
+      for (var i = 0; i < items.length; i++) if (items[i].name.toLowerCase() === n) return items[i];
+      return null;
+    }
+
+    function attachSuggest(input, listName, onChoose) {
+      var wrap = input.closest('.suggest-wrap');
+      var menu = document.createElement('ul');
+      menu.className = 'suggest-list';
+      menu.setAttribute('role', 'listbox');
+      menu.hidden = true;
+      wrap.appendChild(menu);
+      var results = [];
+      var optionEls = [];
+      var active = -1;
+
+      function close() { menu.hidden = true; active = -1; }
+      function highlight() {
+        optionEls.forEach(function (li, i) { li.classList.toggle('active', i === active); });
+        if (optionEls[active]) optionEls[active].scrollIntoView({ block: 'nearest' });
+      }
+      function choose(item) { close(); onChoose(item); }
+      function render() {
+        var browsing = !input.value.trim();
+        results = search(listName, input.value);
+        menu.replaceChildren();
+        optionEls = [];
+        var lastGroup = null;
+        results.forEach(function (item) {
+          if (browsing && item.group && item.group !== lastGroup) {
+            var heading = document.createElement('li');
+            heading.className = 'group-heading';
+            heading.textContent = item.group;
+            heading.addEventListener('mousedown', function (event) { event.preventDefault(); });
+            menu.appendChild(heading);
+            lastGroup = item.group;
+          }
+          var li = document.createElement('li');
+          li.setAttribute('role', 'option');
+          li.textContent = item.name;
+          var detail = browsing ? item.detail : joinText([item.detail, item.group]);
+          if (detail) { var small = document.createElement('small'); small.textContent = detail; li.appendChild(small); }
+          li.addEventListener('mousedown', function (event) { event.preventDefault(); choose(item); });
+          menu.appendChild(li);
+          optionEls.push(li);
+        });
+        active = results.length && !browsing ? 0 : -1;
+        menu.hidden = !results.length;
+        highlight();
+      }
+      input.addEventListener('input', render);
+      input.addEventListener('focus', render);
+      input.addEventListener('blur', close);
+      input.addEventListener('change', function () {
+        var match = findOption(listName, input.value);
+        if (match) choose(match);
+      });
+      input.addEventListener('keydown', function (event) {
+        if (menu.hidden || !results.length) return;
+        if (event.key === 'ArrowDown') { active = (active + 1) % results.length; highlight(); event.preventDefault(); }
+        else if (event.key === 'ArrowUp') { active = (active - 1 + results.length) % results.length; highlight(); event.preventDefault(); }
+        else if (event.key === 'Enter' && active >= 0) { choose(results[active]); event.preventDefault(); }
+        else if (event.key === 'Escape') { close(); }
+      });
+    }
+
+    function joinText(parts) { return parts.filter(Boolean).join(' · '); }
+
+    function populateSubclasses(className, current) {
+      subclassSelect.replaceChildren(new Option('', ''));
+      (options.subclasses || []).filter(function (item) { return item.class === className; })
+        .forEach(function (item) { subclassSelect.add(new Option(item.name, item.name)); });
+      subclassSelect.disabled = !className;
+      setSelectValue(subclassSelect, className ? current : '');
+      renderReference();
+      updateModifiers();
+    }
+
+    // Read-only summary derived from the chosen options; never saved with the sheet.
+    function renderReference() {
+      var container = document.getElementById('reference-list');
+      var section = document.getElementById('reference-section');
+      var picks = [
+        ['Species', options.species || [], form.elements.namedItem('species').value],
+        ['Class', options.classes || [], classSelect.value],
+        ['Subclass', (options.subclasses || []).filter(function (item) { return item.class === classSelect.value; }), subclassSelect.value],
+        ['Background', options.backgrounds || [], form.elements.namedItem('background').value]
+      ];
+      container.replaceChildren();
+      picks.forEach(function (pick) {
+        var match = pick[2] && pick[1].filter(function (item) { return item.name === pick[2]; })[0];
+        if (!match || !(match.notes || []).length) return;
+        var group = document.createElement('div');
+        group.className = 'reference-group';
+        var heading = document.createElement('h3');
+        var kind = document.createElement('small');
+        kind.textContent = pick[0];
+        heading.appendChild(kind);
+        if (match.link) {
+          var anchor = document.createElement('a');
+          anchor.href = match.link; anchor.target = '_blank'; anchor.rel = 'noopener';
+          anchor.textContent = match.name;
+          heading.appendChild(anchor);
+        } else heading.appendChild(document.createTextNode(match.name));
+        group.appendChild(heading);
+        var list = document.createElement('dl');
+        match.notes.forEach(function (note) {
+          var term = document.createElement('dt'); term.textContent = note.label;
+          var detail = document.createElement('dd'); detail.textContent = note.text;
+          list.appendChild(term); list.appendChild(detail);
+        });
+        group.appendChild(list);
+        container.appendChild(group);
+      });
+      section.hidden = !container.children.length;
+    }
+
+    function writeDraft() {
+      window.clearTimeout(draftTimer);
+      draftTimer = null;
+      if (restoring) return;
+      try {
+        localStorage.setItem(draftKey, JSON.stringify({ id: activeID, character: serializeForm(), savedAt: Date.now() }));
+      } catch (error) { /* storage unavailable or full; the saved sheet is unaffected */ }
+    }
+
+    function scheduleDraft() {
+      if (restoring) return;
+      window.clearTimeout(draftTimer);
+      draftTimer = window.setTimeout(writeDraft, 300);
+    }
+
+    function readDraft() {
+      try {
+        var draft = JSON.parse(localStorage.getItem(draftKey));
+        return draft && draft.character ? draft : null;
+      } catch (error) { return null; }
+    }
+
+    function restoreDraft() {
+      var draft = readDraft();
+      if (!draft) return false;
+      var known = draft.id && Array.prototype.some.call(picker.options, function (option) { return option.value === draft.id; });
+      fillForm(Object.assign({}, draft.character, { id: known ? draft.id : '' }));
+      return true;
+    }
+
+    function setStatus(message, isError) {
+      status.textContent = message;
+      status.classList.toggle('error', Boolean(isError));
+    }
+
+    function setBusy(value) {
+      busy = value;
+      saveButton.disabled = value;
+      picker.disabled = value;
+      document.querySelectorAll('[data-add-entry], .remove-entry').forEach(function (button) { button.disabled = value; });
+    }
+
+    function updateModifiers() {
+      document.querySelectorAll('[data-score]').forEach(function (input) {
+        var score = Number(input.value) || 0;
+        var modifier = Math.floor((score - 10) / 2);
+        document.querySelector('[data-modifier="' + input.dataset.score + '"]').textContent = signed(modifier);
+      });
+      document.getElementById('prof-bonus').textContent = signed(profBonus());
+      ABILITIES.forEach(function (ability) {
+        document.querySelector('[data-save-total="' + ability + '"]').textContent = signed(saveBonus(ability));
+        document.querySelector('[data-roll-check="' + ability + '"]').textContent = 'Check ' + signed(abilityMod(ability));
+        document.querySelector('[data-roll-save="' + ability + '"]').textContent = 'Save ' + signed(saveBonus(ability));
+      });
+      SKILLS.forEach(function (skill) {
+        document.querySelector('[data-skill-roll="' + skill[0] + '"]').textContent = 'Roll ' + signed(skillBonus(skill));
+      });
+      syncSlots();
+      updateSpellInfo();
+      document.querySelectorAll('.entry-row').forEach(function (row) { if (row.refreshRolls) row.refreshRolls(); });
+    }
+
+    function addEntry(listName, entry) {
+      var container = document.querySelector('[data-entry-list="' + listName + '"]');
+      var row = document.createElement('div');
+      row.className = 'entry-row';
+      var nameField = document.createElement('div');
+
+      var detailField = document.createElement('div');
+      detailField.className = 'field detail-field';
+      var detailLabel = document.createElement('label');
+      detailLabel.textContent = listName === 'weapons' ? 'Damage and notes' : listName === 'spells' ? 'Level and notes' : 'Details';
+      var detailInput = document.createElement('input');
+      detailInput.type = 'text';
+      detailInput.maxLength = 2000;
+      detailInput.dataset.entryDetail = '';
+      detailInput.value = entry && entry.detail ? entry.detail : '';
+      detailLabel.appendChild(detailInput);
+      detailField.appendChild(detailLabel);
+
+      var remove = document.createElement('button');
+      remove.type = 'button';
+      remove.className = 'remove-entry';
+      remove.setAttribute('aria-label', 'Remove entry');
+      remove.title = 'Remove entry';
+      remove.textContent = '×';
+      remove.addEventListener('click', function () { row.remove(); scheduleDraft(); });
+
+      function showLink(option) {
+        nameField.className = 'item-link-cell';
+        nameField.replaceChildren();
+        var label = document.createElement('span');
+        label.className = 'field-label';
+        label.textContent = 'Name';
+        var link;
+        if (option.link) {
+          link = document.createElement('a');
+          link.href = option.link;
+          link.target = '_blank';
+          link.rel = 'noopener';
+          link.title = 'Open full details in the starter guide';
+        } else {
+          link = document.createElement('span');
+        }
+        link.className = 'item-link';
+        link.textContent = option.name;
+        nameField.append(label, link);
+        row.getName = function () { return option.name; };
+      }
+
+      function showInput(value) {
+        nameField.className = 'field suggest-wrap';
+        nameField.replaceChildren();
+        var nameLabel = document.createElement('label');
+        nameLabel.textContent = 'Name';
+        var nameInput = document.createElement('input');
+        nameInput.type = 'text';
+        nameInput.maxLength = 150;
+        nameInput.value = value;
+        nameLabel.appendChild(nameInput);
+        nameField.appendChild(nameLabel);
+        row.getName = function () { return nameInput.value.trim(); };
+        attachSuggest(nameInput, listName, function (item) {
+          if (item.detail && !detailInput.value.trim()) detailInput.value = item.detail;
+          showLink(item);
+          scheduleDraft();
+        });
+      }
+
+      var matched = entry && entry.name ? findOption(listName, entry.name) : null;
+      if (matched) showLink(matched); else showInput(entry && entry.name ? entry.name : '');
+      row.append(nameField, detailField, remove);
+      if (listName === 'weapons') {
+        row.proficient = Boolean(entry && entry.proficient);
+        var actions = document.createElement('div');
+        actions.className = 'roll-actions';
+        var prof = document.createElement('button');
+        prof.type = 'button';
+        prof.textContent = 'Proficient';
+        prof.title = 'Add your proficiency bonus to attack rolls with this weapon';
+        var attack = document.createElement('button');
+        attack.type = 'button';
+        var damage = document.createElement('button');
+        damage.type = 'button';
+        var crit = document.createElement('button');
+        crit.type = 'button';
+        crit.textContent = 'Crit damage';
+        var attackBonus = function () { return abilityMod(weaponAbility(detailInput.value)) + (row.proficient ? profBonus() : 0); };
+        var weaponName = function () { return row.getName() || 'Weapon'; };
+        row.refreshRolls = function () {
+          prof.setAttribute('aria-pressed', String(row.proficient));
+          attack.textContent = 'Attack ' + signed(attackBonus());
+          damage.textContent = 'Damage ' + signed(abilityMod(weaponAbility(detailInput.value)));
+        };
+        prof.addEventListener('click', function () { row.proficient = !row.proficient; row.refreshRolls(); scheduleDraft(); });
+        attack.addEventListener('click', function () { rollD20(weaponName() + ' attack', attackBonus()); });
+        damage.addEventListener('click', function () { rollDamage(weaponName() + ' damage', detailInput.value, abilityMod(weaponAbility(detailInput.value)), false); });
+        crit.addEventListener('click', function () { rollDamage(weaponName() + ' critical damage', detailInput.value, abilityMod(weaponAbility(detailInput.value)), true); });
+        detailInput.addEventListener('input', row.refreshRolls);
+        actions.append(prof, attack, damage, crit);
+        row.appendChild(actions);
+        row.refreshRolls();
+      }
+      container.appendChild(row);
+    }
+
+    function fillEntries(character) {
+      lists.forEach(function (listName) {
+        var container = document.querySelector('[data-entry-list="' + listName + '"]');
+        container.replaceChildren();
+        (character[listName] || []).forEach(function (entry) { addEntry(listName, entry); });
+      });
+    }
+
+    function clearForm() {
+      var filterOn = spellFilter.checked;
+      form.reset();
+      spellFilter.checked = filterOn;
+      document.querySelectorAll('[data-save-toggle], [data-skill-toggle]').forEach(function (button) { button.setAttribute('aria-pressed', 'false'); });
+      for (var level = 1; level <= 9; level++) { var inputs = slotInputs(level); inputs.current.value = 0; inputs.max.value = 0; autoMax[level] = 0; }
+      ['strength', 'dexterity', 'constitution', 'intelligence', 'wisdom', 'charisma'].forEach(function (ability) {
+        document.querySelector('[data-score="' + ability + '"]').value = 10;
+      });
+      lists.forEach(function (listName) { document.querySelector('[data-entry-list="' + listName + '"]').replaceChildren(); });
+      activeID = '';
+      deleteButton.hidden = true;
+      picker.value = '';
+      populateSubclasses('', '');
+      updateModifiers();
+      scheduleDraft();
+    }
+
+    function fillForm(character) {
+      clearForm();
+      activeID = character.id || '';
+      ['name', 'species', 'class', 'background', 'alignment', 'hit_dice', 'notes'].forEach(function (key) {
+        var input = form.elements.namedItem(key);
+        if (!input) return;
+        if (input.tagName === 'SELECT') setSelectValue(input, character[key] || '');
+        else input.value = character[key] || '';
+      });
+      ['level', 'experience_points', 'armor_class', 'initiative', 'speed', 'current_hp', 'max_hp', 'temporary_hp'].forEach(function (key) {
+        var input = form.elements.namedItem(key);
+        if (input) input.value = character[key] == null ? 0 : character[key];
+      });
+      ['strength', 'dexterity', 'constitution', 'intelligence', 'wisdom', 'charisma'].forEach(function (ability) {
+        document.querySelector('[data-score="' + ability + '"]').value = character.ability_scores && character.ability_scores[ability] || 10;
+      });
+      populateSubclasses(classSelect.value, character.subclass || '');
+      fillEntries(character);
+      (character.save_proficiencies || []).forEach(function (ability) {
+        var toggle = saveToggle(ability);
+        if (toggle) toggle.setAttribute('aria-pressed', 'true');
+      });
+      (character.skill_proficiencies || []).forEach(function (name) {
+        var toggle = skillToggle(name);
+        if (toggle) toggle.setAttribute('aria-pressed', 'true');
+      });
+      if (character.spell_slots && character.spell_slots.length) {
+        var targets = slotTargets();
+        for (var level = 1; level <= 9; level++) {
+          var saved = character.spell_slots.filter(function (slot) { return slot.level === level; })[0] || { current: 0, max: 0 };
+          var inputs = slotInputs(level);
+          inputs.current.value = saved.current;
+          inputs.max.value = saved.max;
+          autoMax[level] = targets[level];
+        }
+      }
+      deleteButton.hidden = !activeID;
+      picker.value = activeID;
+      updateModifiers();
+      scheduleDraft();
+    }
+
+    function serializeForm() {
+      var value = function (name) { return form.elements.namedItem(name).value.trim(); };
+      var number = function (name) { return Number(form.elements.namedItem(name).value) || 0; };
+      var character = {
+        name: value('name'), species: value('species'), class: value('class'), subclass: value('subclass'), background: value('background'),
+        level: number('level'), experience_points: number('experience_points'), alignment: value('alignment'),
+        ability_scores: {}, armor_class: number('armor_class'), initiative: number('initiative'), speed: number('speed'),
+        current_hp: number('current_hp'), max_hp: number('max_hp'), temporary_hp: number('temporary_hp'),
+        hit_dice: value('hit_dice'), notes: value('notes')
+      };
+      ['strength', 'dexterity', 'constitution', 'intelligence', 'wisdom', 'charisma'].forEach(function (ability) {
+        character.ability_scores[ability] = Number(document.querySelector('[data-score="' + ability + '"]').value) || 10;
+      });
+      lists.forEach(function (listName) {
+        character[listName] = Array.prototype.map.call(document.querySelectorAll('[data-entry-list="' + listName + '"] .entry-row'), function (row) {
+          var entry = { name: row.getName(), detail: row.querySelector('[data-entry-detail]').value.trim() };
+          if (listName === 'weapons' && row.proficient) entry.proficient = true;
+          return entry;
+        }).filter(function (entry) { return entry.name || entry.detail; });
+      });
+      character.save_proficiencies = ABILITIES.filter(function (ability) { return saveToggle(ability).getAttribute('aria-pressed') === 'true'; });
+      character.skill_proficiencies = SKILLS.filter(function (skill) { return skillToggle(skill[0]).getAttribute('aria-pressed') === 'true'; }).map(function (skill) { return skill[0]; });
+      character.spell_slots = [];
+      for (var level = 1; level <= 9; level++) {
+        var inputs = slotInputs(level);
+        var max = Math.min(99, Math.max(0, Math.floor(Number(inputs.max.value) || 0)));
+        var current = Math.min(99, Math.max(0, Math.floor(Number(inputs.current.value) || 0)));
+        if (max || current) character.spell_slots.push({ level: level, current: current, max: max });
+      }
+      return character;
+    }
+
+    async function request(path, options) {
+      var response = await fetch(path, Object.assign({ credentials: 'same-origin' }, options || {}));
+      var data = response.status === 204 ? null : await response.json();
+      if (!response.ok) throw new Error(data && data.error ? data.error : 'Request failed.');
+      return data;
+    }
+
+    async function refreshCharacters(selectedID) {
+      var characters = await request('/api/characters');
+      picker.replaceChildren(new Option('New character', ''));
+      characters.forEach(function (character) { picker.add(new Option(character.name + ' · Level ' + character.level, character.id)); });
+      if (selectedID) picker.value = selectedID;
+    }
+
+    picker.addEventListener('change', async function () {
+      if (!picker.value) { clearForm(); setStatus('New character.'); return; }
+      setBusy(true);
+      try {
+        var characters = await request('/api/characters');
+        var character = characters.find(function (item) { return item.id === picker.value; });
+        if (!character) throw new Error('That character could not be found.');
+        fillForm(character);
+        setStatus('Loaded ' + character.name + '.');
+      } catch (error) { setStatus(error.message, true); }
+      finally { setBusy(false); }
+    });
+
+    document.getElementById('new-character').addEventListener('click', function () {
+      clearForm();
+      setStatus('New character.');
+      form.elements.namedItem('name').focus();
+    });
+
+    document.getElementById('print-character').addEventListener('click', function () {
+      if (!form.reportValidity()) return;
+      window.print();
+    });
+
+    saveButton.addEventListener('click', async function () {
+      if (!form.reportValidity() || busy) return;
+      setBusy(true);
+      setStatus('Saving character...');
+      try {
+        var character = serializeForm();
+        var saved = activeID
+          ? await request('/api/characters/' + encodeURIComponent(activeID), { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(character) })
+          : await request('/api/characters', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(character) });
+        await refreshCharacters(saved.id);
+        fillForm(saved);
+        setStatus('Saved ' + saved.name + '.');
+      } catch (error) { setStatus(error.message, true); }
+      finally { setBusy(false); }
+    });
+
+    deleteButton.addEventListener('click', async function () {
+      if (!activeID || busy || !window.confirm('Delete this character sheet? This cannot be undone.')) return;
+      setBusy(true);
+      try {
+        await request('/api/characters/' + encodeURIComponent(activeID), { method: 'DELETE' });
+        clearForm();
+        await refreshCharacters();
+        setStatus('Character deleted.');
+      } catch (error) { setStatus(error.message, true); }
+      finally { setBusy(false); }
+    });
+
+    document.querySelectorAll('[data-add-entry]').forEach(function (button) {
+      button.addEventListener('click', function () { addEntry(button.dataset.addEntry); });
+    });
+    document.querySelectorAll('[data-score]').forEach(function (input) { input.addEventListener('input', updateModifiers); });
+    classSelect.addEventListener('change', function () { populateSubclasses(classSelect.value, ''); });
+    subclassSelect.addEventListener('change', updateModifiers);
+    levelInput.addEventListener('input', updateModifiers);
+    ['species', 'subclass', 'background'].forEach(function (key) {
+      form.elements.namedItem(key).addEventListener('change', renderReference);
+    });
+    form.addEventListener('input', scheduleDraft);
+    form.addEventListener('change', scheduleDraft);
+    window.addEventListener('pagehide', writeDraft);
+    document.addEventListener('visibilitychange', function () { if (document.visibilityState === 'hidden') writeDraft(); });
+
+    buildRollUI();
+    buildCollapsibleSections();
+    clearForm();
+    fetch('/api/character-options').then(function (r) { return r.ok ? r.json() : {}; }).catch(function () { return {}; })
+      .then(function (data) {
+        options = data;
+        populateSelect('species', data.species);
+        populateSelect('class', data.classes);
+        populateSelect('background', data.backgrounds);
+        updateModifiers();
+      })
+      .then(function () { return refreshCharacters(); })
+      .then(function () {
+        var restored = restoreDraft();
+        restoring = false;
+        setStatus(restored ? 'Restored your previous sheet. Save it to keep these changes on the server.' : 'Ready.');
+      }).catch(function (error) {
+      restoring = false;
+      setStatus(error.message + ' Confirm that this route is protected by Authelia and forwards Remote-User.', true);
+    });
+  })();
+  </script>
+</body>
+</html>
+{{end}}

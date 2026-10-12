@@ -22,19 +22,69 @@ type CategoryData struct {
 }
 
 type StandardResponse struct {
-	Category string        `json:"category"`
-	Total    int           `json:"total"`
-	Sections []SectionNode `json:"sections"`
+	Category          string             `json:"category"`
+	CurrentCategory   string             `json:"current_category,omitempty"`
+	HasSpells         bool               `json:"has_spells,omitempty"`
+	Total             int                `json:"total"`
+	Categories        []CategoryOption   `json:"categories,omitempty"`
+	SpellClassOptions []SpellClassOption `json:"spell_class_options,omitempty"`
+	Sections          []SectionNode      `json:"sections"`
+}
+
+type CategoryOption struct {
+	Title string `json:"title"`
+	Path  string `json:"path"`
+	Count int    `json:"count"`
+}
+
+type SpellClassOption struct {
+	Original  string `json:"original"`
+	Reskinned string `json:"reskinned"`
 }
 
 type SectionNode struct {
-	Title       string         `json:"title"`
-	Subtitle    string         `json:"subtitle,omitempty"`
-	Description string         `json:"description,omitempty"`
-	Content     string         `json:"content,omitempty"`
-	Tags        []string       `json:"tags,omitempty"`
-	Attributes  map[string]any `json:"attributes,omitempty"`
-	Children    []SectionNode  `json:"children,omitempty"`
+	ID           string         `json:"id,omitempty"`
+	Title        string         `json:"title"`
+	Subtitle     string         `json:"subtitle,omitempty"`
+	Description  string         `json:"description,omitempty"`
+	Content      string         `json:"content,omitempty"`
+	Tags         []string       `json:"tags,omitempty"`
+	Attributes   map[string]any `json:"attributes,omitempty"`
+	Children     []SectionNode  `json:"children,omitempty"`
+	SpellLevel   int            `json:"spell_level,omitempty"`
+	SpellClasses []string       `json:"spell_classes,omitempty"`
+	Tables       []SectionTable `json:"tables,omitempty"`
+	Links        []SectionLink  `json:"links,omitempty"`
+
+	// Generated marks nodes computed from rules data rather than written in the guide.
+	Generated bool `json:"-"`
+}
+
+type SectionTable struct {
+	Caption string     `json:"caption,omitempty"`
+	Headers []string   `json:"headers"`
+	Rows    [][]string `json:"rows"`
+}
+
+type SectionLink struct {
+	Title string `json:"title"`
+	URL   string `json:"url"`
+}
+
+type SpellReskinIndex struct {
+	Spells       []SpellReskin `json:"spells_reskin"`
+	ClassReskins []ClassReskin `json:"class_reskins"`
+}
+
+type ClassReskin struct {
+	OriginalClass  string `json:"original_class"`
+	ReskinnedClass string `json:"reskinned_class"`
+}
+
+type SpellReskin struct {
+	Reskinned string   `json:"reskinned"`
+	Level     int      `json:"level"`
+	Classes   []string `json:"classes"`
 }
 
 type Ability struct {
