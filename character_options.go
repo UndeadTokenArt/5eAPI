@@ -6,7 +6,6 @@ import (
 	"sort"
 	"strconv"
 	"strings"
-	"sync"
 )
 
 // CharacterNote is one read-only rules line shown for a chosen class, subclass,
@@ -23,9 +22,10 @@ type CharacterOption struct {
 	Link   string          `json:"link,omitempty"`
 	Notes  []CharacterNote `json:"notes,omitempty"`
 
-	Spellcasting *Spellcasting `json:"spellcasting,omitempty"`
-	SpellLevel   *int          `json:"spell_level,omitempty"`
-	SpellClasses []string      `json:"spell_classes,omitempty"`
+	Spellcasting *Spellcasting   `json:"spellcasting,omitempty"`
+	SpellLevel   *int            `json:"spell_level,omitempty"`
+	SpellClasses []string        `json:"spell_classes,omitempty"`
+	Resources    []ClassResource `json:"resources,omitempty"`
 }
 
 type SubclassOption struct {
@@ -35,9 +35,6 @@ type SubclassOption struct {
 	Notes []CharacterNote `json:"notes,omitempty"`
 
 	Spellcasting *Spellcasting `json:"spellcasting,omitempty"`
-
-	// path locates the subclass in the Classes section tree.
-	path []int
 }
 
 type CharacterOptions struct {
@@ -52,11 +49,7 @@ type CharacterOptions struct {
 }
 
 var (
-	characterOptionsOnce  sync.Once
-	characterOptionsCache CharacterOptions
-	characterOptionsErr   error
-
-	leadingNumberPattern = regexp.MustCompile(`^\d+\.\s*`)
+	characterOptionsCache versionedCache[CharacterOptions]
 )
 
 func joinNonEmpty(sep string, parts ...string) string {
@@ -69,47 +62,14 @@ func joinNonEmpty(sep string, parts ...string) string {
 	return strings.Join(kept, sep)
 }
 
-func isSubclassGroup(name string) bool {
-	return strings.Contains(strings.ToLower(name), "subclass")
-}
-
-// splitClasses separates base classes from the subclass groups that follow them
-// in the guide. Numbered entries after a group are extra subclasses of that group.
-func splitClasses(classes []Class) ([]string, []SubclassOption) {
-	bases, _, subclasses := splitClassesIndexed(classes)
-	return bases, subclasses
-}
-
-// splitClassesIndexed also returns each base class's index in the guide's class list.
-func splitClassesIndexed(classes []Class) ([]string, []int, []SubclassOption) {
-	var bases []string
-	var baseIdx []int
-	var subclasses []SubclassOption
-	for ci, class := range classes {
-		switch {
-		case isSubclassGroup(class.Name):
-			if len(bases) == 0 {
-				continue
-			}
-			for fi, feature := range class.Features {
-				subclasses = append(subclasses, SubclassOption{
-					Name:  strings.TrimSpace(leadingNumberPattern.ReplaceAllString(feature.Name, "")),
-					Class: bases[len(bases)-1],
-					path:  []int{ci, fi},
-				})
-			}
-		case leadingNumberPattern.MatchString(class.Name) && len(subclasses) > 0:
-			subclasses = append(subclasses, SubclassOption{
-				Name:  strings.TrimSpace(leadingNumberPattern.ReplaceAllString(class.Name, "")),
-				Class: subclasses[len(subclasses)-1].Class,
-				path:  []int{ci},
-			})
-		default:
-			bases = append(bases, class.Name)
-			baseIdx = append(baseIdx, ci)
+// subclassNodes returns the subclass nodes nested under a class node.
+func subclassNodes(classNode SectionNode) []SectionNode {
+	for _, child := range classNode.Children {
+		if child.Title == subclassesTitle && !child.Generated {
+			return child.Children
 		}
 	}
-	return bases, baseIdx, subclasses
+	return nil
 }
 
 const (
@@ -166,7 +126,7 @@ func nodeNote(node SectionNode) (CharacterNote, bool) {
 func childNotes(node SectionNode) []CharacterNote {
 	notes := []CharacterNote{}
 	for _, child := range node.Children {
-		if child.Generated {
+		if child.Generated || child.Title == subclassesTitle {
 			continue
 		}
 		if note, ok := nodeNote(child); ok && len(notes) < noteLimitPerOp {
@@ -240,26 +200,31 @@ func buildCharacterOptions(guide *StarterGuide) CharacterOptions {
 	}
 	labels, _ := classLabels()
 	spellLists, _ := loadClassSpellLists()
+	classResources, _ := loadClassResources()
 	classNode, classBase := categoryNode(guide, "Classes")
-	bases, baseIdx, subclasses := splitClassesIndexed(c.Classes)
-	for i, name := range bases {
-		option := CharacterOption{Name: name, Link: itemLink(classBase, childID(classNode, baseIdx[i]))}
-		if i < len(baseIdx) && baseIdx[i] < len(classNode.Children) {
-			option.Notes = childNotes(classNode.Children[baseIdx[i]])
+	for i, class := range c.Classes {
+		var nodes []SectionNode
+		option := CharacterOption{Name: class.Name, Link: itemLink(classBase, childID(classNode, i))}
+		if i < len(classNode.Children) {
+			option.Notes = childNotes(classNode.Children[i])
+			nodes = subclassNodes(classNode.Children[i])
 		}
-		option.Spellcasting = spellcastingForClass(name, labels)
+		option.Spellcasting = spellcastingForClass(class.Name, labels)
+		option.Resources = resourcesForClass(class.Name, labels, classResources)
 		opts.Classes = append(opts.Classes, option)
-	}
-	for _, sub := range subclasses {
-		if node, ok := nodeAt(classNode, sub.path); ok {
-			sub.Link = itemLink(classBase, node.ID)
-			if desc := cleanNoteText(node.Description); desc != "" {
-				sub.Notes = append(sub.Notes, CharacterNote{Label: "Features by level", Text: desc})
+
+		for j, subclass := range class.Subclasses {
+			sub := SubclassOption{Name: subclass.Name, Class: class.Name}
+			if j < len(nodes) {
+				sub.Link = itemLink(classBase, nodes[j].ID)
+				if desc := cleanNoteText(nodes[j].Description); desc != "" {
+					sub.Notes = append(sub.Notes, CharacterNote{Label: "Features by level", Text: desc})
+				}
+				sub.Notes = append(sub.Notes, childNotes(nodes[j])...)
 			}
-			sub.Notes = append(sub.Notes, childNotes(node)...)
+			sub.Spellcasting = spellcastingForSubclass(subclass.Name, labels)
+			opts.Subclasses = append(opts.Subclasses, sub)
 		}
-		sub.Spellcasting = spellcastingForSubclass(sub.Name, labels)
-		opts.Subclasses = append(opts.Subclasses, sub)
 	}
 	backgroundNode, backgroundBase := categoryNode(guide, "Backgrounds")
 	for i, b := range c.Backgrounds {
@@ -346,20 +311,13 @@ func childID(node SectionNode, index int) string {
 }
 
 func characterOptionsHandler(w http.ResponseWriter, r *http.Request) {
-	characterOptionsOnce.Do(func() {
-		guide, err := loadJSON("static/data/neo_tokyo_starter_guide.json")
-		if err != nil {
-			characterOptionsErr = err
-			return
-		}
-		characterOptionsCache = buildCharacterOptions(guide)
-	})
-	if characterOptionsErr != nil {
+	options, err := characterOptionsCache.get(buildCharacterOptions)
+	if err != nil {
 		writeCharacterError(w, http.StatusInternalServerError, "Could not load character options.")
 		return
 	}
-	w.Header().Set("Cache-Control", "public, max-age=3600")
-	writeCharacterJSON(w, http.StatusOK, characterOptionsCache)
+	w.Header().Set("Cache-Control", "no-cache")
+	writeCharacterJSON(w, http.StatusOK, options)
 }
 
 // equipmentDetail pairs an item's price with its description so the sheet shows both.

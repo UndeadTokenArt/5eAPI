@@ -355,15 +355,11 @@ func GenerateEncounter(partySize, partyLevel int, difficulty string) (*Encounter
 		goldPerPC = gold / partySize
 	}
 
-	diffColors := map[string]string{
-		"easy": "#4ade80", "medium": "#facc15", "hard": "#fb923c", "deadly": "#f87171",
-	}
 	diffLabel := strings.ToUpper(difficulty[:1]) + difficulty[1:]
 
 	return &EncounterResult{
 		Monsters:   enc,
 		Difficulty: diffLabel,
-		DiffColor:  diffColors[difficulty],
 		TotalXP:    totalRaw,
 		AdjustedXP: adjusted,
 		XPPerPC:    xpPerPC,

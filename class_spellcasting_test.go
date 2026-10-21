@@ -41,7 +41,7 @@ func TestSpellcastingTables(t *testing.T) {
 }
 
 func TestGuideClassesListSpells(t *testing.T) {
-	guide, err := loadJSON("static/data/neo_tokyo_starter_guide.json")
+	guide, err := loadGuideFromDir(builtinGuideDir)
 	if err != nil {
 		t.Fatal(err)
 	}

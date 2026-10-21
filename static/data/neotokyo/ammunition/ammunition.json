@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Smart-Arrow",
+    "price": "0.5",
+    "description": "A lightweight arrow equipped with micro-steering fins that sync with a smart-bow targeting system."
+  },
+  {
+    "name": "High-Velocity Bolt",
+    "price": "0.5",
+    "description": "A heavy steel crossbow bolt built for maximum armor penetration against sub-dermal weave."
+  },
+  {
+    "name": "Flechette Needle",
+    "price": "0.1",
+    "description": "A tiny, razor-sharp steel needle designed to be fired silently from pneumatic blowguns."
+  },
+  {
+    "name": "Heavy Kinetic Slug",
+    "price": "0.2",
+    "description": "A dense lead and tungsten bullet designed for high-caliber kinetic slings."
+  }
+]

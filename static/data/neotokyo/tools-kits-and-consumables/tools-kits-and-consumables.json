@@ -1,0 +1,182 @@
+[
+  {
+    "name": "Corrosive Industrial Solvent",
+    "price": "250",
+    "description": "A concentrated chemical acid vial that eats through lock tumblers, security cables, and metal plating."
+  },
+  {
+    "name": "Thermite-Gel Grenade",
+    "price": "500",
+    "description": "A volatile flask of incendiary gel that ignites upon impact into a blinding, metal-melting fire."
+  },
+  {
+    "name": "Alchemical & Bio-Reagent Chem-Lab",
+    "price": "500",
+    "description": "A portable kit of beakers, burners, and testing strips used to synthesize street compounds and reagents."
+  },
+  {
+    "name": "Street-Donation Terminal",
+    "price": "5",
+    "description": "A portable credit scanner used by street priests and beggars to collect digital donations."
+  },
+  {
+    "name": "Broad-Spectrum Anti-Tox Injector",
+    "price": "500",
+    "description": "A pre-loaded hypo-syringe that neutralizes synthetic poisons, snake venom, and neuro-toxins."
+  },
+  {
+    "name": "Homebrew Synth-Ale Rig",
+    "price": "200",
+    "description": "A set of copper stills, filtration tubes, and testing meters used to brew illegal street alcohol."
+  },
+  {
+    "name": "Synth-Ramen Field Burner Kit",
+    "price": "10",
+    "description": "A portable cooking set complete with a mini stove, pots, and spices for preparing field rations."
+  },
+  {
+    "name": "Infiltrator Suite",
+    "price": "160",
+    "description": "A pre-packed duffel containing a crowbar, glass cutter, lockpicks, tac-light, and dark street clothes."
+  },
+  {
+    "name": "Executive Liaison Suite",
+    "price": "390",
+    "description": "A luxury briefcase containing fine stationery, a cipher box, a flask, and high-end credentials."
+  },
+  {
+    "name": "Undercity Runner Pack",
+    "price": "120",
+    "description": "A rugged survival kit containing a backpack, rope, pitons, flares, rations, and a hydro-flask."
+  },
+  {
+    "name": "Laser-Etching Stylus Kit",
+    "price": "100",
+    "description": "A set of fine laser tools and inks used for delicate inscription on circuit boards and talismans."
+  },
+  {
+    "name": "GPS Topo-Deck",
+    "price": "150",
+    "description": "A digital mapping terminal equipped with satellite data, subterranean scans, and route-planning software."
+  },
+  {
+    "name": "Tire-Shredder Micro-Spikes",
+    "price": "10",
+    "description": "A pouch of razor-sharp steel tetrahedrons designed to pop tires and puncture footwear."
+  },
+  {
+    "name": "Pressure-Sensitive Mag-Snare",
+    "price": "50",
+    "description": "A spring-loaded floor trap that clamps onto limbs with immense hydraulic pressure."
+  },
+  {
+    "name": "Power-Tool Rig",
+    "price": "80",
+    "description": "A heavy kit containing electric saws, drills, chisels, and clamps for structural modification."
+  },
+  {
+    "name": "Cyber-Fitter Kit",
+    "price": "50",
+    "description": "A specialized toolset for adjusting shoe hydraulics, sub-dermal tread, and cybernetic foot mounts."
+  },
+  {
+    "name": "Sub-Dermal Tailoring Kit",
+    "price": "50",
+    "description": "A set of heavy needles, tough synthetic thread, and leather punches for repairing armor and holsters."
+  },
+  {
+    "name": "Concrete Core Cutter",
+    "price": "100",
+    "description": "Heavy-duty chisels, trowels, and mortar mixers designed to modify masonry and concrete barriers."
+  },
+  {
+    "name": "Armor Lathe",
+    "price": "100",
+    "description": "A set of specialized wheels, shaping tools, and glazes for crafting ceramic plates and heat shields."
+  },
+  {
+    "name": "Cyberware Fabrication Kit",
+    "price": "200",
+    "description": "A portable workshop containing mini-anvils, tongs, hammers, and welding torches for metalworking."
+  },
+  {
+    "name": "Laser Whittler",
+    "price": "100",
+    "description": "Precision blades and mini-lasers designed for shaping wooden stocks, charms, and handles."
+  },
+  {
+    "name": "Facial-Spoofing & Deep-Fake Mod Kit",
+    "price": "250",
+    "description": "A makeup and electronic facial-prosthetic kit used to bypass physical visual recognition."
+  },
+  {
+    "name": "Biometric ID Spoofer",
+    "price": "150",
+    "description": "A high-end forgery kit containing blank keycards, biometric clone pads, and signature spoofers."
+  },
+  {
+    "name": "Cyberdeck Decryption & Mag-Pick Set",
+    "price": "250",
+    "description": "A collection of manual picks, electronic decoders, and tension wrenches for cracking locks."
+  },
+  {
+    "name": "Idol Broadcaster Suite",
+    "price": "400",
+    "description": "A performance kit containing a holographic projector, cosmetics, a synth-horn, and lighting rigs."
+  },
+  {
+    "name": "Zone Tracker Pack",
+    "price": "100",
+    "description": "A wilderness survival kit equipped with a bedroll, mess kit, tinderbox, torches, and emergency rations."
+  },
+  {
+    "name": "Tech-Cultist Pack",
+    "price": "190",
+    "description": "A devotional kit containing a censer, incense, vestments, tinderbox, and scriptural data-pads."
+  },
+  {
+    "name": "Research Analyst Suite",
+    "price": "400",
+    "description": "A scholarly kit filled with notebooks, ink, data-pads, historical archives, and a map case."
+  },
+  {
+    "name": "Optic Glass Forge",
+    "price": "300",
+    "description": "Blowpipes, shaping irons, and cooling racks used for crafting precision lenses and glass containers."
+  },
+  {
+    "name": "Micro-Optics Lathe",
+    "price": "250",
+    "description": "Delicate tweezers, magnifying visors, and mini-files used to assemble fine jewelry and cyber-optics."
+  },
+  {
+    "name": "Neon Aero-Spray Kit",
+    "price": "100",
+    "description": "A set of pressurized spray cans, stencils, and pigments used to leave street graffiti and sign markers."
+  },
+  {
+    "name": "Trauma-Gel & Bio-Nanite Injector",
+    "price": "50",
+    "description": "A field medical kit stocked with anti-septic gel, pressure bandages, and trauma-sealing nanites."
+  },
+  {
+    "name": "Street-Shaman Botanical Extractor",
+    "price": "50",
+    "description": "A pouch of shears, pestles, and vials used to harvest and process awakened urban plants."
+  },
+  {
+    "name": "Bio-Chemical Synthesis Lab",
+    "price": "500",
+    "description": "A dangerous kit containing toxic reagents, mixing vials, and syringes for formulating poisons."
+  },
+  {
+    "name": "Synthetic Bio-Tox Vial",
+    "price": "1,000",
+    "description": "A small vial of lethal synthetic venom designed to coat blades or tip flechette darts."
+  },
+  {
+    "name": "Optic Sensor Chaff",
+    "price": "1",
+    "description": "A pouch of metallic dust thrown into the air to disrupt laser targeting and blind cybereyes."
+  }
+]

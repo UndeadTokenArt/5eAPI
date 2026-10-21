@@ -1,0 +1,122 @@
+[
+  {
+    "name": "Synth-Kibble",
+    "price": "0.5 / day",
+    "description": "Concentrated, long-lasting nutrient paste used to feed bio-engineered guard beasts and street animals."
+  },
+  {
+    "name": "Cargo Mech",
+    "price": "800",
+    "description": "A heavy four-legged walking frame used to haul equipment across rough urban terrain."
+  },
+  {
+    "name": "Utility Hauler Quad",
+    "price": "300",
+    "description": "A rugged four-wheeled cargo ATV designed for transport in flooded or ruined districts."
+  },
+  {
+    "name": "All-Terrain Pack-Drone",
+    "price": "500",
+    "description": "A tracked or multi-legged autonomous drone programmed to carry gear for runner teams."
+  },
+  {
+    "name": "Heavy Cargo Strider",
+    "price": "2,000",
+    "description": "A massive bipedal walking machine used for heavy industrial logistics and military transport."
+  },
+  {
+    "name": "Street-Cycle",
+    "price": "750",
+    "description": "A sleek, high-speed motorcycle popular among street runners and gang scouts in Shinjuku."
+  },
+  {
+    "name": "High-Speed Hover-Bike",
+    "price": "2,000",
+    "description": "An advanced repulsor bike capable of skimming over flooded streets and concrete barriers."
+  },
+  {
+    "name": "Aegis Assault Bike",
+    "price": "4,000",
+    "description": "Heavy armored military motorcycle fitted with twin smart-gun mounts and siren arrays."
+  },
+  {
+    "name": "Cyber-Enhanced Guard Hound",
+    "price": "250",
+    "description": "A genetically modified Doberman equipped with cybernetic optics and sub-dermal armor."
+  },
+  {
+    "name": "Drone Control Interface",
+    "price": "20",
+    "description": "A neural headset and harness used to transmit direct steering commands to mounts and drones."
+  },
+  {
+    "name": "Custom Mounting Rig",
+    "price": "100",
+    "description": "A reinforced saddle fitted with magnetic locks, stirrups, and power coupling ports."
+  },
+  {
+    "name": "Hard-Shell Storage Pods",
+    "price": "40",
+    "description": "Weather-sealed hard cases that clamp onto vehicle frames or pack-drones to carry gear."
+  },
+  {
+    "name": "Automated Cyber-Cab",
+    "price": "1,000",
+    "description": "A self-driving corporate taxi used for discreet transit across the Neon Layer."
+  },
+  {
+    "name": "Cargo Trailer",
+    "price": "150",
+    "description": "A heavy two-wheeled tow trailer used by street vendors and smugglers to move bulk goods."
+  },
+  {
+    "name": "Transport Van",
+    "price": "350",
+    "description": "An armored panel van favored by runner teams for mobile operations and field deployments."
+  },
+  {
+    "name": "Tactical Buggy",
+    "price": "1,500",
+    "description": "An open-topped high-speed off-road vehicle equipped with roll cages and reinforced suspension."
+  },
+  {
+    "name": "Snow-Track Rover",
+    "price": "500",
+    "description": "A heavy tracked vehicle designed for navigating icy conditions and contaminated quarantine zones."
+  },
+  {
+    "name": "Mizu Sub-Deck Galley",
+    "price": "30,000",
+    "description": "A large, multi-oared river barge used for housing and heavy transport in flooded Mizu Ward."
+  },
+  {
+    "name": "Pontoon Skiff",
+    "price": "300",
+    "description": "A flat-bottomed motorboat built from salvaged pontoons, ideal for navigating shallow flooded streets."
+  },
+  {
+    "name": "Stealth Pontoon Cruiser",
+    "price": "10,000",
+    "description": "A long, muffled motorboat equipped with radar-dampening paint for smuggling operations."
+  },
+  {
+    "name": "Motorized Dinghy",
+    "price": "50",
+    "description": "A small inflatable rubber boat powered by a quiet electric outboard motor."
+  },
+  {
+    "name": "Cargo Barge",
+    "price": "10,000",
+    "description": "A massive flat-deck vessel used for transporting shipping containers along Chrome Harbor."
+  },
+  {
+    "name": "Aegis Naval Strike Craft",
+    "price": "25,000",
+    "description": "A fast, armored patrol boat equipped with heavy gun turrets and depth-sonar arrays."
+  },
+  {
+    "name": "Recharge & Parking Dock",
+    "price": "5",
+    "description": "A secure station where vehicles, mechs, and bio-drones can be parked, washed, and recharged."
+  }
+]

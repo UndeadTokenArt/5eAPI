@@ -148,27 +148,40 @@ type classSpellData struct {
 	Lists map[string][]classSpellEntry `json:"class_spell_lists"`
 }
 
-var (
-	classSpellOnce sync.Once
-	classSpellList classSpellData
-	classSpellErr  error
-)
+var classSpellCache struct {
+	sync.Mutex
+	version string
+	data    classSpellData
+	ok      bool
+}
 
 func loadClassSpellLists() (classSpellData, error) {
-	classSpellOnce.Do(func() {
-		raw, err := os.ReadFile("static/data/cyberpunk-class-spell-list.json")
-		if err != nil {
-			classSpellErr = err
-			return
-		}
-		classSpellErr = json.Unmarshal(raw, &classSpellList)
-	})
-	return classSpellList, classSpellErr
+	path := referencePath("class-spell-lists.json")
+	info, err := os.Stat(path)
+	if err != nil {
+		return classSpellData{}, err
+	}
+	version := fmt.Sprintf("%d|%d", info.Size(), info.ModTime().UnixNano())
+	classSpellCache.Lock()
+	defer classSpellCache.Unlock()
+	if classSpellCache.ok && classSpellCache.version == version {
+		return classSpellCache.data, nil
+	}
+	raw, err := os.ReadFile(path)
+	if err != nil {
+		return classSpellData{}, err
+	}
+	var data classSpellData
+	if err := json.Unmarshal(raw, &data); err != nil {
+		return classSpellData{}, err
+	}
+	classSpellCache.version, classSpellCache.data, classSpellCache.ok = version, data, true
+	return data, nil
 }
 
 // classLabels maps an original class name (Wizard) to its Neo Tokyo name.
 func classLabels() (map[string]string, error) {
-	index, err := loadSpellReskinIndex("static/data/cyberpunk-class-and-spell-reskins.json")
+	index, err := loadSpellReskinIndex(referencePath("class-and-spell-reskins.json"))
 	if err != nil {
 		return nil, err
 	}
@@ -331,26 +344,27 @@ func addSpellcastingNodes(classes *SectionNode, guide *StarterGuide) {
 		spellLinks[child.Title] = base + child.ID
 	}
 
-	bases, baseIdx, subclasses := splitClassesIndexed(guide.Category.Classes)
-	for i, label := range bases {
-		sc := spellcastingForClass(label, labels)
-		if sc == nil || baseIdx[i] >= len(classes.Children) {
-			continue
+	for i, class := range guide.Category.Classes {
+		if i >= len(classes.Children) {
+			break
 		}
-		original := originalClassFor(label, labels)
-		child := &classes.Children[baseIdx[i]]
-		child.Children = append(child.Children, spellcastingNodes(sc, lists.Lists[original], spellLinks)...)
-	}
-	for _, sub := range subclasses {
-		sc := spellcastingForSubclass(sub.Name, labels)
-		if sc == nil || len(sub.path) != 2 || sub.path[0] >= len(classes.Children) {
-			continue
+		child := &classes.Children[i]
+		if sc := spellcastingForClass(class.Name, labels); sc != nil {
+			original := originalClassFor(class.Name, labels)
+			child.Children = append(child.Children, spellcastingNodes(sc, lists.Lists[original], spellLinks)...)
 		}
-		group := &classes.Children[sub.path[0]]
-		if sub.path[1] >= len(group.Children) {
-			continue
+		for _, group := range child.Children {
+			if group.Title != subclassesTitle {
+				continue
+			}
+			for j, subclass := range class.Subclasses {
+				sc := spellcastingForSubclass(subclass.Name, labels)
+				if sc == nil || j >= len(group.Children) {
+					continue
+				}
+				node := &group.Children[j]
+				node.Children = append(node.Children, spellcastingNodes(sc, lists.Lists["Wizard"], spellLinks)...)
+			}
 		}
-		node := &group.Children[sub.path[1]]
-		node.Children = append(node.Children, spellcastingNodes(sc, lists.Lists["Wizard"], spellLinks)...)
 	}
 }

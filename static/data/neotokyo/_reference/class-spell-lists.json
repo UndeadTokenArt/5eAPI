@@ -522,6 +522,15 @@
       ]
     },
     {
+      "original": "Compelled Duel",
+      "reskinned": "Aggro Intercept Lock",
+      "level": 1,
+      "school": "Divination",
+      "classes": [
+        "Paladin"
+      ]
+    },
+    {
       "original": "Compulsion",
       "reskinned": "Behavioral Routing Override",
       "level": 4,

@@ -1,0 +1,26 @@
+:root { color-scheme: dark; --page:#101311; --panel:#191e1a; --line:#39433b; --green:#9fc777; --red:#cb7466; --text:#e4e9df; --muted:#a5b0a1; --field:#111612; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--page); color:var(--text); font:15px/1.5 Georgia,'Times New Roman',serif; }
+    a { color:var(--green); text-decoration:none; }
+    [hidden] { display:none !important; }
+    .sheet-nav { display:flex; align-items:center; gap:1.25rem; padding:.8rem clamp(1rem,4vw,3rem); background:var(--panel); border-bottom:1px solid var(--line); font:.9rem/1.4 system-ui,sans-serif; }
+    .sheet-brand { margin-right:auto; font-weight:700; }
+    main { width:min(900px,100%); margin:0 auto; padding:1.4rem clamp(1rem,3vw,2rem) 3rem; }
+    h1 { margin:0 0 .3rem; font-weight:600; }
+    h2 { font-size:1.15rem; font-weight:600; margin:1.6rem 0 .6rem; }
+    .muted { color:var(--muted); font:.88rem system-ui,sans-serif; }
+    label { display:block; margin:.7rem 0 .25rem; color:var(--muted); font:.75rem system-ui,sans-serif; text-transform:uppercase; letter-spacing:.04em; }
+    input, select, textarea { width:100%; padding:.55rem .65rem; border:1px solid var(--line); border-radius:4px; background:var(--field); color:var(--text); font:inherit; }
+    textarea { min-height:7rem; resize:vertical; }
+    textarea.json { min-height:16rem; font:.85rem ui-monospace,Menlo,monospace; }
+    input:focus, select:focus, textarea:focus, button:focus-visible { outline:2px solid var(--green); outline-offset:1px; }
+    button { min-height:40px; padding:.5rem .9rem; border:1px solid var(--green); border-radius:4px; background:transparent; color:var(--green); font:600 .85rem system-ui,sans-serif; cursor:pointer; }
+    button.danger { border-color:var(--red); color:var(--red); }
+    .panel { padding:1rem; border:1px solid var(--line); border-radius:4px; background:var(--panel); }
+    .row { display:flex; flex-wrap:wrap; gap:.6rem; align-items:center; margin-top:1rem; }
+    .toggle { display:flex; align-items:center; gap:.4rem; margin:0; text-transform:none; }
+    .toggle input { width:auto; }
+    .status { min-height:1.4rem; margin-top:.6rem; font:.9rem system-ui,sans-serif; }
+    .status.error { color:var(--red); }
+    .added { display:flex; justify-content:space-between; align-items:center; gap:.6rem; padding:.5rem .7rem; border:1px solid var(--line); border-radius:4px; margin-bottom:.4rem; background:var(--field); }
+    .grid2 { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:0 .8rem; }

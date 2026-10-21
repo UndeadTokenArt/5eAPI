@@ -33,6 +33,12 @@ type CharacterEntry struct {
 	Proficient bool   `json:"proficient,omitempty"`
 }
 
+// ResourceUse stores the remaining uses of a class resource; the maximum comes from class and level.
+type ResourceUse struct {
+	ID      string `json:"id"`
+	Current int    `json:"current"`
+}
+
 type SpellSlot struct {
 	Level   int `json:"level"`
 	Current int `json:"current"`
@@ -54,6 +60,7 @@ type CharacterSheet struct {
 	AbilityScores      AbilityScores    `json:"ability_scores"`
 	SaveProficiencies  []string         `json:"save_proficiencies,omitempty"`
 	SpellSlots         []SpellSlot      `json:"spell_slots,omitempty"`
+	ClassResources     []ResourceUse    `json:"class_resources,omitempty"`
 	SkillProficiencies []string         `json:"skill_proficiencies,omitempty"`
 	ArmorClass         int              `json:"armor_class,omitempty"`
 	Initiative         int              `json:"initiative,omitempty"`
@@ -478,6 +485,14 @@ func validateCharacter(character CharacterSheet) error {
 	for _, slot := range character.SpellSlots {
 		if slot.Level < 1 || slot.Level > 9 || slot.Current < 0 || slot.Max < 0 || slot.Current > 99 || slot.Max > 99 {
 			return errors.New("spell slot values are outside the supported range")
+		}
+	}
+	if len(character.ClassResources) > 20 {
+		return errors.New("too many class resources")
+	}
+	for _, resource := range character.ClassResources {
+		if len(resource.ID) == 0 || len(resource.ID) > 60 || resource.Current < 0 || resource.Current > 99 {
+			return errors.New("class resource values are outside the supported range")
 		}
 	}
 	if character.MaxHP < 0 || character.MaxHP > 9999 || character.CurrentHP < 0 || character.CurrentHP > 9999 || character.TemporaryHP < 0 || character.TemporaryHP > 9999 {

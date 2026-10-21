@@ -6,7 +6,6 @@ import (
 	"net/http"
 	"sort"
 	"strings"
-	"sync"
 	"unicode"
 )
 
@@ -37,9 +36,7 @@ type searchEntry struct {
 }
 
 var (
-	searchIndexOnce sync.Once
-	searchIndex     []searchEntry
-	searchIndexErr  error
+	searchIndexCache versionedCache[[]searchEntry]
 )
 
 var macronFolder = strings.NewReplacer("ā", "a", "ē", "e", "ī", "i", "ō", "o", "ū", "u")
@@ -184,15 +181,8 @@ func searchNeoTokyo(index []searchEntry, rawQuery string) NeoTokyoSearchResponse
 }
 
 func neoTokyoSearchHandler(w http.ResponseWriter, r *http.Request) {
-	searchIndexOnce.Do(func() {
-		guide, err := loadJSON("static/data/neo_tokyo_starter_guide.json")
-		if err != nil {
-			searchIndexErr = err
-			return
-		}
-		searchIndex = buildSearchIndex(guide)
-	})
-	if searchIndexErr != nil {
+	searchIndex, err := searchIndexCache.get(buildSearchIndex)
+	if err != nil {
 		http.Error(w, "Could not load the starter guide.", http.StatusInternalServerError)
 		return
 	}

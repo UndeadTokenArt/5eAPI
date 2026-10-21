@@ -1,0 +1,14 @@
+{
+  "class_resources": {
+    "Paladin": [
+      {
+        "id": "channel-divinity",
+        "name": "Channel Divinity",
+        "recharge": "short",
+        "min_level": 3,
+        "uses": [0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        "description": "Use the Channel Divinity option from your Sacred Oath. Regain your use on a short or long rest."
+      }
+    ]
+  }
+}

@@ -1,0 +1,344 @@
+[
+  {
+    "name": "Monomolecular Battleaxe",
+    "price": "100",
+    "description": "A heavy axe featuring a blade sharpened to a single atom for slicing metal.",
+    "damage": "1d8",
+    "damage_type": "slashing",
+    "attribute": "STR",
+    "tag": "Versatile: 1d10 + STR"
+  },
+  {
+    "name": "Tactical Hatchet",
+    "price": "50",
+    "description": "A compact, balanced throwing axe built with a rubberized grip and wire-cutting notch.",
+    "damage": "1d6",
+    "damage_type": "slashing",
+    "attribute": "STR",
+    "tag": "None"
+  },
+  {
+    "name": "Pneumatic Flechette Pistol",
+    "price": "100",
+    "description": "A silent, high-pressure blowgun that fires toxic needles using compressed gas.",
+    "damage": "1",
+    "damage_type": "piercing",
+    "attribute": "DEX",
+    "tag": "None"
+  },
+  {
+    "name": "Shock-Baton",
+    "price": "10",
+    "description": "A heavy rubberized truncheon that delivers an incapacitating electrical discharge upon physical impact.",
+    "damage": "1d4",
+    "damage_type": "bludgeoning",
+    "attribute": "STR",
+    "tag": "None"
+  },
+  {
+    "name": "Heavy Kinetic Arc-Bat",
+    "price": "20",
+    "description": "A two-handed heavy club wrapped in high-voltage wiring to crush armor and shock targets.",
+    "damage": "1d8",
+    "damage_type": "bludgeoning",
+    "attribute": "STR",
+    "tag": "None"
+  },
+  {
+    "name": "Smart-Crossbow",
+    "price": "750",
+    "description": "A compact, hand-held mechanical launcher fitted with a laser sight and electronic trigger.",
+    "damage": "1d6",
+    "damage_type": "piercing",
+    "attribute": "DEX",
+    "tag": "None"
+  },
+  {
+    "name": "Compact Rail-Crossbow",
+    "price": "250",
+    "description": "A light, magazine-fed crossbow that uses magnetic rails to launch bolts at high velocity.",
+    "damage": "1d8",
+    "damage_type": "piercing",
+    "attribute": "DEX",
+    "tag": "None"
+  },
+  {
+    "name": "Heavy Gauss Crossbow",
+    "price": "500",
+    "description": "A massive, winch-loaded crossbow designed to fire heavy armor-piercing bolts through bulkheads.",
+    "damage": "1d10",
+    "damage_type": "piercing",
+    "attribute": "DEX",
+    "tag": "None"
+  },
+  {
+    "name": "Monomolecular Combat Knife",
+    "price": "20",
+    "description": "A double-edged tactical knife with a razor-sharp monomolecular edge.",
+    "damage": "1d4",
+    "damage_type": "piercing",
+    "attribute": "DEX or STR",
+    "tag": "Finesse"
+  },
+  {
+    "name": "Cyber-Scalpel",
+    "price": "10",
+    "description": "A small, concealable knife favored by street docs and assassins for precise cuts.",
+    "damage": "1d4",
+    "damage_type": "piercing",
+    "attribute": "DEX or STR",
+    "tag": "Finesse"
+  },
+  {
+    "name": "Pneumatic Javelin",
+    "price": "5",
+    "description": "A light steel-tipped spear balanced for throwing across alleyways and rooftops.",
+    "damage": "1d6",
+    "damage_type": "piercing",
+    "attribute": "STR",
+    "tag": "None"
+  },
+  {
+    "name": "Kinetic Pulse Flail",
+    "price": "100",
+    "description": "A spiked weight attached to a heavy chain that discharges kinetic energy on impact.",
+    "damage": "1d8",
+    "damage_type": "bludgeoning",
+    "attribute": "STR",
+    "tag": "None"
+  },
+  {
+    "name": "Spiked Shock-Star",
+    "price": "150",
+    "description": "A heavy morningstar fitted with electrified spikes that shock targets on physical contact.",
+    "damage": "1d8",
+    "damage_type": "piercing",
+    "attribute": "STR",
+    "tag": "None"
+  },
+  {
+    "name": "High-Frequency Naginata",
+    "price": "200",
+    "description": "A long polearm topped with a high-speed vibrating blade designed to slice through cyberware.",
+    "damage": "1d10",
+    "damage_type": "slashing",
+    "attribute": "STR",
+    "tag": "Reach"
+  },
+  {
+    "name": "Power-Halberd",
+    "price": "200",
+    "description": "A heavy axe-headed polearm equipped with a pneumatic impact booster for breaching armor.",
+    "damage": "1d10",
+    "damage_type": "slashing",
+    "attribute": "STR",
+    "tag": "Reach"
+  },
+  {
+    "name": "Shock-Pike",
+    "price": "50",
+    "description": "An extra-long tactical spear fitted with a high-voltage tip to keep charging enemies at bay.",
+    "damage": "1d10",
+    "damage_type": "piercing",
+    "attribute": "STR",
+    "tag": "Reach"
+  },
+  {
+    "name": "Tactical Spear",
+    "price": "10",
+    "description": "A versatile steel spear used for thrusting, throwing, or set defense against incoming charges.",
+    "damage": "1d6",
+    "damage_type": "piercing",
+    "attribute": "STR",
+    "tag": "Versatile: 1d8 + STR"
+  },
+  {
+    "name": "Electrified Trident",
+    "price": "50",
+    "description": "A three-pronged fishing and combat spear that delivers a disabling shock upon thrusting.",
+    "damage": "1d6",
+    "damage_type": "piercing",
+    "attribute": "STR",
+    "tag": "Versatile: 1d8 + STR"
+  },
+  {
+    "name": "Hydraulic Heavy Axe",
+    "price": "300",
+    "description": "A massive two-handed battleaxe powered by internal hydraulics to deliver devastating overhead chops.",
+    "damage": "1d12",
+    "damage_type": "slashing",
+    "attribute": "STR",
+    "tag": "Heavy, Two-Handed"
+  },
+  {
+    "name": "High-Frequency Nodachi",
+    "price": "500",
+    "description": "A long curved two-handed sword whose blade vibrates at extreme frequencies to cut steel.",
+    "damage": "2d6",
+    "damage_type": "slashing",
+    "attribute": "STR",
+    "tag": "Heavy, Two-Handed"
+  },
+  {
+    "name": "Kinetic Breaker",
+    "price": "20",
+    "description": "A lightweight steel hammer designed for rapid impact strikes against armor joints.",
+    "damage": "1d4",
+    "damage_type": "bludgeoning",
+    "attribute": "STR",
+    "tag": "None"
+  },
+  {
+    "name": "Heavy Arc-Hammer",
+    "price": "150",
+    "description": "A military-grade warhammer that discharges a localized EMP blast on every heavy strike.",
+    "damage": "1d8",
+    "damage_type": "bludgeoning",
+    "attribute": "STR",
+    "tag": "Versatile: 1d10 + STR"
+  },
+  {
+    "name": "Power-Mace",
+    "price": "50",
+    "description": "A heavy spiked club fitted with an internal kinetic generator to crush sub-dermal plating.",
+    "damage": "1d6",
+    "damage_type": "bludgeoning",
+    "attribute": "STR",
+    "tag": "None"
+  },
+  {
+    "name": "Kinetic Sledgehammer",
+    "price": "100",
+    "description": "A massive two-handed hammer designed for demolition work and breaking heavy exoskeletons.",
+    "damage": "2d6",
+    "damage_type": "bludgeoning",
+    "attribute": "STR",
+    "tag": "Heavy, Two-Handed"
+  },
+  {
+    "name": "Monomolecular Lance",
+    "price": "100",
+    "description": "A heavy jousting weapon equipped with a monomolecular tip for high-speed vehicular combat.",
+    "damage": "1d12",
+    "damage_type": "piercing",
+    "attribute": "STR",
+    "tag": "Reach"
+  },
+  {
+    "name": "Pneumatic Armor Breaker",
+    "price": "50",
+    "description": "A heavy pick equipped with a gas-driven piston that punches clean holes through plate.",
+    "damage": "1d8",
+    "damage_type": "piercing",
+    "attribute": "STR",
+    "tag": "None"
+  },
+  {
+    "name": "Composite Smart-Bow",
+    "price": "500",
+    "description": "A longbow made of carbon-fiber materials equipped with a digital draw-assist and scope.",
+    "damage": "1d8",
+    "damage_type": "piercing",
+    "attribute": "DEX",
+    "tag": "Heavy, Two-Handed"
+  },
+  {
+    "name": "Recurve Reflex Bow",
+    "price": "250",
+    "description": "A short, highly maneuverable bow designed for rapid-fire archery in tight urban corridors.",
+    "damage": "1d6",
+    "damage_type": "piercing",
+    "attribute": "DEX",
+    "tag": "Two-Handed"
+  },
+  {
+    "name": "Monomolecular Katana",
+    "price": "250",
+    "description": "A traditional single-edged sword featuring a monomolecular edge that cuts through alloy.",
+    "damage": "1d8",
+    "damage_type": "slashing",
+    "attribute": "STR",
+    "tag": "Versatile: 1d10 + STR"
+  },
+  {
+    "name": "Thermal Blade",
+    "price": "250",
+    "description": "A curved short sword with a superheated edge that cauterizes as it cuts through flesh and metal.",
+    "damage": "1d6",
+    "damage_type": "slashing",
+    "attribute": "DEX or STR",
+    "tag": "Finesse"
+  },
+  {
+    "name": "High-Frequency Tanto",
+    "price": "100",
+    "description": "A compact tactical dagger with a vibrating blade designed for rapid close-quarters stabbing.",
+    "damage": "1d6",
+    "damage_type": "piercing",
+    "attribute": "DEX or STR",
+    "tag": "Finesse"
+  },
+  {
+    "name": "Mag-Restraint Trap Net",
+    "price": "10",
+    "description": "A weighted net woven from high-tensile wire that contracts around struggling targets.",
+    "damage": "Special",
+    "damage_type": "none",
+    "attribute": "DEX",
+    "tag": "Restrains Target"
+  },
+  {
+    "name": "Collapsible Shock-Staff",
+    "price": "2",
+    "description": "A lightweight metal quarterstaff that expands from a baton and delivers non-lethal shocks.",
+    "damage": "1d6",
+    "damage_type": "bludgeoning",
+    "attribute": "STR",
+    "tag": "Versatile: 1d8 + STR"
+  },
+  {
+    "name": "Spirit-Warded Conduit Pole",
+    "price": "5",
+    "description": "A wooden staff inscribed with Shinto talismans used by street shamans to channel mana.",
+    "damage": "1d6",
+    "damage_type": "bludgeoning",
+    "attribute": "STR",
+    "tag": "Versatile: 1d8 + STR"
+  },
+  {
+    "name": "Monomolecular Stiletto Rapier",
+    "price": "250",
+    "description": "A slender, needle-like thrusting sword designed to bypass armor seams and cyber-ports.",
+    "damage": "1d8",
+    "damage_type": "piercing",
+    "attribute": "DEX or STR",
+    "tag": "Finesse"
+  },
+  {
+    "name": "High-Frequency Sickle",
+    "price": "10",
+    "description": "A curved agricultural knife retrofitted with a vibrating edge for back-alley combat.",
+    "damage": "1d4",
+    "damage_type": "slashing",
+    "attribute": "STR",
+    "tag": "None"
+  },
+  {
+    "name": "Kinetic Accelerator Sling",
+    "price": "1",
+    "description": "A handheld leather and cord pouch designed to hurl heavy steel bullets at lethal speeds.",
+    "damage": "1d4",
+    "damage_type": "bludgeoning",
+    "attribute": "DEX",
+    "tag": "None"
+  },
+  {
+    "name": "Monofilament Whip",
+    "price": "200",
+    "description": "A deadly, nearly invisible monofilament line stored in a fingertip spool that slices targets effortlessly.",
+    "damage": "1d4",
+    "damage_type": "slashing",
+    "attribute": "DEX or STR",
+    "tag": "Finesse, Reach"
+  }
+]

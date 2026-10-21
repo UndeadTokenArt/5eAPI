@@ -1,0 +1,143 @@
+[
+  {
+    "name": "Optic Glitch",
+    "description": "Occurs when ocular implants are jammed with strobing viral adverts, optic sensors suffer flashbang glare, or a spell disrupts visual feeds.",
+    "details": [
+      "The creature auto-fails any ability check that requires sight.",
+      "Attack rolls against the creature have advantage.",
+      "The creature’s attack rolls have disadvantage."
+    ],
+    "content": "Occurs when ocular implants are jammed with strobing viral adverts, optic sensors suffer flashbang glare, or a spell disrupts visual feeds.\n* The creature auto-fails any ability check that requires sight.\n* Attack rolls against the creature have advantage.\n* The creature’s attack rolls have disadvantage."
+  },
+  {
+    "name": "Subliminal Override",
+    "description": "Induced by Amaterasu Media recommendation algorithms, neural romance malware, or subtle spirit-attuned persuasion.",
+    "details": [
+      "The creature cannot attack the influencer or target them with harmful abilities/effects.",
+      "The influencer has advantage on any ability check to interact socially with the creature."
+    ],
+    "content": "Induced by Amaterasu Media recommendation algorithms, neural romance malware, or subtle spirit-attuned persuasion.\n* The creature cannot attack the influencer or target them with harmful abilities/effects.\n* The influencer has advantage on any ability check to interact socially with the creature."
+  },
+  {
+    "name": "Acoustic Scramble",
+    "description": "Caused by blown audio-dampeners, directional acoustic weapons, high-frequency sonic bursts, or signal white-noise.",
+    "details": [
+      "The creature auto-fails any ability check that requires hearing."
+    ],
+    "content": "Caused by blown audio-dampeners, directional acoustic weapons, high-frequency sonic bursts, or signal white-noise.\n* The creature auto-fails any ability check that requires hearing."
+  },
+  {
+    "name": "Cyber-Strain",
+    "1_level_1": "Disadvantage on ability checks.",
+    "2_level_2": "Speed halved.",
+    "3_level_3": "Disadvantage on attack rolls and saving throws.",
+    "4_level_4": "Hit point maximum halved.",
+    "5_level_5": "Speed reduced to 0.",
+    "6_level_6": "Systemic Failure / Death.",
+    "description": "Systemic fatigue resulting from overclocking neural processors, stim-pack crashes, cyberware rejection, or extreme heat dissipation failure.",
+    "content": "Systemic fatigue resulting from overclocking neural processors, stim-pack crashes, cyberware rejection, or extreme heat dissipation failure.\n1. Level 1: Disadvantage on ability checks.\n2. Level 2: Speed halved.\n3. Level 3: Disadvantage on attack rolls and saving throws.\n4. Level 4: Hit point maximum halved.\n5. Level 5: Speed reduced to 0.\n6. Level 6: Systemic Failure / Death."
+  },
+  {
+    "name": "Threat-Lock",
+    "description": "Aegis Tactical combat-HUDs flagging a target as an unwinnable lethal threat, rogue AI dread-waves, or Black ICE neural intimidation spikes. Held in place by heavy hydraulic combat arms, monofilament snares, drone clamps, or physical grapple-lines.",
+    "details": [
+      "The creature has disadvantage on ability checks and attack rolls while the source of its threat is within line of sight.",
+      "The creature cannot willingly move closer to the source of its threat.### Servo-Cinch",
+      "The creature’s speed becomes 0, and it can't benefit from any bonus to its speed."
+    ],
+    "content": "Aegis Tactical combat-HUDs flagging a target as an unwinnable lethal threat, rogue AI dread-waves, or Black ICE neural intimidation spikes.\n* The creature has disadvantage on ability checks and attack rolls while the source of its threat is within line of sight.\n* The creature cannot willingly move closer to the source of its threat.### Servo-Cinch\nHeld in place by heavy hydraulic combat arms, monofilament snares, drone clamps, or physical grapple-lines.\n* The creature’s speed becomes 0, and it can't benefit from any bonus to its speed."
+  },
+  {
+    "name": "OS Buffer Overflow",
+    "description": "A temporary operating system crash, severe lag spike, or mental lockout leaving the target unable to process actions.",
+    "details": [
+      "The creature cannot take actions or reactions."
+    ],
+    "content": "A temporary operating system crash, severe lag spike, or mental lockout leaving the target unable to process actions.\n* The creature cannot take actions or reactions."
+  },
+  {
+    "name": "Optical Camouflage",
+    "description": "Achieved via thermo-optic cloak suits, light-bending hologram arrays, or matrix-ghosting spells that scrub physical signatures from optic sensors.",
+    "details": [
+      "The creature is impossible to see without specialized sensors or true sight.",
+      "The creature is considered heavily obscured for stealth checks.",
+      "Attack rolls against the creature have disadvantage.",
+      "The creature’s attack rolls have advantage."
+    ],
+    "content": "Achieved via thermo-optic cloak suits, light-bending hologram arrays, or matrix-ghosting spells that scrub physical signatures from optic sensors.\n* The creature is impossible to see without specialized sensors or true sight.\n* The creature is considered heavily obscured for stealth checks.\n* Attack rolls against the creature have disadvantage.\n* The creature’s attack rolls have advantage."
+  },
+  {
+    "name": "Neural Freeze",
+    "description": "High-voltage electrical stun, remote Aegis governor override, complete cyber-spinal lockdown, or spirit-binding stasis.",
+    "details": [
+      "The creature is Incapacitated and cannot move or speak.",
+      "The creature auto-fails Strength and Dexterity saving throws.",
+      "Attack rolls against the creature have advantage.",
+      "Any attack that hits the creature is a critical hit if the attacker is within 5 feet."
+    ],
+    "content": "High-voltage electrical stun, remote Aegis governor override, complete cyber-spinal lockdown, or spirit-binding stasis.\n* The creature is Incapacitated and cannot move or speak.\n* The creature auto-fails Strength and Dexterity saving throws.\n* Attack rolls against the creature have advantage.\n* Any attack that hits the creature is a critical hit if the attacker is within 5 feet."
+  },
+  {
+    "name": "Solid-State Stasis",
+    "description": "Encapsulated in quick-hardening riot resin, hard-light solid state fields, digitised matter-storage, or alchemical petrification.",
+    "details": [
+      "Transformed into an inanimate solid mass. Weight increases by a factor of ten, and aging ceases.",
+      "The creature is Incapacitated, cannot move or speak, and is unaware of its surroundings.",
+      "Attack rolls against the creature have advantage.",
+      "Auto-fails Strength and Dexterity saving throws.",
+      "Has resistance to all damage, and is immune to poison and disease."
+    ],
+    "content": "Encapsulated in quick-hardening riot resin, hard-light solid state fields, digitised matter-storage, or alchemical petrification.\n* Transformed into an inanimate solid mass. Weight increases by a factor of ten, and aging ceases.\n* The creature is Incapacitated, cannot move or speak, and is unaware of its surroundings.\n* Attack rolls against the creature have advantage.\n* Auto-fails Strength and Dexterity saving throws.\n* Has resistance to all damage, and is immune to poison and disease."
+  },
+  {
+    "name": "Bio-Toxed",
+    "description": "Rejection of bad street cyberware, bad synth-narcotics, dirty bio-reagents from Sector 17, or synthetic combat toxins.",
+    "details": [
+      "The creature has disadvantage on attack rolls and ability checks."
+    ],
+    "content": "Rejection of bad street cyberware, bad synth-narcotics, dirty bio-reagents from Sector 17, or synthetic combat toxins.\n* The creature has disadvantage on attack rolls and ability checks."
+  },
+  {
+    "name": "Grounded",
+    "description": "Knocked flat on wet asphalt by kinetic force, gravity pulses, slippery drainage oils, or melee sweeps.",
+    "details": [
+      "The creature's only movement option is to crawl, unless it stands up (costing half its movement speed).",
+      "The creature has disadvantage on attack rolls.",
+      "An attack roll against the creature has advantage if the attacker is within 5 feet; otherwise, the attack roll has disadvantage."
+    ],
+    "content": "Knocked flat on wet asphalt by kinetic force, gravity pulses, slippery drainage oils, or melee sweeps.\n* The creature's only movement option is to crawl, unless it stands up (costing half its movement speed).\n* The creature has disadvantage on attack rolls.\n* An attack roll against the creature has advantage if the attacker is within 5 feet; otherwise, the attack roll has disadvantage."
+  },
+  {
+    "name": "Mag-Bound",
+    "description": "Pinned by magnetic lock-cuffs, monofilament nets, shock-tethers, or spirit roots.",
+    "details": [
+      "The creature’s speed becomes 0.",
+      "Attack rolls against the creature have advantage.",
+      "The creature’s attack rolls have disadvantage.",
+      "The creature has disadvantage on Dexterity saving throws."
+    ],
+    "content": "Pinned by magnetic lock-cuffs, monofilament nets, shock-tethers, or spirit roots.\n* The creature’s speed becomes 0.\n* Attack rolls against the creature have advantage.\n* The creature’s attack rolls have disadvantage.\n* The creature has disadvantage on Dexterity saving throws."
+  },
+  {
+    "name": "Synapse Short",
+    "description": "An EMP pulse cooking cyberware, severe brain-seizure from Black ICE feedback, or high-caliber shock impact.",
+    "details": [
+      "The creature is Incapacitated, cannot move, and can speak only falteringly.",
+      "The creature auto-fails Strength and Dexterity saving throws.",
+      "Attack rolls against the creature have advantage."
+    ],
+    "content": "An EMP pulse cooking cyberware, severe brain-seizure from Black ICE feedback, or high-caliber shock impact.\n* The creature is Incapacitated, cannot move, and can speak only falteringly.\n* The creature auto-fails Strength and Dexterity saving throws.\n* Attack rolls against the creature have advantage."
+  },
+  {
+    "name": "Flatlined",
+    "description": "Total biological or cybernetic shutdown, severe coma, or non-lethal trauma state where bio-monitors drop to emergency low-power mode.",
+    "details": [
+      "The creature is Incapacitated, cannot move or speak, and is unaware of its surroundings.",
+      "The creature drops whatever it's holding and falls Grounded.",
+      "Auto-fails Strength and Dexterity saving throws.",
+      "Attack rolls against the creature have advantage.",
+      "Any attack that hits the creature is a critical hit if the attacker is within 5 feet."
+    ],
+    "content": "Total biological or cybernetic shutdown, severe coma, or non-lethal trauma state where bio-monitors drop to emergency low-power mode.\n* The creature is Incapacitated, cannot move or speak, and is unaware of its surroundings.\n* The creature drops whatever it's holding and falls Grounded.\n* Auto-fails Strength and Dexterity saving throws.\n* Attack rolls against the creature have advantage.\n* Any attack that hits the creature is a critical hit if the attacker is within 5 feet."
+  }
+]

@@ -1,0 +1,110 @@
+[
+  {
+    "name": "Corporate Whistleblower",
+    "description": "You once held a comfortable desk in the luxury sky-arcologies of Kōten or the artificial bio-domes of The Garden. Everything changed when you uncovered classified files—such as KAMI's conscious synthetic soul prototype or Hoshi Biodyne's suppressed age-reversal breakthrough. Forced to flee into the Undercity before executive strike teams silenced you, you now sell corporate secrets to survive.",
+    "skill_proficiencies": "Subtext Scan (Insight), Fixer Negotiation (Persuasion).",
+    "tool_language_proficiencies": "Encrypted Data-Pads , Corporate Executive Protocol.",
+    "starting_equipment": "Tailored Kōten Silk-Suit, Encrypted Data-Pad , a burner credstick with 150 Nuyen.",
+    "background_feature": "Clearance_residuals: You retain obsolete or stolen high-level access ciphers that grant you entry to lower-tier corporate facilities, research archives, or sky-line transit elevators in Kōten.",
+    "content": "* Description: You once held a comfortable desk in the luxury sky-arcologies of Kōten or the artificial bio-domes of The Garden. Everything changed when you uncovered classified files—such as KAMI's conscious synthetic soul prototype or Hoshi Biodyne's suppressed age-reversal breakthrough. Forced to flee into the Undercity before executive strike teams silenced you, you now sell corporate secrets to survive.\n* Skill Proficiencies: Subtext Scan (Insight), Fixer Negotiation (Persuasion).\n* Tool / Language Proficiencies: Encrypted Data-Pads , Corporate Executive Protocol.\n* Starting Equipment: Tailored Kōten Silk-Suit, Encrypted Data-Pad , a burner credstick with 150 Nuyen.\n* Background Feature — Clearance Residuals: You retain obsolete or stolen high-level access ciphers that grant you entry to lower-tier corporate facilities, research archives, or sky-line transit elevators in Kōten."
+  },
+  {
+    "name": "Sector 17 Escapee",
+    "description": "You survived behind the blast walls and automated kill-zones of Sector 17. Whether you were a forgotten squatter or a captive test subject in Kitsune Bio-Magic's illegal essence-harvesting labs, you managed to break past Aegis Tactical border patrols and escape into the city's shadow economy.",
+    "skill_proficiencies": "Low-Signature (Stealth), Zone Survival (Survival).",
+    "tool_language_proficiencies": "Alchemical & Bio-Reagent Chem-Lab , Sector 17 Mutated Slang.",
+    "starting_equipment": "Weatherproof Tech-Wear, Bio-Chemical Synthesis Lab or Trauma Gel, a scarred biometric ID tag.",
+    "background_feature": "Bio_hazard_instinct: You automatically spot bio-contaminants, illegal genetic experimentation traps, and automated security sensors in corporate quarantine zones.",
+    "content": "* Description: You survived behind the blast walls and automated kill-zones of Sector 17. Whether you were a forgotten squatter or a captive test subject in Kitsune Bio-Magic's illegal essence-harvesting labs, you managed to break past Aegis Tactical border patrols and escape into the city's shadow economy.\n* Skill Proficiencies: Low-Signature (Stealth), Zone Survival (Survival).\n* Tool / Language Proficiencies: Alchemical & Bio-Reagent Chem-Lab , Sector 17 Mutated Slang.\n* Starting Equipment: Weatherproof Tech-Wear, Bio-Chemical Synthesis Lab or Trauma Gel, a scarred biometric ID tag.\n* Background Feature — Bio-Hazard Instinct: You automatically spot bio-contaminants, illegal genetic experimentation traps, and automated security sensors in corporate quarantine zones."
+  },
+  {
+    "name": "Underline Hacktivist",
+    "description": "You learned your trade inside the dark subway networks of The Underline. Operating alongside pirate broadcasters or hacktivist cells like The 404s, you hijack corporate advertising displays and run pirate data streams from perpetually moving metro train cars.",
+    "skill_proficiencies": "System Forensics (Investigation), Cyber-Arcana (Arcana).",
+    "tool_proficiencies": "Cyberdecks (Security Tools), Pirate Mesh Radio.",
+    "starting_equipment": "Cyberdeck Decryption Set , Kevlar Hoodie, a pocket mesh broadcaster, 120 Nuyen.",
+    "background_feature": "Moving_node_access: You know how to patch into independent mesh networks across The Underline and can secure free transit aboard illegal subway lines.",
+    "content": "* Description: You learned your trade inside the dark subway networks of The Underline. Operating alongside pirate broadcasters or hacktivist cells like The 404s, you hijack corporate advertising displays and run pirate data streams from perpetually moving metro train cars.\n* Skill Proficiencies: System Forensics (Investigation), Cyber-Arcana (Arcana).\n* Tool Proficiencies: Cyberdecks (Security Tools), Pirate Mesh Radio.\n* Starting Equipment: Cyberdeck Decryption Set , Kevlar Hoodie, a pocket mesh broadcaster, 120 Nuyen.\n* Background Feature — Moving Node Access: You know how to patch into independent mesh networks across The Underline and can secure free transit aboard illegal subway lines."
+  },
+  {
+    "name": "Yoru Market Street Doc",
+    "description": "You learned field surgery in the subterranean alleys of Yoru Market. Trained under back-alley surgeons like Doc \"Scalpel\" Chen, you patched up wounded shadow-runners, installed unregistered cyberware, and treated Black ICE neural feedback.",
+    "skill_proficiencies": "Street Doc (Medicine), Palm-Hack (Sleight of Hand).",
+    "tool_proficiencies": "Trauma-Gel & Bio-Nanite Injectors, Cyberware Fabrication Kits.",
+    "starting_equipment": "Trauma-Gel Injector, Cyber-Scalpel, Cyberware Repair Kit, 100 Nuyen.",
+    "background_feature": "Black_clinic_sanctuary: Unlicensed street docs, cyberware fences, and shadow brokers in Yoru Market treat you as a colleague, offering emergency medical triage, discounted cyber-parts, and safe havens.",
+    "content": "* Description: You learned field surgery in the subterranean alleys of Yoru Market. Trained under back-alley surgeons like Doc \"Scalpel\" Chen, you patched up wounded shadow-runners, installed unregistered cyberware, and treated Black ICE neural feedback.\n* Skill Proficiencies: Street Doc (Medicine), Palm-Hack (Sleight of Hand).\n* Tool Proficiencies: Trauma-Gel & Bio-Nanite Injectors, Cyberware Fabrication Kits.\n* Starting Equipment: Trauma-Gel Injector, Cyber-Scalpel, Cyberware Repair Kit, 100 Nuyen.\n* Background Feature — Black Clinic Sanctuary: Unlicensed street docs, cyberware fences, and shadow brokers in Yoru Market treat you as a colleague, offering emergency medical triage, discounted cyber-parts, and safe havens."
+  },
+  {
+    "name": "Aegis Tactical Veteran",
+    "description": "You served as a private security enforcer for Aegis Tactical. You may have been part of an elite corporate strike squad or a rogue soldier who broke your remote neural governor like Sergeant Vane's Oni gang in Kurogane.",
+    "skill_proficiencies": "Threat Display (Intimidation), Threat Scan (Perception).",
+    "tool_proficiencies": "Arms & Cyberware Tech Tools, Land Vehicles (Combat Bikes).",
+    "starting_equipment": "Kevlar Street Jacket, Shock-Baton, Aegis Tactical Service Badge, 150 Nuyen.",
+    "background_feature": "Mercenary_network: Private security contractors, ex-military mercenaries, and industrial weapon crews in Kurogane respect your military background, granting you access to mercenary hiring halls and military gear leads.",
+    "content": "* Description: You served as a private security enforcer for Aegis Tactical. You may have been part of an elite corporate strike squad or a rogue soldier who broke your remote neural governor like Sergeant Vane's Oni gang in Kurogane.\n* Skill Proficiencies: Threat Display (Intimidation), Threat Scan (Perception).\n* Tool Proficiencies: Arms & Cyberware Tech Tools, Land Vehicles (Combat Bikes).\n* Starting Equipment: Kevlar Street Jacket, Shock-Baton, Aegis Tactical Service Badge, 150 Nuyen.\n* Background Feature — Mercenary Network: Private security contractors, ex-military mercenaries, and industrial weapon crews in Kurogane respect your military background, granting you access to mercenary hiring halls and military gear leads."
+  },
+  {
+    "name": "Kitsune-cho Shrine Guardian",
+    "description": "Raised among the traditional Shinto shrines of Kitsune-cho, you were trained to protect sacred ley lines from corporate energy grids tapped by Izanagi Grid and Kitsune Bio-Magic.",
+    "skill_proficiencies": "Critter Attunement (Animal Handling), Spirit & Tech Cults (Religion).",
+    "tool_language_proficiencies": "Calligrapher's Stylus, Ancient Shinto & Spirit Speech.",
+    "starting_equipment": "Spirit-Warded Conduit Pole, Shinto Spirit-Charm, Conductive UV Ink, 50 Nuyen.",
+    "background_feature": "Ley_line_sanctuary: Traditional priests, street shamans, and magical street cults like The Shrine Children offer you shelter, alchemical reagents, and spiritual guidance without cost.",
+    "content": "* Description: Raised among the traditional Shinto shrines of Kitsune-cho, you were trained to protect sacred ley lines from corporate energy grids tapped by Izanagi Grid and Kitsune Bio-Magic.\n* Skill Proficiencies: Critter Attunement (Animal Handling), Spirit & Tech Cults (Religion).\n* Tool / Language Proficiencies: Calligrapher's Stylus, Ancient Shinto & Spirit Speech.\n* Starting Equipment: Spirit-Warded Conduit Pole, Shinto Spirit-Charm, Conductive UV Ink, 50 Nuyen.\n* Background Feature — Ley-Line Sanctuary: Traditional priests, street shamans, and magical street cults like The Shrine Children offer you shelter, alchemical reagents, and spiritual guidance without cost."
+  },
+  {
+    "name": "Neon Shinjuku Idol",
+    "description": "You were a rising star in the entertainment capital of Neon Shinjuku. Sponsored by Amaterasu Media or managed by nightclub syndicates like The Velvet Dolls, you learned how media recommendation algorithms manipulate collective behavior.",
+    "skill_proficiencies": "Idol Presence (Performance), Deep Fake (Deception).",
+    "tool_proficiencies": "Holographic Display & Media Rigs, Social Media Analytics.",
+    "starting_equipment": "Holographic Idol Attire, Digital Beat-Pad or Laser-Harp, 150 Nuyen.",
+    "background_feature": "Fan_base_and_backstage_access: Your celebrity profile grants you VIP entry into host clubs, synthwave venues, and media channels across the Neon Layer, as well as shelter provided by loyal subscribers.",
+    "content": "* Description: You were a rising star in the entertainment capital of Neon Shinjuku. Sponsored by Amaterasu Media or managed by nightclub syndicates like The Velvet Dolls, you learned how media recommendation algorithms manipulate collective behavior.\n* Skill Proficiencies: Idol Presence (Performance), Deep Fake (Deception).\n* Tool Proficiencies: Holographic Display & Media Rigs, Social Media Analytics.\n* Starting Equipment: Holographic Idol Attire, Digital Beat-Pad or Laser-Harp, 150 Nuyen.\n* Background Feature — Fan Base & Backstage Access: Your celebrity profile grants you VIP entry into host clubs, synthwave venues, and media channels across the Neon Layer, as well as shelter provided by loyal subscribers."
+  },
+  {
+    "name": "Mizu Ward Smuggler",
+    "description": "You grew up navigating the flooded ruins, pontoon bridges, and submerged highways of Mizu Ward. Operating stealth pontoon boats alongside smuggler captains like Aria \"Vapor\" Chen, you moved contraband past automated dock patrols.",
+    "skill_proficiencies": "Reflex Dodge (Acrobatics), Street Navigation (Survival).",
+    "tool_proficiencies": "Water Vehicles (Pontoon Boats), GPS Topo-Deck.",
+    "starting_equipment": "Weatherproof Tech-Wear, GPS Topo-Deck, a waterproof container, 100 Nuyen.",
+    "background_feature": "Submerged_navigation: You know the locations of submerged pre-war subway tunnels, hidden pontoon routes, and underwater safe-houses across old Tokyo.",
+    "content": "* Description: You grew up navigating the flooded ruins, pontoon bridges, and submerged highways of Mizu Ward. Operating stealth pontoon boats alongside smuggler captains like Aria \"Vapor\" Chen, you moved contraband past automated dock patrols.\n* Skill Proficiencies: Reflex Dodge (Acrobatics), Street Navigation (Survival).\n* Tool Proficiencies: Water Vehicles (Pontoon Boats), GPS Topo-Deck.\n* Starting Equipment: Weatherproof Tech-Wear, GPS Topo-Deck, a waterproof container, 100 Nuyen.\n* Background Feature — Submerged Navigation: You know the locations of submerged pre-war subway tunnels, hidden pontoon routes, and underwater safe-houses across old Tokyo."
+  },
+  {
+    "name": "Chrome Harbor Street Samurai",
+    "description": "You learned the street code of honor along the automated logistics yards and shipping docks of Chrome Harbor. Aligned with cyberpunk street samurai like Boss Kazuma's Chrome Lotus, you enforced territorial control against rival gangs.",
+    "skill_proficiencies": "Hydraulic Prowess (Athletics), Threat Display (Intimidation).",
+    "tool_proficiencies": "Cyberware Fabrication Kits, Smart-Link Maintenance.",
+    "starting_equipment": "Monomolecular Combat Knife, Reinforced Ballistic Weave , 100 Nuyen.",
+    "background_feature": "Honor_of_the_docks: Street samurai, dockworkers, and contraband fences in Chrome Harbor recognize your loyalty to the street code, offering safe harbor and warning you of corporate raids.",
+    "content": "* Description: You learned the street code of honor along the automated logistics yards and shipping docks of Chrome Harbor. Aligned with cyberpunk street samurai like Boss Kazuma's Chrome Lotus, you enforced territorial control against rival gangs.\n* Skill Proficiencies: Hydraulic Prowess (Athletics), Threat Display (Intimidation).\n* Tool Proficiencies: Cyberware Fabrication Kits, Smart-Link Maintenance.\n* Starting Equipment: Monomolecular Combat Knife, Reinforced Ballistic Weave , 100 Nuyen.\n* Background Feature — Honor of the Docks: Street samurai, dockworkers, and contraband fences in Chrome Harbor recognize your loyalty to the street code, offering safe harbor and warning you of corporate raids."
+  },
+  {
+    "name": "Ghost Signal Cultist",
+    "description": "You were present in Shiba Void during the anomalous broadcasts or matrix bleeds surrounding the ground-zero origin of the 2089 Ghost Signal (\"I REMEMBER YOU\"). You perceive digital ghosts and matrix data as living entities.",
+    "skill_proficiencies": "Cyber-Arcana (Arcana), System Forensics (Investigation).",
+    "tool_language_proficiencies": "Encrypted Terminals, Ghost-Code Cipher.",
+    "starting_equipment": "Encrypted Data-Pad , UV-Fluorescent Marker, a corrupted memory chip, 50 Nuyen.",
+    "background_feature": "Signal_sensitivity: You can sense residual matrix anomalies, spatial glitches, and digital ghosts in erased districts or high-density server nodes.",
+    "content": "* Description: You were present in Shiba Void during the anomalous broadcasts or matrix bleeds surrounding the ground-zero origin of the 2089 Ghost Signal (\"I REMEMBER YOU\"). You perceive digital ghosts and matrix data as living entities.\n* Skill Proficiencies: Cyber-Arcana (Arcana), System Forensics (Investigation).\n* Tool / Language Proficiencies: Encrypted Terminals, Ghost-Code Cipher.\n* Starting Equipment: Encrypted Data-Pad , UV-Fluorescent Marker, a corrupted memory chip, 50 Nuyen.\n* Background Feature — Signal Sensitivity: You can sense residual matrix anomalies, spatial glitches, and digital ghosts in erased districts or high-density server nodes."
+  },
+  {
+    "name": "Akihabara Tech-Scavenger",
+    "description": "You made a living in the multi-tier arcade ruins and flooded electronics bazaars of Akihabara Ruin. Working alongside street techs and deckers, you salvaged obsolete 2040s hardware and independent AI cores like Zero-One.",
+    "skill_proficiencies": "Data Archives (History), System Forensics (Investigation).",
+    "tool_proficiencies": "Retro-Tech Repair Kits, Hardware Lathes.",
+    "starting_equipment": "Retro-Tech Repair Kit, Power-Tool Rig, a pocketful of spare micro-capacitors, 100 Nuyen.",
+    "background_feature": "Junk_rigging: You can harvest functional electronic components, micro-processors, and obsolete cyberdeck parts from junked machinery, arcade terminals, and electronics graveyards.",
+    "content": "* Description: You made a living in the multi-tier arcade ruins and flooded electronics bazaars of Akihabara Ruin. Working alongside street techs and deckers, you salvaged obsolete 2040s hardware and independent AI cores like Zero-One.\n* Skill Proficiencies: Data Archives (History), System Forensics (Investigation).\n* Tool Proficiencies: Retro-Tech Repair Kits, Hardware Lathes.\n* Starting Equipment: Retro-Tech Repair Kit, Power-Tool Rig, a pocketful of spare micro-capacitors, 100 Nuyen.\n* Background Feature — Junk-Rigging: You can harvest functional electronic components, micro-processors, and obsolete cyberdeck parts from junked machinery, arcade terminals, and electronics graveyards."
+  },
+  {
+    "name": "Ryujin Debt-Bound Asset",
+    "description": "You entered a high-stakes financial contract with Ryujin Trust & Financial. Whether taking out a loan for bio-augments or incurring corporate debt, your contract is backed by shell accounts managed by an awakened dragon.",
+    "skill_proficiencies": "Subtext Scan (Insight), Fixer Negotiation (Persuasion).",
+    "tool_language_proficiencies": "Financial Terminals, High-Corporate & Dragon Dialects.",
+    "starting_equipment": "Tailored Kōten Silk-Suit, Corporate Encrypted Ring, a line of corporate credit.",
+    "background_feature": "Dragon_s_line_of_credit: You can secure emergency credit or temporary high-level access in sky-arcologies through Ryujin shell trusts, though doing so increases your corporate debt and draws dragon oversight.",
+    "content": "* Description: You entered a high-stakes financial contract with Ryujin Trust & Financial. Whether taking out a loan for bio-augments or incurring corporate debt, your contract is backed by shell accounts managed by an awakened dragon.\n* Skill Proficiencies: Subtext Scan (Insight), Fixer Negotiation (Persuasion).\n* Tool / Language Proficiencies: Financial Terminals, High-Corporate & Dragon Dialects.\n* Starting Equipment: Tailored Kōten Silk-Suit, Corporate Encrypted Ring, a line of corporate credit.\n* Background Feature — Dragon's Line of Credit: You can secure emergency credit or temporary high-level access in sky-arcologies through Ryujin shell trusts, though doing so increases your corporate debt and draws dragon oversight."
+  }
+]

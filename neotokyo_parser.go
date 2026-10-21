@@ -12,7 +12,7 @@ import (
 )
 
 func NeoTokyoHandler(w http.ResponseWriter, r *http.Request) {
-	data, err := loadJSON("static/data/neo_tokyo_starter_guide.json")
+	data, _, err := currentGuide()
 	if err != nil {
 		http.Error(w, fmt.Sprintf("error loading JSON: %v", err), http.StatusInternalServerError)
 		return
@@ -28,7 +28,7 @@ func NeoTokyoHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	if response.HasSpells {
-		spellIndex, err := loadSpellReskinIndex("static/data/cyberpunk-class-and-spell-reskins.json")
+		spellIndex, err := loadSpellReskinIndex(referencePath("class-and-spell-reskins.json"))
 		if err != nil {
 			http.Error(w, fmt.Sprintf("error loading spell class mappings: %v", err), http.StatusInternalServerError)
 			return
@@ -112,20 +112,6 @@ func spellClassOptions(sections []SectionNode, index spellReskinLookup) []SpellC
 		return options[i].Reskinned < options[j].Reskinned
 	})
 	return options
-}
-
-func loadJSON(filename string) (*StarterGuide, error) {
-	data, err := os.ReadFile(filename)
-	if err != nil {
-		return nil, fmt.Errorf("failed to open file: %w", err)
-	}
-
-	var guide StarterGuide
-	if err := json.Unmarshal(data, &guide); err != nil {
-		return nil, fmt.Errorf("failed to decode json: %w", err)
-	}
-
-	return &guide, nil
 }
 
 func categoryFromPath(path string) string {
@@ -364,38 +350,56 @@ func mapSpecies(speciesList []Species) SectionNode {
 	return SectionNode{Title: "Species", Children: children}
 }
 
+// subclassesTitle names the node that holds a class's subclasses in the Classes section.
+const subclassesTitle = "Subclasses"
+
+func mapClassFeatures(features []ClassFeature) []SectionNode {
+	var nodes []SectionNode
+	for _, f := range features {
+		var subFeatNodes []SectionNode
+		for _, sf := range f.Features {
+			subFeatNodes = append(subFeatNodes, SectionNode{
+				Title:       sf.Name,
+				Description: sf.Description,
+			})
+		}
+		nodes = append(nodes, SectionNode{
+			Title:       f.Name,
+			Description: f.Description,
+			Content:     f.Content,
+			Children:    subFeatNodes,
+		})
+	}
+	return nodes
+}
+
+func classAttributes(focus, defensive, slashing, mobile string) map[string]any {
+	attrs := make(map[string]any)
+	for key, value := range map[string]string{"focus": focus, "defensive_flourish": defensive, "slashing_flourish": slashing, "mobile_flourish": mobile} {
+		if value != "" {
+			attrs[key] = value
+		}
+	}
+	return attrs
+}
+
 func mapClasses(classes []Class) SectionNode {
 	var children []SectionNode
 	for _, c := range classes {
-		var featNodes []SectionNode
-		for _, f := range c.Features {
-			var subFeatNodes []SectionNode
-			for _, sf := range f.Features {
-				subFeatNodes = append(subFeatNodes, SectionNode{
-					Title:       sf.Name,
-					Description: sf.Description,
+		featNodes := mapClassFeatures(c.Features)
+		if len(c.Subclasses) > 0 {
+			var subNodes []SectionNode
+			for _, sub := range c.Subclasses {
+				subNodes = append(subNodes, SectionNode{
+					Title:       sub.Name,
+					Description: sub.Description,
+					Content:     sub.Content,
+					Tags:        sub.Details,
+					Attributes:  classAttributes(sub.Focus, sub.DefensiveFlourish, sub.SlashingFlourish, sub.MobileFlourish),
+					Children:    mapClassFeatures(sub.Features),
 				})
 			}
-			featNodes = append(featNodes, SectionNode{
-				Title:       f.Name,
-				Description: f.Description,
-				Content:     f.Content,
-				Children:    subFeatNodes,
-			})
-		}
-
-		attrs := make(map[string]any)
-		if c.Focus != "" {
-			attrs["focus"] = c.Focus
-		}
-		if c.DefensiveFlourish != "" {
-			attrs["defensive_flourish"] = c.DefensiveFlourish
-		}
-		if c.SlashingFlourish != "" {
-			attrs["slashing_flourish"] = c.SlashingFlourish
-		}
-		if c.MobileFlourish != "" {
-			attrs["mobile_flourish"] = c.MobileFlourish
+			featNodes = append(featNodes, SectionNode{Title: subclassesTitle, Children: subNodes})
 		}
 
 		children = append(children, SectionNode{
@@ -403,7 +407,7 @@ func mapClasses(classes []Class) SectionNode {
 			Description: c.Description,
 			Content:     c.Content,
 			Tags:        c.Details,
-			Attributes:  attrs,
+			Attributes:  classAttributes(c.Focus, c.DefensiveFlourish, c.SlashingFlourish, c.MobileFlourish),
 			Children:    featNodes,
 		})
 	}

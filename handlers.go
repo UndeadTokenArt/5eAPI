@@ -140,6 +140,10 @@ func setupRouter() *http.ServeMux {
 	// Exact routes
 	mux.HandleFunc("GET /{$}", homeHandler)
 	mux.HandleFunc("GET /api/account", accountHandler)
+	mux.HandleFunc("GET /editor", editorPageHandler)
+	for _, method := range []string{"GET", "POST", "DELETE"} {
+		mux.HandleFunc(method+" /api/editor/entries", editorEntriesHandler)
+	}
 	mux.HandleFunc("GET /characters", charactersPageHandler)
 	mux.HandleFunc("GET /api/character-options", characterOptionsHandler)
 	mux.HandleFunc("GET /api/characters", charactersAPIHandler)

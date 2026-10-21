@@ -1,0 +1,327 @@
+[
+  {
+    "name": "Retro-Logic Board",
+    "price": "20",
+    "description": "A handheld analog calculator used for offline data processing when local networks are jammed."
+  },
+  {
+    "name": "Tactical Utility Rucksack",
+    "price": "20",
+    "description": "A heavy-duty backpack made of radar-dampening fabric with modular attachment points."
+  },
+  {
+    "name": "Micro-Mag Ball Bearings",
+    "price": "10",
+    "description": "A pouch of 1,000 tiny magnetic spheres designed to throw off pursuers and disrupt footwear friction."
+  },
+  {
+    "name": "Thermal-Insulated Bivouac Roll",
+    "price": "10",
+    "description": "A compact, self-heating sleeping roll engineered for survival in sub-zero alleyways or damp"
+  },
+  {
+    "name": "Piezoelectric Acoustic Chime",
+    "price": "10",
+    "description": "A palm-sized device that emits an intense, clear tone when triggered by motion or pressure."
+  },
+  {
+    "name": "High-Torque Hydraulic Hoist",
+    "price": "10",
+    "description": "A heavy-duty pulley system powered by a compact servo-motor to haul massive loads up sky-arcologies."
+  },
+  {
+    "name": "Aromatherapy Memory-Chip",
+    "price": "1",
+    "description": "A small plug-in scent emitter used by corporate executives to simulate natural environments."
+  },
+  {
+    "name": "Aerosol Reagent Vaporizer",
+    "price": "50",
+    "description": "A brass-plated diffuser that disperses alchemical vapors and spirit-attuned incense into the air."
+  },
+  {
+    "name": "Encrypted Data-Pad",
+    "price": "250",
+    "description": "A hardened, biometric-locked tablet used to store classified files and field reports."
+  },
+  {
+    "name": "Smart-Paper Sheet",
+    "price": "2",
+    "description": "A flexible, tear-resistant electronic paper display that updates dynamically when connected to a stylus."
+  },
+  {
+    "name": "Flexible E-Ink Parchment",
+    "price": "1",
+    "description": "A durable synthetic scroll surface preferred by street shamans for inscribing digital spirit wards."
+  },
+  {
+    "name": "Reinforced Chem-Vial",
+    "price": "20",
+    "description": "A shatterproof glass cylinder used to safely transport volatile bio-reagents and street compounds."
+  },
+  {
+    "name": "Insulated Hydro-Flask",
+    "price": "2",
+    "description": "A vacuum-sealed steel container that keeps liquids at extreme temperatures regardless of environmental radiation."
+  },
+  {
+    "name": "Hydro-Pack Bladder",
+    "price": "price",
+    "description": "A flexible, puncture-resistant water pouch designed to integrate into tactical vests."
+  },
+  {
+    "name": "name",
+    "price": "2",
+    "description": "description"
+  },
+  {
+    "name": "Poly-Composite Fluid Drum",
+    "price": "20",
+    "description": "A heavy industrial barrel used across Chrome Harbor for transporting fluids and bio-slurry."
+  },
+  {
+    "name": "Utility Pail",
+    "price": "1",
+    "description": "A reinforced plastic bucket used by street techs and maintenance workers in the Undercity."
+  },
+  {
+    "name": "Fluid Canister",
+    "price": "2",
+    "description": "A sealed metal jug designed for storing high-octane fuel, coolant, or synthetic alcohol."
+  },
+  {
+    "name": "Alloy Cooking Pot",
+    "price": "20",
+    "description": "A heavy-bottomed cookware pot built to withstand raw plasma heat and field campfires."
+  },
+  {
+    "name": "Synth-Fiber Bin",
+    "price": "4",
+    "description": "A woven polymer basket used in Yoru Market for carrying street cargo and electronic scrap."
+  },
+  {
+    "name": "Biometric Lockbox",
+    "price": "50",
+    "description": "A reinforced steel chest protected by a thumbprint and optic scanner."
+  },
+  {
+    "name": "Belt Utility Pouch",
+    "price": "5",
+    "description": "A weather-sealed leather and Kevlar pouch worn on tactical belts to store ammunition and micro-decks."
+  },
+  {
+    "name": "Poly-Duty Bag",
+    "price": "1",
+    "description": "A cheap, heavy-duty plastic sack used for hauling contraband across district borders."
+  },
+  {
+    "name": "Mini LED Beacon",
+    "price": "5",
+    "description": "A thumb-sized light emitter that clips onto collars to provide emergency illumination."
+  },
+  {
+    "name": "Tac-Light",
+    "price": "5",
+    "description": "A high-lumen, rechargeable flashlight mounted with a weapon rail or handheld grip."
+  },
+  {
+    "name": "Directional Spot-Lantern",
+    "price": "100",
+    "description": "A focused beam lantern with a manual shutter used for silent signaling in dark subway tunnels."
+  },
+  {
+    "name": "Magnesium Flare Stick",
+    "price": "1",
+    "description": "A single-use thermal rod that ignites with intense, blinding light to cut through optical smoke."
+  },
+  {
+    "name": "Mag-Strip Ammo Caddy",
+    "price": "10",
+    "description": " A magnetized hard case that keeps ammunition clips organized and weather-sealed."
+  },
+  {
+    "name": "Waterproof Hologram Tube",
+    "price": "10",
+    "description": "A shockproof cylinder designed to safely carry projected blueprints and physical schematics."
+  },
+  {
+    "name": "Monofilament Chain",
+    "price": "50",
+    "description": "A ten-foot length of linked high-tensile steel designed to hold heavy machinery or secure prisoners."
+  },
+  {
+    "name": "Standard Utility Line",
+    "price": "10",
+    "description": "A heavy fifty-foot braided nylon rope used for rigging and urban climbing."
+  },
+  {
+    "name": "Monofilament Tension Cord",
+    "price": "100",
+    "description": "A lightweight, fifty-foot synthetic silk line capable of supporting multiple fully armored runners."
+  },
+  {
+    "name": "Fiber-Optic Wire",
+    "price": "1",
+    "description": "A thin ten-foot spool of glass-core wire used for tapping local data feeds and setting up tripwires."
+  },
+  {
+    "name": "UV-Fluorescent Marker",
+    "price": "1",
+    "description": "A chalk-like stylus that leaves invisible marks visible only under ultraviolet cybereyes."
+  },
+  {
+    "name": "Conductive UV Ink",
+    "price": "100",
+    "description": "A bottle of specialized liquid ink used to draw functional circuit lines or magic talismans."
+  },
+  {
+    "name": "Laser-Stylus",
+    "price": "2",
+    "description": "A precision writing tool that burns permanent digital characters into smart-paper and metal tags."
+  },
+  {
+    "name": "Urban Rappelling Harness",
+    "price": "250",
+    "description": "A full-body harness equipped with friction brakes, carabiners, and high-tensile web straps."
+  },
+  {
+    "name": "Pneumatic Grapple Launcher",
+    "price": "20",
+    "description": "A shoulder-mounted or handheld launcher that fires a weighted, magnetic grappling head."
+  },
+  {
+    "name": "Anchor Spikes",
+    "price": "0.5",
+    "description": "Hardened steel pitons designed to be driven into concrete walls for rigging descent lines."
+  },
+  {
+    "name": "Kevlar Hoodie & Cargoes",
+    "price": "20",
+    "description": "Inexpensive everyday street clothing built with subtle Kevlar threading to resist light cuts."
+  },
+  {
+    "name": "Holographic Idol Attire",
+    "price": "50",
+    "description": "Vibrant, light-emitting clothing favored by performers in Neon Shinjuku to captivate crowds."
+  },
+  {
+    "name": "Tailored Kōten Silk-Suit",
+    "price": "150",
+    "description": "High-end executive wear lined with ballistic weave, designed for boardrooms in the sky-arcology."
+  },
+  {
+    "name": "Weatherproof Tech-Wear",
+    "price": "20",
+    "description": "Rugged, waterproof outerwear equipped with climate-control micro-lining for zone exploration."
+  },
+  {
+    "name": "Hydraulic Pry-Bar",
+    "price": "20",
+    "description": "A high-leverage alloy crowbar designed to force open sealed bulkhead doors and elevator shafts."
+  },
+  {
+    "name": "Impact Driver",
+    "price": "10",
+    "description": "A heavy-duty power hammer used for rapid field repairs and structural breaching."
+  },
+  {
+    "name": "Kinetic Sledge",
+    "price": "20",
+    "description": "A weighted sledgehammer designed to break through reinforced masonry and concrete barriers."
+  },
+  {
+    "name": "Foldable Entrenching Tool",
+    "price": "20",
+    "description": "A compact steel shovel that locks at multiple angles for digging or close-quarters defense."
+  },
+  {
+    "name": "Pneumatic Rock Drill",
+    "price": "20",
+    "description": "A heavy industrial mining pick used to break through dense rock and subterranean concrete."
+  },
+  {
+    "name": "Holographic Neural Dice Block",
+    "price": "1",
+    "description": "A palm-sized digital block that projects randomized holographic dice for street gambling."
+  },
+  {
+    "name": "Neural Gambling Card Deck",
+    "price": "5",
+    "description": "A deck of electronic playing cards that syncs with players' neural ports for high-stakes games."
+  },
+  {
+    "name": "Digital Countdown Chronometer",
+    "price": "250",
+    "description": "A precise electronic timer used to synchronize heist operations and explosive charges."
+  },
+  {
+    "name": "Biometric Padlock",
+    "price": "100",
+    "description": "A heavy-duty mechanical lock that unlocks only when presented with an authorized keycard or print."
+  },
+  {
+    "name": "Optic Macro-Scanner",
+    "price": "1,000",
+    "description": "A handheld magnifying lens with built-in digital magnification and spectral analysis."
+  },
+  {
+    "name": "Digital Zoom Monocular",
+    "price": "10,000",
+    "description": "A compact spyglass equipped with thermal optics, digital zoom, and distance-finding HUD overlays."
+  },
+  {
+    "name": "Optic Sensor Chaff Pouch",
+    "price": "1",
+    "description": "A small pouch filled with reflective micro-particles used to blind optical camera sensors."
+  },
+  {
+    "name": "Aegis Mag-Cuffs",
+    "price": "20",
+    "description": "Heavy-duty electromagnetic restraints that lock a prisoner's wrists together and damp cybernetic strength."
+  },
+  {
+    "name": "Polished Optic Reflector",
+    "price": "50",
+    "description": "A small, high-reflectivity steel mirror used to peek around corners without exposing oneself."
+  },
+  {
+    "name": "Compact Synth-Ramen Set",
+    "price": "2",
+    "description": "A lightweight mess kit containing a heating element, collapsible bowl, and utensils for street dining."
+  },
+  {
+    "name": "Decon-Sanitizing Soap Bar",
+    "price": "0.2",
+    "description": "A harsh chemical soap designed to scrub bio-toxins, heavy metals, and radiation dust from skin."
+  },
+  {
+    "name": "Pheromone-Enhanced Perfume Vapor",
+    "price": "50",
+    "description": "A subtle synthetic perfume infused with social-enhancement pheromones to ease persuasion."
+  },
+  {
+    "name": "Digital Micro-Gram Balance",
+    "price": "50",
+    "description": "A compact precision scale used by street docs and chemists to weigh bio-reagents and powders."
+  },
+  {
+    "name": "Biometric Lock-Gel",
+    "price": "5",
+    "description": "A quick-hardening chemical wax used to temporarily seal electronic keypads and physical locks."
+  },
+  {
+    "name": "Corporate Encrypted Ring",
+    "price": "50",
+    "description": "A signet ring embedded with an RFID chip that grants seamless access to corporate facilities."
+  },
+  {
+    "name": "Pop-Up Stealth Bivouac Tent",
+    "price": "20",
+    "description": "A lightweight two-person tent with thermo-optic coating to hide thermal signatures from overhead drones."
+  },
+  {
+    "name": "Plasma Arc Igniter",
+    "price": "5",
+    "description": "A pocket-sized electronic lighter that creates an intense plasma arc capable of lighting fires in heavy rain."
+  }
+]

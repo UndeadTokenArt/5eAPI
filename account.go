@@ -11,6 +11,7 @@ import (
 type AccountInfo struct {
 	SignedIn       bool   `json:"signed_in"`
 	Guest          bool   `json:"guest"`
+	Editor         bool   `json:"editor,omitempty"`
 	User           string `json:"user,omitempty"`
 	CharacterCount int    `json:"character_count"`
 	LoginURL       string `json:"login_url,omitempty"`
@@ -57,6 +58,7 @@ func accountHandler(w http.ResponseWriter, r *http.Request) {
 	info := AccountInfo{}
 	base := autheliaURL()
 	returnTo := returnURL(r)
+	_, info.Editor = editorUser(r)
 	if user != "" {
 		info.SignedIn = !guest
 		info.Guest = guest

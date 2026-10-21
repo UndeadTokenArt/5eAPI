@@ -10,7 +10,7 @@ import (
 )
 
 func TestCharacterOptionsSeparateClassesFromSubclasses(t *testing.T) {
-	guide, err := loadJSON("static/data/neo_tokyo_starter_guide.json")
+	guide, err := loadGuideFromDir(builtinGuideDir)
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -18,10 +18,15 @@ func TestCharacterOptionsSeparateClassesFromSubclasses(t *testing.T) {
 
 	classes := map[string]bool{}
 	for _, class := range opts.Classes {
-		if isSubclassGroup(class.Name) || leadingNumberPattern.MatchString(class.Name) {
+		if strings.Contains(strings.ToLower(class.Name), "subclass") {
 			t.Errorf("subclass entry %q listed as a class", class.Name)
 		}
 		classes[class.Name] = true
+	}
+	for _, sub := range opts.Subclasses {
+		if sub.Link == "" || len(sub.Notes) == 0 {
+			t.Errorf("subclass %q has link %q and %d notes", sub.Name, sub.Link, len(sub.Notes))
+		}
 	}
 	if len(opts.Classes) != 10 {
 		t.Errorf("classes = %d, want 10: %v", len(opts.Classes), opts.Classes)
@@ -48,8 +53,33 @@ func TestCharacterOptionsSeparateClassesFromSubclasses(t *testing.T) {
 	}
 }
 
+func TestWikiNestsSubclassesUnderTheirClass(t *testing.T) {
+	guide, err := loadGuideFromDir(builtinGuideDir)
+	if err != nil {
+		t.Fatal(err)
+	}
+	node, base := categoryNode(guide, "Classes")
+	if base == "" {
+		t.Fatal("no Classes section")
+	}
+	if len(node.Children) != len(guide.Category.Classes) {
+		t.Fatalf("class nodes = %d, want %d", len(node.Children), len(guide.Category.Classes))
+	}
+	for i, class := range guide.Category.Classes {
+		subs := subclassNodes(node.Children[i])
+		if len(subs) != len(class.Subclasses) {
+			t.Fatalf("%s: subclass nodes = %d, want %d", class.Name, len(subs), len(class.Subclasses))
+		}
+		for j, sub := range subs {
+			if sub.Title != class.Subclasses[j].Name || !strings.HasPrefix(sub.ID, node.Children[i].ID+"-") {
+				t.Errorf("%s: subclass node %q (id %s) is not nested under the class", class.Name, sub.Title, sub.ID)
+			}
+		}
+	}
+}
+
 func TestCharacterOptionsMatchGuideAndLinkToDetails(t *testing.T) {
-	guide, err := loadJSON("static/data/neo_tokyo_starter_guide.json")
+	guide, err := loadGuideFromDir(builtinGuideDir)
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -134,7 +164,7 @@ func TestNeoTokyoSearchFindsAcrossCategories(t *testing.T) {
 }
 
 func TestOptionsCarryMechanicalNotes(t *testing.T) {
-	guide, err := loadJSON("static/data/neo_tokyo_starter_guide.json")
+	guide, err := loadGuideFromDir(builtinGuideDir)
 	if err != nil {
 		t.Fatal(err)
 	}

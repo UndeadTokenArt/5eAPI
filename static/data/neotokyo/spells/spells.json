@@ -1,0 +1,4815 @@
+[
+  {
+    "name": "Corrosive Flechette Pulse",
+    "level": "2",
+    "school": "Transmutation",
+    "casting_time": "1 Action",
+    "range": "90 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a drop of industrial solvent or a Sector 17 bio-reagent ampoule)"
+    ],
+    "duration": "Instantaneous",
+    "description": "You load a compressed burst of industrial chemical solvent or toxic Sector 17 bio-reagent into your wrist-launcher or biometric focus, firing a glowing stream of flesh-searing polymer at a target.",
+    "mechanics": "Make a ranged spell attack. On a hit, the target takes 4d4 Acid damage immediately and 2d4 Acid damage at the end of its next turn as the bio-solvent continues to dissolve armor plating and flesh. On a miss, the chemical splash still deals half of the initial damage (2d4 Acid damage) and no damage at the end of its next turn.\nAt Higher Levels: When cast using a spell slot of 3rd level or higher, the damage increases by 1d4 for both initial and delayed damage for each slot level above 2nd."
+  },
+  {
+    "name": "Chem-Solvent Spray",
+    "level": "0",
+    "school": "Evocation",
+    "casting_time": "1 Action",
+    "range": "60 feet",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Instantaneous",
+    "description": "You vent a micro-pressurized stream of corrosive industrial chemical or toxic bio-reagent from a sub-dermal nozzle or wrist emitter toward one or two close targets.",
+    "mechanics": "Choose one creature within range, or two creatures within range that are within 5 feet of each other. A target must succeed on a Dexterity saving throw or take 1d6 Acid damage.\nAt Higher Levels: The spell's damage increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6)."
+  },
+  {
+    "name": "Bio-Nanite Overclock",
+    "level": "2",
+    "school": "Abjuration",
+    "casting_time": "1 Action",
+    "range": "30 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a tiny bio-nanite vial or Hoshi Biodyne medical chip)"
+    ],
+    "duration": "8 hours",
+    "description": "You broadcast an emergency cellular repair protocol that deploys micro-nanites into up to three allies' nervous systems, increasing their physical toughness and sealing minor tissue damage.",
+    "mechanics": "Choose up to three creatures within range. Each target's hit point maximum and current hit points increase by 5 for the duration.\nAt Higher Levels: When cast using a spell slot of 3rd level or higher, the targets' hit points increase by an additional 5 for each slot level above 2nd."
+  },
+  {
+    "name": "Sensor Perimeter Ping",
+    "level": "1",
+    "school": "Abjuration",
+    "casting_time": "1 Action",
+    "range": "30 feet (20-foot cube)",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a micro-sensor node or optic wire spool)"
+    ],
+    "duration": "8 hours",
+    "description": "You deploy invisible optical laser tripwires and ultrasonic motion-sensor pings across a designated area, alerting your comms feed or HUD the moment an unauthorized signature breaks the perimeter.",
+    "mechanics": "Set a point within range and designate an area no larger than a 20-foot cube. Until the spell ends, an alarm alerts you whenever a Tiny or larger creature touches or enters the warded area. When casting, you can designate creatures that won't trigger the alarm. Choose whether the alarm is Mental (a private wireless ping sent to your neural feed up to 1 mile away) or Audible (a 60-foot piercing electronic klaxon chime)."
+  },
+  {
+    "name": "Aggro Intercept Lock",
+    "level": "1",
+    "school": "Divination",
+    "casting_time": "1 Bonus Action",
+    "components": [
+      "V"
+    ],
+    "duration":"Concentration, up to 1 minute",
+    "description": "By broadcasting an invasive, high-priority threat ping over open comms channels and spoofing nearby optic HUDs, you force a hostile combatant’s targeting systems and attention to lock onto you. You project your heavily armored frame as the primary tactical threat, drawing their fire away from squishy squadmates and defenseless civilians.",
+    "mechanics": "You attempt to compel a creature into a 1-on-1 engagement. One creature that you can see within range must make a Wisdom saving throw. On a failed save, the creature is drawn to you, compelled by your high-decibel threat override. \nThe target has disadvantage on attack rolls against creatures other than you. \nThe target must make a Wisdom saving throw each time it attempts to move to a space that is more than 30 feet away from you. If it succeeds on this saving throw, this spell doesn’t restrict the target’s movement for that turn. \nThe spell ends early if:\n You attack any other creature.\nYou cast a spell/program that targets a hostile creature other than the target.\nA creature friendly to you damages the target or casts a harmful spell/program on it\nYou end your turn more than 30 feet away from the target."
+  },
+  {
+    "name": "Sub-Dermal Flesh-Craft",
+    "level": "2",
+    "school": "Transmutation",
+    "casting_time": "1 Action",
+    "range": "Self",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Concentration, up to 1 hour",
+    "description": "You execute an adaptive bio-reconstruction code or active optical-mesh cloak, altering your physical features, skin pigmentation, or sub-dermal biology on the fly.",
+    "mechanics": "You assume a new form. When you cast the spell, choose one of the following options. While the spell lasts, you can use an action to end one option and gain the benefits of a different one:\nBiometric Spoofing: You alter your physical appearance (facial structure, height, voice modulation, dermal color, hair, sex) to spoof cameras, facial recognition, and human observers. You gain advantage on Deep Fake (Deception) checks to maintain the disguise.\nAquatic Adaptive Sub-Dermal: You adapt your body to aquatic environments. You sprout gill-slits or bio-filters that allow you to breathe underwater, and webbed digits that grant a swimming speed equal to your walking speed.\nHigh-Frequency Natural Augments: You sprout monomolecular claws, bone-spikes, or high-torque jaw teeth. Your unarmed strikes deal 1d6 Bludgeoning, Piercing, or Slashing damage (your choice), count as magical weapon strikes, and gain a +1 bonus to attack and damage rolls."
+  },
+  {
+    "name": "Critter Subroutine Override",
+    "level": "1",
+    "school": "Enchantment",
+    "casting_time": "1 Action",
+    "range": "30 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a morsel of synth-kibble or an optic signal ping)"
+    ],
+    "duration": "24 hours",
+    "description": "You broadcast a pacification pulse or offer conditioned synth-kibble to suppress territorial hostility in a street critter, stray cyber-hound, or low-tier bio-drone.",
+    "mechanics": "Choose a beast or bio-drone within range that has an Intelligence score of 3 or lower. The target must succeed on a Wisdom saving throw or be Subliminally Overridden (Charmed) by you for the spell's duration. If you or one of your allies harms the target, the spell instantly ends.\nAt Higher Levels: When cast using a spell slot of 2nd level or higher, you can target one additional beast or bio-drone for each slot level above 1st."
+  },
+  {
+    "name": "Bio-Drone Data Relay",
+    "level": "2",
+    "school": "Enchantment",
+    "casting_time": "1 Action",
+    "range": "30 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a micro-data chip or optical tracking tag)"
+    ],
+    "duration": "24 hours",
+    "description": "You upload a brief encrypted message or audio clip into a Tiny street critter, mechanical sparrow, or micro-surveillance drone, routing it to deliver the payload across Neo-Tokyo's vertical layers.",
+    "mechanics": "Target a Tiny beast or micro-drone within range. You specify a recipient and a general location. You speak a message of up to 25 words. The target travels toward the destination at a speed of roughly 50 miles per 24 hours for airborne targets or 25 miles per 24 hours for land targets. Upon reaching the target, it broadcasts the message in your voice, then resumes its normal behavior.\nAt Higher Levels: When cast using a spell slot of 3rd level or higher, the duration increases by 48 hours for each slot level above 2nd."
+  },
+  {
+    "name": "Bio-Drone Swarm Reconfiguration",
+    "level": "8",
+    "school": "Transmutation",
+    "casting_time": "1 Action",
+    "range": "30 feet",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Concentration, up to 24 hours",
+    "description": "You project a high-density genetic rewrite code or nanite restructuring field into surrounding allies, forcibly mutating their physical frames into apex bio-drones or heavy urban beasts.",
+    "mechanics": "Choose any number of willing creatures within range. You transform each target into a Large or smaller beast or bio-drone of Challenge Rating 4 or lower. You can choose different forms for different targets. On subsequent turns, you can use your action to transform affected targets into new beast forms. A target's game statistics are replaced by the chosen beast/bio-drone stat block, though it retains its alignment, personality, Intelligence, Wisdom, and Charisma scores."
+  },
+  {
+    "name": "Cyber-Corpse Rigging",
+    "level": "3",
+    "school": "Necromancy",
+    "casting_time": "1 minute",
+    "range": "10 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a micro-actuator controller, servomotor rig, or neural override chip)"
+    ],
+    "duration": "Instantaneous",
+    "description": "You drive sub-dermal servomotors, wiring, and a crude neural governor into a corpse or skeletal frame, animating it into a loyal cyber-zombie or automated skeletal rig.",
+    "mechanics": "Target a pile of bones or a humanoid corpse within range. Your spell rewires the remains, animating it as a Skeletal Rig (if targeting bones) or a Cyber-Zombie (if targeting a corpse). On each of your turns, you can use a bonus action to mentally command any construct created by this spell if the creature is within 60 feet. The construct obeys your mental commands for 24 hours.\nAt Higher Levels: When cast using a spell slot of 4th level or higher, you animate or reassert control over two additional constructs for each slot level above 3rd."
+  },
+  {
+    "name": "Automated Hardware Hijack",
+    "level": "5",
+    "school": "Transmutation",
+    "casting_time": "1 Action",
+    "range": "120 feet",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Concentration, up to 1 minute",
+    "description": "You broadcast an explosive wireless override pulse that animates unattached urban hardware—street signs, vending machine panels, discarded engine blocks, or arcade chassis—granting them kinetic levitation and combat routines.",
+    "mechanics": "Choose up to ten non-magical, unequipped objects within range that aren't being worn or carried. Each object animates, sprouting hard-light thrusters or kinetic actuators, and becomes a construct under your control until the spell ends.\nTiny: 1 object (HP: 20, AC: 18, Atk: +8, 1d4+4 Dmg)\nSmall: 1 object (HP: 25, AC: 16, Atk: +6, 1d8+2 Dmg)\nMedium: 2 objects (HP: 40, AC: 13, Atk: +5, 2d6+1 Dmg)\nLarge: 4 objects (HP: 50, AC: 10, Atk: +6, 2d10+2 Dmg)\nHuge: 8 objects (HP: 80, AC: 10, Atk: +8, 2d12+4 Dmg)\nAs a bonus action, you can mentally command any animated object within 120 feet to move and make a slam attack against a target."
+  },
+  {
+    "name": "Bio-Organic Exclusion Field",
+    "level": "5",
+    "school": "Abjuration",
+    "casting_time": "1 Action",
+    "range": "Self (10-foot radius)",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a micro-pulse generator chip or bio-sensor node)"
+    ],
+    "duration": "Concentration, up to 1 hour",
+    "description": "You project a high-frequency bio-dispersion field from your sub-dermal harness or focus, creating a 10-foot barrier that repels living organic matter and biological metahumans.",
+    "mechanics": "A 10-foot-radius barrier extends from you and moves with you as its center. Living creatures (humanoids, beasts, bio-drones, plant-critters) cannot pass or reach through the barrier. Constructs, Cyber-Zombies, and Skeletal Rigs are unaffected by the field. If a living creature is within 10 feet of you when you cast the spell, the field forces the creature back until it is outside the barrier. If you move so that an affected creature is forced to pass through the barrier, the spell instantly collapses."
+  },
+  {
+    "name": "Null-Mana Damping Dome",
+    "level": "8",
+    "school": "Abjuration",
+    "casting_time": "1 Action",
+    "range": "Self (10-foot-radius sphere)",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a high-density lead-alloy capacitor or Izanagi Grid damper node)"
+    ],
+    "duration": "Concentration, up to 1 hour",
+    "description": "You activate an ultra-high-density frequency dampener that neutralizes all local mana flow, astral energy, matrix magic subroutines, and active spell code within a 10-foot sphere centered on you.",
+    "mechanics": "Within the 10-foot sphere, no spells can be cast, active magic and hacks are suppressed, and the magical properties of weapons and cyberware are temporarily disabled. \nAny active spell or magic effect targeting a creature or area inside the sphere is suppressed while inside it. \nMagical weapons, focuses, and enchanted cyberware function as mundane equivalents while within the dome. \nSummoned spirits, sprites, and magical constructs phase out of physical existence while inside the sphere."
+  },
+  {
+    "name": "Subliminal Beacon / Repulsion Signal",
+    "level": "8",
+    "school": "Enchantment",
+    "casting_time": "1 hour",
+    "range": "60 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a broadcast frequency array or pheromone-infused bio-chip)"
+    ],
+    "duration": "10 days",
+    "description": "You encode an overwhelming subconscious broadcasting frequency or pheromone profile into a location, object, or target, implanting an irresistible neural attraction or psychological terror toward a designated target category.",
+    "mechanics": "Target a Huge or smaller object or location, and designate a specific creature type or metahuman heritage. Choose one of the following broadcast modes:\nRepulsion: Affected targets coming within 120 feet of the beacon must succeed on a Wisdom saving throw or suffer Threat-Lock (Frightened). While frightened, the creature must use its movement on each turn to move as far away from the beacon as possible.\nAttraction: Affected targets coming within 120 feet of the beacon must succeed on a Wisdom saving throw or suffer Subliminal Override (Charmed). While charmed, the target is compelled to approach the beacon and stay near it."
+  },
+  {
+    "name": "Micro-Drone Optical Scanner",
+    "level": "4",
+    "school": "Divination",
+    "casting_time": "1 Action",
+    "range": "30 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a crystal micro-lens or optical sensor head)"
+    ],
+    "duration": "Concentration, up to 1 hour",
+    "description": "You deploy an invisible, floating micro-recon drone equipped with thermal optics, night vision, and a live HUD feed linked directly to your optic implants.",
+    "mechanics": "You create an invisible, floating optic sensor within range. The sensor has darkvision and thermal optics out to 30 feet, streaming visual and audio feeds directly into your neural HUD. As an action, you can move the sensor up to 30 feet in any direction. There is no limit to how far away from you the sensor can move, but it cannot pass through solid physical barriers. It can pass through small gaps, ventilation grates, and openings as small as 1 inch in diameter."
+  },
+  {
+    "name": "Hard-Light Power-Glove",
+    "level": "5",
+    "school": "Evocation",
+    "casting_time": "1 Action",
+    "range": "120 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(an articulated servo-glove or hard-light emitter ring)"
+    ],
+    "duration": "Concentration, up to 1 minute",
+    "description": "You project a Large, glowing hard-light energy gauntlet or hydraulic kinetic force-arm that hovers in mid-air to grapple enemies, crush physical barriers, or shield you from incoming attacks.",
+    "mechanics": "You project a Large hard-light gauntlet at an unoccupied space within range. The gauntlet has an AC of 20, Hit Points equal to your maximum Hit Points, a Strength score of 26 (+8), and a Dexterity score of 10 (+0). On the turn you cast it, and as a bonus action on subsequent turns, you can command the gauntlet to perform Clenched Strike (4d12 Force damage), Force Shove, Grasp & Crush (2d6 + spell modifier Force damage), or Aegis Shield (+2 AC half cover).\nAt Higher Levels: When cast using a spell slot of 6th level or higher, Clenched Strike damage increases by 2d12 and Grasp & Crush damage increases by 2d6 for each slot level above 5th."
+  },
+  {
+    "name": "Biometric Firewall Lockout",
+    "level": "2",
+    "school": "Abjuration",
+    "casting_time": "1 Action",
+    "range": "Touch",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a biometric lock-gel cartridge or encrypted key-card)"
+    ],
+    "duration": "Until dispelled",
+    "description": "You apply an encrypted digital lock and high-density biometric security script onto an entryway, safe door, or computer terminal.",
+    "mechanics": "You securely lock a door, window, gate, chest, or digital terminal. You and creatures you designate can open the object normally. You can also set a biometric password or cipher. The DC to break the lock or pick it increases by 10."
+  },
+  {
+    "name": "Monomolecular Energy Blade",
+    "level": "7",
+    "school": "Evocation",
+    "casting_time": "1 Action",
+    "range": "60 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a miniature laser lens)"
+    ],
+    "duration": "Concentration, up to 1 minute",
+    "description": "You materialize a floating, three-foot-long blade of pure monomolecular plasma and hard-light energy that slices through armor and cyberware.",
+    "mechanics": "Create a floating energy blade within range. When the blade appears, you can make a melee spell attack against a target within 5 feet of it. On a hit, the target takes 3d10 Force damage. As a bonus action on your turn, you can move the blade up to 20 feet and repeat the attack."
+  },
+  {
+    "name": "Firmware Signature Mask",
+    "level": "2",
+    "school": "Illusion",
+    "casting_time": "1 Action",
+    "range": "Touch",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a silk cloth or optic dampening gel)"
+    ],
+    "duration": "24 hours",
+    "description": "You alter the digital signature, magical aura, or cyberware telemetry of an item or target to fool security scanners and spell detectors.",
+    "mechanics": "You alter how the target appears to detection spells and security sensors. You can mask an item's magical or technological aura, make a magical item register as mundane, or alter its alignment signature."
+  },
+  {
+    "name": "Astral-Net Projection",
+    "level": "9",
+    "school": "Necromancy",
+    "casting_time": "1 hour",
+    "range": "10 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a set of jacinth crystals worth 1,000gp in a silver casing)"
+    ],
+    "duration": "Special",
+    "description": "You decouple your consciousness and spirit body from your physical form, projecting your soul into the Astral Plane and the deepest layer of the global Matrix grid.",
+    "mechanics": "You and up to eight willing creatures project your astral bodies into the Astral Plane. Your physical body falls unconscious and enters stasis. Your astral body possesses your stats and equipment."
+  },
+  {
+    "name": "Predictive Data Analytics",
+    "level": "2",
+    "school": "Divination",
+    "casting_time": "1 minute",
+    "range": "Self",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(specially marked digital coins or neural dice)"
+    ],
+    "duration": "Instantaneous",
+    "description": "You feed real-time atmospheric data, corporate market trends, and probability algorithms into your deck to predict the short-term outcome of a specific action.",
+    "mechanics": "You receive an omen from your analytics deck regarding the results of a specific course of action you plan to take within the next 30 minutes: Weal (good), Woe (bad), Weal and Woe (both), or Nothing."
+  },
+  {
+    "name": "Consciousness Uplink Routine",
+    "level": "5",
+    "school": "Transmutation",
+    "casting_time": "8 hours",
+    "range": "Touch",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(an Awakened resin module or KAMI neural chip worth 1,000gp)"
+    ],
+    "duration": "Instantaneous",
+    "description": "You implant a self-aware synthetic soul routine or spirit-code into an un-awakened urban critter, plant, or autonomous drone, granting it sapience.",
+    "mechanics": "Target a beast, plant, or construct with an Intelligence of 3 or lower. The target gains an Intelligence score of 10 and the ability to speak one language you know. It is Charmed by you for 30 days."
+  },
+  {
+    "name": "Subliminal Glitch Injection",
+    "level": "1",
+    "school": "Enchantment",
+    "casting_time": "1 Action",
+    "range": "30 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a drop of corrupted optic fluid)"
+    ],
+    "duration": "Concentration, up to 1 minute",
+    "description": "You beam a subtle neural glitch or micro-malware ping into up to three targets, causing optic stutters and muscle twitches that throw off their aim.",
+    "mechanics": "Up to three targets within range must make a Charisma saving throw. Whenever a target that fails this save makes an attack roll or saving throw before the spell ends, it must subtract 1d4 from the roll.\nAt Higher Levels: You can target one additional creature for each slot level above 1st."
+  },
+  {
+    "name": "Matrix Isolation Quarantine",
+    "level": "4",
+    "school": "Abjuration",
+    "casting_time": "1 Action",
+    "range": "60 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(an encrypted containment drive)"
+    ],
+    "duration": "Concentration, up to 1 minute",
+    "description": "You force a target's consciousness or physical form into an isolated, pocket digital quarantine server, removing them from the battlefield.",
+    "mechanics": "Target a creature within range. It must succeed on a Charisma saving throw or be banished to a harmless digital quarantine server. While there, the target is Incapacitated. If the target is native to a different plane or digital realm, it returns to its home plane on a failed save."
+  },
+  {
+    "name": "Sub-Dermal Kinetic Weave",
+    "level": "2",
+    "school": "Transmutation",
+    "casting_time": "1 Action",
+    "range": "Touch",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a patch of hardened reptile scale or Kevlar thread)"
+    ],
+    "duration": "1 hour",
+    "description": "You temporarily harden a target's skin or clothing with flexible carbon-mesh and sub-dermal kinetic plating.",
+    "mechanics": "Touch a willing creature who isn't wearing armor. Until the spell ends, the target's skin hardens and its AC cannot be less than 16."
+  },
+  {
+    "name": "High-Priority Signal Broadcast",
+    "level": "3",
+    "school": "Abjuration",
+    "casting_time": "1 Action",
+    "range": "Self (30-foot radius)",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Concentration, up to 1 minute",
+    "description": "You broadcast an uplifting motivational comms feed and trauma-suppression frequency to stabilize allies during intense combat.",
+    "mechanics": "For the duration, allies within 30 feet have advantage on Wisdom saving throws and death saving throws, and regain the maximum possible hit points from any healing."
+  },
+  {
+    "name": "Black ICE Corruption Malware",
+    "level": "3",
+    "school": "Necromancy",
+    "casting_time": "1 Action",
+    "range": "Touch",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Concentration, up to 1 minute",
+    "description": "You touch a creature and upload a malicious Black ICE payload directly into its nerve cluster or cyber-ports.",
+    "mechanics": "Touch a target. It must make a Wisdom saving throw. On a failure, choose one effect: disadvantage on ability checks and attack rolls using one attribute; disadvantage on attack rolls against you; or taking 1d8 Necrotic/Psychic damage at the start of its turns."
+  },
+  {
+    "name": "High-Voltage Cable Swarm",
+    "level": "4",
+    "school": "Conjuration",
+    "casting_time": "1 Action",
+    "range": "90 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a piece of copper wire)"
+    ],
+    "duration": "Concentration, up to 1 minute",
+    "description": "Writhing bundles of high-voltage copper cabling and monofilament wires erupt from the ground, grabbing and shocking enemies.",
+    "mechanics": "A 20-foot square area within range turns into difficult terrain filled with writhing cables. Creatures starting their turn in the area take 3d6 Bludgeoning/Lightning damage and must make a Dexterity save or be Restrained."
+  },
+  {
+    "name": "Hard-Light Razor Grid",
+    "level": "6",
+    "school": "Evocation",
+    "casting_time": "1 Action",
+    "range": "90 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a small monofilament grid ring)"
+    ],
+    "duration": "Concentration, up to 10 minutes",
+    "description": "You project a massive wall of hard-light razor beams and spinning laser cutters across the field.",
+    "mechanics": "You create a wall of razor-sharp energy up to 60 feet long, 20 feet high, and 1 foot thick. Any creature passing through the wall takes 6d10 Slashing/Force damage."
+  },
+  {
+    "name": "Neural Precision Boost",
+    "level": "1",
+    "school": "Enchantment",
+    "casting_time": "1 Action",
+    "range": "30 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a drop of holy oil or focus ping)"
+    ],
+    "duration": "Concentration, up to 1 minute",
+    "description": "You upload a tactical targeting enhancement into up to three allies, sharpening their focus and reaction speed.",
+    "mechanics": "Up to three allies within range add a 1d4 bonus to their attack rolls and saving throws for the duration.\nAt Higher Levels: Target one additional creature for each slot level above 1st."
+  },
+  {
+    "name": "Cellular Decay Beam",
+    "level": "4",
+    "school": "Necromancy",
+    "casting_time": "1 Action",
+    "range": "30 feet",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Instantaneous",
+    "description": "You blast a target with a high-intensity necrotic radiation beam that rots organic tissue and breaks down cellular bonds.",
+    "mechanics": "Target a creature within range. It must make a Constitution saving throw, taking 8d8 Necrotic damage on a failure, or half on a success."
+  },
+  {
+    "name": "Optical Glitch / Acoustic Jammer",
+    "level": "2",
+    "school": "Necromancy",
+    "casting_time": "1 Action",
+    "range": "30 feet",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "1 minute",
+    "description": "You inject a targeted optic glitch or audio deafening code into a creature's sensory implants or nervous system.",
+    "mechanics": "Target a creature within range. It must succeed on a Constitution saving throw or become Blinded or Deafened (your choice) for the duration. It can repeat the save at the end of each turn."
+  },
+  {
+    "name": "Phase-Shift Glitch",
+    "level": "3",
+    "school": "Transmutation",
+    "casting_time": "1 Action",
+    "range": "Self",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "1 minute",
+    "description": "Your body rapidly glitters and phase-shifts between physical reality and the local digital grid, making you unpredictable to target.",
+    "mechanics": "At the end of your turn, roll a d20. On an 11 or higher, you vanish from your current plane into the Ethereal/Digital Plane. At the start of your next turn, you reappear in an unoccupied space within 10 feet."
+  },
+  {
+    "name": "Holographic Optical Camouflage",
+    "level": "2",
+    "school": "Illusion",
+    "casting_time": "1 Action",
+    "range": "Self",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Concentration, up to 1 minute",
+    "description": "You project an active optical camouflage shimmer around your body, blurring your position to observers.",
+    "mechanics": "Any creature has disadvantage on attack rolls against you. An attacker is immune to this effect if it doesn't rely on sight or can see through illusions."
+  },
+  {
+    "name": "High-Voltage Tracker Strike",
+    "level": "2",
+    "school": "Evocation",
+    "casting_time": "1 Bonus Action",
+    "range": "Self",
+    "components": [
+      "V"
+    ],
+    "duration": "Concentration, up to 1 minute",
+    "description": "Your next weapon hit discharges a surging high-voltage shock and tags the target with a luminous, tracking signal.",
+    "mechanics": "The next time you hit a creature with a weapon attack, it takes an extra 2d6 Radiant/Lightning damage and sheds bright light in a 5-foot radius. It cannot become invisible."
+  },
+  {
+    "name": "Sub-Dermal Flame-Venter",
+    "level": "1",
+    "school": "Evocation",
+    "casting_time": "1 Action",
+    "range": "Self (15-foot cone)",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Instantaneous",
+    "description": "You vent a searing sheet of liquid napalm or superheated plasma in a 15-foot cone from your sub-dermal nozzles.",
+    "mechanics": "Each creature in a 15-foot cone must make a Dexterity saving throw, taking 3d6 Fire damage on a failure, or half on a success.\nAt Higher Levels: Damage increases by 1d6 for each slot level above 1st."
+  },
+  {
+    "name": "Orbital Plasma Strike",
+    "level": "3",
+    "school": "Conjuration",
+    "casting_time": "1 Action",
+    "range": "150 feet",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Concentration, up to 10 minutes",
+    "description": "You ping a satellite or sky-arcology relay to paint a target area, unleashing torrential lightning arcs and plasma bursts.",
+    "mechanics": "A storm cloud or orbital target laser forms in a 60-foot cylinder. As an action, you call down a bolt of lightning, dealing 3d10 Lightning damage to creatures in a 5-foot radius on a failed Dexterity save."
+  },
+  {
+    "name": "Subliminal Neural Pacifier",
+    "level": "2",
+    "school": "Enchantment",
+    "casting_time": "1 Action",
+    "range": "60 feet",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Concentration, up to 1 minute",
+    "description": "You emit a calming neurological frequency that suppresses intense aggression and adrenaline surges in nearby targets.",
+    "mechanics": "Suppress strong emotions in humanoids in a 20-foot sphere. Targets failing a Charisma save lose hostile intentions and immunity to Charm/Frightened."
+  },
+  {
+    "name": "Arc-Discharge Network",
+    "level": "6",
+    "school": "Evocation",
+    "casting_time": "1 Action",
+    "range": "150 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a bit of fur and an amber rod)"
+    ],
+    "duration": "Instantaneous",
+    "description": "You discharge a massive high-voltage arc at a primary target that leaps through up to three secondary targets in a chaining arc.",
+    "mechanics": "A bolt of lightning strikes a target within range, dealing 10d8 Lightning damage on a failed Dexterity save. Three secondary bolts jump to targets within 30 feet of the first target."
+  },
+  {
+    "name": "Subliminal Override",
+    "level": "1",
+    "school": "Enchantment",
+    "casting_time": "1 Action",
+    "range": "30 feet",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "1 hour",
+    "description": "You broadcast a subtle subliminal frequency that makes a target humanoid view you as a trusted friend and ally.",
+    "mechanics": "Target a humanoid. It must succeed on a Wisdom saving throw (with advantage if in combat) or be Charmed by you for 1 hour."
+  },
+  {
+    "name": "Necrotic Signal Freeze",
+    "level": "0",
+    "school": "Necromancy",
+    "casting_time": "1 Action",
+    "range": "120 feet",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "1 round",
+    "description": "You project a ghostly necrotic data feed that grips a target with chilling cold and suppresses its cellular healing.",
+    "mechanics": "Make a ranged spell attack. On a hit, the target takes 1d8 Necrotic damage and cannot regain hit points until the start of your next turn."
+  },
+  {
+    "name": "Bio-Nanite Liquefaction Field",
+    "level": "6",
+    "school": "Necromancy",
+    "casting_time": "1 Action",
+    "range": "500 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a pinch of black dust)"
+    ],
+    "duration": "Instantaneous",
+    "description": "A wave of flesh-consuming bio-nanites erupts in a 60-foot sphere, liquefying biological matter.",
+    "mechanics": "All creatures in a 60-foot-radius sphere must make a Constitution save, taking 8d6 Necrotic damage on a failure, or half on a success."
+  },
+  {
+    "name": "Remote Drone Feeds",
+    "level": "3",
+    "school": "Divination",
+    "casting_time": "10 minutes",
+    "range": "1 mile",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a focus lens)"
+    ],
+    "duration": "Concentration, up to 10 minutes",
+    "description": "You deploy an invisible sensor link to remotely view or listen to a familiar location anywhere within range.",
+    "mechanics": "Create an invisible sensor at a familiar or described location within 1 mile. You can see or hear through the sensor as if you were present."
+  },
+  {
+    "name": "Replicant Biomass Vats",
+    "level": "8",
+    "school": "Necromancy",
+    "casting_time": "1 hour",
+    "range": "Touch",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a bio-vat worth 2,000gp and biomass worth 1,000gp)"
+    ],
+    "duration": "Instantaneous",
+    "description": "You grow an inert, identical replicant clone of a target inside a bio-engineering vat, ready to receive their consciousness upon death.",
+    "mechanics": "You grow a duplicate clone body over 120 days. If the original creature dies, its soul/consciousness transfers to the clone body instantly."
+  },
+  {
+    "name": "Sector 17 Neuro-Toxin Vapor",
+    "level": "5",
+    "school": "Conjuration",
+    "casting_time": "1 Action",
+    "range": "120 feet",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Concentration, up to 10 minutes",
+    "description": "You vent a dense, greenish neuro-toxic gas cloud from Sector 17 that chokes and dissolves living tissue.",
+    "mechanics": "Create a 20-foot-radius sphere of yellow-green fog. A creature starting its turn in the fog takes 5d8 Poison damage on a failed Constitution save."
+  },
+  {
+    "name": "Strobe Light Flashbang",
+    "level": "1",
+    "school": "Illusion",
+    "casting_time": "1 Action",
+    "range": "Self (15-foot cone)",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a drop of phosphorescent gel)"
+    ],
+    "duration": "1 round",
+    "description": "A sudden burst of multi-colored strobe lasers and flashbang lights blinds surrounding enemies.",
+    "mechanics": "Roll 6d10; the total is how many Hit Points of creatures in a 15-foot cone this spell can affect, causing them to become Blinded."
+  },
+  {
+    "name": "Subconscious Neural Override",
+    "level": "1",
+    "school": "Enchantment",
+    "casting_time": "1 Action",
+    "range": "60 feet",
+    "components": [
+      "V"
+    ],
+    "duration": "1 round",
+    "description": "You issue a single, authoritative neural command that forces a target to execute a specific 1-word action.",
+    "mechanics": "Target a creature. It must succeed on a Wisdom saving throw or follow a 1-word command (e.g. Approach, Drop, Halt, Flee) on its next turn."
+  },
+  {
+    "name": "Deep-Net Matrix Query",
+    "level": "5",
+    "school": "Divination",
+    "casting_time": "1 minute",
+    "range": "Self",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(incense and a data chip)"
+    ],
+    "duration": "1 minute",
+    "description": "You contact an extra-dimensional Matrix core or powerful corporate AI to ask up to six direct questions.",
+    "mechanics": "Contact a powerful AI or deity to ask up to six questions that can be answered with a yes or no."
+  },
+  {
+    "name": "Ley-Line Environmental Ping",
+    "level": "5",
+    "school": "Divination",
+    "casting_time": "1 minute",
+    "range": "Self",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Instantaneous",
+    "description": "You ping the local environmental ley lines and urban grid to learn facts about the surrounding district.",
+    "mechanics": "Gain knowledge of the surrounding territory up to 3 miles (terrain, water, creatures, threat levels)."
+  },
+  {
+    "name": "Universal Neural Translator",
+    "level": "1",
+    "school": "Divination",
+    "casting_time": "1 Action",
+    "range": "Self",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a soot-covered copper coin)"
+    ],
+    "duration": "1 hour",
+    "description": "Your neural interface translates all spoken and written languages, digital codes, and dialects in real time.",
+    "mechanics": "You understand the literal meaning of any spoken language you hear or written text you read."
+  },
+  {
+    "name": "Behavioral Routing Override",
+    "level": "4",
+    "school": "Enchantment",
+    "casting_time": "1 Action",
+    "range": "30 feet",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Concentration, up to 1 minute",
+    "description": "You force a target creature to move in a specific direction on its turn, overriding its motor controls.",
+    "mechanics": "Target a creature. It must succeed on a Wisdom save or use its movement on each turn to move in a direction you specify."
+  },
+  {
+    "name": "Liquid Nitrogen Venter",
+    "level": "5",
+    "school": "Evocation",
+    "casting_time": "1 Action",
+    "range": "Self (60-foot cone)",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a crystal vial)"
+    ],
+    "duration": "Instantaneous",
+    "description": "You blast a massive 60-foot cone of sub-zero liquid nitrogen and cryogenic fog from your vents.",
+    "mechanics": "Creatures in a 60-foot cone must make a Constitution save, taking 8d8 Cold damage on a failure, or half on a success."
+  },
+  {
+    "name": "Neural Feedback Loop",
+    "level": "4",
+    "school": "Enchantment",
+    "casting_time": "1 Action",
+    "range": "90 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(three nut shells)"
+    ],
+    "duration": "Concentration, up to 1 minute",
+    "description": "You flood a target's neural network with conflicting sensory data, causing erratic actions and confusion.",
+    "mechanics": "Creatures in a 10-foot sphere must make a Wisdom save or act randomly on their turn according to a d10 roll table."
+  },
+  {
+    "name": "Bio-Drone Deployment Routine",
+    "level": "3",
+    "school": "Conjuration",
+    "casting_time": "1 Action",
+    "range": "60 feet",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Concentration, up to 1 hour",
+    "description": "You summon a pack of bio-engineered beasts or combat drones to assist you in combat.",
+    "mechanics": "Summon beasts/bio-drones of CR 2 or lower (or multiple lower CR beasts) that obey your commands."
+  },
+  {
+    "name": "Astral Entity Manifestation",
+    "level": "7",
+    "school": "Conjuration",
+    "casting_time": "1 Action",
+    "range": "90 feet",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Concentration, up to 1 hour",
+    "description": "You summon an astral spirit-entity or high-tier celestial AI construct to fight by your side.",
+    "mechanics": "Summon a celestial or powerful astral spirit of CR 4 or lower that obeys your commands."
+  },
+  {
+    "name": "Elemental Ley-Line Manifestation",
+    "level": "5",
+    "school": "Conjuration",
+    "casting_time": "1 minute",
+    "range": "90 feet",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Concentration, up to 1 hour",
+    "description": "You summon a massive elemental avatar from local ley lines (Fire, Water, Earth, or Air).",
+    "mechanics": "Summon an elemental of CR 5 or lower that obeys your verbal commands."
+  },
+  {
+    "name": "Spirit-Critter Summons",
+    "level": "6",
+    "school": "Conjuration",
+    "casting_time": "1 minute",
+    "range": "90 feet",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Concentration, up to 1 hour",
+    "description": "You summon a high-tier spirit critter or fey-born bio-drone from Kitsune-cho.",
+    "mechanics": "Summon a fey/spirit beast of CR 6 or lower that obeys your commands."
+  },
+  {
+    "name": "Sub-Elemental Micro-Manifestation",
+    "level": "4",
+    "school": "Conjuration",
+    "casting_time": "1 minute",
+    "range": "90 feet",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Concentration, up to 1 hour",
+    "description": "You manifest up to four minor elemental spirits or micro-drones from local power lines.",
+    "mechanics": "Summon up to 4 minor elementals of CR 1/2 or lower."
+  },
+  {
+    "name": "Urban Spirit-Critter Swarm",
+    "level": "4",
+    "school": "Conjuration",
+    "casting_time": "1 Action",
+    "range": "60 feet",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Concentration, up to 1 hour",
+    "description": "You call forth a swarm of urban spirit beasts or micro-drones to harass your enemies.",
+    "mechanics": "Summon fey/spirit beasts of CR 2 or lower."
+  },
+  {
+    "name": "Deep Matrix AI Link",
+    "level": "5",
+    "school": "Divination",
+    "casting_time": "1 minute",
+    "range": "Self",
+    "components": [
+      "V"
+    ],
+    "duration": "Instantaneous",
+    "description": "You link your deck directly to an extra-dimensional AI entity in the deep Matrix to gain profound knowledge.",
+    "mechanics": "Make an Intelligence check to ask an extra-dimensional entity 5 questions. On a failed save, suffer psychic damage and insanity."
+  },
+  {
+    "name": "Cyber-Infection Protocol",
+    "level": "5",
+    "school": "Necromancy",
+    "casting_time": "1 Action",
+    "range": "Touch",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "7 days",
+    "description": "You infect a target with a virulent bio-toxin or hardware-eating flesh virus upon touch.",
+    "mechanics": "Make a melee spell attack to infect a target with one of 6 debilitating bio-diseases on a failed Constitution save."
+  },
+  {
+    "name": "Automated Trigger Subroutine",
+    "level": "6",
+    "school": "Evocation",
+    "casting_time": "10 minutes",
+    "range": "Self",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a platinum statuette worth 1,500gp)"
+    ],
+    "duration": "10 days",
+    "description": "You encode a backup spell script that triggers automatically when specific environmental conditions are met.",
+    "mechanics": "Set a trigger condition and cast a 5th-level or lower spell that activates instantly when the condition occurs."
+  },
+  {
+    "name": "Hard-Light Perpetual Beacon",
+    "level": "2",
+    "school": "Evocation",
+    "casting_time": "1 Action",
+    "range": "Touch",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(ruby dust worth 50gp)"
+    ],
+    "duration": "Until dispelled",
+    "description": "You touch an object to create a permanent, heatless hard-light flame or LED beacon.",
+    "mechanics": "Touch an object to make it emit bright light in a 20-foot radius permanently without producing heat."
+  },
+  {
+    "name": "Hydro-Pump Regulation",
+    "level": "4",
+    "school": "Transmutation",
+    "casting_time": "1 Action",
+    "range": "300 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a drop of water and a pinch of dust)"
+    ],
+    "duration": "Concentration, up to 10 minutes",
+    "description": "You manipulate water currents, flood levels, or hydro-pumps in a 100-foot area.",
+    "mechanics": "Control water in a 100-foot cube (Redirect Flow, Part Water, Raise/Lower Water Level, Flood)."
+  },
+  {
+    "name": "Atmospheric Arcology Regulator",
+    "level": "8",
+    "school": "Transmutation",
+    "casting_time": "10 minutes",
+    "range": "Self (5-mile radius)",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Concentration, up to 8 hours",
+    "description": "You hack into local arcology weather regulators to alter rain, fog, temperature, and wind across a 5-mile area.",
+    "mechanics": "Change local weather conditions (temperature, precipitation, wind speed) over an 8-hour period."
+  },
+  {
+    "name": "Code-Interrupt Firewall",
+    "level": "3",
+    "school": "Abjuration",
+    "casting_time": "1 Reaction",
+    "range": "60 feet",
+    "components": [
+      "S"
+    ],
+    "duration": "Instantaneous",
+    "description": "You execute an instantaneous firewall ping that interrupts an enemy spell or hack as it is being cast.",
+    "mechanics": "Interrupt a spell being cast within 60 feet. Spells of 3rd level or lower automatically fail. Higher level spells require an ability check."
+  },
+  {
+    "name": "Synth-Ramen & Hydro-Synthesizer",
+    "level": "3",
+    "school": "Conjuration",
+    "casting_time": "1 Action",
+    "range": "30 feet",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Instantaneous",
+    "description": "You materialize 45 pounds of nourishing synth-ramen and 30 gallons of purified water.",
+    "mechanics": "Create 45 pounds of food and 30 gallons of fresh water, enough to sustain up to 15 humanoids for 24 hours."
+  },
+  {
+    "name": "Atmospheric Moisture Collector",
+    "level": "1",
+    "school": "Transmutation",
+    "casting_time": "1 Action",
+    "range": "30 feet",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Instantaneous",
+    "description": "You create up to 10 gallons of clean water, or drain water from a 10-foot cube.",
+    "mechanics": "Create 10 gallons of clean water in an open container, or destroy water in a 10-foot cube."
+  },
+  {
+    "name": "Advanced Cyber-Zombie Fabrication",
+    "level": "6",
+    "school": "Necromancy",
+    "casting_time": "1 hour",
+    "range": "10 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a clay pot filled with grave dirt and black onyx)"
+    ],
+    "duration": "Instantaneous",
+    "description": "You fabricate advanced cyber-zombies, ghoul-cyborgs, or heavy skeletal combat rigs.",
+    "mechanics": "Animate up to three corpses as ghouls/cyber-zombies under your control."
+  },
+  {
+    "name": "Hard-Light Materializer",
+    "level": "5",
+    "school": "Illusion",
+    "casting_time": "1 minute",
+    "range": "30 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(bits of hard-light glass)"
+    ],
+    "duration": "Special",
+    "description": "You materialize non-magical physical objects out of hard-light energy and solid-state data.",
+    "mechanics": "Materialize an object of vegetable, mineral, or metallic composition up to a 5-foot cube."
+  },
+  {
+    "name": "Rapid Bio-Nanite Patch",
+    "level": "1",
+    "school": "Evocation",
+    "casting_time": "1 Action",
+    "range": "Touch",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Instantaneous",
+    "description": "You inject a rapid surge of healing bio-nanites into a target to instantly seal wounds.",
+    "mechanics": "A creature you touch regains Hit Points equal to 1d8 + your spellcasting ability modifier."
+  },
+  {
+    "name": "Floating LED Micro-Drones",
+    "level": "0",
+    "school": "Evocation",
+    "casting_time": "1 Action",
+    "range": "120 feet",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Concentration, up to 1 minute",
+    "description": "You deploy up to four glowing LED micro-drones that illuminate dark alleyways.",
+    "mechanics": "Create up to 4 torch-sized lights that move at your command."
+  },
+  {
+    "name": "Optical Smoke & Chaff Spray",
+    "level": "2",
+    "school": "Evocation",
+    "casting_time": "1 Action",
+    "range": "60 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a pinch of soot)"
+    ],
+    "duration": "Concentration, up to 10 minutes",
+    "description": "You deploy a 15-foot sphere of pitch-black optical smoke and metallic radar-chaff.",
+    "mechanics": "Create a 15-foot-radius sphere of magical darkness that blocks vision and darkvision."
+  },
+  {
+    "name": "Thermal-Optic Augmentation",
+    "level": "2",
+    "school": "Transmutation",
+    "casting_time": "1 Action",
+    "range": "Touch",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a pinch of dried carrot)"
+    ],
+    "duration": "8 hours",
+    "description": "You upgrade a target's optical implants with 60-foot thermal and low-light vision.",
+    "mechanics": "Grant a willing target Darkvision out to 60 feet for 8 hours."
+  },
+  {
+    "name": "High-Lumen Flare Beacon",
+    "level": "3",
+    "school": "Evocation",
+    "casting_time": "1 Action",
+    "range": "60 feet",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "1 hour",
+    "description": "You project a 60-foot radius sphere of intense daylight to dispel darkness and optical smoke.",
+    "mechanics": "Create bright light in a 60-foot radius that dispels magical darkness of 3rd level or lower."
+  },
+  {
+    "name": "Emergency Defibrillator Bio-Stasis",
+    "level": "4",
+    "school": "Abjuration",
+    "casting_time": "1 Action",
+    "range": "Touch",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a sub-dermal defibrillator chip)"
+    ],
+    "duration": "8 hours",
+    "description": "You prime an internal emergency defibrillator that prevents a target from dying when taking lethal damage.",
+    "mechanics": "The first time the target would drop to 0 Hit Points, it drops to 1 Hit Point instead."
+  },
+  {
+    "name": "Time-Delayed Plasma Charges",
+    "level": "7",
+    "school": "Evocation",
+    "casting_time": "1 Action",
+    "range": "150 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a tiny bead of sulfur)"
+    ],
+    "duration": "Concentration, up to 1 minute",
+    "description": "You place a glowing, time-delayed plasma bead that detonates in a massive firestorm.",
+    "mechanics": "Create a glowing bead that detonates after 1 minute (or upon command) dealing 12d6 Fire damage in a 20-foot sphere, increasing by 1d6 per round stored."
+  },
+  {
+    "name": "Virtual Data-Vault Construction",
+    "level": "8",
+    "school": "Conjuration",
+    "casting_time": "1 Action",
+    "range": "60 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a polished metal key)"
+    ],
+    "duration": "1 hour",
+    "description": "You conjure a doorway into a private extra-dimensional virtual data vault.",
+    "mechanics": "Manifest a doorway leading to a 30-foot extra-dimensional room."
+  },
+  {
+    "name": "Threat & Malice Scanner",
+    "level": "1",
+    "school": "Divination",
+    "casting_time": "1 Action",
+    "range": "Self",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Concentration, up to 10 minutes",
+    "description": "Your optics scan the area for extra-dimensional entities, corporate threats, and malice signatures.",
+    "mechanics": "Sensing the presence of aberrations, celestials, dragons, elementals, fey, fiends, or undead within 60 feet."
+  },
+  {
+    "name": "Mana & Signal Scanner",
+    "level": "1",
+    "school": "Divination",
+    "casting_time": "1 Action",
+    "range": "Self",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Concentration, up to 10 minutes",
+    "description": "Your optics scan for magical code, spell effects, and active signal transmissions.",
+    "mechanics": "Sense the presence of magic within 30 feet and learn its school."
+  },
+  {
+    "name": "Bio-Tox & Pathogen Analyzer",
+    "level": "1",
+    "school": "Divination",
+    "casting_time": "1 Action",
+    "range": "Self",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a yew leaf)"
+    ],
+    "duration": "Concentration, up to 10 minutes",
+    "description": "Your sensors identify poisons, bio-toxins, and diseases within 30 feet.",
+    "mechanics": "Detect and identify poisons, venom, and disease within 30 feet."
+  },
+  {
+    "name": "Neural Mind Probe",
+    "level": "2",
+    "school": "Divination",
+    "casting_time": "1 Action",
+    "range": "30 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a copper piece)"
+    ],
+    "duration": "Concentration, up to 1 minute",
+    "description": "You probe a target's neural feed to read surface thoughts or probe deeper memories.",
+    "mechanics": "Read surface thoughts of a target, or probe deeper thoughts on a failed Wisdom save."
+  },
+  {
+    "name": "Phase-Shift Teleport",
+    "level": "4",
+    "school": "Conjuration",
+    "casting_time": "1 Action",
+    "range": "500 feet",
+    "components": [
+      "V"
+    ],
+    "duration": "Instantaneous",
+    "description": "You phase-shift your physical form through the Matrix grid to teleport up to 500 feet.",
+    "mechanics": "Teleport yourself and up to 500 lbs of gear/allies to a location within 500 feet."
+  },
+  {
+    "name": "Holographic Skin-Spoofer",
+    "level": "1",
+    "school": "Illusion",
+    "casting_time": "1 Action",
+    "range": "Self",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "1 hour",
+    "description": "You project a holographic disguise over your clothing and physical appearance.",
+    "mechanics": "Change your visual appearance including clothing, armor, and weapons for 1 hour."
+  },
+  {
+    "name": "Particle Disassembly Beam",
+    "level": "6",
+    "school": "Transmutation",
+    "casting_time": "1 Action",
+    "range": "60 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a pinch of dust)"
+    ],
+    "duration": "Instantaneous",
+    "description": "A green particle-disassembly beam disintegrates target matter into fine dust.",
+    "mechanics": "Deals 10d6+40 Force damage on a failed Dexterity save. If this reduces the target to 0 HP, it is disintegrated."
+  },
+  {
+    "name": "Malicious Entity Purge",
+    "level": "5",
+    "school": "Abjuration",
+    "casting_time": "1 Action",
+    "range": "Touch",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(holy water)"
+    ],
+    "duration": "Concentration, up to 1 minute",
+    "description": "You purge extra-dimensional entities, possessors, and rogue spirits from a target.",
+    "mechanics": "Protect a target from extra-planar creatures, or banish/unpossess a target."
+  },
+  {
+    "name": "Code Scrub & Firewall Purge",
+    "level": "3",
+    "school": "Abjuration",
+    "casting_time": "1 Action",
+    "range": "120 feet",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Instantaneous",
+    "description": "You run a purge script that cancels active spell code and hacks on a target.",
+    "mechanics": "End spells of 3rd level or lower on a target. Requires an ability check for higher level spells."
+  },
+  {
+    "name": "Quantum Predictive Analytics",
+    "level": "4",
+    "school": "Divination",
+    "casting_time": "10 minutes",
+    "range": "Self",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(incense)"
+    ],
+    "duration": "Instantaneous",
+    "description": "You execute a deep quantum simulation to gain advice regarding a goal within 7 days.",
+    "mechanics": "Receive a truthful advice snippet regarding a specific goal or event within 7 days."
+  },
+  {
+    "name": "High-Voltage Combat Coating",
+    "level": "1",
+    "school": "Evocation",
+    "casting_time": "1 Bonus Action",
+    "range": "Self",
+    "components": [
+      "V"
+    ],
+    "duration": "Concentration, up to 1 minute",
+    "description": "Your weapon attacks deal an extra 1d4 Radiant/Lightning damage.",
+    "mechanics": "Your weapon strikes deal an additional 1d4 Radiant damage for the duration."
+  },
+  {
+    "name": "Subliminal Master Broadcast",
+    "level": "7",
+    "school": "Evocation",
+    "casting_time": "1 Action",
+    "range": "30 feet",
+    "components": [
+      "V"
+    ],
+    "duration": "Instantaneous",
+    "description": "You broadcast a deafening sonic and neural command that stuns or kills weak targets.",
+    "mechanics": "Creatures within 30 feet take effects based on their current HP (deafened, blinded, stunned, or instantly killed)."
+  },
+  {
+    "name": "Bio-Drone Master Override",
+    "level": "4",
+    "school": "Enchantment",
+    "casting_time": "1 Action",
+    "range": "60 feet",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Concentration, up to 1 minute",
+    "description": "You force a total neural takeover of a beast or bio-drone.",
+    "mechanics": "Take total control of a beast on a failed Wisdom save."
+  },
+  {
+    "name": "Neural Core Master Hijack",
+    "level": "8",
+    "school": "Enchantment",
+    "casting_time": "1 Action",
+    "range": "60 feet",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Concentration, up to 1 hour",
+    "description": "You force a total neural takeover of any creature or boss target.",
+    "mechanics": "Take total control of any creature on a failed Wisdom save."
+  },
+  {
+    "name": "Subliminal Neural Hijack",
+    "level": "5",
+    "school": "Enchantment",
+    "casting_time": "1 Action",
+    "range": "60 feet",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Concentration, up to 1 minute",
+    "description": "You force a total neural takeover of a humanoid target.",
+    "mechanics": "Take total control of a humanoid on a failed Wisdom save."
+  },
+  {
+    "name": "Virtual Reality Simulation Injection",
+    "level": "5",
+    "school": "Illusion",
+    "casting_time": "1 minute",
+    "range": "Special",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a drop of ink)"
+    ],
+    "duration": "8 hours",
+    "description": "You send a tailored holographic VR dream/nightmare feed to a sleeping target anywhere in Neo-Tokyo.",
+    "mechanics": "Inject a virtual reality dream or nightmare into a sleeping target, dealing 3d6 Psychic damage and preventing rest benefits."
+  },
+  {
+    "name": "Micro-Ecology Manipulator",
+    "level": "0",
+    "school": "Transmutation",
+    "casting_time": "1 Action",
+    "range": "30 feet",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Instantaneous",
+    "description": "You manipulate minor urban nature effects—blooming cyber-flora, predicting weather, or lighting torches.",
+    "mechanics": "Create minor botanical effects, predict local weather, or light small fires."
+  },
+  {
+    "name": "Seismic Structural Breaker",
+    "level": "8",
+    "school": "Evocation",
+    "casting_time": "1 Action",
+    "range": "500 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a dirt clod)"
+    ],
+    "duration": "Concentration, up to 1 minute",
+    "description": "You trigger intense seismic shockwaves that collapse structures and knock enemies prone in a 100-foot area.",
+    "mechanics": "Triggers intense seismic ground tremors in a 100-foot radius, knocking creatures prone and damaging structures."
+  },
+  {
+    "name": "Ghost-Byte Beam",
+    "level": "0",
+    "school": "Evocation",
+    "casting_time": "1 Action",
+    "range": "120 feet",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Instantaneous",
+    "description": "You fire a crackling beam of raw matrix code and electrical force.",
+    "mechanics": "Make a ranged spell attack dealing 1d10 Force damage. Fires additional beams at 5th, 11th, and 17th level."
+  },
+  {
+    "name": "Bio-Algorithmic Overclock",
+    "level": "2",
+    "school": "Transmutation",
+    "casting_time": "1 Action",
+    "range": "Touch",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a piece of fur or muscle)"
+    ],
+    "duration": "Concentration, up to 1 hour",
+    "description": "You overclock a target's physical or mental attribute for 1 hour.",
+    "mechanics": "Grant advantage on ability checks for one chosen ability score (STR, DEX, CON, INT, WIS, CHA) plus extra situational perks."
+  },
+  {
+    "name": "Nanite Biomass Modifier",
+    "level": "2",
+    "school": "Transmutation",
+    "casting_time": "1 Action",
+    "range": "30 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a pinch of iron powder)"
+    ],
+    "duration": "Concentration, up to 1 minute",
+    "description": "You expand or shrink a target's biomass using nanite density shifts.",
+    "mechanics": "Enlarge or reduce a creature's size category by one step, altering its weight and damage rolls (+1d4 or -1d4)."
+  },
+  {
+    "name": "High-Tensile Cable Snare",
+    "level": "1",
+    "school": "Conjuration",
+    "casting_time": "1 Action",
+    "range": "90 feet",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Concentration, up to 1 minute",
+    "description": "High-tensile wire snares and carbon vines erupt in a 20-foot square, restraining targets.",
+    "mechanics": "Creates difficult terrain in a 20-foot square. Creatures entering must succeed on a Strength save or be Restrained."
+  },
+  {
+    "name": "Subliminal Broadcast Hype",
+    "level": "2",
+    "school": "Enchantment",
+    "casting_time": "1 Action",
+    "range": "60 feet",
+    "components": [
+      "V"
+    ],
+    "duration": "Concentration, up to 1 minute",
+    "description": "You broadcast a mesmerizing hype track that captivates targets and holds their attention.",
+    "mechanics": "Targets failing a Wisdom save have disadvantage on Perception checks to notice anyone other than you."
+  },
+  {
+    "name": "Phase-Shift Infiltration Protocol",
+    "level": "7",
+    "school": "Transmutation",
+    "casting_time": "1 Action",
+    "range": "Self",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a micro-phase capacitor or quantum frequency key)"
+    ],
+    "duration": "Concentration, up to 8 hours",
+    "description": "You decouple your physical atoms and digital signature from baseline physical space, shifting into the border zone between the physical world and the Matrix grid.",
+    "mechanics": "You enter the border region of the Ethereal / Digital Plane for the duration. You can see and hear the physical plane, but everything looks gray and digital. While phase-shifted, you can move through physical objects and creatures, and can only affect or be affected by other phase-shifted entities."
+  },
+  {
+    "name": "Adrenaline Overclock Routine",
+    "level": "1",
+    "school": "Transmutation",
+    "casting_time": "1 Bonus Action",
+    "range": "Self",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Concentration, up to 1 minute",
+    "description": "You trigger an emergency neural impulse that floods your muscle actuators with high-voltage charge, doubling your movement speed.",
+    "mechanics": "When you cast this spell, and as a bonus action on each of your turns until the spell ends, you can take the Dash action."
+  },
+  {
+    "name": "Ocular Cyber-Blight",
+    "level": "6",
+    "school": "Necromancy",
+    "casting_time": "1 Action",
+    "range": "60 feet",
+    "components": [
+      "V"
+    ],
+    "duration": "Concentration, up to 1 minute",
+    "description": "Your optics flash with a malicious virus feed that infects a target's brain-computer interface, inflicting gruesome physical and visual glitches.",
+    "mechanics": "Target one creature within range. It must succeed on a Constitution saving throw or be affected by one of the following glitches for the duration (your choice): Glitched Optics (Blinded), Terrified System Lockout (Frightened), Neural Tremors (Disadvantage on attacks/checks), or Bio-Drain (takes 2d8 Necrotic damage when it acts)."
+  },
+  {
+    "name": "Nanite 3D-Fabrication Array",
+    "level": "4",
+    "school": "Transmutation",
+    "casting_time": "10 minutes",
+    "range": "Touch",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(raw synth-polymer, metal alloy, or scrap electronics)"
+    ],
+    "duration": "Instantaneous",
+    "description": "You deploy industrial nanite swarms to instantly break down scrap materials and 3D-fabricate complex tools, gear, or barricades.",
+    "mechanics": "You convert raw materials into a finished product of the same material (e.g. metal scrap into a door or weapon). You cannot fabricate items requiring high-precision microchips unless you supply the electronics."
+  },
+  {
+    "name": "Bio-Luminescent Target Marker",
+    "level": "1",
+    "school": "Evocation",
+    "casting_time": "1 Action",
+    "range": "60 feet",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Concentration, up to 1 minute",
+    "description": "You paint a 20-foot cube with a high-visibility holographic laser grid and bio-luminescent tracking chaff, highlighting hidden targets.",
+    "mechanics": "Each object or creature in a 20-foot cube within range must succeed on a Dexterity saving throw or be outlined in glowing neon light. Any attack roll against an outlined target has advantage if the attacker can see it, and affected targets cannot benefit from stealth or invisibility."
+  },
+  {
+    "name": "Cyber-Hound Security Sentry",
+    "level": "6",
+    "school": "Conjuration",
+    "casting_time": "1 Action",
+    "range": "30 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a silver whistle or biometric beacon tag)"
+    ],
+    "duration": "8 hours",
+    "description": "You summon a phantom hard-light cyber-hound that guards a designated perimeter and alerts you to invisible or stealth intruders.",
+    "mechanics": "Manifest an invisible cyber-hound guard at a point within range. The hound has True Sight out to 30 feet, darkvision to 60 feet, and can detect stealth or invisible creatures. If an intruder approaches within 30 feet, the hound barks loudly and can bite the target (+8 to hit, 4d8 Piercing damage)."
+  },
+  {
+    "name": "Bio-Synthetic Cell Injector",
+    "level": "1",
+    "school": "Necromancy",
+    "casting_time": "1 Action",
+    "range": "Self",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a drop of synthetic blood or Hoshi Biodyne cell ampoule)"
+    ],
+    "duration": "1 hour",
+    "description": "You inject a dose of synthetic blood-platelets and temporary bio-gel, bolstering your physical frame with a buffer of temporary vitality.",
+    "mechanics": "You gain 1d4 + 4 temporary hit points for the duration.\nAt Higher Levels: When cast using a spell slot of 2nd level or higher, the temporary hit points increase by 5 for each slot level above 1st."
+  },
+  {
+    "name": "Neural Terror Feedback",
+    "level": "4",
+    "school": "Enchantment",
+    "casting_time": "1 Action",
+    "range": "Self (30-foot cone)",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a shard of cracked optic lens)"
+    ],
+    "duration": "Concentration, up to 1 minute",
+    "description": "You broadcast a harrowing psychological panic frequency that projects horrific hallucinations of corporate execution squads directly into enemies' optic nerves.",
+    "mechanics": "Each creature in a 30-foot cone must succeed on a Wisdom saving throw or drop whatever it is holding and become Threat-Locked (Frightened) for the duration. While frightened, a target must take the Dash action and move away from you on each of its turns."
+  },
+  {
+    "name": "Kinetic Inertia Dampener",
+    "level": "1",
+    "school": "Transmutation",
+    "casting_time": "1 Reaction",
+    "range": "60 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a feather or micro-thruster nozzle)"
+    ],
+    "duration": "1 minute",
+    "description": "You activate micro-air-thrusters or sub-dermal gravity dampeners on up to five falling creatures, neutralizing kinetic impact damage.",
+    "mechanics": "Choose up to five falling creatures within range. A target's rate of descent slows to 60 feet per round until the spell ends. If the creature lands before the spell ends, it takes no falling damage and lands on its feet."
+  },
+  {
+    "name": "System Code Scrambler",
+    "level": "8",
+    "school": "Transmutation",
+    "casting_time": "1 Action",
+    "range": "30 feet",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Instantaneous",
+    "description": "You execute a permanent neural code scramble that wipes a target's technical aptitude, spell access, and higher cognitive faculties.",
+    "mechanics": "Target a creature within range. It must make a Intelligence saving throw. On a failure, the creature's Intelligence and Charisma scores drop to 1. The creature cannot cast spells, activate cyberware, communicate intelligibly, or understand language until cured by a High-Priority System Purge."
+  },
+  {
+    "name": "Recon Drone Familiar",
+    "level": "1",
+    "school": "Conjuration",
+    "casting_time": "1 hour",
+    "range": "10 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(10gp worth of micro-circuitry and copper wire)"
+    ],
+    "duration": "Instantaneous",
+    "description": "You assemble or summon a compact autonomous recon drone or spirit-critter that links to your neural feed and acts as your field scout.",
+    "mechanics": "You gain the services of a familiar (a micro-drone or spirit animal). The familiar acts independently, but obeys your commands. As an action, you can see through its optics and hear through its audio sensors up to 100 feet away."
+  },
+  {
+    "name": "Cyber-Steed Deployment",
+    "level": "2",
+    "school": "Conjuration",
+    "casting_time": "10 minutes",
+    "range": "30 feet",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Instantaneous",
+    "description": "You summon an autonomous cybernetic mount or heavy combat bike from a local transport grid.",
+    "mechanics": "You summon a loyal, cybernetically enhanced mount (such as a cyber-horse or heavy street bike). The mount has the statistics of a riding horse, warhorse, or camel (or similar vehicle/beast) and serves as a loyal mount in combat."
+  },
+  {
+    "name": "GPS Route Algorithm",
+    "level": "6",
+    "school": "Divination",
+    "casting_time": "1 minute",
+    "range": "Self",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a set of topo-maps or navigation chip)"
+    ],
+    "duration": "Concentration, up to 1 day",
+    "description": "Your deck calculates the optimal physical or digital route to any specified location, bypass, or secret objective in Neo-Tokyo.",
+    "mechanics": "Specify a location on the same plane. For the duration, you know the shortest, safest physical route to that destination and automatically bypass natural hazards or navigation dead-ends."
+  },
+  {
+    "name": "Automated Hazard Sweep",
+    "level": "2",
+    "school": "Divination",
+    "casting_time": "1 Action",
+    "range": "Self",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Instantaneous",
+    "description": "Your HUD scans the surrounding 20-foot area for physical booby traps, laser tripwires, pressure plates, and malicious malware.",
+    "mechanics": "You sense the presence and nature of any trap within 120 feet that is within line of sight, including mechanical traps, landmines, cyber-glitch tripwires, and security sensors."
+  },
+  {
+    "name": "Bio-Disassembly Neural Beam",
+    "level": "7",
+    "school": "Necromancy",
+    "casting_time": "1 Action",
+    "range": "60 feet",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Instantaneous",
+    "description": "You point your finger and release a jet-black ray of concentrated necrotic radiation that instantly disintegrates organic tissue.",
+    "mechanics": "Make a ranged spell attack. On a hit, the target takes 8d12 + 20 Necrotic damage. If this damage reduces the target to 0 Hit Points, its physical body is instantly dissolved into a pile of gray chemical ash."
+  },
+  {
+    "name": "High-Voltage Plasma Arc",
+    "level": "0",
+    "school": "Evocation",
+    "casting_time": "1 Action",
+    "range": "120 feet",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Instantaneous",
+    "description": "You launch a streak of plasma or high-voltage energy from your palm emitter or firearm focus at a target.",
+    "mechanics": "Make a ranged spell attack against a target within range. On a hit, the target takes 1d10 Fire/Lightning damage.\nScaling: The damage increases by 1d10 at 5th level (2d10), 11th level (3d10), and 17th level (4d10)."
+  },
+  {
+    "name": "Thermal & Reactive Shielding",
+    "level": "4",
+    "school": "Evocation",
+    "casting_time": "1 Action",
+    "range": "Self",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a piece of phosphorus or ice crystal)"
+    ],
+    "duration": "10 minutes",
+    "description": "You envelop your body in a high-voltage plasma barrier or super-cooled cryogenic aura that damages attackers upon physical contact.",
+    "mechanics": "Choose Flame Shield (Fire resistance, attackers within 5 feet take 2d8 Fire damage when hitting you in melee) or Cryo Shield (Cold resistance, attackers take 2d8 Cold damage)."
+  },
+  {
+    "name": "Orbital Plasma Bombardment",
+    "level": "7",
+    "school": "Evocation",
+    "casting_time": "1 Action",
+    "range": "150 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a laser target designator pointer)"
+    ],
+    "duration": "Instantaneous",
+    "description": "You paint a location with an orbital target laser, calling down a catastrophic column of fire and raw plasma from a sky-arcology weapon platform.",
+    "mechanics": "Each creature in a 20-foot-radius, 40-foot-high cylinder centered on a point within range must make a Dexterity save, taking 20d6 Fire/Force damage on a failure, or half on a success."
+  },
+  {
+    "name": "Plasma Detonation Sphere",
+    "level": "3",
+    "school": "Evocation",
+    "casting_time": "1 Action",
+    "range": "150 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a tiny ball of thermite gel)"
+    ],
+    "duration": "Instantaneous",
+    "description": "You launch a glowing thermite-gel bead that detonates into a roaring 20-foot-radius sphere of white-hot plasma fire.",
+    "mechanics": "Each creature in a 20-foot-radius sphere centered on a target point must make a Dexterity saving throw, taking 8d6 Fire damage on a failure, or half on a success.\nAt Higher Levels: Damage increases by 1d6 for each slot level above 3rd."
+  },
+  {
+    "name": "Monomolecular Heat Blade",
+    "level": "2",
+    "school": "Evocation",
+    "casting_time": "1 Bonus Action",
+    "range": "Self",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a knife handle or optic lens)"
+    ],
+    "duration": "Concentration, up to 10 minutes",
+    "description": "You ignite a three-foot blade of superheated plasma that extends from your wrist focus or hilt.",
+    "mechanics": "You evoke a fiery blade in your hand. You can make a melee spell attack with the blade dealing 3d6 Fire damage on a hit. The blade emits bright light in a 10-foot radius."
+  },
+  {
+    "name": "Orbital Precision Strike",
+    "level": "5",
+    "school": "Evocation",
+    "casting_time": "1 Action",
+    "range": "60 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a mini-beacon tag)"
+    ],
+    "duration": "Instantaneous",
+    "description": "A radiant column of satellite energy and searing plasma slams down from orbit, vaporizing physical structures.",
+    "mechanics": "A vertical column of light 10 feet in radius and 40 feet high deals 4d6 Fire damage and 4d6 Radiant damage to creatures failing a Dexterity save."
+  },
+  {
+    "name": "Plasma Geysers",
+    "level": "2",
+    "school": "Evocation",
+    "casting_time": "1 Action",
+    "range": "60 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a pinch of gunpowder)"
+    ],
+    "duration": "Concentration, up to 1 minute",
+    "description": "You conjure a floating, super-heated plasma orb that rolls across the battlefield, scorching enemies.",
+    "mechanics": "A 5-foot-diameter sphere of fire appears within range. As a bonus action, you can move it up to 30 feet. Creatures touching the sphere take 2d6 Fire damage on a failed Dexterity save."
+  },
+  {
+    "name": "Cybernetic Petrification Virus",
+    "level": "6",
+    "school": "Transmutation",
+    "casting_time": "1 Action",
+    "range": "60 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a chip of solid concrete or stone)"
+    ],
+    "duration": "Concentration, up to 1 minute",
+    "description": "You upload a brutal nano-petrification virus into a creature's bloodstream, turning its organic flesh into solid gray concrete.",
+    "mechanics": "Target a creature within range. It must make a Constitution saving throw. On a failure, it is Restrained as its flesh hardens. If it fails three saving throws, it is permanently turned to solid stone/concrete."
+  },
+  {
+    "name": "Repulsor Cargo Disk",
+    "level": "1",
+    "school": "Conjuration",
+    "casting_time": "1 Action",
+    "range": "30 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a piece of copper wire)"
+    ],
+    "duration": "1 hour",
+    "description": "You project a floating, horizontal repulsor energy disk that carries heavy gear or wounded allies behind you.",
+    "mechanics": "Creates a circular repulsor field 3 feet in diameter that floats 3 feet above the ground. It can hold up to 500 pounds and follows 20 feet behind you."
+  },
+  {
+    "name": "Repulsor Thruster Flight",
+    "level": "3",
+    "school": "Transmutation",
+    "casting_time": "1 Action",
+    "range": "Touch",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a bird feather or micro-jet nozzle)"
+    ],
+    "duration": "Concentration, up to 10 minutes",
+    "description": "You activate sub-dermal repulsor thrusters or hard-light wings, granting a target high-speed aerial flight.",
+    "mechanics": "A willing creature you touch gains a flying speed of 60 feet for the duration."
+  },
+  {
+    "name": "Acid Fog Chemical Venter",
+    "level": "1",
+    "school": "Conjuration",
+    "casting_time": "1 Action",
+    "range": "120 feet",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Concentration, up to 1 hour",
+    "description": "You deploy a 20-foot-radius sphere of corrosive chemical acid fog and heavy smog that obscures vision and dissolves eyes.",
+    "mechanics": "Create a 20-foot-radius sphere of fog that heavily obscures the area. Wind of 10 mph or greater disperses it."
+  },
+  {
+    "name": "District Security Lockdown",
+    "level": "6",
+    "school": "Abjuration",
+    "casting_time": "10 minutes",
+    "range": "Touch",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(500gp of electronic circuitry)"
+    ],
+    "duration": "Until dispelled",
+    "description": "You lock down a building or district perimeter with biometric scanners, laser grids, and automatic turrets.",
+    "mechanics": "Ward an area up to 20,000 square feet with security measures (locked doors, fog, web snares, alarm pings)."
+  },
+  {
+    "name": "Hard-Light Laser Cage",
+    "level": "7",
+    "school": "Evocation",
+    "casting_time": "1 Action",
+    "range": "100 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a ruby dust lens)"
+    ],
+    "duration": "1 hour",
+    "description": "You project an impenetrable cube or cage of hard-light laser beams around a target.",
+    "mechanics": "Traps a target inside an indestructible laser cage or solid box. Spells and physical attacks cannot pass through."
+  },
+  {
+    "name": "Quantum Predictive Reflexes",
+    "level": "9",
+    "school": "Divination",
+    "casting_time": "1 minute",
+    "range": "Touch",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a hummingbird feather)"
+    ],
+    "duration": "8 hours",
+    "description": "Your deck streams future probability threads directly into your optic HUD, making you immune to surprise and predicting enemy moves.",
+    "mechanics": "For the duration, the target cannot be surprised, has advantage on all attack rolls, ability checks, and saving throws, and attackers have disadvantage on attacks against it."
+  },
+  {
+    "name": "Neural Restraint Override",
+    "level": "4",
+    "school": "Abjuration",
+    "casting_time": "1 Action",
+    "range": "Touch",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a drop of oil)"
+    ],
+    "duration": "1 hour",
+    "description": "You upload an anti-restraint code that renders a target immune to paralysis, mag-cuffs, slow effects, and water drag.",
+    "mechanics": "Target creature is immune to paralysis, movement speed reductions, non-magical restraints, and underwater movement penalties."
+  },
+  {
+    "name": "Cryogenic Blast Sphere",
+    "level": "6",
+    "school": "Evocation",
+    "casting_time": "1 Action",
+    "range": "150 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a glass globe filled with liquid nitrogen)"
+    ],
+    "duration": "Instantaneous",
+    "description": "A 60-foot-radius sphere detonates with flash-freezing liquid nitrogen and super-cooled shards of ice.",
+    "mechanics": "Deals 10d6 Cold damage to creatures in a 60-foot sphere on a failed Constitution save, or half on a success."
+  },
+  {
+    "name": "Aerosolized Bio-Gaseous Form",
+    "level": "3",
+    "school": "Transmutation",
+    "casting_time": "1 Action",
+    "range": "Touch",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a bit of gauze)"
+    ],
+    "duration": "Concentration, up to 1 hour",
+    "description": "You convert a willing target's physical biomass into a floating cloud of aerosolized mist and nanites.",
+    "mechanics": "Target transforms into a misty cloud with a fly speed of 10 feet, gaining resistance to non-magical damage and immunity to poison."
+  },
+  {
+    "name": "Matrix Portal Breach",
+    "level": "9",
+    "school": "Conjuration",
+    "casting_time": "1 Action",
+    "range": "60 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a diamond worth 5,000gp)"
+    ],
+    "duration": "Concentration, up to 1 minute",
+    "description": "You tear open an inter-dimensional Matrix breach linking two distant points or deep server nodes across the globe.",
+    "mechanics": "Opens a two-way portal between your location and a specified destination on another plane or distant node."
+  },
+  {
+    "name": "Biometric Command Firmware",
+    "level": "5",
+    "school": "Enchantment",
+    "casting_time": "1 Action",
+    "range": "60 feet",
+    "components": [
+      "V"
+    ],
+    "duration": "Concentration, up to 30 days",
+    "description": "You implant a long-term behavioral command chip into a target, forcing it to complete a long-term task.",
+    "mechanics": "Implant a command into a target on a failed Wisdom save. The target takes 5d10 Psychic damage each day it acts directly against the command."
+  },
+  {
+    "name": "Cryo-Stasis Preservative",
+    "level": "2",
+    "school": "Necromancy",
+    "casting_time": "1 Action",
+    "range": "Touch",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a pinch of salt and a copper piece)"
+    ],
+    "duration": "10 days",
+    "description": "You coat a corpse in cryo-stasis foam, extending the time window for organ harvesting or revival.",
+    "mechanics": "Protects a corpse from decay and extends the time limit on resurrecting/reviving the target by 10 days."
+  },
+  {
+    "name": "Bio-Drone Mutagen Exposure",
+    "level": "4",
+    "school": "Transmutation",
+    "casting_time": "1 Action",
+    "range": "30 feet",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Concentration, up to 10 minutes",
+    "description": "You unleash a mutagenic cloud that mutates surrounding street insects into massive bio-drones.",
+    "mechanics": "Transforms up to ten centipedes, spiders, or insects into giant variants under your command."
+  },
+  {
+    "name": "Subliminal Silver-Tongue Protocol",
+    "level": "8",
+    "school": "Enchantment",
+    "casting_time": "1 Action",
+    "range": "Self",
+    "components": [
+      "V"
+    ],
+    "duration": "1 hour",
+    "description": "Your voice modulation and persuasion algorithms guarantee success in corporate boardroom negotiations.",
+    "mechanics": "Whenever you make a Charisma check for the duration, treat a d20 roll of 9 or lower as a 10."
+  },
+  {
+    "name": "Null-Mana Damping Barrier",
+    "level": "6",
+    "school": "Abjuration",
+    "casting_time": "1 Action",
+    "range": "Self (10-foot-radius sphere)",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a glass bead)"
+    ],
+    "duration": "Concentration, up to 1 minute",
+    "description": "An impenetrable 10-foot sphere of anti-magic energy isolates you from all incoming spell code and hacks.",
+    "mechanics": "Creates an impenetrable 10-foot sphere around you that completely blocks spells of 5th level or lower from entering."
+  },
+  {
+    "name": "Mag-Lock Trap / Sensor Glyph",
+    "level": "3",
+    "school": "Abjuration",
+    "casting_time": "1 hour",
+    "range": "Touch",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(incense and diamond dust worth 200gp)"
+    ],
+    "duration": "Until dispelled",
+    "description": "You etch a hidden digital glyph or explosive mag-trap onto a surface that detonates when triggered.",
+    "mechanics": "Inscribe a rune that triggers an explosion (5d8 damage), spell effect, or alarm ping when an unauthorized creature touches it."
+  },
+  {
+    "name": "Synth-Berry Nutrient Capsules",
+    "level": "1",
+    "school": "Transmutation",
+    "casting_time": "1 Action",
+    "range": "Touch",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a sprig of mistletoe)"
+    ],
+    "duration": "Instantaneous",
+    "description": "You synthesize up to ten nutrient-dense synth-pills that restore health and satisfy hunger.",
+    "mechanics": "Creates up to 10 synth-pills. Eating a pill restores 1 Hit Point and provides nourishment for a full day."
+  },
+  {
+    "name": "Conductive Friction Lubricant",
+    "level": "1",
+    "school": "Conjuration",
+    "casting_time": "1 Action",
+    "range": "60 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a bit of pork rind)"
+    ],
+    "duration": "1 minute",
+    "description": "You slick a 10-foot square with conductive industrial oil, causing enemies to slip and fall prone.",
+    "mechanics": "Slicks a 10-foot square. Creatures walking through must succeed on a Dexterity save or fall Prone."
+  },
+  {
+    "name": "Hard-Light Thermo-Optic Stealth Cloak",
+    "level": "4",
+    "school": "Illusion",
+    "casting_time": "1 Action",
+    "range": "Touch",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(an optic shroud)"
+    ],
+    "duration": "Concentration, up to 1 minute",
+    "description": "You bend light and thermal signatures around a target, making them completely invisible even when attacking.",
+    "mechanics": "Target becomes invisible for the duration. Attacking or casting a spell does not break the invisibility."
+  },
+  {
+    "name": "Bio-System Purge Script",
+    "level": "5",
+    "school": "Abjuration",
+    "casting_time": "1 Action",
+    "range": "Touch",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(diamond dust worth 100gp)"
+    ],
+    "duration": "Instantaneous",
+    "description": "You run a deep system purge script that cures diseases, neutralizes toxins, and removes curses/paralysis.",
+    "mechanics": "Ends all debilitating conditions, curses, reduced ability scores, or max HP reductions on a target."
+  },
+  {
+    "name": "Aegis Hard-Light Sentry",
+    "level": "4",
+    "school": "Conjuration",
+    "casting_time": "1 Action",
+    "range": "30 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a holy symbol)"
+    ],
+    "duration": "8 hours",
+    "description": "You manifest a Large hard-light Aegis security sentry that strikes any enemies entering its zone.",
+    "mechanics": "Creates a Large hovering sentry. Any enemy moving within 10 feet takes 20 Radiant/Force damage on a failed Dexterity save."
+  },
+  {
+    "name": "Arcology Sub-System Wards",
+    "level": "6",
+    "school": "Abjuration",
+    "casting_time": "10 minutes",
+    "range": "Touch",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(burning incense)"
+    ],
+    "duration": "24 hours",
+    "description": "You ward an arcology vault or floor with confusion gas, illusory walls, and mag-locked doors.",
+    "mechanics": "Wards an area up to 200 feet square with fog, illusion corridors, and mag-locked doors."
+  },
+  {
+    "name": "Sub-Dermal Targeting Assistant",
+    "level": "0",
+    "school": "Divination",
+    "casting_time": "1 Action",
+    "range": "Touch",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Concentration, up to 1 minute",
+    "description": "You touch a target and feed targeting telemetry into its HUD, granting a +d4 bonus to its next attack roll.",
+    "mechanics": "Target adds a d4 bonus to its next attack roll before the spell ends."
+  },
+  {
+    "name": "High-Velocity Gyro-Bolt",
+    "level": "1",
+    "school": "Evocation",
+    "casting_time": "1 Action",
+    "range": "120 feet",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Instantaneous",
+    "description": "A high-velocity smart bolt streak hits a target, dealing damage and granting the next attacker advantage against it.",
+    "mechanics": "Make a ranged spell attack dealing 4d6 Radiant/Force damage. The next attack against the target before the end of your next turn has advantage."
+  },
+  {
+    "name": "Pneumatic Air-Cannon Blast",
+    "level": "2",
+    "school": "Evocation",
+    "casting_time": "1 Action",
+    "range": "Self (60-foot line)",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a small fan)"
+    ],
+    "duration": "Concentration, up to 1 minute",
+    "description": "A roaring blast of compressed air and pneumatic force knocks down enemies and extinguishes fires.",
+    "mechanics": "A 60-foot line of compressed air forces creatures failing a Strength save back 15 feet and knocks them Prone."
+  },
+  {
+    "name": "Ley-Line Sacred Ground Sanctification",
+    "level": "5",
+    "school": "Evocation",
+    "casting_time": "24 hours",
+    "range": "Touch",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(herbs and incense worth 1,000gp)"
+    ],
+    "duration": "Until dispelled",
+    "description": "You sanctify an area up to a 60-foot radius, shielding it from extra-dimensional threats and corporate mages.",
+    "mechanics": "Wards a 60-foot area against extra-planar entities and applies custom buff/debuff zones."
+  },
+  {
+    "name": "Holographic Environmental Simulator",
+    "level": "4",
+    "school": "Illusion",
+    "casting_time": "10 minutes",
+    "range": "300 feet",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "24 hours",
+    "description": "You project a massive holographic terrain simulation over a 150-foot area.",
+    "mechanics": "Alters the visual and acoustic appearance of terrain in a 150-foot cube."
+  },
+  {
+    "name": "Bio-Cellular Rot Wave",
+    "level": "6",
+    "school": "Necromancy",
+    "casting_time": "1 Action",
+    "range": "60 feet",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Instantaneous",
+    "description": "A wave of necrotic radiation causes organ failure and tissue necrosis in a target.",
+    "mechanics": "Target takes 14d6 Necrotic damage on a failed Constitution save, or half on a success."
+  },
+  {
+    "name": "Synaptic Overclock Stim",
+    "level": "3",
+    "school": "Transmutation",
+    "casting_time": "1 Action",
+    "range": "30 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a shaving of licorice root)"
+    ],
+    "duration": "Concentration, up to 1 minute",
+    "description": "You flood a target's nervous system with hyper-reflex stims, doubling its speed and granting an extra action.",
+    "mechanics": "Target's speed is doubled, +2 AC, advantage on Dexterity saves, and gains an extra action on each turn. When it ends, the target suffers lethargy."
+  },
+  {
+    "name": "High-Priority Medical Triage",
+    "level": "6",
+    "school": "Evocation",
+    "casting_time": "1 Action",
+    "range": "60 feet",
+    "components": [
+      "V"
+    ],
+    "duration": "Instantaneous",
+    "description": "A massive surge of bio-nanites restores 70 Hit Points to a target and cures all blindness/deafness/diseases.",
+    "mechanics": "Target regains 70 Hit Points instantly and is cured of blindness, deafness, and diseases."
+  },
+  {
+    "name": "Emergency Nanite Patch",
+    "level": "1",
+    "school": "Evocation",
+    "casting_time": "1 Bonus Action",
+    "range": "60 feet",
+    "components": [
+      "V"
+    ],
+    "duration": "Instantaneous",
+    "description": "You beam a quick-patch wireless bio-nanite signal to heal a downed ally at range.",
+    "mechanics": "Target regains Hit Points equal to 1d4 + your spellcasting ability modifier as a bonus action."
+  },
+  {
+    "name": "Thermal Induction Arc",
+    "level": "2",
+    "school": "Transmutation",
+    "casting_time": "1 Action",
+    "range": "60 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a piece of iron wire)"
+    ],
+    "duration": "Concentration, up to 1 minute",
+    "description": "You superheat a metal object or weapon held by a target, burning them and forcing them to drop it.",
+    "mechanics": "Manufactured metal object glows red-hot, dealing 2d8 Fire damage to any creature touching it."
+  },
+  {
+    "name": "High-Voltage Neural Backlash",
+    "level": "1",
+    "school": "Evocation",
+    "casting_time": "1 Reaction",
+    "range": "60 feet",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Instantaneous",
+    "description": "When damaged by an enemy, you retaliate with an instantaneous high-voltage arc blast.",
+    "mechanics": "In reaction to taking damage, attacker takes 2d10 Fire/Lightning damage on a failed Dexterity save."
+  },
+  {
+    "name": "Synthesized Executive Feast",
+    "level": "6",
+    "school": "Conjuration",
+    "casting_time": "10 minutes",
+    "range": "30 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a gem-encrusted bowl worth 1,000gp)"
+    ],
+    "duration": "Instantaneous",
+    "description": "You synthesize a luxurious executive banquet for up to 12 creatures that grants temp HP and immunity to poison/fear.",
+    "mechanics": "Feast for 12 creatures grants immunity to poison/fear, max HP increase by 2d10, and advantage on Wisdom saves for 24 hours."
+  },
+  {
+    "name": "Adrenaline Adrenal Overdrive",
+    "level": "1",
+    "school": "Abjuration",
+    "casting_time": "1 Action",
+    "range": "Touch",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Concentration, up to 1 minute",
+    "description": "You inject a willing target with combat stims that make them immune to fear and grant temporary HP.",
+    "mechanics": "Target is immune to Frightened and gains 5 temporary Hit Points at the start of each turn."
+  },
+  {
+    "name": "Subliminal Neural Hysteria",
+    "level": "1",
+    "school": "Enchantment",
+    "casting_time": "1 Action",
+    "range": "30 feet",
+    "components": [
+      "V"
+    ],
+    "duration": "Concentration, up to 1 minute",
+    "description": "You inject a viral laughing glitch into a target's brain, knocking them prone with uncontrollable laughter.",
+    "mechanics": "Target falls Prone and is Incapacitated with uncontrollable laughter on a failed Wisdom save."
+  },
+  {
+    "name": "Neural System Freeze (Boss)",
+    "level": "5",
+    "school": "Enchantment",
+    "casting_time": "1 Action",
+    "range": "90 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a small iron straight edge)"
+    ],
+    "duration": "Concentration, up to 1 minute",
+    "description": "You lock down a target creature's motor controls and neural pathways, paralyzing them.",
+    "mechanics": "Paralyzes a target creature on a failed Wisdom save. Target repeats save at the end of each turn."
+  },
+  {
+    "name": "Neural System Freeze",
+    "level": "2",
+    "school": "Enchantment",
+    "casting_time": "1 Action",
+    "range": "60 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a small piece of iron)"
+    ],
+    "duration": "Concentration, up to 1 minute",
+    "description": "You lock down a humanoid's neural pathways, paralyzing them.",
+    "mechanics": "Paralyzes a humanoid target on a failed Wisdom save. Target repeats save at the end of each turn."
+  },
+  {
+    "name": "Aegis Divine Protective Aura",
+    "level": "8",
+    "school": "Abjuration",
+    "casting_time": "1 Action",
+    "range": "Self (30-foot radius)",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a tiny reliquary worth 500gp)"
+    ],
+    "duration": "Concentration, up to 1 minute",
+    "description": "A blinding halo of hard-light energy grants allies resistance to all damage and advantage on saving throws.",
+    "mechanics": "Allies in a 30-foot radius have advantage on all saving throws and attackers have disadvantage on attack rolls against them."
+  },
+  {
+    "name": "Smart-Link Target Tag",
+    "level": "1",
+    "school": "Divination",
+    "casting_time": "1 Bonus Action",
+    "range": "90 feet",
+    "components": [
+      "V"
+    ],
+    "duration": "Concentration, up to 1 hour",
+    "description": "You mark a single target with a smart-link lock, dealing an extra 1d6 damage on weapon hits.",
+    "mechanics": "Mark a target. Deal an extra 1d6 damage when hitting it with a weapon attack, and gain advantage on tracking checks."
+  },
+  {
+    "name": "Strobe-Pulse Disorientation",
+    "level": "3",
+    "school": "Illusion",
+    "casting_time": "1 Action",
+    "range": "120 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a crystal incense burner)"
+    ],
+    "duration": "Concentration, up to 1 minute",
+    "description": "A 30-foot sphere of flashing neon lights disorients creatures and incapacitates them.",
+    "mechanics": "Pattern of flashing lights in a 30-foot cube causes targets failing a Wisdom save to become Incapacitated and mesmerized."
+  },
+  {
+    "name": "Cryogenic Hailstorm",
+    "level": "4",
+    "school": "Evocation",
+    "casting_time": "1 Action",
+    "range": "300 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(dust and water)"
+    ],
+    "duration": "Instantaneous",
+    "description": "Rock-hard ice chunks and cryogenic freezing mist pelt a 20-foot radius, dealing Bludgeoning and Cold damage.",
+    "mechanics": "Deals 2d8 Bludgeoning damage and 4d6 Cold damage in a 20-foot cylinder on a failed Dexterity save."
+  },
+  {
+    "name": "Hardware Telemetry Analysis",
+    "level": "1",
+    "school": "Divination",
+    "casting_time": "1 minute",
+    "range": "Touch",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Instantaneous",
+    "description": "You scan a technological or magical item to instantly learn its functions, properties, and charges.",
+    "mechanics": "Learn the properties, charges, and spell/hack requirements of a object or item upon touch."
+  },
+  {
+    "name": "Encrypted Scripting",
+    "level": "1",
+    "school": "Illusion",
+    "casting_time": "1 minute",
+    "range": "Touch",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(lead-based ink worth 10gp)"
+    ],
+    "duration": "10 days",
+    "description": "You write a piece of code or text that appears as gibberish to everyone except designated recipients.",
+    "mechanics": "Write an encrypted message that only you and designated individuals can read normally."
+  },
+  {
+    "name": "Deep Matrix Imprisonment",
+    "level": "9",
+    "school": "Abjuration",
+    "casting_time": "1 minute",
+    "range": "30 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a miniature vellum representation)"
+    ],
+    "duration": "Until dispelled",
+    "description": "You trap a target's soul and physical form inside an unbreakable deep Matrix server cell.",
+    "mechanics": "Trap a target in an indestructible extra-dimensional prison cell (Burial, Chaining, Hedged Prison, Minimus Containment, Slumber)."
+  },
+  {
+    "name": "Incendiary Plasma Cloud",
+    "level": "8",
+    "school": "Conjuration",
+    "casting_time": "1 Action",
+    "range": "150 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a pinch of gunpowder)"
+    ],
+    "duration": "Concentration, up to 1 minute",
+    "description": "A massive 20-foot cloud of super-heated plasma and white-hot fire roars across the battlefield.",
+    "mechanics": "Creates a 20-foot-radius cloud dealing 10d8 Fire damage to creatures starting their turn inside."
+  },
+  {
+    "name": "Bio-Tox Touch",
+    "level": "1",
+    "school": "Necromancy",
+    "casting_time": "1 Action",
+    "range": "Touch",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Instantaneous",
+    "description": "You touch a target and discharge a concentrated surge of necrotic bio-toxin.",
+    "mechanics": "Make a melee spell attack dealing 3d10 Necrotic damage on a hit."
+  },
+  {
+    "name": "Locust Drone Swarm",
+    "level": "5",
+    "school": "Conjuration",
+    "casting_time": "1 Action",
+    "range": "300 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a locust)"
+    ],
+    "duration": "Concentration, up to 10 minutes",
+    "description": "A swarming cloud of razor-winged micro-drones bites and slashes targets in a 20-foot sphere.",
+    "mechanics": "Creates a 20-foot-radius sphere of biting micro-drones dealing 4d10 Piercing damage on a failed Constitution save."
+  },
+  {
+    "name": "Teleporting Supply Crate",
+    "level": "4",
+    "school": "Conjuration",
+    "casting_time": "1 Action",
+    "range": "Touch",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a sapphire worth 1,000gp)"
+    ],
+    "duration": "Until dispelled",
+    "description": "You mark a supply crate or item that can be summoned to your hand from anywhere instantly.",
+    "mechanics": "Touch an object. At any later time, speak its command word to teleport the object directly to your hand."
+  },
+  {
+    "name": "Thermo-Optic Camouflage Field",
+    "level": "2",
+    "school": "Illusion",
+    "casting_time": "1 Action",
+    "range": "Touch",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(an eyelash in gum)"
+    ],
+    "duration": "Concentration, up to 1 hour",
+    "description": "A target becomes completely invisible to sight and thermal scanners until it attacks or casts a spell.",
+    "mechanics": "Target becomes invisible for 1 hour or until it attacks or casts a spell."
+  },
+  {
+    "name": "Subliminal Rave Protocol",
+    "level": "6",
+    "school": "Enchantment",
+    "casting_time": "1 Action",
+    "range": "30 feet",
+    "components": [
+      "V"
+    ],
+    "duration": "Concentration, up to 1 minute",
+    "description": "You broadcast an irresistible synthwave beat that forces a target to dance uncontrollably.",
+    "mechanics": "Target must dance uncontrollably on a failed Wisdom save, losing its movement and taking disadvantage on DEX saves and attack rolls against it."
+  },
+  {
+    "name": "Sub-Dermal Hydraulic Jump",
+    "level": "1",
+    "school": "Transmutation",
+    "casting_time": "1 Action",
+    "range": "Touch",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a grasshopper leg)"
+    ],
+    "duration": "1 minute",
+    "description": "Your leg servos overcharge, tripling your jump distance.",
+    "mechanics": "Touch a creature to triple its jump distance for 1 minute."
+  },
+  {
+    "name": "Mag-Lock Breaker",
+    "level": "2",
+    "school": "Transmutation",
+    "casting_time": "1 Action",
+    "range": "60 feet",
+    "components": [
+      "V"
+    ],
+    "duration": "Instantaneous",
+    "description": "A loud acoustic/electromagnetic pop blows open physical locks, mag-locks, and barred doors.",
+    "mechanics": "Unlocks or unbars an object within 60 feet, emitting a loud acoustic pop audible out to 300 feet."
+  },
+  {
+    "name": "District History Query",
+    "level": "5",
+    "school": "Divination",
+    "casting_time": "10 minutes",
+    "range": "Self",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(incense worth 250gp)"
+    ],
+    "duration": "Instantaneous",
+    "description": "You query historical corporate databases to uncover secret lore regarding a legendary figure, location, or relic.",
+    "mechanics": "Learn legendary information about a person, place, or object."
+  },
+  {
+    "name": "Targeted Cell Purge",
+    "level": "2",
+    "school": "Abjuration",
+    "casting_time": "1 Action",
+    "range": "Touch",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Instantaneous",
+    "description": "You purge one disease, poison, or physical condition (Blinded, Deafened, Paralyzed) from a target.",
+    "mechanics": "Cure one disease or one condition (Blinded, Deafened, Paralyzed, Poisoned) on a target."
+  },
+  {
+    "name": "Magnetic Repulsor Lift",
+    "level": "2",
+    "school": "Transmutation",
+    "casting_time": "1 Action",
+    "range": "60 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a small leather loop)"
+    ],
+    "duration": "Concentration, up to 10 minutes",
+    "description": "You project a vertical magnetic repulsor beam that lifts a creature or object up to 20 feet in mid-air.",
+    "mechanics": "Lifts a target up to 20 feet off the ground in mid-air. Target floats suspended."
+  },
+  {
+    "name": "LED Spotlight Beam",
+    "level": "0",
+    "school": "Evocation",
+    "casting_time": "1 Action",
+    "range": "Touch",
+    "components": [
+      "V",
+      "M",
+      "(a firefly or phosphorescent moss)"
+    ],
+    "duration": "1 hour",
+    "description": "You touch an object to make it emit bright LED light in a 20-foot radius.",
+    "mechanics": "Object emits bright light in a 20-foot radius and dim light for an additional 20 feet."
+  },
+  {
+    "name": "High-Voltage Arc Discharge",
+    "level": "3",
+    "school": "Evocation",
+    "casting_time": "1 Action",
+    "range": "Self (100-foot line)",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a stroke of amber)"
+    ],
+    "duration": "Instantaneous",
+    "description": "A 100-foot line of crackling 100,000-volt electricity blasts out from your palm emitter.",
+    "mechanics": "Deals 8d6 Lightning damage to all creatures in a 100-foot long, 5-foot wide line on a failed Dexterity save."
+  },
+  {
+    "name": "GPS Botanical Tracker",
+    "level": "1",
+    "school": "Divination",
+    "casting_time": "1 Action",
+    "range": "Self",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Instantaneous",
+    "description": "Your HUD highlights the direction and distance to the nearest specific plant, animal, or bio-drone within 5 miles.",
+    "mechanics": "Learn the direction and distance to the nearest plant or animal of a specific species within 5 miles."
+  },
+  {
+    "name": "Biometric Target Tracker",
+    "level": "4",
+    "school": "Divination",
+    "casting_time": "1 Action",
+    "range": "Self",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a bit of fur)"
+    ],
+    "duration": "Concentration, up to 1 hour",
+    "description": "Your HUD tracks the biometric signature of a specific known creature within 1,000 feet.",
+    "mechanics": "Sense the location of a specific creature known to you within 1,000 feet."
+  },
+  {
+    "name": "Asset RFID Tracker",
+    "level": "2",
+    "school": "Divination",
+    "casting_time": "1 Action",
+    "range": "Self",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a fork of copper)"
+    ],
+    "duration": "Concentration, up to 10 minutes",
+    "description": "Your HUD tracks the location of a specific object within 1,000 feet.",
+    "mechanics": "Senses the location of a specific object within 1,000 feet."
+  },
+  {
+    "name": "Sub-Dermal Muscle Overclock",
+    "level": "1",
+    "school": "Transmutation",
+    "casting_time": "1 Action",
+    "range": "Touch",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "1 hour",
+    "description": "You overclock a target's leg actuators, increasing its movement speed by 10 feet.",
+    "mechanics": "Increases a target's movement speed by 10 feet for 1 hour."
+  },
+  {
+    "name": "Sub-Dermal Ballistic Weave",
+    "level": "1",
+    "school": "Abjuration",
+    "casting_time": "1 Action",
+    "range": "Touch",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a piece of cured leather)"
+    ],
+    "duration": "8 hours",
+    "description": "You coat an unarmored target's skin in protective sub-dermal mesh, setting its base AC to 13 + DEX.",
+    "mechanics": "Target's base AC becomes 13 + Dexterity modifier while unarmored for 8 hours."
+  },
+  {
+    "name": "Hard-Light Kinetic Force-Palm",
+    "level": "0",
+    "school": "Evocation",
+    "casting_time": "1 Action",
+    "range": "30 feet",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "1 minute",
+    "description": "A floating hard-light hand manipulates objects, presses buttons, or carries up to 10 lbs at range.",
+    "mechanics": "Create a spectral floating hand that can manipulate objects, open doors, or carry 10 lbs up to 30 feet away."
+  },
+  {
+    "name": "Null-Signal Frequency Barrier",
+    "level": "3",
+    "school": "Abjuration",
+    "casting_time": "1 minute",
+    "range": "10 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(holy water)"
+    ],
+    "duration": "Concentration, up to 1 hour",
+    "description": "Creates a 20-foot cylinder that blocks extra-dimensional entities and corporate mages from crossing.",
+    "mechanics": "Wards a 20-foot cylinder against extra-planar entities and prevents teleportation into the zone."
+  },
+  {
+    "name": "Consciousness Trapping Drive",
+    "level": "6",
+    "school": "Necromancy",
+    "casting_time": "1 minute",
+    "range": "Touch",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(an urn worth 500gp)"
+    ],
+    "duration": "Until dispelled",
+    "description": "You capture a dying target's soul/consciousness directly into an encrypted data drive upon death.",
+    "mechanics": "Traps the soul of a creature inside a gem/drive at the moment of death, preventing resurrection."
+  },
+  {
+    "name": "Targeting Smart-Micro-Missiles",
+    "level": "1",
+    "school": "Evocation",
+    "casting_time": "1 Action",
+    "range": "120 feet",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Instantaneous",
+    "description": "You launch three auto-seeking micro-missiles that strike targets automatically without missing.",
+    "mechanics": "Fires three micro-missiles. Each strikes a target automatically for 1d4 + 1 Force damage."
+  },
+  {
+    "name": "Voice-Synthesized Interface",
+    "level": "1",
+    "school": "Illusion",
+    "casting_time": "1 minute",
+    "range": "60 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a small honeycomb)"
+    ],
+    "duration": "Until dispelled",
+    "description": "You encode a digital audio response script on an object that speaks aloud when triggered.",
+    "mechanics": "Programs an object to speak a message up to 25 words when a specified trigger event occurs."
+  },
+  {
+    "name": "Monomolecular Edge Coating",
+    "level": "2",
+    "school": "Transmutation",
+    "casting_time": "1 Bonus Action",
+    "range": "Touch",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Concentration, up to 1 hour",
+    "description": "You coat a weapon in a monomolecular edge layer, turning it into a +1 magic weapon.",
+    "mechanics": "Target non-magical weapon becomes a +1 magic weapon for the duration."
+  },
+  {
+    "name": "Virtual Arcology Penthouse",
+    "level": "7",
+    "school": "Conjuration",
+    "casting_time": "1 minute",
+    "range": "300 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a miniature portal frame)"
+    ],
+    "duration": "24 hours",
+    "description": "You manifest a massive, luxurious extra-dimensional penthouse suite for up to 100 creatures.",
+    "mechanics": "Conjures an extra-dimensional mansion containing 50 rooms, staff, and food for 100 people for 24 hours."
+  },
+  {
+    "name": "Holographic Projection Matrix",
+    "level": "3",
+    "school": "Illusion",
+    "casting_time": "1 Action",
+    "range": "120 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a bit of fleece)"
+    ],
+    "duration": "Concentration, up to 10 minutes",
+    "description": "You project a Large, complex holographic image complete with sound, smell, and temperature details.",
+    "mechanics": "Creates a complex visual, audio, and thermal illusion up to a 20-foot cube."
+  },
+  {
+    "name": "High-Priority Nanite Resuscitation",
+    "level": "5",
+    "school": "Evocation",
+    "casting_time": "1 Action",
+    "range": "60 feet",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Instantaneous",
+    "description": "A massive bio-nanite wave heals up to six allies at range simultaneously.",
+    "mechanics": "Restores Hit Points equal to 3d8 + your spellcasting ability modifier to up to six targets."
+  },
+  {
+    "name": "Executive Medical Regeneration",
+    "level": "9",
+    "school": "Evocation",
+    "casting_time": "1 Action",
+    "range": "60 feet",
+    "components": [
+      "V"
+    ],
+    "duration": "Instantaneous",
+    "description": "A legendary surge of medical nanites restores 70 Hit Points to all allies within range and cures all conditions.",
+    "mechanics": "Restores 70 Hit Points to all allies within 60 feet and cures all diseases and conditions."
+  },
+  {
+    "name": "Emergency Nanite Broadcast",
+    "level": "3",
+    "school": "Evocation",
+    "casting_time": "1 Bonus Action",
+    "range": "60 feet",
+    "components": [
+      "V"
+    ],
+    "duration": "Instantaneous",
+    "description": "You beam a emergency patch signal restoring HP to up to six allies as a bonus action.",
+    "mechanics": "Restores 1d4 + spellcasting modifier Hit Points to up to six targets as a bonus action."
+  },
+  {
+    "name": "Subliminal Crowd Manipulation",
+    "level": "6",
+    "school": "Enchantment",
+    "casting_time": "1 Action",
+    "range": "60 feet",
+    "components": [
+      "V"
+    ],
+    "duration": "Concentration, up to 1 minute",
+    "description": "You project a mass behavioral suggestion to up to twelve targets.",
+    "mechanics": "Implant a course of action into up to twelve humanoids on a failed Wisdom save."
+  },
+  {
+    "name": "Matrix Firewall Isolation Cell",
+    "level": "8",
+    "school": "Abjuration",
+    "casting_time": "1 Action",
+    "range": "60 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a ruby glass cube)"
+    ],
+    "duration": "Concentration, up to 1 minute",
+    "description": "You lock a target in a 20-foot extra-dimensional data cell where it can perform no actions.",
+    "mechanics": "Traps a target in a harmless extra-dimensional space on a failed Wisdom save."
+  },
+  {
+    "name": "Sub-Dermal Concrete Integration",
+    "level": "3",
+    "school": "Transmutation",
+    "casting_time": "1 Action",
+    "range": "Touch",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "8 hours",
+    "description": "You phase your physical form directly into concrete walls or stone barriers.",
+    "mechanics": "Merge your body and gear into a stone/concrete wall or surface for up to 8 hours."
+  },
+  {
+    "name": "Micro-Solder Quick-Patch",
+    "level": "0",
+    "school": "Transmutation",
+    "casting_time": "1 minute",
+    "range": "Touch",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a spool of copper solder wire or micro-welding torch)"
+    ],
+    "duration": "Instantaneous",
+    "description": "You vent a micro-arc welding stream or nanite adhesive to fuse torn wiring, seal cracked casing, or repair fractured cyberware.",
+    "mechanics": "This spell repairs a single break or tear in an object you touch, such as a severed cable, cracked optic lens, or torn Kevlar jacket, provided the break is no larger than 1 foot in any dimension."
+  },
+  {
+    "name": "Subliminal Comms Ping",
+    "level": "0",
+    "school": "Transmutation",
+    "casting_time": "1 Action",
+    "range": "120 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a piece of copper wire)"
+    ],
+    "duration": "1 round",
+    "description": "You transmit a short, direct audio frequency or sub-vocal comms ping directly into a target's ear implant or neural receiver.",
+    "mechanics": "You point your finger toward a creature within range and whisper a message. Only the target hears the message and can reply in a whisper that only you can hear. It can pass through solid objects, but is blocked by lead shielding or active jammer grids."
+  },
+  {
+    "name": "Orbital Kinetic Carpet-Bomb",
+    "level": "9",
+    "school": "Evocation",
+    "casting_time": "1 Action",
+    "range": "1 mile",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a laser target designator array)"
+    ],
+    "duration": "Instantaneous",
+    "description": "You transmit orbital strike coordinates, calling down four massive tungsten rods and kinetic plasma rounds from a Kōten sky-arcology platform.",
+    "mechanics": "Four 40-foot-radius spheres of kinetic impact and plasma strike points within range. Each creature in an affected area must make a Dexterity saving throw, taking 20d6 Bludgeoning damage and 20d6 Fire damage on a failure, or half on a success. A creature in multiple areas takes damage only once."
+  },
+  {
+    "name": "Neural Firewall Encryption",
+    "level": "8",
+    "school": "Abjuration",
+    "casting_time": "1 Action",
+    "range": "Touch",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "24 hours",
+    "description": "You install an un-crackable military-grade neural firewall that isolates a target's consciousness from hostile Matrix entry, memory probes, and mind control.",
+    "mechanics": "Until the spell ends, one willing creature you touch is immune to Psychic damage, thought-reading effects, mental location tracking, and the Charmed or Possession conditions."
+  },
+  {
+    "name": "Holographic Projection Mesh",
+    "level": "0",
+    "school": "Illusion",
+    "casting_time": "1 Action",
+    "range": "30 feet",
+    "components": [
+      "S",
+      "M",
+      "(a micro-laser LED array)"
+    ],
+    "duration": "1 minute",
+    "description": "You project a minor optical illusion, acoustic glitch, or holographic logo into an unoccupied 5-foot space.",
+    "mechanics": "You create a sound or an optical image of an object within range that lasts for 1 minute. Physical interaction with the image reveals it to be an illusion because things can pass through it."
+  },
+  {
+    "name": "District-Wide Holo-Sim",
+    "level": "8",
+    "school": "Illusion",
+    "casting_time": "10 minutes",
+    "range": "10 miles",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a holographic lens and server key)"
+    ],
+    "duration": "10 days",
+    "description": "You project a massive, multi-block holographic environmental overlay that transforms the visual, acoustic, and atmospheric appearance of an entire district.",
+    "mechanics": "You alter the appearance of a 1-mile-square terrain area, changing its visible layout, structures, weather appearance, and sounds. Physical interaction reveals the hard-light illusion."
+  },
+  {
+    "name": "Optical Decoy Shimmer",
+    "level": "2",
+    "school": "Illusion",
+    "casting_time": "1 Action",
+    "range": "Self",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Concentration, up to 1 minute",
+    "description": "You project three holographic duplicate decoys that shift and interweave with your movements to confuse enemy targeting systems.",
+    "mechanics": "Three illusory duplicates of yourself appear in your space. Whenever a creature targets you with an attack, roll a d20 to determine whether it targets a duplicate instead (3 duplicates: 6+, 2 duplicates: 8+, 1 duplicate: 11+). A duplicate's AC equals 10 + your DEX modifier and is destroyed when hit."
+  },
+  {
+    "name": "Active Optical Camouflage",
+    "level": "5",
+    "school": "Illusion",
+    "casting_time": "1 Action",
+    "range": "Self",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Concentration, up to 1 minute",
+    "description": "You activate an advanced optical cloak and holographic decoy feed that projects an illusory copy of yourself running in one direction while rendering you completely invisible.",
+    "mechanics": "You become Invisible at the same time an illusory double of you appears and runs up to your speed in a direction you choose. As a bonus action, you can move the double. The double lasts until the spell ends."
+  },
+  {
+    "name": "Phase-Blink Step",
+    "level": "2",
+    "school": "Conjuration",
+    "casting_time": "1 Bonus Action",
+    "range": "Self",
+    "components": [
+      "V"
+    ],
+    "duration": "Instantaneous",
+    "description": "You instantly phase-shift through local Matrix data nodes, reappearing up to 30 feet away in a flash of digital static.",
+    "mechanics": "Briefly surrounded by digital distortion, you teleport up to 30 feet to an unoccupied space that you can see."
+  },
+  {
+    "name": "Memory Reprogramming Virus",
+    "level": "5",
+    "school": "Enchantment",
+    "casting_time": "1 Action",
+    "range": "30 feet",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Concentration, up to 1 minute",
+    "description": "You execute a deep neural memory rewrite payload that edits, erases, or replaces a target's memories of events within the last 24 hours.",
+    "mechanics": "Target a creature within range. It must succeed on a Wisdom saving throw or become Subliminally Overridden (Charmed) for the duration. You can alter its memories of an event that took place within the last 24 hours (lasting up to 10 minutes), erasing, altering, or fabricating details."
+  },
+  {
+    "name": "Lunar Energy Beam",
+    "level": "2",
+    "school": "Evocation",
+    "casting_time": "1 Action",
+    "range": "120 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a piece of opalescent glass)"
+    ],
+    "duration": "Concentration, up to 1 minute",
+    "description": "A 5-foot-radius, 40-foot-high cylinder of silver astral energy beam beams down from orbit, searing enemies and revealing shapeshifters.",
+    "mechanics": "A cylinder of pale silver light shines down. Creatures entering or starting their turn in the cylinder must make a Constitution saving throw, taking 2d10 Radiant damage on a failure, or half on a success. Shapechangers make the save with disadvantage and revert to their true form on a failure."
+  },
+  {
+    "name": "Sub-Dermal Concrete Sculpting",
+    "level": "5",
+    "school": "Transmutation",
+    "casting_time": "1 Action",
+    "range": "120 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a miniature shovel)"
+    ],
+    "duration": "Concentration, up to 2 hours",
+    "description": "You overwrite local structural concrete, asphalt, or soil, reshaping terrain, carving trenches, or digging subterranean bypasses.",
+    "mechanics": "Reshape terrain in a 40-foot cube (Excavating trenches, leveling hills, reshaping dirt/stone/concrete, or creating difficult terrain)."
+  },
+  {
+    "name": "Signal Jammer Mask",
+    "level": "3",
+    "school": "Abjuration",
+    "casting_time": "1 Action",
+    "range": "Touch",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a small pinch of lead dust)"
+    ],
+    "duration": "8 hours",
+    "description": "You coat a target or chip in signal-dampening lead paint and encryption routines, masking it from optical scanners and Matrix tracing.",
+    "mechanics": "For the duration, a willing creature or object touched cannot be targeted by divination magic, scrying sensors, or digital tracking devices."
+  },
+  {
+    "name": "Low-Signature Stealth Protocol",
+    "level": "2",
+    "school": "Abjuration",
+    "casting_time": "1 Action",
+    "range": "Self",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a pinch of ash or stealth thread)"
+    ],
+    "duration": "Concentration, up to 1 hour",
+    "description": "You broadcast an optical and acoustic dampening field around your team, suppressing footsteps and optical reflections.",
+    "mechanics": "You and up to ten creatures you choose within 30 feet gain a +10 bonus to Low-Signature (Stealth) checks and leave no physical tracks or biometric residues."
+  },
+  {
+    "name": "Structural Vaporizer Tunnel",
+    "level": "5",
+    "school": "Transmutation",
+    "casting_time": "1 Action",
+    "range": "30 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a pinch of sesame seeds)"
+    ],
+    "duration": "1 hour",
+    "description": "You deploy a line of industrial nanite disintegrators that instantly carves a 5-foot-wide, 10-foot-high, 20-foot-deep tunnel through solid concrete, steel, or stone.",
+    "mechanics": "A passage opens up in a wooden, plaster, concrete, or stone surface within range, up to 5 feet wide, 8 feet high, and 20 feet deep. When the spell ends, the passage closes smoothly."
+  },
+  {
+    "name": "Subliminal Terror Nightmare",
+    "level": "4",
+    "school": "Illusion",
+    "casting_time": "1 Action",
+    "range": "120 feet",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Concentration, up to 1 minute",
+    "description": "You project an isolated holographic nightmare directly into a target's neural interface, conjuring its worst fears.",
+    "mechanics": "Target a creature within range. It must succeed on a Wisdom saving throw or become Threat-Locked (Frightened) for the duration. At the end of each of its turns, it must repeat the save, taking 4d10 Psychic damage on a failure."
+  },
+  {
+    "name": "Cyber-Bike Fast-Deploy",
+    "level": "2",
+    "school": "Illusion",
+    "casting_time": "1 Action",
+    "range": "30 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a thread from a riding cloak)"
+    ],
+    "duration": "1 hour",
+    "description": "You materialize an illusory hard-light combat bike or fast-transit vehicle that carries a rider across urban terrain.",
+    "mechanics": "Manifest an illusory riding horse or light vehicle. It moves at 100 feet per round and can carry one rider. It dissolves if it takes any damage."
+  },
+  {
+    "name": "Astral Contractor Proxy",
+    "level": "6",
+    "school": "Conjuration",
+    "casting_time": "10 minutes",
+    "range": "60 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a high-tier corporate contract chip worth 500gp)"
+    ],
+    "duration": "Instantaneous",
+    "description": "You submit a high-priority request to an extra-dimensional corporate board or spirit court, summoning a powerful celestial or demon contractor.",
+    "mechanics": "You request aid from a powerful extra-planar entity (an Astral Contractor). The entity expects a contract payment or favor in exchange for its services."
+  },
+  {
+    "name": "Astral Contract Binding",
+    "level": "5",
+    "school": "Abjuration",
+    "casting_time": "1 hour",
+    "range": "60 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(jewel-dusted contract scroll worth 1,000gp)"
+    ],
+    "duration": "24 hours",
+    "description": "You execute a binding neural contract that traps a summoned spirit, demon, or celestial entity in your service for up to 24 hours.",
+    "mechanics": "Binds a target extra-planar entity (celestial, elemental, fey, or fiend) to your service. It must make a Charisma saving throw; on a failure, it obeys your commands for the duration."
+  },
+  {
+    "name": "Matrix Transit Shift",
+    "level": "7",
+    "school": "Conjuration",
+    "casting_time": "1 Action",
+    "range": "5 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a tuning fork set to a digital node)"
+    ],
+    "duration": "Instantaneous",
+    "description": "You and up to eight willing allies phase through the Matrix infrastructure, instantly teleporting to a distant global server node or dimension.",
+    "mechanics": "You and up to eight willing creatures teleport to a designated destination node on another plane or distant location on the globe."
+  },
+  {
+    "name": "Accelerated Bio-Flora Growth",
+    "level": "3",
+    "school": "Transmutation",
+    "casting_time": "1 Action or 8 hours",
+    "range": "150 feet",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Instantaneous",
+    "description": "You release a heavy botanical growth agent that causes urban weeds, bio-engineered vines, and rooftop flora to instantly overgrow.",
+    "mechanics": "In a 100-foot radius, plants instantly overgrow, creating difficult terrain. Alternatively, enrich crop yield in a half-mile radius over 8 hours."
+  },
+  {
+    "name": "Aerosolized Bio-Toxin Jet",
+    "level": "0",
+    "school": "Necromancy",
+    "casting_time": "1 Action",
+    "range": "10 feet",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Instantaneous",
+    "description": "You vent a cloud of toxic gas and hardware-corroding chemicals from your sub-dermal wrist nozzle.",
+    "mechanics": "Target a creature within 10 feet. It must succeed on a Constitution saving throw or take 1d12 Poison damage.\nScaling: Damage increases by 1d12 at 5th level (2d12), 11th level (3d12), and 17th level (4d12)."
+  },
+  {
+    "name": "Bio-Form Mutagen Overwrite",
+    "level": "4",
+    "school": "Transmutation",
+    "casting_time": "1 Action",
+    "range": "60 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a caterpillar cocoon)"
+    ],
+    "duration": "Concentration, up to 1 hour",
+    "description": "You forcibly rewrite a target's physical genetic code, mutating it into a harmless harmless beast or apex bio-drone.",
+    "mechanics": "Target a creature within range. It must succeed on a Wisdom saving throw or be transformed into a beast of CR equal to or lower than its level/CR for the duration."
+  },
+  {
+    "name": "Kill-Code Execution Protocol",
+    "level": "9",
+    "school": "Enchantment",
+    "casting_time": "1 Action",
+    "range": "60 feet",
+    "components": [
+      "V"
+    ],
+    "duration": "Instantaneous",
+    "description": "You speak a high-level corporate kill-code that instantly shuts down the neural heart rate and brain function of a target with 100 HP or less.",
+    "mechanics": "You utter a command word. If the target has 100 Hit Points or fewer, it dies instantly. Otherwise, the spell has no effect."
+  },
+  {
+    "name": "Neural Shock-Stun Protocol",
+    "level": "8",
+    "school": "Enchantment",
+    "casting_time": "1 Action",
+    "range": "60 feet",
+    "components": [
+      "V"
+    ],
+    "duration": "Instantaneous",
+    "description": "You broadcast an intense high-frequency shock pulse that instantly stuns a target with 150 HP or less.",
+    "mechanics": "Target a creature within 60 feet. If it has 150 Hit Points or fewer, it is Stunned until the end of your next turn."
+  },
+  {
+    "name": "Emergency Cellular Triage",
+    "level": "2",
+    "school": "Evocation",
+    "casting_time": "10 minutes",
+    "range": "30 feet",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Instantaneous",
+    "description": "You deploy a field medical nanite cloud that heals up to six wounded allies during short rests.",
+    "mechanics": "Up to six creatures regain 2d8 + your spellcasting ability modifier Hit Points at the end of a 10-minute medical triage session."
+  },
+  {
+    "name": "Micro-Holo & Acoustic Utility",
+    "level": "0",
+    "school": "Transmutation",
+    "casting_time": "1 Action",
+    "range": "10 feet",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "1 hour",
+    "description": "You execute minor technical utility routines: igniting synth-cigarettes, changing shirt neon colors, or generating minor synth-flavors.",
+    "mechanics": "Perform minor utility tricks (sparking a small fire, cleaning an item, changing neon clothing trim, generating a minor scent or flavor)."
+  },
+  {
+    "name": "Prismatic Refraction Laser Strike",
+    "level": "7",
+    "school": "Evocation",
+    "casting_time": "1 Action",
+    "range": "Self (60-foot cone)",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Instantaneous",
+    "description": "Eight multi-colored laser beams detonate from your optical array in a 60-foot cone, inflicting varied elemental and status effects.",
+    "mechanics": "Each creature in a 60-foot cone takes damage and effects based on random laser color rolls (Red: 10d6 Fire, Orange: 10d6 Acid, Yellow: 10d6 Lightning, Green: 10d6 Poison, Blue: 10d6 Cold, Indigo: Restrained, Violet: Blinded)."
+  },
+  {
+    "name": "Hard-Light Prismatic Citadel",
+    "level": "9",
+    "school": "Abjuration",
+    "casting_time": "1 Action",
+    "range": "60 feet",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "10 minutes",
+    "description": "You project an impenetrable, 90-foot-wide hard-light laser dome consisting of seven multi-colored protective layers.",
+    "mechanics": "Creates a dome made of 7 distinct colored energy layers. Each layer blocks specific damage types, spells, and physical movement, and must be destroyed by specific counter-measures."
+  },
+  {
+    "name": "Data-Vault Isolation Chamber",
+    "level": "4",
+    "school": "Abjuration",
+    "casting_time": "10 minutes",
+    "range": "120 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a miniature lead box)"
+    ],
+    "duration": "24 hours",
+    "description": "You encase a 30-foot cube in an opaque hard-light force field that blocks all physical entry, optical sensors, and wireless signals.",
+    "mechanics": "Creates an isolated 30-foot cube that blocks sound, wireless signals, visual scrying, and physical entry."
+  },
+  {
+    "name": "Sub-Dermal Plasma Arc Emitter",
+    "level": "0",
+    "school": "Evocation",
+    "casting_time": "1 Action",
+    "range": "Self",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Instantaneous",
+    "description": "You ignite a small flame or plasma arc at your fingertip that can illuminate dark alleyways or ignite flammable fuel.",
+    "mechanics": "A flame appears in your hand for 10 minutes (bright light 10ft). You can throw it up to 30 feet to make a ranged spell attack dealing 1d8 Fire damage."
+  },
+  {
+    "name": "Hard-Light Timed Hologram",
+    "level": "6",
+    "school": "Illusion",
+    "casting_time": "10 minutes",
+    "range": "120 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(fleece and jade dust worth 250gp)"
+    ],
+    "duration": "Until dispelled",
+    "description": "You program an intricate holographic illusion up to a 30-foot cube that activates automatically when specific triggers occur.",
+    "mechanics": "Create a complex visual and auditory illusion that activates upon a set trigger condition and follows a pre-programmed script."
+  },
+  {
+    "name": "Hard-Light Holo-Avatar",
+    "level": "7",
+    "school": "Illusion",
+    "casting_time": "1 Action",
+    "range": "500 miles",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Concentration, up to 1 day",
+    "description": "You project an interactive hard-light avatar of yourself anywhere within 500 miles, allowing you to speak, see, and cast spells through it.",
+    "mechanics": "Project an intangible copy of yourself anywhere within range. You can see, hear, speak, and cast spells through the image."
+  },
+  {
+    "name": "Elemental Shielding Protocol",
+    "level": "3",
+    "school": "Abjuration",
+    "casting_time": "1 Action",
+    "range": "Touch",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Concentration, up to 1 hour",
+    "description": "You coat a target in energy-dampening insulation, granting resistance to one specific energy type (Fire, Cold, Lightning, Acid, Sonic).",
+    "mechanics": "Target creature gains resistance to Acid, Cold, Fire, Lightning, or Thunder damage for the duration."
+  },
+  {
+    "name": "Aegis Anti-Corporate Protection",
+    "level": "1",
+    "school": "Abjuration",
+    "casting_time": "1 Action",
+    "range": "Touch",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(holy water or silver chip)"
+    ],
+    "duration": "Concentration, up to 10 minutes",
+    "description": "You install a protective firewall against hostile extra-dimensional entities, spirits, and mind-control hacks.",
+    "mechanics": "Target gains +2 AC and saving throws against Aberrations, Celestials, Elementals, Fey, Fiends, and Undead, and immunity to Charm/Frightened from them."
+  },
+  {
+    "name": "Bio-Tox Antitoxin Injector",
+    "level": "2",
+    "school": "Abjuration",
+    "casting_time": "1 Action",
+    "range": "Touch",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "1 hour",
+    "description": "You inject a neutralizing anti-toxin serum that cures poisons and grants resistance to chemical toxins.",
+    "mechanics": "Touch a creature to neutralize one poison affecting it. For the duration, it has advantage on saves against poison and resistance to Poison damage."
+  },
+  {
+    "name": "Bio-Filter Purifier",
+    "level": "1",
+    "school": "Transmutation",
+    "casting_time": "1 Action",
+    "range": "10 feet",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Instantaneous",
+    "description": "You deploy micro-filters to neutralize bio-toxins, heavy radiation, and pollutants in food and water within 5 feet.",
+    "mechanics": "All non-magical food and drink within a 5-foot-radius sphere is purified and freed of poison and disease."
+  },
+  {
+    "name": "High-Tier Cybernetic Resuscitation",
+    "level": "5",
+    "school": "Necromancy",
+    "casting_time": "1 hour",
+    "range": "Touch",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(diamonds worth 500gp)"
+    ],
+    "duration": "Instantaneous",
+    "description": "You use trauma-surge defibrillators and neural reconstructors to revive a target that died within the last 10 days.",
+    "mechanics": "Revive a dead creature that died within the last 10 days with 1 Hit Point, restoring missing limbs and organs."
+  },
+  {
+    "name": "Sub-Dermal Bio-Siphon",
+    "level": "2",
+    "school": "Necromancy",
+    "casting_time": "1 Action",
+    "range": "60 feet",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Concentration, up to 1 minute",
+    "description": "A beam of necrotic energy drains a target's muscle strength, cutting its physical attack damage in half.",
+    "mechanics": "Target a creature within range. On a hit, it takes 2d6 Necrotic damage and its weapon attacks dealing Strength damage deal half damage until the spell ends."
+  },
+  {
+    "name": "Cryo-Beam Cannon",
+    "level": "0",
+    "school": "Evocation",
+    "casting_time": "1 Action",
+    "range": "60 feet",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Instantaneous",
+    "description": "You fire a beam of sub-zero cryogenic fluid that freezes a target's leg joints and reduces its speed.",
+    "mechanics": "Make a ranged spell attack. On a hit, the target takes 1d8 Cold damage and its movement speed is reduced by 10 feet until the start of your next turn.\nScaling: Damage increases by 1d8 at 5th level (2d8), 11th level (3d8), and 17th level (4d8)."
+  },
+  {
+    "name": "Bio-Nanite Cellular Regeneration",
+    "level": "7",
+    "school": "Transmutation",
+    "casting_time": "1 minute",
+    "range": "Touch",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a prayer wheel)"
+    ],
+    "duration": "1 hour",
+    "description": "You inject a continuous stream of cellular repair nanites that restores HP every round and regrows severed limbs.",
+    "mechanics": "Target regains 4d8 + 15 Hit Points instantly, and 1 Hit Point at the start of each of its turns for 1 hour. Severed body parts are reattached or regrown."
+  },
+  {
+    "name": "Replicant Genetic Resynthesis",
+    "level": "5",
+    "school": "Transmutation",
+    "casting_time": "1 hour",
+    "range": "Touch",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(rare incense worth 500gp)"
+    ],
+    "duration": "Instantaneous",
+    "description": "You rebuild a deceased target's physical body into a new metahuman replica body, transferring its soul into the new frame.",
+    "mechanics": "Rebuild a dead creature into a new body (rolling on a metahuman heritage table to determine its new physical species)."
+  },
+  {
+    "name": "Firewall Malware Scrub",
+    "level": "3",
+    "school": "Abjuration",
+    "casting_time": "1 Action",
+    "range": "Touch",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Instantaneous",
+    "description": "You run a deep system antivirus scrub that purges curses, corporate tracking bugs, and malicious hacks from a target.",
+    "mechanics": "At touch, all curses, malwares, and tracking bugs affecting a target or object immediately end."
+  },
+  {
+    "name": "Hard-Light Containment Sphere",
+    "level": "4",
+    "school": "Evocation",
+    "casting_time": "1 Action",
+    "range": "30 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a hemispherical piece of gum)"
+    ],
+    "duration": "Concentration, up to 1 minute",
+    "description": "You trap a target inside an indestructible 10-foot hard-light kinetic force sphere.",
+    "mechanics": "Encloses a Large or smaller creature in an indestructible sphere of force on a failed Dexterity save. Nothing can pass through the sphere."
+  },
+  {
+    "name": "Emergency System Defenses",
+    "level": "0",
+    "school": "Abjuration",
+    "casting_time": "1 Action",
+    "range": "Touch",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Concentration, up to 1 minute",
+    "description": "You touch a target to reinforce its saving throws with a +d4 defense buffer.",
+    "mechanics": "Target adds a d4 bonus to its saving throws for the duration."
+  },
+  {
+    "name": "Full Cybernetic Reconstruction",
+    "level": "7",
+    "school": "Necromancy",
+    "casting_time": "1 hour",
+    "range": "Touch",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(diamonds worth 1,000gp)"
+    ],
+    "duration": "Instantaneous",
+    "description": "You fully reconstruct a deceased target's body and neural network, reviving it even if only a scrap of DNA remains.",
+    "mechanics": "Revives a dead creature that died up to 100 years ago, reconstructing missing organs, limbs, and body parts."
+  },
+  {
+    "name": "Gravitational Inversion Field",
+    "level": "7",
+    "school": "Transmutation",
+    "casting_time": "1 Action",
+    "range": "100 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a magnet)"
+    ],
+    "duration": "Concentration, up to 1 minute",
+    "description": "You invert gravity in a 50-foot-radius, 100-foot-high cylinder, causing enemies and unanchored objects to fall upward.",
+    "mechanics": "Gravity reverses upward in a 50-foot radius cylinder. Unanchored creatures fall upward 100 feet, slamming into ceilings for falling damage."
+  },
+  {
+    "name": "Field Defibrillator Pulse",
+    "level": "3",
+    "school": "Necromancy",
+    "casting_time": "1 Action",
+    "range": "Touch",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(diamonds worth 300gp)"
+    ],
+    "duration": "Instantaneous",
+    "description": "You discharge a high-voltage defibrillator strike directly into a target that died within the last 1 minute, reviving it with 1 HP.",
+    "mechanics": "Revives a creature that died within the last 1 minute, restoring it to life with 1 Hit Point."
+  },
+  {
+    "name": "Deployable Micro-Safehouse",
+    "level": "2",
+    "school": "Transmutation",
+    "casting_time": "1 Action",
+    "range": "Touch",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a 50-foot rope)"
+    ],
+    "duration": "8 hours",
+    "description": "You drop a high-tensile wire upward that opens an invisible 8-person pocket safehouse in the air.",
+    "mechanics": "A 50-foot rope rises into the air, leading to an invisible extra-dimensional safehouse that holds up to eight creatures."
+  },
+  {
+    "name": "Sub-Dermal Laser Beam",
+    "level": "0",
+    "school": "Evocation",
+    "casting_time": "1 Action",
+    "range": "60 feet",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Instantaneous",
+    "description": "You fire a beam of bright laser light from your palm or focus that deals Radiant damage.",
+    "mechanics": "Make a ranged spell attack dealing 1d8 Radiant damage on a hit.\nScaling: Increases by 1d8 at 5th level (2d8), 11th level (3d8), and 17th level (4d8)."
+  },
+  {
+    "name": "Aegis Hard-Light Barrier",
+    "level": "1",
+    "school": "Abjuration",
+    "casting_time": "1 Action",
+    "range": "30 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a holy symbol)"
+    ],
+    "duration": "Concentration, up to 1 minute",
+    "description": "You project a floating hard-light aegis shield in front of an ally, granting them a +2 AC bonus.",
+    "mechanics": "A willing creature within range gains a +2 bonus to AC for the duration."
+  },
+  {
+    "name": "Thermite Cluster Launch",
+    "level": "2",
+    "school": "Evocation",
+    "casting_time": "1 Action",
+    "range": "120 feet",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Instantaneous",
+    "description": "You launch three burning thermite explosive clusters that strike single or multiple targets.",
+    "mechanics": "Create three fiery bolts. Make a ranged spell attack for each bolt, dealing 2d6 Fire damage per bolt on a hit.\nAt Higher Levels: Fires 1 additional bolt for each slot level above 2nd."
+  },
+  {
+    "name": "Matrix Scrying Drone",
+    "level": "5",
+    "school": "Divination",
+    "casting_time": "10 minutes",
+    "range": "Self",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a sensor mirror worth 1,000gp)"
+    ],
+    "duration": "Concentration, up to 10 minutes",
+    "description": "You project an invisible wireless scrying sensor over a target anywhere in Neo-Tokyo to watch and listen to it.",
+    "mechanics": "You see and hear a specific target creature on a failed Wisdom saving throw, moving a scrying sensor with it."
+  },
+  {
+    "name": "Encrypted Stash Lockbox",
+    "level": "4",
+    "school": "Conjuration",
+    "casting_time": "1 Action",
+    "range": "Touch",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a chest worth 5,000gp and replica worth 50gp)"
+    ],
+    "duration": "Instantaneous",
+    "description": "You hide a heavy gear chest in a pocket dimension, summoning or hiding it with a replica key.",
+    "mechanics": "Hides a chest holding up to 12 cubic feet of gear in an extra-dimensional plane, accessible via a replica key."
+  },
+  {
+    "name": "Thermal Optics Sweep",
+    "level": "2",
+    "school": "Divination",
+    "casting_time": "1 Action",
+    "range": "Self",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Concentration, up to 10 minutes",
+    "description": "Your optics switch to thermal-infrared mode, highlighting invisible targets and optical stealth cloaks within 30 feet.",
+    "mechanics": "You can see invisible creatures and objects as if they were visible out to 30 feet."
+  },
+  {
+    "name": "Holographic Persona Cloak",
+    "level": "5",
+    "school": "Illusion",
+    "casting_time": "1 Action",
+    "range": "30 feet",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "8 hours",
+    "description": "You project custom holographic disguises over up to six allies to disguise them as corporate guards or idols.",
+    "mechanics": "Change the physical appearance of up to six willing targets for 8 hours (Charisma save to see through)."
+  },
+  {
+    "name": "Wireless Audio/Text Signal",
+    "level": "3",
+    "school": "Evocation",
+    "casting_time": "1 Action",
+    "range": "Unlimited",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a copper wire)"
+    ],
+    "duration": "1 round",
+    "description": "You transmit a 25-word encrypted text or audio message directly to a target's neural receiver anywhere in the world.",
+    "mechanics": "Send a message of 25 words or less to a creature you are familiar with. It hears the message in its mind and can reply immediately."
+  },
+  {
+    "name": "Deep-Net Data Vault Stasis",
+    "level": "7",
+    "school": "Transmutation",
+    "casting_time": "10 minutes",
+    "range": "Touch",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(powdered ruby worth 5,000gp)"
+    ],
+    "duration": "Until dispelled",
+    "description": "You lock an object or target in stasis inside a digital vault, making it immune to damage, aging, and scrying.",
+    "mechanics": "Target is put into suspended animation, making it immune to aging, damage, and divination magic until triggered."
+  },
+  {
+    "name": "Biological Species Overwrite",
+    "level": "9",
+    "school": "Transmutation",
+    "casting_time": "1 Action",
+    "range": "60 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a jade ring worth 1,500gp)"
+    ],
+    "duration": "Concentration, up to 1 hour",
+    "description": "You rewrite a target's physical genetic structure permanently into any other metahuman species, dragon, or beast.",
+    "mechanics": "Transform a target into another creature of equal or lower CR/level permanently if concentration is maintained for 1 hour."
+  },
+  {
+    "name": "Acoustic Shatter Pulse",
+    "level": "2",
+    "school": "Evocation",
+    "casting_time": "1 Action",
+    "range": "60 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a chip of mica)"
+    ],
+    "duration": "Instantaneous",
+    "description": "You emit a loud, high-frequency sonic pulse that shatters glass, structural barriers, and deafens enemies.",
+    "mechanics": "Creatures in a 10-foot sphere take 3d8 Thunder/Sonic damage on a failed Constitution save. Non-magical inorganic objects take extra damage."
+  },
+  {
+    "name": "Sub-Dermal Reactive Firewall",
+    "level": "1",
+    "school": "Abjuration",
+    "casting_time": "1 Reaction",
+    "range": "Self",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "1 round",
+    "description": "When targeted by an attack or Magic Missile, you project a hard-light energy barrier that grants a +5 AC bonus.",
+    "mechanics": "In reaction to being hit by an attack, gain a +5 bonus to AC until the start of your next turn and immunity to Magic Missile."
+  },
+  {
+    "name": "Aegis Kinetic Barrier",
+    "level": "1",
+    "school": "Abjuration",
+    "casting_time": "1 Action",
+    "range": "60 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a parchment with holy text)"
+    ],
+    "duration": "Concentration, up to 10 minutes",
+    "description": "You project a floating hard-light barrier that grants an ally a +2 AC bonus.",
+    "mechanics": "Target creature within range gains a +2 bonus to AC for the duration."
+  },
+  {
+    "name": "Monofilament Weapon Coating",
+    "level": "0",
+    "school": "Transmutation",
+    "casting_time": "1 Action",
+    "range": "Touch",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a wooden club or staff)"
+    ],
+    "duration": "1 minute",
+    "description": "You coat a wooden staff or club in monofilament wire, allowing you to use your spellcasting stat for melee attack rolls.",
+    "mechanics": "Touch a wooden weapon. For 1 minute, use your spellcasting ability instead of Strength for attack/damage rolls, dealing 1d8 damage."
+  },
+  {
+    "name": "High-Voltage Taser Palm",
+    "level": "0",
+    "school": "Evocation",
+    "casting_time": "1 Action",
+    "range": "Touch",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Instantaneous",
+    "description": "You discharge a high-voltage taser strike from your palm, dealing Lightning damage and preventing reactions.",
+    "mechanics": "Make a melee spell attack (advantage if target wears metal armor). On a hit, deal 1d8 Lightning damage and target cannot take reactions.\nScaling: Increases by 1d8 at 5th level (2d8), 11th level (3d8), and 17th level (4d8)."
+  },
+  {
+    "name": "Acoustic Muffle Field",
+    "level": "2",
+    "school": "Illusion",
+    "casting_time": "1 Action",
+    "range": "120 feet",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Concentration, up to 10 minutes",
+    "description": "You project a 20-foot sound-proof barrier that silences all gunfire, footsteps, and spoken spell code inside.",
+    "mechanics": "No sound can be created within or pass through a 20-foot sphere. Creatures inside are Deafened and immune to Thunder damage."
+  },
+  {
+    "name": "Holographic Decoy Display",
+    "level": "1",
+    "school": "Illusion",
+    "casting_time": "1 Action",
+    "range": "60 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a bit of fleece)"
+    ],
+    "duration": "Concentration, up to 10 minutes",
+    "description": "You project a simple visual or audio hologram (no larger than a 15-foot cube) within range.",
+    "mechanics": "Create a purely visual or auditory image up to a 15-foot cube. Physical interaction reveals it to be an illusion."
+  },
+  {
+    "name": "Hard-Light Replicant Construct",
+    "level": "7",
+    "school": "Illusion",
+    "casting_time": "12 hours",
+    "range": "Touch",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(snow and hair worth 1,500gp)"
+    ],
+    "duration": "Until dispelled",
+    "description": "You fabricate an identical hard-light or bio-synthetic duplicate of a target that possesses half its stats and abilities.",
+    "mechanics": "Creates an illusory duplicate of a target creature with half its maximum Hit Points that obeys your commands."
+  },
+  {
+    "name": "Subliminal Sleep Signal",
+    "level": "1",
+    "school": "Enchantment",
+    "casting_time": "1 Action",
+    "range": "90 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a pinch of fine sand)"
+    ],
+    "duration": "1 minute",
+    "description": "You broadcast a soothing acoustic frequency that knocks low-tier targets unconscious in a 20-foot sphere.",
+    "mechanics": "Roll 5d8; the total is how many Hit Points of creatures in a 20-foot sphere this spell can knock unconscious."
+  },
+  {
+    "name": "Cryogenic Blizzard Cloud",
+    "level": "3",
+    "school": "Evocation",
+    "casting_time": "1 Action",
+    "range": "150 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(dust and water)"
+    ],
+    "duration": "Concentration, up to 1 minute",
+    "description": "A 40-foot cylinder fills with freezing blizzard winds, blinding targets and extinguishing fires.",
+    "mechanics": "Creates a 40-foot-wide, 20-foot-high cylinder of freezing snow that heavily obscures the area and deals 2d6 Cold damage."
+  },
+  {
+    "name": "Neural Reflex Delay",
+    "level": "3",
+    "school": "Transmutation",
+    "casting_time": "1 Action",
+    "range": "120 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a drop of molasses)"
+    ],
+    "duration": "Concentration, up to 1 minute",
+    "description": "You inject a reflex-delay glitch into up to six targets, cutting their movement speed in half and removing reactions.",
+    "mechanics": "Up to six targets failing a Wisdom save have speed halved, -2 AC/DEX saves, and cannot take reactions or multi-attacks."
+  },
+  {
+    "name": "Stabilization Defibrillator Ping",
+    "level": "0",
+    "school": "Necromancy",
+    "casting_time": "1 Action",
+    "range": "Touch",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Instantaneous",
+    "description": "You discharge a gentle defibrillator pulse to instantly stabilize a dying target at 0 HP.",
+    "mechanics": "Touch a living creature at 0 Hit Points to stabilize it."
+  },
+  {
+    "name": "Critter Neural Interlink",
+    "level": "1",
+    "school": "Divination",
+    "casting_time": "1 Action",
+    "range": "30 feet",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "10 minutes",
+    "description": "Your translator translates the vocalizations and body language of urban critters and animals.",
+    "mechanics": "Comprehend and communicate verbally with beasts for the duration."
+  },
+  {
+    "name": "Cyber-Zombie Neural Interlink",
+    "level": "3",
+    "school": "Necromancy",
+    "casting_time": "1 Action",
+    "range": "10 feet",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "10 minutes",
+    "description": "Your neural link interrogates a corpse, asking up to five questions before its brain decays.",
+    "mechanics": "Interrogate a corpse with intact vocal cords, asking up to five questions."
+  },
+  {
+    "name": "Bio-Flora Interlink",
+    "level": "3",
+    "school": "Divination",
+    "casting_time": "1 Action",
+    "range": "Self",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "10 minutes",
+    "description": "You query urban rooftop gardens and mutated flora to learn events that occurred in the area.",
+    "mechanics": "Commune with plants within 30 feet to learn about events, creatures, and paths."
+  },
+  {
+    "name": "Pneumatic Wall-Climber Actuators",
+    "level": "2",
+    "school": "Transmutation",
+    "casting_time": "1 Action",
+    "range": "Touch",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a drop of pitch and a spider)"
+    ],
+    "duration": "Concentration, up to 1 hour",
+    "description": "Pneumatic suction cups and magnetic micro-hooks allow a target to scale vertical arcology walls effortlessly.",
+    "mechanics": "Target creature gains a climbing speed equal to its walking speed and can move across vertical surfaces and ceilings."
+  },
+  {
+    "name": "Monofilament Trap Array",
+    "level": "3",
+    "school": "Transmutation",
+    "casting_time": "1 Action",
+    "range": "60 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a pinch of thorn seeds)"
+    ],
+    "duration": "Concentration, up to 10 minutes",
+    "description": "A 20-foot square area fills with razor-sharp monofilament tripwires that slash creatures moving through.",
+    "mechanics": "Creates difficult terrain in a 20-foot square. Moving through deals 2d4 Piercing/Slashing damage for every 5 feet."
+  },
+  {
+    "name": "Aegis Hard-Light Combat Sentries",
+    "level": "3",
+    "school": "Abjuration",
+    "casting_time": "1 Action",
+    "range": "Self",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a holy symbol)"
+    ],
+    "duration": "Concentration, up to 10 minutes",
+    "description": "Three hovering hard-light sentries orbit you, striking any enemy that enters within 15 feet.",
+    "mechanics": "Hard-light sentries deal 3d8 Radiant/Force damage to enemies entering within 15 feet on a failed Wisdom save."
+  },
+  {
+    "name": "Hard-Light Floating Turret",
+    "level": "2",
+    "school": "Evocation",
+    "casting_time": "1 Bonus Action",
+    "range": "60 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a miniature hammer)"
+    ],
+    "duration": "Concentration, up to 1 minute",
+    "description": "You manifest a hovering hard-light energy turret that shoots lasers as a bonus action.",
+    "mechanics": "Create a floating spectral turret. Make a melee spell attack dealing 1d8 + spellcasting modifier Force damage as a bonus action."
+  },
+  {
+    "name": "Neuro-Toxic Gas Venter",
+    "level": "3",
+    "school": "Conjuration",
+    "casting_time": "1 Action",
+    "range": "90 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a rotten egg)"
+    ],
+    "duration": "Concentration, up to 1 minute",
+    "description": "A 20-foot sphere fills with foul neuro-toxic gas that causes targets to gag and become Incapacitated.",
+    "mechanics": "Creates a 20-foot sphere of yellow gas. Creatures failing a Constitution save are Incapacitated on their turn."
+  },
+  {
+    "name": "Sub-Dermal Concrete Shaping",
+    "level": "4",
+    "school": "Transmutation",
+    "casting_time": "1 Action",
+    "range": "Touch",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(soft clay)"
+    ],
+    "duration": "Instantaneous",
+    "description": "You instantly reshape a 5-foot cube of concrete, rock, or masonry into any form or door passageway.",
+    "mechanics": "Reshape a block of stone/concrete no larger than 5 feet in any dimension into a desired shape."
+  },
+  {
+    "name": "Sub-Dermal Titanium Skin",
+    "level": "4",
+    "school": "Abjuration",
+    "casting_time": "1 Action",
+    "range": "Touch",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a pinch of diamond dust worth 100gp)"
+    ],
+    "duration": "Concentration, up to 1 hour",
+    "description": "A target's skin hardens into rock-hard titanium plating, granting resistance to non-magical kinetic damage.",
+    "mechanics": "Target gains resistance to non-magical Bludgeoning, Piercing, and Slashing damage."
+  },
+  {
+    "name": "Orbital Thunderstorm Array",
+    "level": "9",
+    "school": "Conjuration",
+    "casting_time": "1 Action",
+    "range": "Sight",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Concentration, up to 10 minutes",
+    "description": "A massive 360-foot hurricane storm clouds over the district, dealing torrential acid rain, lightning, and hail damage.",
+    "mechanics": "Creates a massive storm. Deals 2d6 Thunder damage, 1d6 Cold damage, 10d6 Lightning damage, and 2d6 Acid damage in stages."
+  },
+  {
+    "name": "Subliminal Behavioral Override",
+    "level": "2",
+    "school": "Enchantment",
+    "casting_time": "1 Action",
+    "range": "30 feet",
+    "components": [
+      "V",
+      "M",
+      "(a snake tongue)"
+    ],
+    "duration": "Concentration, up to 8 hours",
+    "description": "You implant a compelling course of action into a target, forcing it to carry out the command.",
+    "mechanics": "Implant a reasonable command into a target on a failed Wisdom save. It carries out the task for up to 8 hours."
+  },
+  {
+    "name": "Sub-Dermal Thermal Laser Beam",
+    "level": "6",
+    "school": "Evocation",
+    "casting_time": "1 Action",
+    "range": "Self (60-foot line)",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a magnifying glass)"
+    ],
+    "duration": "Concentration, up to 1 minute",
+    "description": "You project a 60-foot radiant laser beam from your chest focus that deals 6d8 Radiant damage each turn.",
+    "mechanics": "A 60-foot line of bright light deals 6d8 Radiant damage to creatures failing a Constitution save, and blinds them."
+  },
+  {
+    "name": "Orbital Solar Flare Nova",
+    "level": "8",
+    "school": "Evocation",
+    "casting_time": "1 Action",
+    "range": "150 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a sunstone)"
+    ],
+    "duration": "Instantaneous",
+    "description": "A blinding 60-foot sphere of solar plasma detonates, dealing 12d6 Radiant damage and blinding all targets.",
+    "mechanics": "A 60-foot sphere detonates dealing 12d6 Radiant damage to creatures failing a Constitution save, and blinding them."
+  },
+  {
+    "name": "Mag-Lock Trap / System Glyph",
+    "level": "7",
+    "school": "Abjuration",
+    "casting_time": "1 minute",
+    "range": "Touch",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(mercury and diamond dust worth 1,000gp)"
+    ],
+    "duration": "Until dispelled",
+    "description": "You etch a deadly security glyph on a surface that triggers Death, Discord, Fear, Hopelessness, Insanity, Pain, or Sleep.",
+    "mechanics": "Inscribe a master glyph that triggers devastating status effects in a 60-foot sphere when activated."
+  },
+  {
+    "name": "Hard-Light Hydraulic Tether",
+    "level": "5",
+    "school": "Transmutation",
+    "casting_time": "1 Action",
+    "range": "60 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a drop of oil)"
+    ],
+    "duration": "Concentration, up to 10 minutes",
+    "description": "A hard-light kinetic beam grabs a creature or 5,000 lb object, lifting or throwing it across the field.",
+    "mechanics": "Move a creature or object weighing up to 5,000 lbs up to 30 feet in any direction on a failed Strength save."
+  },
+  {
+    "name": "Encrypted Sub-Net Channel",
+    "level": "5",
+    "school": "Divination",
+    "casting_time": "1 Action",
+    "range": "Unlimited",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(two copper wires)"
+    ],
+    "duration": "1 hour",
+    "description": "You establish a private 8-way encrypted telepathic channel across all team members.",
+    "mechanics": "Link up to eight willing creatures telepathically across any distance on the same plane."
+  },
+  {
+    "name": "Matrix Transit Network Shift",
+    "level": "7",
+    "school": "Conjuration",
+    "casting_time": "1 Action",
+    "range": "10 feet",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Instantaneous",
+    "description": "You instantly phase your team through the global transit grid to any known location.",
+    "mechanics": "Teleport yourself and up to eight willing creatures to a destination you are familiar with."
+  },
+  {
+    "name": "Transit Grid Node Circle",
+    "level": "5",
+    "school": "Conjuration",
+    "casting_time": "1 minute",
+    "range": "10 feet",
+    "components": [
+      "V",
+      "M",
+      "(rare chalk and ink worth 50gp)"
+    ],
+    "duration": "1 round",
+    "description": "You link a local chalk/digital circle to a permanent transit node anywhere in Neo-Tokyo.",
+    "mechanics": "Opens a 1-round portal linking your current circle to a permanent teleportation circle elsewhere."
+  },
+  {
+    "name": "Digital Hologram Utility",
+    "level": "0",
+    "school": "Transmutation",
+    "casting_time": "1 Action",
+    "range": "30 feet",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Instantaneous",
+    "description": "You project minor digital glimmers, loud synth horns, or flickering lights to distract targets.",
+    "mechanics": "Create three minor sensory effects (booming voice, flickering lights, minor tremors, or sparks)."
+  },
+  {
+    "name": "Acoustic Shockwave Pulse",
+    "level": "1",
+    "school": "Evocation",
+    "casting_time": "1 Action",
+    "range": "Self (15-foot cube)",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Instantaneous",
+    "description": "A 15-foot blast of sonic shockwave force pushes enemies back 10 feet and shatters windows.",
+    "mechanics": "Each creature in a 15-foot cube takes 2d8 Thunder damage and is pushed 10 feet away on a failed Constitution save."
+  },
+  {
+    "name": "Quantum System Lag",
+    "level": "9",
+    "school": "Transmutation",
+    "casting_time": "1 Action",
+    "range": "Self",
+    "components": [
+      "V"
+    ],
+    "duration": "Instantaneous",
+    "description": "You freeze global time and digital streams around you for 1d4 + 1 rounds, taking actions freely.",
+    "mechanics": "Briefly stop time for 1d4 + 1 turns, during which you can move and act while all other creatures are frozen."
+  },
+  {
+    "name": "Deployable Micro-Bunker",
+    "level": "3",
+    "school": "Evocation",
+    "casting_time": "1 minute",
+    "range": "30 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a crystal drop)"
+    ],
+    "duration": "8 hours",
+    "description": "You deploy a 10-foot hard-light opaque security dome that holds up to nine allies safely.",
+    "mechanics": "Creates an impenetrable 10-foot dome that holds up to nine creatures. The interior is climate-controlled."
+  },
+  {
+    "name": "Neural Linguistic Translator",
+    "level": "3",
+    "school": "Divination",
+    "casting_time": "1 Action",
+    "range": "Touch",
+    "components": [
+      "V",
+      "M",
+      "(a clay model of a tower)"
+    ],
+    "duration": "1 hour",
+    "description": "You upload a universal translation script into a target, allowing it to understand all languages.",
+    "mechanics": "Target understands any spoken language it hears and can speak any language fluently for 1 hour."
+  },
+  {
+    "name": "Bio-Flora Transit Bypass",
+    "level": "8",
+    "school": "Conjuration",
+    "casting_time": "1 Action",
+    "range": "10 feet",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "1 round",
+    "description": "You step into a living bio-plant and teleport out of another plant anywhere on the continent.",
+    "mechanics": "Step into a Large or larger plant and exit from another plant of the same kind anywhere on the same plane."
+  },
+  {
+    "name": "Rooftop Bio-Flora Jump",
+    "level": "5",
+    "school": "Conjuration",
+    "casting_time": "1 Action",
+    "range": "Self",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Concentration, up to 1 minute",
+    "description": "You step into a living plant and teleport up to 500 feet to another plant as a bonus action.",
+    "mechanics": "Use 10 feet of movement to enter a plant and teleport to another plant within 500 feet once per turn."
+  },
+  {
+    "name": "Biomass Rewrite Protocol",
+    "level": "9",
+    "school": "Transmutation",
+    "casting_time": "1 Action",
+    "range": "5 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a drop of mercury)"
+    ],
+    "duration": "Concentration, up to 1 hour",
+    "description": "You rewrite a target's physical code, mutating it permanently into any creature or object.",
+    "mechanics": "Transform a creature into any other creature or object permanently if concentration is held for 1 hour."
+  },
+  {
+    "name": "Executive Cloning Resuscitation",
+    "level": "9",
+    "school": "Necromancy",
+    "casting_time": "1 hour",
+    "range": "Touch",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(diamonds worth 25,000gp)"
+    ],
+    "duration": "Instantaneous",
+    "description": "You revive a target that died up to 200 years ago, constructing a brand new flawless body.",
+    "mechanics": "Restores a creature to life that died up to 200 years ago with full Hit Points and no missing body parts."
+  },
+  {
+    "name": "Sub-Dermal Sensor Scan",
+    "level": "6",
+    "school": "Divination",
+    "casting_time": "1 Action",
+    "range": "Self",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a mushroom eye paste)"
+    ],
+    "duration": "1 hour",
+    "description": "Your optics gain True Sight out to 120 feet, seeing through illusions, stealth cloaks, and matrix shifts.",
+    "mechanics": "Gain True Sight out to 120 feet for 1 hour, seeing through illusions, darkness, and secret doors."
+  },
+  {
+    "name": "Sub-Dermal Targeting Paint",
+    "level": "0",
+    "school": "Divination",
+    "casting_time": "1 Action",
+    "range": "Self",
+    "components": [
+      "S"
+    ],
+    "duration": "1 round",
+    "description": "Your HUD tags a target, granting you advantage on your next attack roll.",
+    "mechanics": "Gain advantage on your next attack roll against a target before the end of your next turn."
+  },
+  {
+    "name": "Hard-Light Automation Unit",
+    "level": "1",
+    "school": "Conjuration",
+    "casting_time": "10 minutes",
+    "range": "60 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(string and wood)"
+    ],
+    "duration": "8 hours",
+    "description": "You manifest an invisible hard-light drone that performs mundane tasks like cleaning, carrying gear, and pouring drinks.",
+    "mechanics": "Creates an invisible, unaligned force construct with STR 2 that performs simple physical chores."
+  },
+  {
+    "name": "Bio-Nanite Life Drain",
+    "level": "3",
+    "school": "Necromancy",
+    "casting_time": "1 Action",
+    "range": "Touch",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Concentration, up to 1 minute",
+    "description": "You touch a target and siphon its life force, dealing Necrotic damage and healing yourself for half.",
+    "mechanics": "Make a melee spell attack dealing 3d6 Necrotic damage, healing yourself for half the damage dealt."
+  },
+  {
+    "name": "Subliminal Sonic Mockery",
+    "level": "0",
+    "school": "Enchantment",
+    "casting_time": "1 Action",
+    "range": "60 feet",
+    "components": [
+      "V"
+    ],
+    "duration": "Instantaneous",
+    "description": "You broadcast a sting of acoustic insults directly into a target's ear implant, dealing Psychic damage and giving disadvantage on its next attack.",
+    "mechanics": "Target failing a Wisdom save takes 1d4 Psychic damage and has disadvantage on its next attack roll.\nScaling: Damage increases by 1d4 at 5th level (2d4), 11th level (3d4), and 17th level (4d4)."
+  },
+  {
+    "name": "Hard-Light Napalm Barrier",
+    "level": "4",
+    "school": "Evocation",
+    "casting_time": "1 Action",
+    "range": "120 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a piece of phosphorus)"
+    ],
+    "duration": "Concentration, up to 1 minute",
+    "description": "A 60-foot wall of roaring plasma fire erupts, burning creatures that pass through.",
+    "mechanics": "Creates a wall of fire up to 60 feet long, 20 feet high, and 1 foot thick. Passing through deals 5d8 Fire damage."
+  },
+  {
+    "name": "Hard-Light Kinetic Wall",
+    "level": "5",
+    "school": "Evocation",
+    "casting_time": "1 Action",
+    "range": "120 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a clear glass lens)"
+    ],
+    "duration": "Concentration, up to 10 minutes",
+    "description": "An indestructible wall of hard-light force blocks physical attacks, bullets, and spells.",
+    "mechanics": "Creates an invisible, indestructible wall of force up to 10 10x10 foot panels. Nothing can pass through."
+  },
+  {
+    "name": "Cryogenic Glitch Barrier",
+    "level": "6",
+    "school": "Evocation",
+    "casting_time": "1 Action",
+    "range": "120 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a piece of quartz glass)"
+    ],
+    "duration": "Concentration, up to 10 minutes",
+    "description": "A 60-foot wall of solid ice blocks physical movement and deals Cold damage when shattered.",
+    "mechanics": "Creates a wall of ice up to 10 10x10 foot panels with 30 HP per panel. Breaching a panel deals 10d6 Cold damage."
+  },
+  {
+    "name": "Sub-Dermal Concrete Rampart",
+    "level": "5",
+    "school": "Transmutation",
+    "casting_time": "1 Action",
+    "range": "120 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a small piece of granite)"
+    ],
+    "duration": "Concentration, up to 10 minutes",
+    "description": "A 60-foot wall of solid reinforced concrete erupts from the pavement to provide cover.",
+    "mechanics": "Creates a wall of solid stone up to 6 10x10 foot panels with 30 HP per panel."
+  },
+  {
+    "name": "Monofilament Razor Wall",
+    "level": "6",
+    "school": "Conjuration",
+    "casting_time": "1 Action",
+    "range": "100 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a thorny twig)"
+    ],
+    "duration": "Concentration, up to 10 minutes",
+    "description": "A wall of razor-sharp monofilament tripwires and carbon thorns slashes creatures attempting to cross.",
+    "mechanics": "Creates a wall of monofilament thorns up to 60 feet long, 10 feet high, dealing 7d8 Piercing/Slashing damage to creatures entering."
+  },
+  {
+    "name": "Shared Damage Firewall",
+    "level": "2",
+    "school": "Abjuration",
+    "casting_time": "1 Action",
+    "range": "60 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(two platinum rings worth 50gp)"
+    ],
+    "duration": "1 hour",
+    "description": "You link your protective AC and saving throw bonuses to an ally, splitting incoming damage between you.",
+    "mechanics": "Target gains +1 AC and saving throws, and takes half damage from attacks, with you taking the other half."
+  },
+  {
+    "name": "Sub-Dermal Gills & Hydro-Filters",
+    "level": "3",
+    "school": "Transmutation",
+    "casting_time": "1 Action",
+    "range": "30 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a reed)"
+    ],
+    "duration": "24 hours",
+    "description": "You grant up to ten willing allies sub-dermal gill filters that allow them to breathe underwater.",
+    "mechanics": "Up to ten willing creatures gain the ability to breathe underwater for 24 hours."
+  },
+  {
+    "name": "Hydro-Repulsor Surface Treaders",
+    "level": "3",
+    "school": "Transmutation",
+    "casting_time": "1 Action",
+    "range": "30 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a piece of cork)"
+    ],
+    "duration": "1 hour",
+    "description": "You activate magnetic repulsor soles that allow up to ten allies to run across water surfaces.",
+    "mechanics": "Up to ten willing creatures gain the ability to move across liquid surfaces as if they were solid ground."
+  },
+  {
+    "name": "High-Tensile Cable Web",
+    "level": "2",
+    "school": "Conjuration",
+    "casting_time": "1 Action",
+    "range": "60 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a bit of spider web)"
+    ],
+    "duration": "Concentration, up to 1 hour",
+    "description": "A massive 20-foot cube of sticky monofilament cables traps and restrains creatures.",
+    "mechanics": "Fills a 20-foot cube with sticky web cables. Creatures entering must succeed on a Dexterity save or be Restrained."
+  },
+  {
+    "name": "Neural Hallucinatory Overload",
+    "level": "9",
+    "school": "Illusion",
+    "casting_time": "1 Action",
+    "range": "120 feet",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Concentration, up to 1 minute",
+    "description": "You flood all targets in a 30-foot sphere with terrifying neural illusions that deal 10d10 Psychic damage per turn.",
+    "mechanics": "Targets in a 30-foot sphere take 10d10 Psychic damage on a failed Intelligence save and become Frightened."
+  },
+  {
+    "name": "Aerosolized Cloud Flight",
+    "level": "8",
+    "school": "Transmutation",
+    "casting_time": "1 minute",
+    "range": "30 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a bit of cotton)"
+    ],
+    "duration": "8 hours",
+    "description": "You convert up to ten willing creatures into gaseous mist clouds that fly at 300 feet per round.",
+    "mechanics": "Up to ten willing creatures transform into gaseous mist clouds with a flying speed of 300 feet for 8 hours."
+  },
+  {
+    "name": "Acoustic Deflection Barrier",
+    "level": "2",
+    "school": "Evocation",
+    "casting_time": "1 Action",
+    "range": "120 feet",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Concentration, up to 1 minute",
+    "description": "A 50-foot wall of high-pressure acoustic wind deflects ranged attacks and pushes creatures back.",
+    "mechanics": "Creates a wall of high-pressure wind 50 feet long, 15 feet high that deflects ranged attacks and forces flying creatures back."
+  },
+  {
+    "name": "Quantum Matrix Alteration",
+    "level": "9",
+    "school": "Conjuration",
+    "casting_time": "1 Action",
+    "range": "Self",
+    "components": [
+      "V"
+    ],
+    "duration": "Instantaneous",
+    "description": "You alter reality itself by rewriting the core digital source code of the universe to grant any desired spell effect.",
+    "mechanics": "The ultimate spell. Duplicates any 8th-level or lower spell instantly without components, or alters reality at severe risk."
+  },
+  {
+    "name": "Emergency Extraction Beacon",
+    "level": "6",
+    "school": "Conjuration",
+    "casting_time": "1 Action",
+    "range": "Self",
+    "components": [
+      "V"
+    ],
+    "duration": "Instantaneous",
+    "description": "You and up to five allies instantly teleport to a pre-designated safehouse or medical extraction point.",
+    "mechanics": "Instantly teleports you and up to five willing creatures to a sanctuary location designated when you last rested."
+  },
+  {
+    "name": "Biometric Truth Scanner",
+    "level": "2",
+    "school": "Enchantment",
+    "casting_time": "1 Action",
+    "range": "60 feet",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Concentration, up to 10 minutes",
+    "description": "You project an acoustic truth-field that prevents creatures inside a 15-foot sphere from speaking deliberate lies.",
+    "mechanics": "Creatures in a 15-foot sphere failing a Charisma save cannot tell a deliberate lie while inside the area."
+  }
+]

@@ -1,0 +1,146 @@
+[
+  {
+    "name": "Strength Checks",
+    "features": [
+      {
+        "name": "Hydraulic Prowess",
+        "example": "Forcing open jammed pneumatic bulkhead doors, leaping across rain-slicked rooftops in Kurogane, scaling industrial elevator shafts in Kōten, or breaking free from heavy security drone grappling clamps.",
+        "description": "Leverages raw muscle mass, synthetic myomer fibers, and high-torque hydraulic cybernetic limbs.",
+        "content": "Leverages raw muscle mass, synthetic myomer fibers, and high-torque hydraulic cybernetic limbs.\n* Example: Forcing open jammed pneumatic bulkhead doors, leaping across rain-slicked rooftops in Kurogane, scaling industrial elevator shafts in Kōten, or breaking free from heavy security drone grappling clamps."
+      }
+    ]
+  },
+  {
+    "name": "Dexterity Checks",
+    "features": [
+      {
+        "name": "Vector Agility",
+        "example": "Navigating flooded pontoon bridges in Mizu Ward, diving clear of an incoming Aegis Tactical drone strike, or landing safely after jumping from a high-speed metro train on The Underline.",
+        "description": "Keeps balance on unstable surfaces, dodges urban hazards, or executes high-speed parkour maneuvers using neural reflex boosters.",
+        "content": "Keeps balance on unstable surfaces, dodges urban hazards, or executes high-speed parkour maneuvers using neural reflex boosters.\n* Example: Navigating flooded pontoon bridges in Mizu Ward, diving clear of an incoming Aegis Tactical drone strike, or landing safely after jumping from a high-speed metro train on The Underline."
+      },
+      {
+        "name": "Palm-Hack",
+        "example": "Swapping an executive's security keycard in a crowded Neon Shinjuku host club, palming an encrypted quantum drive during a trade at Sato's Noodle House, or quietly planting a tracking bug on a corporate suit.",
+        "description": "Manual dexterity and stealthy physical manipulation of small tech, keycards, or weapons.",
+        "content": "Manual dexterity and stealthy physical manipulation of small tech, keycards, or weapons.\n* Example: Swapping an executive's security keycard in a crowded Neon Shinjuku host club, palming an encrypted quantum drive during a trade at Sato's Noodle House, or quietly planting a tracking bug on a corporate suit."
+      },
+      {
+        "name": "Optic Scrub",
+        "example": "Slipping past Aegis Tactical border patrols in Sector 17, creeping through high-security corporate arcologies in thermal-optic camouflage, or moving quietly through dark subway tunnels.",
+        "description": "Evading visual observation, thermal optics, facial-recognition drone cameras, and acoustic sensors.",
+        "content": "Evading visual observation, thermal optics, facial-recognition drone cameras, and acoustic sensors.\n* Example: Slipping past Aegis Tactical border patrols in Sector 17, creeping through high-security corporate arcologies in thermal-optic camouflage, or moving quietly through dark subway tunnels."
+      }
+    ]
+  },
+  {
+    "name": "Intelligence Checks",
+    "features": [
+      {
+        "name": "Cyber-Arcana",
+        "example": "Analyzing the mysterious Ghost Signal (\"I REMEMBER YOU\"), identifying Kitsune Bio-Magic alchemical formulas, or understanding how Izanagi Grid taps ancient Shinto ley lines beneath the Dead City.",
+        "description": "Understanding how awakened magic interacts with Matrix infrastructure, spirit-attuned cyberware, and digital entities.",
+        "content": "Understanding how awakened magic interacts with Matrix infrastructure, spirit-attuned cyberware, and digital entities.\n* Example: Analyzing the mysterious Ghost Signal (\"I REMEMBER YOU\"), identifying Kitsune Bio-Magic alchemical formulas, or understanding how Izanagi Grid taps ancient Shinto ley lines beneath the Dead City."
+      },
+      {
+        "name": "Data Archives (or Pre-Blackout Lore)**",
+        "example": "Recalling events from the 2044 Osaka Blackout, remembering pre-war corporate treaties, or identifying abandoned infrastructure from old Tokyo beneath the Undercity.",
+        "description": "Accessing stored historical databases or personal memory banks regarding Neo-Tokyo’s past.",
+        "content": "Accessing stored historical databases or personal memory banks regarding Neo-Tokyo’s past.\n* Example: Recalling events from the 2044 Osaka Blackout, remembering pre-war corporate treaties, or identifying abandoned infrastructure from old Tokyo beneath the Undercity."
+      },
+      {
+        "name": "System Forensics",
+        "example": "Reconstructing deleted camera feeds, analyzing biometric murder scenes, tracking illegal money trails through Ryujin Trust shell accounts, or finding hidden doors in corporate vaults.",
+        "description": "Parsing complex data trails, cross-referencing public/private records, and inspecting crime scenes for physical and digital clues.",
+        "content": "Parsing complex data trails, cross-referencing public/private records, and inspecting crime scenes for physical and digital clues.\n* Example: Reconstructing deleted camera feeds, analyzing biometric murder scenes, tracking illegal money trails through Ryujin Trust shell accounts, or finding hidden doors in corporate vaults."
+      },
+      {
+        "name": "Awakened Ecology",
+        "example": "Identifying toxic bio-hazards in Sector 17 quarantine zones, tracking mutated aquatic creatures in the flooded Mizu Ward, or harvesting spirit reagents from awakened street plants.",
+        "description": "Knowledge of mutated urban flora/fauna, spirit-infused bio-reagents, and environmental hazards.",
+        "content": "Knowledge of mutated urban flora/fauna, spirit-infused bio-reagents, and environmental hazards.\n* Example: Identifying toxic bio-hazards in Sector 17 quarantine zones, tracking mutated aquatic creatures in the flooded Mizu Ward, or harvesting spirit reagents from awakened street plants."
+      },
+      {
+        "name": "Spirit & Tech Cults",
+        "example": "Interacting with machine worshippers in Akihabara Ruin, understanding Ghost Signal cultists in Shiba Void, or identifying sacred wards placed on traditional shrines.",
+        "description": "Knowledge of ancient Shinto traditions, machine-worshipping religions, transhumanist philosophies, and digital cults.",
+        "content": "Knowledge of ancient Shinto traditions, machine-worshipping religions, transhumanist philosophies, and digital cults.\n* Example: Interacting with machine worshippers in Akihabara Ruin, understanding Ghost Signal cultists in Shiba Void, or identifying sacred wards placed on traditional shrines."
+      }
+    ]
+  },
+  {
+    "name": "Wisdom Checks",
+    "features": [
+      {
+        "name": "Bio-Drone Control",
+        "example": "Calming a genetically modified security hound, bonding with an astral spirit-critter in Kitsune-cho, or guiding a cyber-pigeon delivery network.",
+        "description": "Communicating with awakened spirits/familiars, taming bio-engineered guard beasts, or handling cyber-enhanced street animals.",
+        "content": "Communicating with awakened spirits/familiars, taming bio-engineered guard beasts, or handling cyber-enhanced street animals.\n* Example: Calming a genetically modified security hound, bonding with an astral spirit-critter in Kitsune-cho, or guiding a cyber-pigeon delivery network."
+      },
+      {
+        "name": "Subtext Scan",
+        "example": "Spotting if an employer intends to betray the party at job handoff, detecting Amaterasu Media subliminal behavioral conditioning, or seeing through a corporate spy's cover.",
+        "description": "Reading non-verbal tells, micro-expressions, or neural feedback cues to determine motives and spot deceptions.",
+        "content": "Reading non-verbal tells, micro-expressions, or neural feedback cues to determine motives and spot deceptions.\n* Example: Spotting if an employer intends to betray the party at job handoff, detecting Amaterasu Media subliminal behavioral conditioning, or seeing through a corporate spy's cover."
+      },
+      {
+        "name": "Street Doc",
+        "example": "Stabilizing a dying runner hit by Black ICE feedback, treating bio-toxins from Sector 17, or performing emergency back-alley cyberware repairs.",
+        "description": "Field medicine, treating biological trauma, stabilizing fried neural pathways, and patching damaged cyberware.",
+        "content": "Field medicine, treating biological trauma, stabilizing fried neural pathways, and patching damaged cyberware.\n* Example: Stabilizing a dying runner hit by Black ICE feedback, treating bio-toxins from Sector 17, or performing emergency back-alley cyberware repairs."
+      },
+      {
+        "name": "Threat Scan",
+        "example": "Spotting hidden laser tripwires, noticing a sniper's optic glare on a distant rooftop, or detecting the low hum of a active stealth drone.",
+        "description": "Using natural senses or sensory augments (cybereyes, acoustic dampeners, motion trackers) to notice immediate environmental details.",
+        "content": "Using natural senses or sensory augments (cybereyes, acoustic dampeners, motion trackers) to notice immediate environmental details.\n* Example: Spotting hidden laser tripwires, noticing a sniper's optic glare on a distant rooftop, or detecting the low hum of a active stealth drone."
+      },
+      {
+        "name": "Street Navigation",
+        "example": "Finding safe havens in Yoru Market, tracking a missing target through the flooded ruins of Mizu Ward, or avoiding environmental data-glitches in Shiba Void.",
+        "description": "Finding safe routes, tracking targets through urban jungles, and surviving hazardous, abandoned environments.",
+        "content": "Finding safe routes, tracking targets through urban jungles, and surviving hazardous, abandoned environments.\n* Example: Finding safe havens in Yoru Market, tracking a missing target through the flooded ruins of Mizu Ward, or avoiding environmental data-glitches in Shiba Void."
+      }
+    ]
+  },
+  {
+    "name": "Charisma Checks",
+    "features": [
+      {
+        "name": "Deep Fake",
+        "example": "Bluffing past a security checkpoint with fake credentials, convincing corporate interrogators that you are an innocent janitor, or leaking false rumors to rival fixers.",
+        "description": "Spinning believable lies, using spoofed digital identities, or maintaining an undercover persona.",
+        "content": "Spinning believable lies, using spoofed digital identities, or maintaining an undercover persona.\n* Example: Bluffing past a security checkpoint with fake credentials, convincing corporate interrogators that you are an innocent janitor, or leaking false rumors to rival fixers."
+      },
+      {
+        "name": "Threat Display",
+        "example": "Flashing military-grade cyber-blades to back down street gangers, threatening an executive with a total matrix wipe, or forcing an informant to talk in a dark alley.",
+        "description": "Coercing targets through physical dominance, flashing lethal cyberware, or leveraging terrifying digital threats.",
+        "content": "Coercing targets through physical dominance, flashing lethal cyberware, or leveraging terrifying digital threats.\n* Example: Flashing military-grade cyber-blades to back down street gangers, threatening an executive with a total matrix wipe, or forcing an informant to talk in a dark alley."
+      },
+      {
+        "name": "Performance",
+        "example": "Distracting a nightclub crowd in Neon Shinjuku, delivering a moving anti-corporate speech on a pirate stream, or performing in an idol theater to gather intelligence.",
+        "description": "Captivating an audience through music, neural VR entertainment, speechcraft, or pirate mesh broadcasting.",
+        "content": "Captivating an audience through music, neural VR entertainment, speechcraft, or pirate mesh broadcasting.\n* Example: Distracting a nightclub crowd in Neon Shinjuku, delivering a moving anti-corporate speech on a pirate stream, or performing in an idol theater to gather intelligence."
+      },
+      {
+        "name": "Corporate Protocol",
+        "example": "Negotiating higher job payouts with fixers like Mama Sato, convincing a corporate scientist to defect, or brokering a truce between rival street gangs like The Chrome Lotus and The Oni.",
+        "description": "Diplomatic negotiation, leveraging mutual self-interest, and navigating formal social hierarchies.",
+        "content": "Diplomatic negotiation, leveraging mutual self-interest, and navigating formal social hierarchies.\n* Example: Negotiating higher job payouts with fixers like Mama Sato, convincing a corporate scientist to defect, or brokering a truce between rival street gangs like The Chrome Lotus and The Oni."
+      }
+    ]
+  },
+  {
+    "name": "Constitution Checks",
+    "features": [
+      {
+        "name": "Overclock Tolerance",
+        "example": "Resisting neural heat buildup while pushing a cyberdeck to its limits, holding your breath in acid fog, staying conscious after a heavy dosage of combat stims, or enduring physical torture in a corporate black site.",
+        "description": "Resisting physical fatigue, stim-pack crashes, cyberware overheating, and environmental contaminants.",
+        "content": "Resisting physical fatigue, stim-pack crashes, cyberware overheating, and environmental contaminants.\n* Example: Resisting neural heat buildup while pushing a cyberdeck to its limits, holding your breath in acid fog, staying conscious after a heavy dosage of combat stims, or enduring physical torture in a corporate black site."
+      }
+    ]
+  }
+]

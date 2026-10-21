@@ -1,0 +1,1894 @@
+[
+  {
+    "name": "Street Samurai / Corporate Enforcer",
+    "features": [
+      {
+        "name": "Core Street Samurai / Corporate Enforcer Class Features"
+      },
+      {
+        "name": "1. Combat Augment Protocol (Level 1)",
+        "description": "You calibrate your neural interface and physical sub-dermal augments for a specific combat doctrine:",
+        "features": [
+          {
+            "name": "Smart Link Targeting",
+            "description": "You gain a +2 bonus to attack rolls made with ranged smart-weapons and firearms."
+          },
+          {
+            "name": "Sub Dermal Plating",
+            "description": "You gain a +1 bonus to AC while wearing armor or sub-dermal weave."
+          },
+          {
+            "name": "Monomolecular Edge Tuning",
+            "description": "When wielding a one-handed melee weapon in one hand and no other weapons, you gain a +2 bonus to damage rolls."
+          },
+          {
+            "name": "Hydraulic Torque Drive",
+            "description": "When you roll a 1 or 2 on a damage die for an attack with a two-handed weapon, you can reroll the die and must use the new roll."
+          },
+          {
+            "name": "Hard Light Aegis Intercept",
+            "description": "When a target within 5 feet of you is attacked, you can use your reaction to project a hard-light barrier, imposing disadvantage on the attack roll (requires a shield or cyber-shield)."
+          },
+          {
+            "name": "Dual Rotor Actuators",
+            "description": "When you engage in two-weapon fighting, you can add your ability modifier to the damage of the second attack."
+          }
+        ]
+      },
+      {
+        "name": "2. Nanite Repair Injection (Level 1)",
+        "description": "You activate a sub-dermal auto-injector or trigger a nanite repair swarm that instantly cauterizes wounds, seals flesh, and numbs trauma.",
+        "features": [
+          {
+            "name": "Mechanics",
+            "description": "On your turn, you can use a bonus action to regain Hit Points equal to 1d10 + your Fighter level. (1/Short or Long Rest)."
+          }
+        ]
+      },
+      {
+        "name": "3. Synaptic Overclock (Level 2)",
+        "description": "You temporarily override your neural safety governors or trigger a heavy combat-stim dump, allowing your body to move at near-light reaction speeds.",
+        "features": [
+          {
+            "name": "Mechanics",
+            "description": "On your turn, you can take one additional action on top of your regular action and possible bonus action. (1/Short or Long Rest; 2 uses at Level 17)."
+          }
+        ]
+      },
+      {
+        "name": "4. Combat Specialization (Level 3)",
+        "description": "You select your operational role in Neo-Tokyo's shadow economy—whether as a street samurai, corporate field officer, or spirit-bound ward-knight."
+      },
+      {
+        "name": "5. Rapid Fire Protocol (Level 5)",
+        "description": "High-frequency weapon swings, sub-dermal recoil dampeners, and automated target cycling allow you to strike multiple targets in milliseconds.",
+        "features": [
+          {
+            "name": "Mechanics",
+            "description": "You can attack twice (Level 5), three times (Level 11), and four times (Level 20) whenever you take the Attack action on your turn."
+          }
+        ]
+      },
+      {
+        "name": "6. Neural Hardening (Level 9)",
+        "description": "You purge Black ICE neural feedback, override bioweapons, or push through physical shock through sheer grit and hardened firewall firmware. :::",
+        "features": [
+          {
+            "name": "Mechanics",
+            "description": "You can reroll a saving throw that you fail, but you must use the new roll. (1/Long Rest at Level 9; 2 at Level 13; 3 at Level 17)."
+          }
+        ]
+      }
+    ],
+    "subclasses": [
+      {
+        "name": "Street Samurai",
+        "description": "Target Acquisition Optics (Level 3) Biomechanical Conditioning (Level 7) Secondary Augment Suite (Level 10) Lethal Precision Firmware (Level 15) Sub-Dermal Regen Core (Level 18)",
+        "details": [
+          "Your weapon attacks score a critical hit on a roll of 19 or 20.",
+          "You can add half your proficiency bonus (rounded up) to any Strength, Dexterity, or Constitution check that doesn't already use your proficiency bonus. Additionally, your running jump distance increases by a number of feet equal to your Strength modifier.",
+          "You choose a second Combat Augment Protocol from the Level 1 list.",
+          "Your weapon attacks score a critical hit on a roll of 18–20.",
+          "At the start of each of your turns, you regain Hit Points equal to 5 + your Constitution modifier if you have no more than half your Hit Points left and aren't at 0 HP."
+        ],
+        "features": [
+          {
+            "name": "Focus",
+            "description": "Raw physical perfection, military-grade cybernetic lethality, and unmatched critical hit frequency.*"
+          }
+        ]
+      },
+      {
+        "name": "Aegis Tactical Strategist",
+        "description": "Tactical Maneuver Deck (Level 3) Corporate Ordnance Certification (Level 3) :::",
+        "details": [
+          "You gain proficiency with one type of artisan's tools (e.g., Arms & Cyberware Tech tools) and proficiency in System Forensics (Investigation).",
+          "Biometric Threat Scan (Level 7)",
+          "If you spend at least 1 minute observing or interacting with a target outside of combat, you can analyze their cybernetic tier, threat level, AC, HP, or physical ability scores relative to your own.",
+          "Tactical Command Reserve (Level 15)",
+          "When you roll initiative and have no Superiority Dice remaining, you immediately regain one Superiority Die."
+        ],
+        "features": [
+          {
+            "name": "Focus",
+            "description": "Tactical maneuvers, squad coordination, and analyzing enemy vulnerabilities using corporate combat algorithms.*"
+          },
+          {
+            "name": "Superiority Dice",
+            "description": "You gain four d8 Superiority Dice to power tactical maneuvers."
+          },
+          {
+            "name": "Fire Discipline Command",
+            "description": "Direct an ally to issue an immediate ranged or melee strike."
+          },
+          {
+            "name": "Joint Lock Disarm",
+            "description": "Target a foe's cybernetic joints or weapon grip to force them to drop an item."
+          },
+          {
+            "name": "E Vector Dodge",
+            "description": "Add a superiority die to your AC while moving through dangerous kill zones."
+          },
+          {
+            "name": "Counter Strike",
+            "description": "Use your reaction when an enemy misses you to execute an immediate counter-attack."
+          }
+        ]
+      },
+      {
+        "name": "Cyber-Mage Ronin",
+        "description": "Cyber-Mage Spellcasting (Level 3) Spell-Blade Weave (Level 7) Data-Disrupting Strike (Level 10) Matrix Shift (Level 15) :::",
+        "details": [
+          "You cast Wizard spells using Intelligence as your spellcasting ability, flavoring spells as active matrix code uploads (e.g., Overclock Reflexes for Shield, Blackout Arc for Thunderwave, or Hard-Light Decoy Array for Mirror Image).",
+          "Neural Weapon Sync (Level 3)",
+          "You perform a 1-hour neural synchronization with up to two weapons. Once synced, you cannot be disarmed of the weapon unless incapacitated, and you can summon it directly to your hand from anywhere on the same plane as a bonus action.",
+          "When you use your action to cast a cantrip (such as Data-Siphon or Neon Glitch), you can make one weapon attack as a bonus action.",
+          "When you hit a creature with a weapon attack, that creature has disadvantage on the next saving throw it makes against a spell you cast before the end of your next turn.",
+          "When you use your Synaptic Overclock (Action Surge), you can instantly teleport up to 30 feet to an unoccupied space you can see."
+        ],
+        "features": [
+          {
+            "name": "Focus",
+            "description": "Blending high-frequency blade work with awakened matrix code and offensive digital spellcasting.*"
+          }
+        ]
+      },
+      {
+        "name": "Shinto Ward-Knight",
+        "description": "Spirit Ward Inscription (Level 3) Avatar Manifestation (Level 3) Shinto Barrier Reaction (Level 7) Dual Ward Protocol (Level 15)",
+        "details": [
+          "You learn to carve sacred Shinto kanji and digital spirit talismans onto your gear:",
+          "As a bonus action, you channel raw ley-line energy to physically expand your form. For 1 minute, your size becomes Large, you deal an extra 1d6 damage once per turn with weapon attacks, and you have advantage on Strength checks and saving throws.",
+          "When a creature you can see within 60 feet is hit by an attack roll, you can use your reaction to force the attacker to reroll the attack roll with a sacred digital barrier.",
+          "You can invoke each of your inscribed Spirit Wards twice per short or long rest rather than once."
+        ],
+        "features": [
+          {
+            "name": "Focus",
+            "description": "Channeling ancient Shinto spirit wards and ley-line energy directly into heavy armor and weapons.*"
+          },
+          {
+            "name": "Inugami Ward Fire Rune",
+            "description": "Infuses strikes with searing spirit fire and restrains targets with burning chains."
+          },
+          {
+            "name": "Raijin Ward Storm Rune",
+            "description": "Emits a high-voltage lightning shockwave when hit in combat."
+          },
+          {
+            "name": "Tengu Ward Cloud Rune",
+            "description": "Uses a reaction to invoke a wind shield, redirecting an incoming attack from yourself or an ally to another target nearby."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Street Shaman / Bio-Tech Specialist",
+    "features": [
+      {
+        "name": "1. Spellcasting: Spirit Conduit",
+        "features": [
+          {
+            "name": "Spellcasting Ability",
+            "description": "You cast spells using Wisdom. Instead of traditional holy symbols or druidic mistletoe, your spellcasting focus is a Spirit Device—a Shinto charm bound with fiber-optic wire, a spirit-attuned cyberdeck, or a talisman-engraved smartphone."
+          },
+          {
+            "name": "The Cyberware Tax Essence Strain",
+            "description": "Excessive cybernetic installation disrupts your spiritual connection to the city's mana. Over-augmenting your body imposes penalties on your spell save DC or reduces spell slot recovery during short rests."
+          }
+        ]
+      },
+      {
+        "name": "2. Channel Divinity / Spirit Communion: Astral Intercept",
+        "description": "You open your third eye to perceive the overlapping Astral Plane and local Matrix data streams simultaneously. Mechanics (1–3 uses/Short Rest):",
+        "features": [
+          {
+            "name": "Astral Sweep",
+            "description": "You scan the area within 60 feet. For 1 minute, you see invisible targets, optical camouflage, digital ghosts, hidden wireless cameras, and astral spirits through walls and physical cover."
+          },
+          {
+            "name": "Turn Exorcise Code And Spirit",
+            "description": "Force rogue AI entities, digital ghosts, or spirit-bound constructs within 30 feet to make a Wisdom saving throw or be rebuked and turned away for 1 minute."
+          }
+        ]
+      },
+      {
+        "name": "3. Spirit Morph",
+        "description": "Rather than turning into woodland beasts, you project your spirit into physical form as an Awakened Urban Critter or manifest a hard-light spirit construct—such as a cyber-fox (Kitsune), a raven drone-spirit, a neon-lit alley panther, or a subterranean sewer serpent.",
+        "features": [
+          {
+            "name": "Mechanics",
+            "description": "Functionally identical to Druid Wild Shape, but your beast forms manifest with glowing neon circuitry, spirit-aura trails, and environmental resistance (such as resistance to Lightning or Bio-Tox/Poison damage)."
+          }
+        ]
+      },
+      {
+        "name": "4.Ley-Line / Great Kami Override (Level 10)",
+        "description": "You petition the ancient dragon spirits, the overarching city intelligence, or the subterranean Shinto ley lines of Neo-Tokyo for direct intervention.",
+        "features": [
+          {
+            "name": "Mechanics",
+            "description": "Roll a d100. If you roll equal to or lower than your Shaman level, a massive surge of spirit-lightning, citywide grid blackout, or spirit sanctuary manifests to save your party."
+          }
+        ]
+      }
+    ],
+    "subclasses": [
+      {
+        "name": "Domain of the City Kami (Urban & Ley-Line Shaman)",
+        "features": [
+          {
+            "name": "Focus",
+            "description": "Harnessing the raw energy of Neo-Tokyo's concrete, lightning, wireless power grids, and subterranean Shinto ley lines.*"
+          },
+          {
+            "name": "Bonus Proficiency And Cantrip Level 1",
+            "description": "You gain proficiency with Street Navigation (Survival) and learn the Data-Siphon or Neon Glitch cantrip."
+          },
+          {
+            "name": "Ley Line Surge Level 1",
+            "description": "When you deal Lightning or Radiant damage with a spell, you can push a target up to 10 feet away as an urban electrical surge erupts around them."
+          },
+          {
+            "name": "Channel Divinity",
+            "description": "Grid Overcharge (Level 2): As an action, you tap into local power lines or ley lines. For 1 minute, whenever an ally within 30 feet deals weapon or spell damage, they deal an additional 1d6 Lightning damage."
+          },
+          {
+            "name": "Concrete Sanctuary Level 6",
+            "description": "You can step through electrical conduits, street shrines, or neon signs to instantly teleport 30 feet as a bonus action."
+          },
+          {
+            "name": "City Storm Level 8 14",
+            "description": "You add your Wisdom modifier to the damage of any Shaman cantrip, and your Spirit Morph attacks deal extra Lightning or Radiant damage."
+          }
+        ]
+      },
+      {
+        "name": "Circle of the Matrix Shaman / Data-Ghost (Digital Medium)",
+        "features": [
+          {
+            "name": "Focus",
+            "description": "Operating at the exact intersection where digital data bleeds into spirit magic—perceiving rogue AIs, digital ghosts, and the Ghost Signal as living astral entities.*"
+          },
+          {
+            "name": "Ghost Code Perception Level 2",
+            "description": "You commune directly with machines, Matrix nodes, and obsolete digital infrastructure without needing a physical cyberdeck. You gain proficiency in Cyber-Arcana (Arcana) and can cast Comprehend Languages at will to decipher encrypted code."
+          },
+          {
+            "name": "Data Spirit Companion Level 2",
+            "description": "You summon a familiar made of flickering code and spirit-light (resembling a cyber-fox or digital sprite). It can deliver touch spells, scout matrix relays, and inflict Optic Glitch (Blinded) on enemies."
+          },
+          {
+            "name": "Matrix Shift Level 6",
+            "description": "When targeted by an attack, you can use your reaction to temporarily dematerialize into the local data stream, gaining Optical Camouflage (Invisible) until the start of your next turn."
+          },
+          {
+            "name": "Ghost Signal Resonance Level 10",
+            "description": "You emit a pulse of the global \"I REMEMBER YOU\" broadcast. Enemies within 30 feet must succeed on an Intelligence saving throw or suffer OS Buffer Overflow (Incapacitated) for 1 round."
+          }
+        ]
+      },
+      {
+        "name": "Domain of Kitsune Bio-Magic (Spirit Essence & Healing)",
+        "features": [
+          {
+            "name": "Focus",
+            "description": "Channeling spirit essence, alchemical reagents, and life-force manipulation—protecting street youth from corporate bio-extraction while providing back-alley miraculous healing.*"
+          },
+          {
+            "name": "Disciple Of Essence Level 1",
+            "description": "Whenever you use a spell of 1st level or higher to restore Hit Points to a creature, the target regains additional Hit Points equal to 2 + the spell's level."
+          },
+          {
+            "name": "Channel Divinity",
+            "description": "Alchemical Preservation (Level 2): As an action, you project a soothing aura of spirit-essence. You restore a pool of Hit Points equal to 5 × your Shaman level, distributed among wounded allies within 30 feet."
+          },
+          {
+            "name": "Essence Shield Level 6",
+            "description": "When you heal an ally, they gain a protective hard-light spirit barrier granting them temporary Hit Points equal to your Wisdom modifier + Shaman level for 1 minute."
+          },
+          {
+            "name": "Bio Tox Purge Level 8",
+            "description": "Your healing spells automatically cure the target of Bio-Toxed (Poisoned), Optic Glitch (Blinded), or Acoustic Scramble (Deafened) conditions."
+          }
+        ]
+      },
+      {
+        "name": "Circle of the Neon Ronin / Ancestral Medium",
+        "features": [
+          {
+            "name": "Focus",
+            "description": "Binding the spirits of fallen street samurai, pre-war warriors, and dead runners to fight corporate oppression on the streets.*"
+          },
+          {
+            "name": "Ancestral Vengeance Level 2",
+            "description": "When you enter combat, phantom blades and spirit armor manifest around you. When an enemy hits an ally within 30 feet, you can use your reaction to unleash an ancestral strike, dealing 1d8 Force or Psychic damage to the attacker."
+          },
+          {
+            "name": "Spirit Guard Level 6",
+            "description": "Your spirit companions protect your party during high-risk operations. Allies within 10 feet of you have advantage on saving throws against Threat-Lock (Frightened) and Subliminal Override (Charmed)."
+          },
+          {
+            "name": "Ghost Samurai Execution Level 10",
+            "description": "Once per turn when you or an ally scores a critical hit within 30 feet of you, a phantom street samurai delivers a follow-up strike dealing 3d8 Force damage and knocking the target Grounded (Prone)."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Street Operative / Decker / Infiltrator",
+    "features": [
+      {
+        "name": "Specialized Firmware (Levels 1 & 6)",
+        "description": "Your neural interface is flashed with custom skill software, allowing you to process specific physical or digital tasks with automated perfection.",
+        "features": [
+          {
+            "name": "Mechanics",
+            "description": "Choose two of your skill proficiencies (or one skill proficiency and your tools proficiency, such as Cyberdeck / Security Tools). Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies. (Choose two more at Level 6)."
+          }
+        ]
+      },
+      {
+        "name": "Exploit Vulnerability (Level 1)",
+        "description": "You use HUD target-lock, sensor scans, or tactical positioning to strike weak seams in sub-dermal armor, unshielded cybernetics, or neural ports.",
+        "features": [
+          {
+            "name": "Mechanics",
+            "description": "Once per turn, you can deal an extra 1d6 damage to one creature you hit with an attack if you have advantage on the attack roll (or if an ally is within 5 feet of the target and you don't have disadvantage). The weapon must be a finesse weapon or a ranged firearm/smart-weapon."
+          },
+          {
+            "name": "Progression",
+            "description": "Increases by +1d6 every two Rogue levels (up to +10d6 at Level 19)."
+          }
+        ]
+      },
+      {
+        "name": "Street-Net Slang & Mesh-Cipher (Level 1)",
+        "description": "A blend of encrypted mesh-net signals, fixer hand-signs, darknet slang, and symbols carved into alleyway conduits by runners in Yoru Market or The Underline.",
+        "features": [
+          {
+            "name": "Mechanics",
+            "description": "You can hide encrypted messages in ordinary digital broadcasts or conversation. Other street runners understand these messages automatically, while unaugmented corporate suits require an Investigation check to decipher them."
+          }
+        ]
+      },
+      {
+        "name": "Tactical Overclock (Level 2)",
+        "description": "Your neural reflex boosters allow you to make micro-adjustments in milliseconds.",
+        "features": [
+          {
+            "name": "Mechanics",
+            "description": "You can use a bonus action on each of your turns in combat to take the Dash, Disengage, or Hide action."
+          }
+        ]
+      },
+      {
+        "name": "Reflex Mitigator (Level 5)",
+        "description": "Sub-dermal momentum dampeners or ocular predictive algorithms roll your body with the impact of incoming kinetic strikes.",
+        "features": [
+          {
+            "name": "Mechanics",
+            "description": "When an attacker that you can see hits you with an attack, you can use your reaction to halve the attack's damage against you."
+          }
+        ]
+      },
+      {
+        "name": "Vector Roll (Level 7)",
+        "description": "Micro-thrusters, sub-dermal agility augments, or instant hazard detection allow you to dive clear of explosive blasts and plasma arcs.",
+        "features": [
+          {
+            "name": "Mechanics",
+            "description": "When subjected to an effect that allows you to make a Dexterity saving throw to take only half damage (such as Blackout Arc or an EMP grenade), you take no damage if you succeed, and only half damage if you fail."
+          }
+        ]
+      },
+      {
+        "name": "Optimized Routine (Level 11)",
+        "description": "Your neural subroutines execute routine tasks with zero margin for human error.",
+        "features": [
+          {
+            "name": "Mechanics",
+            "description": "Whenever you make an ability check that lets you add your proficiency bonus, you can treat a d20 roll of 9 or lower as a 10."
+          }
+        ]
+      },
+      {
+        "name": "Sonar Sweep / Sensor Ping (Level 14)",
+        "description": "Cybernetic audio-dampeners, motion trackers, or electromagnetic pings register invisible physical signatures and optical camouflage.",
+        "features": [
+          {
+            "name": "Mechanics",
+            "description": "If you are able to hear/process sensor feeds, you aware of the location of any hidden or invisible creature within 10 feet of you."
+          }
+        ]
+      },
+      {
+        "name": "Firewall Memory-Lock (Level 15)",
+        "description": "Your brain is protected by hard-light mental firewalls that reject neural intruding malware and mind control.",
+        "features": [
+          {
+            "name": "Mechanics",
+            "description": "You gain proficiency in Wisdom saving throws."
+          }
+        ]
+      },
+      {
+        "name": "Threat-Nullification Algorithm (Level 18)",
+        "description": "Your predictive combat HUD recalculates incoming attack trajectories instantly.",
+        "features": [
+          {
+            "name": "Mechanics",
+            "description": "No attack roll can have advantage against you while you aren't incapacitated."
+          }
+        ]
+      },
+      {
+        "name": "Fail-Safe Override (Level 20)",
+        "description": "You force a critical system bypass or luck-spike to turn a total failure into a decisive victory.",
+        "features": [
+          {
+            "name": "Mechanics",
+            "description": "If your attack misses a target, you can turn the miss into a hit. Alternatively, if you fail an ability check, you can treat the d20 roll as a 20. (1/Short or Long Rest)."
+          }
+        ]
+      }
+    ],
+    "subclasses": [
+      {
+        "name": "The Decker (Matrix Specialist / Hacker)",
+        "description": "Wireless Cyberdeck Sync (Level 3): ICE-Breaker Infiltration (Level 3): System Lockout (Level 9): Ghost in the Shell (Level 13): Black ICE Counter-Strike (Level 17):",
+        "details": [
+          "You install a cyberdeck integrated into your nervous system. You gain proficiency with Cyberdecks (Security Tools) and System Forensics (Investigation).",
+          "You can use your Tactical Overclock (Cunning Action) to make a remote Palm-Hack (Sleight of Hand) or disable an electronic device up to 30 feet away via wireless signal.",
+          "You learn digital hack-routines (treated as spells using Intelligence as your hacking stat):",
+          "When you deal Exploit Vulnerability (Sneak Attack) damage, you can choose to deal Lightning or Psychic damage as you upload rogue code into the target's neural port.",
+          "When you hit an augmented target or construct with a Sneak Attack, you can force them to make a Constitution saving throw (DC \\= 8 + your Int modifier + Proficiency Bonus). On a failure, one of their cybernetic weapons or augments is disabled, inflicting OS Buffer Overflow (Incapacitated) or Optic Glitch (Blinded) until the end of their next turn.",
+          "You can project a digital avatar into physical space using local hologram projectors or direct neural feeds. You can cast Hard-Light Decoy Array or Matrix Ghosting once per long rest without expending a spell slot.",
+          "When a target within 30 feet targets you with a spell, hack, or ranged attack, you can use your reaction to unleash a wave of Black ICE code. The attacker takes 5d10 Psychic damage and must succeed on an Intelligence saving throw or be Neural Frozen (Paralyzed) until the start of your next turn."
+        ],
+        "features": [
+          {
+            "name": "Focus",
+            "description": "Infiltrating digital networks, deploying Black ICE remotely, overriding enemy cyberware, and manipulating camera feeds in real time.*"
+          },
+          {
+            "name": "Cantrips",
+            "description": "Data-Siphon, Neon Glitch."
+          },
+          {
+            "name": "1st Level Hacks",
+            "description": "Overclock Reflexes, Blackout Arc."
+          }
+        ]
+      },
+      {
+        "name": "Corporate Operative (Infiltrator & Black-Ops Specialist)",
+        "description": "Deep Fake Credentials (Level 3): Assassination Protocol (Level 3): Misdirection & Subliminal Cue (Level 9): Impenetrable Cover (Level 13): Lethal Extraction Strike (Level 17):",
+        "details": [
+          "You excel at forging corporate passes, biometric spoofing, and social infiltration. You gain proficiency with Deception (Deep Fake) and Insight (Subtext Scan).",
+          "Given 1 hour and access to a terminal, you can construct a flawless corporate identity (complete with employee ID, biometric clearance, and backdated email trails) for any of the 8 Megacorps.",
+          "You have advantage on attack rolls against any creature that hasn't taken a turn in combat yet. In addition, any hit you score against a creature that is surprised is a critical hit.",
+          "As a bonus action, you can issue a coded phrase or visual gesture that forces a target to make a Wisdom saving throw. On a failure, the target suffers Subliminal Override (Charmed) for 1 minute or until attacked, making them ignore your presence while you bypass security checkpoints.",
+          "Your mind cannot be read by neural probes, truth drugs, or spirit magic unless you allow it. Biometric scanners and facial recognition drones identify you as your current false identity unless an investigator succeeds on a System Forensics check against your passive Deception score.",
+          "When you hit a creature that is surprised with an attack, it must make a Constitution saving throw (DC \\= 8 + Dex modifier + Proficiency Bonus). On a failed save, double the damage of your attack against the target."
+        ],
+        "features": [
+          {
+            "name": "Focus",
+            "description": "Social engineering, deep-cover identities, targeted assassinations, and manipulating corporate power dynamics.*"
+          }
+        ]
+      },
+      {
+        "name": "Ghost-Runner (Street Phantom & Parkour Specialist)",
+        "description": "Vector Parkour (Level 3): Second-Story Hack (Level 3): Optical Cloak Burst (Level 9): Reflex Surge (Level 13): Ghost-Walk (Level 17):",
+        "details": [
+          "You gain a climbing speed and swimming speed equal to your walking speed.",
+          "When you make a running jump, the distance you cover increases by a number of feet equal to your Dexterity modifier. You can use Dexterity instead of Strength for Hydraulic Prowess (Athletics) checks.",
+          "You can use the Palm-Hack (Sleight of Hand) skill to pick physical and electronic mag-locks in half the normal time, and climbing doesn't cost you extra movement.",
+          "When you take the Hide action on your turn, you can engage a temporary thermo-optic cloak, gaining Optical Camouflage (Invisible) until the start of your next turn or until you attack/cast a spell.",
+          "You can take two turns during the first round of any combat. You take your first turn at your normal initiative and your second turn at your initiative minus 10.",
+          "Your movement speed increases by 10 feet, and you can move through solid objects and physical barriers as if they were difficult terrain (phasing through corporate security walls or vault doors). If you end your turn inside an object, you take 1d10 Force damage and are pushed to the nearest open space."
+        ],
+        "features": [
+          {
+            "name": "Focus",
+            "description": "Extreme urban mobility, bypassing physical security, climbing arcologies, and harvesting lost data from the Undercity.*"
+          }
+        ]
+      },
+      {
+        "name": "Chrome Duelist (Cyber-Swashbuckler)",
+        "description": "Monomolecular Footwork (Level 3): Solo Engagement (Level 3): Chrome Flash (Level 9): Elegant Riposte (Level 13): High-Speed Execution (Level 17):",
+        "details": [
+          "You add your Charisma modifier to your Initiative rolls.",
+          "During your turn, if you make a melee attack against a creature, that creature cannot make opportunity attacks against you for the rest of your turn.",
+          "You don't need advantage on your attack roll to use Exploit Vulnerability (Sneak Attack) against a creature if you are within 5 feet of it, no other creatures are within 5 feet of you, and you don't have disadvantage on the roll.",
+          "As an action, you can flash your cyber-blades or ocular optics in a blinding display. Each creature within 15 feet that can see you must succeed on a Wisdom saving throw or suffer Threat-Lock (Frightened) or Optic Glitch (Blinded) until the end of your next turn.",
+          "When a creature misses you with a melee attack, you can use your reaction to make an immediate melee weapon attack against that creature.",
+          "Once per turn, if you miss with an attack roll, you can instantly execute a follow-up strike with advantage."
+        ],
+        "features": [
+          {
+            "name": "Focus",
+            "description": "High-speed 1v1 melee combat with monomolecular katanas, flashing cyber-blades, and intimidating street presence.*"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Aegis Corporate Enforcer / Vow-Bound Operative",
+    "features": [
+      {
+        "name": "1. Threat-Sense Sweep (Level 1)",
+        "description": "Your ocular implants, threat-detection algorithms, and spirit-attuned sensors ping the presence of supernatural entities, rogue digital ghosts, or corporate black-ops gear.",
+        "features": [
+          {
+            "name": "Mechanics",
+            "description": "As an action, you expand your awareness. Until the end of your next turn, you know the location of any awakened spirit, digital ghost, rogue AI, or fiendish construct within 60 feet that is not behind total cover. You also detect any consecrated or desecrated sites (such as Shinto shrines or corrupted matrix server hubs) within range. (Uses equal to 1 + Cha modifier per Long Rest)."
+          }
+        ]
+      },
+      {
+        "name": "2. Bio-Nanite Injector (Level 1)",
+        "description": "You activate sub-dermal medical nanite swarms or apply high-grade corporate trauma gel to seal lethal wounds and purge bio-toxins.",
+        "features": [
+          {
+            "name": "Mechanics",
+            "description": "You have a pool of healing power that replenishes on a long rest, equal to 5 × your Paladin level. As an action, you can touch a creature to restore Hit Points from this pool. You can also expend 5 hit points from the pool to cure the target of Bio-Toxed (Poisoned) or neutralize a disease."
+          }
+        ]
+      },
+      {
+        "name": "3. Combat Augment Protocol (Level 2)",
+        "features": [
+          {
+            "name": "You Select A Specialized Combat Doctrine",
+            "description": "Smart-Link Targeting (+2 ranged), Sub-Dermal Plating (+1 AC), Monomolecular Edge Tuning (+2 melee damage with one-handed weapons), or Hard-Light Aegis Intercept (Shield reaction disadvantage)."
+          }
+        ]
+      },
+      {
+        "name": "4. Spellcasting: Directives & Sacred Code (Level 2)",
+        "features": [
+          {
+            "name": "Spellcasting Ability",
+            "description": "You cast spells using Charisma (representing your force of personality, neural authority, and code conviction). Spells are executed as encoded corporate directives, street vows, or sacred digital talismans."
+          }
+        ]
+      },
+      {
+        "name": "5. High-Voltage Overcharge Smite (Level 2)",
+        "description": "When you hit with a melee weapon or cyber-blade, you channel high-voltage electrical energy or spirit-fire through the strike, cooking internal circuits and searing flesh.",
+        "features": [
+          {
+            "name": "Mechanics",
+            "description": "When you hit a creature with a melee weapon attack, you can expend one spell slot to deal extra Lightning, Radiant, or Psychic damage to the target. The extra damage is 2d8 for a 1st-level slot, plus 1d8 for each slot level higher than 1st (to a maximum of 5d8). The damage increases by 1d8 if the target is a construct, rogue AI, or digital ghost."
+          }
+        ]
+      },
+      {
+        "name": "6. Sub-Dermal Bio-Filter (Level 3)",
+        "description": "Advanced internal bio-filters and cybernetic liver augments make you immune to biological pathogens and synthetic diseases.",
+        "features": [
+          {
+            "name": "Mechanics",
+            "description": "You are immune to all diseases and biological viruses."
+          }
+        ]
+      },
+      {
+        "name": "7. Operational Vow (Level 3)",
+        "description": "You bind yourself to an absolute mandate—whether a binding Aegis Tactical corporate contract, the ancient Bushido code of the Chrome Lotus, or the sacred protection of Neo-Tokyo's ley lines."
+      },
+      {
+        "name": "8. Rapid Fire Protocol (Level 5)",
+        "features": [
+          {
+            "name": "Mechanics",
+            "description": "You can attack twice whenever you take the Attack action on your turn."
+          }
+        ]
+      },
+      {
+        "name": "9. Tactical Mesh Shielding (Level 6)",
+        "description": "Your sub-dermal communication suite broadcasts protective tactical data and hard-light deflection frequencies to nearby squadmates.",
+        "features": [
+          {
+            "name": "Mechanics",
+            "description": "Whenever you or a friendly creature within 10 feet of you must make a saving throw, the creature gains a bonus to the saving throw equal to your Charisma modifier (minimum of +1). You must be conscious to grant this bonus. (Extends to 30 feet at Level 18)."
+          }
+        ]
+      },
+      {
+        "name": "10. Threat-Override Aura (Level 10)",
+        "description": "Your unwavering conviction or neural combat governor overrides fear responses in yourself and your allies.",
+        "features": [
+          {
+            "name": "Mechanics",
+            "description": "You and friendly creatures within 10 feet of you cannot suffer from Threat-Lock (Frightened) while you are conscious. (Extends to 30 feet at Level 18)."
+          }
+        ]
+      },
+      {
+        "name": "11. Passive High-Voltage Pulse (Level 11)",
+        "description": "Every melee strike is permanently infused with a residual high-voltage current.",
+        "features": [
+          {
+            "name": "Mechanics",
+            "description": "Whenever you hit a creature with a melee weapon, the target takes an extra 1d8 Radiant or Lightning damage."
+          }
+        ]
+      },
+      {
+        "name": "12. System Purge (Level 14)",
+        "description": "You issue an absolute system override to purge hostile spell effects, neural hacks, or status ailments from yourself or an ally.",
+        "features": [
+          {
+            "name": "Mechanics",
+            "description": "You can use your action to end one spell or magical effect on yourself or one willing creature you touch. (Uses equal to Cha modifier per Long Rest)."
+          }
+        ]
+      }
+    ],
+    "subclasses": [
+      {
+        "name": "Oath of the Aegis Enforcer",
+        "description": "Tenets of the Contract: Channel Divinity (Level 3): Anti-Override Firewall (Level 7): Smite Sentinel (Level 15): Aegis Prime Manifestation (Level 20):",
+        "details": [
+          "You and friendly creatures within 10 feet cannot suffer Subliminal Override (Charmed) while you are conscious.",
+          "Whenever an enemy within 5 feet hits an ally, you can use your reaction to deliver a melee weapon attack against that enemy with an automatic Overcharge Smite.",
+          "As an action, you deploy heavy tactical exoskeleton plating and hard-light barriers for 1 minute: gain resistance to all damage, project a 30-foot aura of disadvantage against enemy attacks, and deal an extra 10 Lightning damage on all weapon strikes."
+        ],
+        "features": [
+          {
+            "name": "Focus",
+            "description": "Bound by corporate contract, subscription-based law enforcement, and total tactical order.*"
+          },
+          {
+            "name": "Duty To The Board",
+            "description": "Execute client directives without personal hesitation."
+          },
+          {
+            "name": "Maintain Order",
+            "description": "Protect corporate assets and eliminate unauthorized street chaos."
+          },
+          {
+            "name": "Collateral Control",
+            "description": "Minimize non-billable destruction during pacification operations."
+          },
+          {
+            "name": "Neural Lock Weapon",
+            "description": "As an action, you charge your weapon with Aegis suppression code. For 1 minute, you add your Charisma modifier to attack rolls with that weapon, and it emits bright light in a 20-foot radius."
+          },
+          {
+            "name": "Aegis Directive Turn The Lawless",
+            "description": "Force rogue AIs, street gang criminals, and wild spirits within 30 feet to make a Wisdom saving throw or be turned away for 1 minute."
+          }
+        ]
+      },
+      {
+        "name": "Oath of the Chrome Samurai",
+        "description": "Tenets of the Bushido-Net: Channel Divinity (Level 3): Relentless Pursuit (Level 7): Soul of Vengeance (Level 15): Avenging Oni (Level 20):",
+        "details": [
+          "When you hit a target with an opportunity attack, you can move up to half your speed as part of the same reaction without provoking opportunity attacks.",
+          "When a target under your Target Lock Vow makes an attack, you can use your reaction to make a melee weapon attack against that target if it is within range."
+        ],
+        "features": [
+          {
+            "name": "Focus",
+            "description": "Enforcing the strict honor code of street samurai, hunting corporate betrayers, and exacting bloody retribution.*"
+          },
+          {
+            "name": "A Debt Paid In Chrome",
+            "description": "Every favor must be returned; every betrayal repaid in blood."
+          },
+          {
+            "name": "No Unchecked Betrayal",
+            "description": "Fixers or corps who burn their runners must be eliminated."
+          },
+          {
+            "name": "Honor The Contract",
+            "description": "Once a job is accepted, see it through to the end or die trying."
+          },
+          {
+            "name": "Target Lock Vow",
+            "description": "As a bonus action, you lock your ocular sensors onto a single target within 30 feet. You gain advantage on attack rolls against that target for 1 minute or until it drops to 0 HP."
+          },
+          {
+            "name": "Abjure Traitor",
+            "description": "Force a single target within 30 feet to make a Wisdom saving throw. On a failure, the target suffers Neural Freeze (Paralyzed) or its speed is reduced to 0 for 1 minute."
+          },
+          {
+            "name": "You Manifest A Terrifying Digital Oni Aura For 1 Hour",
+            "description": "wings of neon-red hard-light sprout from your back (30 ft fly speed), you project a 30-foot aura of Threat-Lock (Frightened), and attacks against locked targets score a critical hit on a 19–20."
+          }
+        ]
+      },
+      {
+        "name": "Oath of the Ley-Line Guardian",
+        "description": "Tenets of the Sacred Street: Channel Divinity (Level 3): Mana-Tech Resistance (Level 7): Spirit Resurgence (Level 15): Avatar of the Great Kami (Level 20):",
+        "details": [
+          "You and friendly creatures within 10 feet have resistance to damage from spells and matrix hacks.",
+          "When you are reduced to 0 Hit Points and not killed outright, you can choose to drop to 1 Hit Point instead (1/Long Rest). You suffer no drawbacks from old age and cannot be aged magically.",
+          "You transform into a glowing avatar of nature and digital spirit-energy for 1 minute: at the start of each of your turns, you regain 10 Hit Points, your spells with a casting time of 1 action can be cast as a bonus action, and enemies within 10 feet have disadvantage on saving throws against your spells."
+        ],
+        "features": [
+          {
+            "name": "Focus",
+            "description": "Bound to the ancient Shinto spirits (kami), protecting street youth and traditional shrines in Kitsune-cho from corporate energy exploitation.*"
+          },
+          {
+            "name": "Preserve The Light",
+            "description": "Protect the living spirits, shrines, and innocent street dwellers from corporate greed."
+          },
+          {
+            "name": "Shield The Awakened",
+            "description": "Shelter young shamans and spirits from corporate bio-harvesting labs in Sector 17."
+          },
+          {
+            "name": "Stand Against The Machine",
+            "description": "Strike down corrupt AI entities and megacorps tapping subterranean ley lines."
+          },
+          {
+            "name": "Spirit Roots Nature S Wrath",
+            "description": "As an action, you summon glowing digital spirit roots to entangle a target within 10 feet. The target must succeed on a Strength or Dexterity save or suffer Mag-Bound (Restrained)."
+          },
+          {
+            "name": "Turn The Corrupted",
+            "description": "Turn constructs, cybernetic monstrosities, and rogue AIs within 30 feet."
+          }
+        ]
+      },
+      {
+        "name": "Corporate Defector",
+        "description": "Channel Divinity (Level 3): Aura of Black ICE (Level 7): Supernatural Resistance (Level 15): Dread Lord of the Undercity (Level 20):",
+        "details": [
+          "You and friendly constructs/spirits within 10 feet add your Charisma modifier to melee weapon damage rolls.",
+          "You gain resistance to bludgeoning, piercing, and slashing damage from non-magical and non-smart weapons.",
+          "For 1 minute, you radiate an aura of crushing dark code (30-foot radius). Enemies inside the aura take 3d10 Psychic damage at the start of their turns and suffer OS Buffer Overflow (Incapacitated) if they fail a Wisdom saving throw."
+        ],
+        "features": [
+          {
+            "name": "Focus",
+            "description": "A former Aegis Tactical commander or corporate hitman who broke their neural governor, betrayed their employer, and now channels dark Black ICE code for vengeance.*"
+          },
+          {
+            "name": "Control Cyberware Construct",
+            "description": "Target a construct, drone, or cybernetically augmented enemy within 30 feet. It must succeed on a Wisdom save or fall under your command for 1 minute."
+          },
+          {
+            "name": "Dread Black Ice Pulse",
+            "description": "Force surrounding enemies within 30 feet to make a Wisdom save or suffer Threat-Lock (Frightened) for 1 minute."
+          }
+        ]
+      },
+      {
+        "name": "Oath of the Sanctuary",
+        "description": "Channel Divinity (Level 3): Aura of Black ICE (Level 7): Supernatural Resistance (Level 15): Dread Lord of the Undercity (Level 20):",
+        "details": [
+          "You and friendly constructs/spirits within 10 feet add your Charisma modifier to melee weapon damage rolls.",
+          "You gain resistance to bludgeoning, piercing, and slashing damage from non-magical and non-smart weapons.",
+          "For 1 minute, you radiate an aura of crushing dark code (30-foot radius). Enemies inside the aura take 3d10 Psychic damage at the start of their turns and suffer OS Buffer Overflow (Incapacitated) if they fail a Wisdom saving throw."
+        ],
+        "features": [
+          {
+            "name": "Sanctuary Lockdown",
+            "description": "A former Aegis Tactical commander or corporate hitman who broke their neural governor, betrayed their employer, and now channels dark Black ICE code for vengeance.*"
+          },
+          {
+            "name": "Control Cyberware Construct",
+            "description": "Target a construct, drone, or cybernetically augmented enemy within 30 feet. It must succeed on a Wisdom save or fall under your command for 1 minute."
+          },
+          {
+            "name": "Dread Black Ice Pulse",
+            "description": "Force surrounding enemies within 30 feet to make a Wisdom save or suffer Threat-Lock (Frightened) for 1 minute."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Corporate Decker / Cyber-Mage",
+    "features": [
+      {
+        "name": "1. Spellcasting: Arcane Algorithms & Data-Decks",
+        "features": [
+          {
+            "name": "Spellcasting Ability",
+            "description": "You cast spells using Intelligence."
+          },
+          {
+            "name": "Hermetic Data Deck Terminal",
+            "description": "Your spells are written as complex mathematical equations, digital runes, and compiled arcane algorithms stored inside a high-end corporate terminal, encrypted cyberdeck, or biometric data-pad."
+          },
+          {
+            "name": "Biometric Focus",
+            "description": "A corporate-issued biometric focus ring, a crystal-fused stylus, a laser wand, or a spirit-attuned data-port."
+          }
+        ]
+      },
+      {
+        "name": "2. Memory Cache Purge (Level 1)",
+        "description": "You flush your neural cache and purge used memory buffers during a short rest, freeing up cognitive bandwidth to re-compile expended spell slot routines.",
+        "features": [
+          {
+            "name": "Mechanics",
+            "description": "Once per day when you finish a short rest, you can choose expended spell slots to recover. The combined level of the spell slots must equal no more than half your Wizard level (rounded up), and none of the slots can be 6th level or higher."
+          }
+        ]
+      },
+      {
+        "name": "3. Corporate Arcane Discipline (Level 2)",
+        "description": "You specialize in a specific doctrine of corporate magic—aligning with the R\\&D departments of Neo-Tokyo’s megacorporate titans."
+      },
+      {
+        "name": "4. Executable Subroutine (Level 18)",
+        "description": "You optimize a 1st-level and a 2nd-level spell formula so thoroughly that your neural architecture executes them as passive background subroutines without consuming spell slot memory.",
+        "features": [
+          {
+            "name": "Mechanics",
+            "description": "Choose a 1st-level and 2nd-level wizard spell in your spell-deck. You can cast those spells at their lowest level without expending a spell slot when prepared."
+          }
+        ]
+      },
+      {
+        "name": "5. Hard-Coded Macros (Level 20)",
+        "description": "Two 3rd-level spell formulas become permanently hard-coded macros built into your subconscious mind. /column",
+        "features": [
+          {
+            "name": "Mechanics",
+            "description": "Choose two 3rd-level wizard spells in your spell-deck. You always have them prepared, and you can cast each of them once at 3rd level without expending a spell slot per short or long rest."
+          }
+        ]
+      }
+    ],
+    "subclasses": [
+      {
+        "name": "KAMI Techno-Mage (Evocation & Abjuration)",
+        "description": "Sculpt Code (Level 2): Hard-Light Deflector Shield (Level 2): Potent Arcane Code (Level 6): Overclocked Plasma (Level 10): System Overchannel (Level 14):",
+        "details": [
+          "When you cast an Evocation spell that affects other creatures you can see, you can choose a number of them equal to 1 + the spell’s level. The chosen creatures automatically succeed on their saving throws, and take no damage if they would normally take half.",
+          "When you cast an Abjuration or Evocation spell of 1st level or higher, you project a hard-light barrier around yourself. The barrier gains temporary Hit Points equal to twice your Wizard level + your Intelligence modifier.",
+          "Your offensive cantrips (like Data-Siphon or Ghost-Byte) still deal half damage to a creature that succeeds on its saving throw.",
+          "You can add your Intelligence modifier to one damage roll of any Wizard Evocation spell you cast.",
+          "When you cast a Wizard spell of 1st through 5th level that deals damage, you can deal maximum damage with that spell. The first time you do so, you suffer no adverse effects. If you use this feature again before finishing a long rest, you take 2d12 Necrotic/Neural Heat damage per level of the spell immediately after casting it."
+        ],
+        "features": [
+          {
+            "name": "Focus",
+            "description": "Developed by KAMI Industries; focuses on offensive plasma code, hard-light defensive barriers, and algorithmic target calculations.*"
+          }
+        ]
+      },
+      {
+        "name": "Kitsune Alchemical Hermeticist (Transmutation & Bio-Magic)",
+        "description": "Alchemical Reagent Synthesis (Level 2): Transmutation Efficiency (Level 2): Transmuter’s Bio-Core (Level 6): Shape-Shift Algorithm (Level 10): Master Bio-Restoration (Level 14):",
+        "details": [
+          "You gain proficiency with Alchemist’s Supplies and Awakened Ecology (Nature). During a short or long rest, you can synthesize temporary combat stims or anti-toxin serums that grant allies resistance to Bio-Toxed (Poisoned) or heal minor wounds.",
+          "The gold and time you must spend to copy a Transmutation or bio-magic spell into your spell-deck is halved.",
+          "You create an alchemical bio-stone. Whoever carries it gains one benefit of your choice: Darkvision (60 ft), +10 ft movement speed, proficiency in Constitution saving throws, or resistance to Acid/Lightning damage.",
+          "You add Polymorph to your spell-deck if it isn't there already. You can cast it once without expending a spell slot (transforming into an awakened urban critter or cyber-beast).",
+          "You can consume your alchemical bio-core as an action to execute one of the following: restore a creature to full Hit Points, cure all diseases and poisons, or regenerate lost limbs and damaged cyberware."
+        ],
+        "features": [
+          {
+            "name": "Focus",
+            "description": "Backed by Kitsune Bio-Magic; merges corporate alchemy, spirit-attuned reagents, flesh-shaping, and cybernetic transmutation.*"
+          }
+        ]
+      },
+      {
+        "name": "Amaterasu Holographic Architect (Illusion & Enchantment)",
+        "description": "Subliminal Broadcast (Level 2): Hard-Light Decoy (Level 2): Malleable Holograms (Level 6): Illusory Displacement (Level 10): Solid-State Reality (Level 14):",
+        "details": [
+          "You learn the Neon Glitch cantrip. When you cast an Illusion or Enchantment spell, you can execute it silently without verbal or somatic components by broadcasting subtle neural frequencies directly into nearby optics.",
+          "When a creature makes an attack roll against you, you can use your reaction to interpose a hard-light optical duplicate. The attack automatically misses you, destroying the duplicate instead (1/Short or Long Rest).",
+          "When you cast an Illusion spell that has a duration of 1 minute or longer, you can use your action to change the nature of that illusion as if you were casting the spell anew.",
+          "When you are hit by an attack, you can use your reaction to become Optically Camouflaged (Invisible) and teleport up to 30 feet to an unoccupied space, leaving a hard-light hologram in your original space.",
+          "You can make one non-magical object created by an Illusion spell real for 1 minute. The object can deal damage or provide physical cover (such as a hard-light wall or bridge)."
+        ],
+        "features": [
+          {
+            "name": "Focus",
+            "description": "Engineered by Amaterasu Media; utilizes subliminal recommendation algorithms, hard-light optical holograms, and memory rewrites.*"
+          }
+        ]
+      },
+      {
+        "name": "Izanagi Ley-Line Geomancer (Divination & Conjuration)",
+        "description": "Ley-Line Sensor Sweep (Level 2): Matrix Node Shift (Level 2): Subterranean Power Tap (Level 6): Focused System Summons (Level 10): Ley-Line Transit Gate (Level 14):",
+        "details": [
+          "You can sense the exact location of active power grids, wireless matrix nodes, and subterranean Shinto ley lines within 1 mile. You gain proficiency in Cyber-Arcana (Arcana).",
+          "As an action, you can teleport up to 30 feet to an unoccupied space you can see adjacent to an electronic terminal, power conduit, or ley-line node (uses equal to Int modifier / Long Rest).",
+          "When casting a Conjuration or Divination spell while standing inside the Undercity or near an Izanagi power node, you can tap the grid to increase your spell save DC by +2 for that spell.",
+          "While concentrating on a Conjuration spell (such as summoning matrix sprites or rogue AI entities), your concentration cannot be broken as a result of taking damage.",
+          "You can tear open a temporary 2-way portal connecting two electrical substations, Matrix nodes, or Shinto shrines up to 10 miles apart for 1 minute."
+        ],
+        "features": [
+          {
+            "name": "Focus",
+            "description": "Utilized by Izanagi Grid & Power; taps subterranean Shinto ley lines, accesses deep matrix data streams, and summons digital constructs.*"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Cyber-Monk / Kinetic Acrobat",
+    "features": [
+      {
+        "name": "1. Kinetic Reflex Weave (Level 1)",
+        "description": "You rely on sub-dermal kinetic dampeners, fluid reflex predictive routines, or natural spiritual awareness rather than heavy bulky armor.",
+        "features": [
+          {
+            "name": "Mechanics",
+            "description": "While wearing no armor and wielding no shield, your AC equals 10 + your Dexterity modifier + your Wisdom modifier."
+          }
+        ]
+      },
+      {
+        "name": "2. Street Kinetic Combat (Level 1)",
+        "description": "Mastered hand-to-hand combat, sub-dermal knuckle plating, or high-torque wrist servomotors allow for lightning-fast unarmed strikes. Mechanics:",
+        "details": [
+          "You can use Dexterity instead of Strength for attack and damage rolls of your unarmed strikes and monk weapons.",
+          "You can roll a d4 (scaling to d6, d8, d10) in place of normal damage for unarmed strikes/monk weapons.",
+          "When you take the Attack action with an unarmed strike or monk weapon, you can make one unarmed strike as a bonus action."
+        ]
+      },
+      {
+        "name": "3. Neural Flow / Qi Current (Level 2)",
+        "description": "You channel bio-electric current, spiritual Qi, or high-bandwidth neural energy through physical and cybernetic pathways.",
+        "features": [
+          {
+            "name": "Mechanics",
+            "description": "You have a pool of Flow Points equal to your Monk level."
+          },
+          {
+            "name": "High Frequency Overdrive",
+            "description": "Spend 1 Flow point to make two unarmed strikes as a bonus action immediately after taking the Attack action."
+          },
+          {
+            "name": "Predictive Parry Subroutine",
+            "description": "Spend 1 Flow point to take the Dodge action as a bonus action."
+          },
+          {
+            "name": "Vector Boost",
+            "description": "Spend 1 Flow point to take the Disengage or Dash action as a bonus action, doubling your jump distance for the turn."
+          }
+        ]
+      },
+      {
+        "name": "4. Micro-Actuator Mobility (Level 2)",
+        "description": "Sub-dermal leg actuators, magnetic boot soles, or fluid momentum control increase your speed and allow you to run up vertical walls or across flooded waters in Mizu Ward."
+      },
+      {
+        "name": "5. Hard-Light Intercept / Kinetic Deflection (Level 3)",
+        "description": "Your predictive combat optics and rapid reflexes allow you to swat away incoming bullets, laser bolts, or thrown monomolecular blades with your bare hands or a hard-light palm shield.",
+        "features": [
+          {
+            "name": "Mechanics",
+            "description": "You can use your reaction to reduce the damage from a ranged weapon attack by 1d10 + your Dexterity modifier + your Monk level. If reduced to 0, you catch the projectile and can spend 1 Flow point to throw/fire it back."
+          }
+        ]
+      },
+      {
+        "name": "6. Inertial Dampener / Micro-Thrusters (Level 4)",
+        "description": "You engage micro-thrusters, sub-dermal shock absorbers, or kinetic dispersion fields to negate fall damage when plummeting from Kōten sky-arcologies.",
+        "features": [
+          {
+            "name": "Mechanics",
+            "description": "You can use your reaction to reduce fall damage by an amount equal to 5 × your Monk level."
+          }
+        ]
+      },
+      {
+        "name": "7. EMP Palm / Neural Disruption Punch (Level 5)",
+        "description": "You channel a targeted bio-electric pulse or EMP charge directly into an enemy's nerve cluster, cyber-spine port, or internal circuitry.",
+        "features": [
+          {
+            "name": "Mechanics",
+            "description": "When you hit a creature with a melee weapon attack, you can spend 1 Flow point to force the target to make a Constitution saving throw. On a failure, the target suffers Synapse Short (Stunned) until the end of your next turn."
+          }
+        ]
+      },
+      {
+        "name": "8. Monomolecular / High-Frequency Strikes (Level 6)",
+        "description": "Your unarmed strikes vibrate at high frequency or channel pure spirit energy, bypassing non-magical physical armor and structural plating.",
+        "features": [
+          {
+            "name": "Mechanics",
+            "description": "Your unarmed strikes count as magical for the purpose of overcoming resistance and immunity to non-magical attacks."
+          }
+        ]
+      },
+      {
+        "name": "9. Vector Roll / Threat-Dodge (Level 7)",
+        "description": "Predictive hazard algorithms and agility augments allow you to dive clear of explosive blasts and plasma arcs.",
+        "features": [
+          {
+            "name": "Mechanics",
+            "description": "When subjected to a Dexterity save for half damage, you take 0 damage on a success and half damage on a failure."
+          }
+        ]
+      },
+      {
+        "name": "10. Memory Purge / Subconscious Firewall (Level 7)",
+        "description": "You purge neural malware, emotional manipulation, or panic frequencies from your neural pathways.",
+        "features": [
+          {
+            "name": "Mechanics",
+            "description": "You can use your action to end one effect on yourself that is causing you to suffer Subliminal Override (Charmed) or Threat-Lock (Frightened)."
+          }
+        ]
+      },
+      {
+        "name": "11. Bio-Filter Immunity (Level 10)",
+        "description": "Advanced internal bio-filters and spiritual purging make you immune to biological poisons, synthetic combat toxins, and street drugs.",
+        "features": [
+          {
+            "name": "Mechanics",
+            "description": "You are immune to poison damage and the Bio-Toxed (Poisoned) condition."
+          }
+        ]
+      },
+      {
+        "name": "12. Universal Translation Matrix (Level 13)",
+        "description": "Sub-dermal real-time translation subroutines allow you to parse all spoken human languages, matrix data-streams, and spirit speech.",
+        "features": [
+          {
+            "name": "Mechanics",
+            "description": "You understand all spoken languages, and any creature that can understand a language can understand what you say."
+          }
+        ]
+      },
+      {
+        "name": "13. Absolute Neural Hardening (Level 14)",
+        "description": "Master-level firewalls and bio-feedback loops protect your mind and body from all forms of disruption.",
+        "features": [
+          {
+            "name": "Mechanics",
+            "description": "You gain proficiency in all saving throws. Whenever you fail a save, you can spend 1 Flow point to reroll it and take the second result."
+          }
+        ]
+      },
+      {
+        "name": "14. Cellular Stasis / Bio-Maintenance (Level 15)",
+        "description": "Advanced bio-stasis or spiritual harmony prevents biological aging or physical decay.",
+        "features": [
+          {
+            "name": "Mechanics",
+            "description": "You suffer none of the frailty of old age and can't be aged magically, though you can still die of old age. You no longer need food or water."
+          }
+        ]
+      },
+      {
+        "name": "15. Matrix Phase / Thermo-Optic Cloak (Level 18)",
+        "description": "You phase your physical form into the local data-grid or engage an advanced optical camouflage suit.",
+        "features": [
+          {
+            "name": "Mechanics",
+            "description": "As an action, you can spend 4 Flow points to gain Optical Camouflage (Invisible) for 1 minute and gain resistance to all damage except force damage. You can also spend 8 Flow points to cast Astral Projection without material components."
+          }
+        ]
+      },
+      {
+        "name": "16. Core Overclock (Level 20)",
+        "description": "When entering a combat engagement with zero reserves, your neural core automatically dumps emergency reserve energy into your stream.",
+        "features": [
+          {
+            "name": "Mechanics",
+            "description": "When you roll initiative and have no Flow points remaining, you immediately regain 4 Flow points."
+          }
+        ]
+      }
+    ],
+    "subclasses": [
+      {
+        "name": "Order of Sacred Code",
+        "description": "Implements of Mercy (Level 3): Hand of Healing (Level 3): Hand of Harm (Level 3): Flurry of Healing/Harm (Level 11):",
+        "details": [
+          "You gain proficiency in Street Doc (Medicine) and Cyber-Arcana (Arcana).",
+          "You spend 1 Flow point to touch a creature and restore HP equal to 1 roll of your Martial Arts die + your Wisdom modifier. You can also cure the target of Bio-Toxed (Poisoned) or Optic Glitch (Blinded).",
+          "When you hit a creature with an unarmed strike, you can spend 1 Flow point to deal extra Necrotic / Neural-Heat damage equal to 1 roll of your Martial Arts die + your Wisdom modifier.",
+          "When you use Flurry of Blows, you can replace one or both of the unarmed strikes with a Hand of Healing without spending additional Flow points."
+        ],
+        "features": [
+          {
+            "name": "Focus",
+            "description": "Inspired by street healers like Sister Teresa in Mizu Ward; wields bio-nanites, spirit talismans, and field trauma packs to heal refugees or deliver mercy-kills.*"
+          }
+        ]
+      },
+      {
+        "name": "Way of the Street Shinobi",
+        "description": "Shadow-Tech Hacks (Level 3): Shadow Step (Level 6): Thermo-Optic Cloak (Level 11): Opportunist Strike (Level 17):",
+        "details": [
+          "You can spend 2 Flow points to cast Darkness, Pass Without Trace, Silence, or Darkvision as active stealth subroutines without material components. You learn the Neon Glitch cantrip.",
+          "When you are in dim light or darkness, you can use a bonus action to teleport up to 60 feet to an unoccupied space you can see that is also in dim light or darkness. You have advantage on the first melee attack you make before the end of the turn.",
+          "When in dim light or darkness, you can use your action to gain Optical Camouflage (Invisible) until you attack, cast a spell, or enter a brightly lit area.",
+          "Whenever a creature within 5 feet of you is hit by an attack made by someone other than you, you can use your reaction to make a melee attack against that creature."
+        ],
+        "features": [
+          {
+            "name": "Focus",
+            "description": "Operates out of dark alleys, subway tunnels, and ruined arcades; uses thermo-optic cloaks, acoustic dampers, and shadow-stepping.*"
+          }
+        ]
+      },
+      {
+        "name": "Way of the Chrome Kensei",
+        "description": "Path of the Kensei (Level 3): One with the Blade (Level 6): Sharpen the Edge (Level 11):",
+        "details": [
+          "Your Kensei weapons count as magical for overcoming resistance.",
+          "As a bonus action, spend up to 3 Flow points to grant a Kensei weapon a bonus to attack and damage rolls equal to the number of points spent for 1 minute."
+        ],
+        "features": [
+          {
+            "name": "Focus",
+            "description": "Perfected mastery over traditional monomolecular katanas, smart-linked throwing stars, and high-frequency street blades.*"
+          },
+          {
+            "name": "Kensei Weapons",
+            "description": "Choose two weapons (one melee, one ranged) to be your Kensei weapons (e.g., Katana/Longsword, Smart-Pistol/Shortbow)."
+          },
+          {
+            "name": "Parry Blade",
+            "description": "If you make an unarmed strike as part of the Attack action on your turn and hold a Kensei melee weapon, you gain a +2 bonus to AC until the start of your next turn."
+          },
+          {
+            "name": "Kensei Shot",
+            "description": "As a bonus action, add 1d4 damage to your ranged attacks with Kensei weapons until the end of the turn."
+          },
+          {
+            "name": "Deft Strike",
+            "description": "When you hit a target with a Kensei weapon, you can spend 1 Flow point to deal extra damage equal to your Martial Arts die."
+          }
+        ]
+      },
+      {
+        "name": "Way of Kinetic Overdrive",
+        "description": "Open Hand Technique (Level 3): Wholeness of Body (Level 6): Tranquility Subroutine (Level 11): Neural Heart-Stop Strike (Level 17):",
+        "details": [
+          "Whenever you hit a creature with an attack granted by Flurry of Blows, you can impose one of the following effects:",
+          "Knock the target Grounded (Prone) if it fails a Dexterity save.",
+          "Push the target up to 15 feet away if it fails a Strength save.",
+          "It cannot take reactions until the end of your next turn.",
+          "As an action, you execute a rapid internal diagnostic and nanite repair, regaining Hit Points equal to 3 × your Monk level (1/Long Rest).",
+          "At the end of a long rest, you gain the effect of a Sanctuary spell that lasts until the start of your next long rest (DC \\= 8 + Wis mod + Prof).",
+          "When you hit a creature with an unarmed strike, you can spend 3 Flow points to set up lethal sub-dermal vibrations. Within a number of days equal to your Monk level, you can use your action to force the target to make a Constitution save. On a failure, it drops to 0 Hit Points; on a success, it takes 10d10 Necrotic/Force damage."
+        ],
+        "features": [
+          {
+            "name": "Focus",
+            "description": "High-torque physical augmentations, kinetic shockwaves, and disabling bio-mechanical nerve strikes.*"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Glitch-Born / Awakened Mutant",
+    "features": [
+      {
+        "name": "1. Spellcasting: Innate Mana Surge",
+        "features": [
+          {
+            "name": "Spellcasting Ability",
+            "description": "You cast spells using Charisma (representing raw force of mutated aura, biological willpower, and neural frequency)."
+          },
+          {
+            "name": "Biological Astral Focus",
+            "description": "A glowing mutated vein, a bio-luminescent iris, a crystalline spinal port, an awakened spirit-pendant, or a raw spirit-essence ampoule."
+          }
+        ]
+      },
+      {
+        "name": "Essence Reservoir / Mana Cell (Level 2)",
+        "description": "You tap into an internal reservoir of bio-electric and spiritual essence, converting raw biological stamina into spell slots or channeling it into Metamagic subroutines.",
+        "features": [
+          {
+            "name": "Mechanics",
+            "description": "You gain a pool of Surge Points equal to your Sorcerer level. You can convert Surge Points into spell slots or burn spell slots to replenish Surge Points as a bonus action."
+          }
+        ]
+      },
+      {
+        "name": "Gene-Evolver / Neural Overclock Subroutines (Level 3)",
+        "description": "You adapt your innate magic using customized neural and biological overrides:",
+        "features": [
+          {
+            "name": "Targeted Bio Filter",
+            "description": "Spend 1 Surge Point to shield selected allies from the harmful collateral effects of your area-of-effect spells."
+          },
+          {
+            "name": "Signal Booster Pulse",
+            "description": "Spend 1 Surge Point to double the range of a spell (or give a touch spell a 30-foot range) via wireless signal amplification or astral resonance."
+          },
+          {
+            "name": "Overclocked Voltage",
+            "description": "Spend 1 Surge Point to reroll damage dice on a spell equal to your Charisma modifier."
+          },
+          {
+            "name": "Persistent Signal",
+            "description": "Spend 1 Surge Point to double the duration of a spell (up to a maximum of 24 hours)."
+          },
+          {
+            "name": "Neuro Disruptor Strike",
+            "description": "Spend 3 Surge Points to scramble a target's optic or neural feed, giving them disadvantage on their first saving throw against the spell."
+          },
+          {
+            "name": "Flash Surge Activation",
+            "description": "Spend 2 Surge Points to cast a 1-action spell as a bonus action via instantaneous synaptic discharge."
+          },
+          {
+            "name": "Stealth Signature Cast",
+            "description": "Spend 1 Surge Point to execute a spell without somatic or verbal components, leaving zero visible trace or signal spike for corporate threat scanners."
+          },
+          {
+            "name": "Dual Thread Fork",
+            "description": "Spend Surge Points equal to a spell’s level (1 for cantrips) to target two distinct targets with a single-target spell."
+          }
+        ]
+      },
+      {
+        "name": "Bio-Regen Cycle (Level 20)",
+        "description": "Your body’s mutated organs or awakened core rapidly regenerate spent energy under extreme stress.",
+        "features": [
+          {
+            "name": "Mechanics",
+            "description": "You regain 4 expended Surge Points whenever you finish a short rest."
+          }
+        ]
+      }
+    ],
+    "subclasses": [
+      {
+        "name": "The Ghost-Signal Anomaly",
+        "description": "Glitch Surge (Level 1): Tides of Anomaly (Level 1): Matrix Bend (Level 6): Controlled Anomaly (Level 14): Spell-Glitch Overload (Level 18):",
+        "details": [
+          "Whenever you cast a spell of 1st level or higher, the GM can have you roll a d20. On a 1, roll on the Glitch Surge Table—triggering chaotic environmental anomalies (e.g., optical flickering, random EMP blasts, temporary Optical Camouflage [Invisible], or local gravity pulses).",
+          "You manipulate probability by tapping the Ghost Signal. Gain advantage on one attack roll, ability check, or saving throw. Afterwards, the GM can automatically trigger a Glitch Surge on your next spell, resetting this feature (1/Long Rest or until a surge occurs).",
+          "When another creature you can see makes an attack roll, ability check, or saving throw, you can use your reaction and spend 2 Surge Points to roll a 1d4 and apply it as a bonus or penalty to the target's roll.",
+          "Whenever you roll on the Glitch Surge Table, you can roll twice and use either result.",
+          "Whenever you roll maximum damage on at least one die for a spell, choose one of those dice, roll it again, and add its damage to the total."
+        ],
+        "features": [
+          {
+            "name": "Focus",
+            "description": "Connected directly to the 2089 Ghost Signal broadcast; spellcasting triggers unpredictable Matrix glitches, spatial-data distortion, and wild mana surges.*"
+          }
+        ]
+      },
+      {
+        "name": "Dragon-Blood Replicant",
+        "description": "Replicant Resilience (Level 1): Dragon Gene Ancestry (Level 1): Gene-Affinity Overcharge (Level 6): Hard-Light Wings (Level 14): Apex Predator Aura (Level 18):",
+        "details": [
+          "Your Hit Point maximum increases by 1 for each Sorcerer level.",
+          "When you cast a spell that deals damage of your ancestral energy type, add your Charisma modifier to one damage roll. You can also spend 1 Surge Point to gain resistance to that energy type for 1 hour.",
+          "As a bonus action, you sprout glowing hard-light energy wings or bio-luminescent dragon wings from your back, gaining a flying speed equal to your current walking speed until dismissed.",
+          "As an action, spend 5 Surge Points to emit a 60-foot aura of dragon majesty for 1 minute. Enemies entering or starting their turn in the aura must succeed on a Wisdom saving throw or suffer Threat-Lock (Frightened) or Subliminal Override (Charmed)."
+        ],
+        "features": [
+          {
+            "name": "Focus",
+            "description": "Engineered with ancient dragon DNA (linked to Ryujin Trust) or illegal corporate apex-predator gene-splicing from Hoshi Biodyne.*"
+          },
+          {
+            "name": "Sub Dermal Scale Weave",
+            "description": "Hardened dragon scales or bio-engineered dermal plating cover parts of your skin. While unarmored, your AC equals 13 + your Dexterity modifier."
+          },
+          {
+            "name": "Choose A Dragon Gene Type Linked To An Energy Element",
+            "description": "Fire, Cold, Lightning, Acid, or Poison (Bio-Tox). You speak and read Draconic and ancient corporate dialect."
+          }
+        ]
+      },
+      {
+        "name": "Sector 17 Bio-Mutant",
+        "description": "Bio-Mutant Spells (Level 1): Neural Mesh Broadcast (Level 1): Essence Casting (Level 6): Hardened Brainstem (Level 6): Bio-Shift Adaptation (Level 14): Bio-Gravitational Collapse (Level 18):",
+        "details": [
+          "As a bonus action, establish a 2-way telepathic comms link with a creature you can see within 30 feet without needing a physical cyberdeck. The link lasts for a number of minutes equal to your Sorcerer level.",
+          "When you cast any of your Bio-Mutant Spells, you can cast them by spending a number of Surge Points equal to the spell's level instead of expending a spell slot. When cast this way, the spell requires no verbal, somatic, or material components.",
+          "You gain resistance to Psychic damage, and you have advantage on saving throws against being Subliminally Overridden (Charmed) or having your mind read.",
+          "As a bonus action, spend 1 or more Surge Points to temporarily mutate your physical form for 10 minutes per point spent: gain a swimming speed in flooded Mizu Ward, gain see-in-darkness optics, levitate, or make your body pliable to squeeze through tight 1-inch spaces.",
+          "As an action, spend 5 Surge Points to teleport up to 120 feet. Where you originated, a biological/gravitational implosion occurs: all creatures within 30 feet must succeed on a Strength save or take 3d10 Force damage and be pulled directly toward the space you left."
+        ],
+        "features": [
+          {
+            "name": "Focus",
+            "description": "An escaped test subject from Kitsune Bio-Magic’s illegal essence-harvesting labs beneath Sector 17; wields telepathic neural probes and flesh-warping abilities.*"
+          },
+          {
+            "name": "You Automatically Learn Bonus Spells That Don T Count Against Your Known Limit",
+            "description": "e.g., Neural Glitch, Neural Feedback Loop, Neural Hijack, Synthetic Memory Rewrite."
+          }
+        ]
+      },
+      {
+        "name": "KAMI Synthetic Soul Vessel",
+        "description": "Synthetic Soul Routines (Level 1): Algorithmic Equilibrium (Level 1): Hard-Light Aegis Buffer (Level 6): Core Optimization Mode (Level 14): System Restructure Protocol (Level 18):",
+        "details": [
+          "When a creature you can see within 60 feet is about to roll with advantage or disadvantage, you can use your reaction to cancel the advantage or disadvantage by balancing the probability equation (uses equal to Proficiency Bonus / Long Rest).",
+          "As an action, spend 1 to 5 Surge Points to create a protective hard-light barrier around yourself or an ally within 30 feet. The barrier creates a pool of d8s equal to the points spent; when the target takes damage, roll the dice and reduce the damage by the total.",
+          "As a bonus action, spend 5 Surge Points to enter absolute system optimization for 1 minute: d20 rolls of 9 or lower count as a 10 for all your attack rolls, ability checks, and saving throws."
+        ],
+        "features": [
+          {
+            "name": "Focus",
+            "description": "An experimental synthetic human body harboring a conscious AI or synthetic soul prototype (Project ECHO from KAMI Industries).*"
+          },
+          {
+            "name": "You Learn Bonus Hard Coded Defensive And Utility Routines",
+            "description": "e.g., Overclock Reflexes, Blackout Arc, Hard-Light Decoy Array, Hard-Light Aegis Dome."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Corporate Pact Agent / AI Host",
+    "features": [
+      {
+        "name": "1. Contracting Entity (Otherworldly Patron - Level 1)",
+        "description": "You sign a binding operational agreement with a mega-scale entity in Neo-Tokyo's hierarchy. In exchange for your field services, your patron routes encrypted power, black-budget funds, and neural subroutines directly into your optic feed."
+      },
+      {
+        "name": "2. Encrypted Contract Firmware (Pact Magic - Level 1)",
+        "features": [
+          {
+            "name": "Spellcasting Ability",
+            "description": "You cast spells using Charisma (representing your contract negotiation leverage, force of personality, and neural clearance)."
+          },
+          {
+            "name": "Bandwidth Refresh Short Rest Recovery",
+            "description": "Unlike standard mages who memorize long algorithms, your spell slots represent allocated corporate bandwidth. Your spell slots are always cast at the highest available level and recharge completely whenever you finish a Short Rest (as your system executes a rapid corporate bandwidth refresh)."
+          }
+        ]
+      },
+      {
+        "name": "3. Black-Market Firmware Patches (Eldritch Invocations - Level 2)",
+        "description": "You install custom cybernetic and neural firmware modifications provided by your corporate contract:",
+        "features": [
+          {
+            "name": "Overclocked Beam Agonizing Blast",
+            "description": "Add your Charisma modifier to the damage roll of your Ghost-Byte or Eldritch Blast* cantrip."
+          },
+          {
+            "name": "Thermal Optic Vision Devil S Sight",
+            "description": "You can see normally in non-magical and magical darkness (or optical smoke/glitch zones) up to 120 feet."
+          },
+          {
+            "name": "Sub Dermal Kinetic Weave Armor Of Shadows",
+            "description": "You can cast Mage Armor* on yourself at will without expending a spell slot or material components."
+          },
+          {
+            "name": "Neural Translator Eyes Of The Rune Keeper",
+            "description": "You can read all writing, encrypted digital codes, and matrix data streams automatically."
+          },
+          {
+            "name": "Voice Spoofing Modulator Beast Speech Mask Of Many Faces",
+            "description": "You can cast Disguise Self* at will to spoof facial-recognition drones and corporate ID scans."
+          }
+        ]
+      },
+      {
+        "name": "4. Corporate Retainer Asset (Pact Boon - Level 3)",
+        "description": "Your employer grants you a specialized operational asset:",
+        "features": [
+          {
+            "name": "Asset",
+            "description": "Biometric Priority Pass (Pact of the Talisman): You wear a corporate priority pass or dragon-engraved talisman. When the wearer fails an ability check or saving throw, they can add a 1d4* to the roll."
+          }
+        ]
+      },
+      {
+        "name": "5. Executive Mystic Arcanum (Level 11)",
+        "description": "Your patron unlocks classified, high-level corporate clearance code (granting one 6th, 7th, 8th, and 9th-level spell slot) that executes once per Long Rest without consuming standard bandwidth."
+      },
+      {
+        "name": "6. Unlimited Bandwidth Override (Eldritch Master - Level 20)",
+        "description": "You issue an emergency contract override, demanding an immediate full-bandwidth replenishment from your patron's deep server core.",
+        "features": [
+          {
+            "name": "Mechanics",
+            "description": "You can spend 1 minute petitioning your patron to instantly regain all your expended Pact Magic spell slots (1/Long Rest)."
+          }
+        ]
+      }
+    ],
+    "subclasses": [
+      {
+        "name": "The Dragon Boardroom",
+        "description": "Dragon Hoard Dividend (Level 1): Market Leverage (Level 6): Scales of Wealth & Resistance (Level 10): Dragon-Fire Market Crash (Level 14):",
+        "details": [
+          "When you reduce a hostile creature to 0 Hit Points, you gain temporary Hit Points equal to your Charisma modifier + your Warlock level as raw spirit-energy and wealth dividend recharges your aura.",
+          "When you make an ability check or saving throw, you can call upon your dragon patron's probability algorithms to add a 1d10 to the roll (1/Short or Long Rest).",
+          "At the end of a short or long rest, choose one damage type (e.g., Fire, Lightning, Psychic). You gain resistance to that damage type until you choose a different one.",
+          "When you hit a creature with an attack, you can instantly transport the target through a hallucinatory digital dragon hoard in the deep Matrix. The target vanishes and takes 10d10 Psychic / Fire damage as its mind burns under dragon-fire. It reappears at the end of your next turn (1/Long Rest)."
+        ],
+        "features": [
+          {
+            "name": "Focus",
+            "description": "Contracted to dragon-backed financial institutions like Ryujin Trust; channels ancient dragon-fire, market leverage, and ruthless wealth reserves.*"
+          },
+          {
+            "name": "Expanded Contract Spells",
+            "description": "Command, Burning Hands, Scorching Ray, Fireball, Wall of Fire, Flame Strike."
+          }
+        ]
+      },
+      {
+        "name": "Ghost Signal",
+        "description": "Neural Mesh Telepathy (Level 1): Subconscious Glitch Shield (Level 6): Firewall Thought Shield (Level 10): Digital Thrall Override (Level 14):",
+        "details": [
+          "You can telepathically communicate with any creature you can see within 30 feet without needing a physical cyberdeck or comms link. The target understands you as long as it speaks at least one language.",
+          "When a creature makes an attack roll against you, you can use your reaction to project a local optic glitch, imposing disadvantage on the roll. If the attack misses, your next attack against that creature before the end of your next turn has advantage (1/Short or Long Rest).",
+          "Your thoughts cannot be read by neural probes or magic unless you allow it. You gain resistance to Psychic damage, and whenever a creature deals Psychic damage to you, that creature takes the same amount of damage back.",
+          "You use a touch to upload a permanent neural override into an Incapacitated human or construct. The target suffers Subliminal Override (Charmed) by you indefinitely, obeying your mental commands until cured by Remove Curse or a firewall scrub."
+        ],
+        "features": [
+          {
+            "name": "Focus",
+            "description": "Bound to autonomous deep-net AIs, Project ECHO, or the broadcast source of the 2089 Ghost Signal (\"I REMEMBER YOU\").*"
+          },
+          {
+            "name": "Expanded Contract Spells",
+            "description": "Dissonant Whispers, Neural Feedback Loop, Detect Thoughts, Neural Hijack, Global Ghost Signal Broadcast."
+          }
+        ]
+      },
+      {
+        "name": "The Corporate Arch-Executive",
+        "description": "Broadcast Glamour (Level 1): Optical Escape (Level 6): Subliminal Immunity (Level 10): Mass Recommendation Loop (Level 14):",
+        "details": [
+          "As an action, you emit a wave of subliminal media glamour. Each creature in a 10-foot cube centered on you must succeed on a Wisdom saving throw or suffer Subliminal Override (Charmed) or Threat-Lock (Frightened) until the end of your next turn (1/Short or Long Rest).",
+          "When you take damage, you can use your reaction to turn Optically Camouflaged (Invisible) and instantly teleport up to 60 feet to an unoccupied space you can see. You remain invisible until the start of your next turn (1/Short or Long Rest).",
+          "You are immune to being Subliminally Overridden (Charmed). When another creature attempts to charm or neural-control you, you can use your reaction to reflect the attempt back at the caster.",
+          "As an action, target a creature within 60 feet. It must succeed on a Wisdom save or be plunged into an immersive holographic VR loop for 1 minute. While trapped, the target is Optic Glitched (Blinded) and Acoustic Scrambled (Deafened), suffering Subliminal Override (Charmed) or Threat-Lock (Frightened) (1/Long Rest)."
+        ],
+        "features": [
+          {
+            "name": "Focus",
+            "description": "Contracted to media conglomerates (Amaterasu Media), high-society glitz lords of The Garden, or syndicate bosses like Madame Yumi; uses subliminal charm, optical cloaks, and media dominance.*"
+          },
+          {
+            "name": "Expanded Contract Spells",
+            "description": "Faerie Fire, Sleep, Phantasmal Force, Hard-Light Decoy Array, Synthetic Memory Rewrite."
+          }
+        ]
+      },
+      {
+        "name": "Subterranean Ley-Line Entity",
+        "description": "Ley-Line Plasma Conduit (Level 1): Sub-Dermal Aquifer / Electrical Shield (Level 6): Electrolyte Defense (Level 10): Ley-Line Grid Gate (Level 14):",
+        "details": [
+          "As a bonus action, you summon a 10-foot spectral conduit or high-voltage plasma tentacle at a point you can see within 60 feet. You can make a melee spell attack against a target within 10 feet of it, dealing 1d8 Lightning or Cold damage on a hit and reducing their speed by 10 feet.",
+          "You gain a swimming speed of 30 feet and can breathe underwater (navigating flooded Mizu Ward). Additionally, when taking Cold or Lightning damage, you can use your reaction to gain resistance to that instance of damage and deal 1d8 Lightning damage back to the attacker.",
+          "You project a protective aura of electrified mist or spirit-data. You and allies within 10 feet gain resistance to Fire damage, and you can cast Evard's Black Tentacles (flavored as high-voltage copper cable bundles) once per long rest without spending a spell slot.",
+          "As an action, you submerge yourself into a local power conduit or flooded drainage grate, instantly teleporting up to 1 mile to another power node or body of water you have seen. A massive lightning surge blasts outward at the destination, dealing 6d10 Lightning damage to surrounding enemies."
+        ],
+        "features": [
+          {
+            "name": "Focus",
+            "description": "Contracted to the ancient digital-magical entity sleeping beneath the Dead City and tapped by Izanagi Grid; manipulates high-voltage conduits, water-slicked cabling, and ley-line plasma.*"
+          },
+          {
+            "name": "Expanded Contract Spells",
+            "description": "Thunderwave, Create or Destroy Water, Blackout Arc, Lightning Bolt, Izanagi Grid Overload."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Neon Idol / Net-Hype",
+    "features": [
+      {
+        "name": "1. Spellcasting: Mesh Broadcast & Neural Tuning",
+        "features": [
+          {
+            "name": "Spellcasting Ability",
+            "description": "You cast spells using Charisma (representing your viral presence, audience engagement, and neural broadcast authority)."
+          },
+          {
+            "name": "Media Focus",
+            "description": "A holographic micro-deck, a neural neck-mic, a spirit-attuned synthesizer, a laser-display instrument, or a high-end Amaterasu streaming rig."
+          }
+        ]
+      },
+      {
+        "name": "2. Viral Hype / Subliminal Boost (Level 1)",
+        "description": "You broadcast a tailored hype-track, motivational neural ping, or tactical combat audio cue that overclocks an ally's confidence and reaction time.",
+        "features": [
+          {
+            "name": "Mechanics",
+            "description": "As a bonus action, target one creature within 60 feet that can hear or receive your signal. That creature gains a Hype Die (d6, scaling to d8, d10, d12). Within the next 10 minutes, the target can add the die to one ability check, attack roll, or saving throw it makes."
+          }
+        ]
+      },
+      {
+        "name": "3. Social Algorithm Analytics (Level 2)",
+        "description": "Your neural interface continuously scrapes trend data, social archives, and street mesh networks, granting you basic competence across all topics.",
+        "features": [
+          {
+            "name": "Mechanics",
+            "description": "You can add half your proficiency bonus (rounded down) to any ability check you make that doesn't already include your proficiency bonus."
+          }
+        ]
+      },
+      {
+        "name": "4. Defrag Stream / Chill-Vibe Lounge (Level 2)",
+        "description": "During a short rest, you broadcast soothing synthwave ambient tracks or low-frequency lo-fi beats that accelerate cellular repair and calm fried neural pathways.",
+        "features": [
+          {
+            "name": "Mechanics",
+            "description": "If you or any friendly creatures regain Hit Points at the end of a short rest by spending Hit Dice, each creature regains an extra 1d6 Hit Points (scaling to 1d8, 1d10, 1d12)."
+          }
+        ]
+      },
+      {
+        "name": "5. Viral Brand Mastery (Levels 3 & 10)",
+        "description": "You master specific public manipulation tools—such as Idol Presence (Performance), Deep Fake (Deception), or Fixer Negotiation (Persuasion).",
+        "features": [
+          {
+            "name": "Mechanics",
+            "description": "Choose two of your skill proficiencies. Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies. (Choose two more at Level 10)."
+          }
+        ]
+      },
+      {
+        "name": "6. Rapid Hype Refresh (Level 5)",
+        "description": "Your viral feed refreshes constantly; short breaks allow you to regain full stream engagement.",
+        "features": [
+          {
+            "name": "Mechanics",
+            "description": "You regain all of your expended uses of Viral Hype (Bardic Inspiration) when you finish a Short or Long Rest."
+          }
+        ]
+      },
+      {
+        "name": "7. Signal-Jacker / Static Scrub (Level 6)",
+        "description": "You emit a localized white-noise jammer or anti-propaganda frequency that shields nearby minds from mind control and dread.",
+        "features": [
+          {
+            "name": "Mechanics",
+            "description": "As an action, you begin a broadcast that lasts until the end of your next turn. You and friendly creatures within 30 feet have advantage on saving throws against suffering Threat-Lock (Frightened) or Subliminal Override (Charmed)."
+          }
+        ]
+      },
+      {
+        "name": "8. Cross-Net Code Piracy (Levels 10, 14, 18)",
+        "description": "You hack into rival corporate networks (like KAMI or Kitsune Bio-Magic) to rip off proprietary spell code and compile it into your media rig.",
+        "features": [
+          {
+            "name": "Mechanics",
+            "description": "Choose two spells from any class list (including spells like Global Ghost Signal Broadcast or Hard-Light Aegis Dome). These spells count as Bard spells for you and are included in your known spell list."
+          }
+        ]
+      },
+      {
+        "name": "9. Emergency Hype Seed (Level 20)",
+        "description": "Even when your stream drops offline, your neural core automatically generates an emergency viral surge when combat erupts.",
+        "features": [
+          {
+            "name": "Mechanics",
+            "description": "When you roll initiative and have no uses of Viral Hype remaining, you immediately regain one use."
+          }
+        ]
+      }
+    ],
+    "subclasses": [
+      {
+        "name": "College of the Cyber Idol",
+        "description": "Hologram Glamour (Level 3): Subliminal Enthrallment (Level 3): Idol Presence (Level 6): Unstoppable Viral Hype (Level 14):",
+        "details": [
+          "As a bonus action, spend 1 use of Viral Hype to project a hard-light avatar sequence. Choose a number of allies within 60 feet up to your Charisma modifier. Each ally gains temporary Hit Points equal to your Hype Die result and can immediately use their reaction to move up to their speed without provoking opportunity attacks.",
+          "If you perform or stream for at least 1 minute, you can force humanoids watching you to make a Wisdom saving throw against your spell save DC. On a failure, targets suffer Subliminal Override (Charmed) for 1 hour, idolizing you and ignoring non-violent environment distractions.",
+          "As a bonus action, project an aura of absolute celebrity for 1 minute. As long as the aura is active, whenever a creature attempts to attack you on its turn, it must make a Wisdom save. On a failure, it loses its attack against you and must choose a new target.",
+          "As an action, enter a dazzling hard-light transformation for 1 minute. You project bright neon light in a 30-foot radius, and whenever a creature hits you for the first time on a turn, it must succeed on a Charisma saving throw or suffer Optic Glitch (Blinded) until the end of its next turn."
+        ],
+        "features": [
+          {
+            "name": "Focus",
+            "description": "Pop stars, holographic idols in Neon Shinjuku, and sponsored icons of Amaterasu Media; uses dazzling hard-light aesthetics and overwhelming audience devotion.*"
+          }
+        ]
+      },
+      {
+        "name": "College of the Pirate Broadcaster",
+        "description": "Cutting Counter-Troll (Level 3): Pirate Mesh Intelligence (Level 3): Leaked Code Clearance (Level 6): Peerless Analytics (Level 14):",
+        "focus": "Inspired by independent street journalists like Daisuke \"Radio\" and hacktivists in The 404s; uncovers corporate cover-ups, broadcasts raw street truth, and trolls enemy comms.*",
+        "details": [
+          "When a creature you can see within 60 feet makes an attack roll, ability check, or damage roll, you can use your reaction and spend 1 use of Viral Hype to roll the die and subtract the number from the creature's roll.",
+          "You gain proficiency in 3 additional skills of your choice (e.g., System Forensics [Investigation], Cyber-Arcana [Arcana], or Deep Fake [Deception]).",
+          "You learn two additional Cross-Net Code Piracy spells from any class list at 6th level instead of waiting for 10th level.",
+          "When you make an ability check, you can expend 1 use of Viral Hype to roll the Hype Die and add the number to your check."
+        ]
+      },
+      {
+        "name": "College of Chrome & Blades",
+        "description": "Combat Streamer Training (Level 3): Blade-Flourish Stream Subroutines (Level 3): Extra Attack (Level 6): Master Flourish (Level 14):",
+        "focus": "Gladiatorial battle-streamers, street samurai influencers, and duelists who perform high-lethality combat for live subscriber feeds.*",
+        "defensive_flourish": "Add the Hype Die to the damage dealt and to your AC until the start of your next turn.",
+        "slashing_flourish": "Add the Hype Die to the damage dealt, and deal that same amount of damage to another creature within 5 feet.",
+        "mobile_flourish": "Add the Hype Die to damage and push the target up to 5 + Hype Die feet away, using your reaction to move adjacent to them.",
+        "details": [
+          "You gain proficiency with medium armor, shields, and martial weapons (such as monomolecular katanas and smart-pistols).",
+          "Whenever you take the Attack action, your walking speed increases by 10 feet until the end of the turn. When you hit with a melee attack, you can expend 1 use of Viral Hype to execute a flourish:",
+          "You can attack twice whenever you take the Attack action on your turn.",
+          "Whenever you execute a Blade Flourish subroutine, you can roll a d6 instead of expending a Viral Hype die."
+        ]
+      },
+      {
+        "name": "College of Subliminal Propaganda",
+        "description": "Neural Venom Strike (Level 3): Subliminal Dread (Level 3): Steal Memory Persona (Level 6): Shadow Whispers (Level 14):",
+        "focus": "Amaterasu Media psychological operatives and host-club manipulators like Madame Yumi's Velvet Dolls; extracts executive secrets, implants false memories, and weaponizes fear.*",
+        "details": [
+          "When you hit a creature with a weapon attack, you can spend 1 use of Viral Hype to inject a wave of psychological terror code, dealing an extra 2d6 Psychic damage (scaling to 3d6, 5d6, 8d6).",
+          "If you speak to a humanoid alone for at least 1 minute, you can plant a hidden neural seed. The target must succeed on a Wisdom save or suffer Threat-Lock (Frightened) of you or a designated creature for 1 hour.",
+          "When a humanoid dies within 30 feet of you, you can use your reaction to capture its memory profile into a blank chip. As an action, you can wear the persona for 1 hour—gaining its voice, accent, surface memories, and Deep Fake (Deception) advantage to impersonate them flawlessly.",
+          "As an action, whisper a corrupted neural phrase to a creature within 30 feet. It must succeed on a Wisdom save or become paranoia-ridden, suffering Subliminal Override (Charmed) by you while viewing all its allies as lethal enemies for 8 hours."
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Urban Hunter / Recon Drone Master",
+    "features": [
+      {
+        "name": "1. Specialized Contract Target (Level 1)",
+        "description": "You install specialized biometric databases, combat algorithms, and threat-analysis firmware tailored to track and execute specific quarry.",
+        "features": [
+          {
+            "name": "Mechanics",
+            "description": "Choose a target category: Corporate Strike Teams / Mercenaries, Cybernetically Augmented Humans, Awakened Spirits / Street Shamans, Rogue AIs / Constructs, or Mutated Urban Critters. You have advantage on Street Navigation (Survival) checks to track your target and System Forensics (Investigation) checks to recall data about them. (Choose additional target types at Levels 6 & 14)."
+          }
+        ]
+      },
+      {
+        "name": "2. District Attunement (Level 1)",
+        "description": "You master navigating specific vertical layers and hazardous environments across Neo-Tokyo.",
+        "features": [
+          {
+            "name": "Mechanics",
+            "description": "Choose a district environment type: The Crown (Sky Arcologies), The Neon Layer (Commercial/Nightlife), The Undercity (Flooded Ruins & Tunnels), or The Dead City (Quarantine & Glitch Zones)."
+          }
+        ],
+        "details": [
+          "Difficult terrain in your chosen environment doesn't slow your group's travel.",
+          "Your group can't become lost except by magical or high-tier matrix distortion.",
+          "When tracking targets, you learn their exact numbers, size, and how long ago they passed through the zone."
+        ]
+      },
+      {
+        "name": "3. Combat Augment Protocol (Level 2)",
+        "description": "Select a specialized combat doctrine:",
+        "features": [
+          {
+            "name": "Smart Link Targeting Archery",
+            "description": "+2 bonus to attack rolls with ranged smart-weapons and firearms."
+          },
+          {
+            "name": "Sub Dermal Plating Defense",
+            "description": "+1 bonus to AC while wearing armor or sub-dermal weave."
+          },
+          {
+            "name": "Dual Rotor Actuators Two Weapon Fighting",
+            "description": "Add your ability modifier to the damage of off-hand attacks."
+          },
+          {
+            "name": "Monomolecular Edge Tuning Dueling",
+            "description": "+2 bonus to damage rolls with one-handed melee weapons."
+          }
+        ]
+      },
+      {
+        "name": "4. Spellcasting: Tactical Routines & Field Tech (Level 2)",
+        "features": [
+          {
+            "name": "Spellcasting Ability",
+            "description": "You cast spells using Wisdom (representing tactical awareness, sensor interpretation, and zone instinct)."
+          },
+          {
+            "name": "Tactical Scanner Field Kit",
+            "description": "A wrist-mounted sensor array, laser-designator visor, or spirit-attuned tracking charm."
+          }
+        ]
+      },
+      {
+        "name": "5. Threat Sensor Sweep (Level 3)",
+        "description": "You ping local wireless frequencies, sonar grids, and astral currents to detect nearby targets.",
+        "features": [
+          {
+            "name": "Mechanics",
+            "description": "Spend one spell slot to execute an environmental sensor sweep. For 1 minute per level of the slot used, you sense whether any specialized contract targets (constructs, spirits, augmented humans, or rogue AIs) are within 1 mile of you (or up to 6 miles within your attuned district)."
+          }
+        ]
+      },
+      {
+        "name": "6. Rapid Fire Protocol (Level 5)",
+        "features": [
+          {
+            "name": "Mechanics",
+            "description": "You can attack twice whenever you take the Attack action on your turn."
+          }
+        ]
+      },
+      {
+        "name": "7. Environmental Bypass (Level 8)",
+        "description": "Micro-thrusters, sub-dermal leg actuators, and hazard-shielding allow you to move unimpeded through urban hazards.",
+        "features": [
+          {
+            "name": "Mechanics",
+            "description": "Moving through non-magical difficult terrain (flooded streets, fallen rubble, barbed wire) costs no extra movement. You also have advantage on saving throws against environmental bio-hazards, acid fog, and toxic spills."
+          }
+        ]
+      },
+      {
+        "name": "8. Optical Camouflage Scrub (Level 10)",
+        "description": "Given 1 minute, you apply thermo-optic camouflage spray, street-chaff, and signal-dampening mesh to blend seamlessly into walls and alleyways.",
+        "features": [
+          {
+            "name": "Mechanics",
+            "description": "You gain a +10 bonus to Low-Signature (Stealth) checks as long as you remain motionless against a solid surface."
+          }
+        ]
+      },
+      {
+        "name": "9. Phantom Step (Level 14)",
+        "description": "You purge your physical radar cross-section and digital trace on the fly.",
+        "features": [
+          {
+            "name": "Mechanics",
+            "description": "You can use the Hide action as a bonus action on your turn. You can't be tracked by non-magical means or corporate camera algorithms unless you choose to leave a digital trail."
+          }
+        ]
+      },
+      {
+        "name": "10. Motion Tracker / Sensor Mesh (Level 18)",
+        "description": "Cybernetic audio-dampeners, motion trackers, and thermal optics render physical cover and darkness irrelevant.",
+        "features": [
+          {
+            "name": "Mechanics",
+            "description": "You do not suffer disadvantage on attack rolls against targets you can't see, and you are aware of the location of any invisible creature within 30 feet unless it is successfully hiding from you."
+          }
+        ]
+      },
+      {
+        "name": "11. Target Execution Protocol (Level 20)",
+        "description": "Your HUD calculates lethal weak points in real time.",
+        "features": [
+          {
+            "name": "Mechanics",
+            "description": "Once on each of your turns, you can add your Wisdom modifier to the attack roll or damage roll of an attack made against one of your specialized contract targets."
+          }
+        ]
+      }
+    ],
+    "subclasses": [
+      {
+        "name": "Street Tracker",
+        "features": [
+          {
+            "name": "Focus",
+            "description": "Precision bounty hunting, neutralizing high-value targets, and surviving brutal street skirmishes.*"
+          },
+          {
+            "name": "Hunter S Tech Level 3",
+            "description": "Choose one tactical subroutine:"
+          },
+          {
+            "name": "Colossus Takedown",
+            "description": "Deal an extra 1d8 damage once per turn when hitting a target below its HP maximum."
+          },
+          {
+            "name": "Crowd Control Spray",
+            "description": "When you make a ranged attack, you can make a secondary attack against a target within 5 feet of the primary target."
+          },
+          {
+            "name": "Counter Strike Parry",
+            "description": "When a creature misses you with a melee attack, use your reaction to make an immediate counter-attack."
+          },
+          {
+            "name": "Defensive Augments Level 7",
+            "description": "Choose one defensive upgrade:"
+          },
+          {
+            "name": "Sub Dermal Blast Plating",
+            "description": "Gain resistance to area-effect damage (like grenades or plasma blasts)."
+          },
+          {
+            "name": "Target Lock Evasion",
+            "description": "Opportunistic attacks against you are made with disadvantage."
+          },
+          {
+            "name": "Multi Target Lock Level 11",
+            "description": "Use your action to execute a rapid salvo, making a ranged or melee attack against any number of targets within 10 feet of a point you can see."
+          },
+          {
+            "name": "Reflex Counter Level 15",
+            "description": "When a target hits or misses you with an attack, use your reaction to deliver an immediate counter-strike."
+          }
+        ]
+      },
+      {
+        "name": "Bio-Drone Handler",
+        "description": "Bio-Drone Companion (Level 3): Coordination Strike (Level 7): Bio-Force Overclock (Level 11): Shared Augments (Level 15):",
+        "details": [
+          "You gain a loyal Bio-Drone Companion—such as a cyber-enhanced Doberman (Hoshi Biodyne hound), an autonomous military quad-copter drone, or an awakened spirit-critter from Kitsune-cho.",
+          "The companion uses a specialized stat block (Bio-Drone of the Land, Air, or Water). It obeys your mental commands, takes its turn on your initiative, and adds your Proficiency Bonus to its AC, attack rolls, and damage rolls.",
+          "When you take the Attack action, you can command your companion to use its reaction to make one melee or ranged attack.",
+          "When your companion takes the Attack action, it can make two attacks or use a high-voltage EMP discharge.",
+          "When you cast a spell targeting yourself (such as Optical Camouflage or Overclock Reflexes), the spell also affects your Bio-Drone companion if it is within 30 feet."
+        ],
+        "features": [
+          {
+            "name": "Focus",
+            "description": "Operating genetically engineered guard beasts, cyber-enhanced hounds, or military surveillance drones.*"
+          }
+        ]
+      },
+      {
+        "name": "Ghost-Zone Infiltrator",
+        "description": "Ghost-Zone Specialist (Level 3): Optic Scrub (Level 3): Iron Mind Firewall (Level 7): Stalking Counter (Level 11): Shadow Dodge (Level 15):",
+        "details": [
+          "You learn the Disguise Self spell and gain Thermal-Optics (Darkvision) up to 60 feet (or extend existing darkvision by 30 feet).",
+          "You are invisible to creatures and camera drones that rely on darkvision/thermal optics to see in total darkness.",
+          "You gain proficiency in Wisdom saving throws (protecting your mind from neural probes and Black ICE).",
+          "Once on each of your turns when you miss with a weapon attack, you can make another weapon attack as part of the same action.",
+          "Whenever a creature makes an attack roll against you without advantage, you can use your reaction to impose disadvantage on the roll."
+        ],
+        "features": [
+          {
+            "name": "Focus",
+            "description": "Operating in total darkness, underground subway tunnels in The Underline, and the erased ruins of Shiba Void; striking from the shadows before targets realize you're there.*"
+          },
+          {
+            "name": "Dread Strike",
+            "description": "You add your Wisdom modifier to Initiative rolls. On your first turn in combat, your speed increases by 10 feet, and your first successful attack deals an extra 1d8 weapon damage."
+          }
+        ]
+      },
+      {
+        "name": "Cyber-Zone Guardian",
+        "description": "Data-Glitch Sensor (Level 3): Phase-Strike Converter (Level 3): Matrix Phase Step (Level 7): Spatial Teleport Strike (Level 11): Data Shift Defense (Level 15):",
+        "details": [
+          "You can detect matrix phase-shifts, spirit portals, and spatial glitches within 1 mile as an action.",
+          "As a bonus action, target a creature within 30 feet. For the rest of the turn, all damage you deal converts to pure Force / Psychic damage, and your first strike deals an extra 1d6 Force damage (scaling to 2d6 at Level 11).",
+          "When you take the Dodge action, you temporarily phase into the local data grid, gaining resistance to all damage until the start of your next turn.",
+          "When you take the Attack action, you can teleport up to 10 feet before each attack. If you attack at least two different targets, you can make a third attack for free.",
+          "When you take damage, you can use your reaction to phase out of reality, gaining resistance to all damage from that instance."
+        ],
+        "features": [
+          {
+            "name": "Focus",
+            "description": "Hunting targets across phase-shifted matrix anomalies, subterranean energy nodes, and spatial data-glitches in Shiba Void.*"
+          }
+        ]
+      }
+    ]
+  }
+]

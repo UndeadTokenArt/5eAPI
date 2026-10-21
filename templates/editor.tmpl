@@ -1,0 +1,180 @@
+{{define "editor"}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editor | D&amp;D 5e SRD</title>
+  <link rel="stylesheet" href="/static/css/editor.css">
+  <link rel="stylesheet" href="/static/css/account.css">
+</head>
+<body>
+  <nav class="sheet-nav" aria-label="Main navigation">
+    <a class="sheet-brand" href="/">D&amp;D 5e SRD</a>
+    <a href="/neotokyo">NeoTokyo</a>
+    <a href="/characters">Characters</a>
+    {{template "account_nav" .}}
+  </nav>
+  <main>
+    <h1>Guide editor</h1>
+    <p class="muted">Signed in as {{.User}}. Entries you add are saved to the guide data folder (<code>zz-editor-additions.json</code> in each category) and appear in the guide, search and character sheet within a couple of seconds.</p>
+    <div class="panel">
+      <label for="category">Category</label>
+      <select id="category">{{range .Categories}}<option value="{{.Slug}}">{{.Title}}</option>{{end}}</select>
+      <form id="entry-form" novalidate>
+        <div id="fields" class="grid2"></div>
+        <div id="json-box" hidden>
+          <label for="json-text">Entry as JSON</label>
+          <textarea id="json-text" class="json" spellcheck="false"></textarea>
+        </div>
+        <div class="row">
+          <button type="submit">Add entry</button>
+          <label class="toggle" id="json-toggle-wrap"><input type="checkbox" id="json-toggle"> Edit as JSON</label>
+        </div>
+        <div class="status" id="status" role="status" aria-live="polite"></div>
+      </form>
+    </div>
+    <h2>Your additions in <span id="added-title"></span></h2>
+    <div id="added"></div>
+    <p class="muted">Entries from the bundled guide files can't be changed here; edit those files in the data folder.</p>
+  </main>
+  <script>
+  (function () {
+    var F = function (key, label, kind, hint) { return { key: key, label: label, kind: kind || 'text', hint: hint }; };
+    var CLASS_NAMES = {{.ClassNames}} || [];
+    var item = [F('name', 'Name'), F('price', 'Price'), F('description', 'Description', 'area')];
+    var FORMS = {
+      'adventuring-gear-and-containers': item, 'tools-kits-and-consumables': item, 'ammunition': item,
+      'armor-and-shields': item, 'mounts-vehicles-and-harnesses': item, 'foci-and-instruments': item,
+      weapons: [F('name', 'Name'), F('price', 'Price'), F('damage', 'Damage (e.g. 1d8)'), F('damage_type', 'Damage type'), F('attribute', 'Attribute (STR/DEX)'), F('tag', 'Tags'), F('description', 'Description', 'area')],
+      spells: [F('name', 'Name'), F('level', 'Level (0 for cantrip)'), F('school', 'School'), F('casting_time', 'Casting time'), F('range', 'Range'), F('duration', 'Duration'),
+        F('components', 'Components (comma separated)', 'list'), F('mechanics', 'Mechanics', 'area'), F('description', 'Description', 'area')],
+      subclasses: [F('class', 'Parent class', 'select'), F('name', 'Subclass name'), F('description', 'Description (features by level)', 'area'), F('focus', 'Focus'),
+        F('details', 'Details (comma separated)', 'list'), F('content', 'Content', 'area')],
+      conditions: [F('name', 'Name'), F('description', 'Description', 'area')],
+      backgrounds: [F('name', 'Name'), F('description', 'Description', 'area'), F('skill_proficiencies', 'Skill proficiencies'), F('tool_proficiencies', 'Tool proficiencies'),
+        F('tool_language_proficiencies', 'Tool / language proficiencies'), F('starting_equipment', 'Starting equipment', 'area'), F('background_feature', 'Background feature', 'area')]
+    };
+    var JSON_TEMPLATES = {
+      abilities: { name: 'Example Checks', features: [{ name: 'Example Skill', example: 'When it applies', description: 'What it does' }] },
+      species: { name: 'Example Species', origin: '', appearance: '', cultural_fit: '', trait: [{ name: 'Trait', description: '' }] },
+      classes: { name: 'Example Class', description: '', features: [{ name: '1. Feature (Level 1)', description: '' }],
+        subclasses: [{ name: 'Example Subclass', description: '', features: [{ name: 'Subclass feature (Level 3)', description: '' }] }] },
+      feats: { name: 'Example Feat Group', features: [{ name: 'Example Feat', prerequisite: '', description: '' }] }
+    };
+    var select = document.getElementById('category');
+    var fields = document.getElementById('fields');
+    var jsonBox = document.getElementById('json-box');
+    var jsonText = document.getElementById('json-text');
+    var jsonToggle = document.getElementById('json-toggle');
+    var status = document.getElementById('status');
+
+    function say(message, bad) { status.textContent = message; status.className = 'status' + (bad ? ' error' : ''); }
+    function hasForm() { return !!FORMS[select.value]; }
+
+    function buildForm() {
+      fields.replaceChildren();
+      (FORMS[select.value] || []).forEach(function (field) {
+        var wrap = document.createElement('div');
+        if (field.kind === 'area') wrap.style.gridColumn = '1 / -1';
+        var label = document.createElement('label');
+        var input = document.createElement(field.kind === 'area' ? 'textarea' : field.kind === 'select' ? 'select' : 'input');
+        if (field.kind === 'select') {
+          CLASS_NAMES.forEach(function (name) { var option = document.createElement('option'); option.value = option.textContent = name; input.appendChild(option); });
+        }
+        input.id = 'f-' + field.key;
+        input.dataset.key = field.key;
+        input.dataset.kind = field.kind;
+        label.htmlFor = input.id;
+        label.textContent = field.label;
+        wrap.append(label, input);
+        fields.appendChild(wrap);
+      });
+    }
+
+    function formToEntry() {
+      var entry = {};
+      fields.querySelectorAll('[data-key]').forEach(function (input) {
+        var value = input.value.trim();
+        if (!value) return;
+        entry[input.dataset.key] = input.dataset.kind === 'list' ? value.split(',').map(function (part) { return part.trim(); }).filter(Boolean) : value;
+      });
+      return entry;
+    }
+
+    function applyMode() {
+      var form = hasForm();
+      document.getElementById('json-toggle-wrap').hidden = !form;
+      var showJson = !form || jsonToggle.checked;
+      fields.hidden = showJson;
+      jsonBox.hidden = !showJson;
+      if (showJson && !jsonText.value.trim()) {
+        jsonText.value = JSON.stringify(form ? formToEntry() : (JSON_TEMPLATES[select.value] || { name: '' }), null, 2);
+      }
+    }
+
+    function api(path, options) {
+      options = options || {};
+      options.credentials = 'same-origin';
+      return fetch(path, options).then(function (response) {
+        if (response.status === 204) return null;
+        return response.json().catch(function () { return {}; }).then(function (body) {
+          if (!response.ok) throw new Error(body.error || ('Request failed (' + response.status + ')'));
+          return body;
+        });
+      });
+    }
+
+    function loadAdded() {
+      document.getElementById('added-title').textContent = select.options[select.selectedIndex].textContent;
+      var list = document.getElementById('added');
+      api('/api/editor/entries?category=' + encodeURIComponent(select.value)).then(function (entries) {
+        list.replaceChildren();
+        if (!entries.length) { var none = document.createElement('p'); none.className = 'muted'; none.textContent = 'Nothing added yet.'; list.appendChild(none); return; }
+        entries.forEach(function (entry) {
+          var row = document.createElement('div');
+          row.className = 'added';
+          var name = document.createElement('span');
+          name.textContent = entry.name;
+          var remove = document.createElement('button');
+          remove.type = 'button';
+          remove.className = 'danger';
+          remove.textContent = 'Remove';
+          remove.addEventListener('click', function () {
+            if (!confirm('Remove "' + entry.name + '"?')) return;
+            api('/api/editor/entries?category=' + encodeURIComponent(select.value) + '&index=' + entry.index, { method: 'DELETE' })
+              .then(function () { say('Removed.'); loadAdded(); }).catch(function (err) { say(err.message, true); });
+          });
+          row.append(name, remove);
+          list.appendChild(row);
+        });
+      }).catch(function (err) { say(err.message, true); });
+    }
+
+    document.getElementById('entry-form').addEventListener('submit', function (event) {
+      event.preventDefault();
+      var entry;
+      try {
+        entry = (hasForm() && !jsonToggle.checked) ? formToEntry() : JSON.parse(jsonText.value);
+      } catch (err) { say('That is not valid JSON: ' + err.message, true); return; }
+      api('/api/editor/entries', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ category: select.value, entry: entry })
+      }).then(function (result) {
+        say('Added "' + result.name + '".');
+        buildForm();
+        jsonText.value = '';
+        applyMode();
+        loadAdded();
+      }).catch(function (err) { say(err.message, true); });
+    });
+
+    select.addEventListener('change', function () { say(''); jsonText.value = ''; jsonToggle.checked = false; buildForm(); applyMode(); loadAdded(); });
+    jsonToggle.addEventListener('change', function () { if (jsonToggle.checked) jsonText.value = JSON.stringify(formToEntry(), null, 2); applyMode(); });
+    buildForm(); applyMode(); loadAdded();
+  })();
+  </script>
+</body>
+</html>
+{{end}}

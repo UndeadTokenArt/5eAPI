@@ -1,5 +1,10 @@
 package main
 
+import (
+	"encoding/json"
+	"strings"
+)
+
 type RootJSON struct {
 	Category CategoryData `json:"catagory"`
 }
@@ -133,6 +138,20 @@ type Class struct {
 	SlashingFlourish  string         `json:"slashing_flourish,omitempty"`
 	MobileFlourish    string         `json:"mobile_flourish,omitempty"`
 	Features          []ClassFeature `json:"features,omitempty"`
+	Subclasses        []Subclass     `json:"subclasses,omitempty"`
+}
+
+// Subclass is a specialisation nested inside its parent Class.
+type Subclass struct {
+	Name              string         `json:"name"`
+	Description       string         `json:"description,omitempty"`
+	Content           string         `json:"content,omitempty"`
+	Details           []string       `json:"details,omitempty"`
+	Focus             string         `json:"focus,omitempty"`
+	DefensiveFlourish string         `json:"defensive_flourish,omitempty"`
+	SlashingFlourish  string         `json:"slashing_flourish,omitempty"`
+	MobileFlourish    string         `json:"mobile_flourish,omitempty"`
+	Features          []ClassFeature `json:"features,omitempty"`
 }
 
 type ClassFeature struct {
@@ -199,4 +218,21 @@ type Condition struct {
 	FourLevel4  string   `json:"level_4,omitempty"`
 	FiveLevel5  string   `json:"level_5,omitempty"`
 	SixLevel6   string   `json:"level_6,omitempty"`
+}
+
+// UnmarshalJSON accepts a numeric level (1) as well as a string ("1") so hand edits don't break the guide.
+func (s *Spell) UnmarshalJSON(data []byte) error {
+	type plain Spell
+	aux := struct {
+		*plain
+		Level json.RawMessage `json:"level"`
+	}{plain: (*plain)(s)}
+	if err := json.Unmarshal(data, &aux); err != nil {
+		return err
+	}
+	s.Level = strings.Trim(strings.TrimSpace(string(aux.Level)), `"`)
+	if s.Level == "null" {
+		s.Level = ""
+	}
+	return nil
 }

@@ -1,0 +1,12 @@
+.account-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  margin-left: auto;
+  font: .85rem system-ui, sans-serif;
+  white-space: nowrap;
+}
+
+.account-nav[hidden] {
+  display: none;
+}

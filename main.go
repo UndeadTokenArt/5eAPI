@@ -36,6 +36,7 @@ var funcMap = template.FuncMap{
 var tmpl = pageTemplates
 
 func main() {
+	seedGuideDir()
 	mux := setupRouter()
 
 	log.Printf("D&D 5e SRD Interface → http://localhost%s", listenAddr)

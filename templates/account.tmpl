@@ -1,5 +1,5 @@
 {{define "account_nav"}}
-<span class="account-nav" data-account-nav hidden style="margin-left:auto;display:inline-flex;align-items:center;gap:.6rem;font:.85rem system-ui,sans-serif;white-space:nowrap">
+<span class="account-nav" data-account-nav hidden>
   <span data-account-label></span>
   <a data-account-link href="/characters"></a>
 </span>
@@ -9,6 +9,12 @@
   if (!box) return;
   fetch('/api/account', { credentials: 'same-origin' }).then(function (r) { return r.ok ? r.json() : null; }).then(function (info) {
     if (!info) return;
+    if (info.editor && !document.querySelector('a[href="/editor"]')) {
+      var editorLink = document.createElement('a');
+      editorLink.href = '/editor';
+      editorLink.textContent = 'Editor';
+      box.insertBefore(editorLink, box.firstChild);
+    }
     var label = box.querySelector('[data-account-label]');
     var link = box.querySelector('[data-account-link]');
     if (info.signed_in) {
@@ -23,7 +29,6 @@
       link.href = info.login_url || '/characters';
     }
     box.hidden = false;
-    box.style.display = 'inline-flex';
   }).catch(function () {});
 })();
 </script>

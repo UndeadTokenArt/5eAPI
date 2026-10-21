@@ -9,7 +9,7 @@ import (
 )
 
 func TestLoadJSONLoadsWrappedStarterGuide(t *testing.T) {
-	guide, err := loadJSON("static/data/neo_tokyo_starter_guide.json")
+	guide, err := loadGuideFromDir(builtinGuideDir)
 	if err != nil {
 		t.Fatalf("loadJSON returned error: %v", err)
 	}
@@ -102,11 +102,11 @@ func TestNeoTokyoUnknownCategoryReturnsNotFound(t *testing.T) {
 }
 
 func TestSpellReskinMetadataAddsClassAndLevel(t *testing.T) {
-	guide, err := loadJSON("static/data/neo_tokyo_starter_guide.json")
+	guide, err := loadGuideFromDir(builtinGuideDir)
 	if err != nil {
 		t.Fatalf("load guide: %v", err)
 	}
-	index, err := loadSpellReskinIndex("static/data/cyberpunk-class-and-spell-reskins.json")
+	index, err := loadSpellReskinIndex(referencePath("class-and-spell-reskins.json"))
 	if err != nil {
 		t.Fatalf("load spell index: %v", err)
 	}

@@ -1,0 +1,97 @@
+[
+  {
+    "name": "Shinto Spirit-Charm",
+    "price": "50 ¥",
+    "description": "A traditional wooden or paper talisman bound with fiber-optic wire, used as a holy focus."
+  },
+  {
+    "name": "Corporate ID Badge",
+    "price": "50 ¥",
+    "description": "A high-clearance smartcard displaying corporate seals, used by corporate mages to focus spells."
+  },
+  {
+    "name": "Encrypted Relic Chip",
+    "price": "50 ¥",
+    "description": "A data storage chip containing sacred digital scriptures and spirit-binding formulas."
+  },
+  {
+    "name": "Prismatic Optic Focus",
+    "price": "100 ¥",
+    "description": "A polished glass prism mounted in chrome, used to channel light and illusion spells."
+  },
+  {
+    "name": "Quantum Mana-Globe",
+    "price": "200 ¥",
+    "description": "A floating glass orb containing glowing plasma that reacts dynamically to spellcasting."
+  },
+  {
+    "name": "Laser Firing Rod",
+    "price": "100 ¥",
+    "description": "A slender metal rod tipped with a focusing lens that shoots focused energy when casting spells."
+  },
+  {
+    "name": "Biometric Conduit Wand",
+    "price": "100 ¥",
+    "description": "A polished metal wand that connects directly into a spellcaster's neural port."
+  },
+  {
+    "name": "Awakened Wood Focus",
+    "price": "100 ¥",
+    "description": "A wand crafted from spirit-infused wood harvested from sacred shrines in Kitsune-cho."
+  },
+  {
+    "name": "Spirit-Attuned Botanical Reagent",
+    "price": "10 ¥",
+    "description": "A fresh sprig of awakened flora used by street shamans to channel natural energy."
+  },
+  {
+    "name": "Cyber-Totem Icon",
+    "price": "10 ¥",
+    "description": "A small metallic or carved icon representing a street runner's personal spirit animal or totem."
+  },
+  {
+    "name": "Synth-Pipes",
+    "price": "300 ¥",
+    "description": "An electronic wind instrument that synthesizes bagpipe tones into high-energy synthwave audio."
+  },
+  {
+    "name": "Digital Beat-Pad",
+    "price": "60 ¥",
+    "description": "A handheld electronic drum machine used by street influencers to drop combat beats."
+  },
+  {
+    "name": "Laser-Harp",
+    "price": "250 ¥",
+    "description": "A frame that projects laser beams which emit musical notes when broken by fingertips."
+  },
+  {
+    "name": "Electronic Synth-Flute",
+    "price": "20 ¥",
+    "description": "A sleek metal flute equipped with digital pitch-shifters and audio effects."
+  },
+  {
+    "name": "Cyber-Lute",
+    "price": "350 ¥",
+    "description": "An electric stringed instrument featuring a built-in amplifier and holographic display."
+  },
+  {
+    "name": "Holographic Lyre",
+    "price": "300 ¥",
+    "description": "A handheld frame that projects glowing energy strings that chime when touched."
+  },
+  {
+    "name": "Sonic Pan-Flute",
+    "price": "120 ¥",
+    "description": "A compact electronic pipe array that emits multi-frequency acoustic waves."
+  },
+  {
+    "name": "Synthesizer Horn",
+    "price": "20 ¥",
+    "description": "A brass-plated electronic horn capable of broadcasting deafening fanfares across crowds."
+  },
+  {
+    "name": "Electric Viol",
+    "price": "300 ¥",
+    "description": "A sleek carbon-fiber violin fitted with neural jacks for direct audio streaming to HUDs."
+  }
+]

@@ -42,6 +42,7 @@ services:
     environment:
       CHARACTER_DATA_FILE: /app/data/characters.json
       CHARACTER_GUEST_ACCESS: "true"
+      NEOTOKYO_DATA_DIR: /app/data/neotokyo
       AUTHELIA_URL: https://login.undeadtoken.com
     volumes:
       - ./data/5etools:/app/data

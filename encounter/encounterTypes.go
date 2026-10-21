@@ -31,7 +31,6 @@ type LootItem struct {
 type EncounterResult struct {
 	Monsters   []EncounterMonster
 	Difficulty string
-	DiffColor  string
 	TotalXP    int
 	AdjustedXP int
 	XPPerPC    int

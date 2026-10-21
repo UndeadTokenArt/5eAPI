@@ -1,0 +1,210 @@
+[
+  {
+    "name": "Tactical & Ranged Combat Feats",
+    "features": [
+      {
+        "name": "Smart-Link Sniper",
+        "prerequisite": "Proficiency with ranged firearms or smart-weapons*",
+        "description": "Your ocular HUD target-lock and smart-link firearms allow you to make impossible precision strikes.",
+        "details": [
+          "Attacking at long range doesn't impose disadvantage on your ranged weapon attack rolls.",
+          "Your ranged weapon attacks ignore half cover and three-quarters cover.",
+          "Before you make a ranged attack with a weapon you are proficient with, you can choose to take a -5 penalty to the attack roll. If the attack hits, you add +10 to the attack's damage."
+        ],
+        "content": "Prerequisite: Proficiency with ranged firearms or smart-weapons\n* Your ocular HUD target-lock and smart-link firearms allow you to make impossible precision strikes.\n* Attacking at long range doesn't impose disadvantage on your ranged weapon attack rolls.\n* Your ranged weapon attacks ignore half cover and three-quarters cover.\n* Before you make a ranged attack with a weapon you are proficient with, you can choose to take a -5 penalty to the attack roll. If the attack hits, you add +10 to the attack's damage."
+      },
+      {
+        "name": "Reflex Gun-Fu Specialist",
+        "prerequisite": "Proficiency with handguns or light smart-weapons*",
+        "description": "You excel at high-speed close-quarters gunplay and reactive target cycling.",
+        "details": [
+          "Being within 5 feet of a hostile creature doesn't impose disadvantage on your ranged attack rolls.",
+          "When you take the Attack action and attack with a one-handed weapon, you can use a bonus action to make an attack with a light ranged weapon or sidearm you are holding.",
+          "When you score a critical hit with a sidearm, the target must succeed on a Constitution saving throw (DC \\= 8 + your DEX modifier + Proficiency Bonus) or suffer Optic Glitch (Blinded) until the start of your next turn."
+        ],
+        "content": "Prerequisite: Proficiency with handguns or light smart-weapons\n* You excel at high-speed close-quarters gunplay and reactive target cycling.\n* Being within 5 feet of a hostile creature doesn't impose disadvantage on your ranged attack rolls.\n* When you take the Attack action and attack with a one-handed weapon, you can use a bonus action to make an attack with a light ranged weapon or sidearm you are holding.\n* When you score a critical hit with a sidearm, the target must succeed on a Constitution saving throw (DC \\= 8 + your DEX modifier + Proficiency Bonus) or suffer Optic Glitch (Blinded) until the start of your next turn."
+      }
+    ]
+  },
+  {
+    "name": "Melee & Heavy Augmentation Feats",
+    "features": [
+      {
+        "name": "Hydraulic Breaker",
+        "prerequisite": "Proficiency with heavy melee weapons*",
+        "description": "You use high-torque myomer muscles and hydraulic limb drives to deliver crushing force.",
+        "details": [
+          "On your turn, when you score a critical hit with a melee weapon or reduce a creature to 0 Hit Points with one, you can make one melee weapon attack as a bonus action.",
+          "Before you make a melee attack with a heavy weapon you are proficient with, you can choose to take a -5 penalty to the attack roll. If the attack hits, you add +10 to the attack's damage."
+        ],
+        "content": "Prerequisite: Proficiency with heavy melee weapons\n* You use high-torque myomer muscles and hydraulic limb drives to deliver crushing force.\n* On your turn, when you score a critical hit with a melee weapon or reduce a creature to 0 Hit Points with one, you can make one melee weapon attack as a bonus action.\n* Before you make a melee attack with a heavy weapon you are proficient with, you can choose to take a -5 penalty to the attack roll. If the attack hits, you add +10 to the attack's damage."
+      },
+      {
+        "name": "Monomolecular Dual-Blader",
+        "prerequisite": "Dexterity 13 or higher*",
+        "description": "You master fluid high-frequency blade work with weapons in both hands.",
+        "details": [
+          "You gain a +1 bonus to AC while you are wielding a separate melee weapon in each hand.",
+          "You can use two-weapon fighting even when the one-handed melee weapons you are wielding aren't light.",
+          "You can draw or stow two one-handed weapons when you would normally be able to draw or stow only one."
+        ],
+        "content": "Prerequisite: Dexterity 13 or higher\n* You master fluid high-frequency blade work with weapons in both hands.\n* You gain a +1 bonus to AC while you are wielding a separate melee weapon in each hand.\n* You can use two-weapon fighting even when the one-handed melee weapons you are wielding aren't light.\n* You can draw or stow two one-handed weapons when you would normally be able to draw or stow only one."
+      }
+    ]
+  },
+  {
+    "name": "Defense & Physical Cyberware Feats",
+    "features": [
+      {
+        "name": "Sub-Dermal Reflex Booster",
+        "description": "Your nervous system is wired with military-grade reflex subroutines and predictive combat algorithms.",
+        "details": [
+          "You gain a +5 bonus to initiative rolls.",
+          "You can't be surprised while you are conscious.",
+          "Other creatures don't gain advantage on attack rolls against you as a result of being unseen by you."
+        ],
+        "content": "* Your nervous system is wired with military-grade reflex subroutines and predictive combat algorithms.\n* You gain a +5 bonus to initiative rolls.\n* You can't be surprised while you are conscious.\n* Other creatures don't gain advantage on attack rolls against you as a result of being unseen by you."
+      },
+      {
+        "name": "Heavy Alloy Exoskeleton Master",
+        "prerequisite": "Proficiency with heavy armor or powered exo-suits*",
+        "description": "Your physical form is enclosed in heavy corporate plating and kinetic shock-dampeners.",
+        "details": [
+          "Increase your Strength score by 1, to a maximum of 20.",
+          "While wearing heavy armor or powered exo-suits, non-magical and non-smart bludgeoning, piercing, and slashing damage that you take from physical kinetic attacks is reduced by 3."
+        ],
+        "content": "Prerequisite: Proficiency with heavy armor or powered exo-suits\n* Your physical form is enclosed in heavy corporate plating and kinetic shock-dampeners.\n* Increase your Strength score by 1, to a maximum of 20.\n* While wearing heavy armor or powered exo-suits, non-magical and non-smart bludgeoning, piercing, and slashing damage that you take from physical kinetic attacks is reduced by 3."
+      },
+      {
+        "name": "Hard-Light Aegis Master",
+        "prerequisite": "Proficiency with shields*",
+        "description": "You use hard-light wrist shields or tactical riot shields to dominate close-quarters engagements.",
+        "details": [
+          "You can use a bonus action to shove a creature within 5 feet of you using your shield.",
+          "If you aren't incapacitated, you can add your shield's AC bonus to any Dexterity saving throw you make against a spell, hack, or targeted single-source effect.",
+          "If you are subjected to an effect that allows you to make a Dexterity save to take half damage, you can use your reaction to take no damage if you succeed."
+        ],
+        "content": "Prerequisite: Proficiency with shields\n* You use hard-light wrist shields or tactical riot shields to dominate close-quarters engagements.\n* You can use a bonus action to shove a creature within 5 feet of you using your shield.\n* If you aren't incapacitated, you can add your shield's AC bonus to any Dexterity saving throw you make against a spell, hack, or targeted single-source effect.\n* If you are subjected to an effect that allows you to make a Dexterity save to take half damage, you can use your reaction to take no damage if you succeed."
+      }
+    ]
+  },
+  {
+    "name": "Matrix, Hacking & Technology Feats",
+    "features": [
+      {
+        "name": "Black ICE Counter-Hacker",
+        "description": "You specialize in neutralizing hostile deckers, corporate mages, and aggressive Matrix code.",
+        "details": [
+          "When a creature within 5 feet of you casts a spell or executes a hack, you can use your reaction to make a melee weapon attack against that creature.",
+          "When you deal damage to a creature that is concentrating on a spell or hack, that creature has disadvantage on the saving throw it makes to maintain its concentration.",
+          "You have advantage on saving throws against spells or hacks executed by creatures within 5 feet of you."
+        ],
+        "content": "* You specialize in neutralizing hostile deckers, corporate mages, and aggressive Matrix code.\n* When a creature within 5 feet of you casts a spell or executes a hack, you can use your reaction to make a melee weapon attack against that creature.\n* When you deal damage to a creature that is concentrating on a spell or hack, that creature has disadvantage on the saving throw it makes to maintain its concentration.\n* You have advantage on saving throws against spells or hacks executed by creatures within 5 feet of you."
+      },
+      {
+        "name": "Cross-Net Code Pirate",
+        "description": "You have pirated proprietary spell code and matrix routines from corporate servers.",
+        "details": [
+          "You learn two cantrips of your choice from the Corporate Decker / Cyber-Mage or Street Shaman / Bio-Tech Specialist spell list.",
+          "You learn one 1st-level spell from the same list. You can cast it once without expending a spell slot per long rest, or cast it using any spell slots you possess. Your spellcasting ability for these spells is Intelligence, Wisdom, or Charisma (chosen when taking this feat)."
+        ],
+        "content": "* You have pirated proprietary spell code and matrix routines from corporate servers.\n* You learn two cantrips of your choice from the Corporate Decker / Cyber-Mage or Street Shaman / Bio-Tech Specialist spell list.\n* You learn one 1st-level spell from the same list. You can cast it once without expending a spell slot per long rest, or cast it using any spell slots you possess. Your spellcasting ability for these spells is Intelligence, Wisdom, or Charisma (chosen when taking this feat)."
+      },
+      {
+        "name": "System Forensics Specialist",
+        "description": "Your mind processes environmental details, data trails, and biometric clues like a corporate investigator.",
+        "details": [
+          "Increase your Intelligence or Wisdom score by 1, to a maximum of 20.",
+          "You gain a +5 bonus to your passive Threat Scan (Perception) and passive System Forensics (Investigation) scores.",
+          "You can read lip movements or parse optical data transmissions across language barriers if you can see the target's face or optical transmitter."
+        ],
+        "content": "* Your mind processes environmental details, data trails, and biometric clues like a corporate investigator.\n* Increase your Intelligence or Wisdom score by 1, to a maximum of 20.\n* You gain a +5 bonus to your passive Threat Scan (Perception) and passive System Forensics (Investigation) scores.\n* You can read lip movements or parse optical data transmissions across language barriers if you can see the target's face or optical transmitter."
+      }
+    ]
+  },
+  {
+    "name": "Awakened Magic & Ley-Line Mastery Feats",
+    "features": [
+      {
+        "name": "Ley-Line Focus",
+        "prerequisite": "The ability to cast at least one spell or hack*",
+        "description": "You have trained your mind and neural ports to maintain complex spell formulas through heavy physical trauma.",
+        "details": [
+          "You have advantage on Constitution saving throws made to maintain concentration on a spell or hack when taking damage.",
+          "You can perform somatic spell components even when holding weapons or a shield in both hands.",
+          "When a hostile creature's movement triggers an opportunity attack from you, you can use your reaction to cast a spell or hack at the creature rather than making a weapon attack (must have a casting time of 1 action and target only that creature)."
+        ],
+        "content": "Prerequisite: The ability to cast at least one spell or hack\n* You have trained your mind and neural ports to maintain complex spell formulas through heavy physical trauma.\n* You have advantage on Constitution saving throws made to maintain concentration on a spell or hack when taking damage.\n* You can perform somatic spell components even when holding weapons or a shield in both hands.\n* When a hostile creature's movement triggers an opportunity attack from you, you can use your reaction to cast a spell or hack at the creature rather than making a weapon attack (must have a casting time of 1 action and target only that creature)."
+      },
+      {
+        "name": "Metamagic Gene-Overclock",
+        "prerequisite": "The ability to cast spells or channel mana*",
+        "description": "Your biological aura is mutated or modified to alter spell structures on the fly.",
+        "details": [
+          "You learn two Metamagic options of your choice from the Glitch-Born / Awakened Mutant class list.",
+          "You gain 2 Surge Points to spend on Metamagic subroutines (replenished on a long rest). If you already have Surge Points, these are added to your existing pool."
+        ],
+        "content": "Prerequisite: The ability to cast spells or channel mana\n* Your biological aura is mutated or modified to alter spell structures on the fly.\n* You learn two Metamagic options of your choice from the Glitch-Born / Awakened Mutant class list.\n* You gain 2 Surge Points to spend on Metamagic subroutines (replenished on a long rest). If you already have Surge Points, these are added to your existing pool."
+      }
+    ]
+  },
+  {
+    "name": "Infiltration, Survival & Field Medicine Feats",
+    "features": [
+      {
+        "name": "Vector Parkour Specialist",
+        "description": "You master urban verticality, scaling arcology walls and diving across rain-slicked rooftops effortlessly.",
+        "details": [
+          "Your movement speed increases by 10 feet.",
+          "When you take the Dash action, difficult terrain (such as flooded streets, fallen rubble, or barbed wire) costs you no extra movement for that turn.",
+          "When you make a melee attack against a creature, you don't provoke opportunity attacks from that creature for the rest of your turn, whether you hit or miss."
+        ],
+        "content": "* You master urban verticality, scaling arcology walls and diving across rain-slicked rooftops effortlessly.\n* Your movement speed increases by 10 feet.\n* When you take the Dash action, difficult terrain (such as flooded streets, fallen rubble, or barbed wire) costs you no extra movement for that turn.\n* When you make a melee attack against a creature, you don't provoke opportunity attacks from that creature for the rest of your turn, whether you hit or miss."
+      },
+      {
+        "name": "Ghost-Net Infiltrator",
+        "prerequisite": "Dexterity 13 or higher*",
+        "description": "You slip through optical camera feeds, thermal sensors, and dark alleyways completely undetected.",
+        "details": [
+          "You can attempt to hide when you are lightly obscured by optical smoke, acid fog, rain, or low-light glitch zones.",
+          "When you are hidden from a creature and miss it with a ranged attack, making the attack doesn't reveal your position.",
+          "Dim light or visual glitches don't impose disadvantage on your Threat Scan (Perception) checks relying on sight."
+        ],
+        "content": "Prerequisite: Dexterity 13 or higher\n* You slip through optical camera feeds, thermal sensors, and dark alleyways completely undetected.\n* You can attempt to hide when you are lightly obscured by optical smoke, acid fog, rain, or low-light glitch zones.\n* When you are hidden from a creature and miss it with a ranged attack, making the attack doesn't reveal your position.\n* Dim light or visual glitches don't impose disadvantage on your Threat Scan (Perception) checks relying on sight."
+      },
+      {
+        "name": "Street Doc Field Surgeon",
+        "description": "You know how to stabilize severe trauma, seal severed arteries, and patch fried cybernetics under fire.",
+        "details": [
+          "When you use a Trauma-Gel & Bio-Nanite Injector to stabilize a dying creature, that creature also regains 1 Hit Point.",
+          "As an action, you can spend one use of a trauma pack to tend to a creature and restore 1d6 + 4 Hit Points, plus additional Hit Points equal to the creature's maximum number of Hit Dice. A creature can't regain Hit Points from this feature again until it finishes a short or long rest."
+        ],
+        "content": "* You know how to stabilize severe trauma, seal severed arteries, and patch fried cybernetics under fire.\n* When you use a Trauma-Gel & Bio-Nanite Injector to stabilize a dying creature, that creature also regains 1 Hit Point.\n* As an action, you can spend one use of a trauma pack to tend to a creature and restore 1d6 + 4 Hit Points, plus additional Hit Points equal to the creature's maximum number of Hit Dice. A creature can't regain Hit Points from this feature again until it finishes a short or long rest."
+      }
+    ]
+  },
+  {
+    "name": "Corporate Espionage & Social Dominance Feats",
+    "features": [
+      {
+        "name": "Subliminal Manipulator",
+        "description": "You master non-verbal cues, voice modulation, and corporate social engineering.",
+        "details": [
+          "Increase your Charisma score by 1, to a maximum of 20.",
+          "You have advantage on Deep Fake (Deception) and Idol Presence (Performance) checks when attempting to pass yourself off as a corporate executive, security officer, or media personality.",
+          "You can mimic the speech patterns, vocal cadence, or voice modulation of another person or synthetic AI feed after listening to them for at least 1 minute."
+        ],
+        "content": "* You master non-verbal cues, voice modulation, and corporate social engineering.\n* Increase your Charisma score by 1, to a maximum of 20.\n* You have advantage on Deep Fake (Deception) and Idol Presence (Performance) checks when attempting to pass yourself off as a corporate executive, security officer, or media personality.\n* You can mimic the speech patterns, vocal cadence, or voice modulation of another person or synthetic AI feed after listening to them for at least 1 minute."
+      },
+      {
+        "name": "Neural Hardening",
+        "description": "Your nervous system or spiritual aura adapts to withstand specific physical or mental strains.",
+        "details": [
+          "Increase one ability score of your choice by 1, to a maximum of 20.",
+          "You gain proficiency in saving throws using the chosen ability score."
+        ],
+        "content": "* Your nervous system or spiritual aura adapts to withstand specific physical or mental strains.\n* Increase one ability score of your choice by 1, to a maximum of 20.\n* You gain proficiency in saving throws using the chosen ability score."
+      }
+    ]
+  }
+]
