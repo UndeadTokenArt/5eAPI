@@ -2,28 +2,79 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
 	"strings"
 )
 
 type RootJSON struct {
-	Category CategoryData `json:"catagory"`
+	Category         CategoryData     `json:"catagory"`
+	CustomCategories []CustomCategory `json:"-"`
 }
 
 type CategoryData struct {
-	Abilities                    []Ability    `json:"abilities,omitempty"`
-	Backgrounds                  []Background `json:"backgrounds,omitempty"`
-	Species                      []Species    `json:"species,omitempty"`
-	Classes                      []Class      `json:"classes,omitempty"`
-	Feats                        []Feat       `json:"feats,omitempty"`
-	AdventuringGearAndContainers []BasicItem  `json:"adventuring gear and containers,omitempty"`
-	ToolsKitsAndConsumables      []BasicItem  `json:"tools kits and consumables,omitempty"`
-	Ammunition                   []BasicItem  `json:"ammunition,omitempty"`
-	ArmorAndShields              []BasicItem  `json:"armor and shields,omitempty"`
-	MountsVehiclesAndHarnesses   []BasicItem  `json:"mounts vehicles and harnesses,omitempty"`
-	FociAndInstruments           []BasicItem  `json:"foci and instruments,omitempty"`
-	Weapons                      []Weapon     `json:"weapons,omitempty"`
-	Spells                       []Spell      `json:"spells,omitempty"`
-	Conditions                   []Condition  `json:"conditions,omitempty"`
+	Abilities                    []Ability                   `json:"abilities,omitempty"`
+	Backgrounds                  []Background                `json:"backgrounds,omitempty"`
+	Species                      []Species                   `json:"species,omitempty"`
+	Classes                      []Class                     `json:"classes,omitempty"`
+	Feats                        []Feat                      `json:"feats,omitempty"`
+	AdventuringGearAndContainers []BasicItem                 `json:"adventuring gear and containers,omitempty"`
+	ToolsKitsAndConsumables      []BasicItem                 `json:"tools kits and consumables,omitempty"`
+	Ammunition                   []BasicItem                 `json:"ammunition,omitempty"`
+	ArmorAndShields              []BasicItem                 `json:"armor and shields,omitempty"`
+	MountsVehiclesAndHarnesses   []BasicItem                 `json:"mounts vehicles and harnesses,omitempty"`
+	FociAndInstruments           []BasicItem                 `json:"foci and instruments,omitempty"`
+	Weapons                      []Weapon                    `json:"weapons,omitempty"`
+	Spells                       []Spell                     `json:"spells,omitempty"`
+	Conditions                   []Condition                 `json:"conditions,omitempty"`
+	Custom                       map[string][]map[string]any `json:"-"`
+}
+
+func (category *CategoryData) UnmarshalJSON(data []byte) error {
+	type knownCategories CategoryData
+	var known knownCategories
+	if err := json.Unmarshal(data, &known); err != nil {
+		return err
+	}
+	var raw map[string]json.RawMessage
+	if err := json.Unmarshal(data, &raw); err != nil {
+		return err
+	}
+	knownKeys := map[string]bool{
+		"abilities": true, "backgrounds": true, "species": true, "classes": true,
+		"feats": true, "adventuring gear and containers": true, "tools kits and consumables": true,
+		"ammunition": true, "armor and shields": true, "mounts vehicles and harnesses": true,
+		"foci and instruments": true, "weapons": true, "spells": true, "conditions": true,
+	}
+	custom := make(map[string][]map[string]any)
+	for key, value := range raw {
+		if knownKeys[key] {
+			continue
+		}
+		var entries []map[string]any
+		if err := json.Unmarshal(value, &entries); err != nil {
+			return fmt.Errorf("decode custom category %q: %w", key, err)
+		}
+		custom[key] = entries
+	}
+	*category = CategoryData(known)
+	category.Custom = custom
+	return nil
+}
+
+type CustomCategory struct {
+	Slug   string        `json:"slug"`
+	Title  string        `json:"title"`
+	Fields []CustomField `json:"fields"`
+}
+
+type CustomField struct {
+	Key     string `json:"key"`
+	Label   string `json:"label"`
+	Type    string `json:"type"`
+	Display string `json:"display"`
+	Size    string `json:"size"`
+	Bold    bool   `json:"bold,omitempty"`
+	Italic  bool   `json:"italic,omitempty"`
 }
 
 type StandardResponse struct {
@@ -51,6 +102,7 @@ type SectionNode struct {
 	ID           string         `json:"id,omitempty"`
 	Title        string         `json:"title"`
 	Subtitle     string         `json:"subtitle,omitempty"`
+	Image        string         `json:"image,omitempty"`
 	Description  string         `json:"description,omitempty"`
 	Content      string         `json:"content,omitempty"`
 	Tags         []string       `json:"tags,omitempty"`
@@ -58,11 +110,23 @@ type SectionNode struct {
 	Children     []SectionNode  `json:"children,omitempty"`
 	SpellLevel   int            `json:"spell_level,omitempty"`
 	SpellClasses []string       `json:"spell_classes,omitempty"`
+	Mechanics    string         `json:"-"`
+	IsSpell      bool           `json:"-"`
 	Tables       []SectionTable `json:"tables,omitempty"`
 	Links        []SectionLink  `json:"links,omitempty"`
+	CustomFields []SectionField `json:"custom_fields,omitempty"`
 
 	// Generated marks nodes computed from rules data rather than written in the guide.
 	Generated bool `json:"-"`
+}
+
+type SectionField struct {
+	Label   string
+	Value   string
+	Display string
+	Size    string
+	Bold    bool
+	Italic  bool
 }
 
 type SectionTable struct {
@@ -94,11 +158,13 @@ type SpellReskin struct {
 
 type Ability struct {
 	Name     string           `json:"name"`
+	Image    string           `json:"image,omitempty"`
 	Features []AbilityFeature `json:"features,omitempty"`
 }
 
 type AbilityFeature struct {
 	Name        string `json:"name"`
+	Image       string `json:"image,omitempty"`
 	Example     string `json:"example,omitempty"`
 	Description string `json:"description,omitempty"`
 	Content     string `json:"content,omitempty"`
@@ -106,6 +172,7 @@ type AbilityFeature struct {
 
 type Background struct {
 	Name                      string `json:"name"`
+	Image                     string `json:"image,omitempty"`
 	Description               string `json:"description,omitempty"`
 	Content                   string `json:"content,omitempty"`
 	SkillProficiencies        string `json:"skill_proficiencies,omitempty"`
@@ -117,6 +184,7 @@ type Background struct {
 
 type Species struct {
 	Name        string  `json:"name"`
+	Image       string  `json:"image,omitempty"`
 	Origin      string  `json:"origin,omitempty"`
 	Appearance  string  `json:"appearance,omitempty"`
 	CulturalFit string  `json:"cultural_fit,omitempty"`
@@ -125,11 +193,13 @@ type Species struct {
 
 type Trait struct {
 	Name        string `json:"name"`
+	Image       string `json:"image,omitempty"`
 	Description string `json:"description,omitempty"`
 }
 
 type Class struct {
 	Name              string         `json:"name"`
+	Image             string         `json:"image,omitempty"`
 	Description       string         `json:"description,omitempty"`
 	Content           string         `json:"content,omitempty"`
 	Details           []string       `json:"details,omitempty"`
@@ -144,6 +214,7 @@ type Class struct {
 // Subclass is a specialisation nested inside its parent Class.
 type Subclass struct {
 	Name              string         `json:"name"`
+	Image             string         `json:"image,omitempty"`
 	Description       string         `json:"description,omitempty"`
 	Content           string         `json:"content,omitempty"`
 	Details           []string       `json:"details,omitempty"`
@@ -156,6 +227,7 @@ type Subclass struct {
 
 type ClassFeature struct {
 	Name        string            `json:"name"`
+	Image       string            `json:"image,omitempty"`
 	Description string            `json:"description,omitempty"`
 	Content     string            `json:"content,omitempty"`
 	Features    []SubClassFeature `json:"features,omitempty"`
@@ -163,16 +235,19 @@ type ClassFeature struct {
 
 type SubClassFeature struct {
 	Name        string `json:"name"`
+	Image       string `json:"image,omitempty"`
 	Description string `json:"description,omitempty"`
 }
 
 type Feat struct {
 	Name     string        `json:"name"`
+	Image    string        `json:"image,omitempty"`
 	Features []FeatFeature `json:"features,omitempty"`
 }
 
 type FeatFeature struct {
 	Name         string   `json:"name"`
+	Image        string   `json:"image,omitempty"`
 	Description  string   `json:"description,omitempty"`
 	Content      string   `json:"content,omitempty"`
 	Details      []string `json:"details,omitempty"`
@@ -181,12 +256,14 @@ type FeatFeature struct {
 
 type BasicItem struct {
 	Name        string `json:"name"`
+	Image       string `json:"image,omitempty"`
 	Price       string `json:"price,omitempty"`
 	Description string `json:"description,omitempty"`
 }
 
 type Weapon struct {
 	Name        string `json:"name"`
+	Image       string `json:"image,omitempty"`
 	Price       string `json:"price,omitempty"`
 	Damage      string `json:"damage,omitempty"`
 	DamageType  string `json:"damage_type,omitempty"`
@@ -197,6 +274,7 @@ type Weapon struct {
 
 type Spell struct {
 	Name        string   `json:"name"`
+	Image       string   `json:"image,omitempty"`
 	Level       string   `json:"level,omitempty"`
 	School      string   `json:"school,omitempty"`
 	CastingTime string   `json:"casting_time,omitempty"`
@@ -209,6 +287,7 @@ type Spell struct {
 
 type Condition struct {
 	Name        string   `json:"name"`
+	Image       string   `json:"image,omitempty"`
 	Description string   `json:"description,omitempty"`
 	Content     string   `json:"content,omitempty"`
 	Details     []string `json:"details,omitempty"`

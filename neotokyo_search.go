@@ -68,6 +68,9 @@ func snippetOf(value string) string {
 func nodeBodyText(node SectionNode) string {
 	parts := []string{node.Subtitle, node.Description, node.Content}
 	parts = append(parts, node.Tags...)
+	for _, field := range node.CustomFields {
+		parts = append(parts, field.Label, field.Value)
+	}
 	keys := make([]string, 0, len(node.Attributes))
 	for key := range node.Attributes {
 		keys = append(keys, key)
@@ -89,6 +92,9 @@ func indexNodes(entries *[]searchEntry, nodes []SectionNode, category, base stri
 		snippet := node.Description
 		if snippet == "" {
 			snippet = node.Content
+		}
+		if snippet == "" && len(node.CustomFields) > 0 {
+			snippet = node.CustomFields[0].Value
 		}
 		*entries = append(*entries, searchEntry{
 			result: NeoTokyoSearchResult{
@@ -114,6 +120,13 @@ func buildSearchIndex(guide *StarterGuide) []searchEntry {
 			continue
 		}
 		// The category itself is a browse target; its children are the searchable entries.
+		indexNodes(&entries, node.Children, node.Title, base, []string{node.Title})
+	}
+	for _, category := range guide.CustomCategories {
+		sections := []SectionNode{mapCustomCategory(category, guide)}
+		assignSectionIDs(sections, "")
+		node := sections[0]
+		base := "/neotokyo/" + category.Slug + "#"
 		indexNodes(&entries, node.Children, node.Title, base, []string{node.Title})
 	}
 	return entries

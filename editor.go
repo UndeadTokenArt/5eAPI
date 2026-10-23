@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	htmltemplate "html/template"
 	"io"
 	"log"
 	"net/http"
@@ -122,13 +123,28 @@ var editorCategories = []editorCategory{
 	{"conditions", "Conditions", typedCheck(func(v *Condition) *string { return &v.Name })},
 }
 
-func editorCategoryFor(slug string) (editorCategory, bool) {
+func editorCategoryFor(slug string) (editorCategory, bool, error) {
 	for _, category := range editorCategories {
 		if category.Slug == slug {
-			return category, true
+			return category, true, nil
 		}
 	}
-	return editorCategory{}, false
+	guide, _, err := currentGuide()
+	if err != nil {
+		return editorCategory{}, false, err
+	}
+	for _, definition := range guide.CustomCategories {
+		if definition.Slug == slug {
+			category := editorCategory{
+				Slug: definition.Slug, Title: definition.Title,
+				check: func(raw json.RawMessage) (json.RawMessage, string, error) {
+					return validateCustomEntry(raw, definition)
+				},
+			}
+			return category, true, nil
+		}
+	}
+	return editorCategory{}, false, nil
 }
 
 func editorGroup() string {
@@ -217,16 +233,135 @@ func editorPageHandler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
 	w.Header().Set("Cache-Control", "no-store")
 	var classNames []string
-	if guide, _, err := currentGuide(); err == nil {
-		for _, class := range guide.Category.Classes {
-			classNames = append(classNames, class.Name)
-		}
+	guide, _, err := currentGuide()
+	if err != nil {
+		log.Println("editor guide load:", err)
+		http.Error(w, "Could not load guide data for editor", http.StatusInternalServerError)
+		return
 	}
-	data := map[string]any{"User": user, "Categories": editorCategories, "ClassNames": classNames}
+	categories := append([]editorCategory{}, editorCategories...)
+	for _, class := range guide.Category.Classes {
+		classNames = append(classNames, class.Name)
+	}
+	for _, definition := range guide.CustomCategories {
+		categories = append(categories, editorCategory{Slug: definition.Slug, Title: definition.Title})
+	}
+	categoryJSON, err := json.Marshal(guide.CustomCategories)
+	if err != nil {
+		log.Println("editor category JSON:", err)
+		http.Error(w, "Could not load custom categories", http.StatusInternalServerError)
+		return
+	}
+	data := map[string]any{
+		"User": user, "Categories": categories, "ClassNames": classNames,
+		"CategoryDefinitions": guide.CustomCategories,
+		"CustomCategories":    htmltemplate.JS(categoryJSON),
+	}
 	if err := tmpl.ExecuteTemplate(w, "editor", data); err != nil {
 		log.Println("editor page template error:", err)
 		http.Error(w, "Could not render editor", http.StatusInternalServerError)
 	}
+}
+
+func editorCategoriesHandler(w http.ResponseWriter, r *http.Request) {
+	user, ok := requireEditor(w, r)
+	if !ok {
+		return
+	}
+	w.Header().Set("Cache-Control", "no-store")
+	if r.Method == http.MethodGet {
+		guide, _, err := currentGuide()
+		if err != nil {
+			writeCharacterError(w, http.StatusInternalServerError, "Could not load guide categories.")
+			return
+		}
+		writeCharacterJSON(w, http.StatusOK, guide.CustomCategories)
+		return
+	}
+	if r.Method != http.MethodPost && r.Method != http.MethodPut {
+		w.Header().Set("Allow", "GET, POST, PUT")
+		writeCharacterError(w, http.StatusMethodNotAllowed, fmt.Sprintf("Method %s not allowed.", r.Method))
+		return
+	}
+	if !sameOriginMutation(w, r) {
+		return
+	}
+	if !strings.HasPrefix(r.Header.Get("Content-Type"), "application/json") {
+		writeCharacterError(w, http.StatusUnsupportedMediaType, "Expected application/json.")
+		return
+	}
+	r.Body = http.MaxBytesReader(w, r.Body, editorMaxBody)
+	raw, err := io.ReadAll(r.Body)
+	if err != nil {
+		writeCharacterError(w, http.StatusBadRequest, "Invalid category definition.")
+		return
+	}
+	category, err := decodeCustomCategory(raw)
+	if err != nil {
+		writeCharacterError(w, http.StatusBadRequest, "Invalid category definition.")
+		return
+	}
+	category, err = normalizeCustomCategory(category)
+	if err != nil {
+		writeCharacterError(w, http.StatusBadRequest, "Invalid category: "+err.Error())
+		return
+	}
+	if r.Method == http.MethodPut {
+		slug := r.PathValue("slug")
+		category.Slug = slug
+		category, err = normalizeCustomCategory(category)
+		if err != nil {
+			writeCharacterError(w, http.StatusBadRequest, "Invalid category: "+err.Error())
+			return
+		}
+	}
+	editorMu.Lock()
+	defer editorMu.Unlock()
+	existing, err := loadCustomCategoryDefinitions(guideDir())
+	if err != nil {
+		writeCharacterError(w, http.StatusInternalServerError, "Could not load existing category definitions.")
+		return
+	}
+	for _, definition := range existing {
+		if definition.Slug != category.Slug && normalizeCategory(definition.Title) == normalizeCategory(category.Title) {
+			writeCharacterError(w, http.StatusConflict, "A category with that title already exists.")
+			return
+		}
+	}
+	if r.Method == http.MethodPut {
+		found := false
+		for _, definition := range existing {
+			found = found || definition.Slug == category.Slug
+		}
+		if !found {
+			writeCharacterError(w, http.StatusNotFound, "Custom category not found.")
+			return
+		}
+		entries, err := readEditorEntries(category.Slug)
+		if err != nil {
+			writeCharacterError(w, http.StatusInternalServerError, "Could not read category entries.")
+			return
+		}
+		for index, entry := range entries {
+			if _, _, err := validateCustomEntry(entry, category); err != nil {
+				writeCharacterError(w, http.StatusConflict, fmt.Sprintf("Category changes would make entry %d invalid: %v. Update that entry first.", index+1, err))
+				return
+			}
+		}
+	}
+	if err := writeCustomCategoryDefinition(guideDir(), category); err != nil {
+		log.Printf("editor %s create category: %v", user, err)
+		writeCharacterError(w, http.StatusInternalServerError, "Could not save the category definition.")
+		return
+	}
+	invalidateGuideCache()
+	if r.Method == http.MethodPut {
+		log.Printf("editor %s updated category %q", user, category.Title)
+		writeCharacterJSON(w, http.StatusOK, category)
+		return
+	}
+	log.Printf("editor %s created category %q", user, category.Title)
+	writeCharacterJSON(w, http.StatusCreated, category)
 }
 
 func editorEntriesHandler(w http.ResponseWriter, r *http.Request) {
@@ -235,7 +370,11 @@ func editorEntriesHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	w.Header().Set("Cache-Control", "no-store")
-	category, found := editorCategoryFor(r.URL.Query().Get("category"))
+	category, found, categoryErr := editorCategoryFor(r.URL.Query().Get("category"))
+	if categoryErr != nil {
+		writeCharacterError(w, http.StatusInternalServerError, "Could not load guide categories.")
+		return
+	}
 	if r.Method != http.MethodGet {
 		if !sameOriginMutation(w, r) {
 			return
@@ -258,7 +397,11 @@ func editorEntriesHandler(w http.ResponseWriter, r *http.Request) {
 				writeCharacterError(w, http.StatusBadRequest, "Invalid request body.")
 				return
 			}
-			category, found = editorCategoryFor(body.Category)
+			category, found, categoryErr = editorCategoryFor(body.Category)
+			if categoryErr != nil {
+				writeCharacterError(w, http.StatusInternalServerError, "Could not load guide categories.")
+				return
+			}
 			if !found {
 				writeCharacterError(w, http.StatusBadRequest, "Unknown category.")
 				return
@@ -285,8 +428,59 @@ func editorEntriesHandler(w http.ResponseWriter, r *http.Request) {
 				writeCharacterError(w, http.StatusInternalServerError, "Could not save the entry. Is the data folder writable?")
 				return
 			}
+			invalidateGuideCache()
 			log.Printf("editor %s added %q to %s", user, name, category.Slug)
 			writeCharacterJSON(w, http.StatusCreated, map[string]any{"index": len(entries) - 1, "name": name})
+			return
+		}
+		if r.Method == http.MethodPut {
+			index, err := strconv.Atoi(r.URL.Query().Get("index"))
+			if err != nil || index < 0 {
+				writeCharacterError(w, http.StatusNotFound, "Entry not found.")
+				return
+			}
+			var body struct {
+				Category string          `json:"category"`
+				Entry    json.RawMessage `json:"entry"`
+			}
+			r.Body = http.MaxBytesReader(w, r.Body, editorMaxBody)
+			if !strings.HasPrefix(r.Header.Get("Content-Type"), "application/json") {
+				writeCharacterError(w, http.StatusUnsupportedMediaType, "Expected application/json.")
+				return
+			}
+			raw, err := io.ReadAll(r.Body)
+			if err == nil {
+				err = json.Unmarshal(raw, &body)
+			}
+			if err != nil || len(body.Entry) == 0 || body.Category != category.Slug {
+				writeCharacterError(w, http.StatusBadRequest, "Invalid request body.")
+				return
+			}
+			normalised, name, err := category.check(body.Entry)
+			if err != nil {
+				writeCharacterError(w, http.StatusBadRequest, "Invalid entry: "+err.Error())
+				return
+			}
+			editorMu.Lock()
+			defer editorMu.Unlock()
+			entries, err := readEditorEntries(category.Slug)
+			if err != nil {
+				writeCharacterError(w, http.StatusInternalServerError, "The existing additions file is unreadable: "+err.Error())
+				return
+			}
+			if index >= len(entries) {
+				writeCharacterError(w, http.StatusNotFound, "Entry not found.")
+				return
+			}
+			entries[index] = normalised
+			if err := writeEditorEntries(category.Slug, entries); err != nil {
+				log.Println("editor update:", err)
+				writeCharacterError(w, http.StatusInternalServerError, "Could not save the entry. Is the data folder writable?")
+				return
+			}
+			invalidateGuideCache()
+			log.Printf("editor %s updated %q in %s", user, name, category.Slug)
+			writeCharacterJSON(w, http.StatusOK, map[string]any{"index": index, "name": name})
 			return
 		}
 	}
@@ -326,10 +520,11 @@ func editorEntriesHandler(w http.ResponseWriter, r *http.Request) {
 			writeCharacterError(w, http.StatusInternalServerError, "Could not save the change.")
 			return
 		}
+		invalidateGuideCache()
 		log.Printf("editor %s removed addition %d from %s", user, index, category.Slug)
 		w.WriteHeader(http.StatusNoContent)
 	default:
-		w.Header().Set("Allow", "GET, POST, DELETE")
+		w.Header().Set("Allow", "GET, POST, PUT, DELETE")
 		writeCharacterError(w, http.StatusMethodNotAllowed, fmt.Sprintf("Method %s not allowed.", r.Method))
 	}
 }

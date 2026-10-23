@@ -141,7 +141,10 @@ func setupRouter() *http.ServeMux {
 	mux.HandleFunc("GET /{$}", homeHandler)
 	mux.HandleFunc("GET /api/account", accountHandler)
 	mux.HandleFunc("GET /editor", editorPageHandler)
-	for _, method := range []string{"GET", "POST", "DELETE"} {
+	mux.HandleFunc("GET /api/editor/categories", editorCategoriesHandler)
+	mux.HandleFunc("POST /api/editor/categories", editorCategoriesHandler)
+	mux.HandleFunc("PUT /api/editor/categories/{slug}", editorCategoriesHandler)
+	for _, method := range []string{"GET", "POST", "PUT", "DELETE"} {
 		mux.HandleFunc(method+" /api/editor/entries", editorEntriesHandler)
 	}
 	mux.HandleFunc("GET /characters", charactersPageHandler)

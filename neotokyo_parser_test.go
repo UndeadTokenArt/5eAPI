@@ -4,6 +4,7 @@ import (
 	"html"
 	"net/http"
 	"net/http/httptest"
+	"path/filepath"
 	"strings"
 	"testing"
 )
@@ -150,9 +151,104 @@ func TestNeoTokyoSpellsPageRendersClassAndLevelFilters(t *testing.T) {
 		`<option value="Wizard">Corporate Decker / Cyber-Mage</option>`,
 		`value="0">Cantrip`,
 		`data-spell-classes="Wizard,Artificer" data-spell-level="2"`,
+		`class="spell-text spell-description"`,
+		`<h3 class="spell-text-title">Description</h3>`,
+		`class="spell-text spell-mechanics"`,
+		`<h3 class="spell-text-title">Mechanics</h3>`,
 	} {
 		if !strings.Contains(body, expected) {
 			t.Errorf("spells page missing %q", expected)
 		}
 	}
+}
+
+func TestNeoTokyoEntryImagesRenderForTopLevelAndNestedItems(t *testing.T) {
+	dir := t.TempDir()
+	t.Setenv("NEOTOKYO_DATA_DIR", dir)
+	writeFile(t, filepath.Join(dir, "classes", "classes.json"), `[
+		{
+			"name":"Agent",
+			"image":"/images/agent.png",
+			"features":[{
+				"name":"Protocol",
+				"image":"/images/protocol.png",
+				"features":[{"name":"Subprotocol","image":"/images/subprotocol.png"}]
+			}],
+			"subclasses":[{
+				"name":"Ghost",
+				"image":"/images/ghost.png",
+				"features":[{"name":"Phase","image":"/images/phase.png"}]
+			}]
+		},
+		{"name":"No Icon","image":""}
+	]`)
+	writeFile(t, filepath.Join(dir, "spells", "spells.json"), `[{"name":"Signal Veil","image":"/images/signal-veil.png"}]`)
+	writeFile(t, filepath.Join(dir, "_reference", "class-and-spell-reskins.json"), `{"spells_reskin":[],"class_reskins":[]}`)
+	guideCache.Lock()
+	guideCache.loaded = false
+	guideCache.Unlock()
+
+	classes := httptest.NewRecorder()
+	setupRouter().ServeHTTP(classes, httptest.NewRequest(http.MethodGet, "/neotokyo/classes", nil))
+	if classes.Code != http.StatusOK {
+		t.Fatalf("classes status = %d: %s", classes.Code, classes.Body.String())
+	}
+	for _, image := range []string{"agent", "protocol", "subprotocol", "ghost", "phase"} {
+		if !strings.Contains(classes.Body.String(), `src="/images/`+image+`.png"`) {
+			t.Errorf("class page missing %s icon", image)
+		}
+	}
+	if strings.Contains(classes.Body.String(), `src=""`) {
+		t.Fatal("empty image URL should not render an icon")
+	}
+
+	spells := httptest.NewRecorder()
+	setupRouter().ServeHTTP(spells, httptest.NewRequest(http.MethodGet, "/neotokyo/spells", nil))
+	if spells.Code != http.StatusOK || !strings.Contains(spells.Body.String(), `src="/images/signal-veil.png"`) {
+		t.Fatalf("spell image did not render: status %d: %s", spells.Code, spells.Body.String())
+	}
+}
+
+func TestCategoryMappersRetainImages(t *testing.T) {
+	check := func(label string, node SectionNode, want string) {
+		t.Helper()
+		if node.Image != want {
+			t.Errorf("%s image = %q, want %q", label, node.Image, want)
+		}
+	}
+
+	abilities := mapAbilities([]Ability{{Name: "Ability", Image: "ability.png", Features: []AbilityFeature{{Name: "Feature", Image: "feature.png"}}}})
+	check("ability", abilities.Children[0], "ability.png")
+	check("ability feature", abilities.Children[0].Children[0], "feature.png")
+
+	backgrounds := mapBackgrounds([]Background{{Name: "Background", Image: "background.png"}})
+	check("background", backgrounds.Children[0], "background.png")
+
+	species := mapSpecies([]Species{{Name: "Species", Image: "species.png", Trait: []Trait{{Name: "Trait", Image: "trait.png"}}}})
+	check("species", species.Children[0], "species.png")
+	check("species trait", species.Children[0].Children[0], "trait.png")
+
+	classes := mapClasses([]Class{{
+		Name: "Class", Image: "class.png",
+		Features:   []ClassFeature{{Name: "Feature", Image: "feature.png", Features: []SubClassFeature{{Name: "Nested feature", Image: "nested.png"}}}},
+		Subclasses: []Subclass{{Name: "Subclass", Image: "subclass.png"}},
+	}})
+	class := classes.Children[0]
+	check("class", class, "class.png")
+	check("class feature", class.Children[0], "feature.png")
+	check("nested class feature", class.Children[0].Children[0], "nested.png")
+	check("subclass", class.Children[1].Children[0], "subclass.png")
+
+	feats := mapFeats([]Feat{{Name: "Feat", Image: "feat.png", Features: []FeatFeature{{Name: "Feat feature", Image: "feat-feature.png"}}}})
+	check("feat", feats.Children[0], "feat.png")
+	check("feat feature", feats.Children[0].Children[0], "feat-feature.png")
+
+	items, _ := mapBasicItems("Items", []BasicItem{{Name: "Item", Image: "item.png"}})
+	check("item", items.Children[0], "item.png")
+	weapons := mapWeapons([]Weapon{{Name: "Weapon", Image: "weapon.png"}})
+	check("weapon", weapons.Children[0], "weapon.png")
+	spells := mapSpells([]Spell{{Name: "Spell", Image: "spell.png"}})
+	check("spell", spells.Children[0], "spell.png")
+	conditions := mapConditions([]Condition{{Name: "Condition", Image: "condition.png"}})
+	check("condition", conditions.Children[0], "condition.png")
 }

@@ -6,11 +6,11 @@
     "cultural_fit": "Frequently serve as high-tier executive enforcers in Kōten*, heavy assault mercs, or guardians of dragon-owned ley-line assets.",
     "trait": [
       {
-        "name": "dermal_scale_weave_draconic_ancestry",
+        "name": "Dermal scale weave",
         "description": "Your scales provide natural kinetic shielding and elemental resistance (Fire, Lightning, Cold, Acid, or Bio-Tox/Poison)."
       },
       {
-        "name": "elemental_bio_discharge_breath_weapon",
+        "name": "Elemental Discharge Weapon",
         "description": "As an action, you vent a high-voltage EMP arc, plasma spray, or chemical spray in a 15-foot cone or 30-foot line (Dexterity or Constitution save; 2d6 damage scaling to 3d6, 4d6, 5d6)."
       }
     ]
@@ -22,15 +22,15 @@
     "cultural_fit": "Dominant in the heavy weapons foundries of Kurogane and logistics yards of Takamura Heavy, as well as back-alley cyber-surgery clinics in Yoru Market*.",
     "trait": [
       {
-        "name": "sub_dermal_density_dwarven_resilience",
+        "name": "BioToxin Resilience",
         "description": "Advantage on saving throws against Bio-Toxed (Poisoned) conditions and resistance to Poison/Bio-Tox damage."
       },
       {
-        "name": "thermal_optic_vision_darkvision",
+        "name": "Thermal Vision",
         "description": "Built-in low-light/thermal optics process dark alleyways and subterranean tunnels up to 60 feet."
       },
       {
-        "name": "cyber_tool_intuition_tool_proficiency",
+        "name": "Cyber Tool Proficiency",
         "description": "Double proficiency bonus on checks involving Arms & Cyberware Tech, Hardware Retrofitting, or Demolitions."
       }
     ]
@@ -42,15 +42,15 @@
     "cultural_fit": "Found in executive bio-domes in The Garden, media idol theaters in Neon Shinjuku, or guarding traditional shrines in Kitsune-cho*.",
     "trait": [
       {
-        "name": "optic_sensor_spectrum_keen_senses",
+        "name": "Keen Senses",
         "description": "Proficiency in Threat Scan (Perception)."
       },
       {
-        "name": "firewall_mind_fey_ancestry",
+        "name": "Mind Firewall",
         "description": "Advantage on saving throws against Subliminal Override (Charmed), and immune to magical/neural sleep commands."
       },
       {
-        "name": "high_bandwidth_trance_trance",
+        "name": "Trance",
         "description": "Instead of biological sleep, you enter a 4-hour deep neural defrag state, remaining semi-aware of local wireless pings."
       }
     ]
@@ -62,11 +62,11 @@
     "cultural_fit": "Thrives in the electronics graveyards of Akihabara Ruin, hacktivist cells in The 404s, or as hardware deckers in Yoru Market*.",
     "trait": [
       {
-        "name": "micro_tech_intuition_gnome_cunning",
+        "name": "Micro Tech Cunning",
         "description": "Advantage on all Intelligence, Wisdom, and Charisma saving throws against spell-hacks, Black ICE, and magical disruption."
       },
       {
-        "name": "hardware_engineer_artificer_s_lore_tinker",
+        "name": "Hardware Engeneering",
         "description": "Add double proficiency to checks made to analyze obsolete tech, jury-rig drones, or construct micro-gadgets."
       }
     ]
@@ -78,11 +78,11 @@
     "cultural_fit": "Ideal corporate liaisons, fixers, syndicate managers in The Velvet Dolls, and high-stakes brokers in Kōten*.",
     "trait": [
       {
-        "name": "adaptive_firmware_skill_versatility",
+        "name": "Skill Versatility",
         "description": "Proficiency in two skills of your choice."
       },
       {
-        "name": "dual_heritage_firewall_fey_ancestry",
+        "name": "Dual Heritage Mind Firewall",
         "description": "Advantage on saving throws against Subliminal Override (Charmed)."
       },
       {
@@ -98,15 +98,15 @@
     "cultural_fit": "Heavily populated among ex-military mercenaries in The Oni gang, private police forces in Aegis Tactical, and dockside street samurai in Chrome Harbor*.",
     "trait": [
       {
-        "name": "relentless_bio_stasis_relentless_endurance",
+        "name": "Relentless Endurance",
         "description": "When reduced to 0 Hit Points but not killed outright, internal bio-monitors drop you to 1 Hit Point instead (1/Long Rest)."
       },
       {
-        "name": "cyber_savage_strikes_savage_attacks",
+        "name": "Savage Attacks",
         "description": "When scoring a critical hit with a melee weapon, roll one of the weapon’s damage dice an additional time."
       },
       {
-        "name": "threatening_bulk_menacing",
+        "name": "Bulk Menacing",
         "description": "Proficiency in Threat Display (Intimidation)."
       }
     ]
@@ -118,36 +118,32 @@
     "cultural_fit": "Dominates courier routes on The Underline, smuggling operations in Mizu Ward, and back-alley trade in Yoru Market*.",
     "trait": [
       {
-        "name": "probability_glitch_lucky",
+        "name": "Probability Glitch",
         "description": "When you roll a 1 on an attack roll, ability check, or saving throw, you can reroll the die and must use the new roll."
       },
       {
-        "name": "low_profile_agility_nimble",
+        "name": "Nimble",
         "description": "You can move through the space of any creature that is of a size larger than you."
       },
       {
-        "name": "unshakeable_focus_brave",
+        "name": "Unshakeable Focus",
         "description": "Advantage on saving throws against Threat-Lock (Frightened)."
       }
     ]
   },
   {
-    "name": "Heavy-Augment Transhuman",
+    "name": "Augment Transhuman",
     "origin": "Baseline Homo sapiens who lack innate magical awakening, compensating by installing heavy cybernetics, neural ports, and corporate skill-chips.",
     "appearance": "Varied; ranging from un-augmented street refugees to chrome-covered street samurai and chrome-plated corporate suits.",
     "cultural_fit": "Found across all four layers of Neo-Tokyo—driving corporate boards, running street gangs, and operating as freelance shadow-runners.",
     "trait": [
       {
-        "name": "custom_cyber_suite_bonus_feat",
+        "name": "Bonus Feat",
         "description": "You start with one bonus Feat representing military cyberware, neural deck upgrades, or specialized corporate training."
       },
       {
         "name": "versatile_augmentation_1_to_two_stats_and_bonus_skill",
         "description": "Reflects rapid adaptability and technical customization."
-      },
-      {
-        "name": "",
-        "description": ""
       }
     ]
   },
@@ -158,15 +154,15 @@
     "cultural_fit": "Frequently cast out to the Undercity or drawn into Ghost Signal cults in Shiba Void and street gangs in The Neon Ronin*.",
     "trait": [
       {
-        "name": "hellfire_data_surge_infernal_legacy",
+        "name": "Hellfire Surge",
         "description": "You know the Neon Glitch cantrip. At 3rd level, you can execute Hellish Rebuke (as a high-voltage neural backlash), and at 5th level, Darkness (as an optical smoke/chaff spray) once per long rest."
       },
       {
-        "name": "thermal_resistance_hellish_resistance",
+        "name": "Thermal Resistance",
         "description": "You have resistance to Fire/Thermal damage."
       },
       {
-        "name": "akuma_optics_darkvision",
+        "name": "Thermal Vision",
         "description": "Thermal and low-light vision up to 60 feet."
       }
     ]
@@ -178,19 +174,19 @@
     "cultural_fit": "Concentrated heavily in the industrial foundries of Kurogane*, orbital elevator logistics in Kōten, heavy shipping docks in Chrome Harbor, and mercenary assault squads like The Oni .",
     "trait": [
       {
-        "name": "hydraulic_payload_frame_powerful_build",
+        "name": "Powerful Build",
         "description": "You count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift."
       },
       {
-        "name": "sub_dermal_kinetic_dampener_stone_s_endurance",
+        "name": "Kinetic Endurance",
         "description": "When you take damage, you can use your reaction to activate sub-dermal kinetic dispersion fields and roll a d12 + your Constitution modifier, reducing the incoming damage by that total. You can use this feature a number of times equal to your Proficiency Bonus per Long Rest."
       },
       {
-        "name": "arcology_climber_mountain_born",
+        "name": "Arcology Climber",
         "description": "You are naturally adapted to high altitudes (including upper atmospheric sky-arcologies in The Crown) and have natural resistance to extreme cold and high-altitude pressure drops."
       },
       {
-        "name": "heavy_utility_conditioning",
+        "name": "Utility Conditioning",
         "description": "You gain proficiency in Hydraulic Prowess (Athletics)"
       }
     ]

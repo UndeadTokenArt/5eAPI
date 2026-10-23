@@ -18,6 +18,25 @@
   <main>
     <h1>Guide editor</h1>
     <p class="muted">Signed in as {{.User}}. Entries you add are saved to the guide data folder (<code>zz-editor-additions.json</code> in each category) and appear in the guide, search and character sheet within a couple of seconds.</p>
+    <section class="panel category-builder" aria-labelledby="category-builder-title">
+      <h2 id="category-builder-title">Create a guide category</h2>
+      <p class="muted">Choose an existing custom category to edit its fields and display styles, or create a new one. Field keys are stored in entry JSON.</p>
+      <label for="category-to-edit">Existing custom category</label>
+      <select id="category-to-edit">
+        <option value="">Create a new category</option>
+        {{range .CategoryDefinitions}}<option value="{{.Slug}}">{{.Title}}</option>{{end}}
+      </select>
+      <label for="new-category-title">Category name</label>
+      <input id="new-category-title" maxlength="80" placeholder="e.g. Corporations">
+      <h3>Fields</h3>
+      <div id="category-fields"></div>
+      <div class="row">
+        <button type="button" id="add-category-field">Add field</button>
+        <button type="button" id="save-category">Create category</button>
+        <button type="button" id="cancel-category-edit" hidden>Cancel edit</button>
+      </div>
+      <div class="status" id="category-status" role="status" aria-live="polite"></div>
+    </section>
     <div class="panel">
       <label for="category">Category</label>
       <select id="category">{{range .Categories}}<option value="{{.Slug}}">{{.Title}}</option>{{end}}</select>
@@ -29,6 +48,7 @@
         </div>
         <div class="row">
           <button type="submit">Add entry</button>
+          <button type="button" id="cancel-entry-edit" hidden>Cancel edit</button>
           <label class="toggle" id="json-toggle-wrap"><input type="checkbox" id="json-toggle"> Edit as JSON</label>
         </div>
         <div class="status" id="status" role="status" aria-live="polite"></div>
@@ -42,6 +62,7 @@
   (function () {
     var F = function (key, label, kind, hint) { return { key: key, label: label, kind: kind || 'text', hint: hint }; };
     var CLASS_NAMES = {{.ClassNames}} || [];
+    var CUSTOM_CATEGORIES = {{.CustomCategories}} || [];
     var item = [F('name', 'Name'), F('price', 'Price'), F('description', 'Description', 'area')];
     var FORMS = {
       'adventuring-gear-and-containers': item, 'tools-kits-and-consumables': item, 'ammunition': item,
@@ -68,13 +89,31 @@
     var jsonText = document.getElementById('json-text');
     var jsonToggle = document.getElementById('json-toggle');
     var status = document.getElementById('status');
+    var submitEntryButton = document.querySelector('#entry-form button[type="submit"]');
+    var editingEntryIndex = null;
+    var entryFormBase = null;
 
     function say(message, bad) { status.textContent = message; status.className = 'status' + (bad ? ' error' : ''); }
-    function hasForm() { return !!FORMS[select.value]; }
+    function selectedCustomCategory() {
+      return CUSTOM_CATEGORIES.filter(function (category) { return category.slug === select.value; })[0] || null;
+    }
+    function hasForm() { return !!FORMS[select.value] || !!selectedCustomCategory(); }
+
+    function blankEntry() {
+      var category = selectedCustomCategory();
+      if (!category) return FORMS[select.value] ? formToEntry() : (JSON_TEMPLATES[select.value] || { name: '' });
+      var entry = { name: '' };
+      category.fields.forEach(function (field) { entry[field.key] = field.type === 'list' ? [] : ''; });
+      return entry;
+    }
 
     function buildForm() {
       fields.replaceChildren();
-      (FORMS[select.value] || []).forEach(function (field) {
+      var customCategory = selectedCustomCategory();
+      var formFields = FORMS[select.value] || (customCategory ? [F('name', 'Name')].concat(customCategory.fields.map(function (field) {
+        return F(field.key, field.label, field.type === 'textarea' ? 'area' : field.type);
+      })) : []);
+      formFields.forEach(function (field) {
         var wrap = document.createElement('div');
         if (field.kind === 'area') wrap.style.gridColumn = '1 / -1';
         var label = document.createElement('label');
@@ -93,13 +132,25 @@
     }
 
     function formToEntry() {
-      var entry = {};
+      var entry = Object.assign({}, entryFormBase || {});
       fields.querySelectorAll('[data-key]').forEach(function (input) {
         var value = input.value.trim();
-        if (!value) return;
+        if (!value) {
+          delete entry[input.dataset.key];
+          return;
+        }
         entry[input.dataset.key] = input.dataset.kind === 'list' ? value.split(',').map(function (part) { return part.trim(); }).filter(Boolean) : value;
       });
       return entry;
+    }
+
+    function populateEntryForm(value) {
+      entryFormBase = value;
+      buildForm();
+      fields.querySelectorAll('[data-key]').forEach(function (input) {
+        var fieldValue = value[input.dataset.key];
+        input.value = Array.isArray(fieldValue) ? fieldValue.join(', ') : (fieldValue == null ? '' : fieldValue);
+      });
     }
 
     function applyMode() {
@@ -109,7 +160,7 @@
       fields.hidden = showJson;
       jsonBox.hidden = !showJson;
       if (showJson && !jsonText.value.trim()) {
-        jsonText.value = JSON.stringify(form ? formToEntry() : (JSON_TEMPLATES[select.value] || { name: '' }), null, 2);
+        jsonText.value = JSON.stringify(form ? blankEntry() : (JSON_TEMPLATES[select.value] || { name: '' }), null, 2);
       }
     }
 
@@ -136,6 +187,20 @@
           row.className = 'added';
           var name = document.createElement('span');
           name.textContent = entry.name;
+          var edit = document.createElement('button');
+          edit.type = 'button';
+          edit.textContent = 'Edit';
+          edit.addEventListener('click', function () {
+            var value = entry.entry;
+            if (typeof value === 'string') value = JSON.parse(value);
+            editingEntryIndex = entry.index;
+            populateEntryForm(value);
+            jsonText.value = JSON.stringify(value, null, 2);
+            submitEntryButton.textContent = 'Save changes';
+            document.getElementById('cancel-entry-edit').hidden = false;
+            say('Editing "' + entry.name + '".');
+            document.getElementById('entry-form').scrollIntoView({ behavior: 'smooth', block: 'start' });
+          });
           var remove = document.createElement('button');
           remove.type = 'button';
           remove.className = 'danger';
@@ -145,7 +210,7 @@
             api('/api/editor/entries?category=' + encodeURIComponent(select.value) + '&index=' + entry.index, { method: 'DELETE' })
               .then(function () { say('Removed.'); loadAdded(); }).catch(function (err) { say(err.message, true); });
           });
-          row.append(name, remove);
+          row.append(name, edit, remove);
           list.appendChild(row);
         });
       }).catch(function (err) { say(err.message, true); });
@@ -157,12 +222,18 @@
       try {
         entry = (hasForm() && !jsonToggle.checked) ? formToEntry() : JSON.parse(jsonText.value);
       } catch (err) { say('That is not valid JSON: ' + err.message, true); return; }
-      api('/api/editor/entries', {
-        method: 'POST',
+      var editing = editingEntryIndex !== null;
+      var endpoint = '/api/editor/entries' + (editing ? '?category=' + encodeURIComponent(select.value) + '&index=' + editingEntryIndex : '');
+      api(endpoint, {
+        method: editing ? 'PUT' : 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ category: select.value, entry: entry })
       }).then(function (result) {
-        say('Added "' + result.name + '".');
+        say((editing ? 'Updated "' : 'Added "') + result.name + '".');
+        editingEntryIndex = null;
+        entryFormBase = null;
+        submitEntryButton.textContent = 'Add entry';
+        document.getElementById('cancel-entry-edit').hidden = true;
         buildForm();
         jsonText.value = '';
         applyMode();
@@ -170,8 +241,193 @@
       }).catch(function (err) { say(err.message, true); });
     });
 
-    select.addEventListener('change', function () { say(''); jsonText.value = ''; jsonToggle.checked = false; buildForm(); applyMode(); loadAdded(); });
-    jsonToggle.addEventListener('change', function () { if (jsonToggle.checked) jsonText.value = JSON.stringify(formToEntry(), null, 2); applyMode(); });
+    document.getElementById('cancel-entry-edit').addEventListener('click', function () {
+      editingEntryIndex = null;
+      entryFormBase = null;
+      submitEntryButton.textContent = 'Add entry';
+      this.hidden = true;
+      say('');
+      jsonText.value = '';
+      buildForm();
+      applyMode();
+    });
+    select.addEventListener('change', function () {
+      editingEntryIndex = null;
+      entryFormBase = null;
+      submitEntryButton.textContent = 'Add entry';
+      document.getElementById('cancel-entry-edit').hidden = true;
+      say('');
+      jsonText.value = '';
+      jsonToggle.checked = false;
+      buildForm(); applyMode(); loadAdded();
+    });
+    jsonToggle.addEventListener('change', function () {
+      if (jsonToggle.checked) {
+        var entry = editingEntryIndex !== null || entryFormBase ? formToEntry() : blankEntry();
+        jsonText.value = JSON.stringify(entry, null, 2);
+      } else {
+        try {
+          populateEntryForm(JSON.parse(jsonText.value));
+        } catch (err) {
+          say('That is not valid JSON: ' + err.message, true);
+          jsonToggle.checked = true;
+        }
+      }
+      applyMode();
+    });
+
+    var categoryFields = document.getElementById('category-fields');
+    var categoryStatus = document.getElementById('category-status');
+    var categoryEditorSelect = document.getElementById('category-to-edit');
+    var categoryTitleInput = document.getElementById('new-category-title');
+    var saveCategoryButton = document.getElementById('save-category');
+    var cancelCategoryEdit = document.getElementById('cancel-category-edit');
+    var categoryFieldCounter = 0;
+    var editingCategorySlug = null;
+    function categorySay(message, bad) {
+      categoryStatus.textContent = message;
+      categoryStatus.className = 'status' + (bad ? ' error' : '');
+    }
+    function categoryFieldRow() {
+      var row = document.createElement('div');
+      row.className = 'category-field-row';
+      function control(labelText, control) {
+        var wrap = document.createElement('div');
+        var label = document.createElement('label');
+        label.textContent = labelText;
+        label.htmlFor = control.id;
+        wrap.append(label, control);
+        return wrap;
+      }
+      function input() { return document.createElement('input'); }
+      function choice(options) {
+        var select = document.createElement('select');
+        options.forEach(function (option) { select.add(new Option(option[1], option[0])); });
+        return select;
+      }
+      var labelInput = input();
+      var keyInput = input();
+      keyInput.value = 'field';
+      keyInput.dataset.edited = 'false';
+      labelInput.addEventListener('input', function () {
+        if (keyInput.dataset.edited === 'true') return;
+        var key = labelInput.value.toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_+|_+$/g, '').slice(0, 40) || 'field';
+        keyInput.value = /^[a-z]/.test(key) ? key : 'field_' + key;
+      });
+      keyInput.addEventListener('input', function () { keyInput.dataset.edited = 'true'; });
+      var typeSelect = choice([['text', 'Single line'], ['textarea', 'Long text'], ['list', 'Comma-separated list']]);
+      var displaySelect = choice([['paragraph', 'Paragraph'], ['heading', 'Heading'], ['quote', 'Quote'], ['callout', 'Callout'], ['badge', 'Badge']]);
+      var sizeSelect = choice([['small', 'Small'], ['normal', 'Normal'], ['large', 'Large']]);
+      var bold = input();
+      bold.type = 'checkbox';
+      var italic = input();
+      italic.type = 'checkbox';
+      var remove = document.createElement('button');
+      remove.type = 'button';
+      remove.className = 'danger';
+      remove.textContent = 'Remove field';
+      remove.addEventListener('click', function () { row.remove(); });
+      var prefix = 'category-field-' + categoryFieldCounter++;
+      [labelInput, keyInput, typeSelect, displaySelect, sizeSelect, bold, italic].forEach(function (element, index) {
+        element.id = prefix + '-' + index;
+      });
+      row.append(
+        control('Field label', labelInput), control('JSON key', keyInput), control('Input type', typeSelect),
+        control('Display style', displaySelect), control('Text size', sizeSelect),
+        control('Bold', bold), control('Italic', italic), remove
+      );
+      row.dataset.field = 'true';
+      row._controls = { label: labelInput, key: keyInput, type: typeSelect, display: displaySelect, size: sizeSelect, bold: bold, italic: italic };
+      return row;
+    }
+    function readCategoryFields() {
+      return Array.prototype.map.call(categoryFields.querySelectorAll('[data-field]'), function (row) {
+        var field = row._controls;
+        return {
+          key: field.key.value.trim(), label: field.label.value.trim(), type: field.type.value,
+          display: field.display.value, size: field.size.value, bold: field.bold.checked, italic: field.italic.checked
+        };
+      });
+    }
+    function populateCategoryEditor(category) {
+      categoryTitleInput.value = category.title;
+      categoryFields.replaceChildren();
+      category.fields.forEach(function (field) {
+        var row = categoryFieldRow();
+        var controls = row._controls;
+        controls.label.value = field.label;
+        controls.key.value = field.key;
+        controls.key.dataset.edited = 'true';
+        controls.type.value = field.type;
+        controls.display.value = field.display;
+        controls.size.value = field.size;
+        controls.bold.checked = !!field.bold;
+        controls.italic.checked = !!field.italic;
+        categoryFields.appendChild(row);
+      });
+    }
+    function resetCategoryEditor() {
+      editingCategorySlug = null;
+      categoryEditorSelect.value = '';
+      categoryTitleInput.value = '';
+      categoryFields.replaceChildren(categoryFieldRow());
+      saveCategoryButton.textContent = 'Create category';
+      cancelCategoryEdit.hidden = true;
+      categorySay('');
+    }
+    categoryEditorSelect.addEventListener('change', function () {
+      var category = CUSTOM_CATEGORIES.filter(function (item) { return item.slug === this.value; }, this)[0];
+      if (!category) {
+        resetCategoryEditor();
+        return;
+      }
+      editingCategorySlug = category.slug;
+      populateCategoryEditor(category);
+      saveCategoryButton.textContent = 'Save category changes';
+      cancelCategoryEdit.hidden = false;
+      categorySay('Editing "' + category.title + '".');
+    });
+    cancelCategoryEdit.addEventListener('click', resetCategoryEditor);
+    document.getElementById('add-category-field').addEventListener('click', function () {
+      categoryFields.appendChild(categoryFieldRow());
+    });
+    document.getElementById('save-category').addEventListener('click', function () {
+      var definition = { title: document.getElementById('new-category-title').value.trim(), fields: readCategoryFields() };
+      var updating = editingCategorySlug !== null;
+      var endpoint = '/api/editor/categories' + (updating ? '/' + encodeURIComponent(editingCategorySlug) : '');
+      api(endpoint, {
+        method: updating ? 'PUT' : 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(definition)
+      }).then(function (saved) {
+        if (updating) {
+          var index = CUSTOM_CATEGORIES.findIndex(function (item) { return item.slug === saved.slug; });
+          if (index >= 0) CUSTOM_CATEGORIES[index] = saved;
+          var categoryOption = Array.prototype.filter.call(select.options, function (option) { return option.value === saved.slug; })[0];
+          if (categoryOption) categoryOption.textContent = saved.title;
+          var editOption = Array.prototype.filter.call(categoryEditorSelect.options, function (option) { return option.value === saved.slug; })[0];
+          if (editOption) editOption.textContent = saved.title;
+          categorySay('Updated "' + saved.title + '".');
+        } else {
+          CUSTOM_CATEGORIES.push(saved);
+          select.add(new Option(saved.title, saved.slug));
+          categoryEditorSelect.add(new Option(saved.title, saved.slug));
+          select.value = saved.slug;
+          categorySay('Created "' + saved.title + '".');
+        }
+        editingCategorySlug = null;
+        categoryEditorSelect.value = '';
+        categoryTitleInput.value = '';
+        categoryFields.replaceChildren(categoryFieldRow());
+        saveCategoryButton.textContent = 'Create category';
+        cancelCategoryEdit.hidden = true;
+        buildForm();
+        jsonText.value = '';
+        applyMode();
+        loadAdded();
+      }).catch(function (err) { categorySay(err.message, true); });
+    });
+    categoryFields.appendChild(categoryFieldRow());
     buildForm(); applyMode(); loadAdded();
   })();
   </script>

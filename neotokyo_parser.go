@@ -135,6 +135,14 @@ func buildResponse(data *StarterGuide, category string) *StandardResponse {
 				})
 			}
 		}
+		for _, category := range data.CustomCategories {
+			node := mapCustomCategory(category, data)
+			categories = append(categories, CategoryOption{
+				Title: category.Title,
+				Path:  "/neotokyo/" + category.Slug,
+				Count: len(node.Children),
+			})
+		}
 	} else {
 		node, ok := mapCategory(cleanCategory, data)
 		if ok {
@@ -271,7 +279,11 @@ func mapCategory(category string, data *StarterGuide) (SectionNode, bool) {
 		return mapConditions(data.Category.Conditions), true
 
 	default:
-		return SectionNode{}, false
+		customCategory, ok := customCategoryFor(data, category)
+		if !ok {
+			return SectionNode{}, false
+		}
+		return mapCustomCategory(customCategory, data), true
 	}
 }
 
@@ -284,6 +296,7 @@ func mapAbilities(abilities []Ability) SectionNode {
 		for _, feature := range ability.Features {
 			featureNodes = append(featureNodes, SectionNode{
 				Title:       feature.Name,
+				Image:       feature.Image,
 				Subtitle:    feature.Example,
 				Description: feature.Description,
 				Content:     feature.Content,
@@ -291,6 +304,7 @@ func mapAbilities(abilities []Ability) SectionNode {
 		}
 		children = append(children, SectionNode{
 			Title:    ability.Name,
+			Image:    ability.Image,
 			Children: featureNodes,
 		})
 	}
@@ -319,6 +333,7 @@ func mapBackgrounds(backgrounds []Background) SectionNode {
 		}
 		children = append(children, SectionNode{
 			Title:       background.Name,
+			Image:       background.Image,
 			Description: background.Description,
 			Content:     background.Content,
 			Attributes:  attributes,
@@ -334,11 +349,13 @@ func mapSpecies(speciesList []Species) SectionNode {
 		for _, trait := range species.Trait {
 			traitNodes = append(traitNodes, SectionNode{
 				Title:       trait.Name,
+				Image:       trait.Image,
 				Description: trait.Description,
 			})
 		}
 		children = append(children, SectionNode{
 			Title: species.Name,
+			Image: species.Image,
 			Attributes: map[string]any{
 				"origin":       species.Origin,
 				"appearance":   species.Appearance,
@@ -360,11 +377,13 @@ func mapClassFeatures(features []ClassFeature) []SectionNode {
 		for _, sf := range f.Features {
 			subFeatNodes = append(subFeatNodes, SectionNode{
 				Title:       sf.Name,
+				Image:       sf.Image,
 				Description: sf.Description,
 			})
 		}
 		nodes = append(nodes, SectionNode{
 			Title:       f.Name,
+			Image:       f.Image,
 			Description: f.Description,
 			Content:     f.Content,
 			Children:    subFeatNodes,
@@ -392,6 +411,7 @@ func mapClasses(classes []Class) SectionNode {
 			for _, sub := range c.Subclasses {
 				subNodes = append(subNodes, SectionNode{
 					Title:       sub.Name,
+					Image:       sub.Image,
 					Description: sub.Description,
 					Content:     sub.Content,
 					Tags:        sub.Details,
@@ -404,6 +424,7 @@ func mapClasses(classes []Class) SectionNode {
 
 		children = append(children, SectionNode{
 			Title:       c.Name,
+			Image:       c.Image,
 			Description: c.Description,
 			Content:     c.Content,
 			Tags:        c.Details,
@@ -425,6 +446,7 @@ func mapFeats(feats []Feat) SectionNode {
 			}
 			featNodes = append(featNodes, SectionNode{
 				Title:       f.Name,
+				Image:       f.Image,
 				Description: f.Description,
 				Content:     f.Content,
 				Tags:        f.Details,
@@ -433,6 +455,7 @@ func mapFeats(feats []Feat) SectionNode {
 		}
 		children = append(children, SectionNode{
 			Title:    ft.Name,
+			Image:    ft.Image,
 			Children: featNodes,
 		})
 	}
@@ -447,6 +470,7 @@ func mapBasicItems(title string, items []BasicItem) (SectionNode, bool) {
 	for _, item := range items {
 		children = append(children, SectionNode{
 			Title:       item.Name,
+			Image:       item.Image,
 			Description: item.Description,
 			Attributes: map[string]any{
 				"price": item.Price,
@@ -471,6 +495,7 @@ func mapWeapons(weapons []Weapon) SectionNode {
 		}
 		children = append(children, SectionNode{
 			Title:       w.Name,
+			Image:       w.Image,
 			Description: w.Description,
 			Attributes:  attrs,
 			Tags:        tags,
@@ -484,9 +509,11 @@ func mapSpells(spells []Spell) SectionNode {
 	for _, sp := range spells {
 		children = append(children, SectionNode{
 			Title:       sp.Name,
+			Image:       sp.Image,
 			Subtitle:    fmt.Sprintf("%s (%s)", sp.Level, sp.School),
 			Description: sp.Description,
-			Content:     sp.Mechanics,
+			Mechanics:   sp.Mechanics,
+			IsSpell:     true,
 			Tags:        sp.Components,
 			Attributes: map[string]any{
 				"casting_time": sp.CastingTime,
@@ -523,6 +550,7 @@ func mapConditions(conditions []Condition) SectionNode {
 
 		children = append(children, SectionNode{
 			Title:       cd.Name,
+			Image:       cd.Image,
 			Description: cd.Description,
 			Content:     cd.Content,
 			Tags:        cd.Details,

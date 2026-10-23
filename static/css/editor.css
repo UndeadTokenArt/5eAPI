@@ -17,6 +17,11 @@
     button { min-height:40px; padding:.5rem .9rem; border:1px solid var(--green); border-radius:4px; background:transparent; color:var(--green); font:600 .85rem system-ui,sans-serif; cursor:pointer; }
     button.danger { border-color:var(--red); color:var(--red); }
     .panel { padding:1rem; border:1px solid var(--line); border-radius:4px; background:var(--panel); }
+    .category-builder { margin-bottom:1rem; }
+    .category-field-row { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:.5rem .8rem; align-items:end; margin:.8rem 0; padding:.8rem; border:1px solid var(--line); border-radius:4px; background:var(--field); }
+    .category-field-row label { margin-top:0; }
+    .category-field-row input[type="checkbox"] { width:auto; min-height:40px; }
+    .category-field-row button { grid-column:1 / -1; justify-self:start; }
     .row { display:flex; flex-wrap:wrap; gap:.6rem; align-items:center; margin-top:1rem; }
     .toggle { display:flex; align-items:center; gap:.4rem; margin:0; text-transform:none; }
     .toggle input { width:auto; }

@@ -426,7 +426,7 @@
 {{if .Children}}
 <details class="section-node entry" id="{{.ID}}"{{if .SpellClasses}} data-spell-classes="{{range $index, $class := .SpellClasses}}{{if $index}},{{end}}{{$class}}{{end}}" data-spell-level="{{.SpellLevel}}"{{end}}>
   <summary class="node-header">
-    <h2 class="node-title">{{.Title}}</h2>
+    <h2 class="node-title">{{if .Image}}<img class="node-icon" src="{{.Image}}" alt="" aria-hidden="true" loading="lazy" decoding="async">{{end}}{{.Title}}</h2>
     {{if .Subtitle}}<span class="node-subtitle">{{.Subtitle}}</span>{{end}}
   </summary>
   <div class="entry-body">
@@ -437,7 +437,7 @@
 {{else}}
 <details class="section-node entry" id="{{.ID}}"{{if .SpellClasses}} data-spell-classes="{{range $index, $class := .SpellClasses}}{{if $index}},{{end}}{{$class}}{{end}}" data-spell-level="{{.SpellLevel}}"{{end}}>
   <summary class="node-header">
-    <h2 class="node-title">{{.Title}}</h2>
+    <h2 class="node-title">{{if .Image}}<img class="node-icon" src="{{.Image}}" alt="" aria-hidden="true" loading="lazy" decoding="async">{{end}}{{.Title}}</h2>
     {{if .Subtitle}}<span class="node-subtitle">{{.Subtitle}}</span>{{end}}
   </summary>
   <div class="entry-body">{{template "node_body" .}}</div>
@@ -448,7 +448,7 @@
 {{define "sub_node"}}
 <div class="section-node sub-node" id="{{.ID}}">
   <div class="node-header">
-    <h3 class="node-title">{{.Title}}</h3>
+    <h3 class="node-title">{{if .Image}}<img class="node-icon" src="{{.Image}}" alt="" aria-hidden="true" loading="lazy" decoding="async">{{end}}{{.Title}}</h3>
     {{if .Subtitle}}<span class="node-subtitle">{{.Subtitle}}</span>{{end}}
   </div>
   {{template "node_body" .}}
@@ -457,8 +457,35 @@
 {{end}}
 
 {{define "node_body"}}
-  {{if .Description}}<p class="node-description">{{.Description}}</p>{{end}}
-  {{if .Content}}<div class="node-content">{{.Content}}</div>{{end}}
+  {{if .IsSpell}}
+    {{if .Description}}
+      <section class="spell-text spell-description">
+        <h3 class="spell-text-title">Description</h3>
+        <p class="node-description">{{.Description}}</p>
+      </section>
+    {{end}}
+    {{if .Mechanics}}
+      <section class="spell-text spell-mechanics">
+        <h3 class="spell-text-title">Mechanics</h3>
+        <div class="node-content">{{.Mechanics}}</div>
+      </section>
+    {{end}}
+  {{else}}
+    {{if .Description}}<p class="node-description">{{.Description}}</p>{{end}}
+    {{if .Content}}<div class="node-content">{{.Content}}</div>{{end}}
+  {{end}}
+  {{range .CustomFields}}
+    <div class="custom-field custom-field-{{.Display}} custom-field-size-{{.Size}}{{if .Bold}} custom-field-bold{{end}}{{if .Italic}} custom-field-italic{{end}}">
+      <span class="custom-field-label">{{.Label}}</span>
+      {{if eq .Display "badge"}}
+        <span class="custom-field-value">{{.Value}}</span>
+      {{else if eq .Display "quote"}}
+        <blockquote class="custom-field-value">{{.Value}}</blockquote>
+      {{else}}
+        <div class="custom-field-value">{{.Value}}</div>
+      {{end}}
+    </div>
+  {{end}}
   {{if .Tags}}
     <div class="node-tags">{{range .Tags}}<span class="tag-chip">{{.}}</span>{{end}}</div>
   {{end}}

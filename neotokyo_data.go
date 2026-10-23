@@ -161,6 +161,10 @@ func loadGuideFromDir(dir string) (*StarterGuide, error) {
 	if err := json.Unmarshal(combined, &guide); err != nil {
 		return nil, fmt.Errorf("decode guide data: %w", err)
 	}
+	guide.CustomCategories, err = loadCustomCategoryDefinitions(dir)
+	if err != nil {
+		return nil, err
+	}
 	attachSubclassAdditions(&guide, subclassAdditions)
 	return &guide, nil
 }
@@ -210,6 +214,12 @@ var guideCache struct {
 	checkedAt time.Time
 	loaded    bool
 	dir       string
+}
+
+func invalidateGuideCache() {
+	guideCache.Lock()
+	guideCache.checkedAt = time.Time{}
+	guideCache.Unlock()
 }
 
 // currentGuide returns the guide data, reloading it when files in the folder changed.
