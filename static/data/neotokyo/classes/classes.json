@@ -1,9 +1,9 @@
 [
   {
-    "name": "Street Samurai / Corporate Enforcer",
+    "name": "Corporate Enforcer",
     "features": [
       {
-        "name": "Core Street Samurai / Corporate Enforcer Class Features"
+        "name": "Core Corporate Enforcer Class Features"
       },
       {
         "name": "1. Combat Augment Protocol (Level 1)",
@@ -184,7 +184,7 @@
     ]
   },
   {
-    "name": "Street Shaman / Bio-Tech Specialist",
+    "name": "Bio-Tech Specialist",
     "features": [
       {
         "name": "1. Spellcasting: Spirit Conduit",
@@ -338,7 +338,7 @@
     ]
   },
   {
-    "name": "Street Operative / Decker / Infiltrator",
+    "name": "Decker",
     "features": [
       {
         "name": "Specialized Firmware (Levels 1 & 6)",
@@ -540,7 +540,7 @@
     ]
   },
   {
-    "name": "Aegis Corporate Enforcer / Vow-Bound Operative",
+    "name": "Vow-Bound Operative",
     "features": [
       {
         "name": "1. Threat-Sense Sweep (Level 1)",
@@ -812,7 +812,7 @@
     ]
   },
   {
-    "name": "Corporate Decker / Cyber-Mage",
+    "name": "Cyber-Mage",
     "features": [
       {
         "name": "1. Spellcasting: Arcane Algorithms & Data-Decks",
@@ -938,7 +938,7 @@
     ]
   },
   {
-    "name": "Cyber-Monk / Kinetic Acrobat",
+    "name": "Kinetic Acrobat",
     "features": [
       {
         "name": "1. Kinetic Reflex Weave (Level 1)",
@@ -1191,7 +1191,7 @@
     ]
   },
   {
-    "name": "Glitch-Born / Awakened Mutant",
+    "name": "Awakened Mutant",
     "features": [
       {
         "name": "1. Spellcasting: Innate Mana Surge",
@@ -1350,7 +1350,7 @@
     ]
   },
   {
-    "name": "Corporate Pact Agent / AI Host",
+    "name": "AI Host",
     "features": [
       {
         "name": "1. Contracting Entity (Otherworldly Patron - Level 1)",
@@ -1504,7 +1504,7 @@
     ]
   },
   {
-    "name": "Neon Idol / Net-Hype",
+    "name": "Net-Hype",
     "features": [
       {
         "name": "1. Spellcasting: Mesh Broadcast & Neural Tuning",
@@ -1656,7 +1656,7 @@
     ]
   },
   {
-    "name": "Urban Hunter / Recon Drone Master",
+    "name": "Recon Drone Master",
     "features": [
       {
         "name": "1. Specialized Contract Target (Level 1)",

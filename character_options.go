@@ -20,6 +20,7 @@ type CharacterOption struct {
 	Detail string          `json:"detail,omitempty"`
 	Group  string          `json:"group,omitempty"`
 	Link   string          `json:"link,omitempty"`
+	Tip    string          `json:"tip,omitempty"`
 	Notes  []CharacterNote `json:"notes,omitempty"`
 
 	Spellcasting *Spellcasting   `json:"spellcasting,omitempty"`
@@ -241,6 +242,7 @@ func buildCharacterOptions(guide *StarterGuide) CharacterOptions {
 			Name:   w.Name,
 			Detail: joinNonEmpty(", ", joinNonEmpty(" ", w.Damage, w.DamageType), w.Attribute, w.Tag),
 			Link:   itemLink(base, childID(node, i)),
+			Tip:    weaponTip(w),
 		})
 	}
 
@@ -256,6 +258,7 @@ func buildCharacterOptions(guide *StarterGuide) CharacterOptions {
 			Name:   sp.Name,
 			Detail: joinNonEmpty(", ", sp.Level, sp.School, sp.CastingTime, sp.Range),
 			Link:   itemLink(base, childID(node, i)),
+			Tip:    spellTip(sp),
 		}
 		if level, err := strconv.Atoi(strings.TrimSpace(sp.Level)); err == nil {
 			option.SpellLevel = &level
@@ -321,6 +324,33 @@ func characterOptionsHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 // equipmentDetail pairs an item's price with its description so the sheet shows both.
+// weaponTip is the hover text for a weapon: damage and damage type first.
+func weaponTip(w Weapon) string {
+	lines := []string{}
+	if damage := joinNonEmpty(" ", w.Damage, w.DamageType); damage != "" {
+		lines = append(lines, "Damage: "+damage)
+	}
+	if w.Attribute != "" {
+		lines = append(lines, "Attribute: "+w.Attribute)
+	}
+	if w.Tag != "" && !strings.EqualFold(w.Tag, "none") {
+		lines = append(lines, "Properties: "+w.Tag)
+	}
+	return strings.Join(lines, "\n")
+}
+
+// spellTip is the hover text for a spell: its mechanics, not its flavour description.
+func spellTip(sp Spell) string {
+	lines := []string{}
+	if head := joinNonEmpty(", ", sp.Level, sp.School, sp.CastingTime, sp.Range, sp.Duration); head != "" {
+		lines = append(lines, head)
+	}
+	if sp.Mechanics != "" {
+		lines = append(lines, sp.Mechanics)
+	}
+	return strings.Join(lines, "\n")
+}
+
 func equipmentDetail(item BasicItem) string {
 	price := strings.TrimSpace(item.Price)
 	if price != "" {

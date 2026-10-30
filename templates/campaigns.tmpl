@@ -1,0 +1,108 @@
+{{define "campaigns"}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campaigns | D&amp;D 5e SRD</title>
+  <link rel="stylesheet" href="/static/css/characters.css">
+  <link rel="stylesheet" href="/static/css/account.css">
+  <link rel="stylesheet" href="/static/css/campaign.css">
+  <link rel="stylesheet" href="/static/css/areas.css">
+</head>
+<body class="area-campaign">
+  <nav class="sheet-nav" aria-label="Main navigation">
+    <a class="sheet-brand" href="/">D&amp;D 5e SRD</a>
+    <span class="area-tag">Campaign</span>
+    <a href="/neotokyo">NeoTokyo</a>
+    <a href="/characters">Characters</a>
+    <a href="/campaigns" aria-current="page">Campaigns</a>
+    {{template "account_nav" .}}
+  </nav>
+  <main class="sheet-page campaign-page" id="campaign-root" data-mode="{{.Mode}}" data-campaign-id="{{.CampaignID}}" data-join-token="{{.JoinToken}}">
+    <header class="page-head">
+      <h1 id="campaign-title">Campaigns</h1>
+      <div class="account">{{if .Guest}}{{.User}}{{else}}Signed in as {{.User}}{{end}}</div>
+    </header>
+    <div id="campaign-status" class="status" role="status" aria-live="polite"></div>
+
+    <section id="campaign-list" class="sheet-section" hidden>
+      <form id="campaign-create" class="campaign-create">
+        <div class="field"><label for="campaign-name">New campaign name</label><input id="campaign-name" maxlength="80" required></div>
+        <button class="primary" type="submit">Create campaign</button>
+      </form>
+      <ul id="campaign-items" class="campaign-items"></ul>
+    </section>
+
+    <section id="campaign-join" class="sheet-section" hidden>
+      <p id="join-intro"></p>
+      <div id="join-characters" class="join-characters"></div>
+      <button id="join-submit" class="primary" type="button">Join campaign</button>
+    </section>
+
+    <section id="campaign-view" hidden>
+      <div class="campaign-bar">
+        <div id="connection" class="connection" aria-live="polite">Connecting…</div>
+        <div id="share-box" class="share-box" hidden>
+          <input id="share-link" readonly aria-label="Join link">
+          <button id="share-copy" type="button">Copy join link</button>
+        </div>
+        <button id="campaign-leave" class="danger" type="button" hidden>Delete campaign</button>
+      </div>
+      <p class="expiry" id="expiry"></p>
+      <section id="gm-dropbox" class="sheet-section gm-dropbox" hidden>
+        <h2>Campaign dropbox</h2>
+        <ul id="dropbox-items" class="dropbox-items"></ul>
+        <p id="dropbox-empty" class="muted">Dropbox is empty.</p>
+        <p>Yen: <strong id="dropbox-yen">0</strong></p>
+        <form id="dropbox-add" class="dropbox-add">
+          <div class="field dropbox-item-search"><label for="dropbox-item-name">Item or equipment</label><input id="dropbox-item-name" maxlength="150" placeholder="Search equipment or enter a custom item" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="dropbox-item-suggestions">
+            <ul id="dropbox-item-suggestions" class="dropbox-item-suggestions" role="listbox" hidden></ul></div>
+          <div class="field"><label for="dropbox-item-quantity">Quantity</label><input id="dropbox-item-quantity" type="number" min="1" max="9999" value="1" required></div>
+          <div class="field"><label for="dropbox-add-yen">Add Yen</label><input id="dropbox-add-yen" type="number" min="0" max="999999999" value="0"></div>
+          <button type="submit">Add to dropbox</button>
+        </form>
+        <form id="loot-generator" class="loot-generator">
+          <div class="field"><label for="loot-cr">Generate loot for CR</label><input id="loot-cr" type="number" min="0" max="30" step="0.125" value="1" required></div>
+          <button type="submit">Generate loot</button>
+          <small>CR 0–4: 1–2 items and 1–20 × 10 Yen; CR 5–10: 1–3 items and 1–20 × 50 Yen; CR 11–16: 2–4 items and 1–20 × 100 Yen; CR 17+: 3–5 items and 1–20 × 250 Yen.</small>
+        </form>
+        <form id="dropbox-send" class="dropbox-send">
+          <div class="field"><label for="dropbox-recipient">Send to character</label><select id="dropbox-recipient" required></select></div>
+          <button id="dropbox-clear" class="danger" type="button">Empty dropbox</button>
+          <button class="primary" type="submit">Send delivery</button>
+        </form>
+      </section>
+      <div class="campaign-layout">
+        <div>
+          <h2>Party</h2>
+          <ol id="party" class="party"></ol>
+          <p id="party-empty" class="muted" hidden>No characters have joined yet.</p>
+          <form id="npc-form" class="npc-form" hidden>
+            <div class="field npc-search"><label for="npc-name">Add non-player entity</label><input id="npc-name" maxlength="80" placeholder="Search the catalog or type a custom name" autocomplete="off" role="combobox" aria-expanded="false" aria-controls="npc-suggestions" required>
+              <ul id="npc-suggestions" class="npc-suggestions" role="listbox" hidden></ul></div>
+            <div class="field"><label for="npc-hp">HP</label><input id="npc-hp" type="number" min="0" max="9999" placeholder="HP"></div>
+            <button type="submit">Add to initiative</button>
+          </form>
+        </div>
+        <aside>
+          <div id="dice-roller" class="dice-roller" hidden>
+            <h2>Roll dice</h2>
+            <div class="field"><label for="roll-as">Roll as</label><select id="roll-as"></select></div>
+            <div id="dice-tray" class="dice-tray" role="group" aria-label="Dice"></div>
+            <p id="dice-hand" class="muted" aria-live="polite"></p>
+            <div class="dice-actions"><button id="dice-roll" class="primary" type="button">Roll</button><button id="dice-clear" type="button">Clear hand</button></div>
+          </div>
+          <h2>Dice history</h2>
+          <ol id="dice-log" class="dice-log" aria-live="polite"></ol>
+          <p id="dice-empty" class="muted">No rolls yet. Roll from a character sheet that has joined this campaign.</p>
+        </aside>
+      </div>
+    </section>
+  </main>
+  <footer>Campaigns share only name, species, class, HP, AC, initiative, conditions, cyber strain, portrait and dice rolls.</footer>
+  <script src="/static/js/swipe-nav.js"></script>
+  <script src="/static/js/campaign.js"></script>
+</body>
+</html>
+{{end}}

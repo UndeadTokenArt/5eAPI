@@ -173,7 +173,7 @@ var neoTokyoCategoryNames = []string{
 	"Abilities", "Backgrounds", "Species", "Classes", "Feats",
 	"Adventuring Gear & Containers", "Tools, Kits & Consumables", "Ammunition",
 	"Weapons", "Armor & Shields", "Mounts, Vehicles & Harnesses", "Foci & Instruments",
-	"Spells", "Conditions",
+	"Spells", "Conditions", "Non-Player Entities",
 }
 
 func categorySlug(category string) string {
@@ -277,6 +277,12 @@ func mapCategory(category string, data *StarterGuide) (SectionNode, bool) {
 			return SectionNode{}, false
 		}
 		return mapConditions(data.Category.Conditions), true
+
+	case "non player entities":
+		if len(data.Category.NonPlayerEntities) == 0 {
+			return SectionNode{}, false
+		}
+		return mapNonPlayerEntities(data.Category.NonPlayerEntities), true
 
 	default:
 		customCategory, ok := customCategoryFor(data, category)

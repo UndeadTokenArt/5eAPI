@@ -2,6 +2,7 @@
 {{ define "NeoTokyo_css" }}
 <link rel="stylesheet" href="/static/css/neotokyo.css">
 <link rel="stylesheet" href="/static/css/account.css">
+<link rel="stylesheet" href="/static/css/areas.css">
 {{end}}
 
 
@@ -15,11 +16,13 @@
 <title>{{if .CurrentCategory}}{{.CurrentCategory}} | {{end}}NeoTokyo Starter Guide</title>
 {{template "NeoTokyo_css" .}}
 </head>
-<body>
+<body class="area-wiki">
 <nav class="sheet-nav" aria-label="Main navigation">
   <a class="sheet-brand" href="/">D&amp;D 5e SRD</a>
+  <span class="area-tag">Wiki</span>
   <a href="/neotokyo"{{if not .CurrentCategory}} aria-current="page"{{end}}>NeoTokyo</a>
   <a href="/characters">Characters</a>
+  <a href="/campaigns">Campaigns</a>
   {{template "account_nav" .}}
 </nav>
 

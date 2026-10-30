@@ -16,7 +16,7 @@
     },
     {
       "original_class": "Bard",
-      "reskinned_class": "Neon Idol / Net-Hype",
+      "reskinned_class": "Net-Hype",
       "primary_role": "Social Manipulation, Subliminal Buffs, & Mesh Broadcasting",
       "description": "Media influencers, pirate broadcasters, and acoustic manipulators who use subliminal audio frequencies and neural hype tracks to control the battlefield."
     },
@@ -28,55 +28,55 @@
     },
     {
       "original_class": "Druid",
-      "reskinned_class": "Street Shaman / Bio-Tech Specialist",
+      "reskinned_class": "Bio-Tech Specialist",
       "primary_role": "Awakened Flora/Fauna Control, Bio-Drone Mutagenesis, & Environmental Manipulation",
       "description": "Spiritual mediums and geneticists who commune with urban critters, manipulate mutated city flora, and morph into apex bio-drones."
     },
     {
       "original_class": "Fighter",
-      "reskinned_class": "Street Samurai / Corporate Enforcer",
+      "reskinned_class": "Corporate Enforcer",
       "primary_role": "Weapon Mastery, Tactical Precision, & Kinetic Combat",
       "description": "Elites trained in smart-linked firearms, monomolecular blades, and tactical neural reflex boosters for close-quarters warfare."
     },
     {
       "original_class": "Monk",
-      "reskinned_class": "Cyber-Monk / Kinetic Acrobat",
+      "reskinned_class": "Kinetic Acrobat",
       "primary_role": "High-Speed Unarmed Strikes, Reflex Evasion, & Sub-Dermal Qi",
       "description": "Martial artists utilizing high-torque servo-limbs, sub-dermal kinetic discharge, and neural speed routines to bypass heavy armor."
     },
     {
       "original_class": "Paladin",
-      "reskinned_class": "Aegis Corporate Enforcer / Vow-Bound Operative",
+      "reskinned_class": "Vow-Bound Operative",
       "primary_role": "Frontline Aegis Shielding, Smite Discharges, & Directive Auras",
       "description": "Armored enforcers bound by corporate contracts or street codes who channel high-voltage smite bursts through their weapon suites."
     },
     {
       "original_class": "Ranger",
-      "reskinned_class": "Urban Hunter / Recon Drone Master",
+      "reskinned_class": "Recon Drone Master",
       "primary_role": "Target Tracking, Reconnaissance, & Sniper Operations",
       "description": "Scouts and snipers who track targets across Neo-Tokyo vertical layers using smart-link tags, thermal optics, and scout drones."
     },
     {
       "original_class": "Rogue",
-      "reskinned_class": "Street Operative / Decker / Infiltrator",
+      "reskinned_class": "Decker",
       "primary_role": "Stealth Infiltration, Mag-Lock Bypassing, & Critical Glitch Strikes",
       "description": "Infiltrators and data thieves who slip past corporate security, bypass mag-locks, and deal lethal precision damage."
     },
     {
       "original_class": "Sorcerer",
-      "reskinned_class": "Glitch-Born / Awakened Mutant",
+      "reskinned_class": "Awakened Mutant",
       "primary_role": "Innate Mana-Surge, Code Mutation, & Arcane Overclocking",
       "description": "Individuals possessing natural spellcasting from Ghost Signal exposure, lab mutations, or raw mana channel overclocks."
     },
     {
       "original_class": "Warlock",
-      "reskinned_class": "Corporate Pact Agent / AI Host",
+      "reskinned_class": "AI Host",
       "primary_role": "Eldritch Code Discharges, AI Subroutines, & Patron Exploits",
       "description": "Operatives who trade their neural autonomy to rogue AIs, dragon banks, or extra-dimensional corporate boards for dark code abilities."
     },
     {
       "original_class": "Wizard",
-      "reskinned_class": "Corporate Decker / Cyber-Mage",
+      "reskinned_class": "Cyber-Mage",
       "primary_role": "High-Tech Code Scripting, Matrix Warfare, & Prepared Subroutines",
       "description": "Master programmers and spell casters who encode complex spell subroutines into cyberdecks, optical arrays, and neural focuses."
     }

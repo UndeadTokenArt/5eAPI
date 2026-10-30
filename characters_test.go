@@ -87,7 +87,7 @@ func TestCharacterPageRendersForAutheliaUser(t *testing.T) {
 	if got := recorder.Header().Get("Content-Type"); got != "text/html; charset=utf-8" {
 		t.Fatalf("character page content-type = %q", got)
 	}
-	for _, expected := range []string{"Character Sheets", "Signed in as alice", "Save as PDF", "Ability scores", "Weapons", "Spells", "Feats", "Equipment"} {
+	for _, expected := range []string{"Character Sheets", "Signed in as alice", "Save as PDF", "Ability scores", "Weapons", "Spells", "Feats", "Inventory"} {
 		if !strings.Contains(recorder.Body.String(), expected) {
 			t.Errorf("character page missing %q", expected)
 		}

@@ -1,0 +1,13 @@
+/* Area themes: the wiki, character sheets and campaigns each get their own accent so users can tell where they are.
+   Loaded after each page's own stylesheet; every page colours its accents through --green, so overriding it recolours the area. */
+body.area-wiki      { --green:#9fc777; --green-bright:#b3d78f; --nav-label:'Wiki'; }
+body.area-character { --green:#6cb8e8; --green-bright:#92cdf2; --nav-label:'Character sheet';
+                      --page:#0e1318; --panel:#151c24; --panel-raised:#1b2430; --field:#0f151b; --line:#30404e; --muted:#9fb0bf; }
+body.area-campaign  { --green:#c792ea; --green-bright:#d8aef2; --nav-label:'Campaign';
+                      --page:#130f19; --panel:#1b1624; --panel-raised:#231c2f; --field:#110d17; --line:#43364f; --muted:#b0a5bd; }
+
+.sheet-nav { border-top:4px solid var(--green); }
+.sheet-nav a[aria-current="page"] { padding:.15rem .6rem; border-radius:999px; background:color-mix(in srgb, var(--green) 18%, transparent); color:var(--green); font-weight:700; }
+.area-tag { padding:.1rem .55rem; border:1px solid var(--green); border-radius:4px; color:var(--green); font:700 .7rem system-ui, sans-serif; letter-spacing:.08em; text-transform:uppercase; white-space:nowrap; }
+.sheet-brand { margin-right:0; }
+.sheet-nav .area-tag { margin-right:auto; }

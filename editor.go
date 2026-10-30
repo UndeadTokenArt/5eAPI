@@ -121,6 +121,7 @@ var editorCategories = []editorCategory{
 	{"foci-and-instruments", "Foci & Instruments", typedCheck(func(v *BasicItem) *string { return &v.Name })},
 	{"spells", "Spells", typedCheck(func(v *Spell) *string { return &v.Name })},
 	{"conditions", "Conditions", typedCheck(func(v *Condition) *string { return &v.Name })},
+	{"non-player-entities", "Non-Player Entities", typedCheck(func(v *NonPlayerEntity) *string { return &v.Name })},
 }
 
 func editorCategoryFor(slug string) (editorCategory, bool, error) {

@@ -12,6 +12,7 @@ RUN apk add --no-cache ca-certificates
 WORKDIR /app
 ENV CHARACTER_DATA_FILE=/app/data/characters.json
 ENV NEOTOKYO_DATA_DIR=/app/data/neotokyo
+ENV CAMPAIGN_DATA_FILE=/app/data/campaigns.json
 
 COPY --from=builder /out/dnd5e /usr/local/bin/dnd5e
 COPY --from=builder /src/static ./static

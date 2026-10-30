@@ -10,7 +10,7 @@ func TestAegisEnforcerHasChannelDivinity(t *testing.T) {
 	var found *CharacterOption
 	opts := buildCharacterOptions(guide)
 	for i := range opts.Classes {
-		if opts.Classes[i].Name == "Aegis Corporate Enforcer / Vow-Bound Operative" {
+		if opts.Classes[i].Name == "Vow-Bound Operative" {
 			found = &opts.Classes[i]
 		}
 	}

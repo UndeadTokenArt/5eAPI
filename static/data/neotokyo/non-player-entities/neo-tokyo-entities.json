@@ -1,0 +1,479 @@
+[
+  {
+    "actions": [
+      {
+        "actions": [],
+        "attack_bonus": 5,
+        "damage": [
+          {
+            "damage_dice": "1d8+3",
+            "damage_type": {
+              "index": "piercing",
+              "name": "Piercing",
+              "url": "/api/2014/damage-types/piercing"
+            }
+          }
+        ],
+        "desc": "Ranged Weapon Attack: +5 to hit, range 30/60 ft., one target in or out of water. Hit: 7 (1d8 + 3) piercing damage.",
+        "name": "Micro-Torpedo Launcher"
+      },
+      {
+        "actions": [],
+        "attack_bonus": 5,
+        "damage": [
+          {
+            "damage_dice": "1d6+3",
+            "damage_type": {
+              "index": "piercing",
+              "name": "Piercing",
+              "url": "/api/2014/damage-types/piercing"
+            }
+          }
+        ],
+        "desc": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 6 (1d6 + 3) piercing damage.",
+        "name": "Saw-Blade Mandibles"
+      }
+    ],
+    "alignment": "unaligned",
+    "armor_class": [
+      {
+        "type": "natural",
+        "value": 15
+      }
+    ],
+    "challenge_rating": 1,
+    "charisma": 3,
+    "condition_immunities": [
+      {
+        "index": "charmed",
+        "name": "Charmed",
+        "url": "/api/2014/conditions/charmed"
+      },
+      {
+        "index": "poisoned",
+        "name": "Poisoned",
+        "url": "/api/2014/conditions/poisoned"
+      }
+    ],
+    "constitution": 12,
+    "damage_immunities": [
+      {
+        "index": "poison",
+        "name": "Poison",
+        "url": "/api/2014/damage-types/poison"
+      }
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [
+      {
+        "index": "lightning",
+        "name": "Lightning",
+        "url": "/api/2014/damage-types/lightning"
+      }
+    ],
+    "dexterity": 16,
+    "forms": [],
+    "hit_dice": "6d8",
+    "hit_points": 33,
+    "hit_points_roll": "6d8+6",
+    "image": "/api/images/monsters/aegis-barracuda-drone.png",
+    "index": "aegis-barracuda-drone",
+    "intelligence": 4,
+    "languages": "",
+    "legendary_actions": [],
+    "name": "Aegis Barracuda Drone",
+    "proficiencies": [],
+    "proficiency_bonus": 2,
+    "reactions": [],
+    "senses": {
+      "darkvision": "60 ft.",
+      "passive_perception": 13
+    },
+    "size": "Medium",
+    "special_abilities": [
+      {
+        "damage": [],
+        "desc": "The drone can navigate and operate seamlessly both underwater and in the air.",
+        "name": "Amphibious System"
+      },
+      {
+        "damage": [],
+        "desc": "The drone has advantage on attack rolls against a creature if at least one of the drone's allies is within 5 feet of the creature and the ally isn't incapacitated.",
+        "name": "Targeting Network"
+      }
+    ],
+    "speed": {
+      "fly": "20 ft. (hover)",
+      "swim": "40 ft."
+    },
+    "strength": 12,
+    "type": "construct",
+    "updated_at": "2026-10-25T11:57:37.000Z",
+    "url": "/api/2014/monsters/aegis-barracuda-drone",
+    "wisdom": 12,
+    "xp": 200
+  },
+  {
+    "actions": [
+      {
+        "actions": [],
+        "attack_bonus": 4,
+        "damage": [
+          {
+            "damage_dice": "1d6+2",
+            "damage_type": {
+              "index": "piercing",
+              "name": "Piercing",
+              "url": "/api/2014/damage-types/piercing"
+            }
+          },
+          {
+            "damage_dice": "1d4",
+            "damage_type": {
+              "index": "acid",
+              "name": "Acid",
+              "url": "/api/2014/damage-types/acid"
+            }
+          }
+        ],
+        "desc": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) piercing damage plus 2 (1d4) acid damage, and the lamprey attaches to the target.",
+        "name": "Acidic Latch Bite"
+      }
+    ],
+    "alignment": "unaligned",
+    "armor_class": [
+      {
+        "type": "natural",
+        "value": 13
+      }
+    ],
+    "challenge_rating": 0.5,
+    "charisma": 3,
+    "condition_immunities": [],
+    "constitution": 13,
+    "damage_immunities": [],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "dexterity": 14,
+    "forms": [],
+    "hit_dice": "4d8",
+    "hit_points": 22,
+    "hit_points_roll": "4d8+4",
+    "image": "/api/images/monsters/mutated-canal-lamprey.png",
+    "index": "mutated-canal-lamprey",
+    "intelligence": 2,
+    "languages": "",
+    "legendary_actions": [],
+    "name": "Mutated Canal Lamprey",
+    "proficiencies": [],
+    "proficiency_bonus": 2,
+    "reactions": [],
+    "senses": {
+      "blindsight": "30 ft.",
+      "passive_perception": 10
+    },
+    "size": "Medium",
+    "special_abilities": [
+      {
+        "damage": [],
+        "desc": "The lamprey can breathe only underwater.",
+        "name": "Water Breathing"
+      }
+    ],
+    "speed": {
+      "swim": "40 ft.",
+      "walk": "5 ft."
+    },
+    "strength": 14,
+    "type": "monstrosity",
+    "updated_at": "2026-10-25T11:57:37.000Z",
+    "url": "/api/2014/monsters/mutated-canal-lamprey",
+    "wisdom": 10,
+    "xp": 100
+  },
+  {
+    "actions": [
+      {
+        "actions": [],
+        "attack_bonus": 4,
+        "damage": [
+          {
+            "damage_dice": "1d6+2",
+            "damage_type": {
+              "index": "slashing",
+              "name": "Slashing",
+              "url": "/api/2014/damage-types/slashing"
+            }
+          }
+        ],
+        "desc": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) slashing damage.",
+        "name": "Plasma Arc Welder"
+      },
+      {
+        "actions": [],
+        "attack_bonus": 0,
+        "damage": [
+          {
+            "damage_dice": "2d6",
+            "damage_type": {
+              "index": "lightning",
+              "name": "Lightning",
+              "url": "/api/2014/damage-types/lightning"
+            }
+          }
+        ],
+        "desc": "The bot releases a burst of electrical energy into surrounding water or damp air. Each creature within 10 feet must make a DC 12 Dexterity saving throw, taking 7 (2d6) lightning damage on a failed save, or half as much on a success.",
+        "name": "Discharge Pulse"
+      }
+    ],
+    "alignment": "unaligned",
+    "armor_class": [
+      {
+        "type": "natural",
+        "value": 16
+      }
+    ],
+    "challenge_rating": 1,
+    "charisma": 2,
+    "condition_immunities": [
+      {
+        "index": "charmed",
+        "name": "Charmed",
+        "url": "/api/2014/conditions/charmed"
+      },
+      {
+        "index": "poisoned",
+        "name": "Poisoned",
+        "url": "/api/2014/conditions/poisoned"
+      }
+    ],
+    "constitution": 14,
+    "damage_immunities": [
+      {
+        "index": "poison",
+        "name": "Poison",
+        "url": "/api/2014/damage-types/poison"
+      }
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [
+      {
+        "index": "lightning",
+        "name": "Lightning",
+        "url": "/api/2014/damage-types/lightning"
+      }
+    ],
+    "dexterity": 14,
+    "forms": [],
+    "hit_dice": "5d6",
+    "hit_points": 27,
+    "hit_points_roll": "5d6+10",
+    "image": "/api/images/monsters/izanagi-silt-scavenger-bot.png",
+    "index": "izanagi-silt-scavenger-bot",
+    "intelligence": 3,
+    "languages": "",
+    "legendary_actions": [],
+    "name": "Izanagi Silt-Scavenger Bot",
+    "proficiencies": [],
+    "proficiency_bonus": 2,
+    "reactions": [],
+    "senses": {
+      "darkvision": "60 ft.",
+      "passive_perception": 10
+    },
+    "size": "Small",
+    "special_abilities": [
+      {
+        "damage": [],
+        "desc": "The bot can climb difficult surfaces, including upside down on catwalk ceilings, without needing an ability check.",
+        "name": "Spider Climb"
+      }
+    ],
+    "speed": {
+      "climb": "20 ft.",
+      "swim": "30 ft.",
+      "walk": "20 ft."
+    },
+    "strength": 12,
+    "type": "construct",
+    "updated_at": "2026-10-25T11:57:37.000Z",
+    "url": "/api/2014/monsters/izanagi-silt-scavenger-bot",
+    "wisdom": 11,
+    "xp": 200
+  },
+  {
+    "actions": [
+      {
+        "actions": [],
+        "attack_bonus": 4,
+        "damage": [
+          {
+            "damage_dice": "2d6+2",
+            "damage_type": {
+              "index": "piercing",
+              "name": "Piercing",
+              "url": "/api/2014/damage-types/piercing"
+            }
+          }
+        ],
+        "desc": "Ranged Weapon Attack: +4 to hit, range 40/120 ft., one target. Hit: 9 (2d6 + 2) piercing damage.",
+        "name": "Jury-Rigged Nail Cannon"
+      }
+    ],
+    "alignment": "unaligned",
+    "armor_class": [
+      {
+        "type": "natural",
+        "value": 14
+      }
+    ],
+    "challenge_rating": 2,
+    "charisma": 1,
+    "condition_immunities": [
+      {
+        "index": "charmed",
+        "name": "Charmed",
+        "url": "/api/2014/conditions/charmed"
+      },
+      {
+        "index": "poisoned",
+        "name": "Poisoned",
+        "url": "/api/2014/conditions/poisoned"
+      }
+    ],
+    "constitution": 14,
+    "damage_immunities": [
+      {
+        "index": "poison",
+        "name": "Poison",
+        "url": "/api/2014/damage-types/poison"
+      }
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [
+      {
+        "index": "lightning",
+        "name": "Lightning",
+        "url": "/api/2014/damage-types/lightning"
+      }
+    ],
+    "dexterity": 15,
+    "forms": [],
+    "hit_dice": "7d8",
+    "hit_points": 45,
+    "hit_points_roll": "7d8+14",
+    "image": "/api/images/monsters/scrap-tinker-skimmer-drone.png",
+    "index": "scrap-tinker-skimmer-drone",
+    "intelligence": 3,
+    "languages": "",
+    "legendary_actions": [],
+    "name": "Scrap-Tinker Skimmer Drone",
+    "proficiencies": [],
+    "proficiency_bonus": 2,
+    "reactions": [],
+    "senses": {
+      "darkvision": "60 ft.",
+      "passive_perception": 10
+    },
+    "size": "Medium",
+    "special_abilities": [
+      {
+        "damage": [],
+        "desc": "The skimmer drone can walk across water and liquid surfaces without sinking.",
+        "name": "Water Striding"
+      }
+    ],
+    "speed": {
+      "swim": "40 ft.",
+      "walk": "10 ft."
+    },
+    "strength": 14,
+    "type": "construct",
+    "updated_at": "2026-10-25T11:57:37.000Z",
+    "url": "/api/2014/monsters/scrap-tinker-skimmer-drone",
+    "wisdom": 10,
+    "xp": 450
+  },
+  {
+    "actions": [
+      {
+        "actions": [],
+        "attack_bonus": 4,
+        "damage": [
+          {
+            "damage_dice": "1d8+2",
+            "damage_type": {
+              "index": "slashing",
+              "name": "Slashing",
+              "url": "/api/2014/damage-types/slashing"
+            }
+          }
+        ],
+        "desc": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 6 (1d8 + 2) slashing damage.",
+        "name": "Rusty Cyber-Claw"
+      }
+    ],
+    "alignment": "unaligned",
+    "armor_class": [
+      {
+        "type": "natural",
+        "value": 12
+      }
+    ],
+    "challenge_rating": 1,
+    "charisma": 5,
+    "condition_immunities": [
+      {
+        "index": "poisoned",
+        "name": "Poisoned",
+        "url": "/api/2014/conditions/poisoned"
+      }
+    ],
+    "constitution": 16,
+    "damage_immunities": [
+      {
+        "index": "poison",
+        "name": "Poison",
+        "url": "/api/2014/damage-types/poison"
+      }
+    ],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "dexterity": 8,
+    "forms": [],
+    "hit_dice": "4d8",
+    "hit_points": 30,
+    "hit_points_roll": "4d8+12",
+    "image": "/api/images/monsters/submerged-cyber-corpse.png",
+    "index": "submerged-cyber-corpse",
+    "intelligence": 3,
+    "languages": "",
+    "legendary_actions": [],
+    "name": "Submerged Cyber-Corpse",
+    "proficiencies": [],
+    "proficiency_bonus": 2,
+    "reactions": [],
+    "senses": {
+      "darkvision": "60 ft.",
+      "passive_perception": 9
+    },
+    "size": "Medium",
+    "special_abilities": [
+      {
+        "damage": [],
+        "desc": "If damage reduces the cyber-corpse to 0 hit points, it must make a Constitution saving throw with a DC of 5 + the damage taken, unless the damage is lightning or from a critical hit. On a success, its sub-dermal battery reboots it to 1 hit point instead.",
+        "name": "Emergency Battery Reboot"
+      }
+    ],
+    "speed": {
+      "swim": "20 ft.",
+      "walk": "20 ft."
+    },
+    "strength": 15,
+    "type": "undead",
+    "updated_at": "2026-10-25T11:57:37.000Z",
+    "url": "/api/2014/monsters/submerged-cyber-corpse",
+    "wisdom": 8,
+    "xp": 200
+  }
+]

@@ -7,12 +7,15 @@
   <title>Editor | D&amp;D 5e SRD</title>
   <link rel="stylesheet" href="/static/css/editor.css">
   <link rel="stylesheet" href="/static/css/account.css">
+  <link rel="stylesheet" href="/static/css/areas.css">
 </head>
-<body>
+<body class="area-wiki">
   <nav class="sheet-nav" aria-label="Main navigation">
     <a class="sheet-brand" href="/">D&amp;D 5e SRD</a>
+    <span class="area-tag">Wiki editor</span>
     <a href="/neotokyo">NeoTokyo</a>
     <a href="/characters">Characters</a>
+    <a href="/campaigns">Campaigns</a>
     {{template "account_nav" .}}
   </nav>
   <main>
@@ -81,6 +84,7 @@
       species: { name: 'Example Species', origin: '', appearance: '', cultural_fit: '', trait: [{ name: 'Trait', description: '' }] },
       classes: { name: 'Example Class', description: '', features: [{ name: '1. Feature (Level 1)', description: '' }],
         subclasses: [{ name: 'Example Subclass', description: '', features: [{ name: 'Subclass feature (Level 3)', description: '' }] }] },
+      'non-player-entities': { name: 'Badger', size: 'Tiny', type: 'beast', alignment: 'unaligned', armor_class: [{ type: 'dex', value: 10 }], hit_points: 3, hit_points_roll: '1d4+1', speed: { walk: '20 ft.' }, strength: 4, dexterity: 11, constitution: 12, intelligence: 2, wisdom: 12, charisma: 5, challenge_rating: 0, xp: 10, special_abilities: [{ name: 'Keen Smell', desc: '' }], actions: [{ name: 'Bite', desc: 'Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: 1 piercing damage.', attack_bonus: 2 }] },
       feats: { name: 'Example Feat Group', features: [{ name: 'Example Feat', prerequisite: '', description: '' }] }
     };
     var select = document.getElementById('category');

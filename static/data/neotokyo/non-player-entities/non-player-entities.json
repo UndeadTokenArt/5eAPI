@@ -1,0 +1,61 @@
+[
+  {
+    "actions": [
+      {
+        "actions": [],
+        "attack_bonus": 2,
+        "damage": [
+          {
+            "damage_dice": "1",
+            "damage_type": {
+              "index": "piercing",
+              "name": "Piercing",
+              "url": "/api/2014/damage-types/piercing"
+            }
+          }
+        ],
+        "desc": "Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: 1 piercing damage.",
+        "name": "Bite"
+      }
+    ],
+    "alignment": "unaligned",
+    "armor_class": [{ "type": "dex", "value": 10 }],
+    "challenge_rating": 0,
+    "charisma": 5,
+    "condition_immunities": [],
+    "constitution": 12,
+    "damage_immunities": [],
+    "damage_resistances": [],
+    "damage_vulnerabilities": [],
+    "dexterity": 11,
+    "forms": [],
+    "hit_dice": "1d4",
+    "hit_points": 3,
+    "hit_points_roll": "1d4+1",
+    "image": "/api/images/monsters/badger.png",
+    "index": "badger",
+    "intelligence": 2,
+    "languages": "",
+    "legendary_actions": [],
+    "name": "Badger",
+    "proficiencies": [],
+    "proficiency_bonus": 2,
+    "reactions": [],
+    "senses": { "darkvision": "30 ft.", "passive_perception": 11 },
+    "size": "Tiny",
+    "special_abilities": [
+      {
+        "damage": [],
+        "desc": "The badger has advantage on Wisdom (Perception) checks that rely on smell.",
+        "name": "Keen Smell"
+      }
+    ],
+    "speed": { "burrow": "5 ft.", "walk": "20 ft." },
+    "strength": 4,
+    "type": "beast",
+    "updated_at": "2026-04-01T20:35:38.253Z",
+    "url": "/api/2014/monsters/badger",
+    "wisdom": 12,
+    "xp": 10
+  }
+]

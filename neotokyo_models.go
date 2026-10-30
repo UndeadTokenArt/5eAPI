@@ -26,6 +26,7 @@ type CategoryData struct {
 	Weapons                      []Weapon                    `json:"weapons,omitempty"`
 	Spells                       []Spell                     `json:"spells,omitempty"`
 	Conditions                   []Condition                 `json:"conditions,omitempty"`
+	NonPlayerEntities            []NonPlayerEntity           `json:"non player entities,omitempty"`
 	Custom                       map[string][]map[string]any `json:"-"`
 }
 
@@ -43,7 +44,7 @@ func (category *CategoryData) UnmarshalJSON(data []byte) error {
 		"abilities": true, "backgrounds": true, "species": true, "classes": true,
 		"feats": true, "adventuring gear and containers": true, "tools kits and consumables": true,
 		"ammunition": true, "armor and shields": true, "mounts vehicles and harnesses": true,
-		"foci and instruments": true, "weapons": true, "spells": true, "conditions": true,
+		"foci and instruments": true, "weapons": true, "spells": true, "conditions": true, "non player entities": true,
 	}
 	custom := make(map[string][]map[string]any)
 	for key, value := range raw {

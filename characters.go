@@ -31,6 +31,7 @@ type CharacterEntry struct {
 	Name       string `json:"name"`
 	Detail     string `json:"detail,omitempty"`
 	Proficient bool   `json:"proficient,omitempty"`
+	Quantity   int    `json:"quantity,omitempty"`
 }
 
 // ResourceUse stores the remaining uses of a class resource; the maximum comes from class and level.
@@ -68,6 +69,10 @@ type CharacterSheet struct {
 	CurrentHP          int              `json:"current_hp,omitempty"`
 	MaxHP              int              `json:"max_hp,omitempty"`
 	TemporaryHP        int              `json:"temporary_hp,omitempty"`
+	Conditions         []string         `json:"conditions,omitempty"`
+	CyberStrain        int              `json:"cyber_strain,omitempty"`
+	Yen                int              `json:"yen,omitempty"`
+	Portrait           string           `json:"portrait,omitempty"`
 	HitDice            string           `json:"hit_dice,omitempty"`
 	Weapons            []CharacterEntry `json:"weapons,omitempty"`
 	Spells             []CharacterEntry `json:"spells,omitempty"`
@@ -179,6 +184,54 @@ func (s *characterStore) delete(user, id string) error {
 		return s.write(file)
 	}
 	return os.ErrNotExist
+}
+
+// find returns one sheet owned by user.
+func (s *characterStore) find(user, id string) (CharacterSheet, bool) {
+	s.mu.Lock()
+	defer s.mu.Unlock()
+	file, err := s.read()
+	if err != nil {
+		return CharacterSheet{}, false
+	}
+	for _, character := range file.Users[user] {
+		if character.ID == id {
+			return character, true
+		}
+	}
+	return CharacterSheet{}, false
+}
+
+// patch applies change to one sheet under the store lock and saves the result.
+func (s *characterStore) patch(user, id string, change func(*CharacterSheet)) (CharacterSheet, error) {
+	return s.patchChecked(user, id, func(sheet *CharacterSheet) error {
+		change(sheet)
+		return nil
+	})
+}
+
+func (s *characterStore) patchChecked(user, id string, change func(*CharacterSheet) error) (CharacterSheet, error) {
+	s.mu.Lock()
+	defer s.mu.Unlock()
+	file, err := s.read()
+	if err != nil {
+		return CharacterSheet{}, err
+	}
+	characters := file.Users[user]
+	for index := range characters {
+		if characters[index].ID != id {
+			continue
+		}
+		if err := change(&characters[index]); err != nil {
+			return CharacterSheet{}, err
+		}
+		characters[index].UpdatedAt = time.Now().UTC()
+		if err := s.write(file); err != nil {
+			return CharacterSheet{}, err
+		}
+		return characters[index], nil
+	}
+	return CharacterSheet{}, os.ErrNotExist
 }
 
 // adopt moves every sheet owned by from onto to. It is a no-op when from has none.
@@ -347,6 +400,7 @@ func characterAPIHandler(w http.ResponseWriter, r *http.Request) {
 			writeCharacterError(w, http.StatusInternalServerError, "Could not save character.")
 			return
 		}
+		campaigns.characterChanged(user, updated)
 		writeCharacterJSON(w, http.StatusOK, updated)
 	case http.MethodDelete:
 		if !sameOriginMutation(w, r) {
@@ -359,11 +413,44 @@ func characterAPIHandler(w http.ResponseWriter, r *http.Request) {
 			writeCharacterError(w, http.StatusInternalServerError, "Could not delete character.")
 			return
 		}
+		campaigns.characterDeleted(user, id)
 		w.WriteHeader(http.StatusNoContent)
 	default:
 		w.Header().Set("Allow", "PUT, DELETE")
 		writeCharacterError(w, http.StatusMethodNotAllowed, "Method not allowed.")
 	}
+}
+
+// characterHPHandler saves only the hit point fields so HP edits can be pushed live to campaigns.
+func characterHPHandler(w http.ResponseWriter, r *http.Request) {
+	user, ok := campaignAuth(w, r)
+	if !ok {
+		return
+	}
+	var body struct {
+		CurrentHP int `json:"current_hp"`
+		MaxHP     int `json:"max_hp"`
+	}
+	if !decodeCampaignBody(w, r, &body) {
+		return
+	}
+	if body.CurrentHP < 0 || body.CurrentHP > 9999 || body.MaxHP < 0 || body.MaxHP > 9999 {
+		writeCharacterError(w, http.StatusBadRequest, "Hit point values are outside the supported range.")
+		return
+	}
+	updated, err := savedCharacters.patch(user, r.PathValue("id"), func(sheet *CharacterSheet) {
+		sheet.CurrentHP, sheet.MaxHP = body.CurrentHP, body.MaxHP
+	})
+	if errors.Is(err, os.ErrNotExist) {
+		writeCharacterError(w, http.StatusNotFound, "Character not found.")
+		return
+	}
+	if err != nil {
+		writeCharacterError(w, http.StatusInternalServerError, "Could not save character.")
+		return
+	}
+	campaigns.characterChanged(user, updated)
+	w.WriteHeader(http.StatusNoContent)
 }
 
 func characterUser(w http.ResponseWriter, r *http.Request) (string, bool) {
@@ -460,6 +547,9 @@ func validateCharacter(character CharacterSheet) error {
 	if character.ExperiencePoints < 0 || character.ExperiencePoints > 10000000 {
 		return errors.New("experience points are outside the supported range")
 	}
+	if character.Yen < 0 || character.Yen > 999999999 {
+		return errors.New("yen is outside the supported range")
+	}
 	scores := []int{character.AbilityScores.Strength, character.AbilityScores.Dexterity, character.AbilityScores.Constitution, character.AbilityScores.Intelligence, character.AbilityScores.Wisdom, character.AbilityScores.Charisma}
 	for _, score := range scores {
 		if score < 1 || score > 30 {
@@ -498,6 +588,9 @@ func validateCharacter(character CharacterSheet) error {
 	if character.MaxHP < 0 || character.MaxHP > 9999 || character.CurrentHP < 0 || character.CurrentHP > 9999 || character.TemporaryHP < 0 || character.TemporaryHP > 9999 {
 		return errors.New("hit point values are outside the supported range")
 	}
+	if err := validateSharedFields(character.Conditions, character.CyberStrain, character.Portrait); err != nil {
+		return err
+	}
 	if len(character.Notes) > 20000 {
 		return errors.New("notes must be at most 20000 characters")
 	}
@@ -506,10 +599,13 @@ func validateCharacter(character CharacterSheet) error {
 			return errors.New("each character list may contain at most 100 entries")
 		}
 		for _, entry := range entries {
-			if len(entry.Name) > 150 || len(entry.Detail) > 2000 {
-				return errors.New("entry names must be at most 150 characters and details at most 2000 characters")
+			if len(entry.Name) > 150 || len(entry.Detail) > 2000 || entry.Quantity < 0 || entry.Quantity > 9999 {
+				return errors.New("entry names must be at most 150 characters, details at most 2000 characters, and quantities between 0 and 9999")
 			}
 		}
+	}
+	if character.Yen < 0 || character.Yen > maxYen {
+		return errors.New("yen is outside the supported range")
 	}
 	return nil
 }

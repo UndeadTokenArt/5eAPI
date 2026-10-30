@@ -47,6 +47,7 @@ The category folder names are:
 - `foci-and-instruments`
 - `spells`
 - `conditions`
+- `non-player-entities`
 
 ## JSON Format
 
@@ -79,6 +80,7 @@ The category folder names are:
 | `weapons` | `price`, `damage`, `damage_type`, `attribute`, `tag`, `description` |
 | `spells` | `level`, `school`, `casting_time`, `range`, `duration`, `components` (string array), `description`, `mechanics` |
 | `conditions` | `description`, `content`, `details` (string array), and optional `level_1` through `level_6` |
+| `non-player-entities` | SRD monster-style stat block: `size`, `type`, `alignment`, `armor_class`, `hit_points`, `hit_points_roll`, `speed`, the six ability scores (`strength`…`charisma`), `senses`, `languages`, `challenge_rating`, `xp`, `special_abilities`, `actions`, `reactions`, `legendary_actions` and more |
 
 For class features, `features` is an array of objects with `name`,
 `description`, `content`, and optional nested `features` (objects with `name`

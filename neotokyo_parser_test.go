@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"html"
 	"net/http"
 	"net/http/httptest"
@@ -148,7 +149,7 @@ func TestNeoTokyoSpellsPageRendersClassAndLevelFilters(t *testing.T) {
 		`id="spell-class-filter"`,
 		`id="spell-level-filter"`,
 		`<option value="Artificer">Cyber-Doctor / Tech-Smith</option>`,
-		`<option value="Wizard">Corporate Decker / Cyber-Mage</option>`,
+		`<option value="Wizard">Cyber-Mage</option>`,
 		`value="0">Cantrip`,
 		`data-spell-classes="Wizard,Artificer" data-spell-level="2"`,
 		`class="spell-text spell-description"`,
@@ -251,4 +252,29 @@ func TestCategoryMappersRetainImages(t *testing.T) {
 	check("spell", spells.Children[0], "spell.png")
 	conditions := mapConditions([]Condition{{Name: "Condition", Image: "condition.png"}})
 	check("condition", conditions.Children[0], "condition.png")
+}
+
+func TestNonPlayerEntitiesCategory(t *testing.T) {
+	guide, err := loadGuideFromDir(builtinGuideDir)
+	if err != nil {
+		t.Fatal(err)
+	}
+	node, ok := mapCategory("Non-Player Entities", guide)
+	if !ok || len(node.Children) == 0 {
+		t.Fatal("non-player entities category missing")
+	}
+	var badger SectionNode
+	for _, child := range node.Children {
+		if child.Title == "Badger" {
+			badger = child
+		}
+	}
+	if badger.Title != "Badger" || badger.Subtitle != "Tiny beast unaligned" || badger.Attributes["hit_points"] != "3 (1d4+1)" ||
+		len(badger.CustomFields) != 2 || badger.CustomFields[1].Label != "Actions" {
+		t.Fatalf("unexpected badger node: %#v", badger)
+	}
+	raw := json.RawMessage(`{"name":"Rat","hit_points":1,"bogus":1}`)
+	if _, _, err := editorCategories[len(editorCategories)-1].check(raw); err == nil {
+		t.Fatal("unknown fields must be rejected")
+	}
 }

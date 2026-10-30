@@ -18,6 +18,9 @@ func TestCharacterOptionsSeparateClassesFromSubclasses(t *testing.T) {
 
 	classes := map[string]bool{}
 	for _, class := range opts.Classes {
+		if strings.Contains(class.Name, "/") {
+			t.Errorf("class name %q still contains multiple labels", class.Name)
+		}
 		if strings.Contains(strings.ToLower(class.Name), "subclass") {
 			t.Errorf("subclass entry %q listed as a class", class.Name)
 		}
@@ -35,9 +38,9 @@ func TestCharacterOptionsSeparateClassesFromSubclasses(t *testing.T) {
 		t.Fatal("no subclasses were extracted")
 	}
 	wantSubclass := map[string]string{
-		"Street Samurai":                    "Street Samurai / Corporate Enforcer",
-		"College of the Pirate Broadcaster": "Neon Idol / Net-Hype",
-		"Street Tracker":                    "Urban Hunter / Recon Drone Master",
+		"Street Samurai":                    "Corporate Enforcer",
+		"College of the Pirate Broadcaster": "Net-Hype",
+		"Street Tracker":                    "Recon Drone Master",
 	}
 	found := map[string]string{}
 	for _, sub := range opts.Subclasses {
@@ -202,5 +205,19 @@ func TestEquipmentDetailIncludesDescription(t *testing.T) {
 	}
 	if equipmentDetail(BasicItem{Name: "Rope"}) != "" {
 		t.Fatal("empty item should have no detail")
+	}
+}
+
+func TestWeaponAndSpellTips(t *testing.T) {
+	weapon := weaponTip(Weapon{Damage: "1d8", DamageType: "slashing", Attribute: "STR", Tag: "Versatile: 1d10 + STR"})
+	if weapon != "Damage: 1d8 slashing\nAttribute: STR\nProperties: Versatile: 1d10 + STR" {
+		t.Fatalf("weapon tip = %q", weapon)
+	}
+	if strings.Contains(weaponTip(Weapon{Damage: "1", DamageType: "piercing", Tag: "None"}), "Properties") {
+		t.Fatal("tag None must be omitted")
+	}
+	spell := spellTip(Spell{Level: "1", School: "Evocation", Range: "60 ft", Mechanics: "DEX save, 3d6 fire", Description: "flavour"})
+	if !strings.Contains(spell, "DEX save, 3d6 fire") || strings.Contains(spell, "flavour") {
+		t.Fatalf("spell tip = %q", spell)
 	}
 }

@@ -7,12 +7,15 @@
   <title>Character Sheets | D&amp;D 5e SRD</title>
   <link rel="stylesheet" href="/static/css/characters.css">
   <link rel="stylesheet" href="/static/css/account.css">
+  <link rel="stylesheet" href="/static/css/areas.css">
 </head>
-<body>
+<body class="area-character">
   <nav class="sheet-nav" aria-label="Main navigation">
     <a class="sheet-brand" href="/">D&amp;D 5e SRD</a>
+    <span class="area-tag">Character sheet</span>
     <a href="/neotokyo">NeoTokyo</a>
     <a href="/characters" aria-current="page">Characters</a>
+    <a href="/campaigns">Campaigns</a>
     {{template "account_nav" .}}
   </nav>
   <main class="sheet-page">
@@ -45,6 +48,7 @@
           <div class="field"><label for="subclass">Subclass</label><select id="subclass" name="subclass" disabled><option value=""></option></select></div>
           <div class="field"><label for="background">Background</label><select id="background" name="background"><option value=""></option></select></div>
           <div class="field"><label for="level">Level</label><input id="level" name="level" type="number" min="1" max="20" value="1" required></div>
+          <div class="field"><label for="yen">Yen (¥)</label><input id="yen" name="yen" type="number" min="0" max="999999999" value="0"></div>
           <div class="field"><label for="experience-points">Experience points</label><input id="experience-points" name="experience_points" type="number" min="0" max="10000000" value="0"></div>
           <div class="field"><label for="alignment">Alignment</label><input id="alignment" name="alignment" maxlength="80"></div>
         </div>
@@ -85,7 +89,14 @@
           <div class="field"><label for="max-hp">Maximum HP</label><input id="max-hp" name="max_hp" type="number" min="0" max="9999" value="0"></div>
           <div class="field"><label for="temporary-hp">Temporary HP</label><input id="temporary-hp" name="temporary_hp" type="number" min="0" max="9999" value="0"></div>
           <div class="field"><label for="hit-dice">Hit dice</label><input id="hit-dice" name="hit_dice" maxlength="40" placeholder="e.g. 5d10"></div>
+          <div class="field"><label for="cyber-strain">Cyber strain</label><input id="cyber-strain" name="cyber_strain" type="number" min="0" max="20" value="0"></div>
         </div>
+        <div class="identity-grid shared-grid">
+          <div class="field name-field"><label for="conditions">Conditions (comma separated)</label><input id="conditions" name="conditions" maxlength="400" list="condition-presets" placeholder="e.g. Optic Glitch, Subliminal Override"></div>
+          <div class="field name-field"><label for="portrait">Portrait image URL</label><input id="portrait" name="portrait" type="url" maxlength="500" placeholder="https://i.imgur.com/example.png"></div>
+        </div>
+        <datalist id="condition-presets"><option value="Optic Glitch"><option value="Subliminal Override"><option value="Acoustic Scramble"><option value="Cyber-Strain"><option value="Threat-Lock"><option value="OS Buffer Overflow"><option value="Optical Camouflage"><option value="Neural Freeze"><option value="Solid-State Stasis"><option value="Bio-Toxed"><option value="Grounded"><option value="Mag-Bound"><option value="Synapse Short"><option value="Flatlined"></datalist>
+        <p class="reference-hint">Initiative of 0 counts as not rolled. These values are shared with any campaign this character has joined.</p>
       </section>
 
       <section class="sheet-section" data-list-section="weapons">
@@ -121,8 +132,23 @@
         <div class="entry-list" data-entry-list="feats"></div>
       </section>
       <section class="sheet-section" data-list-section="equipment">
-        <div class="section-head"><h2>Equipment</h2><button type="button" data-add-entry="equipment">Add item</button></div>
+        <div class="section-head"><h2>Inventory</h2><button type="button" data-add-entry="equipment">Add item</button></div>
         <div class="entry-list" data-entry-list="equipment"></div>
+      </section>
+      <section id="inventory-trade" class="sheet-section inventory-trade" hidden>
+        <div class="section-head"><h2>Trade from Inventory</h2></div>
+        <p class="muted">Choose only items already in this character's Inventory. Items and Yen leave your sheet when sent; a declined offer returns them.</p>
+        <div class="trade-controls">
+          <div class="field"><label for="trade-recipient">Send to</label><select id="trade-recipient"></select></div>
+          <div class="field"><label for="trade-item">Inventory item</label><select id="trade-item"></select></div>
+          <div class="field"><label for="trade-quantity">Quantity</label><input id="trade-quantity" type="number" min="1" value="1"></div>
+          <button type="button" id="trade-add-item">Add item</button>
+        </div>
+        <ul id="trade-staged-items" class="trade-staged-items"></ul>
+        <div class="trade-controls">
+          <div class="field"><label for="trade-yen">Yen to send</label><input id="trade-yen" type="number" min="0" max="999999999" value="0"></div>
+          <button type="button" class="primary" id="trade-send">Send trade offer</button>
+        </div>
       </section>
       <section class="sheet-section reference-section" id="reference-section" hidden>
         <div class="section-head"><h2>Class &amp; Origin Notes</h2></div>
@@ -136,7 +162,15 @@
     </form>
   </main>
   <div id="roll-toast" class="roll-toast" role="status" aria-live="polite" hidden></div>
+  <dialog id="delivery-dialog" class="delivery-dialog" aria-labelledby="delivery-title">
+    <h2 id="delivery-title">Incoming delivery</h2>
+    <p id="delivery-from"></p>
+    <ul id="delivery-items"></ul>
+    <p id="delivery-yen"></p>
+    <div class="dialog-actions"><button type="button" id="delivery-deny">Deny</button><button type="button" class="primary" id="delivery-accept">Accept</button></div>
+  </dialog>
   <footer>Character sheets are private to your authenticated account.</footer>
+  <script src="/static/js/swipe-nav.js"></script>
   <script>
   (function () {
     var form = document.getElementById('character-form');
@@ -211,6 +245,17 @@
       log.insertBefore(item, log.firstChild);
       while (log.children.length > 10) log.removeChild(log.lastChild);
       showToast(label, detail, total, note);
+      shareRoll(label, detail, total, note);
+    }
+
+    // Saved characters in a campaign publish each roll to the shared dice history.
+    function shareRoll(label, detail, total, note) {
+      if (!activeID) return;
+      var amount = Number(total);
+      var body = { label: String(label).slice(0, 120), detail: String(detail || '').slice(0, 300), total: total == null || isNaN(amount) ? null : amount, note: String(note || '').slice(0, 60) };
+      fetch('/api/characters/' + encodeURIComponent(activeID) + '/rolls', {
+        method: 'POST', credentials: 'same-origin', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body)
+      }).catch(function () { /* the sheet roll still works offline */ });
     }
 
     var toastTimer = null;
@@ -353,6 +398,7 @@
         }
         autoMax[level] = targets[level];
       }
+      refreshSlotDots();
     }
 
     var resourceCurrent = {};
@@ -532,6 +578,15 @@
           label.textContent = ordinals[level - 1];
           var values = document.createElement('div');
           values.className = 'slot-values';
+          var dots = document.createElement('div');
+          dots.className = 'slot-dots';
+          dots.addEventListener('click', function (event) {
+            var dot = event.target.closest('[data-dot]');
+            if (!dot) return;
+            var index = Number(dot.dataset.dot);
+            current.value = index <= (Number(current.value) || 0) ? index - 1 : index;
+            scheduleDraft();
+          });
           var current = document.createElement('input');
           var max = document.createElement('input');
           [[current, 'current', 'remaining'], [max, 'max', 'maximum']].forEach(function (pair) {
@@ -539,7 +594,10 @@
             pair[0].dataset['slot' + titleCase(pair[1])] = '';
             pair[0].setAttribute('aria-label', ordinals[level - 1] + '-level slots ' + pair[2]);
           });
-          values.append(current, '/', max);
+          current.hidden = true;
+          max.addEventListener('input', scheduleDraft);
+          max.className = 'slot-max';
+          values.append(current, max);
           var use = document.createElement('button');
           use.type = 'button';
           use.textContent = 'Use';
@@ -548,7 +606,7 @@
             current.value = Math.max(0, (Number(current.value) || 0) - 1);
             scheduleDraft();
           });
-          cell.append(label, values, use);
+          cell.append(label, dots, values, use);
           grid.appendChild(cell);
         })(level);
       }
@@ -743,7 +801,31 @@
       } catch (error) { /* storage unavailable or full; the saved sheet is unaffected */ }
     }
 
+    // Draws each spell level as dots: filled = slots remaining, hollow = used.
+    function refreshSlotDots() {
+      for (var level = 1; level <= 9; level++) {
+        var cell = document.querySelector('[data-slot="' + level + '"]');
+        var inputs = slotInputs(level);
+        var max = Math.min(99, Math.max(0, Math.floor(Number(inputs.max.value) || 0)));
+        var current = Math.min(max, Math.max(0, Math.floor(Number(inputs.current.value) || 0)));
+        var dots = cell.querySelector('.slot-dots');
+        dots.replaceChildren();
+        for (var i = 1; i <= max; i++) {
+          var dot = document.createElement('button');
+          dot.type = 'button';
+          dot.className = 'slot-dot' + (i <= current ? ' is-filled' : '');
+          dot.dataset.dot = i;
+          dot.setAttribute('aria-pressed', String(i <= current));
+          dot.setAttribute('aria-label', 'Slot ' + i + ' of ' + max + (i <= current ? ', available' : ', used'));
+          dots.appendChild(dot);
+        }
+        if (!max) dots.appendChild(document.createTextNode('\u2014'));
+        cell.classList.toggle('is-unused', max === 0);
+      }
+    }
+
     function scheduleDraft() {
+      refreshSlotDots();
       if (restoring) return;
       window.clearTimeout(draftTimer);
       draftTimer = window.setTimeout(writeDraft, 300);
@@ -815,6 +897,22 @@
       detailLabel.appendChild(detailInput);
       detailField.appendChild(detailLabel);
 
+      var quantityField = null;
+      if (listName === 'equipment') {
+        quantityField = document.createElement('div');
+        quantityField.className = 'field quantity-field';
+        var quantityLabel = document.createElement('label');
+        quantityLabel.textContent = 'Qty';
+        var quantityInput = document.createElement('input');
+        quantityInput.type = 'number';
+        quantityInput.min = '1';
+        quantityInput.max = '9999';
+        quantityInput.value = String(entry && entry.quantity > 0 ? entry.quantity : 1);
+        quantityInput.dataset.entryQuantity = '';
+        quantityLabel.appendChild(quantityInput);
+        quantityField.appendChild(quantityLabel);
+      }
+
       var remove = document.createElement('button');
       remove.type = 'button';
       remove.className = 'remove-entry';
@@ -841,6 +939,13 @@
         }
         link.className = 'item-link';
         link.textContent = option.name;
+        if (option.tip) {
+          // Hover shows a styled tooltip; the title keeps it available to assistive tech and touch long-press.
+          nameField.classList.add('has-tip');
+          nameField.dataset.tip = option.tip;
+          link.setAttribute('aria-label', option.name + '. ' + option.tip.replace(/\n/g, '. '));
+          if (!option.link) link.tabIndex = 0;
+        }
         nameField.append(label, link);
         row.getName = function () { return option.name; };
       }
@@ -866,7 +971,8 @@
 
       var matched = entry && entry.name ? findOption(listName, entry.name) : null;
       if (matched) showLink(matched); else showInput(entry && entry.name ? entry.name : '');
-      row.append(nameField, detailField, remove);
+      if (quantityField) row.append(nameField, quantityField, detailField, remove);
+      else row.append(nameField, detailField, remove);
       if (listName === 'weapons') {
         row.proficient = Boolean(entry && entry.proficient);
         var actions = document.createElement('div');
@@ -910,6 +1016,11 @@
     }
 
     function clearForm() {
+      if (deliveryDialog && deliveryDialog.open) deliveryDialog.close();
+      currentDelivery = null;
+      stagedTradeItems = [];
+      var tradeSection = document.getElementById('inventory-trade');
+      if (tradeSection) tradeSection.hidden = true;
       var filterOn = spellFilter.checked;
       form.reset();
       spellFilter.checked = filterOn;
@@ -931,13 +1042,14 @@
     function fillForm(character) {
       clearForm();
       activeID = character.id || '';
-      ['name', 'species', 'class', 'background', 'alignment', 'hit_dice', 'notes'].forEach(function (key) {
+      ['name', 'species', 'class', 'background', 'alignment', 'hit_dice', 'notes', 'portrait'].forEach(function (key) {
         var input = form.elements.namedItem(key);
         if (!input) return;
         if (input.tagName === 'SELECT') setSelectValue(input, character[key] || '');
         else input.value = character[key] || '';
       });
-      ['level', 'experience_points', 'armor_class', 'initiative', 'speed', 'current_hp', 'max_hp', 'temporary_hp'].forEach(function (key) {
+      form.elements.namedItem('conditions').value = (character.conditions || []).join(', ');
+      ['level', 'experience_points', 'armor_class', 'initiative', 'speed', 'current_hp', 'max_hp', 'temporary_hp', 'cyber_strain', 'yen'].forEach(function (key) {
         var input = form.elements.namedItem(key);
         if (input) input.value = character[key] == null ? 0 : character[key];
       });
@@ -970,6 +1082,8 @@
       picker.value = activeID;
       updateModifiers();
       scheduleDraft();
+      refreshTradeUI();
+      refreshIncomingDelivery();
     }
 
     function serializeForm() {
@@ -977,10 +1091,12 @@
       var number = function (name) { return Number(form.elements.namedItem(name).value) || 0; };
       var character = {
         name: value('name'), species: value('species'), class: value('class'), subclass: value('subclass'), background: value('background'),
-        level: number('level'), experience_points: number('experience_points'), alignment: value('alignment'),
+        level: number('level'), experience_points: number('experience_points'), yen: number('yen'), alignment: value('alignment'),
         ability_scores: {}, armor_class: number('armor_class'), initiative: number('initiative'), speed: number('speed'),
         current_hp: number('current_hp'), max_hp: number('max_hp'), temporary_hp: number('temporary_hp'),
-        hit_dice: value('hit_dice'), notes: value('notes')
+        hit_dice: value('hit_dice'), notes: value('notes'),
+        cyber_strain: number('cyber_strain'), portrait: value('portrait'),
+        conditions: value('conditions').split(',').map(function (item) { return item.trim(); }).filter(Boolean)
       };
       ['strength', 'dexterity', 'constitution', 'intelligence', 'wisdom', 'charisma'].forEach(function (ability) {
         character.ability_scores[ability] = Number(document.querySelector('[data-score="' + ability + '"]').value) || 10;
@@ -988,6 +1104,7 @@
       lists.forEach(function (listName) {
         character[listName] = Array.prototype.map.call(document.querySelectorAll('[data-entry-list="' + listName + '"] .entry-row'), function (row) {
           var entry = { name: row.getName(), detail: row.querySelector('[data-entry-detail]').value.trim() };
+          if (listName === 'equipment') entry.quantity = Math.max(1, Number(row.querySelector('[data-entry-quantity]').value) || 1);
           if (listName === 'weapons' && row.proficient) entry.proficient = true;
           return entry;
         }).filter(function (entry) { return entry.name || entry.detail; });
@@ -1011,6 +1128,168 @@
       if (!response.ok) throw new Error(data && data.error ? data.error : 'Request failed.');
       return data;
     }
+
+    var tradeTargets = [];
+    var stagedTradeItems = [];
+    var tradeRecipient = document.getElementById('trade-recipient');
+    var tradeItem = document.getElementById('trade-item');
+    var deliveryDialog = document.getElementById('delivery-dialog');
+    var currentDelivery = null;
+
+    function currentInventory() {
+      var inventory = [];
+      document.querySelectorAll('[data-entry-list="equipment"] .entry-row').forEach(function (row) {
+        var name = row.getName();
+        var quantityInput = row.querySelector('[data-entry-quantity]');
+        var quantity = Math.max(1, Number(quantityInput.value) || 1);
+        if (!name) return;
+        var existing = inventory.find(function (item) { return item.name.toLowerCase() === name.toLowerCase(); });
+        if (existing) existing.quantity += quantity;
+        else inventory.push({ name: name, quantity: quantity });
+      });
+      return inventory;
+    }
+
+    async function refreshTradeUI() {
+      var section = document.getElementById('inventory-trade');
+      section.hidden = !activeID;
+      if (!activeID) return;
+      var id = activeID;
+      try {
+        tradeTargets = await request('/api/characters/' + encodeURIComponent(id) + '/trade-targets');
+        if (id !== activeID) return;
+        var previous = tradeRecipient.value;
+        tradeRecipient.replaceChildren();
+        tradeTargets.forEach(function (target) {
+          var value = JSON.stringify([target.campaign_id, target.recipient_alias]);
+          tradeRecipient.add(new Option(target.campaign_name + ' · ' + target.recipient_name, value));
+        });
+        if (previous && Array.prototype.some.call(tradeRecipient.options, function (o) { return o.value === previous; })) tradeRecipient.value = previous;
+        tradeRecipient.disabled = tradeRecipient.options.length === 0;
+        var previousItem = tradeItem.value;
+        var inventory = currentInventory();
+        tradeItem.replaceChildren();
+        inventory.forEach(function (item) { tradeItem.add(new Option(item.name + ' (' + item.quantity + ' available)', item.name)); });
+        if (previousItem && Array.prototype.some.call(tradeItem.options, function (o) { return o.value === previousItem; })) tradeItem.value = previousItem;
+        document.getElementById('trade-add-item').disabled = tradeItem.options.length === 0;
+        document.getElementById('trade-send').disabled = tradeRecipient.options.length === 0;
+        renderStagedTradeItems();
+      } catch (error) {
+        section.hidden = true;
+        setStatus('Could not load campaign trade options: ' + error.message, true);
+      }
+    }
+
+    function renderStagedTradeItems() {
+      var list = document.getElementById('trade-staged-items');
+      list.replaceChildren();
+      stagedTradeItems.forEach(function (item, index) {
+        var li = document.createElement('li');
+        li.appendChild(document.createTextNode(item.name + ' × ' + item.quantity + ' '));
+        var remove = document.createElement('button');
+        remove.type = 'button';
+        remove.textContent = 'Remove';
+        remove.addEventListener('click', function () {
+          stagedTradeItems.splice(index, 1);
+          renderStagedTradeItems();
+        });
+        li.appendChild(remove);
+        list.appendChild(li);
+      });
+    }
+
+    document.getElementById('trade-add-item').addEventListener('click', function () {
+      var name = tradeItem.value;
+      var quantity = Math.floor(Number(document.getElementById('trade-quantity').value));
+      var inInventory = currentInventory().find(function (item) { return item.name === name; });
+      var staged = stagedTradeItems.filter(function (item) { return item.name.toLowerCase() === name.toLowerCase(); })
+        .reduce(function (sum, item) { return sum + item.quantity; }, 0);
+      if (!inInventory || quantity < 1 || quantity > inInventory.quantity - staged) {
+        setStatus('Choose a quantity available in this character’s Inventory.', true);
+        return;
+      }
+      var existing = stagedTradeItems.find(function (item) { return item.name.toLowerCase() === name.toLowerCase(); });
+      if (existing) existing.quantity += quantity;
+      else stagedTradeItems.push({ name: name, quantity: quantity });
+      renderStagedTradeItems();
+      setStatus('');
+    });
+
+    document.getElementById('trade-send').addEventListener('click', async function () {
+      if (!activeID) return;
+      var target;
+      try { target = JSON.parse(tradeRecipient.value); } catch (error) { setStatus('Choose a campaign recipient.', true); return; }
+      var yen = Math.floor(Number(document.getElementById('trade-yen').value) || 0);
+      if (!stagedTradeItems.length && !yen) { setStatus('Add an item or Yen to the trade offer.', true); return; }
+      try {
+        await request('/api/campaigns/' + encodeURIComponent(target[0]) + '/trades/' + encodeURIComponent(target[1]), {
+          method: 'POST', headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ sender_character_id: activeID, items: stagedTradeItems, yen: yen })
+        });
+        var saved = (await request('/api/characters')).find(function (character) { return character.id === activeID; });
+        if (saved) applyInventoryUpdate(saved);
+        stagedTradeItems = [];
+        document.getElementById('trade-yen').value = '0';
+        renderStagedTradeItems();
+        setStatus('Trade offer sent. The recipient can accept or deny it on their character sheet.');
+      } catch (error) { setStatus(error.message, true); }
+    });
+
+    function applyInventoryUpdate(character) {
+      var list = document.querySelector('[data-entry-list="equipment"]');
+      list.replaceChildren();
+      (character.equipment || []).forEach(function (entry) { addEntry('equipment', entry); });
+      form.elements.namedItem('yen').value = character.yen || 0;
+      refreshTradeUI();
+      scheduleDraft();
+    }
+
+    async function refreshIncomingDelivery() {
+      if (!activeID) {
+        if (deliveryDialog.open) deliveryDialog.close();
+        return;
+      }
+      var characterID = activeID;
+      try {
+        var deliveries = await request('/api/characters/' + encodeURIComponent(characterID) + '/deliveries');
+        if (characterID !== activeID || deliveryDialog.open || !deliveries.length) return;
+        currentDelivery = deliveries[0];
+        document.getElementById('delivery-from').textContent = currentDelivery.sender_name + ' sent you a delivery from ' + currentDelivery.campaign_name + '.';
+        var list = document.getElementById('delivery-items');
+        list.replaceChildren();
+        (currentDelivery.items || []).forEach(function (item) {
+          var li = document.createElement('li');
+          li.textContent = item.name + ' × ' + item.quantity;
+          list.appendChild(li);
+        });
+        document.getElementById('delivery-yen').textContent = 'Yen: ' + (currentDelivery.yen || 0);
+        deliveryDialog.showModal();
+      } catch (error) {
+        if (/not found/i.test(error.message)) return;
+        setStatus('Could not check for deliveries: ' + error.message, true);
+      }
+    }
+
+    async function respondToDelivery(accept) {
+      if (!currentDelivery || !activeID) return;
+      var offer = currentDelivery;
+      try {
+        await request('/api/characters/' + encodeURIComponent(activeID) + '/deliveries/' + encodeURIComponent(offer.id) + '?campaign=' + encodeURIComponent(offer.campaign_id), {
+          method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ accept: accept })
+        });
+        if (accept) {
+          var saved = (await request('/api/characters')).find(function (character) { return character.id === activeID; });
+          if (saved) applyInventoryUpdate(saved);
+        }
+        deliveryDialog.close();
+        currentDelivery = null;
+        refreshIncomingDelivery();
+        setStatus(accept ? 'Delivery accepted.' : 'Delivery denied; it was returned to the sender.', false);
+      } catch (error) { setStatus(error.message, true); }
+    }
+    document.getElementById('delivery-accept').addEventListener('click', function () { respondToDelivery(true); });
+    document.getElementById('delivery-deny').addEventListener('click', function () { respondToDelivery(false); });
+    window.setInterval(refreshIncomingDelivery, 30000);
 
     async function refreshCharacters(selectedID) {
       var characters = await request('/api/characters');
@@ -1075,6 +1354,23 @@
       button.addEventListener('click', function () { addEntry(button.dataset.addEntry); });
     });
     document.querySelectorAll('[data-score]').forEach(function (input) { input.addEventListener('input', updateModifiers); });
+
+    // HP changes on a saved character reach any campaign right away, without a full save.
+    var hpPushTimer = null;
+    function pushHP() {
+      if (!activeID) return;
+      var id = activeID;
+      var body = { current_hp: Number(form.elements.namedItem('current_hp').value) || 0, max_hp: Number(form.elements.namedItem('max_hp').value) || 0 };
+      fetch('/api/characters/' + encodeURIComponent(id) + '/hp', {
+        method: 'PATCH', credentials: 'same-origin', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body)
+      }).catch(function () { /* the next full save will sync it */ });
+    }
+    ['current_hp', 'max_hp'].forEach(function (name) {
+      form.elements.namedItem(name).addEventListener('input', function () {
+        window.clearTimeout(hpPushTimer);
+        hpPushTimer = window.setTimeout(pushHP, 400);
+      });
+    });
     classSelect.addEventListener('change', function () { populateSubclasses(classSelect.value, ''); });
     subclassSelect.addEventListener('change', updateModifiers);
     levelInput.addEventListener('input', updateModifiers);
@@ -1102,6 +1398,7 @@
         var restored = restoreDraft();
         restoring = false;
         setStatus(restored ? 'Restored your previous sheet. Save it to keep these changes on the server.' : 'Ready.');
+        refreshIncomingDelivery();
       }).catch(function (error) {
       restoring = false;
       setStatus(error.message + ' Confirm that this route is protected by Authelia and forwards Remote-User.', true);

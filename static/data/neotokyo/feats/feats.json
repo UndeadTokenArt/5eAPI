@@ -105,10 +105,10 @@
         "name": "Cross-Net Code Pirate",
         "description": "You have pirated proprietary spell code and matrix routines from corporate servers.",
         "details": [
-          "You learn two cantrips of your choice from the Corporate Decker / Cyber-Mage or Street Shaman / Bio-Tech Specialist spell list.",
+          "You learn two cantrips of your choice from the Cyber-Mage or Bio-Tech Specialist spell list.",
           "You learn one 1st-level spell from the same list. You can cast it once without expending a spell slot per long rest, or cast it using any spell slots you possess. Your spellcasting ability for these spells is Intelligence, Wisdom, or Charisma (chosen when taking this feat)."
         ],
-        "content": "* You have pirated proprietary spell code and matrix routines from corporate servers.\n* You learn two cantrips of your choice from the Corporate Decker / Cyber-Mage or Street Shaman / Bio-Tech Specialist spell list.\n* You learn one 1st-level spell from the same list. You can cast it once without expending a spell slot per long rest, or cast it using any spell slots you possess. Your spellcasting ability for these spells is Intelligence, Wisdom, or Charisma (chosen when taking this feat)."
+        "content": "* You have pirated proprietary spell code and matrix routines from corporate servers.\n* You learn two cantrips of your choice from the Cyber-Mage or Bio-Tech Specialist spell list.\n* You learn one 1st-level spell from the same list. You can cast it once without expending a spell slot per long rest, or cast it using any spell slots you possess. Your spellcasting ability for these spells is Intelligence, Wisdom, or Charisma (chosen when taking this feat)."
       },
       {
         "name": "System Forensics Specialist",
@@ -141,10 +141,10 @@
         "prerequisite": "The ability to cast spells or channel mana*",
         "description": "Your biological aura is mutated or modified to alter spell structures on the fly.",
         "details": [
-          "You learn two Metamagic options of your choice from the Glitch-Born / Awakened Mutant class list.",
+          "You learn two Metamagic options of your choice from the Awakened Mutant class list.",
           "You gain 2 Surge Points to spend on Metamagic subroutines (replenished on a long rest). If you already have Surge Points, these are added to your existing pool."
         ],
-        "content": "Prerequisite: The ability to cast spells or channel mana\n* Your biological aura is mutated or modified to alter spell structures on the fly.\n* You learn two Metamagic options of your choice from the Glitch-Born / Awakened Mutant class list.\n* You gain 2 Surge Points to spend on Metamagic subroutines (replenished on a long rest). If you already have Surge Points, these are added to your existing pool."
+        "content": "Prerequisite: The ability to cast spells or channel mana\n* Your biological aura is mutated or modified to alter spell structures on the fly.\n* You learn two Metamagic options of your choice from the Awakened Mutant class list.\n* You gain 2 Surge Points to spend on Metamagic subroutines (replenished on a long rest). If you already have Surge Points, these are added to your existing pool."
       }
     ]
   },
