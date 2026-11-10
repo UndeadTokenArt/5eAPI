@@ -29,6 +29,15 @@ those entries before retrying. In the category's additions list, choose
 entries in `zz-editor-additions.json`; bundled guide data must be edited in its
 JSON files.
 
+## Classes
+
+Each class is its own file in `classes/`, named after the class (for example
+`classes/SuperStud.json`). The file holds one class object (`name`, `features`,
+`subclasses`). Drop in a new file and the class appears in the guide and the
+character sheet. Class resources and spell lists for it can be added in the
+`_reference` files. If two files define the same class name, the later file
+(alphabetically) wins; an old combined `classes.json` is always overridden.
+
 ## Categories
 
 The category folder names are:
@@ -171,6 +180,65 @@ The editor portal's Subclasses category uses this format. Older flat files
 
 The `_reference/` folder contains the class name mapping and class spell lists
 used for spell filtering and class pages.
+
+Class entries may also contain a `uid` and a `levels` array. Each level entry
+has a numeric `level`, an optional `hitdie` such as `1d6`, and `skills` using
+the same nested feature format as the class's existing `features`. The guide
+and character-options API expose these entries. Missing level entries mean the
+progression has not been authored; they do not mean the class gains nothing.
+Existing `features` and `subclasses` remain supported. This format does not yet
+define machine-readable choices. The current level-up dialog is preview-only;
+applying both single-class and multiclass levels is disabled until the
+progression and choice effects can be handled safely.
+
+For preparing fuller class data, see
+[`class-progression-template.json`](_reference/classes/class-progression-template.json)
+and the [class progression authoring guide](../../../developernotes/CLASS_PROGRESSION.md).
+It is a **proposed authoring worksheet**, not an app-supported schema. Keep it
+outside the live `classes/` folder: the application will ignore unsupported
+fields, and the proposed `levels[].features` differs from the currently
+supported `levels[].skills`. Filling it in does not enable multiclassing.
+
+[`classesv2/`](classesv2/) contains draft worksheets based on the supplied
+2024-style reference classes. They are not active class entries; the loader
+reads JSON in the folder but does not use it as the `classes` category. The
+new worksheets defer subclasses and retain unresolved rules and choices for
+review. Awakened Mutant has a 2024-style single-class preview and spellcasting
+pilot, but its choices are still manual. The multiclass eligibility and slot
+calculator use 2024-style rules; applying mixed builds on the sheet is not
+yet supported.
+
+Copy the worksheet outside the active guide data directory for each class:
+
+1. Replace the class ID, name and original class name, and note the rules edition. Keep IDs stable;
+   worksheet IDs are proposed identifiers, not current app lookups.
+2. Record the hit die and multiclass ability prerequisites for entering and
+   leaving the class. Each `any_of` item is an alternative; every ability in
+   its `all_of` must be satisfied.
+3. Separate starting-class proficiencies and equipment from proficiencies gained
+   when taking the class later. Record fixed grants, choices, eligible options,
+   how many to choose, and restrictions on duplicates.
+4. Describe casting ability, spell list, casting kind, preparation, replacement
+   rules and any restrictions. In each level's spell progression, `*_total`
+   fields are totals at that class level; `spellbook_spells_gained` is newly
+   gained at that level. `class_spell_slots` is an array of nine counts for
+   spell levels 1–9. Pact slots are separate. Mystic Arcanum and similar
+   features are choices, not ordinary slots. The shared multiclass slot table
+   is a separate calculation, not the sum of those class slot arrays.
+5. For all class levels 1–20, record every feature gained or improved, including
+   repeated gains, subclass selection, resources and choices. Describe each
+   choice's options, count, prerequisites, replacement rules and effects.
+   Feature descriptions alone are not machine-readable rules.
+6. Describe each subclass's selection level and level-specific features,
+   choices and spellcasting overrides. Record resource maximum and recharge
+   rules, specifying class level, total level, ability modifiers or other inputs.
+7. Leave unknown values as `null` and levels marked `unfilled`. Use empty
+   arrays only after confirming there are no grants or choices; mark a level
+   `complete` only after review. Remove sample placeholders that do not apply.
+
+The worksheet's choice kinds, effects, expressions and subclass progression
+are proposals; validation and migration must be implemented before the app
+can use them.
 
 When renaming a class, also update its `reskinned_class` in
 `_reference/class-and-spell-reskins.json`. Character sheet spellcasting and

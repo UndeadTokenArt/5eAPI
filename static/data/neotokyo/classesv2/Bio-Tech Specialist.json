@@ -1,0 +1,1286 @@
+{
+  "schema_status": "draft_authoring_template_not_supported_by_app",
+  "schema_version": 1,
+  "uid": "class-bio-tech-specialist-draft",
+  "name": "Bio-Tech Specialist",
+  "original_class": "Druid",
+  "description": "Spiritual mediums and geneticists who commune with urban critters, manipulate mutated city flora, and morph into apex bio-drones.",
+  "hit_die": 8,
+  "multiclass_prerequisites": {
+    "description": "2024 multiclass prerequisite: meet this class primary ability requirement when adding a new class; requirements also apply to every current class.",
+    "any_of": [
+      {
+        "all_of": [
+          {
+            "ability": "wisdom",
+            "minimum": 13
+          }
+        ]
+      }
+    ]
+  },
+  "starting_proficiencies": {
+    "armor": [
+      "Light armor and Shields"
+    ],
+    "weapons": [
+      "Simple weapons"
+    ],
+    "tools": [
+      "Herbalism Kit"
+    ],
+    "saving_throws": [
+      "intelligence",
+      "wisdom"
+    ],
+    "skills": [],
+    "choices": [
+      {
+        "id": "starting-skills",
+        "name": "Choose starting skills",
+        "kind": "skill",
+        "count": 2,
+        "allowed_options": [
+          "Arcana",
+          "Animal Handling",
+          "Insight",
+          "Medicine",
+          "Nature",
+          "Perception",
+          "Religion",
+          "Survival"
+        ],
+        "eligibility_rule": "Choose distinct skills; verify handling of an already-proficient skill.",
+        "selection_effect": "Record proficiency in the selected skills."
+      }
+    ]
+  },
+  "multiclass_proficiencies": {
+    "armor": [
+      "Light armor",
+      "Shields"
+    ],
+    "weapons": [],
+    "tools": [],
+    "skills": [],
+    "choices": [],
+    "description": "Gain the following traits from the Core Druid Traits table: Hit Point Die and training with Light armor and Shields."
+  },
+  "starting_equipment": {
+    "description": "Choose A or B: (A) Leather Armor, Shield, Sickle, Druidic Focus (Quarterstaff), Explorer’s Pack, Herbalism Kit, and 9 GP; or (B) 50 GP Starting equipment is not granted on multiclass entry.",
+    "grants": [],
+    "choices": [
+      {
+        "id": "starting-equipment",
+        "name": "Choose starting equipment",
+        "kind": "equipment_bundle",
+        "count": 1,
+        "allowed_options": "Choose A or B: (A) Leather Armor, Shield, Sickle, Druidic Focus (Quarterstaff), Explorer’s Pack, Herbalism Kit, and 9 GP; or (B) 50 GP",
+        "eligibility_rule": "Choose one listed bundle when starting as this class.",
+        "selection_effect": "Record the chosen items and currency."
+      }
+    ]
+  },
+  "spellcasting": {
+    "kind": "full",
+    "ability": "wisdom",
+    "starts_at_class_level": 1,
+    "spell_list_id": "Druid",
+    "casting_mode": "prepared",
+    "preparation_rule": "Changing Your Prepared Spells. Whenever you finish a Long Rest, you can change your list of prepared spells, replacing any of the spells with other Druid spells for which you have spell slots.",
+    "ritual_casting_rule": null,
+    "focus_rule": "Spellcasting Focus. You can use a Druidic Focus as a Spellcasting Focus for your Druid spells.",
+    "multiclass_slot_rule": "Full caster; verify shared multiclass slot calculation under the chosen edition.",
+    "notes": "See the level 1 Spellcasting or Pact Magic feature for casting, preparation, focus, and replacement rules. Null fields require review; the reference spell mapping may not be a complete 2024 spell list."
+  },
+  "resources": [
+    {
+      "id": "resource-wild-shape",
+      "name": "Spirit Morph",
+      "description": "See the Wild Shape feature for costs, use, and recovery. The power of nature allows you to assume the form of an animal. As a Bonus Action, you shape-shift into a Beast form that you have learned for this feature (see “Known Forms” below). You stay in that form for a number of hours equal to half your Druid level or until you use Wild Shape again, have the Incapacitated condition, or die. You can also leave the form early as a Bonus Action.\n\nNumber of Uses. You can use Wild Shape twice. You regain one expended use when you finish a Short Rest, and you regain all expended uses when you finish a Long Rest.\n\nYou gain additional uses when you reach certain Druid levels, as shown in the Wild Shape column of the Druid Features table.\n\nKnown Forms. You know four Beast forms for this feature, chosen from among Beast stat blocks that have a maximum Challenge Rating of 1/4 and that lack a Fly Speed (see appendix B for stat block options). The Rat, Riding Horse, Spider, and Wolf are recommended. Whenever you finish a Long Rest, you can replace one of your known forms with another eligible form.\n\nWhen you reach certain Druid levels, your number of known forms and the maximum Challenge Rating for those forms increases, as shown in the Beast Shapes table. In addition, starting at level 8, you can adopt a form that has a Fly Speed.\n\nWhen choosing known forms, you may look in the Monster Manual or elsewhere for eligible Beasts if the Dungeon Master permits you to do so.\n\nBeast Shapes\nDruid Level\tKnown Forms\tMax CR\tFly Speed\n2\t4\t1/4\tNo\n4\t6\t1/2\tNo\n8\t8\t1\tYes\nRules While Shape-Shifted. While in a form, you retain your personality, memories, and ability to speak, and the following rules apply:\n\nTemporary Hit Points. When you assume a Wild Shape form, you gain a number of Temporary Hit Points equal to your Druid level.\n\nGame Statistics. Your game statistics are replaced by the Beast’s stat block, but you retain your creature type; Hit Points; Hit Point Dice; Intelligence, Wisdom, and Charisma scores; class features; languages; and feats. You also retain your skill and saving throw proficiencies and use your Proficiency Bonus for them, in addition to gaining the proficiencies of the creature. If a skill or saving throw modifier in the Beast’s stat block is higher than yours, use the one in the stat block.\n\nNo Spellcasting. You can’t cast spells, but shape-shifting doesn’t break your Concentration or otherwise interfere with a spell you’ve already cast.\n\nObjects. Your ability to handle objects is determined by the form’s limbs rather than your own. In addition, you choose whether your equipment falls in your space, merges into your new form, or is worn by it. Worn equipment functions as normal, but the DM decides whether it’s practical for the new form to wear a piece of equipment based on the creature’s size and shape. Your equipment doesn’t change size or shape to match the new form, and any equipment that the new form can’t wear must either fall to the ground or merge with the form. Equipment that merges with the form has no effect while you’re in that form.",
+      "recharge": "other",
+      "maximum_rule": "See the feature and level table; resolve structured maximum and recovery rules before implementation."
+    }
+  ],
+  "levels": [
+    {
+      "level": 1,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "spellcasting-1",
+          "name": "Spellcasting: Spirit Conduit (Spellcasting)",
+          "description": "You have learned to cast spells through studying the mystical forces of nature. See “Spells” for the rules on spellcasting. The information below details how you use those rules with Druid spells, which appear on the Druid spell list later in the class’s description.\n\nCantrips. You know two cantrips of your choice from the Druid spell list. Druidcraft and Produce Flame are recommended.\n\nWhenever you gain a Druid level, you can replace one of your cantrips with another cantrip of your choice from the Druid spell list.\n\nWhen you reach Druid levels 4 and 10, you learn another cantrip of your choice from the Druid spell list, as shown in the Cantrips column of the Druid Features table.\n\nSpell Slots. The Druid Features table shows how many spell slots you have to cast your level 1+ spells. You regain all expended slots when you finish a Long Rest.\n\nPrepared Spells of Level 1+. You prepare the list of level 1+ spells that are available for you to cast with this feature. To start, choose four level 1 spells from the Druid spell list. Animal Friendship, Cure Wounds, Faerie Fire, and Thunderwave are recommended.\n\nThe number of spells on your list increases as you gain Druid levels, as shown in the Prepared Spells column of the Druid Features table. Whenever that number increases, choose additional spells from the Druid spell list until the number of spells on your list matches the number on the table. The chosen spells must be of a level for which you have spell slots. For example, if you’re a level 3 Druid, your list of prepared spells can include six spells of levels 1 and 2 in any combination.\n\nIf another Druid feature gives you spells that you always have prepared, those spells don’t count against the number of spells you can prepare with this feature, but those spells otherwise count as Druid spells for you.\n\nChanging Your Prepared Spells. Whenever you finish a Long Rest, you can change your list of prepared spells, replacing any of the spells with other Druid spells for which you have spell slots.\n\nSpellcasting Ability. Wisdom is your spellcasting ability for your Druid spells.\n\nSpellcasting Focus. You can use a Druidic Focus as a Spellcasting Focus for your Druid spells.",
+          "when": "both",
+          "choices": null,
+          "reskin_reference": {
+            "name": "1. Spellcasting: Spirit Conduit",
+            "description": null,
+            "features": [
+              {
+                "name": "Spellcasting Ability",
+                "description": "You cast spells using Wisdom. Instead of traditional holy symbols or druidic mistletoe, your spellcasting focus is a Spirit Device—a Shinto charm bound with fiber-optic wire, a spirit-attuned cyberdeck, or a talisman-engraved smartphone."
+              },
+              {
+                "name": "The Cyberware Tax Essence Strain",
+                "description": "Excessive cybernetic installation disrupts your spiritual connection to the city's mana. Over-augmenting your body imposes penalties on your spell save DC or reduces spell slot recovery during short rests."
+              }
+            ]
+          }
+        },
+        {
+          "id": "druidic-1",
+          "name": "Druidic",
+          "description": "You know Druidic, the secret language of Druids. While learning this ancient tongue, you also unlocked the magic of communicating with animals; you always have the Speak with Animals spell prepared.\n\nYou can use Druidic to leave hidden messages. You and others who know Druidic automatically spot such a message. Others spot the message’s presence with a successful DC 15 Intelligence (Investigation) check but can’t decipher it without magic.",
+          "when": "both",
+          "choices": []
+        },
+        {
+          "id": "primal-order-1",
+          "name": "Primal Order",
+          "description": "You have dedicated yourself to one of the following sacred roles of your choice.\n\nMagician. You know one extra cantrip from the Druid spell list. In addition, your mystical connection to nature gives you a bonus to your Intelligence (Arcana or Nature) checks. The bonus equals your Wisdom modifier (minimum bonus of +1).\n\nWarden. Trained for battle, you gain proficiency with Martial weapons and training with Medium armor.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-primal-order-1",
+              "name": "Choose Primal Order",
+              "kind": "feature_option",
+              "count": 1,
+              "allowed_options": "See the source feature and its option list.",
+              "eligibility_rule": "Follow the feature's count, prerequisites, and replacement rules.",
+              "selection_effect": "Record selections and effects; structured details require review."
+            }
+          ]
+        },
+        {
+          "id": "progression-values-1",
+          "name": "Class progression values",
+          "description": "Wild Shape: —. These are totals at this class level, not additional grants.",
+          "when": "both",
+          "choices": []
+        },
+        {
+          "id": "spell-selections-1",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "cantrip-selection-1",
+              "name": "Choose cantrips",
+              "kind": "spell",
+              "count": 2,
+              "allowed_options": "Cantrips on the Druid spell list.",
+              "eligibility_rule": "Follow the class's cantrip and replacement rules.",
+              "selection_effect": "Record the newly selected class cantrips."
+            },
+            {
+              "id": "prepared-selection-1",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 4,
+              "allowed_options": "Eligible level 1+ Druid spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 2,
+        "spells_known_total": null,
+        "prepared_spells_total": 4,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 1,
+        "class_spell_slots": [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 2,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "wild-shape-2",
+          "name": "Spirit Morph (Wild Shape)",
+          "description": "The power of nature allows you to assume the form of an animal. As a Bonus Action, you shape-shift into a Beast form that you have learned for this feature (see “Known Forms” below). You stay in that form for a number of hours equal to half your Druid level or until you use Wild Shape again, have the Incapacitated condition, or die. You can also leave the form early as a Bonus Action.\n\nNumber of Uses. You can use Wild Shape twice. You regain one expended use when you finish a Short Rest, and you regain all expended uses when you finish a Long Rest.\n\nYou gain additional uses when you reach certain Druid levels, as shown in the Wild Shape column of the Druid Features table.\n\nKnown Forms. You know four Beast forms for this feature, chosen from among Beast stat blocks that have a maximum Challenge Rating of 1/4 and that lack a Fly Speed (see appendix B for stat block options). The Rat, Riding Horse, Spider, and Wolf are recommended. Whenever you finish a Long Rest, you can replace one of your known forms with another eligible form.\n\nWhen you reach certain Druid levels, your number of known forms and the maximum Challenge Rating for those forms increases, as shown in the Beast Shapes table. In addition, starting at level 8, you can adopt a form that has a Fly Speed.\n\nWhen choosing known forms, you may look in the Monster Manual or elsewhere for eligible Beasts if the Dungeon Master permits you to do so.\n\nBeast Shapes\nDruid Level\tKnown Forms\tMax CR\tFly Speed\n2\t4\t1/4\tNo\n4\t6\t1/2\tNo\n8\t8\t1\tYes\nRules While Shape-Shifted. While in a form, you retain your personality, memories, and ability to speak, and the following rules apply:\n\nTemporary Hit Points. When you assume a Wild Shape form, you gain a number of Temporary Hit Points equal to your Druid level.\n\nGame Statistics. Your game statistics are replaced by the Beast’s stat block, but you retain your creature type; Hit Points; Hit Point Dice; Intelligence, Wisdom, and Charisma scores; class features; languages; and feats. You also retain your skill and saving throw proficiencies and use your Proficiency Bonus for them, in addition to gaining the proficiencies of the creature. If a skill or saving throw modifier in the Beast’s stat block is higher than yours, use the one in the stat block.\n\nNo Spellcasting. You can’t cast spells, but shape-shifting doesn’t break your Concentration or otherwise interfere with a spell you’ve already cast.\n\nObjects. Your ability to handle objects is determined by the form’s limbs rather than your own. In addition, you choose whether your equipment falls in your space, merges into your new form, or is worn by it. Worn equipment functions as normal, but the DM decides whether it’s practical for the new form to wear a piece of equipment based on the creature’s size and shape. Your equipment doesn’t change size or shape to match the new form, and any equipment that the new form can’t wear must either fall to the ground or merge with the form. Equipment that merges with the form has no effect while you’re in that form.",
+          "when": "both",
+          "choices": null,
+          "reskin_reference": {
+            "name": "3. Spirit Morph",
+            "description": "Rather than turning into woodland beasts, you project your spirit into physical form as an Awakened Urban Critter or manifest a hard-light spirit construct—such as a cyber-fox (Kitsune), a raven drone-spirit, a neon-lit alley panther, or a subterranean sewer serpent.",
+            "features": [
+              {
+                "name": "Mechanics",
+                "description": "Functionally identical to Druid Wild Shape, but your beast forms manifest with glowing neon circuitry, spirit-aura trails, and environmental resistance (such as resistance to Lightning or Bio-Tox/Poison damage)."
+              }
+            ]
+          }
+        },
+        {
+          "id": "wild-companion-2",
+          "name": "Wild Companion",
+          "description": "You can summon a nature spirit that assumes an animal form to aid you. As a Magic action, you can expend a spell slot or a use of Wild Shape to cast the Find Familiar spell without Material components.\n\nWhen you cast the spell in this way, the familiar is Fey and disappears when you finish a Long Rest.",
+          "when": "both",
+          "choices": []
+        },
+        {
+          "id": "progression-values-2",
+          "name": "Class progression values",
+          "description": "Wild Shape: 2 (previously —). These are totals at this class level, not additional grants.",
+          "when": "both",
+          "choices": []
+        },
+        {
+          "id": "wild-shape-forms-2",
+          "name": "Spirit Morph known forms",
+          "description": "Know 4 eligible Beast forms in total, maximum challenge rating 1/4, without a fly speed. See Wild Shape for replacement and other restrictions.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-wild-shape-forms-2",
+              "name": "Choose Beast forms",
+              "kind": "beast_form",
+              "count": 4,
+              "allowed_options": "Eligible Beast stat blocks up to challenge rating 1/4, without a fly speed.",
+              "eligibility_rule": "Follow Wild Shape's known-form, long-rest replacement and DM approval rules.",
+              "selection_effect": "Record the selected known Beast forms."
+            }
+          ]
+        },
+        {
+          "id": "spell-selections-2",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "prepared-selection-2",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible level 1+ Druid spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 2,
+        "spells_known_total": null,
+        "prepared_spells_total": 5,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 1,
+        "class_spell_slots": [
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 3,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "druid-subclass-3",
+          "name": "Druid Subclass",
+          "description": "Choose a Druid subclass at this class level. Subclass choices and features will be authored later.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-druid-subclass-3",
+              "name": "Choose a subclass later",
+              "kind": "subclass",
+              "count": 1,
+              "allowed_options": null,
+              "eligibility_rule": "Subclass authoring is deferred; verify available choices.",
+              "selection_effect": "Record the chosen subclass when implemented."
+            }
+          ]
+        },
+        {
+          "id": "spell-selections-3",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "prepared-selection-3",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible level 1+ Druid spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 2,
+        "spells_known_total": null,
+        "prepared_spells_total": 6,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 2,
+        "class_spell_slots": [
+          4,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 4,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "ability-score-improvement-4",
+          "name": "Ability Score Improvement",
+          "description": "You gain the Ability Score Improvement feat (see “Feats”) or another feat of your choice for which you qualify. You gain this feature again at Druid levels 8, 12, and 16.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-ability-score-improvement-4",
+              "name": "Choose an eligible feat or Ability Score Improvement",
+              "kind": "feat",
+              "count": 1,
+              "allowed_options": "Ability Score Improvement or another eligible feat.",
+              "eligibility_rule": "Meet feat prerequisites and verify ability-score limits.",
+              "selection_effect": "Record the feat and apply its selected effects."
+            }
+          ]
+        },
+        {
+          "id": "wild-shape-forms-4",
+          "name": "Spirit Morph known forms",
+          "description": "Know 6 eligible Beast forms in total, maximum challenge rating 1/2, without a fly speed. See Wild Shape for replacement and other restrictions.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-wild-shape-forms-4",
+              "name": "Choose Beast forms",
+              "kind": "beast_form",
+              "count": 2,
+              "allowed_options": "Eligible Beast stat blocks up to challenge rating 1/2, without a fly speed.",
+              "eligibility_rule": "Follow Wild Shape's known-form, long-rest replacement and DM approval rules.",
+              "selection_effect": "Record the selected known Beast forms."
+            }
+          ]
+        },
+        {
+          "id": "spell-selections-4",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "cantrip-selection-4",
+              "name": "Choose cantrips",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Cantrips on the Druid spell list.",
+              "eligibility_rule": "Follow the class's cantrip and replacement rules.",
+              "selection_effect": "Record the newly selected class cantrips."
+            },
+            {
+              "id": "prepared-selection-4",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible level 1+ Druid spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 3,
+        "spells_known_total": null,
+        "prepared_spells_total": 7,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 2,
+        "class_spell_slots": [
+          4,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 5,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "wild-resurgence-5",
+          "name": "Wild Resurgence",
+          "description": "Once on each of your turns, if you have no uses of Wild Shape left, you can give yourself one use by expending a spell slot (no action required).\n\nIn addition, you can expend one use of Wild Shape (no action required) to give yourself a level 1 spell slot, but you can’t do so again until you finish a Long Rest.",
+          "when": "both",
+          "choices": []
+        },
+        {
+          "id": "spell-selections-5",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "prepared-selection-5",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 2,
+              "allowed_options": "Eligible level 1+ Druid spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 3,
+        "spells_known_total": null,
+        "prepared_spells_total": 9,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 3,
+        "class_spell_slots": [
+          4,
+          3,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 6,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "progression-values-6",
+          "name": "Class progression values",
+          "description": "Wild Shape: 3 (previously 2). These are totals at this class level, not additional grants.",
+          "when": "both",
+          "choices": []
+        },
+        {
+          "id": "spell-selections-6",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "prepared-selection-6",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible level 1+ Druid spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 3,
+        "spells_known_total": null,
+        "prepared_spells_total": 10,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 3,
+        "class_spell_slots": [
+          4,
+          3,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Subclass feature deferred. Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 7,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "elemental-fury-7",
+          "name": "Elemental Fury",
+          "description": "The might of the elements flows through you. You gain one of the following options of your choice.\n\nPotent Spellcasting. Add your Wisdom modifier to the damage you deal with any Druid cantrip.\n\nPrimal Strike. Once on each of your turns when you hit a creature with an attack roll using a weapon or a Beast form’s attack in Wild Shape, you can cause the target to take an extra 1d8 Cold, Fire, Lightning, or Thunder damage (choose when you hit).",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-elemental-fury-7",
+              "name": "Choose Elemental Fury option",
+              "kind": "feature_option",
+              "count": 1,
+              "allowed_options": "See the source feature and its option list.",
+              "eligibility_rule": "Follow the feature's count, prerequisites, and replacement rules.",
+              "selection_effect": "Record selections and effects; structured details require review."
+            }
+          ]
+        },
+        {
+          "id": "spell-selections-7",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "prepared-selection-7",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible level 1+ Druid spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 3,
+        "spells_known_total": null,
+        "prepared_spells_total": 11,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 4,
+        "class_spell_slots": [
+          4,
+          3,
+          3,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 8,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "ability-score-improvement-8",
+          "name": "Ability Score Improvement",
+          "description": "You gain the Ability Score Improvement feat (see “Feats”) or another feat of your choice for which you qualify. You gain this feature again at Druid levels 8, 12, and 16.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-ability-score-improvement-8",
+              "name": "Choose an eligible feat or Ability Score Improvement",
+              "kind": "feat",
+              "count": 1,
+              "allowed_options": "Ability Score Improvement or another eligible feat.",
+              "eligibility_rule": "Meet feat prerequisites and verify ability-score limits.",
+              "selection_effect": "Record the feat and apply its selected effects."
+            }
+          ]
+        },
+        {
+          "id": "wild-shape-forms-8",
+          "name": "Spirit Morph known forms",
+          "description": "Know 8 eligible Beast forms in total, maximum challenge rating 1, including forms with a fly speed. See Wild Shape for replacement and other restrictions.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-wild-shape-forms-8",
+              "name": "Choose Beast forms",
+              "kind": "beast_form",
+              "count": 2,
+              "allowed_options": "Eligible Beast stat blocks up to challenge rating 1, including forms with a fly speed.",
+              "eligibility_rule": "Follow Wild Shape's known-form, long-rest replacement and DM approval rules.",
+              "selection_effect": "Record the selected known Beast forms."
+            }
+          ]
+        },
+        {
+          "id": "spell-selections-8",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "prepared-selection-8",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible level 1+ Druid spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 3,
+        "spells_known_total": null,
+        "prepared_spells_total": 12,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 4,
+        "class_spell_slots": [
+          4,
+          3,
+          3,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 9,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "spell-selections-9",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "prepared-selection-9",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 2,
+              "allowed_options": "Eligible level 1+ Druid spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 3,
+        "spells_known_total": null,
+        "prepared_spells_total": 14,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 5,
+        "class_spell_slots": [
+          4,
+          3,
+          3,
+          3,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 10,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "spell-selections-10",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "cantrip-selection-10",
+              "name": "Choose cantrips",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Cantrips on the Druid spell list.",
+              "eligibility_rule": "Follow the class's cantrip and replacement rules.",
+              "selection_effect": "Record the newly selected class cantrips."
+            },
+            {
+              "id": "prepared-selection-10",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible level 1+ Druid spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 4,
+        "spells_known_total": null,
+        "prepared_spells_total": 15,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 5,
+        "class_spell_slots": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Subclass feature deferred. Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 11,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "spell-selections-11",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "prepared-selection-11",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible level 1+ Druid spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 4,
+        "spells_known_total": null,
+        "prepared_spells_total": 16,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 6,
+        "class_spell_slots": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 12,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "ability-score-improvement-12",
+          "name": "Ability Score Improvement",
+          "description": "You gain the Ability Score Improvement feat (see “Feats”) or another feat of your choice for which you qualify. You gain this feature again at Druid levels 8, 12, and 16.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-ability-score-improvement-12",
+              "name": "Choose an eligible feat or Ability Score Improvement",
+              "kind": "feat",
+              "count": 1,
+              "allowed_options": "Ability Score Improvement or another eligible feat.",
+              "eligibility_rule": "Meet feat prerequisites and verify ability-score limits.",
+              "selection_effect": "Record the feat and apply its selected effects."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 4,
+        "spells_known_total": null,
+        "prepared_spells_total": 16,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 6,
+        "class_spell_slots": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 13,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "spell-selections-13",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "prepared-selection-13",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible level 1+ Druid spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 4,
+        "spells_known_total": null,
+        "prepared_spells_total": 17,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 7,
+        "class_spell_slots": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 14,
+      "status": "unfilled",
+      "features": [],
+      "spell_progression": {
+        "cantrips_known_total": 4,
+        "spells_known_total": null,
+        "prepared_spells_total": 17,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 7,
+        "class_spell_slots": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Subclass feature deferred. Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 15,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "improved-elemental-fury-15",
+          "name": "Improved Elemental Fury",
+          "description": "The option you chose for Elemental Fury grows more powerful, as detailed below.\n\nPotent Spellcasting. When you cast a Druid cantrip with a range of 10 feet or greater, the spell’s range increases by 300 feet.\n\nPrimal Strike. The extra damage of your Primal Strike increases to 2d8.",
+          "when": "both",
+          "choices": []
+        },
+        {
+          "id": "spell-selections-15",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "prepared-selection-15",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible level 1+ Druid spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 4,
+        "spells_known_total": null,
+        "prepared_spells_total": 18,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 8,
+        "class_spell_slots": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          1,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 16,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "ability-score-improvement-16",
+          "name": "Ability Score Improvement",
+          "description": "You gain the Ability Score Improvement feat (see “Feats”) or another feat of your choice for which you qualify. You gain this feature again at Druid levels 8, 12, and 16.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-ability-score-improvement-16",
+              "name": "Choose an eligible feat or Ability Score Improvement",
+              "kind": "feat",
+              "count": 1,
+              "allowed_options": "Ability Score Improvement or another eligible feat.",
+              "eligibility_rule": "Meet feat prerequisites and verify ability-score limits.",
+              "selection_effect": "Record the feat and apply its selected effects."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 4,
+        "spells_known_total": null,
+        "prepared_spells_total": 18,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 8,
+        "class_spell_slots": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          1,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 17,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "progression-values-17",
+          "name": "Class progression values",
+          "description": "Wild Shape: 4 (previously 3). These are totals at this class level, not additional grants.",
+          "when": "both",
+          "choices": []
+        },
+        {
+          "id": "spell-selections-17",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "prepared-selection-17",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible level 1+ Druid spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 4,
+        "spells_known_total": null,
+        "prepared_spells_total": 19,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 9,
+        "class_spell_slots": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          1,
+          1
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 18,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "beast-spells-18",
+          "name": "Beast Spells",
+          "description": "While using Wild Shape, you can cast spells in Beast form, except for any spell that has a Material component with a cost specified or that consumes its Material component.",
+          "when": "both",
+          "choices": []
+        },
+        {
+          "id": "spell-selections-18",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "prepared-selection-18",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible level 1+ Druid spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 4,
+        "spells_known_total": null,
+        "prepared_spells_total": 20,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 9,
+        "class_spell_slots": [
+          4,
+          3,
+          3,
+          3,
+          3,
+          1,
+          1,
+          1,
+          1
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 19,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "epic-boon-19",
+          "name": "Epic Boon",
+          "description": "You gain an Epic Boon feat (see “Feats”) or another feat of your choice for which you qualify. Boon of Dimensional Travel is recommended.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-epic-boon-19",
+              "name": "Choose an Epic Boon or another eligible feat",
+              "kind": "feat",
+              "count": 1,
+              "allowed_options": "An Epic Boon feat or another eligible feat.",
+              "eligibility_rule": "Meet feat prerequisites.",
+              "selection_effect": "Record the feat and its effects."
+            }
+          ]
+        },
+        {
+          "id": "spell-selections-19",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "prepared-selection-19",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible level 1+ Druid spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 4,
+        "spells_known_total": null,
+        "prepared_spells_total": 21,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 9,
+        "class_spell_slots": [
+          4,
+          3,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          1
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 20,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "archdruid-20",
+          "name": "Archdruid",
+          "description": "The vitality of nature constantly blooms within you, granting you the following benefits.\n\nEvergreen Wild Shape. Whenever you roll Initiative and have no uses of Wild Shape left, you regain one expended use of it.\n\nNature Magician. You can convert uses of Wild Shape into a spell slot (no action required). Choose a number of your unexpended uses of Wild Shape and convert them into a single spell slot, with each use contributing 2 spell levels. For example, if you convert two uses of Wild Shape, you produce a level 4 spell slot. Once you use this benefit, you can’t do so again until you finish a Long Rest.\n\nLongevity. The primal magic that you wield causes you to age more slowly. For every ten years that pass, your body ages only one year.",
+          "when": "both",
+          "choices": null
+        },
+        {
+          "id": "spell-selections-20",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "prepared-selection-20",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible level 1+ Druid spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 4,
+        "spells_known_total": null,
+        "prepared_spells_total": 22,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 9,
+        "class_spell_slots": [
+          4,
+          3,
+          3,
+          3,
+          3,
+          2,
+          2,
+          1,
+          1
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    }
+  ],
+  "subclasses": null,
+  "source_notes": [
+    "Rules basis: _reference/classes/Druid.md, a 2024-style source. Review compatibility with the earlier 2014 multiclass design.",
+    "Class progression and mechanics use the original reference; older reskin mechanics may differ and are thematic reference only, not additional grants.",
+    "The worksheet schema is not supported by the app. Levels remain unfilled pending rules and choice review; null means unresolved or not applicable as described.",
+    "Subclass selection milestones are recorded, but subclass options, features, and spellcasting are intentionally deferred.",
+    "Reskin inspiration: classes/Bio-Tech Specialist.json. Names may be adapted where source mechanics have changed.",
+    "The existing Bio-Tech Specialist source mixes Cleric and Druid mechanics; do not grant its Cleric features or its additional form resistances without a separate rules decision."
+  ]
+}

@@ -1,0 +1,184 @@
+{
+  "name": "Corporate Enforcer",
+  "features": [
+    {
+      "name": "Core Corporate Enforcer Class Features"
+    },
+    {
+      "name": "1. Combat Augment Protocol (Level 1)",
+      "description": "You calibrate your neural interface and physical sub-dermal augments for a specific combat doctrine:",
+      "features": [
+        {
+          "name": "Smart Link Targeting",
+          "description": "You gain a +2 bonus to attack rolls made with ranged smart-weapons and firearms."
+        },
+        {
+          "name": "Sub Dermal Plating",
+          "description": "You gain a +1 bonus to AC while wearing armor or sub-dermal weave."
+        },
+        {
+          "name": "Monomolecular Edge Tuning",
+          "description": "When wielding a one-handed melee weapon in one hand and no other weapons, you gain a +2 bonus to damage rolls."
+        },
+        {
+          "name": "Hydraulic Torque Drive",
+          "description": "When you roll a 1 or 2 on a damage die for an attack with a two-handed weapon, you can reroll the die and must use the new roll."
+        },
+        {
+          "name": "Hard Light Aegis Intercept",
+          "description": "When a target within 5 feet of you is attacked, you can use your reaction to project a hard-light barrier, imposing disadvantage on the attack roll (requires a shield or cyber-shield)."
+        },
+        {
+          "name": "Dual Rotor Actuators",
+          "description": "When you engage in two-weapon fighting, you can add your ability modifier to the damage of the second attack."
+        }
+      ]
+    },
+    {
+      "name": "2. Nanite Repair Injection (Level 1)",
+      "description": "You activate a sub-dermal auto-injector or trigger a nanite repair swarm that instantly cauterizes wounds, seals flesh, and numbs trauma.",
+      "features": [
+        {
+          "name": "Mechanics",
+          "description": "On your turn, you can use a bonus action to regain Hit Points equal to 1d10 + your Fighter level. (1/Short or Long Rest)."
+        }
+      ]
+    },
+    {
+      "name": "3. Synaptic Overclock (Level 2)",
+      "description": "You temporarily override your neural safety governors or trigger a heavy combat-stim dump, allowing your body to move at near-light reaction speeds.",
+      "features": [
+        {
+          "name": "Mechanics",
+          "description": "On your turn, you can take one additional action on top of your regular action and possible bonus action. (1/Short or Long Rest; 2 uses at Level 17)."
+        }
+      ]
+    },
+    {
+      "name": "4. Combat Specialization (Level 3)",
+      "description": "You select your operational role in Neo-Tokyo's shadow economy—whether as a street samurai, corporate field officer, or spirit-bound ward-knight."
+    },
+    {
+      "name": "5. Rapid Fire Protocol (Level 5)",
+      "description": "High-frequency weapon swings, sub-dermal recoil dampeners, and automated target cycling allow you to strike multiple targets in milliseconds.",
+      "features": [
+        {
+          "name": "Mechanics",
+          "description": "You can attack twice (Level 5), three times (Level 11), and four times (Level 20) whenever you take the Attack action on your turn."
+        }
+      ]
+    },
+    {
+      "name": "6. Neural Hardening (Level 9)",
+      "description": "You purge Black ICE neural feedback, override bioweapons, or push through physical shock through sheer grit and hardened firewall firmware. :::",
+      "features": [
+        {
+          "name": "Mechanics",
+          "description": "You can reroll a saving throw that you fail, but you must use the new roll. (1/Long Rest at Level 9; 2 at Level 13; 3 at Level 17)."
+        }
+      ]
+    }
+  ],
+  "subclasses": [
+    {
+      "name": "Street Samurai",
+      "description": "Target Acquisition Optics (Level 3) Biomechanical Conditioning (Level 7) Secondary Augment Suite (Level 10) Lethal Precision Firmware (Level 15) Sub-Dermal Regen Core (Level 18)",
+      "details": [
+        "Your weapon attacks score a critical hit on a roll of 19 or 20.",
+        "You can add half your proficiency bonus (rounded up) to any Strength, Dexterity, or Constitution check that doesn't already use your proficiency bonus. Additionally, your running jump distance increases by a number of feet equal to your Strength modifier.",
+        "You choose a second Combat Augment Protocol from the Level 1 list.",
+        "Your weapon attacks score a critical hit on a roll of 18–20.",
+        "At the start of each of your turns, you regain Hit Points equal to 5 + your Constitution modifier if you have no more than half your Hit Points left and aren't at 0 HP."
+      ],
+      "features": [
+        {
+          "name": "Focus",
+          "description": "Raw physical perfection, military-grade cybernetic lethality, and unmatched critical hit frequency.*"
+        }
+      ]
+    },
+    {
+      "name": "Aegis Tactical Strategist",
+      "description": "Tactical Maneuver Deck (Level 3) Corporate Ordnance Certification (Level 3) :::",
+      "details": [
+        "You gain proficiency with one type of artisan's tools (e.g., Arms & Cyberware Tech tools) and proficiency in System Forensics (Investigation).",
+        "Biometric Threat Scan (Level 7)",
+        "If you spend at least 1 minute observing or interacting with a target outside of combat, you can analyze their cybernetic tier, threat level, AC, HP, or physical ability scores relative to your own.",
+        "Tactical Command Reserve (Level 15)",
+        "When you roll initiative and have no Superiority Dice remaining, you immediately regain one Superiority Die."
+      ],
+      "features": [
+        {
+          "name": "Focus",
+          "description": "Tactical maneuvers, squad coordination, and analyzing enemy vulnerabilities using corporate combat algorithms.*"
+        },
+        {
+          "name": "Superiority Dice",
+          "description": "You gain four d8 Superiority Dice to power tactical maneuvers."
+        },
+        {
+          "name": "Fire Discipline Command",
+          "description": "Direct an ally to issue an immediate ranged or melee strike."
+        },
+        {
+          "name": "Joint Lock Disarm",
+          "description": "Target a foe's cybernetic joints or weapon grip to force them to drop an item."
+        },
+        {
+          "name": "E Vector Dodge",
+          "description": "Add a superiority die to your AC while moving through dangerous kill zones."
+        },
+        {
+          "name": "Counter Strike",
+          "description": "Use your reaction when an enemy misses you to execute an immediate counter-attack."
+        }
+      ]
+    },
+    {
+      "name": "Cyber-Mage Ronin",
+      "description": "Cyber-Mage Spellcasting (Level 3) Spell-Blade Weave (Level 7) Data-Disrupting Strike (Level 10) Matrix Shift (Level 15) :::",
+      "details": [
+        "You cast Wizard spells using Intelligence as your spellcasting ability, flavoring spells as active matrix code uploads (e.g., Overclock Reflexes for Shield, Blackout Arc for Thunderwave, or Hard-Light Decoy Array for Mirror Image).",
+        "Neural Weapon Sync (Level 3)",
+        "You perform a 1-hour neural synchronization with up to two weapons. Once synced, you cannot be disarmed of the weapon unless incapacitated, and you can summon it directly to your hand from anywhere on the same plane as a bonus action.",
+        "When you use your action to cast a cantrip (such as Data-Siphon or Neon Glitch), you can make one weapon attack as a bonus action.",
+        "When you hit a creature with a weapon attack, that creature has disadvantage on the next saving throw it makes against a spell you cast before the end of your next turn.",
+        "When you use your Synaptic Overclock (Action Surge), you can instantly teleport up to 30 feet to an unoccupied space you can see."
+      ],
+      "features": [
+        {
+          "name": "Focus",
+          "description": "Blending high-frequency blade work with awakened matrix code and offensive digital spellcasting.*"
+        }
+      ]
+    },
+    {
+      "name": "Shinto Ward-Knight",
+      "description": "Spirit Ward Inscription (Level 3) Avatar Manifestation (Level 3) Shinto Barrier Reaction (Level 7) Dual Ward Protocol (Level 15)",
+      "details": [
+        "You learn to carve sacred Shinto kanji and digital spirit talismans onto your gear:",
+        "As a bonus action, you channel raw ley-line energy to physically expand your form. For 1 minute, your size becomes Large, you deal an extra 1d6 damage once per turn with weapon attacks, and you have advantage on Strength checks and saving throws.",
+        "When a creature you can see within 60 feet is hit by an attack roll, you can use your reaction to force the attacker to reroll the attack roll with a sacred digital barrier.",
+        "You can invoke each of your inscribed Spirit Wards twice per short or long rest rather than once."
+      ],
+      "features": [
+        {
+          "name": "Focus",
+          "description": "Channeling ancient Shinto spirit wards and ley-line energy directly into heavy armor and weapons.*"
+        },
+        {
+          "name": "Inugami Ward Fire Rune",
+          "description": "Infuses strikes with searing spirit fire and restrains targets with burning chains."
+        },
+        {
+          "name": "Raijin Ward Storm Rune",
+          "description": "Emits a high-voltage lightning shockwave when hit in combat."
+        },
+        {
+          "name": "Tengu Ward Cloud Rune",
+          "description": "Uses a reaction to invoke a wind shield, redirecting an incoming attack from yourself or an ally to another target nearby."
+        }
+      ]
+    }
+  ]
+}

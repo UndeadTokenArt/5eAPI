@@ -157,6 +157,68 @@ func nonEmpty(values ...string) []string {
 	return out
 }
 
+// NPCAttack is one structured attack action of a stat block, ready for one-click rolling.
+type NPCAttack struct {
+	Name        string      `json:"name"`
+	AttackBonus int         `json:"attack_bonus"`
+	Damage      []NPCDamage `json:"damage"`
+	Description string      `json:"description,omitempty"`
+}
+
+type NPCDamage struct {
+	Dice string `json:"dice"`
+	Type string `json:"type,omitempty"`
+}
+
+// attacksFor lists the actions that have both an attack bonus and damage dice.
+func (e NonPlayerEntity) attacksFor() []NPCAttack {
+	attacks := []NPCAttack{}
+	for _, action := range e.Actions {
+		name, _ := action["name"].(string)
+		bonus, hasBonus := action["attack_bonus"].(float64)
+		damageList, _ := action["damage"].([]any)
+		if name == "" || !hasBonus || len(damageList) == 0 {
+			continue
+		}
+		attack := NPCAttack{Name: name, AttackBonus: int(bonus), Damage: []NPCDamage{}}
+		attack.Description, _ = action["desc"].(string)
+		for _, raw := range damageList {
+			entry, _ := raw.(map[string]any)
+			dice, _ := entry["damage_dice"].(string)
+			if strings.TrimSpace(dice) == "" {
+				continue
+			}
+			damage := NPCDamage{Dice: strings.TrimSpace(dice)}
+			if kind, ok := entry["damage_type"].(map[string]any); ok {
+				damage.Type, _ = kind["name"].(string)
+			}
+			attack.Damage = append(attack.Damage, damage)
+		}
+		if len(attack.Damage) > 0 {
+			attacks = append(attacks, attack)
+		}
+	}
+	return attacks
+}
+
+// npcAttacksByName finds a stat block by name (case-insensitive) and returns its attacks.
+func npcAttacksByName(name string) []NPCAttack {
+	name = strings.TrimSpace(name)
+	if name == "" {
+		return nil
+	}
+	guide, _, err := currentGuide()
+	if err != nil {
+		return nil
+	}
+	for _, e := range guide.Category.NonPlayerEntities {
+		if strings.EqualFold(e.Name, name) {
+			return e.attacksFor()
+		}
+	}
+	return nil
+}
+
 type npcCatalogEntry struct {
 	Name      string  `json:"name"`
 	HP        int     `json:"hit_points"`

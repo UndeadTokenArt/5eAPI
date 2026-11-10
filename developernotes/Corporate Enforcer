@@ -1,0 +1,284 @@
+Corporate Enforcer
+Core Corporate Enforcer Class Features
+1. Combat Augment Protocol (Level 1)
+You calibrate your neural interface and physical sub-dermal augments for a specific combat doctrine:
+
+Smart Link Targeting
+You gain a +2 bonus to attack rolls made with ranged smart-weapons and firearms.
+
+Sub Dermal Plating
+You gain a +1 bonus to AC while wearing armor or sub-dermal weave.
+
+Monomolecular Edge Tuning
+When wielding a one-handed melee weapon in one hand and no other weapons, you gain a +2 bonus to damage rolls.
+
+Hydraulic Torque Drive
+When you roll a 1 or 2 on a damage die for an attack with a two-handed weapon, you can reroll the die and must use the new roll.
+
+Hard Light Aegis Intercept
+When a target within 5 feet of you is attacked, you can use your reaction to project a hard-light barrier, imposing disadvantage on the attack roll (requires a shield or cyber-shield).
+
+Dual Rotor Actuators
+When you engage in two-weapon fighting, you can add your ability modifier to the damage of the second attack.
+
+2. Nanite Repair Injection (Level 1)
+You activate a sub-dermal auto-injector or trigger a nanite repair swarm that instantly cauterizes wounds, seals flesh, and numbs trauma.
+
+Mechanics
+On your turn, you can use a bonus action to regain Hit Points equal to 1d10 + your Fighter level. (1/Short or Long Rest).
+
+3. Synaptic Overclock (Level 2)
+You temporarily override your neural safety governors or trigger a heavy combat-stim dump, allowing your body to move at near-light reaction speeds.
+
+Mechanics
+On your turn, you can take one additional action on top of your regular action and possible bonus action. (1/Short or Long Rest; 2 uses at Level 17).
+
+4. Combat Specialization (Level 3)
+You select your operational role in Neo-Tokyo's shadow economy—whether as a street samurai, corporate field officer, or spirit-bound ward-knight.
+
+5. Rapid Fire Protocol (Level 5)
+High-frequency weapon swings, sub-dermal recoil dampeners, and automated target cycling allow you to strike multiple targets in milliseconds.
+
+Mechanics
+You can attack twice (Level 5), three times (Level 11), and four times (Level 20) whenever you take the Attack action on your turn.
+
+6. Neural Hardening (Level 9)
+You purge Black ICE neural feedback, override bioweapons, or push through physical shock through sheer grit and hardened firewall firmware. :::
+
+Mechanics
+You can reroll a saving throw that you fail, but you must use the new roll. (1/Long Rest at Level 9; 2 at Level 13; 3 at Level 17).
+
+Subclasses
+Street Samurai
+Target Acquisition Optics (Level 3) Biomechanical Conditioning (Level 7) Secondary Augment Suite (Level 10) Lethal Precision Firmware (Level 15) Sub-Dermal Regen Core (Level 18)
+
+Your weapon attacks score a critical hit on a roll of 19 or 20.
+You can add half your proficiency bonus (rounded up) to any Strength, Dexterity, or Constitution check that doesn't already use your proficiency bonus. Additionally, your running jump distance increases by a number of feet equal to your Strength modifier.
+You choose a second Combat Augment Protocol from the Level 1 list.
+Your weapon attacks score a critical hit on a roll of 18–20.
+At the start of each of your turns, you regain Hit Points equal to 5 + your Constitution modifier if you have no more than half your Hit Points left and aren't at 0 HP.
+Focus
+Raw physical perfection, military-grade cybernetic lethality, and unmatched critical hit frequency.*
+
+Aegis Tactical Strategist
+Tactical Maneuver Deck (Level 3) Corporate Ordnance Certification (Level 3) :::
+
+You gain proficiency with one type of artisan's tools (e.g., Arms & Cyberware Tech tools) and proficiency in System Forensics (Investigation).
+Biometric Threat Scan (Level 7)
+If you spend at least 1 minute observing or interacting with a target outside of combat, you can analyze their cybernetic tier, threat level, AC, HP, or physical ability scores relative to your own.
+Tactical Command Reserve (Level 15)
+When you roll initiative and have no Superiority Dice remaining, you immediately regain one Superiority Die.
+Focus
+Tactical maneuvers, squad coordination, and analyzing enemy vulnerabilities using corporate combat algorithms.*
+
+Superiority Dice
+You gain four d8 Superiority Dice to power tactical maneuvers.
+
+Fire Discipline Command
+Direct an ally to issue an immediate ranged or melee strike.
+
+Joint Lock Disarm
+Target a foe's cybernetic joints or weapon grip to force them to drop an item.
+
+E Vector Dodge
+Add a superiority die to your AC while moving through dangerous kill zones.
+
+Counter Strike
+Use your reaction when an enemy misses you to execute an immediate counter-attack.
+
+Cyber-Mage Ronin
+Cyber-Mage Spellcasting (Level 3) Spell-Blade Weave (Level 7) Data-Disrupting Strike (Level 10) Matrix Shift (Level 15) :::
+
+You cast Wizard spells using Intelligence as your spellcasting ability, flavoring spells as active matrix code uploads (e.g., Overclock Reflexes for Shield, Blackout Arc for Thunderwave, or Hard-Light Decoy Array for Mirror Image).
+Neural Weapon Sync (Level 3)
+You perform a 1-hour neural synchronization with up to two weapons. Once synced, you cannot be disarmed of the weapon unless incapacitated, and you can summon it directly to your hand from anywhere on the same plane as a bonus action.
+When you use your action to cast a cantrip (such as Data-Siphon or Neon Glitch), you can make one weapon attack as a bonus action.
+When you hit a creature with a weapon attack, that creature has disadvantage on the next saving throw it makes against a spell you cast before the end of your next turn.
+When you use your Synaptic Overclock (Action Surge), you can instantly teleport up to 30 feet to an unoccupied space you can see.
+Focus
+Blending high-frequency blade work with awakened matrix code and offensive digital spellcasting.*
+
+Spell Progression by Class Level
+Spell slots, cantrips and spells for each class level.
+
+Spellcasting ability: Intelligence. Spellcasting starts at class level 3 and uses the Wizard spell list. Spells known are fixed per level; cantrips rise from 2 to 3 at level 10.
+Level	Cantrips	Spells Known	1st	2nd	3rd	4th
+3	2	3	2	—	—	—
+4	2	4	3	—	—	—
+5	2	4	3	—	—	—
+6	2	4	3	—	—	—
+7	2	5	4	2	—	—
+8	2	6	4	2	—	—
+9	2	6	4	2	—	—
+10	3	7	4	3	—	—
+11	3	8	4	3	—	—
+12	3	8	4	3	—	—
+13	3	9	4	3	2	—
+14	3	10	4	3	2	—
+15	3	10	4	3	2	—
+16	3	11	4	3	3	—
+17	3	11	4	3	3	—
+18	3	11	4	3	3	—
+19	3	12	4	3	3	1
+20	3	13	4	3	3	1
+Class Spell List
+Every spell this class can learn or prepare, grouped by spell level. Each group unlocks at the class level shown.
+
+Cantrips
+Available from class level 3. 15 spells.
+
+Aerosolized Bio-Toxin Jet
+Chem-Solvent Spray
+Cryo-Beam Cannon
+Floating LED Micro-Drones
+Hard-Light Kinetic Force-Palm
+High-Voltage Plasma Arc
+High-Voltage Taser Palm
+Holographic Projection Mesh
+LED Spotlight Beam
+Micro-Holo & Acoustic Utility
+Micro-Solder Quick-Patch
+Necrotic Signal Freeze
+Sub-Dermal Targeting Paint
+Subliminal Comms Ping
+Synaptic Spike
+1st-Level Spells
+Available from class level 3. 27 spells.
+
+Acid Fog Chemical Venter
+Acoustic Shockwave Pulse
+Adrenaline Overclock Routine
+Aegis Anti-Corporate Protection
+Bio-Synthetic Cell Injector
+Conductive Friction Lubricant
+Encrypted Scripting
+Hard-Light Automation Unit
+Hardware Telemetry Analysis
+Holographic Decoy Display
+Holographic Skin-Spoofer
+Kinetic Inertia Dampener
+Mana & Signal Scanner
+Recon Drone Familiar
+Repulsor Cargo Disk
+Sensor Perimeter Ping
+Strobe Light Flashbang
+Sub-Dermal Ballistic Weave
+Sub-Dermal Flame-Venter
+Sub-Dermal Hydraulic Jump
+Sub-Dermal Muscle Overclock
+Sub-Dermal Reactive Firewall
+Subliminal Neural Hysteria
+Subliminal Override
+Subliminal Sleep Signal
+Targeting Smart-Micro-Missiles
+Universal Neural Translator
+2nd-Level Spells
+Available from class level 7. 31 spells.
+
+Acoustic Shatter Pulse
+Asset RFID Tracker
+Biometric Firewall Lockout
+Corrosive Flechette Pulse
+Cryo-Stasis Preservative
+Deployable Micro-Safehouse
+Firmware Signature Mask
+Hard-Light Perpetual Beacon
+High-Tensile Cable Web
+Holographic Optical Camouflage
+Mag-Lock Breaker
+Magnetic Repulsor Lift
+Monomolecular Edge Coating
+Nanite Biomass Modifier
+Neural Mind Probe
+Neural System Freeze
+Optical Decoy Shimmer
+Optical Glitch / Acoustic Jammer
+Optical Smoke & Chaff Spray
+Phase-Blink Step
+Plasma Geysers
+Pneumatic Air-Cannon Blast
+Pneumatic Wall-Climber Actuators
+Sub-Dermal Bio-Siphon
+Sub-Dermal Flesh-Craft
+Subliminal Behavioral Override
+Thermal Optics Sweep
+Thermal-Optic Augmentation
+Thermite Cluster Launch
+Thermo-Optic Camouflage Field
+Voice-Synthesized Interface
+3rd-Level Spells
+Available from class level 13. 28 spells.
+
+Aerosolized Bio-Gaseous Form
+Bio-Nanite Life Drain
+Black ICE Corruption Malware
+Code Scrub & Firewall Purge
+Code-Interrupt Firewall
+Cryogenic Blizzard Cloud
+Cyber-Bike Fast-Deploy
+Cyber-Corpse Rigging
+Deployable Micro-Bunker
+Elemental Shielding Protocol
+Firewall Malware Scrub
+High-Voltage Arc Discharge
+Holographic Projection Matrix
+Mag-Lock Trap / Sensor Glyph
+Neural Linguistic Translator
+Neural Reflex Delay
+Neural Terror Feedback
+Neuro-Toxic Gas Venter
+Null-Signal Frequency Barrier
+Phase-Shift Glitch
+Plasma Detonation Sphere
+Remote Drone Feeds
+Repulsor Thruster Flight
+Signal Jammer Mask
+Strobe-Pulse Disorientation
+Sub-Dermal Gills & Hydro-Filters
+Synaptic Overclock Stim
+Wireless Audio/Text Signal
+4th-Level Spells
+Available from class level 19. 24 spells.
+
+Bio-Form Mutagen Overwrite
+Biometric Target Tracker
+Cellular Decay Beam
+Cryogenic Hailstorm
+Cyber-Hound Security Sentry
+Data-Vault Isolation Chamber
+Encrypted Stash Lockbox
+Escaped Specimen Protocol
+Hard-Light Containment Sphere
+Hard-Light Napalm Barrier
+Hard-Light Thermo-Optic Stealth Cloak
+High-Voltage Cable Swarm
+Holographic Environmental Simulator
+Hydro-Pump Regulation
+Matrix Isolation Quarantine
+Micro-Drone Optical Scanner
+Nanite 3D-Fabrication Array
+Neural Feedback Loop
+Phase-Shift Teleport
+Sub-Dermal Concrete Shaping
+Sub-Dermal Titanium Skin
+Sub-Elemental Micro-Manifestation
+Subliminal Terror Nightmare
+Thermal & Reactive Shielding
+Shinto Ward-Knight
+Spirit Ward Inscription (Level 3) Avatar Manifestation (Level 3) Shinto Barrier Reaction (Level 7) Dual Ward Protocol (Level 15)
+
+You learn to carve sacred Shinto kanji and digital spirit talismans onto your gear:
+As a bonus action, you channel raw ley-line energy to physically expand your form. For 1 minute, your size becomes Large, you deal an extra 1d6 damage once per turn with weapon attacks, and you have advantage on Strength checks and saving throws.
+When a creature you can see within 60 feet is hit by an attack roll, you can use your reaction to force the attacker to reroll the attack roll with a sacred digital barrier.
+You can invoke each of your inscribed Spirit Wards twice per short or long rest rather than once.
+Focus
+Channeling ancient Shinto spirit wards and ley-line energy directly into heavy armor and weapons.*
+
+Inugami Ward Fire Rune
+Infuses strikes with searing spirit fire and restrains targets with burning chains.
+
+Raijin Ward Storm Rune
+Emits a high-voltage lightning shockwave when hit in combat.
+
+Tengu Ward Cloud Rune
+Uses a reaction to invoke a wind shield, redirecting an incoming attack from yourself or an ally to another target nearby.

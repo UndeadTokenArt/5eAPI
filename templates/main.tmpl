@@ -1,11 +1,15 @@
 {{define "css"}}
 <link rel="stylesheet" href="/static/css/main.css">
 <link rel="stylesheet" href="/static/css/account.css">
+<link rel="stylesheet" href="/static/css/navigation.css">
+<script src="/static/js/navigation.js" defer></script>
 {{end}}
 
 {{define "nav"}}
-<nav>
+<nav class="site-nav" aria-label="Main navigation">
   <a href="/" class="brand">⚔ D&amp;D 5e SRD</a>
+  <button class="nav-toggle" type="button" aria-controls="main-nav-links" aria-expanded="false" aria-label="Open navigation menu"><span aria-hidden="true">&#9776;</span></button>
+  <div class="nav-links" id="main-nav-links">
   <a href="/neotokyo">NeoTokyo</a>
   <span class="nav-sub">System Reference Document Explorer</span>
   <a href="/encounter" class="nav-enc">🎲 Encounter Generator</a>
@@ -13,7 +17,8 @@
   <a href="/shop" class="nav-enc">🛒 Shop</a>
   <a href="/characters" class="nav-enc">Character Sheets</a>
   {{template "account_nav" .}}
-</nav> 
+  </div>
+</nav>
 {{end}}
 
 {{define "foot"}}

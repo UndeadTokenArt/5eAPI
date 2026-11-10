@@ -328,6 +328,29 @@ func campaignRollHandler(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(http.StatusNoContent)
 }
 
+func campaignTurnHandler(w http.ResponseWriter, r *http.Request) {
+	user, ok := campaignAuth(w, r)
+	if !ok {
+		return
+	}
+	id := r.PathValue("id")
+	if _, ok := campaignMemberOnly(w, user, id); !ok {
+		return
+	}
+	var err error
+	if r.Method == http.MethodDelete {
+		_, err = campaigns.endCombat(id, user)
+	} else {
+		_, err = campaigns.advanceTurn(id, user)
+	}
+	if err != nil {
+		campaignError(w, err)
+		return
+	}
+	campaignHub.broadcast(id)
+	w.WriteHeader(http.StatusNoContent)
+}
+
 func campaignDropboxHandler(w http.ResponseWriter, r *http.Request) {
 	user, ok := campaignAuth(w, r)
 	if !ok {
@@ -510,6 +533,8 @@ func registerCampaignRoutes(mux *http.ServeMux) {
 	mux.HandleFunc("PATCH /api/campaigns/{id}/npcs/{npc}", campaignNPCUpdateHandler)
 	mux.HandleFunc("DELETE /api/campaigns/{id}/npcs/{npc}", campaignNPCDeleteHandler)
 	mux.HandleFunc("POST /api/campaigns/{id}/rolls", campaignRollHandler)
+	mux.HandleFunc("POST /api/campaigns/{id}/turn", campaignTurnHandler)
+	mux.HandleFunc("DELETE /api/campaigns/{id}/turn", campaignTurnHandler)
 	mux.HandleFunc("POST /api/campaigns/{id}/dropbox", campaignDropboxHandler)
 	mux.HandleFunc("DELETE /api/campaigns/{id}/dropbox", campaignDropboxClearHandler)
 	mux.HandleFunc("POST /api/campaigns/{id}/loot", campaignLootHandler)

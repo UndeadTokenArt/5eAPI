@@ -1,0 +1,182 @@
+{
+  "name": "Awakened Mutant",
+  "features": [
+    {
+      "name": "1. Spellcasting: Innate Mutation (Level 1)",
+      "features": [
+        {
+          "name": "Spellcasting Ability",
+          "description": "Charisma is your spellcasting ability. Your spell save DC is 8 + your proficiency bonus + your Charisma modifier, and your spell attack modifier is your proficiency bonus + your Charisma modifier."
+        },
+        {
+          "name": "Known Spells and Spell Slots",
+          "description": "You know four cantrips and two 1st-level Sorcerer spells at 1st level. Your cantrips known increase to five at level 4 and six at level 10; your spells known increase by level according to the 2014 Sorcerer table, to a maximum of 15. When you gain a level in this class, you can replace one Sorcerer spell you know with another Sorcerer spell of a level for which you have slots. You regain all expended spell slots after a long rest. Spell-slot progression follows the 2014 Sorcerer table."
+        },
+        {
+          "name": "Mutation Focus",
+          "description": "You can use an arcane focus as a spellcasting focus for your Awakened Mutant spells."
+        }
+      ]
+    },
+    {
+      "name": "Mutant Physiology (Level 1)",
+      "features": [
+        {
+          "name": "Hit Points and Proficiencies",
+          "description": "Hit Die: 1d6 per Awakened Mutant level. Hit points at 1st level: 6 + your Constitution modifier. At later levels, gain 1d6 (or 4) + your Constitution modifier per level. You have no armor or tool proficiencies. Weapon proficiencies: Monomolecular Combat Knives, Darts, Kinetic Accelerator Slings, Collapsible Shock-Staffs, and Compact Rail-Crossbows. Saving throws: Constitution and Charisma. Choose two skills: Matrix-Arcana, Deep Fake, Insight, Threat Display, Fixer Negotiation, or Spirit/AI Cults."
+        },
+        {
+          "name": "Starting Equipment",
+          "description": "In addition to background equipment, choose a Compact Rail-Crossbow and 20 bolts or a simple weapon; a component pouch or arcane focus; and a dungeoneer's pack or explorer's pack. You also start with two Monomolecular Combat Knives."
+        }
+      ]
+    },
+    {
+      "name": "Sorcerous Origin (Level 1)",
+      "description": "Choose an Awakened Mutant origin that describes the source of your innate power. Your origin grants features at 1st, 6th, 14th, and 18th level."
+    },
+    {
+      "name": "2. Font of Mutation (Font of Magic - Level 2)",
+      "features": [
+        {
+          "name": "Mutation Points",
+          "description": "You gain 2 mutation points at 2nd level and one more at each Awakened Mutant level thereafter. You regain all expended points when you finish a long rest, and cannot hold more than your class-level maximum. These points fuel Metamagic and other features."
+        },
+        {
+          "name": "Flexible Casting",
+          "description": "As a bonus action, you can spend mutation points to create a spell slot: 1st level costs 2 points, 2nd costs 3, 3rd costs 5, 4th costs 6, and 5th costs 7. You cannot create a slot above 5th level; created slots vanish after a long rest. As a bonus action, you can also expend a spell slot to gain mutation points equal to its level."
+        }
+      ]
+    },
+    {
+      "name": "3. Metamagic (Level 3)",
+      "features": [
+        {
+          "name": "Metamagic Options",
+          "description": "Choose two options; you gain one more at level 10 and another at level 17. You can apply only one option to a spell unless an option says otherwise. Options: Careful Spell (1 point, protect up to your Charisma modifier creatures on a save); Distant Spell (1 point, double range or make touch range 30 feet); Empowered Spell (1 point, reroll damage dice up to your Charisma modifier); Extended Spell (1 point, double a spell duration up to 24 hours); Heightened Spell (3 points, impose disadvantage on one target's first save); Quickened Spell (2 points, change a 1-action spell to a bonus action); Subtle Spell (1 point, remove verbal and somatic components); Twinned Spell (cost equals spell level, or 1 for a cantrip, to target an eligible second creature). Optional Tasha's options: Seeking Spell (2 points to reroll a missed spell attack) and Transmuted Spell (1 point to change acid, cold, fire, lightning, poison, or thunder damage to another listed type)."
+        }
+      ]
+    },
+    {
+      "name": "4. Ability Score Improvement (Levels 4, 8, 12, 16, 19)",
+      "description": "At each listed level, increase one ability score by 2 or two ability scores by 1. No score can exceed 20 from this feature."
+    },
+    {
+      "name": "5. Sorcerous Versatility (Optional; Levels 4, 8, 12, 16, 19)",
+      "description": "Whenever you gain an Ability Score Improvement from this class, you can replace one Metamagic option you know with another available option, or replace one Awakened Mutant cantrip with another cantrip from the Sorcerer spell list."
+    },
+    {
+      "name": "6. Magical Guidance (Optional; Level 5)",
+      "description": "When you fail an ability check, you can spend 1 mutation point to reroll the d20, using the new result."
+    },
+    {
+      "name": "7. Sorcerous Restoration (Level 20)",
+      "description": "When you finish a short rest, regain 4 expended mutation points."
+    }
+  ],
+  "subclasses": [
+    {
+      "name": "Dragon-Blood Replicant",
+      "description": "Your mutation traces back to a splice of draconic genome: a bio-engineered Wyrm Corp strain in your bloodline or a lab pact gone sideways. Scales, heat and apex-predator presence surface through your skin.",
+      "details": [
+        "Wyrm Genome: Choose a dragon strain, which sets the damage type for your later features. You also speak, read and write Draconic.",
+        "Dermal Plating: Your hit point maximum rises by 1 per level, and unarmored AC is 13 + your Dexterity modifier.",
+        "Elemental Affinity: Add your Charisma modifier to one damage roll of a matching spell, and spend 1 mutation point for 1 hour of resistance.",
+        "Grafted Wings: Sprout a pair of wings for a flying speed equal to your speed.",
+        "Apex Presence: Spend 5 mutation points to project an aura of awe or fear."
+      ],
+      "features": [
+        {
+          "name": "Wyrm Genome (Level 1)",
+          "description": "Choose one dragon strain as your genetic ancestor. The damage type for each strain is used by features you gain later: Black (Acid), Blue (Lightning), Brass (Fire), Bronze (Lightning), Copper (Acid), Gold (Fire), Green (Poison), Red (Fire), Silver (Cold), White (Cold). You can speak, read and write Draconic. Whenever you make a Charisma check to interact with dragons, your proficiency bonus is doubled if it applies to the check."
+        },
+        {
+          "name": "Dermal Plating (Level 1)",
+          "description": "Draconic traits surface through your mutation. Your hit point maximum increases by 1 at 1st level and by 1 again whenever you gain a level in this class. Parts of your skin are covered by a thin sheen of scale-like plating: when you aren't wearing armor, your AC equals 13 + your Dexterity modifier."
+        },
+        {
+          "name": "Elemental Affinity (Level 6)",
+          "description": "When you cast a spell that deals damage of the type associated with your Wyrm Genome, add your Charisma modifier to one damage roll of that spell. At the same time, you can spend 1 mutation point to gain resistance to that damage type for 1 hour."
+        },
+        {
+          "name": "Grafted Wings (Level 14)",
+          "description": "As a bonus action on your turn, you sprout a pair of wings from your back, gaining a flying speed equal to your current speed. They last until you dismiss them as a bonus action on your turn. You can't manifest the wings while wearing armor unless it is built to accommodate them, and clothing not made for them might be destroyed when you do."
+        },
+        {
+          "name": "Apex Presence (Level 18)",
+          "description": "As an action, spend 5 mutation points to exude an aura of awe or fear (your choice) out to 60 feet. For 1 minute or until you lose concentration (as if casting a concentration spell), each hostile creature that starts its turn in the aura must succeed on a Wisdom saving throw or be charmed (awe) or frightened (fear) until the aura ends. A creature that succeeds is immune to your aura for 24 hours."
+        }
+      ]
+    },
+    {
+      "name": "KAMI Synthetic Soul Vessel",
+      "description": "A fragment of a KAMI, the vast order-obsessed machine intelligence behind Neo Tokyo's infrastructure, lives in your nervous system. Perhaps you were exposed to one of its relic nodes, or an ancestor took part in its great calibration sweeps. Your mutation now enforces balance on chaos.",
+      "details": [
+        "Synthetic Soul Spells: Gain bonus spells as you level; they count as Awakened Mutant spells and do not count against spells known.",
+        "Restore Balance: Use your reaction to cancel advantage or disadvantage on a nearby creature's d20 roll, Charisma-modifier times per long rest.",
+        "Bulwark of Law: Spend 1 to 5 mutation points to ward a creature with d8s that absorb damage.",
+        "Trance of Order: Enter a machine-calm state where d20 rolls of 9 or lower count as 10.",
+        "Calibration Cascade: Summon intangible order-spirits that heal, repair and end spells in a 30-foot cube."
+      ],
+      "features": [
+        {
+          "name": "Synthetic Soul Spells (Level 1)",
+          "description": "You learn bonus spells at the Awakened Mutant levels shown; they count as Awakened Mutant spells and do not count against your spells known, and they can't be replaced when you gain a level. At level 1: Sensor Perimeter Ping (Alarm) and Aegis Anti-Corporate Protection (Protection from Evil and Good). At level 3: Automated Hazard Sweep (Find Traps) and Thermal Induction Arc (Heat Metal). At level 5: Code-Interrupt Firewall (Counterspell) and Mag-Lock Trap / Sensor Glyph (Glyph of Warding). At level 7: Micro-Drone Optical Scanner (Arcane Eye) and Hard-Light Containment Sphere (Otiluke's Resilient Sphere). At level 9: Automated Hardware Hijack (Animate Objects) and Hard-Light Kinetic Wall (Wall of Force)."
+        },
+        {
+          "name": "Restore Balance (Level 1)",
+          "description": "When a creature you can see within 60 feet of you is about to roll a d20 with advantage or disadvantage, you can use your reaction to prevent the roll from being affected by advantage and disadvantage. You can use this feature a number of times equal to your Charisma modifier (minimum of once), and you regain all expended uses when you finish a long rest."
+        },
+        {
+          "name": "Bulwark of Law (Level 6)",
+          "description": "As an action, you can expend 1 to 5 mutation points to create a protective ward around yourself or another creature you can see within 30 feet. The ward lasts until you finish a long rest or use this feature again. It is represented by a number of d8s equal to the mutation points spent. When the warded creature takes damage, it can use its reaction to spend any number of those dice, roll them, and reduce the damage taken by the total."
+        },
+        {
+          "name": "Trance of Order (Level 14)",
+          "description": "As a bonus action, you enter a state of machine-calm consciousness for 1 minute. Attack rolls against you can't benefit from advantage, and whenever you make an attack roll, an ability check or a saving throw, you can treat a d20 roll of 9 or lower as a 10. Once you use this feature, you can't use it again until you finish a long rest or expend 5 mutation points to use it again."
+        },
+        {
+          "name": "Calibration Cascade (Level 18)",
+          "description": "As an action, you summon order-spirits in a 30-foot cube originating from you. They look like drones, modrons or other constructs of your choice; they are intangible and invulnerable, and vanish after creating these effects within the cube: they restore up to 100 hit points, divided as you choose among any number of creatures of your choice; any damaged objects entirely in the cube are repaired; and every spell of 6th level or lower ends on creatures and objects of your choice. Once you use this feature, you can't use it again until you finish a long rest or expend 7 mutation points to use it again."
+        }
+      ]
+    },
+    {
+      "name": "Sector 17 Bio-Mutant",
+      "description": "A Sector 17 biolab exposure, engineered parasite, or mutation event awakened aberrant psionic power. Your nervous system now reaches into other minds and reshapes nearby reality.",
+      "details": [
+        "Psionic Spells: Gain a set of bonus spells as you level; these count as Awakened Mutant spells and do not count against spells known.",
+        "Telepathic Speech: Create a temporary two-way neural link with a visible creature.",
+        "Psionic Sorcery and Psychic Defenses: Cast psionic spells through mutation points without ordinary components and resist psychic intrusion.",
+        "Revelation in Flesh: Temporarily manifest bio-mutant sensory, movement, or pliability adaptations.",
+        "Warping Implosion: Teleport in a spatial rupture that damages and pulls nearby targets."
+      ],
+      "features": [
+        {
+          "name": "Psionic Spells (Level 1)",
+          "description": "You learn bonus spells at the Awakened Mutant levels shown; they count as Awakened Mutant spells and do not count against your spells known. At level 1: Black-ICE Tendril Burst (Arms of Hadar) and Subsonic Pain Whisper (Dissonant Whispers), plus Synaptic Spike (Mind Sliver) as a bonus cantrip. At level 3: Subliminal Neural Pacifier (Calm Emotions) and Neural Mind Probe (Detect Thoughts). At level 5: Dead-Zone Void Field (Hunger of Hadar) and Wireless Audio/Text Signal (Sending). At level 7: High-Voltage Cable Swarm (Evard's Black Tentacles) and Escaped Specimen Protocol (Summon Aberration). At level 9: Encrypted Sub-Net Channel (Rary's Telepathic Bond) and Hard-Light Hydraulic Tether (Telekinesis). Whenever you gain an Awakened Mutant level, you can replace one spell from this feature with a spell of the same level from the Sorcerer, Warlock, or Wizard list that is divination or enchantment."
+        },
+        {
+          "name": "Telepathic Speech (Level 1)",
+          "description": "As a bonus action, choose a creature you can see within 30 feet. You and it can communicate telepathically while within a number of miles of each other equal to your Charisma modifier (minimum 1), provided you each understand a language the other uses. The link lasts for a number of minutes equal to your Awakened Mutant level and ends early if you are incapacitated, die, or form a link with another creature."
+        },
+        {
+          "name": "Psionic Sorcery (Level 6)",
+          "description": "When you cast a 1st-level-or-higher spell from Psionic Spells, you can spend mutation points equal to its level instead of using a spell slot. When cast this way, it requires no verbal or somatic components and no material components unless they are consumed by the spell."
+        },
+        {
+          "name": "Psychic Defenses (Level 6)",
+          "description": "You gain resistance to psychic damage and advantage on saving throws against being charmed or frightened."
+        },
+        {
+          "name": "Revelation in Flesh (Level 14)",
+          "description": "As a bonus action, spend 1 or more mutation points to transform for 10 minutes. For each point spent, choose one benefit: see invisible creatures within 60 feet that are not behind total cover; gain a flying speed equal to your walking speed and hover; gain a swimming speed twice your walking speed and breathe underwater; or become pliable enough to pass through 1-inch spaces without squeezing and escape a grapple or nonmagical restraint by spending 5 feet of movement. The chosen benefits last until the transformation ends."
+        },
+        {
+          "name": "Warping Implosion (Level 18)",
+          "description": "As an action, teleport to an unoccupied space you can see within 120 feet. Each creature within 30 feet of the space you left makes a Strength saving throw against your spell save DC. On a failure, it takes 3d10 force damage and is pulled toward the space you left to the nearest unoccupied space; on a success, it takes half damage and is not pulled. After using this feature, you cannot use it again until a long rest unless you spend 5 mutation points to use it again."
+        }
+      ]
+    }
+  ]
+}

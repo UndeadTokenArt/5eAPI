@@ -9,15 +9,20 @@
   <link rel="stylesheet" href="/static/css/account.css">
   <link rel="stylesheet" href="/static/css/campaign.css">
   <link rel="stylesheet" href="/static/css/areas.css">
+  <link rel="stylesheet" href="/static/css/navigation.css">
+  <script src="/static/js/navigation.js" defer></script>
 </head>
 <body class="area-campaign">
-  <nav class="sheet-nav" aria-label="Main navigation">
+  <nav class="sheet-nav site-nav" aria-label="Main navigation">
     <a class="sheet-brand" href="/">D&amp;D 5e SRD</a>
+    <button class="nav-toggle" type="button" aria-controls="main-nav-links" aria-expanded="false" aria-label="Open navigation menu"><span aria-hidden="true">&#9776;</span></button>
+    <div class="nav-links" id="main-nav-links">
     <span class="area-tag">Campaign</span>
     <a href="/neotokyo">NeoTokyo</a>
     <a href="/characters">Characters</a>
     <a href="/campaigns" aria-current="page">Campaigns</a>
     {{template "account_nav" .}}
+    </div>
   </nav>
   <main class="sheet-page campaign-page" id="campaign-root" data-mode="{{.Mode}}" data-campaign-id="{{.CampaignID}}" data-join-token="{{.JoinToken}}">
     <header class="page-head">
@@ -92,6 +97,11 @@
             <div id="dice-tray" class="dice-tray" role="group" aria-label="Dice"></div>
             <p id="dice-hand" class="muted" aria-live="polite"></p>
             <div class="dice-actions"><button id="dice-roll" class="primary" type="button">Roll</button><button id="dice-clear" type="button">Clear hand</button></div>
+          </div>
+          <div id="turn-box" class="turn-box" hidden>
+            <h2>Turn order</h2>
+            <p id="turn-status" class="turn-status" aria-live="polite"></p>
+            <div class="dice-actions"><button id="turn-next" class="primary" type="button"></button><button id="turn-end" type="button" hidden>End combat</button></div>
           </div>
           <h2>Dice history</h2>
           <ol id="dice-log" class="dice-log" aria-live="polite"></ol>

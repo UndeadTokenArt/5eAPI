@@ -1,0 +1,1219 @@
+{
+  "schema_status": "draft_authoring_template_not_supported_by_app",
+  "schema_version": 1,
+  "uid": "class-vow-bound-operative-draft",
+  "name": "Vow-Bound Operative",
+  "original_class": "Paladin",
+  "description": "Armored enforcers bound by corporate contracts or street codes who channel high-voltage smite bursts through their weapon suites.",
+  "hit_die": 10,
+  "multiclass_prerequisites": {
+    "description": "2024 multiclass prerequisite: meet this class primary ability requirement when adding a new class; requirements also apply to every current class.",
+    "any_of": [
+      {
+        "all_of": [
+          {
+            "ability": "strength",
+            "minimum": 13
+          },
+          {
+            "ability": "charisma",
+            "minimum": 13
+          }
+        ]
+      }
+    ]
+  },
+  "starting_proficiencies": {
+    "armor": [
+      "Light, Medium, and Heavy armor and Shields"
+    ],
+    "weapons": [
+      "Simple and Martial weapons"
+    ],
+    "tools": null,
+    "saving_throws": [
+      "wisdom",
+      "charisma"
+    ],
+    "skills": [],
+    "choices": [
+      {
+        "id": "starting-skills",
+        "name": "Choose starting skills",
+        "kind": "skill",
+        "count": 2,
+        "allowed_options": [
+          "Athletics",
+          "Insight",
+          "Intimidation",
+          "Medicine",
+          "Persuasion",
+          "Religion"
+        ],
+        "eligibility_rule": "Choose distinct skills; verify handling of an already-proficient skill.",
+        "selection_effect": "Record proficiency in the selected skills."
+      }
+    ]
+  },
+  "multiclass_proficiencies": {
+    "armor": [
+      "Light armor",
+      "Medium armor",
+      "Shields"
+    ],
+    "weapons": [
+      "Martial weapons"
+    ],
+    "tools": [],
+    "skills": [],
+    "choices": [],
+    "description": "Gain the following traits from the Core Paladin Traits table: Hit Point Die, proficiency with Martial weapons, and training with Light and Medium armor and Shields."
+  },
+  "starting_equipment": {
+    "description": "Choose A or B: (A) Chain Mail, Shield, Longsword, 6 Javelins, Holy Symbol, Priest’s Pack, and 9 GP; or (B) 150 GP Starting equipment is not granted on multiclass entry.",
+    "grants": [],
+    "choices": [
+      {
+        "id": "starting-equipment",
+        "name": "Choose starting equipment",
+        "kind": "equipment_bundle",
+        "count": 1,
+        "allowed_options": "Choose A or B: (A) Chain Mail, Shield, Longsword, 6 Javelins, Holy Symbol, Priest’s Pack, and 9 GP; or (B) 150 GP",
+        "eligibility_rule": "Choose one listed bundle when starting as this class.",
+        "selection_effect": "Record the chosen items and currency."
+      }
+    ]
+  },
+  "spellcasting": {
+    "kind": "half",
+    "ability": "charisma",
+    "starts_at_class_level": 1,
+    "spell_list_id": "Paladin",
+    "casting_mode": "prepared",
+    "preparation_rule": "Changing Your Prepared Spells. Whenever you finish a Long Rest, you can replace one spell on your list with another Paladin spell for which you have spell slots.",
+    "ritual_casting_rule": null,
+    "focus_rule": "Spellcasting Focus. You can use a Holy Symbol as a Spellcasting Focus for your Paladin spells.",
+    "multiclass_slot_rule": "Half caster; verify rounding and shared multiclass slot calculation under the chosen edition.",
+    "notes": "See the level 1 Spellcasting or Pact Magic feature for casting, preparation, focus, and replacement rules. Null fields require review; the reference spell mapping may not be a complete 2024 spell list."
+  },
+  "resources": [
+    {
+      "id": "resource-lay-on-hands",
+      "name": "Bio-Nanite Injector",
+      "description": "See the Lay On Hands feature for costs, use, and recovery. Your blessed touch can heal wounds. You have a pool of healing power that replenishes when you finish a Long Rest. With that pool, you can restore a total number of Hit Points equal to five times your Paladin level.\n\nAs a Bonus Action, you can touch a creature (which could be yourself) and draw power from the pool of healing to restore a number of Hit Points to that creature, up to the maximum amount remaining in the pool.\n\nYou can also expend 5 Hit Points from the pool of healing power to remove the Poisoned condition from the creature; those points don’t also restore Hit Points to the creature.",
+      "recharge": "other",
+      "maximum_rule": "See the feature and level table; resolve structured maximum and recovery rules before implementation."
+    },
+    {
+      "id": "resource-channel-divinity",
+      "name": "Channel Divinity",
+      "description": "See the Channel Divinity feature for costs, use, and recovery. You can channel divine energy directly from the Outer Planes, using it to fuel magical effects. You start with one such effect: Divine Sense, which is described below. Other Paladin features give additional Channel Divinity effect options. Each time you use this class’s Channel Divinity, you choose which effect from this class to create.\n\nYou can use this class’s Channel Divinity twice. You regain one of its expended uses when you finish a Short Rest, and you regain all expended uses when you finish a Long Rest. You gain an additional use when you reach Paladin level 11.\n\nIf a Channel Divinity effect requires a saving throw, the DC equals the spell save DC from this class’s Spellcasting feature.\n\nDivine Sense. As a Bonus Action, you can open your awareness to detect Celestials, Fiends, and Undead. For the next 10 minutes or until you have the Incapacitated condition, you know the location of any creature of those types within 60 feet of yourself, and you know its creature type. Within the same radius, you also detect the presence of any place or object that has been consecrated or desecrated, as with the Hallow spell.",
+      "recharge": "other",
+      "maximum_rule": "See the feature and level table; resolve structured maximum and recovery rules before implementation."
+    }
+  ],
+  "levels": [
+    {
+      "level": 1,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "lay-on-hands-1",
+          "name": "Bio-Nanite Injector (Lay On Hands)",
+          "description": "Your blessed touch can heal wounds. You have a pool of healing power that replenishes when you finish a Long Rest. With that pool, you can restore a total number of Hit Points equal to five times your Paladin level.\n\nAs a Bonus Action, you can touch a creature (which could be yourself) and draw power from the pool of healing to restore a number of Hit Points to that creature, up to the maximum amount remaining in the pool.\n\nYou can also expend 5 Hit Points from the pool of healing power to remove the Poisoned condition from the creature; those points don’t also restore Hit Points to the creature.",
+          "when": "both",
+          "choices": [],
+          "reskin_reference": {
+            "name": "2. Bio-Nanite Injector (Level 1)",
+            "description": "You activate sub-dermal medical nanite swarms or apply high-grade corporate trauma gel to seal lethal wounds and purge bio-toxins.",
+            "features": [
+              {
+                "name": "Mechanics",
+                "description": "You have a pool of healing power that replenishes on a long rest, equal to 5 × your Paladin level. As an action, you can touch a creature to restore Hit Points from this pool. You can also expend 5 hit points from the pool to cure the target of Bio-Toxed (Poisoned) or neutralize a disease."
+              }
+            ]
+          }
+        },
+        {
+          "id": "spellcasting-1",
+          "name": "Spellcasting: Directives & Sacred Code (Spellcasting)",
+          "description": "You have learned to cast spells through prayer and meditation. See “Spells” for the rules on spellcasting. The information below details how you use those rules with Paladin spells, which appear in the Paladin spell list later in the class’s description.\n\nSpell Slots. The Paladin Features table shows how many spell slots you have to cast your level 1+ spells. You regain all expended slots when you finish a Long Rest.\n\nPrepared Spells of Level 1+. You prepare the list of level 1+ spells that are available for you to cast with this feature. To start, choose two level 1 Paladin spells. Heroism and Searing Smite are recommended.\n\nThe number of spells on your list increases as you gain Paladin levels, as shown in the Prepared Spells column of the Paladin Features table. Whenever that number increases, choose additional Paladin spells until the number of spells on your list matches the number in the Paladin Features table. The chosen spells must be of a level for which you have spell slots. For example, if you’re a level 5 Paladin, your list of prepared spells can include six Paladin spells of level 1 or 2 in any combination.\n\nIf another Paladin feature gives you spells that you always have prepared, those spells don’t count against the number of spells you can prepare with this feature, but those spells otherwise count as Paladin spells for you.\n\nChanging Your Prepared Spells. Whenever you finish a Long Rest, you can replace one spell on your list with another Paladin spell for which you have spell slots.\n\nSpellcasting Ability. Charisma is your spellcasting ability for your Paladin spells.\n\nSpellcasting Focus. You can use a Holy Symbol as a Spellcasting Focus for your Paladin spells.",
+          "when": "both",
+          "choices": null,
+          "reskin_reference": {
+            "name": "4. Spellcasting: Directives & Sacred Code (Level 2)",
+            "description": null,
+            "features": [
+              {
+                "name": "Spellcasting Ability",
+                "description": "You cast spells using Charisma (representing your force of personality, neural authority, and code conviction). Spells are executed as encoded corporate directives, street vows, or sacred digital talismans."
+              }
+            ]
+          }
+        },
+        {
+          "id": "weapon-mastery-1",
+          "name": "Weapon Mastery",
+          "description": "Your training with weapons allows you to use the mastery properties of two kinds of weapons of your choice with which you have proficiency, such as Longswords and Javelins.\n\nWhenever you finish a Long Rest, you can change the kinds of weapons you chose. For example, you could switch to using the mastery properties of Halberds and Flails.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-weapon-mastery-1",
+              "name": "Choose weapon masteries",
+              "kind": "weapon_mastery",
+              "count": 2,
+              "allowed_options": "Eligible weapon kinds as described by the feature.",
+              "eligibility_rule": "Follow proficiency, weapon type, and replacement restrictions in the source feature.",
+              "selection_effect": "Record the selected weapon kinds."
+            }
+          ]
+        },
+        {
+          "id": "progression-values-1",
+          "name": "Class progression values",
+          "description": "Channel Divinity: —. These are totals at this class level, not additional grants.",
+          "when": "both",
+          "choices": []
+        },
+        {
+          "id": "spell-selections-1",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "prepared-selection-1",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 2,
+              "allowed_options": "Eligible level 1+ Paladin spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": null,
+        "spells_known_total": null,
+        "prepared_spells_total": 2,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 1,
+        "class_spell_slots": [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 2,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "fighting-style-2",
+          "name": "Combat Augment Protocol (Fighting Style)",
+          "description": "You gain a Fighting Style feat of your choice (see “Feats” for feats). Instead of choosing one of those feats, you can choose the option below.\n\nBlessed Warrior. You learn two Cleric cantrips of your choice (see the Cleric class’s section for a list of Cleric spells). Guidance and Sacred Flame are recommended. The chosen cantrips count as Paladin spells for you, and Charisma is your spellcasting ability for them. Whenever you gain a Paladin level, you can replace one of these cantrips with another Cleric cantrip.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-fighting-style-2",
+              "name": "Choose a Fighting Style feat",
+              "kind": "feat",
+              "count": 1,
+              "allowed_options": "Eligible Fighting Style feats; Paladin and Ranger may instead select their cantrip-granting option described in the feature.",
+              "eligibility_rule": "Meet feat prerequisites and apply any replacement rule in the feature.",
+              "selection_effect": "Record the selected feat."
+            }
+          ],
+          "reskin_reference": {
+            "name": "3. Combat Augment Protocol (Level 2)",
+            "description": null,
+            "features": [
+              {
+                "name": "You Select A Specialized Combat Doctrine",
+                "description": "Smart-Link Targeting (+2 ranged), Sub-Dermal Plating (+1 AC), Monomolecular Edge Tuning (+2 melee damage with one-handed weapons), or Hard-Light Aegis Intercept (Shield reaction disadvantage)."
+              }
+            ]
+          }
+        },
+        {
+          "id": "paladin-s-smite-2",
+          "name": "High-Voltage Overcharge Smite (Paladin’s Smite)",
+          "description": "You always have the Divine Smite spell prepared. In addition, you can cast it without expending a spell slot, but you must finish a Long Rest before you can cast it in this way again.",
+          "when": "both",
+          "choices": [],
+          "reskin_reference": {
+            "name": "5. High-Voltage Overcharge Smite (Level 2)",
+            "description": "When you hit with a melee weapon or cyber-blade, you channel high-voltage electrical energy or spirit-fire through the strike, cooking internal circuits and searing flesh.",
+            "features": [
+              {
+                "name": "Mechanics",
+                "description": "When you hit a creature with a melee weapon attack, you can expend one spell slot to deal extra Lightning, Radiant, or Psychic damage to the target. The extra damage is 2d8 for a 1st-level slot, plus 1d8 for each slot level higher than 1st (to a maximum of 5d8). The damage increases by 1d8 if the target is a construct, rogue AI, or digital ghost."
+              }
+            ]
+          }
+        },
+        {
+          "id": "spell-selections-2",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "prepared-selection-2",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible level 1+ Paladin spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": null,
+        "spells_known_total": null,
+        "prepared_spells_total": 3,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 1,
+        "class_spell_slots": [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 3,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "channel-divinity-3",
+          "name": "Channel Divinity",
+          "description": "You can channel divine energy directly from the Outer Planes, using it to fuel magical effects. You start with one such effect: Divine Sense, which is described below. Other Paladin features give additional Channel Divinity effect options. Each time you use this class’s Channel Divinity, you choose which effect from this class to create.\n\nYou can use this class’s Channel Divinity twice. You regain one of its expended uses when you finish a Short Rest, and you regain all expended uses when you finish a Long Rest. You gain an additional use when you reach Paladin level 11.\n\nIf a Channel Divinity effect requires a saving throw, the DC equals the spell save DC from this class’s Spellcasting feature.\n\nDivine Sense. As a Bonus Action, you can open your awareness to detect Celestials, Fiends, and Undead. For the next 10 minutes or until you have the Incapacitated condition, you know the location of any creature of those types within 60 feet of yourself, and you know its creature type. Within the same radius, you also detect the presence of any place or object that has been consecrated or desecrated, as with the Hallow spell.",
+          "when": "both",
+          "choices": null
+        },
+        {
+          "id": "paladin-subclass-3",
+          "name": "Paladin Subclass",
+          "description": "Choose a Paladin subclass at this class level. Subclass choices and features will be authored later.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-paladin-subclass-3",
+              "name": "Choose a subclass later",
+              "kind": "subclass",
+              "count": 1,
+              "allowed_options": null,
+              "eligibility_rule": "Subclass authoring is deferred; verify available choices.",
+              "selection_effect": "Record the chosen subclass when implemented."
+            }
+          ]
+        },
+        {
+          "id": "progression-values-3",
+          "name": "Class progression values",
+          "description": "Channel Divinity: 2 (previously —). These are totals at this class level, not additional grants.",
+          "when": "both",
+          "choices": []
+        },
+        {
+          "id": "spell-selections-3",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "prepared-selection-3",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible level 1+ Paladin spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": null,
+        "spells_known_total": null,
+        "prepared_spells_total": 4,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 1,
+        "class_spell_slots": [
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 4,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "ability-score-improvement-4",
+          "name": "Ability Score Improvement",
+          "description": "You gain the Ability Score Improvement feat (see “Feats”) or another feat of your choice for which you qualify. You gain this feature again at Paladin levels 8, 12, and 16.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-ability-score-improvement-4",
+              "name": "Choose an eligible feat or Ability Score Improvement",
+              "kind": "feat",
+              "count": 1,
+              "allowed_options": "Ability Score Improvement or another eligible feat.",
+              "eligibility_rule": "Meet feat prerequisites and verify ability-score limits.",
+              "selection_effect": "Record the feat and apply its selected effects."
+            }
+          ]
+        },
+        {
+          "id": "spell-selections-4",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "prepared-selection-4",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible level 1+ Paladin spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": null,
+        "spells_known_total": null,
+        "prepared_spells_total": 5,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 1,
+        "class_spell_slots": [
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 5,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "extra-attack-5",
+          "name": "Rapid Fire Protocol (Extra Attack)",
+          "description": "You can attack twice instead of once whenever you take the Attack action on your turn.",
+          "when": "both",
+          "choices": [],
+          "reskin_reference": {
+            "name": "8. Rapid Fire Protocol (Level 5)",
+            "description": null,
+            "features": [
+              {
+                "name": "Mechanics",
+                "description": "You can attack twice whenever you take the Attack action on your turn."
+              }
+            ]
+          }
+        },
+        {
+          "id": "faithful-steed-5",
+          "name": "Faithful Steed",
+          "description": "You can call on the aid of an otherworldly steed. You always have the Find Steed spell prepared.\n\nYou can also cast the spell once without expending a spell slot, and you regain the ability to do so when you finish a Long Rest.",
+          "when": "both",
+          "choices": []
+        },
+        {
+          "id": "spell-selections-5",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "prepared-selection-5",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible level 1+ Paladin spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": null,
+        "spells_known_total": null,
+        "prepared_spells_total": 6,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 2,
+        "class_spell_slots": [
+          4,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 6,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "aura-of-protection-6",
+          "name": "Tactical Mesh Shielding (Aura of Protection)",
+          "description": "You radiate a protective, unseeable aura in a 10-foot Emanation that originates from you. The aura is inactive while you have the Incapacitated condition.\n\nYou and your allies in the aura gain a bonus to saving throws equal to your Charisma modifier (minimum bonus of +1).\n\nIf another Paladin is present, a creature can benefit from only one Aura of Protection at a time; the creature chooses which aura while in them.",
+          "when": "both",
+          "choices": [],
+          "reskin_reference": {
+            "name": "9. Tactical Mesh Shielding (Level 6)",
+            "description": "Your sub-dermal communication suite broadcasts protective tactical data and hard-light deflection frequencies to nearby squadmates.",
+            "features": [
+              {
+                "name": "Mechanics",
+                "description": "Whenever you or a friendly creature within 10 feet of you must make a saving throw, the creature gains a bonus to the saving throw equal to your Charisma modifier (minimum of +1). You must be conscious to grant this bonus. (Extends to 30 feet at Level 18)."
+              }
+            ]
+          }
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": null,
+        "spells_known_total": null,
+        "prepared_spells_total": 6,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 2,
+        "class_spell_slots": [
+          4,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 7,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "spell-selections-7",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "prepared-selection-7",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible level 1+ Paladin spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": null,
+        "spells_known_total": null,
+        "prepared_spells_total": 7,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 2,
+        "class_spell_slots": [
+          4,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Subclass feature deferred. Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 8,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "ability-score-improvement-8",
+          "name": "Ability Score Improvement",
+          "description": "You gain the Ability Score Improvement feat (see “Feats”) or another feat of your choice for which you qualify. You gain this feature again at Paladin levels 8, 12, and 16.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-ability-score-improvement-8",
+              "name": "Choose an eligible feat or Ability Score Improvement",
+              "kind": "feat",
+              "count": 1,
+              "allowed_options": "Ability Score Improvement or another eligible feat.",
+              "eligibility_rule": "Meet feat prerequisites and verify ability-score limits.",
+              "selection_effect": "Record the feat and apply its selected effects."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": null,
+        "spells_known_total": null,
+        "prepared_spells_total": 7,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 2,
+        "class_spell_slots": [
+          4,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 9,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "abjure-foes-9",
+          "name": "Abjure Foes",
+          "description": "As a Magic action, you can expend one use of this class’s Channel Divinity to overwhelm foes with awe. As you present your Holy Symbol or weapon, you can target a number of creatures equal to your Charisma modifier (minimum of one creature) that you can see within 60 feet of yourself. Each target must succeed on a Wisdom saving throw or have the Frightened condition for 1 minute or until it takes any damage. While Frightened in this way, a target can do only one of the following on its turns: move, take an action, or take a Bonus Action.",
+          "when": "both",
+          "choices": []
+        },
+        {
+          "id": "spell-selections-9",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "prepared-selection-9",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 2,
+              "allowed_options": "Eligible level 1+ Paladin spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": null,
+        "spells_known_total": null,
+        "prepared_spells_total": 9,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 3,
+        "class_spell_slots": [
+          4,
+          3,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 10,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "aura-of-courage-10",
+          "name": "Threat-Override Aura (Aura of Courage)",
+          "description": "You and your allies have Immunity to the Frightened condition while in your Aura of Protection. If a Frightened ally enters the aura, that condition has no effect on that ally while there.",
+          "when": "both",
+          "choices": [],
+          "reskin_reference": {
+            "name": "10. Threat-Override Aura (Level 10)",
+            "description": "Your unwavering conviction or neural combat governor overrides fear responses in yourself and your allies.",
+            "features": [
+              {
+                "name": "Mechanics",
+                "description": "You and friendly creatures within 10 feet of you cannot suffer from Threat-Lock (Frightened) while you are conscious. (Extends to 30 feet at Level 18)."
+              }
+            ]
+          }
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": null,
+        "spells_known_total": null,
+        "prepared_spells_total": 9,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 3,
+        "class_spell_slots": [
+          4,
+          3,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 11,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "radiant-strikes-11",
+          "name": "Passive High-Voltage Pulse (Radiant Strikes)",
+          "description": "Your strikes now carry supernatural power. When you hit a target with an attack roll using a Melee weapon or an Unarmed Strike, the target takes an extra 1d8 Radiant damage.",
+          "when": "both",
+          "choices": [],
+          "reskin_reference": {
+            "name": "11. Passive High-Voltage Pulse (Level 11)",
+            "description": "Every melee strike is permanently infused with a residual high-voltage current.",
+            "features": [
+              {
+                "name": "Mechanics",
+                "description": "Whenever you hit a creature with a melee weapon, the target takes an extra 1d8 Radiant or Lightning damage."
+              }
+            ]
+          }
+        },
+        {
+          "id": "progression-values-11",
+          "name": "Class progression values",
+          "description": "Channel Divinity: 3 (previously 2). These are totals at this class level, not additional grants.",
+          "when": "both",
+          "choices": []
+        },
+        {
+          "id": "spell-selections-11",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "prepared-selection-11",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible level 1+ Paladin spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": null,
+        "spells_known_total": null,
+        "prepared_spells_total": 10,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 3,
+        "class_spell_slots": [
+          4,
+          3,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 12,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "ability-score-improvement-12",
+          "name": "Ability Score Improvement",
+          "description": "You gain the Ability Score Improvement feat (see “Feats”) or another feat of your choice for which you qualify. You gain this feature again at Paladin levels 8, 12, and 16.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-ability-score-improvement-12",
+              "name": "Choose an eligible feat or Ability Score Improvement",
+              "kind": "feat",
+              "count": 1,
+              "allowed_options": "Ability Score Improvement or another eligible feat.",
+              "eligibility_rule": "Meet feat prerequisites and verify ability-score limits.",
+              "selection_effect": "Record the feat and apply its selected effects."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": null,
+        "spells_known_total": null,
+        "prepared_spells_total": 10,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 3,
+        "class_spell_slots": [
+          4,
+          3,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 13,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "spell-selections-13",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "prepared-selection-13",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible level 1+ Paladin spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": null,
+        "spells_known_total": null,
+        "prepared_spells_total": 11,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 4,
+        "class_spell_slots": [
+          4,
+          3,
+          3,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 14,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "restoring-touch-14",
+          "name": "System Purge (Restoring Touch)",
+          "description": "When you use Lay On Hands on a creature, you can also remove one or more of the following conditions from the creature: Blinded, Charmed, Deafened, Frightened, Paralyzed, or Stunned. You must expend 5 Hit Points from the healing pool of Lay On Hands for each of these conditions you remove; those points don’t also restore Hit Points to the creature.",
+          "when": "both",
+          "choices": [],
+          "reskin_reference": {
+            "name": "12. System Purge (Level 14)",
+            "description": "You issue an absolute system override to purge hostile spell effects, neural hacks, or status ailments from yourself or an ally.",
+            "features": [
+              {
+                "name": "Mechanics",
+                "description": "You can use your action to end one spell or magical effect on yourself or one willing creature you touch. (Uses equal to Cha modifier per Long Rest)."
+              }
+            ]
+          }
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": null,
+        "spells_known_total": null,
+        "prepared_spells_total": 11,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 4,
+        "class_spell_slots": [
+          4,
+          3,
+          3,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 15,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "spell-selections-15",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "prepared-selection-15",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible level 1+ Paladin spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": null,
+        "spells_known_total": null,
+        "prepared_spells_total": 12,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 4,
+        "class_spell_slots": [
+          4,
+          3,
+          3,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Subclass feature deferred. Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 16,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "ability-score-improvement-16",
+          "name": "Ability Score Improvement",
+          "description": "You gain the Ability Score Improvement feat (see “Feats”) or another feat of your choice for which you qualify. You gain this feature again at Paladin levels 8, 12, and 16.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-ability-score-improvement-16",
+              "name": "Choose an eligible feat or Ability Score Improvement",
+              "kind": "feat",
+              "count": 1,
+              "allowed_options": "Ability Score Improvement or another eligible feat.",
+              "eligibility_rule": "Meet feat prerequisites and verify ability-score limits.",
+              "selection_effect": "Record the feat and apply its selected effects."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": null,
+        "spells_known_total": null,
+        "prepared_spells_total": 12,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 4,
+        "class_spell_slots": [
+          4,
+          3,
+          3,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 17,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "spell-selections-17",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "prepared-selection-17",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 2,
+              "allowed_options": "Eligible level 1+ Paladin spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": null,
+        "spells_known_total": null,
+        "prepared_spells_total": 14,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 5,
+        "class_spell_slots": [
+          4,
+          3,
+          3,
+          3,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 18,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "aura-expansion-18",
+          "name": "Aura Expansion",
+          "description": "Your Aura of Protection is now a 30-foot Emanation.",
+          "when": "both",
+          "choices": []
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": null,
+        "spells_known_total": null,
+        "prepared_spells_total": 14,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 5,
+        "class_spell_slots": [
+          4,
+          3,
+          3,
+          3,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 19,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "epic-boon-19",
+          "name": "Epic Boon",
+          "description": "You gain an Epic Boon feat (see “Feats”) or another feat of your choice for which you qualify. Boon of Truesight is recommended.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-epic-boon-19",
+              "name": "Choose an Epic Boon or another eligible feat",
+              "kind": "feat",
+              "count": 1,
+              "allowed_options": "An Epic Boon feat or another eligible feat.",
+              "eligibility_rule": "Meet feat prerequisites.",
+              "selection_effect": "Record the feat and its effects."
+            }
+          ]
+        },
+        {
+          "id": "spell-selections-19",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "prepared-selection-19",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible level 1+ Paladin spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": null,
+        "spells_known_total": null,
+        "prepared_spells_total": 15,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 5,
+        "class_spell_slots": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 20,
+      "status": "unfilled",
+      "features": [],
+      "spell_progression": {
+        "cantrips_known_total": null,
+        "spells_known_total": null,
+        "prepared_spells_total": 15,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 5,
+        "class_spell_slots": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Subclass feature deferred. Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    }
+  ],
+  "subclasses": null,
+  "source_notes": [
+    "Rules basis: _reference/classes/Paladin.md, a 2024-style source. Review compatibility with the earlier 2014 multiclass design.",
+    "Class progression and mechanics use the original reference; older reskin mechanics may differ and are thematic reference only, not additional grants.",
+    "The worksheet schema is not supported by the app. Levels remain unfilled pending rules and choice review; null means unresolved or not applicable as described.",
+    "Subclass selection milestones are recorded, but subclass options, features, and spellcasting are intentionally deferred.",
+    "Reskin inspiration: classes/Vow-Bound Operative.json. Names may be adapted where source mechanics have changed."
+  ]
+}

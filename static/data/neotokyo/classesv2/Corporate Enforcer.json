@@ -1,0 +1,716 @@
+{
+  "schema_status": "draft_authoring_template_not_supported_by_app",
+  "schema_version": 1,
+  "uid": "class-corporate-enforcer-fighter-draft",
+  "name": "Corporate Enforcer",
+  "original_class": "Fighter",
+  "description": "Elites trained in smart-linked firearms, monomolecular blades, and tactical neural reflex boosters for close-quarters warfare.",
+  "hit_die": 10,
+  "multiclass_prerequisites": {
+    "description": "2024 multiclass prerequisite: meet this class primary ability requirement when adding a new class; requirements also apply to every current class.",
+    "any_of": [
+      {
+        "all_of": [
+          {
+            "ability": "strength",
+            "minimum": 13
+          }
+        ]
+      },
+      {
+        "all_of": [
+          {
+            "ability": "dexterity",
+            "minimum": 13
+          }
+        ]
+      }
+    ]
+  },
+  "starting_proficiencies": {
+    "armor": [
+      "Light, Medium, and Heavy armor and Shields"
+    ],
+    "weapons": [
+      "Simple and Martial weapons"
+    ],
+    "tools": null,
+    "saving_throws": [
+      "strength",
+      "constitution"
+    ],
+    "skills": [],
+    "choices": [
+      {
+        "id": "starting-skills",
+        "name": "Choose starting skills",
+        "kind": "skill",
+        "count": 2,
+        "allowed_options": [
+          "Acrobatics",
+          "Animal Handling",
+          "Athletics",
+          "History",
+          "Insight",
+          "Intimidation",
+          "Persuasion",
+          "Perception",
+          "Survival"
+        ],
+        "eligibility_rule": "Choose distinct skills; verify handling of an already-proficient skill.",
+        "selection_effect": "Record proficiency in the selected skills."
+      }
+    ]
+  },
+  "multiclass_proficiencies": {
+    "armor": [
+      "Light armor",
+      "Medium armor",
+      "Shields"
+    ],
+    "weapons": [
+      "Martial weapons"
+    ],
+    "tools": [],
+    "skills": [],
+    "choices": [],
+    "description": "Gain the following traits from the Core Fighter Traits table: Hit Point Die, proficiency with Martial weapons, and training with Light and Medium armor and Shields."
+  },
+  "starting_equipment": {
+    "description": "Choose A, B, or C: (A) Chain Mail, Greatsword, Flail, 8 Javelins, Dungeoneer’s Pack, and 4 GP; (B) Studded Leather Armor, Scimitar, Shortsword, Longbow, 20 Arrows, Quiver, Dungeoneer’s Pack, and 11 GP; or (C) 155 GP Starting equipment is not granted on multiclass entry.",
+    "grants": [],
+    "choices": [
+      {
+        "id": "starting-equipment",
+        "name": "Choose starting equipment",
+        "kind": "equipment_bundle",
+        "count": 1,
+        "allowed_options": "Choose A, B, or C: (A) Chain Mail, Greatsword, Flail, 8 Javelins, Dungeoneer’s Pack, and 4 GP; (B) Studded Leather Armor, Scimitar, Shortsword, Longbow, 20 Arrows, Quiver, Dungeoneer’s Pack, and 11 GP; or (C) 155 GP",
+        "eligibility_rule": "Choose one listed bundle when starting as this class.",
+        "selection_effect": "Record the chosen items and currency."
+      }
+    ]
+  },
+  "spellcasting": {
+    "kind": "none",
+    "ability": null,
+    "starts_at_class_level": null,
+    "spell_list_id": null,
+    "casting_mode": "none",
+    "preparation_rule": null,
+    "ritual_casting_rule": null,
+    "focus_rule": null,
+    "multiclass_slot_rule": "No base-class spellcasting slots.",
+    "notes": "Null casting fields are not applicable; subclass spellcasting is deferred."
+  },
+  "resources": [
+    {
+      "id": "resource-second-wind",
+      "name": "Nanite Repair Injection",
+      "description": "See the Second Wind feature for costs, use, and recovery. You have a limited well of physical and mental stamina that you can draw on. As a Bonus Action, you can use it to regain Hit Points equal to 1d10 plus your Fighter level.\n\nYou can use this feature twice. You regain one expended use when you finish a Short Rest, and you regain all expended uses when you finish a Long Rest.\n\nWhen you reach certain Fighter levels, you gain more uses of this feature, as shown in the Second Wind column of the Fighter Features table.",
+      "recharge": "other",
+      "maximum_rule": "See the feature and level table; resolve structured maximum and recovery rules before implementation."
+    },
+    {
+      "id": "resource-action-surge",
+      "name": "Synaptic Overclock",
+      "description": "See the Action Surge feature for costs, use, and recovery. You can push yourself beyond your normal limits for a moment. On your turn, you can take one additional action, except the Magic action.\n\nOnce you use this feature, you can’t do so again until you finish a Short or Long Rest. Starting at level 17, you can use it twice before a rest but only once on a turn.",
+      "recharge": "other",
+      "maximum_rule": "See the feature and level table; resolve structured maximum and recovery rules before implementation."
+    },
+    {
+      "id": "resource-indomitable",
+      "name": "Neural Hardening",
+      "description": "See the Indomitable feature for costs, use, and recovery. If you fail a saving throw, you can reroll it with a bonus equal to your Fighter level. You must use the new roll, and you can’t use this feature again until you finish a Long Rest.\n\nYou can use this feature twice before a Long Rest starting at level 13 and three times before a Long Rest starting at level 17.",
+      "recharge": "other",
+      "maximum_rule": "See the feature and level table; resolve structured maximum and recovery rules before implementation."
+    }
+  ],
+  "levels": [
+    {
+      "level": 1,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "fighting-style-1",
+          "name": "Combat Augment Protocol (Fighting Style)",
+          "description": "You have honed your martial prowess and gain a Fighting Style feat of your choice (see “Feats”). Defense is recommended.\n\nWhenever you gain a Fighter level, you can replace the feat you chose with a different Fighting Style feat.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-fighting-style-1",
+              "name": "Choose a Fighting Style feat",
+              "kind": "feat",
+              "count": 1,
+              "allowed_options": "Eligible Fighting Style feats; Paladin and Ranger may instead select their cantrip-granting option described in the feature.",
+              "eligibility_rule": "Meet feat prerequisites and apply any replacement rule in the feature.",
+              "selection_effect": "Record the selected feat."
+            }
+          ],
+          "reskin_reference": {
+            "name": "1. Combat Augment Protocol (Level 1)",
+            "description": "You calibrate your neural interface and physical sub-dermal augments for a specific combat doctrine:",
+            "features": [
+              {
+                "name": "Smart Link Targeting",
+                "description": "You gain a +2 bonus to attack rolls made with ranged smart-weapons and firearms."
+              },
+              {
+                "name": "Sub Dermal Plating",
+                "description": "You gain a +1 bonus to AC while wearing armor or sub-dermal weave."
+              },
+              {
+                "name": "Monomolecular Edge Tuning",
+                "description": "When wielding a one-handed melee weapon in one hand and no other weapons, you gain a +2 bonus to damage rolls."
+              },
+              {
+                "name": "Hydraulic Torque Drive",
+                "description": "When you roll a 1 or 2 on a damage die for an attack with a two-handed weapon, you can reroll the die and must use the new roll."
+              },
+              {
+                "name": "Hard Light Aegis Intercept",
+                "description": "When a target within 5 feet of you is attacked, you can use your reaction to project a hard-light barrier, imposing disadvantage on the attack roll (requires a shield or cyber-shield)."
+              },
+              {
+                "name": "Dual Rotor Actuators",
+                "description": "When you engage in two-weapon fighting, you can add your ability modifier to the damage of the second attack."
+              }
+            ]
+          }
+        },
+        {
+          "id": "second-wind-1",
+          "name": "Nanite Repair Injection (Second Wind)",
+          "description": "You have a limited well of physical and mental stamina that you can draw on. As a Bonus Action, you can use it to regain Hit Points equal to 1d10 plus your Fighter level.\n\nYou can use this feature twice. You regain one expended use when you finish a Short Rest, and you regain all expended uses when you finish a Long Rest.\n\nWhen you reach certain Fighter levels, you gain more uses of this feature, as shown in the Second Wind column of the Fighter Features table.",
+          "when": "both",
+          "choices": [],
+          "reskin_reference": {
+            "name": "2. Nanite Repair Injection (Level 1)",
+            "description": "You activate a sub-dermal auto-injector or trigger a nanite repair swarm that instantly cauterizes wounds, seals flesh, and numbs trauma.",
+            "features": [
+              {
+                "name": "Mechanics",
+                "description": "On your turn, you can use a bonus action to regain Hit Points equal to 1d10 + your Fighter level. (1/Short or Long Rest)."
+              }
+            ]
+          }
+        },
+        {
+          "id": "weapon-mastery-1",
+          "name": "Weapon Mastery",
+          "description": "Your training with weapons allows you to use the mastery properties of three kinds of Simple or Martial weapons of your choice. Whenever you finish a Long Rest, you can practice weapon drills and change one of those weapon choices.\n\nWhen you reach certain Fighter levels, you gain the ability to use the mastery properties of more kinds of weapons, as shown in the Weapon Mastery column of the Fighter Features table.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-weapon-mastery-1",
+              "name": "Choose weapon masteries",
+              "kind": "weapon_mastery",
+              "count": 3,
+              "allowed_options": "Eligible weapon kinds as described by the feature.",
+              "eligibility_rule": "Follow proficiency, weapon type, and replacement restrictions in the source feature.",
+              "selection_effect": "Record the selected weapon kinds."
+            }
+          ]
+        },
+        {
+          "id": "progression-values-1",
+          "name": "Class progression values",
+          "description": "Second Wind: 2; Weapon Mastery: 3. These are totals at this class level, not additional grants.",
+          "when": "both",
+          "choices": []
+        }
+      ],
+      "spell_progression": null,
+      "notes": null
+    },
+    {
+      "level": 2,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "action-surge-2",
+          "name": "Synaptic Overclock (Action Surge)",
+          "description": "You can push yourself beyond your normal limits for a moment. On your turn, you can take one additional action, except the Magic action.\n\nOnce you use this feature, you can’t do so again until you finish a Short or Long Rest. Starting at level 17, you can use it twice before a rest but only once on a turn.",
+          "when": "both",
+          "choices": [],
+          "reskin_reference": {
+            "name": "3. Synaptic Overclock (Level 2)",
+            "description": "You temporarily override your neural safety governors or trigger a heavy combat-stim dump, allowing your body to move at near-light reaction speeds.",
+            "features": [
+              {
+                "name": "Mechanics",
+                "description": "On your turn, you can take one additional action on top of your regular action and possible bonus action. (1/Short or Long Rest; 2 uses at Level 17)."
+              }
+            ]
+          }
+        },
+        {
+          "id": "tactical-mind-2",
+          "name": "Tactical Mind",
+          "description": "You have a mind for tactics on and off the battlefield. When you fail an ability check, you can expend a use of your Second Wind to push yourself toward success. Rather than regaining Hit Points, you roll 1d10 and add the number rolled to the ability check, potentially turning it into a success. If the check still fails, this use of Second Wind isn’t expended.",
+          "when": "both",
+          "choices": []
+        }
+      ],
+      "spell_progression": null,
+      "notes": null
+    },
+    {
+      "level": 3,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "fighter-subclass-3",
+          "name": "Fighter Subclass",
+          "description": "Choose a Fighter subclass at this class level. Subclass choices and features will be authored later.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-fighter-subclass-3",
+              "name": "Choose a subclass later",
+              "kind": "subclass",
+              "count": 1,
+              "allowed_options": null,
+              "eligibility_rule": "Subclass authoring is deferred; verify available choices.",
+              "selection_effect": "Record the chosen subclass when implemented."
+            }
+          ]
+        }
+      ],
+      "spell_progression": null,
+      "notes": null
+    },
+    {
+      "level": 4,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "ability-score-improvement-4",
+          "name": "Ability Score Improvement",
+          "description": "You gain the Ability Score Improvement feat (see “Feats”) or another feat of your choice for which you qualify. You gain this feature again at Fighter levels 6, 8, 12, 14, and 16.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-ability-score-improvement-4",
+              "name": "Choose an eligible feat or Ability Score Improvement",
+              "kind": "feat",
+              "count": 1,
+              "allowed_options": "Ability Score Improvement or another eligible feat.",
+              "eligibility_rule": "Meet feat prerequisites and verify ability-score limits.",
+              "selection_effect": "Record the feat and apply its selected effects."
+            }
+          ]
+        },
+        {
+          "id": "progression-values-4",
+          "name": "Class progression values",
+          "description": "Second Wind: 3 (previously 2); Weapon Mastery: 4 (previously 3). These are totals at this class level, not additional grants.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "weapon-mastery-increase-4",
+              "name": "Choose additional weapon masteries",
+              "kind": "weapon_mastery",
+              "count": 1,
+              "allowed_options": "Eligible weapon kinds from the Weapon Mastery feature.",
+              "eligibility_rule": "Choose distinct eligible weapon kinds, following the class feature's replacement rules.",
+              "selection_effect": "Record the additional weapon masteries."
+            }
+          ]
+        }
+      ],
+      "spell_progression": null,
+      "notes": null
+    },
+    {
+      "level": 5,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "extra-attack-5",
+          "name": "Rapid Fire Protocol (Extra Attack)",
+          "description": "You can attack twice instead of once whenever you take the Attack action on your turn.",
+          "when": "both",
+          "choices": [],
+          "reskin_reference": {
+            "name": "5. Rapid Fire Protocol (Level 5)",
+            "description": "High-frequency weapon swings, sub-dermal recoil dampeners, and automated target cycling allow you to strike multiple targets in milliseconds.",
+            "features": [
+              {
+                "name": "Mechanics",
+                "description": "You can attack twice (Level 5), three times (Level 11), and four times (Level 20) whenever you take the Attack action on your turn."
+              }
+            ]
+          }
+        },
+        {
+          "id": "tactical-shift-5",
+          "name": "Tactical Shift",
+          "description": "Whenever you activate your Second Wind with a Bonus Action, you can move up to half your Speed without provoking Opportunity Attacks.",
+          "when": "both",
+          "choices": []
+        }
+      ],
+      "spell_progression": null,
+      "notes": null
+    },
+    {
+      "level": 6,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "ability-score-improvement-6",
+          "name": "Ability Score Improvement",
+          "description": "You gain the Ability Score Improvement feat (see “Feats”) or another feat of your choice for which you qualify. You gain this feature again at Fighter levels 6, 8, 12, 14, and 16.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-ability-score-improvement-6",
+              "name": "Choose an eligible feat or Ability Score Improvement",
+              "kind": "feat",
+              "count": 1,
+              "allowed_options": "Ability Score Improvement or another eligible feat.",
+              "eligibility_rule": "Meet feat prerequisites and verify ability-score limits.",
+              "selection_effect": "Record the feat and apply its selected effects."
+            }
+          ]
+        }
+      ],
+      "spell_progression": null,
+      "notes": null
+    },
+    {
+      "level": 7,
+      "status": "unfilled",
+      "features": [],
+      "spell_progression": null,
+      "notes": "Subclass feature deferred."
+    },
+    {
+      "level": 8,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "ability-score-improvement-8",
+          "name": "Ability Score Improvement",
+          "description": "You gain the Ability Score Improvement feat (see “Feats”) or another feat of your choice for which you qualify. You gain this feature again at Fighter levels 6, 8, 12, 14, and 16.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-ability-score-improvement-8",
+              "name": "Choose an eligible feat or Ability Score Improvement",
+              "kind": "feat",
+              "count": 1,
+              "allowed_options": "Ability Score Improvement or another eligible feat.",
+              "eligibility_rule": "Meet feat prerequisites and verify ability-score limits.",
+              "selection_effect": "Record the feat and apply its selected effects."
+            }
+          ]
+        }
+      ],
+      "spell_progression": null,
+      "notes": null
+    },
+    {
+      "level": 9,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "indomitable-9",
+          "name": "Neural Hardening (Indomitable)",
+          "description": "If you fail a saving throw, you can reroll it with a bonus equal to your Fighter level. You must use the new roll, and you can’t use this feature again until you finish a Long Rest.\n\nYou can use this feature twice before a Long Rest starting at level 13 and three times before a Long Rest starting at level 17.",
+          "when": "both",
+          "choices": [],
+          "reskin_reference": {
+            "name": "6. Neural Hardening (Level 9)",
+            "description": "You purge Black ICE neural feedback, override bioweapons, or push through physical shock through sheer grit and hardened firewall firmware. :::",
+            "features": [
+              {
+                "name": "Mechanics",
+                "description": "You can reroll a saving throw that you fail, but you must use the new roll. (1/Long Rest at Level 9; 2 at Level 13; 3 at Level 17)."
+              }
+            ]
+          }
+        },
+        {
+          "id": "tactical-master-9",
+          "name": "Tactical Master",
+          "description": "When you attack with a weapon whose mastery property you can use, you can replace that property with the Push, Sap, or Slow property for that attack.",
+          "when": "both",
+          "choices": []
+        }
+      ],
+      "spell_progression": null,
+      "notes": null
+    },
+    {
+      "level": 10,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "progression-values-10",
+          "name": "Class progression values",
+          "description": "Second Wind: 4 (previously 3); Weapon Mastery: 5 (previously 4). These are totals at this class level, not additional grants.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "weapon-mastery-increase-10",
+              "name": "Choose additional weapon masteries",
+              "kind": "weapon_mastery",
+              "count": 1,
+              "allowed_options": "Eligible weapon kinds from the Weapon Mastery feature.",
+              "eligibility_rule": "Choose distinct eligible weapon kinds, following the class feature's replacement rules.",
+              "selection_effect": "Record the additional weapon masteries."
+            }
+          ]
+        }
+      ],
+      "spell_progression": null,
+      "notes": "Subclass feature deferred."
+    },
+    {
+      "level": 11,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "two-extra-attacks-11",
+          "name": "Two Extra Attacks",
+          "description": "You can attack three times instead of once whenever you take the Attack action on your turn.",
+          "when": "both",
+          "choices": []
+        }
+      ],
+      "spell_progression": null,
+      "notes": null
+    },
+    {
+      "level": 12,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "ability-score-improvement-12",
+          "name": "Ability Score Improvement",
+          "description": "You gain the Ability Score Improvement feat (see “Feats”) or another feat of your choice for which you qualify. You gain this feature again at Fighter levels 6, 8, 12, 14, and 16.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-ability-score-improvement-12",
+              "name": "Choose an eligible feat or Ability Score Improvement",
+              "kind": "feat",
+              "count": 1,
+              "allowed_options": "Ability Score Improvement or another eligible feat.",
+              "eligibility_rule": "Meet feat prerequisites and verify ability-score limits.",
+              "selection_effect": "Record the feat and apply its selected effects."
+            }
+          ]
+        }
+      ],
+      "spell_progression": null,
+      "notes": null
+    },
+    {
+      "level": 13,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "indomitable-13",
+          "name": "Neural Hardening (Indomitable)",
+          "description": "If you fail a saving throw, you can reroll it with a bonus equal to your Fighter level. You must use the new roll, and you can’t use this feature again until you finish a Long Rest.\n\nYou can use this feature twice before a Long Rest starting at level 13 and three times before a Long Rest starting at level 17.",
+          "when": "both",
+          "choices": [],
+          "reskin_reference": {
+            "name": "6. Neural Hardening (Level 9)",
+            "description": "You purge Black ICE neural feedback, override bioweapons, or push through physical shock through sheer grit and hardened firewall firmware. :::",
+            "features": [
+              {
+                "name": "Mechanics",
+                "description": "You can reroll a saving throw that you fail, but you must use the new roll. (1/Long Rest at Level 9; 2 at Level 13; 3 at Level 17)."
+              }
+            ]
+          }
+        },
+        {
+          "id": "studied-attacks-13",
+          "name": "Studied Attacks",
+          "description": "You study your opponents and learn from each attack you make. If you make an attack roll against a creature and miss, you have Advantage on your next attack roll against that creature before the end of your next turn.",
+          "when": "both",
+          "choices": []
+        }
+      ],
+      "spell_progression": null,
+      "notes": null
+    },
+    {
+      "level": 14,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "ability-score-improvement-14",
+          "name": "Ability Score Improvement",
+          "description": "You gain the Ability Score Improvement feat (see “Feats”) or another feat of your choice for which you qualify. You gain this feature again at Fighter levels 6, 8, 12, 14, and 16.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-ability-score-improvement-14",
+              "name": "Choose an eligible feat or Ability Score Improvement",
+              "kind": "feat",
+              "count": 1,
+              "allowed_options": "Ability Score Improvement or another eligible feat.",
+              "eligibility_rule": "Meet feat prerequisites and verify ability-score limits.",
+              "selection_effect": "Record the feat and apply its selected effects."
+            }
+          ]
+        }
+      ],
+      "spell_progression": null,
+      "notes": null
+    },
+    {
+      "level": 15,
+      "status": "unfilled",
+      "features": [],
+      "spell_progression": null,
+      "notes": "Subclass feature deferred."
+    },
+    {
+      "level": 16,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "ability-score-improvement-16",
+          "name": "Ability Score Improvement",
+          "description": "You gain the Ability Score Improvement feat (see “Feats”) or another feat of your choice for which you qualify. You gain this feature again at Fighter levels 6, 8, 12, 14, and 16.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-ability-score-improvement-16",
+              "name": "Choose an eligible feat or Ability Score Improvement",
+              "kind": "feat",
+              "count": 1,
+              "allowed_options": "Ability Score Improvement or another eligible feat.",
+              "eligibility_rule": "Meet feat prerequisites and verify ability-score limits.",
+              "selection_effect": "Record the feat and apply its selected effects."
+            }
+          ]
+        },
+        {
+          "id": "progression-values-16",
+          "name": "Class progression values",
+          "description": "Weapon Mastery: 6 (previously 5). These are totals at this class level, not additional grants.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "weapon-mastery-increase-16",
+              "name": "Choose additional weapon masteries",
+              "kind": "weapon_mastery",
+              "count": 1,
+              "allowed_options": "Eligible weapon kinds from the Weapon Mastery feature.",
+              "eligibility_rule": "Choose distinct eligible weapon kinds, following the class feature's replacement rules.",
+              "selection_effect": "Record the additional weapon masteries."
+            }
+          ]
+        }
+      ],
+      "spell_progression": null,
+      "notes": null
+    },
+    {
+      "level": 17,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "action-surge-17",
+          "name": "Synaptic Overclock (Action Surge)",
+          "description": "You can push yourself beyond your normal limits for a moment. On your turn, you can take one additional action, except the Magic action.\n\nOnce you use this feature, you can’t do so again until you finish a Short or Long Rest. Starting at level 17, you can use it twice before a rest but only once on a turn.",
+          "when": "both",
+          "choices": [],
+          "reskin_reference": {
+            "name": "3. Synaptic Overclock (Level 2)",
+            "description": "You temporarily override your neural safety governors or trigger a heavy combat-stim dump, allowing your body to move at near-light reaction speeds.",
+            "features": [
+              {
+                "name": "Mechanics",
+                "description": "On your turn, you can take one additional action on top of your regular action and possible bonus action. (1/Short or Long Rest; 2 uses at Level 17)."
+              }
+            ]
+          }
+        },
+        {
+          "id": "indomitable-17",
+          "name": "Neural Hardening (Indomitable)",
+          "description": "If you fail a saving throw, you can reroll it with a bonus equal to your Fighter level. You must use the new roll, and you can’t use this feature again until you finish a Long Rest.\n\nYou can use this feature twice before a Long Rest starting at level 13 and three times before a Long Rest starting at level 17.",
+          "when": "both",
+          "choices": [],
+          "reskin_reference": {
+            "name": "6. Neural Hardening (Level 9)",
+            "description": "You purge Black ICE neural feedback, override bioweapons, or push through physical shock through sheer grit and hardened firewall firmware. :::",
+            "features": [
+              {
+                "name": "Mechanics",
+                "description": "You can reroll a saving throw that you fail, but you must use the new roll. (1/Long Rest at Level 9; 2 at Level 13; 3 at Level 17)."
+              }
+            ]
+          }
+        }
+      ],
+      "spell_progression": null,
+      "notes": null
+    },
+    {
+      "level": 18,
+      "status": "unfilled",
+      "features": [],
+      "spell_progression": null,
+      "notes": "Subclass feature deferred."
+    },
+    {
+      "level": 19,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "epic-boon-19",
+          "name": "Epic Boon",
+          "description": "You gain an Epic Boon feat (see “Feats”) or another feat of your choice for which you qualify. Boon of Combat Prowess is recommended.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-epic-boon-19",
+              "name": "Choose an Epic Boon or another eligible feat",
+              "kind": "feat",
+              "count": 1,
+              "allowed_options": "An Epic Boon feat or another eligible feat.",
+              "eligibility_rule": "Meet feat prerequisites.",
+              "selection_effect": "Record the feat and its effects."
+            }
+          ]
+        }
+      ],
+      "spell_progression": null,
+      "notes": null
+    },
+    {
+      "level": 20,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "three-extra-attacks-20",
+          "name": "Three Extra Attacks",
+          "description": "You can attack four times instead of once whenever you take the Attack action on your turn.",
+          "when": "both",
+          "choices": []
+        }
+      ],
+      "spell_progression": null,
+      "notes": null
+    }
+  ],
+  "subclasses": null,
+  "source_notes": [
+    "Rules basis: _reference/classes/Fighter.md, a 2024-style source. Review compatibility with the earlier 2014 multiclass design.",
+    "Class progression and mechanics use the original reference; older reskin mechanics may differ and are thematic reference only, not additional grants.",
+    "The worksheet schema is not supported by the app. Levels remain unfilled pending rules and choice review; null means unresolved or not applicable as described.",
+    "Subclass selection milestones are recorded, but subclass options, features, and spellcasting are intentionally deferred.",
+    "Reskin inspiration: classes/Corporate Enforcer.json. Names may be adapted where source mechanics have changed.",
+    "Separate from the existing Barbarian-based Corporate Enforcer worksheet; this worksheet uses Fighter rules."
+  ]
+}

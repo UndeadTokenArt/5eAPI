@@ -528,3 +528,52 @@ func TestCampaignSendItemAndCharacterDeliveryRoutes(t *testing.T) {
 		t.Fatalf("delivery was not applied: %#v", sheet)
 	}
 }
+
+func TestAdvanceTurnCyclesRounds(t *testing.T) {
+	store := newCampaignStore(filepath.Join(t.TempDir(), "campaigns.json"))
+	campaign, _ := store.create("alice", "Run")
+	hp, a, b := 5, 10, 20
+	n1, n2, n3 := "Fast", "Slow", "Unrolled"
+	c, _ := store.addNPC(campaign.ID, "alice", NPCInput{Name: &n1, MaxHP: &hp, Initiative: &b})
+	c, _ = store.addNPC(campaign.ID, "alice", NPCInput{Name: &n2, MaxHP: &hp, Initiative: &a})
+	c, _ = store.addNPC(campaign.ID, "alice", NPCInput{Name: &n3, MaxHP: &hp})
+	names := map[string]string{}
+	for _, npc := range c.NPCs {
+		names[npc.ID] = npc.Name
+	}
+	step := func(actor string) (string, int, error) {
+		updated, err := store.advanceTurn(campaign.ID, actor)
+		return names[updated.ActiveID], updated.Round, err
+	}
+	if _, _, err := step("bob"); err != errCampaignForbid {
+		t.Fatalf("non-owner start: %v", err)
+	}
+	for i, want := range []struct {
+		name  string
+		round int
+	}{{"Fast", 1}, {"Slow", 1}, {"Fast", 2}} {
+		name, round, err := step("alice")
+		if err != nil || name != want.name || round != want.round {
+			t.Fatalf("step %d = %s %d %v", i, name, round, err)
+		}
+	}
+	view := viewFor(mustGet(t, store, campaign.ID), "alice")
+	if view.Round != 2 || names[view.ActiveID] != "Fast" {
+		t.Fatalf("view = %d %q", view.Round, view.ActiveID)
+	}
+	if _, err := store.endCombat(campaign.ID, "alice"); err != nil {
+		t.Fatal(err)
+	}
+	if view := viewFor(mustGet(t, store, campaign.ID), "alice"); view.Round != 0 || view.ActiveID != "" {
+		t.Fatalf("combat not ended: %+v", view)
+	}
+}
+
+func mustGet(t *testing.T, store *campaignStore, id string) Campaign {
+	t.Helper()
+	c, ok := store.get(id)
+	if !ok {
+		t.Fatal("missing campaign")
+	}
+	return c
+}

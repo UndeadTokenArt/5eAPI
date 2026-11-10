@@ -1,0 +1,691 @@
+{
+  "schema_status": "draft_authoring_template_not_supported_by_app",
+  "schema_version": 1,
+  "uid": "class-cyber-berserker-barbarian-draft",
+  "name": "Cyber-Berserker / Aug-Brute",
+  "original_class": "Barbarian",
+  "description": "A corporate shock operative whose combat stimulants, reinforced chassis, and threat-response firmware express Barbarian abilities. This is a separate 2024-style Barbarian reskin, not the existing Fighter-based Corporate Enforcer.",
+  "source_notes": [
+    "Rules and level progression are based on the supplied 2024-style Barbarian reference, including its Rage, weapon mastery, subclass timing, and feats.",
+    "Cybernetic and corporate terminology is flavor: it does not change the supplied Barbarian mechanics or imply additional equipment requirements.",
+    "The Fighter-based Corporate Enforcer source supplies thematic inspiration. Its combat styles, repair injection, action surge, additional attacks beyond two, saving throw rerolls, Fighter subclasses, and Cyber-Mage Ronin spellcasting are not granted by this worksheet.",
+    "The supplied Barbarian source specifies one subclass, Path of the Berserker, reskinned here as Corporate Shock Trooper. Other subclasses are not specified.",
+    "All levels remain unfilled pending rules review, choice details, and an app-supported schema. This file must not be loaded as live class data."
+  ],
+  "hit_die": 12,
+  "multiclass_prerequisites": {
+    "description": "2024 multiclass prerequisite: meet this class primary ability requirement when adding a new class; requirements also apply to every current class.",
+    "any_of": [
+      {
+        "all_of": [
+          {
+            "ability": "strength",
+            "minimum": 13
+          }
+        ]
+      }
+    ]
+  },
+  "starting_proficiencies": {
+    "armor": ["light armor", "medium armor", "shields"],
+    "weapons": ["simple weapons", "martial weapons"],
+    "tools": null,
+    "saving_throws": ["strength", "constitution"],
+    "skills": [],
+    "choices": [
+      {
+        "id": "starting-skills",
+        "name": "Choose starting skill proficiencies",
+        "kind": "skill",
+        "count": 2,
+        "allowed_options": ["Animal Handling", "Athletics", "Intimidation", "Nature", "Perception", "Survival"],
+        "eligibility_rule": "Choose two distinct skills from the list. How to handle existing proficiency from another source requires rules review.",
+        "selection_effect": "Record proficiency in the selected skills."
+      }
+    ]
+  },
+  "multiclass_proficiencies": {
+    "armor": ["shields"],
+    "weapons": ["martial weapons"],
+    "tools": null,
+    "skills": null,
+    "choices": null
+  },
+  "starting_equipment": {
+    "description": "Starting characters choose one equipment bundle; a character entering this class through multiclassing does not receive starting equipment. Corporate weapon names are cosmetic and use the listed equipment's mechanics.",
+    "grants": [],
+    "choices": [
+      {
+        "id": "starting-equipment",
+        "name": "Choose starting equipment",
+        "kind": "equipment_bundle",
+        "count": 1,
+        "allowed_options": [
+          "A: Greataxe, four handaxes, explorer's pack, and 15 GP",
+          "B: 75 GP"
+        ],
+        "eligibility_rule": "Choose exactly one bundle as a starting character.",
+        "selection_effect": "Record the items and currency from the selected bundle."
+      }
+    ]
+  },
+  "spellcasting": {
+    "kind": "none",
+    "ability": null,
+    "starts_at_class_level": null,
+    "spell_list_id": null,
+    "casting_mode": "none",
+    "preparation_rule": null,
+    "ritual_casting_rule": null,
+    "focus_rule": null,
+    "multiclass_slot_rule": "This class and its supplied subclass do not contribute spellcasting levels or spell slots.",
+    "notes": "Null casting fields are not applicable. A character may have spells from other sources, but cannot cast spells or maintain concentration while Combat Overdrive is active."
+  },
+  "resources": [
+    {
+      "id": "combat-overdrive",
+      "name": "Combat Overdrive",
+      "description": "Expend one use to enter the Barbarian's Rage, flavored as a combat-stimulant and cybernetic response. At class level 15, one initiative-triggered recovery of all uses is available per long rest.",
+      "recharge": "other",
+      "maximum_rule": "By class level: 2 uses at 1-2, 3 at 3-5, 4 at 6-11, 5 at 12-16, and 6 at 17-20. Regain one expended use on a short rest and all expended uses on a long rest."
+    },
+    {
+      "id": "persistent-overdrive-recovery",
+      "name": "Persistent Overdrive Recovery",
+      "description": "From class level 15, when rolling initiative, regain all expended Combat Overdrive uses once per long rest.",
+      "recharge": "long",
+      "maximum_rule": "One initiative-triggered recovery per long rest, beginning at class level 15."
+    }
+  ],
+  "levels": [
+    {
+      "level": 1,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "class-hit-points",
+          "name": "Reinforced Chassis: Hit Points",
+          "description": "Gain a d12 Hit Point Die per class level. Starting-character and later-level HP calculations, including Constitution modifier and any average-or-roll choice, require verification against the selected edition and app rules.",
+          "when": "both",
+          "choices": []
+        },
+        {
+          "id": "combat-overdrive-feature",
+          "name": "Combat Overdrive (Rage)",
+          "description": "Enter Overdrive as a bonus action while not wearing heavy armor. While active, gain resistance to bludgeoning, piercing, and slashing damage; advantage on Strength checks and Strength saves; and +2 damage when a Strength-based weapon or unarmed attack deals damage. You cannot cast spells or maintain concentration. It lasts until the end of your next turn and ends early if you don heavy armor or become incapacitated. On each following turn, extend it through the end of your next turn by attacking an enemy, forcing an enemy saving throw, or taking a bonus action. Maximum duration is 10 minutes. Uses and recovery are recorded in resources.",
+          "when": "both",
+          "choices": []
+        },
+        {
+          "id": "unarmored-defense",
+          "name": "Sub-Dermal Defense (Unarmored Defense)",
+          "description": "While wearing no armor, base AC is 10 + Dexterity modifier + Constitution modifier. A shield can be used without losing this benefit. This is not a grant of actual armor or cyberware.",
+          "when": "both",
+          "choices": []
+        },
+        {
+          "id": "weapon-mastery",
+          "name": "Weapon Interface Calibration (Weapon Mastery)",
+          "description": "Use the mastery properties of two selected kinds of simple or martial melee weapons. After a long rest, change one selected kind through practice. The number of selected kinds increases at class levels 4 and 10.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "weapon-mastery-initial",
+              "name": "Choose two weapon masteries",
+              "kind": "weapon_mastery",
+              "count": 2,
+              "allowed_options": "Kinds of simple or martial melee weapons with mastery properties.",
+              "eligibility_rule": "Choose distinct eligible weapon kinds. One selection can be changed after a long rest.",
+              "selection_effect": "Record the two weapon kinds whose mastery properties can be used."
+            }
+          ]
+        }
+      ],
+      "spell_progression": null,
+      "notes": "Starting and multiclass proficiencies are separate top-level grants. Spell progression is not applicable. Verify HP, existing-proficiency interactions, and how Unarmored Defense interacts with other sources."
+    },
+    {
+      "level": 2,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "danger-sense",
+          "name": "Threat-Scan Reflexes (Danger Sense)",
+          "description": "Gain advantage on Dexterity saving throws unless incapacitated.",
+          "when": "both",
+          "choices": []
+        },
+        {
+          "id": "reckless-attack",
+          "name": "Aggressive Assault (Reckless Attack)",
+          "description": "When making your first attack roll on your turn, choose to attack recklessly. Gain advantage on Strength-based attack rolls until the start of your next turn; attack rolls against you have advantage for the same duration.",
+          "when": "both",
+          "choices": []
+        }
+      ],
+      "spell_progression": null,
+      "notes": null
+    },
+    {
+      "level": 3,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "subclass",
+          "name": "Combat Specialization",
+          "description": "Choose a Barbarian subclass. Gain its features at the applicable class levels; the supplied source describes the Berserker reskinned as Corporate Shock Trooper.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "subclass-choice",
+              "name": "Choose a combat specialization",
+              "kind": "subclass",
+              "count": 1,
+              "allowed_options": ["Corporate Shock Trooper"],
+              "eligibility_rule": "Choose one available Barbarian subclass; any additional choices require separate authoring and review.",
+              "selection_effect": "Record the subclass and grant its class-level 3 feature."
+            }
+          ]
+        },
+        {
+          "id": "primal-knowledge",
+          "name": "Field Conditioning (Primal Knowledge)",
+          "description": "Gain proficiency in another skill from the starting class skill list. While Combat Overdrive is active, you may make Acrobatics, Intimidation, Perception, Stealth, or Survival checks using Strength instead of the usual ability.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "field-conditioning-skill",
+              "name": "Choose a field skill",
+              "kind": "skill",
+              "count": 1,
+              "allowed_options": ["Animal Handling", "Athletics", "Intimidation", "Nature", "Perception", "Survival"],
+              "eligibility_rule": "Choose another skill from the list; verify handling of already-proficient skills.",
+              "selection_effect": "Record proficiency in the chosen skill."
+            }
+          ]
+        },
+        {
+          "id": "overdrive-uses-3",
+          "name": "Combat Overdrive Capacity",
+          "description": "Maximum Combat Overdrive uses increase to 3.",
+          "when": "both",
+          "choices": []
+        }
+      ],
+      "spell_progression": null,
+      "notes": "Also apply the selected subclass's level 3 feature."
+    },
+    {
+      "level": 4,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "ability-score-improvement-4",
+          "name": "Ability Score Improvement",
+          "description": "Gain the Ability Score Improvement feat or another feat for which you qualify.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "feat-choice-4",
+              "name": "Choose a feat or Ability Score Improvement",
+              "kind": "feat",
+              "count": 1,
+              "allowed_options": "Ability Score Improvement or another eligible feat.",
+              "eligibility_rule": "Meet the selected feat's prerequisites; verify ability score choices and limits under the selected rules.",
+              "selection_effect": "Record the feat and apply its selected effects, including any ability score increases."
+            }
+          ]
+        },
+        {
+          "id": "weapon-mastery-4",
+          "name": "Weapon Interface Calibration: Third Weapon",
+          "description": "Increase the number of selected weapon kinds whose mastery properties you can use from two to three.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "weapon-mastery-choice-4",
+              "name": "Choose one additional weapon mastery",
+              "kind": "weapon_mastery",
+              "count": 1,
+              "allowed_options": "Kinds of simple or martial melee weapons with mastery properties.",
+              "eligibility_rule": "Choose an eligible weapon kind not already selected; the existing long-rest replacement rule still applies.",
+              "selection_effect": "Record the additional weapon kind."
+            }
+          ]
+        }
+      ],
+      "spell_progression": null,
+      "notes": null
+    },
+    {
+      "level": 5,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "extra-attack",
+          "name": "Rapid Assault Protocol (Extra Attack)",
+          "description": "Attack twice instead of once when taking the Attack action on your turn. This Barbarian version does not grant the Fighter source's third or fourth attacks.",
+          "when": "both",
+          "choices": []
+        },
+        {
+          "id": "fast-movement",
+          "name": "Hydraulic Mobility (Fast Movement)",
+          "description": "Your speed increases by 10 feet while you are not wearing heavy armor.",
+          "when": "both",
+          "choices": []
+        }
+      ],
+      "spell_progression": null,
+      "notes": "Verify how Extra Attack interacts with other classes' features."
+    },
+    {
+      "level": 6,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "overdrive-uses-6",
+          "name": "Combat Overdrive Capacity",
+          "description": "Maximum Combat Overdrive uses increase to 4.",
+          "when": "both",
+          "choices": []
+        }
+      ],
+      "spell_progression": null,
+      "notes": "Also apply the selected subclass's level 6 feature."
+    },
+    {
+      "level": 7,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "feral-instinct",
+          "name": "Combat Predictor (Feral Instinct)",
+          "description": "Gain advantage on initiative rolls.",
+          "when": "both",
+          "choices": []
+        },
+        {
+          "id": "instinctive-pounce",
+          "name": "Rapid Deployment (Instinctive Pounce)",
+          "description": "As part of the bonus action used to enter Combat Overdrive, move up to half your speed.",
+          "when": "both",
+          "choices": []
+        }
+      ],
+      "spell_progression": null,
+      "notes": null
+    },
+    {
+      "level": 8,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "ability-score-improvement-8",
+          "name": "Ability Score Improvement",
+          "description": "Gain the Ability Score Improvement feat or another feat for which you qualify.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "feat-choice-8",
+              "name": "Choose a feat or Ability Score Improvement",
+              "kind": "feat",
+              "count": 1,
+              "allowed_options": "Ability Score Improvement or another eligible feat.",
+              "eligibility_rule": "Meet the selected feat's prerequisites; verify ability score choices and limits under the selected rules.",
+              "selection_effect": "Record the feat and apply its selected effects, including any ability score increases."
+            }
+          ]
+        }
+      ],
+      "spell_progression": null,
+      "notes": null
+    },
+    {
+      "level": 9,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "brutal-strike",
+          "name": "High-Impact Strike (Brutal Strike)",
+          "description": "When using Aggressive Assault, forgo any advantage on one Strength-based attack roll on your turn that does not have disadvantage. On a hit, deal an extra 1d10 damage of the same type as the weapon or unarmed strike and choose one effect: Forceful Blow pushes the target 15 feet straight away, after which you may move up to half your speed straight toward it without provoking opportunity attacks; Hamstring Blow reduces its speed by 15 feet until the start of your next turn, with only the most recent Hamstring Blow affecting it.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "high-impact-effect",
+              "name": "Choose a High-Impact Strike effect when used",
+              "kind": "combat_effect",
+              "count": 1,
+              "allowed_options": ["Forceful Blow", "Hamstring Blow"],
+              "eligibility_rule": "Choose on a qualifying hit; additional effects become available at class level 13 and two different effects can be used at level 17.",
+              "selection_effect": "Apply the chosen temporary combat effect; this is not a permanent build selection."
+            }
+          ]
+        },
+        {
+          "id": "overdrive-damage-9",
+          "name": "Combat Overdrive Damage",
+          "description": "The Combat Overdrive damage bonus increases from +2 to +3.",
+          "when": "both",
+          "choices": []
+        }
+      ],
+      "spell_progression": null,
+      "notes": null
+    },
+    {
+      "level": 10,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "weapon-mastery-10",
+          "name": "Weapon Interface Calibration: Fourth Weapon",
+          "description": "Increase the number of selected weapon kinds whose mastery properties you can use from three to four.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "weapon-mastery-choice-10",
+              "name": "Choose one additional weapon mastery",
+              "kind": "weapon_mastery",
+              "count": 1,
+              "allowed_options": "Kinds of simple or martial melee weapons with mastery properties.",
+              "eligibility_rule": "Choose an eligible weapon kind not already selected; the existing long-rest replacement rule still applies.",
+              "selection_effect": "Record the additional weapon kind."
+            }
+          ]
+        }
+      ],
+      "spell_progression": null,
+      "notes": "Also apply the selected subclass's level 10 feature."
+    },
+    {
+      "level": 11,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "relentless-rage",
+          "name": "Trauma Override (Relentless Rage)",
+          "description": "If you drop to 0 HP while Combat Overdrive is active and do not die outright, make a DC 10 Constitution saving throw. On success, your HP become twice your class level. Each use after the first increases the DC by 5; a short or long rest resets it to 10.",
+          "when": "both",
+          "choices": []
+        }
+      ],
+      "spell_progression": null,
+      "notes": null
+    },
+    {
+      "level": 12,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "ability-score-improvement-12",
+          "name": "Ability Score Improvement",
+          "description": "Gain the Ability Score Improvement feat or another feat for which you qualify.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "feat-choice-12",
+              "name": "Choose a feat or Ability Score Improvement",
+              "kind": "feat",
+              "count": 1,
+              "allowed_options": "Ability Score Improvement or another eligible feat.",
+              "eligibility_rule": "Meet the selected feat's prerequisites; verify ability score choices and limits under the selected rules.",
+              "selection_effect": "Record the feat and apply its selected effects, including any ability score increases."
+            }
+          ]
+        },
+        {
+          "id": "overdrive-uses-12",
+          "name": "Combat Overdrive Capacity",
+          "description": "Maximum Combat Overdrive uses increase to 5.",
+          "when": "both",
+          "choices": []
+        }
+      ],
+      "spell_progression": null,
+      "notes": null
+    },
+    {
+      "level": 13,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "improved-brutal-strike-13",
+          "name": "High-Impact Strike: Improved Effects",
+          "description": "Add two High-Impact Strike options. Staggering Blow gives the target disadvantage on its next saving throw and prevents its opportunity attacks until the start of your next turn. Sundering Blow gives the next attack roll by another creature against the target before the start of your next turn a +5 bonus; an attack roll can benefit from only one Sundering Blow bonus.",
+          "when": "both",
+          "choices": []
+        }
+      ],
+      "spell_progression": null,
+      "notes": "The effects are options chosen during combat, not permanent selections."
+    },
+    {
+      "level": 14,
+      "status": "unfilled",
+      "features": [],
+      "spell_progression": null,
+      "notes": "Apply the selected subclass's level 14 feature."
+    },
+    {
+      "level": 15,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "persistent-rage",
+          "name": "Persistent Overdrive (Persistent Rage)",
+          "description": "When rolling initiative, regain all expended Combat Overdrive uses; once used, this recovery is unavailable until a long rest. Overdrive now lasts 10 minutes without needing to extend it each round. It ends early if you become unconscious or don heavy armor.",
+          "when": "both",
+          "choices": []
+        }
+      ],
+      "spell_progression": null,
+      "notes": "The initiative recovery is tracked separately in resources."
+    },
+    {
+      "level": 16,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "ability-score-improvement-16",
+          "name": "Ability Score Improvement",
+          "description": "Gain the Ability Score Improvement feat or another feat for which you qualify.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "feat-choice-16",
+              "name": "Choose a feat or Ability Score Improvement",
+              "kind": "feat",
+              "count": 1,
+              "allowed_options": "Ability Score Improvement or another eligible feat.",
+              "eligibility_rule": "Meet the selected feat's prerequisites; verify ability score choices and limits under the selected rules.",
+              "selection_effect": "Record the feat and apply its selected effects, including any ability score increases."
+            }
+          ]
+        },
+        {
+          "id": "overdrive-damage-16",
+          "name": "Combat Overdrive Damage",
+          "description": "The Combat Overdrive damage bonus increases from +3 to +4.",
+          "when": "both",
+          "choices": []
+        }
+      ],
+      "spell_progression": null,
+      "notes": null
+    },
+    {
+      "level": 17,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "improved-brutal-strike-17",
+          "name": "High-Impact Strike: Maximum Impact",
+          "description": "High-Impact Strike's extra damage increases to 2d10, and you can use two different available High-Impact Strike effects whenever you use the feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "high-impact-effects-17",
+              "name": "Choose two High-Impact Strike effects when used",
+              "kind": "combat_effect",
+              "count": 2,
+              "allowed_options": ["Forceful Blow", "Hamstring Blow", "Staggering Blow", "Sundering Blow"],
+              "eligibility_rule": "Choose two different available effects on a qualifying hit.",
+              "selection_effect": "Apply the chosen temporary combat effects; these are not permanent build selections."
+            }
+          ]
+        },
+        {
+          "id": "overdrive-uses-17",
+          "name": "Combat Overdrive Capacity",
+          "description": "Maximum Combat Overdrive uses increase to 6.",
+          "when": "both",
+          "choices": []
+        }
+      ],
+      "spell_progression": null,
+      "notes": null
+    },
+    {
+      "level": 18,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "indomitable-might",
+          "name": "Maximum Torque (Indomitable Might)",
+          "description": "If a Strength check or Strength saving throw total is less than your Strength score, you may use the score in place of the total.",
+          "when": "both",
+          "choices": []
+        }
+      ],
+      "spell_progression": null,
+      "notes": null
+    },
+    {
+      "level": 19,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "epic-boon",
+          "name": "Epic Boon",
+          "description": "Gain an Epic Boon feat or another feat for which you qualify. The supplied Barbarian source recommends Boon of Irresistible Offense.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "epic-boon-choice",
+              "name": "Choose an Epic Boon or another feat",
+              "kind": "feat",
+              "count": 1,
+              "allowed_options": "An Epic Boon feat or another eligible feat.",
+              "eligibility_rule": "Meet the selected feat's prerequisites.",
+              "selection_effect": "Record the feat and apply its effects."
+            }
+          ]
+        }
+      ],
+      "spell_progression": null,
+      "notes": null
+    },
+    {
+      "level": 20,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "primal-champion",
+          "name": "Apex Augmentation (Primal Champion)",
+          "description": "Increase Strength and Constitution scores by 4, to a maximum of 25.",
+          "when": "both",
+          "choices": []
+        }
+      ],
+      "spell_progression": null,
+      "notes": null
+    }
+  ],
+  "subclasses": [
+    {
+      "id": "corporate-shock-trooper",
+      "name": "Corporate Shock Trooper",
+      "description": "A close-quarters enforcer whose combat firmware channels Overdrive into overwhelming force. This is a thematic reskin of the supplied Path of the Berserker, not the Fighter-based Street Samurai or another Fighter subclass.",
+      "selected_at_class_level": 3,
+      "spellcasting_override": null,
+      "resources": [
+        {
+          "id": "intimidating-presence",
+          "name": "Corporate Terror Protocol",
+          "description": "Use the subclass's fear effect once per long rest. Expend one Combat Overdrive use with no action required to restore the expended use.",
+          "recharge": "other",
+          "maximum_rule": "One use beginning at class level 14; regained on a long rest or by expending one Combat Overdrive use."
+        }
+      ],
+      "levels": [
+        {
+          "level": 3,
+          "status": "unfilled",
+          "features": [
+            {
+              "id": "frenzy",
+              "name": "Assault Frenzy (Frenzy)",
+              "description": "If you use Aggressive Assault while Combat Overdrive is active, deal extra damage to the first target you hit on your turn with a Strength-based attack. Roll a number of d6s equal to your Overdrive damage bonus; the extra damage has the weapon or unarmed strike's damage type.",
+              "when": "both",
+              "choices": []
+            }
+          ],
+          "notes": "The extra damage scales with the Overdrive damage bonus at class levels 9 and 16."
+        },
+        {
+          "level": 6,
+          "status": "unfilled",
+          "features": [
+            {
+              "id": "mindless-rage",
+              "name": "Neural Firewall (Mindless Rage)",
+              "description": "While Combat Overdrive is active, you are immune to the charmed and frightened conditions. If either condition affects you when you enter Overdrive, it ends.",
+              "when": "both",
+              "choices": []
+            }
+          ],
+          "notes": null
+        },
+        {
+          "level": 10,
+          "status": "unfilled",
+          "features": [
+            {
+              "id": "retaliation",
+              "name": "Counterstrike Firmware (Retaliation)",
+              "description": "When a creature within 5 feet deals damage to you, use your reaction to make one melee attack against it with a weapon or an unarmed strike.",
+              "when": "both",
+              "choices": []
+            }
+          ],
+          "notes": null
+        },
+        {
+          "level": 14,
+          "status": "unfilled",
+          "features": [
+            {
+              "id": "intimidating-presence-feature",
+              "name": "Corporate Terror Protocol (Intimidating Presence)",
+              "description": "As a bonus action, choose creatures in a 30-foot emanation originating from you. Each makes a Wisdom saving throw against DC 8 + your Strength modifier + proficiency bonus. On a failure, a creature is frightened for 1 minute and repeats the save at the end of each of its turns, ending the effect on itself on a success. After use, regain the feature on a long rest or by expending one Combat Overdrive use without an action.",
+              "when": "both",
+              "choices": [
+                {
+                  "id": "terror-protocol-targets",
+                  "name": "Choose targets when activating Corporate Terror Protocol",
+                  "kind": "combat_targets",
+                  "count": null,
+                  "allowed_options": "Creatures of your choice in the 30-foot emanation.",
+                  "eligibility_rule": "Choose targets when the feature is used; the supplied source does not specify a fixed target count.",
+                  "selection_effect": "Each chosen creature makes the saving throw; do not save these targets as permanent build choices."
+                }
+              ]
+            }
+          ],
+          "notes": "The feature's use and recovery are recorded in subclass resources."
+        }
+      ]
+    }
+  ]
+}

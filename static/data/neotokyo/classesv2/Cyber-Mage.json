@@ -1,0 +1,1490 @@
+{
+  "schema_status": "draft_authoring_template_not_supported_by_app",
+  "schema_version": 1,
+  "uid": "class-cyber-mage-draft",
+  "name": "Cyber-Mage",
+  "original_class": "Wizard",
+  "description": "Master programmers and spell casters who encode complex spell subroutines into cyberdecks, optical arrays, and neural focuses.",
+  "hit_die": 6,
+  "multiclass_prerequisites": {
+    "description": "2024 multiclass prerequisite: meet this class primary ability requirement when adding a new class; requirements also apply to every current class.",
+    "any_of": [
+      {
+        "all_of": [
+          {
+            "ability": "intelligence",
+            "minimum": 13
+          }
+        ]
+      }
+    ]
+  },
+  "starting_proficiencies": {
+    "armor": [],
+    "weapons": [
+      "Simple weapons"
+    ],
+    "tools": null,
+    "saving_throws": [
+      "intelligence",
+      "wisdom"
+    ],
+    "skills": [],
+    "choices": [
+      {
+        "id": "starting-skills",
+        "name": "Choose starting skills",
+        "kind": "skill",
+        "count": 2,
+        "allowed_options": [
+          "Arcana",
+          "History",
+          "Insight",
+          "Investigation",
+          "Medicine",
+          "Nature",
+          "Religion"
+        ],
+        "eligibility_rule": "Choose distinct skills; verify handling of an already-proficient skill.",
+        "selection_effect": "Record proficiency in the selected skills."
+      }
+    ]
+  },
+  "multiclass_proficiencies": {
+    "armor": [],
+    "weapons": [],
+    "tools": [],
+    "skills": [],
+    "choices": [],
+    "description": "Gain the Hit Point Die from the Core Wizard Traits table."
+  },
+  "starting_equipment": {
+    "description": "Choose A or B: (A) 2 Daggers, Arcane Focus (Quarterstaff), Robe, Spellbook, Scholar’s Pack, and 5 GP; or (B) 55 GP Starting equipment is not granted on multiclass entry.",
+    "grants": [],
+    "choices": [
+      {
+        "id": "starting-equipment",
+        "name": "Choose starting equipment",
+        "kind": "equipment_bundle",
+        "count": 1,
+        "allowed_options": "Choose A or B: (A) 2 Daggers, Arcane Focus (Quarterstaff), Robe, Spellbook, Scholar’s Pack, and 5 GP; or (B) 55 GP",
+        "eligibility_rule": "Choose one listed bundle when starting as this class.",
+        "selection_effect": "Record the chosen items and currency."
+      }
+    ]
+  },
+  "spellcasting": {
+    "kind": "full",
+    "ability": "intelligence",
+    "starts_at_class_level": 1,
+    "spell_list_id": "Wizard",
+    "casting_mode": "spellbook",
+    "preparation_rule": "Changing Your Prepared Spells. Whenever you finish a Long Rest, you can change your list of prepared spells, replacing any of the spells there with spells from your spellbook.",
+    "ritual_casting_rule": "You can cast any spell as a Ritual if that spell has the Ritual tag and the spell is in your spellbook. You needn’t have the spell prepared, but you must read from the book to cast a spell in this way.",
+    "focus_rule": "Spellcasting Focus. You can use an Arcane Focus or your spellbook as a Spellcasting Focus for your Wizard spells.",
+    "multiclass_slot_rule": "Full caster; verify shared multiclass slot calculation under the chosen edition.",
+    "notes": "See the level 1 Spellcasting or Pact Magic feature for casting, preparation, focus, and replacement rules. Null fields require review; the reference spell mapping may not be a complete 2024 spell list."
+  },
+  "resources": [
+    {
+      "id": "resource-arcane-recovery",
+      "name": "RAM Defrag & Buffer Flush",
+      "description": "See the Arcane Recovery feature for costs, use, and recovery. You can regain some of your magical energy by studying your spellbook. When you finish a Short Rest, you can choose expended spell slots to recover. The spell slots can have a combined level equal to no more than half your Wizard level (round up), and none of the slots can be level 6 or higher. For example, if you’re a level 4 Wizard, you can recover up to two levels’ worth of spell slots, regaining either one level 2 spell slot or two level 1 spell slots.\n\nOnce you use this feature, you can’t do so again until you finish a Long Rest.",
+      "recharge": "other",
+      "maximum_rule": "See the feature and level table; resolve structured maximum and recovery rules before implementation."
+    }
+  ],
+  "levels": [
+    {
+      "level": 1,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "spellcasting-1",
+          "name": "Spellcasting: Digital Architecture & Executable Modules (Spellcasting)",
+          "description": "As a student of arcane magic, you have learned to cast spells. See “Spells” for the rules on spellcasting. The information below details how you use those rules with Wizard spells, which appear in the Wizard spell list later in the class’s description.\n\nCantrips. You know three Wizard cantrips of your choice. Light, Mage Hand, and Ray of Frost are recommended. Whenever you finish a Long Rest, you can replace one of your cantrips from this feature with another Wizard cantrip of your choice.\n\nWhen you reach Wizard levels 4 and 10, you learn another Wizard cantrip of your choice, as shown in the Cantrips column of the Wizard Features table.\n\nSpellbook. Your wizardly apprenticeship culminated in the creation of a unique book: your spellbook. It is a Tiny object that weighs 3 pounds, contains 100 pages, and can be read only by you or someone casting Identify. You determine the book’s appearance and materials, such as a gilt-edged tome or a collection of vellum bound with twine.\n\nThe book contains the level 1+ spells you know. It starts with six level 1 Wizard spells of your choice. Detect Magic, Feather Fall, Mage Armor, Magic Missile, Sleep, and Thunderwave are recommended.\n\nWhenever you gain a Wizard level after 1, add two Wizard spells of your choice to your spellbook. Each of these spells must be of a level for which you have spell slots, as shown in the Wizard Features table. The spells are the culmination of arcane research you do regularly.\n\nSpell Slots. The Wizard Features table shows how many spell slots you have to cast your level 1+ spells. You regain all expended slots when you finish a Long Rest.\n\nPrepared Spells of Level 1+. You prepare the list of level 1+ spells that are available for you to cast with this feature. To do so, choose four spells from your spellbook. The chosen spells must be of a level for which you have spell slots.\n\nThe number of spells on your list increases as you gain Wizard levels, as shown in the Prepared Spells column of the Wizard Features table. Whenever that number increases, choose additional Wizard spells until the number of spells on your list matches the number in the table. The chosen spells must be of a level for which you have spell slots. For example, if you’re a level 3 Wizard, your list of prepared spells can include six spells of levels 1 and 2 in any combination, chosen from your spellbook.\n\nIf another Wizard feature gives you spells that you always have prepared, those spells don’t count against the number of spells you can prepare with this feature, but those spells otherwise count as Wizard spells for you.\n\nChanging Your Prepared Spells. Whenever you finish a Long Rest, you can change your list of prepared spells, replacing any of the spells there with spells from your spellbook.\n\nSpellcasting Ability. Intelligence is your spellcasting ability for your Wizard spells.\n\nSpellcasting Focus. You can use an Arcane Focus or your spellbook as a Spellcasting Focus for your Wizard spells.\n\nExpanding and Replacing a Spellbook\n\nThe spells you add to your spellbook as you gain levels reflect your ongoing magical research, but you might find other spells during your adventures that you can add to the book. You could discover a Wizard spell on a Spell Scroll, for example, and then copy it into your spellbook.\n\nCopying a Spell into the Book. When you find a level 1+ Wizard spell, you can copy it into your spellbook if it’s of a level you can prepare and if you have time to copy it. For each level of the spell, the transcription takes 2 hours and costs 50 GP. Afterward you can prepare the spell like the other spells in your spellbook.\n\nCopying the Book. You can copy a spell from your spellbook into another book. This is like copying a new spell into your spellbook but faster, since you already know how to cast the spell. You need spend only 1 hour and 10 GP for each level of the copied spell.\n\nIf you lose your spellbook, you can use the same procedure to transcribe the Wizard spells that you have prepared into a new spellbook. Filling out the remainder of the new book requires you to find new spells to do so. For this reason, many wizards keep a backup spellbook.",
+          "when": "both",
+          "choices": null,
+          "reskin_reference": {
+            "name": "2. Spellcasting: Digital Architecture & Executable Modules (Level 1)",
+            "description": "As a practitioner of Matrix code manipulation and digital sorcery, you operate a customized Cyberdeck containing compiled code modules and daemon scripts.",
+            "features": [
+              {
+                "name": "Low-Bandwidth Utilities (Cantrips)",
+                "description": "At 1st level, you know three low-bandwidth utility scripts of your choice from the Cyber-Mage module list. These micro-programs require minimal clock cycles and are permanently cached in your active RAM for instant execution without expending deck power cells. You learn additional utility scripts at higher levels (4 at 4th level, 5 at 10th level)."
+              },
+              {
+                "name": "Cyberdeck / Neural Memory Matrix (Spellbook)",
+                "description": "At 1st level, you possess a Cyberdeck pre-loaded with six 1st-level executable code modules of your choice. Your Cyberdeck is the secure repository of all complex programs you know, excluding your cached utilities. The code modules you add as you gain levels reflect your independent signal research, dark-web data digs, and system breakthroughs."
+              },
+              {
+                "name": "Caching & Program Allocation (Preparing and Casting Spells)",
+                "description": "The Cyber-Mage table shows how many Deck Power Cells (spell slots) you have to launch programs of 1st level and higher. To run a compiled program, you must consume a Deck Power Cell of that program's level or higher. You fully recharge all depleted power cells when you finish a System Power Cycle (Long Rest). You mount a curated list of programs into active RAM equal to your Intelligence modifier + your Cyber-Mage level (minimum 1). Re-mounting a new list requires spending 1 minute per program level after a System Power Cycle."
+              },
+              {
+                "name": "Primary Processing Ability: System Architecture (Spellcasting Ability)",
+                "description": "Intelligence is your primary System Architecture ability for Cyber-Mage programs, as your digital sorcery relies on advanced logic, network topology, and code execution. Program Firewall Save DC = 8 + Proficiency Bonus + Intelligence modifier. Program Attack Modifier = Proficiency Bonus + Intelligence modifier."
+              },
+              {
+                "name": "Background Daemon Execution (Ritual Casting)",
+                "description": "You can launch a program as an Offline Background Daemon if that module carries the [Daemon] tag and is compiled within your Cyberdeck. You do not need to mount the program into active RAM, but launching a daemon adds 10 extra minutes of system compile time."
+              },
+              {
+                "name": "Interface Focus (Spellcasting Focus)",
+                "description": "You can use a specialized Hardware Focus—such as a neural interface wrist-rig, a high-frequency signal wand, a sub-dermal coprocessor, or your Cyberdeck chassis—as a system focus for executing your programs."
+              },
+              {
+                "name": "Compiling Code & System Backups (Copying Spells & Replacement)",
+                "description": "When you find a Cyber-Mage program of 1st level or higher, you can compile it into your Cyberdeck if you can process its level. For each level of the program, the process takes 2 hours and costs 50 credits (gp) for diagnostic solder, thermal paste, and decryption licenses. Duplicating your own programs to a backup drive requires 1 hour and 10 credits per program level."
+              }
+            ]
+          }
+        },
+        {
+          "id": "ritual-adept-1",
+          "name": "Ritual Adept",
+          "description": "You can cast any spell as a Ritual if that spell has the Ritual tag and the spell is in your spellbook. You needn’t have the spell prepared, but you must read from the book to cast a spell in this way.",
+          "when": "both",
+          "choices": []
+        },
+        {
+          "id": "arcane-recovery-1",
+          "name": "RAM Defrag & Buffer Flush (Arcane Recovery)",
+          "description": "You can regain some of your magical energy by studying your spellbook. When you finish a Short Rest, you can choose expended spell slots to recover. The spell slots can have a combined level equal to no more than half your Wizard level (round up), and none of the slots can be level 6 or higher. For example, if you’re a level 4 Wizard, you can recover up to two levels’ worth of spell slots, regaining either one level 2 spell slot or two level 1 spell slots.\n\nOnce you use this feature, you can’t do so again until you finish a Long Rest.",
+          "when": "both",
+          "choices": null,
+          "reskin_reference": {
+            "name": "3. RAM Defrag & Buffer Flush (Arcane Recovery) (Level 1)",
+            "description": "You have learned to purge temporary cache files and clear thermal throttling during a Quick Diagnostic Pause.",
+            "features": [
+              {
+                "name": "Mechanics",
+                "description": "Once per day when you finish a Quick Diagnostic Pause (Short Rest), you can execute an automated RAM defragmentation cycle to recover depleted Deck Power Cells. The recovered power cells can have a combined level equal to or less than half your Cyber-Mage level (rounded up), and none of the recovered cells can be 6th level or higher."
+              }
+            ]
+          }
+        },
+        {
+          "id": "spell-selections-1",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "cantrip-selection-1",
+              "name": "Choose cantrips",
+              "kind": "spell",
+              "count": 3,
+              "allowed_options": "Cantrips on the Wizard spell list.",
+              "eligibility_rule": "Follow the class's cantrip and replacement rules.",
+              "selection_effect": "Record the newly selected class cantrips."
+            },
+            {
+              "id": "spellbook-selection-1",
+              "name": "Choose spells for the spellbook",
+              "kind": "spell",
+              "count": 6,
+              "allowed_options": "Wizard spells of levels permitted by the class Spellcasting feature.",
+              "eligibility_rule": "Choose distinct eligible spells; follow spellbook and replacement rules.",
+              "selection_effect": "Add the selected spells to the class spellbook."
+            },
+            {
+              "id": "prepared-selection-1",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 4,
+              "allowed_options": "Eligible spells in the Wizard's spellbook.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 3,
+        "spells_known_total": null,
+        "prepared_spells_total": 4,
+        "spellbook_spells_gained": 6,
+        "max_class_spell_level": 1,
+        "class_spell_slots": [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 2,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "scholar-2",
+          "name": "Scholar",
+          "description": "While studying magic, you also specialized in another field of study. Choose one of the following skills in which you have proficiency: Arcana, History, Investigation, Medicine, Nature, or Religion. You have Expertise in the chosen skill.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-scholar-2",
+              "name": "Choose skill expertise",
+              "kind": "skill_expertise",
+              "count": 1,
+              "allowed_options": "Eligible skill proficiencies in the source feature.",
+              "eligibility_rule": "Follow the feature's specific eligibility and duplication rules.",
+              "selection_effect": "Record Expertise in each selected proficiency."
+            }
+          ]
+        },
+        {
+          "id": "spell-selections-2",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "spellbook-selection-2",
+              "name": "Choose spells for the spellbook",
+              "kind": "spell",
+              "count": 2,
+              "allowed_options": "Wizard spells of levels permitted by the class Spellcasting feature.",
+              "eligibility_rule": "Choose distinct eligible spells; follow spellbook and replacement rules.",
+              "selection_effect": "Add the selected spells to the class spellbook."
+            },
+            {
+              "id": "prepared-selection-2",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible spells in the Wizard's spellbook.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 3,
+        "spells_known_total": null,
+        "prepared_spells_total": 5,
+        "spellbook_spells_gained": 2,
+        "max_class_spell_level": 1,
+        "class_spell_slots": [
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 3,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "wizard-subclass-3",
+          "name": "Wizard Subclass",
+          "description": "Choose a Wizard subclass at this class level. Subclass choices and features will be authored later.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-wizard-subclass-3",
+              "name": "Choose a subclass later",
+              "kind": "subclass",
+              "count": 1,
+              "allowed_options": null,
+              "eligibility_rule": "Subclass authoring is deferred; verify available choices.",
+              "selection_effect": "Record the chosen subclass when implemented."
+            }
+          ]
+        },
+        {
+          "id": "spell-selections-3",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "spellbook-selection-3",
+              "name": "Choose spells for the spellbook",
+              "kind": "spell",
+              "count": 2,
+              "allowed_options": "Wizard spells of levels permitted by the class Spellcasting feature.",
+              "eligibility_rule": "Choose distinct eligible spells; follow spellbook and replacement rules.",
+              "selection_effect": "Add the selected spells to the class spellbook."
+            },
+            {
+              "id": "prepared-selection-3",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible spells in the Wizard's spellbook.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 3,
+        "spells_known_total": null,
+        "prepared_spells_total": 6,
+        "spellbook_spells_gained": 2,
+        "max_class_spell_level": 2,
+        "class_spell_slots": [
+          4,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 4,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "ability-score-improvement-4",
+          "name": "Hardware & Neural Enhancement (Ability Score Improvement)",
+          "description": "You gain the Ability Score Improvement feat (see “Feats”) or another feat of your choice for which you qualify. You gain this feature again at Wizard levels 8, 12, and 16.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-ability-score-improvement-4",
+              "name": "Choose an eligible feat or Ability Score Improvement",
+              "kind": "feat",
+              "count": 1,
+              "allowed_options": "Ability Score Improvement or another eligible feat.",
+              "eligibility_rule": "Meet feat prerequisites and verify ability-score limits.",
+              "selection_effect": "Record the feat and apply its selected effects."
+            }
+          ],
+          "reskin_reference": {
+            "name": "6. Hardware & Neural Enhancement (Level 4)",
+            "description": "When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can upgrade your biological hardware or neural architecture.",
+            "features": [
+              {
+                "name": "Mechanics",
+                "description": "You can increase one ability score of your choice by 2, or increase two ability scores of your choice by 1 (max 20). Alternatively, you can select a Cyberpunk Combat Feat."
+              }
+            ]
+          }
+        },
+        {
+          "id": "spell-selections-4",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "cantrip-selection-4",
+              "name": "Choose cantrips",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Cantrips on the Wizard spell list.",
+              "eligibility_rule": "Follow the class's cantrip and replacement rules.",
+              "selection_effect": "Record the newly selected class cantrips."
+            },
+            {
+              "id": "spellbook-selection-4",
+              "name": "Choose spells for the spellbook",
+              "kind": "spell",
+              "count": 2,
+              "allowed_options": "Wizard spells of levels permitted by the class Spellcasting feature.",
+              "eligibility_rule": "Choose distinct eligible spells; follow spellbook and replacement rules.",
+              "selection_effect": "Add the selected spells to the class spellbook."
+            },
+            {
+              "id": "prepared-selection-4",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible spells in the Wizard's spellbook.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 4,
+        "spells_known_total": null,
+        "prepared_spells_total": 7,
+        "spellbook_spells_gained": 2,
+        "max_class_spell_level": 2,
+        "class_spell_slots": [
+          4,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 5,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "memorize-spell-5",
+          "name": "Memorize Spell",
+          "description": "Whenever you finish a Short Rest, you can study your spellbook and replace one of the level 1+ Wizard spells you have prepared for your Spellcasting feature with another level 1+ spell from the book.",
+          "when": "both",
+          "choices": []
+        },
+        {
+          "id": "spell-selections-5",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "spellbook-selection-5",
+              "name": "Choose spells for the spellbook",
+              "kind": "spell",
+              "count": 2,
+              "allowed_options": "Wizard spells of levels permitted by the class Spellcasting feature.",
+              "eligibility_rule": "Choose distinct eligible spells; follow spellbook and replacement rules.",
+              "selection_effect": "Add the selected spells to the class spellbook."
+            },
+            {
+              "id": "prepared-selection-5",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 2,
+              "allowed_options": "Eligible spells in the Wizard's spellbook.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 4,
+        "spells_known_total": null,
+        "prepared_spells_total": 9,
+        "spellbook_spells_gained": 2,
+        "max_class_spell_level": 3,
+        "class_spell_slots": [
+          4,
+          3,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 6,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "spell-selections-6",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "spellbook-selection-6",
+              "name": "Choose spells for the spellbook",
+              "kind": "spell",
+              "count": 2,
+              "allowed_options": "Wizard spells of levels permitted by the class Spellcasting feature.",
+              "eligibility_rule": "Choose distinct eligible spells; follow spellbook and replacement rules.",
+              "selection_effect": "Add the selected spells to the class spellbook."
+            },
+            {
+              "id": "prepared-selection-6",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible spells in the Wizard's spellbook.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 4,
+        "spells_known_total": null,
+        "prepared_spells_total": 10,
+        "spellbook_spells_gained": 2,
+        "max_class_spell_level": 3,
+        "class_spell_slots": [
+          4,
+          3,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Subclass feature deferred. Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 7,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "spell-selections-7",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "spellbook-selection-7",
+              "name": "Choose spells for the spellbook",
+              "kind": "spell",
+              "count": 2,
+              "allowed_options": "Wizard spells of levels permitted by the class Spellcasting feature.",
+              "eligibility_rule": "Choose distinct eligible spells; follow spellbook and replacement rules.",
+              "selection_effect": "Add the selected spells to the class spellbook."
+            },
+            {
+              "id": "prepared-selection-7",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible spells in the Wizard's spellbook.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 4,
+        "spells_known_total": null,
+        "prepared_spells_total": 11,
+        "spellbook_spells_gained": 2,
+        "max_class_spell_level": 4,
+        "class_spell_slots": [
+          4,
+          3,
+          3,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 8,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "ability-score-improvement-8",
+          "name": "Hardware & Neural Enhancement (Ability Score Improvement)",
+          "description": "You gain the Ability Score Improvement feat (see “Feats”) or another feat of your choice for which you qualify. You gain this feature again at Wizard levels 8, 12, and 16.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-ability-score-improvement-8",
+              "name": "Choose an eligible feat or Ability Score Improvement",
+              "kind": "feat",
+              "count": 1,
+              "allowed_options": "Ability Score Improvement or another eligible feat.",
+              "eligibility_rule": "Meet feat prerequisites and verify ability-score limits.",
+              "selection_effect": "Record the feat and apply its selected effects."
+            }
+          ],
+          "reskin_reference": {
+            "name": "6. Hardware & Neural Enhancement (Level 4)",
+            "description": "When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can upgrade your biological hardware or neural architecture.",
+            "features": [
+              {
+                "name": "Mechanics",
+                "description": "You can increase one ability score of your choice by 2, or increase two ability scores of your choice by 1 (max 20). Alternatively, you can select a Cyberpunk Combat Feat."
+              }
+            ]
+          }
+        },
+        {
+          "id": "spell-selections-8",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "spellbook-selection-8",
+              "name": "Choose spells for the spellbook",
+              "kind": "spell",
+              "count": 2,
+              "allowed_options": "Wizard spells of levels permitted by the class Spellcasting feature.",
+              "eligibility_rule": "Choose distinct eligible spells; follow spellbook and replacement rules.",
+              "selection_effect": "Add the selected spells to the class spellbook."
+            },
+            {
+              "id": "prepared-selection-8",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible spells in the Wizard's spellbook.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 4,
+        "spells_known_total": null,
+        "prepared_spells_total": 12,
+        "spellbook_spells_gained": 2,
+        "max_class_spell_level": 4,
+        "class_spell_slots": [
+          4,
+          3,
+          3,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 9,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "spell-selections-9",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "spellbook-selection-9",
+              "name": "Choose spells for the spellbook",
+              "kind": "spell",
+              "count": 2,
+              "allowed_options": "Wizard spells of levels permitted by the class Spellcasting feature.",
+              "eligibility_rule": "Choose distinct eligible spells; follow spellbook and replacement rules.",
+              "selection_effect": "Add the selected spells to the class spellbook."
+            },
+            {
+              "id": "prepared-selection-9",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 2,
+              "allowed_options": "Eligible spells in the Wizard's spellbook.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 4,
+        "spells_known_total": null,
+        "prepared_spells_total": 14,
+        "spellbook_spells_gained": 2,
+        "max_class_spell_level": 5,
+        "class_spell_slots": [
+          4,
+          3,
+          3,
+          3,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 10,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "spell-selections-10",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "cantrip-selection-10",
+              "name": "Choose cantrips",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Cantrips on the Wizard spell list.",
+              "eligibility_rule": "Follow the class's cantrip and replacement rules.",
+              "selection_effect": "Record the newly selected class cantrips."
+            },
+            {
+              "id": "spellbook-selection-10",
+              "name": "Choose spells for the spellbook",
+              "kind": "spell",
+              "count": 2,
+              "allowed_options": "Wizard spells of levels permitted by the class Spellcasting feature.",
+              "eligibility_rule": "Choose distinct eligible spells; follow spellbook and replacement rules.",
+              "selection_effect": "Add the selected spells to the class spellbook."
+            },
+            {
+              "id": "prepared-selection-10",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible spells in the Wizard's spellbook.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 5,
+        "spells_known_total": null,
+        "prepared_spells_total": 15,
+        "spellbook_spells_gained": 2,
+        "max_class_spell_level": 5,
+        "class_spell_slots": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Subclass feature deferred. Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 11,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "spell-selections-11",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "spellbook-selection-11",
+              "name": "Choose spells for the spellbook",
+              "kind": "spell",
+              "count": 2,
+              "allowed_options": "Wizard spells of levels permitted by the class Spellcasting feature.",
+              "eligibility_rule": "Choose distinct eligible spells; follow spellbook and replacement rules.",
+              "selection_effect": "Add the selected spells to the class spellbook."
+            },
+            {
+              "id": "prepared-selection-11",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible spells in the Wizard's spellbook.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 5,
+        "spells_known_total": null,
+        "prepared_spells_total": 16,
+        "spellbook_spells_gained": 2,
+        "max_class_spell_level": 6,
+        "class_spell_slots": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 12,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "ability-score-improvement-12",
+          "name": "Hardware & Neural Enhancement (Ability Score Improvement)",
+          "description": "You gain the Ability Score Improvement feat (see “Feats”) or another feat of your choice for which you qualify. You gain this feature again at Wizard levels 8, 12, and 16.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-ability-score-improvement-12",
+              "name": "Choose an eligible feat or Ability Score Improvement",
+              "kind": "feat",
+              "count": 1,
+              "allowed_options": "Ability Score Improvement or another eligible feat.",
+              "eligibility_rule": "Meet feat prerequisites and verify ability-score limits.",
+              "selection_effect": "Record the feat and apply its selected effects."
+            }
+          ],
+          "reskin_reference": {
+            "name": "6. Hardware & Neural Enhancement (Level 4)",
+            "description": "When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can upgrade your biological hardware or neural architecture.",
+            "features": [
+              {
+                "name": "Mechanics",
+                "description": "You can increase one ability score of your choice by 2, or increase two ability scores of your choice by 1 (max 20). Alternatively, you can select a Cyberpunk Combat Feat."
+              }
+            ]
+          }
+        },
+        {
+          "id": "spell-selections-12",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "spellbook-selection-12",
+              "name": "Choose spells for the spellbook",
+              "kind": "spell",
+              "count": 2,
+              "allowed_options": "Wizard spells of levels permitted by the class Spellcasting feature.",
+              "eligibility_rule": "Choose distinct eligible spells; follow spellbook and replacement rules.",
+              "selection_effect": "Add the selected spells to the class spellbook."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 5,
+        "spells_known_total": null,
+        "prepared_spells_total": 16,
+        "spellbook_spells_gained": 2,
+        "max_class_spell_level": 6,
+        "class_spell_slots": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 13,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "spell-selections-13",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "spellbook-selection-13",
+              "name": "Choose spells for the spellbook",
+              "kind": "spell",
+              "count": 2,
+              "allowed_options": "Wizard spells of levels permitted by the class Spellcasting feature.",
+              "eligibility_rule": "Choose distinct eligible spells; follow spellbook and replacement rules.",
+              "selection_effect": "Add the selected spells to the class spellbook."
+            },
+            {
+              "id": "prepared-selection-13",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible spells in the Wizard's spellbook.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 5,
+        "spells_known_total": null,
+        "prepared_spells_total": 17,
+        "spellbook_spells_gained": 2,
+        "max_class_spell_level": 7,
+        "class_spell_slots": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 14,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "spell-selections-14",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "spellbook-selection-14",
+              "name": "Choose spells for the spellbook",
+              "kind": "spell",
+              "count": 2,
+              "allowed_options": "Wizard spells of levels permitted by the class Spellcasting feature.",
+              "eligibility_rule": "Choose distinct eligible spells; follow spellbook and replacement rules.",
+              "selection_effect": "Add the selected spells to the class spellbook."
+            },
+            {
+              "id": "prepared-selection-14",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible spells in the Wizard's spellbook.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 5,
+        "spells_known_total": null,
+        "prepared_spells_total": 18,
+        "spellbook_spells_gained": 2,
+        "max_class_spell_level": 7,
+        "class_spell_slots": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Subclass feature deferred. Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 15,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "spell-selections-15",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "spellbook-selection-15",
+              "name": "Choose spells for the spellbook",
+              "kind": "spell",
+              "count": 2,
+              "allowed_options": "Wizard spells of levels permitted by the class Spellcasting feature.",
+              "eligibility_rule": "Choose distinct eligible spells; follow spellbook and replacement rules.",
+              "selection_effect": "Add the selected spells to the class spellbook."
+            },
+            {
+              "id": "prepared-selection-15",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible spells in the Wizard's spellbook.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 5,
+        "spells_known_total": null,
+        "prepared_spells_total": 19,
+        "spellbook_spells_gained": 2,
+        "max_class_spell_level": 8,
+        "class_spell_slots": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          1,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 16,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "ability-score-improvement-16",
+          "name": "Hardware & Neural Enhancement (Ability Score Improvement)",
+          "description": "You gain the Ability Score Improvement feat (see “Feats”) or another feat of your choice for which you qualify. You gain this feature again at Wizard levels 8, 12, and 16.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-ability-score-improvement-16",
+              "name": "Choose an eligible feat or Ability Score Improvement",
+              "kind": "feat",
+              "count": 1,
+              "allowed_options": "Ability Score Improvement or another eligible feat.",
+              "eligibility_rule": "Meet feat prerequisites and verify ability-score limits.",
+              "selection_effect": "Record the feat and apply its selected effects."
+            }
+          ],
+          "reskin_reference": {
+            "name": "6. Hardware & Neural Enhancement (Level 4)",
+            "description": "When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can upgrade your biological hardware or neural architecture.",
+            "features": [
+              {
+                "name": "Mechanics",
+                "description": "You can increase one ability score of your choice by 2, or increase two ability scores of your choice by 1 (max 20). Alternatively, you can select a Cyberpunk Combat Feat."
+              }
+            ]
+          }
+        },
+        {
+          "id": "spell-selections-16",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "spellbook-selection-16",
+              "name": "Choose spells for the spellbook",
+              "kind": "spell",
+              "count": 2,
+              "allowed_options": "Wizard spells of levels permitted by the class Spellcasting feature.",
+              "eligibility_rule": "Choose distinct eligible spells; follow spellbook and replacement rules.",
+              "selection_effect": "Add the selected spells to the class spellbook."
+            },
+            {
+              "id": "prepared-selection-16",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 2,
+              "allowed_options": "Eligible spells in the Wizard's spellbook.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 5,
+        "spells_known_total": null,
+        "prepared_spells_total": 21,
+        "spellbook_spells_gained": 2,
+        "max_class_spell_level": 8,
+        "class_spell_slots": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          1,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 17,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "spell-selections-17",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "spellbook-selection-17",
+              "name": "Choose spells for the spellbook",
+              "kind": "spell",
+              "count": 2,
+              "allowed_options": "Wizard spells of levels permitted by the class Spellcasting feature.",
+              "eligibility_rule": "Choose distinct eligible spells; follow spellbook and replacement rules.",
+              "selection_effect": "Add the selected spells to the class spellbook."
+            },
+            {
+              "id": "prepared-selection-17",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible spells in the Wizard's spellbook.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 5,
+        "spells_known_total": null,
+        "prepared_spells_total": 22,
+        "spellbook_spells_gained": 2,
+        "max_class_spell_level": 9,
+        "class_spell_slots": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          1,
+          1
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 18,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "spell-mastery-18",
+          "name": "Permanent Neural Kernel Caching (Spell Mastery)",
+          "description": "You have achieved such mastery over certain spells that you can cast them at will. Choose a level 1 and a level 2 spell in your spellbook that have a casting time of an action. You always have those spells prepared, and you can cast them at their lowest level without expending a spell slot. To cast either spell at a higher level, you must expend a spell slot.\n\nWhenever you finish a Long Rest, you can study your spellbook and replace one of those spells with an eligible spell of the same level from the book.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-spell-mastery-18",
+              "name": "Choose mastered spells",
+              "kind": "feature_option",
+              "count": 2,
+              "allowed_options": "See the source feature and its option list.",
+              "eligibility_rule": "Follow the feature's count, prerequisites, and replacement rules.",
+              "selection_effect": "Record selections and effects; structured details require review."
+            }
+          ],
+          "reskin_reference": {
+            "name": "7. Permanent Neural Kernel Caching (Spell Mastery) (Level 18)",
+            "description": "You have achieved such complete mastery over core programs that you can execute them at will.",
+            "features": [
+              {
+                "name": "Mechanics",
+                "description": "Choose a 1st-level program and a 2nd-level program compiled in your Cyberdeck. You can execute those programs at their lowest level without expending a Deck Power Cell whenever you have them mounted in active RAM. By spending 8 hours in diagnostic simulation, you can exchange one or both chosen programs for different ones of the same levels."
+              }
+            ]
+          }
+        },
+        {
+          "id": "spell-selections-18",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "spellbook-selection-18",
+              "name": "Choose spells for the spellbook",
+              "kind": "spell",
+              "count": 2,
+              "allowed_options": "Wizard spells of levels permitted by the class Spellcasting feature.",
+              "eligibility_rule": "Choose distinct eligible spells; follow spellbook and replacement rules.",
+              "selection_effect": "Add the selected spells to the class spellbook."
+            },
+            {
+              "id": "prepared-selection-18",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible spells in the Wizard's spellbook.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 5,
+        "spells_known_total": null,
+        "prepared_spells_total": 23,
+        "spellbook_spells_gained": 2,
+        "max_class_spell_level": 9,
+        "class_spell_slots": [
+          4,
+          3,
+          3,
+          3,
+          3,
+          1,
+          1,
+          1,
+          1
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 19,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "epic-boon-19",
+          "name": "Epic Boon",
+          "description": "You gain an Epic Boon feat (see “Feats”) or another feat of your choice for which you qualify. Boon of Spell Recall is recommended.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-epic-boon-19",
+              "name": "Choose an Epic Boon or another eligible feat",
+              "kind": "feat",
+              "count": 1,
+              "allowed_options": "An Epic Boon feat or another eligible feat.",
+              "eligibility_rule": "Meet feat prerequisites.",
+              "selection_effect": "Record the feat and its effects."
+            }
+          ]
+        },
+        {
+          "id": "spell-selections-19",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "spellbook-selection-19",
+              "name": "Choose spells for the spellbook",
+              "kind": "spell",
+              "count": 2,
+              "allowed_options": "Wizard spells of levels permitted by the class Spellcasting feature.",
+              "eligibility_rule": "Choose distinct eligible spells; follow spellbook and replacement rules.",
+              "selection_effect": "Add the selected spells to the class spellbook."
+            },
+            {
+              "id": "prepared-selection-19",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible spells in the Wizard's spellbook.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 5,
+        "spells_known_total": null,
+        "prepared_spells_total": 24,
+        "spellbook_spells_gained": 2,
+        "max_class_spell_level": 9,
+        "class_spell_slots": [
+          4,
+          3,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          1
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 20,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "signature-spells-20",
+          "name": "Command-Line Directives (Signature Spells)",
+          "description": "Choose two level 3 spells in your spellbook as your signature spells. You always have these spells prepared, and you can cast each of them once at level 3 without expending a spell slot. When you do so, you can’t cast them in this way again until you finish a Short or Long Rest. To cast either spell at a higher level, you must expend a spell slot.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-signature-spells-20",
+              "name": "Choose signature spells",
+              "kind": "feature_option",
+              "count": 2,
+              "allowed_options": "See the source feature and its option list.",
+              "eligibility_rule": "Follow the feature's count, prerequisites, and replacement rules.",
+              "selection_effect": "Record selections and effects; structured details require review."
+            }
+          ],
+          "reskin_reference": {
+            "name": "8. Command-Line Directives (Signature Spells) (Level 20)",
+            "description": "You gain total mastery over two high-tier operational programs, executing them with minimal clock cycles.",
+            "features": [
+              {
+                "name": "Mechanics",
+                "description": "Choose two 3rd-level programs in your Cyberdeck as your signature directives. You always have these programs mounted in active RAM without counting against your preparation limit. You can execute each of them once at 3rd level without expending a Deck Power Cell (recharges on a Short or Long Rest)."
+              }
+            ]
+          }
+        },
+        {
+          "id": "spell-selections-20",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "spellbook-selection-20",
+              "name": "Choose spells for the spellbook",
+              "kind": "spell",
+              "count": 2,
+              "allowed_options": "Wizard spells of levels permitted by the class Spellcasting feature.",
+              "eligibility_rule": "Choose distinct eligible spells; follow spellbook and replacement rules.",
+              "selection_effect": "Add the selected spells to the class spellbook."
+            },
+            {
+              "id": "prepared-selection-20",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible spells in the Wizard's spellbook.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 5,
+        "spells_known_total": null,
+        "prepared_spells_total": 25,
+        "spellbook_spells_gained": 2,
+        "max_class_spell_level": 9,
+        "class_spell_slots": [
+          4,
+          3,
+          3,
+          3,
+          3,
+          2,
+          2,
+          1,
+          1
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    }
+  ],
+  "subclasses": null,
+  "source_notes": [
+    "Rules basis: _reference/classes/Wizard.md, a 2024-style source. Review compatibility with the earlier 2014 multiclass design.",
+    "Class progression and mechanics use the original reference; older reskin mechanics may differ and are thematic reference only, not additional grants.",
+    "The worksheet schema is not supported by the app. Levels remain unfilled pending rules and choice review; null means unresolved or not applicable as described.",
+    "Subclass selection milestones are recorded, but subclass options, features, and spellcasting are intentionally deferred.",
+    "Reskin inspiration: classes/Cyber-Mage.json. Names may be adapted where source mechanics have changed."
+  ]
+}

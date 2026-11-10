@@ -1,0 +1,272 @@
+{
+  "name": "Vow-Bound Operative",
+  "features": [
+    {
+      "name": "1. Threat-Sense Sweep (Level 1)",
+      "description": "Your ocular implants, threat-detection algorithms, and spirit-attuned sensors ping the presence of supernatural entities, rogue digital ghosts, or corporate black-ops gear.",
+      "features": [
+        {
+          "name": "Mechanics",
+          "description": "As an action, you expand your awareness. Until the end of your next turn, you know the location of any awakened spirit, digital ghost, rogue AI, or fiendish construct within 60 feet that is not behind total cover. You also detect any consecrated or desecrated sites (such as Shinto shrines or corrupted matrix server hubs) within range. (Uses equal to 1 + Cha modifier per Long Rest)."
+        }
+      ]
+    },
+    {
+      "name": "2. Bio-Nanite Injector (Level 1)",
+      "description": "You activate sub-dermal medical nanite swarms or apply high-grade corporate trauma gel to seal lethal wounds and purge bio-toxins.",
+      "features": [
+        {
+          "name": "Mechanics",
+          "description": "You have a pool of healing power that replenishes on a long rest, equal to 5 × your Paladin level. As an action, you can touch a creature to restore Hit Points from this pool. You can also expend 5 hit points from the pool to cure the target of Bio-Toxed (Poisoned) or neutralize a disease."
+        }
+      ]
+    },
+    {
+      "name": "3. Combat Augment Protocol (Level 2)",
+      "features": [
+        {
+          "name": "You Select A Specialized Combat Doctrine",
+          "description": "Smart-Link Targeting (+2 ranged), Sub-Dermal Plating (+1 AC), Monomolecular Edge Tuning (+2 melee damage with one-handed weapons), or Hard-Light Aegis Intercept (Shield reaction disadvantage)."
+        }
+      ]
+    },
+    {
+      "name": "4. Spellcasting: Directives & Sacred Code (Level 2)",
+      "features": [
+        {
+          "name": "Spellcasting Ability",
+          "description": "You cast spells using Charisma (representing your force of personality, neural authority, and code conviction). Spells are executed as encoded corporate directives, street vows, or sacred digital talismans."
+        }
+      ]
+    },
+    {
+      "name": "5. High-Voltage Overcharge Smite (Level 2)",
+      "description": "When you hit with a melee weapon or cyber-blade, you channel high-voltage electrical energy or spirit-fire through the strike, cooking internal circuits and searing flesh.",
+      "features": [
+        {
+          "name": "Mechanics",
+          "description": "When you hit a creature with a melee weapon attack, you can expend one spell slot to deal extra Lightning, Radiant, or Psychic damage to the target. The extra damage is 2d8 for a 1st-level slot, plus 1d8 for each slot level higher than 1st (to a maximum of 5d8). The damage increases by 1d8 if the target is a construct, rogue AI, or digital ghost."
+        }
+      ]
+    },
+    {
+      "name": "6. Sub-Dermal Bio-Filter (Level 3)",
+      "description": "Advanced internal bio-filters and cybernetic liver augments make you immune to biological pathogens and synthetic diseases.",
+      "features": [
+        {
+          "name": "Mechanics",
+          "description": "You are immune to all diseases and biological viruses."
+        }
+      ]
+    },
+    {
+      "name": "7. Operational Vow (Level 3)",
+      "description": "You bind yourself to an absolute mandate—whether a binding Aegis Tactical corporate contract, the ancient Bushido code of the Chrome Lotus, or the sacred protection of Neo-Tokyo's ley lines."
+    },
+    {
+      "name": "8. Rapid Fire Protocol (Level 5)",
+      "features": [
+        {
+          "name": "Mechanics",
+          "description": "You can attack twice whenever you take the Attack action on your turn."
+        }
+      ]
+    },
+    {
+      "name": "9. Tactical Mesh Shielding (Level 6)",
+      "description": "Your sub-dermal communication suite broadcasts protective tactical data and hard-light deflection frequencies to nearby squadmates.",
+      "features": [
+        {
+          "name": "Mechanics",
+          "description": "Whenever you or a friendly creature within 10 feet of you must make a saving throw, the creature gains a bonus to the saving throw equal to your Charisma modifier (minimum of +1). You must be conscious to grant this bonus. (Extends to 30 feet at Level 18)."
+        }
+      ]
+    },
+    {
+      "name": "10. Threat-Override Aura (Level 10)",
+      "description": "Your unwavering conviction or neural combat governor overrides fear responses in yourself and your allies.",
+      "features": [
+        {
+          "name": "Mechanics",
+          "description": "You and friendly creatures within 10 feet of you cannot suffer from Threat-Lock (Frightened) while you are conscious. (Extends to 30 feet at Level 18)."
+        }
+      ]
+    },
+    {
+      "name": "11. Passive High-Voltage Pulse (Level 11)",
+      "description": "Every melee strike is permanently infused with a residual high-voltage current.",
+      "features": [
+        {
+          "name": "Mechanics",
+          "description": "Whenever you hit a creature with a melee weapon, the target takes an extra 1d8 Radiant or Lightning damage."
+        }
+      ]
+    },
+    {
+      "name": "12. System Purge (Level 14)",
+      "description": "You issue an absolute system override to purge hostile spell effects, neural hacks, or status ailments from yourself or an ally.",
+      "features": [
+        {
+          "name": "Mechanics",
+          "description": "You can use your action to end one spell or magical effect on yourself or one willing creature you touch. (Uses equal to Cha modifier per Long Rest)."
+        }
+      ]
+    }
+  ],
+  "subclasses": [
+    {
+      "name": "Oath of the Aegis Enforcer",
+      "description": "Tenets of the Contract: Channel Divinity (Level 3): Anti-Override Firewall (Level 7): Smite Sentinel (Level 15): Aegis Prime Manifestation (Level 20):",
+      "details": [
+        "You and friendly creatures within 10 feet cannot suffer Subliminal Override (Charmed) while you are conscious.",
+        "Whenever an enemy within 5 feet hits an ally, you can use your reaction to deliver a melee weapon attack against that enemy with an automatic Overcharge Smite.",
+        "As an action, you deploy heavy tactical exoskeleton plating and hard-light barriers for 1 minute: gain resistance to all damage, project a 30-foot aura of disadvantage against enemy attacks, and deal an extra 10 Lightning damage on all weapon strikes."
+      ],
+      "features": [
+        {
+          "name": "Focus",
+          "description": "Bound by corporate contract, subscription-based law enforcement, and total tactical order.*"
+        },
+        {
+          "name": "Duty To The Board",
+          "description": "Execute client directives without personal hesitation."
+        },
+        {
+          "name": "Maintain Order",
+          "description": "Protect corporate assets and eliminate unauthorized street chaos."
+        },
+        {
+          "name": "Collateral Control",
+          "description": "Minimize non-billable destruction during pacification operations."
+        },
+        {
+          "name": "Neural Lock Weapon",
+          "description": "As an action, you charge your weapon with Aegis suppression code. For 1 minute, you add your Charisma modifier to attack rolls with that weapon, and it emits bright light in a 20-foot radius."
+        },
+        {
+          "name": "Aegis Directive Turn The Lawless",
+          "description": "Force rogue AIs, street gang criminals, and wild spirits within 30 feet to make a Wisdom saving throw or be turned away for 1 minute."
+        }
+      ]
+    },
+    {
+      "name": "Oath of the Chrome Samurai",
+      "description": "Tenets of the Bushido-Net: Channel Divinity (Level 3): Relentless Pursuit (Level 7): Soul of Vengeance (Level 15): Avenging Oni (Level 20):",
+      "details": [
+        "When you hit a target with an opportunity attack, you can move up to half your speed as part of the same reaction without provoking opportunity attacks.",
+        "When a target under your Target Lock Vow makes an attack, you can use your reaction to make a melee weapon attack against that target if it is within range."
+      ],
+      "features": [
+        {
+          "name": "Focus",
+          "description": "Enforcing the strict honor code of street samurai, hunting corporate betrayers, and exacting bloody retribution.*"
+        },
+        {
+          "name": "A Debt Paid In Chrome",
+          "description": "Every favor must be returned; every betrayal repaid in blood."
+        },
+        {
+          "name": "No Unchecked Betrayal",
+          "description": "Fixers or corps who burn their runners must be eliminated."
+        },
+        {
+          "name": "Honor The Contract",
+          "description": "Once a job is accepted, see it through to the end or die trying."
+        },
+        {
+          "name": "Target Lock Vow",
+          "description": "As a bonus action, you lock your ocular sensors onto a single target within 30 feet. You gain advantage on attack rolls against that target for 1 minute or until it drops to 0 HP."
+        },
+        {
+          "name": "Abjure Traitor",
+          "description": "Force a single target within 30 feet to make a Wisdom saving throw. On a failure, the target suffers Neural Freeze (Paralyzed) or its speed is reduced to 0 for 1 minute."
+        },
+        {
+          "name": "You Manifest A Terrifying Digital Oni Aura For 1 Hour",
+          "description": "wings of neon-red hard-light sprout from your back (30 ft fly speed), you project a 30-foot aura of Threat-Lock (Frightened), and attacks against locked targets score a critical hit on a 19–20."
+        }
+      ]
+    },
+    {
+      "name": "Oath of the Ley-Line Guardian",
+      "description": "Tenets of the Sacred Street: Channel Divinity (Level 3): Mana-Tech Resistance (Level 7): Spirit Resurgence (Level 15): Avatar of the Great Kami (Level 20):",
+      "details": [
+        "You and friendly creatures within 10 feet have resistance to damage from spells and matrix hacks.",
+        "When you are reduced to 0 Hit Points and not killed outright, you can choose to drop to 1 Hit Point instead (1/Long Rest). You suffer no drawbacks from old age and cannot be aged magically.",
+        "You transform into a glowing avatar of nature and digital spirit-energy for 1 minute: at the start of each of your turns, you regain 10 Hit Points, your spells with a casting time of 1 action can be cast as a bonus action, and enemies within 10 feet have disadvantage on saving throws against your spells."
+      ],
+      "features": [
+        {
+          "name": "Focus",
+          "description": "Bound to the ancient Shinto spirits (kami), protecting street youth and traditional shrines in Kitsune-cho from corporate energy exploitation.*"
+        },
+        {
+          "name": "Preserve The Light",
+          "description": "Protect the living spirits, shrines, and innocent street dwellers from corporate greed."
+        },
+        {
+          "name": "Shield The Awakened",
+          "description": "Shelter young shamans and spirits from corporate bio-harvesting labs in Sector 17."
+        },
+        {
+          "name": "Stand Against The Machine",
+          "description": "Strike down corrupt AI entities and megacorps tapping subterranean ley lines."
+        },
+        {
+          "name": "Spirit Roots Nature S Wrath",
+          "description": "As an action, you summon glowing digital spirit roots to entangle a target within 10 feet. The target must succeed on a Strength or Dexterity save or suffer Mag-Bound (Restrained)."
+        },
+        {
+          "name": "Turn The Corrupted",
+          "description": "Turn constructs, cybernetic monstrosities, and rogue AIs within 30 feet."
+        }
+      ]
+    },
+    {
+      "name": "Corporate Defector",
+      "description": "Channel Divinity (Level 3): Aura of Black ICE (Level 7): Supernatural Resistance (Level 15): Dread Lord of the Undercity (Level 20):",
+      "details": [
+        "You and friendly constructs/spirits within 10 feet add your Charisma modifier to melee weapon damage rolls.",
+        "You gain resistance to bludgeoning, piercing, and slashing damage from non-magical and non-smart weapons.",
+        "For 1 minute, you radiate an aura of crushing dark code (30-foot radius). Enemies inside the aura take 3d10 Psychic damage at the start of their turns and suffer OS Buffer Overflow (Incapacitated) if they fail a Wisdom saving throw."
+      ],
+      "features": [
+        {
+          "name": "Focus",
+          "description": "A former Aegis Tactical commander or corporate hitman who broke their neural governor, betrayed their employer, and now channels dark Black ICE code for vengeance.*"
+        },
+        {
+          "name": "Control Cyberware Construct",
+          "description": "Target a construct, drone, or cybernetically augmented enemy within 30 feet. It must succeed on a Wisdom save or fall under your command for 1 minute."
+        },
+        {
+          "name": "Dread Black Ice Pulse",
+          "description": "Force surrounding enemies within 30 feet to make a Wisdom save or suffer Threat-Lock (Frightened) for 1 minute."
+        }
+      ]
+    },
+    {
+      "name": "Oath of the Sanctuary",
+      "description": "Channel Divinity (Level 3): Aura of Black ICE (Level 7): Supernatural Resistance (Level 15): Dread Lord of the Undercity (Level 20):",
+      "details": [
+        "You and friendly constructs/spirits within 10 feet add your Charisma modifier to melee weapon damage rolls.",
+        "You gain resistance to bludgeoning, piercing, and slashing damage from non-magical and non-smart weapons.",
+        "For 1 minute, you radiate an aura of crushing dark code (30-foot radius). Enemies inside the aura take 3d10 Psychic damage at the start of their turns and suffer OS Buffer Overflow (Incapacitated) if they fail a Wisdom saving throw."
+      ],
+      "features": [
+        {
+          "name": "Sanctuary Lockdown",
+          "description": "A former Aegis Tactical commander or corporate hitman who broke their neural governor, betrayed their employer, and now channels dark Black ICE code for vengeance.*"
+        },
+        {
+          "name": "Control Cyberware Construct",
+          "description": "Target a construct, drone, or cybernetically augmented enemy within 30 feet. It must succeed on a Wisdom save or fall under your command for 1 minute."
+        },
+        {
+          "name": "Dread Black Ice Pulse",
+          "description": "Force surrounding enemies within 30 feet to make a Wisdom save or suffer Threat-Lock (Frightened) for 1 minute."
+        }
+      ]
+    }
+  ]
+}

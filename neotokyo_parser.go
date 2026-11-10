@@ -412,6 +412,17 @@ func mapClasses(classes []Class) SectionNode {
 	var children []SectionNode
 	for _, c := range classes {
 		featNodes := mapClassFeatures(c.Features)
+		for _, level := range c.Levels {
+			attrs := make(map[string]any)
+			if level.HitDie != "" {
+				attrs["hit_die"] = level.HitDie
+			}
+			featNodes = append(featNodes, SectionNode{
+				Title:      fmt.Sprintf("Level %d", level.Level),
+				Attributes: attrs,
+				Children:   mapClassFeatures(level.Skills),
+			})
+		}
 		if len(c.Subclasses) > 0 {
 			var subNodes []SectionNode
 			for _, sub := range c.Subclasses {

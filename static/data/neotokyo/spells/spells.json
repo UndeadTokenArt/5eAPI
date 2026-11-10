@@ -30,6 +30,19 @@
     "mechanics": "Choose one creature within range, or two creatures within range that are within 5 feet of each other. A target must succeed on a Dexterity saving throw or take 1d6 Acid damage.\nAt Higher Levels: The spell's damage increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6)."
   },
   {
+    "name":"Smart-Link Target Tag",
+    "level": "1",
+    "school": "Divination",
+    "casting_time": "",
+    "range": "",
+    "components": [
+      "V"
+    ],
+    "duration": "",
+    "description": "You paint a target within range with an active high-frequency tracking laser or neural-HUD telemetry ping, locking your smart-link weapon interface onto their biometric signature. Until the spell ends, your targeting algorithms calculate the target's exact vector, momentum, and structural weaknesses",
+    "mechanics": "Whenever you hit the tagged target with a weapon attack, you deal an extra 1d6 damage\nYou gain Advantage on any Wisdom (Threat Scan) or Wisdom (Street Navigation / Zone Survival) check you make to track, locate, or spot the target.\nIf the target drops to 0 hit points (flatlines or enters emergency reboot) before this spell ends, you can use a bonus action on a subsequent turn to paint a new creature within range with a fresh target tag"
+  },
+  {
     "name": "Bio-Nanite Overclock",
     "level": "2",
     "school": "Abjuration",
@@ -4811,5 +4824,77 @@
     "duration": "Concentration, up to 10 minutes",
     "description": "You project an acoustic truth-field that prevents creatures inside a 15-foot sphere from speaking deliberate lies.",
     "mechanics": "Creatures in a 15-foot sphere failing a Charisma save cannot tell a deliberate lie while inside the area."
+  },
+  {
+    "name": "Black-ICE Tendril Burst",
+    "level": "1",
+    "school": "Conjuration",
+    "casting_time": "1 Action",
+    "range": "Self (10-foot radius)",
+    "components": [
+      "V",
+      "S"
+    ],
+    "duration": "Instantaneous",
+    "description": "You trigger a hostile black-ICE routine in your bio-wiring. Tendrils of dark, hungry code-matter whip out from your body and lash every creature around you.",
+    "mechanics": "Each creature within 10 feet of you makes a Strength saving throw. On a failed save, a target takes 2d6 Necrotic damage and can't take reactions until its next turn. On a success, it takes half damage and suffers no other effect.\nAt Higher Levels: The damage increases by 1d6 for each slot level above 1st."
+  },
+  {
+    "name": "Subsonic Pain Whisper",
+    "level": "1",
+    "school": "Enchantment",
+    "casting_time": "1 Action",
+    "range": "60 feet",
+    "components": [
+      "V"
+    ],
+    "duration": "Instantaneous",
+    "description": "You pipe a discordant subsonic signal that only one chosen target can hear, spiking their auditory nerve with agony and a panic to flee.",
+    "mechanics": "One creature of your choice within range makes a Wisdom saving throw. On a failed save, it takes 3d6 Psychic damage and must immediately use its reaction, if available, to move as far from you as its speed allows, without entering obviously dangerous ground such as fire or a pit. On a success, it takes half damage and doesn't have to move. A deafened creature (or one with audio dampeners) automatically succeeds.\nAt Higher Levels: The damage increases by 1d6 for each slot level above 1st."
+  },
+  {
+    "name": "Synaptic Spike",
+    "level": "0",
+    "school": "Enchantment",
+    "casting_time": "1 Action",
+    "range": "60 feet",
+    "components": [
+      "V"
+    ],
+    "duration": "1 round",
+    "description": "You drive a disorienting spike of psychic static into a target's neural feed, scrambling their reflexes.",
+    "mechanics": "One creature you can see within range must succeed on an Intelligence saving throw or take 1d6 Psychic damage and subtract 1d4 from the next saving throw it makes before the end of your next turn.\nAt Higher Levels: The damage increases by 1d6 at 5th level (2d6), 11th level (3d6), and 17th level (4d6)."
+  },
+  {
+    "name": "Dead-Zone Void Field",
+    "level": "3",
+    "school": "Conjuration",
+    "casting_time": "1 Action",
+    "range": "150 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a pickled octopus tentacle)"
+    ],
+    "duration": "Concentration, up to 1 minute",
+    "description": "You tear open a gateway to a dead zone between the networks: a sphere of lightless, freezing nothing that whispers and slurps with unknown signal-horrors.",
+    "mechanics": "A 20-foot-radius sphere of blackness and bitter cold appears centered on a point within range. No light, magical or otherwise, illuminates it, and creatures fully inside are blinded. The whispers and slurping can be heard up to 30 feet away. The area is difficult terrain. A creature that starts its turn in the area takes 2d6 Cold damage. A creature that ends its turn in the area must succeed on a Dexterity saving throw or take 2d6 Acid damage from the writhing tendrils."
+  },
+  {
+    "name": "Escaped Specimen Protocol",
+    "level": "4",
+    "school": "Conjuration",
+    "casting_time": "1 Action",
+    "range": "90 feet",
+    "components": [
+      "V",
+      "S",
+      "M",
+      "(a preserved tentacle and an eyeball in a platinum-inlaid vial worth at least 400 gp)"
+    ],
+    "duration": "Concentration, up to 1 hour",
+    "description": "You release a containment-breaching lab abomination that manifests in an unoccupied space you can see and fights for you. Choose its strain when you cast: Optic Mutant (Beholderkin), Regenerator Mutant (Slaad), or Void-Spawn Mutant (Star Spawn).",
+    "mechanics": "The Aberrant Specimen is an ally to you and your companions, shares your initiative count and acts immediately after you. It obeys your verbal commands (no action); with none, it takes the Dodge action and moves to avoid danger. It disappears at 0 hit points or when the spell ends. Use the Aberrant Spirit stat block: AC 11 + spell level; HP 40 + 10 for each spell level above 4th; Speed 30 ft. (fly 30 ft., hover, Optic strain only); STR 16, DEX 10, CON 15, INT 16, WIS 10, CHA 6; immune to Psychic; darkvision 60 ft.; Deep Speech and understands your languages; proficiency bonus equals yours. Multiattack: attacks equal to half the spell's level (rounded down). Optic strain - Eye Ray: ranged spell attack, 150 ft., 1d8 + 3 + spell level Psychic. Regenerator strain - Regeneration: regains 5 HP at the start of its turn if it has at least 1 HP; Claws: melee spell attack, 5 ft., 1d10 + 3 + spell level Slashing, and the target can't regain hit points until the start of the specimen's next turn. Void-Spawn strain - Whispering Aura: at the start of each of its turns, each creature within 5 ft. must succeed on a Wisdom save against your spell save DC or take 2d6 Psychic damage; Psychic Slam: melee spell attack, 5 ft., 1d8 + 3 + spell level Psychic.\nAt Higher Levels: Use the higher slot level wherever the spell's level appears in the stat block."
   }
 ]

@@ -1,0 +1,1290 @@
+{
+  "schema_status": "draft_authoring_template_not_supported_by_app",
+  "schema_version": 1,
+  "uid": "class-net-hype-draft",
+  "name": "Net-Hype",
+  "original_class": "Bard",
+  "description": "Media influencers, pirate broadcasters, and acoustic manipulators who use subliminal audio frequencies and neural hype tracks to control the battlefield.",
+  "hit_die": 8,
+  "multiclass_prerequisites": {
+    "description": "2024 multiclass prerequisite: meet this class primary ability requirement when adding a new class; requirements also apply to every current class.",
+    "any_of": [
+      {
+        "all_of": [
+          {
+            "ability": "charisma",
+            "minimum": 13
+          }
+        ]
+      }
+    ]
+  },
+  "starting_proficiencies": {
+    "armor": [
+      "Light armor"
+    ],
+    "weapons": [
+      "Simple weapons"
+    ],
+    "tools": [],
+    "saving_throws": [
+      "dexterity",
+      "charisma"
+    ],
+    "skills": [],
+    "choices": [
+      {
+        "id": "starting-skills",
+        "name": "Choose starting skills",
+        "kind": "skill",
+        "count": 3,
+        "allowed_options": "Any skill from the game's skill list.",
+        "eligibility_rule": "Choose distinct skills; verify handling of an already-proficient skill.",
+        "selection_effect": "Record proficiency in the selected skills."
+      },
+      {
+        "id": "starting-tools",
+        "name": "Choose starting tool proficiencies",
+        "kind": "tool",
+        "count": 3,
+        "allowed_options": "Choose 3 Musical Instruments (see “Equipment”)",
+        "eligibility_rule": "Follow the source trait's choice count and eligible tool types.",
+        "selection_effect": "Record selected tool proficiencies."
+      }
+    ]
+  },
+  "multiclass_proficiencies": {
+    "armor": [
+      "Light armor"
+    ],
+    "weapons": [],
+    "tools": [],
+    "skills": [],
+    "choices": [
+      {
+        "id": "multiclass-skill",
+        "name": "Choose a multiclass skill",
+        "kind": "skill",
+        "count": 1,
+        "allowed_options": "any skill",
+        "eligibility_rule": "Follow the class entry rules and verify handling of already-proficient options.",
+        "selection_effect": "Record the selected proficiency."
+      },
+      {
+        "id": "multiclass-tool",
+        "name": "Choose a multiclass tool",
+        "kind": "tool",
+        "count": 1,
+        "allowed_options": "one musical instrument",
+        "eligibility_rule": "Follow the class entry rules and verify handling of already-proficient options.",
+        "selection_effect": "Record the selected proficiency."
+      }
+    ],
+    "description": "Gain the following traits from the Core Bard Traits table: Hit Point Die, proficiency in one skill of your choice, proficiency with one Musical Instrument of your choice, and training with Light armor."
+  },
+  "starting_equipment": {
+    "description": "Choose A or B: (A) Leather Armor, 2 Daggers, Musical Instrument of your choice, Entertainer’s Pack, and 19 GP; or (B) 90 GP Starting equipment is not granted on multiclass entry.",
+    "grants": [],
+    "choices": [
+      {
+        "id": "starting-equipment",
+        "name": "Choose starting equipment",
+        "kind": "equipment_bundle",
+        "count": 1,
+        "allowed_options": "Choose A or B: (A) Leather Armor, 2 Daggers, Musical Instrument of your choice, Entertainer’s Pack, and 19 GP; or (B) 90 GP",
+        "eligibility_rule": "Choose one listed bundle when starting as this class.",
+        "selection_effect": "Record the chosen items and currency."
+      }
+    ]
+  },
+  "spellcasting": {
+    "kind": "full",
+    "ability": "charisma",
+    "starts_at_class_level": 1,
+    "spell_list_id": "Bard",
+    "casting_mode": "prepared",
+    "preparation_rule": "Changing Your Prepared Spells. Whenever you gain a Bard level, you can replace one spell on your list with another Bard spell for which you have spell slots.",
+    "ritual_casting_rule": null,
+    "focus_rule": "Spellcasting Focus. You can use a Musical Instrument as a Spellcasting Focus for your Bard spells.",
+    "multiclass_slot_rule": "Full caster; verify shared multiclass slot calculation under the chosen edition.",
+    "notes": "See the level 1 Spellcasting or Pact Magic feature for casting, preparation, focus, and replacement rules. Null fields require review; the reference spell mapping may not be a complete 2024 spell list."
+  },
+  "resources": [
+    {
+      "id": "resource-bardic-inspiration",
+      "name": "Viral Hype / Subliminal Boost",
+      "description": "See the Bardic Inspiration feature for costs, use, and recovery. You can supernaturally inspire others through words, music, or dance. This inspiration is represented by your Bardic Inspiration die, which is a d6.\n\nUsing Bardic Inspiration. As a Bonus Action, you can inspire another creature within 60 feet of yourself who can see or hear you. That creature gains one of your Bardic Inspiration dice. A creature can have only one Bardic Inspiration die at a time.\n\nOnce within the next hour when the creature fails a D20 Test, the creature can roll the Bardic Inspiration die and add the number rolled to the d20, potentially turning the failure into a success. A Bardic Inspiration die is expended when it’s rolled.\n\nNumber of Uses. You can confer a Bardic Inspiration die a number of times equal to your Charisma modifier (minimum of once), and you regain all expended uses when you finish a Long Rest.\n\nAt Higher Levels. Your Bardic Inspiration die changes when you reach certain Bard levels, as shown in the Bardic Die column of the Bard Features table. The die becomes a d8 at level 5, a d10 at level 10, and a d12 at level 15.",
+      "recharge": "other",
+      "maximum_rule": "See the feature and level table; resolve structured maximum and recovery rules before implementation."
+    }
+  ],
+  "levels": [
+    {
+      "level": 1,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "bardic-inspiration-1",
+          "name": "Viral Hype / Subliminal Boost (Bardic Inspiration)",
+          "description": "You can supernaturally inspire others through words, music, or dance. This inspiration is represented by your Bardic Inspiration die, which is a d6.\n\nUsing Bardic Inspiration. As a Bonus Action, you can inspire another creature within 60 feet of yourself who can see or hear you. That creature gains one of your Bardic Inspiration dice. A creature can have only one Bardic Inspiration die at a time.\n\nOnce within the next hour when the creature fails a D20 Test, the creature can roll the Bardic Inspiration die and add the number rolled to the d20, potentially turning the failure into a success. A Bardic Inspiration die is expended when it’s rolled.\n\nNumber of Uses. You can confer a Bardic Inspiration die a number of times equal to your Charisma modifier (minimum of once), and you regain all expended uses when you finish a Long Rest.\n\nAt Higher Levels. Your Bardic Inspiration die changes when you reach certain Bard levels, as shown in the Bardic Die column of the Bard Features table. The die becomes a d8 at level 5, a d10 at level 10, and a d12 at level 15.",
+          "when": "both",
+          "choices": [],
+          "reskin_reference": {
+            "name": "2. Viral Hype / Subliminal Boost (Level 1)",
+            "description": "You broadcast a tailored hype-track, motivational neural ping, or tactical combat audio cue that overclocks an ally's confidence and reaction time.",
+            "features": [
+              {
+                "name": "Mechanics",
+                "description": "As a bonus action, target one creature within 60 feet that can hear or receive your signal. That creature gains a Hype Die (d6, scaling to d8, d10, d12). Within the next 10 minutes, the target can add the die to one ability check, attack roll, or saving throw it makes."
+              }
+            ]
+          }
+        },
+        {
+          "id": "spellcasting-1",
+          "name": "Spellcasting: Mesh Broadcast & Neural Tuning (Spellcasting)",
+          "description": "You have learned to cast spells through your bardic arts. See “Spells” for the rules on spellcasting. The information below details how you use those rules with Bard spells, which appear in the Bard spell list later in the class’s description.\n\nCantrips. You know two cantrips of your choice from the Bard spell list. Dancing Lights and Vicious Mockery are recommended.\n\nWhenever you gain a Bard level, you can replace one of your cantrips with another cantrip of your choice from the Bard spell list.\n\nWhen you reach Bard levels 4 and 10, you learn another cantrip of your choice from the Bard spell list, as shown in the Cantrips column of the Bard Features table.\n\nSpell Slots. The Bard Features table shows how many spell slots you have to cast your level 1+ spells. You regain all expended slots when you finish a Long Rest.\n\nPrepared Spells of Level 1+. You prepare the list of level 1+ spells that are available for you to cast with this feature. To start, choose four level 1 spells from the Bard spell list. Charm Person, Color Spray, Dissonant Whispers, and Healing Word are recommended.\n\nThe number of spells on your list increases as you gain Bard levels, as shown in the Prepared Spells column of the Bard Features table. Whenever that number increases, choose additional spells from the Bard spell list until the number of spells on your list matches the number on the table. The chosen spells must be of a level for which you have spell slots. For example, if you’re a level 3 Bard, your list of prepared spells can include six spells of levels 1 and 2 in any combination.\n\nIf another Bard feature gives you spells that you always have prepared, those spells don’t count against the number of spells you can prepare with this feature, but those spells otherwise count as Bard spells for you.\n\nChanging Your Prepared Spells. Whenever you gain a Bard level, you can replace one spell on your list with another Bard spell for which you have spell slots.\n\nSpellcasting Ability. Charisma is your spellcasting ability for your Bard spells.\n\nSpellcasting Focus. You can use a Musical Instrument as a Spellcasting Focus for your Bard spells.",
+          "when": "both",
+          "choices": null,
+          "reskin_reference": {
+            "name": "1. Spellcasting: Mesh Broadcast & Neural Tuning",
+            "description": null,
+            "features": [
+              {
+                "name": "Spellcasting Ability",
+                "description": "You cast spells using Charisma (representing your viral presence, audience engagement, and neural broadcast authority)."
+              },
+              {
+                "name": "Media Focus",
+                "description": "A holographic micro-deck, a neural neck-mic, a spirit-attuned synthesizer, a laser-display instrument, or a high-end Amaterasu streaming rig."
+              }
+            ]
+          }
+        },
+        {
+          "id": "progression-values-1",
+          "name": "Class progression values",
+          "description": "Bardic Die: D6. These are totals at this class level, not additional grants.",
+          "when": "both",
+          "choices": []
+        },
+        {
+          "id": "spell-selections-1",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "cantrip-selection-1",
+              "name": "Choose cantrips",
+              "kind": "spell",
+              "count": 2,
+              "allowed_options": "Cantrips on the Bard spell list.",
+              "eligibility_rule": "Follow the class's cantrip and replacement rules.",
+              "selection_effect": "Record the newly selected class cantrips."
+            },
+            {
+              "id": "prepared-selection-1",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 4,
+              "allowed_options": "Eligible level 1+ Bard spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 2,
+        "spells_known_total": null,
+        "prepared_spells_total": 4,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 1,
+        "class_spell_slots": [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 2,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "expertise-2",
+          "name": "Expertise",
+          "description": "You gain Expertise (see the rules glossary) in two of your skill proficiencies of your choice. Performance and Persuasion are recommended if you have proficiency in them.\n\nAt Bard level 9, you gain Expertise in two more of your skill proficiencies of your choice.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-expertise-2",
+              "name": "Choose skill expertise",
+              "kind": "skill_expertise",
+              "count": 2,
+              "allowed_options": "Eligible skill proficiencies in the source feature.",
+              "eligibility_rule": "Follow the feature's specific eligibility and duplication rules.",
+              "selection_effect": "Record Expertise in each selected proficiency."
+            }
+          ]
+        },
+        {
+          "id": "jack-of-all-trades-2",
+          "name": "Social Algorithm Analytics (Jack of All Trades)",
+          "description": "You can add half your Proficiency Bonus (round down) to any ability check you make that uses a skill proficiency you lack and that doesn’t otherwise use your Proficiency Bonus.\n\nFor example, if you make a Strength (Athletics) check and lack Athletics proficiency, you can add half your Proficiency Bonus to the check.\n\nA Bard’s Repertoire\n\nDoes your Bard beat a drum while chanting the deeds of ancient heroes? Strum a lute while crooning romantic tunes? Perform arias of stirring power? Recite dramatic monologues from classic tragedies? Use the rhythm of a folk dance to coordinate the movement of allies in battle? Compose naughty limericks?\n\nWhen you play a Bard, consider the style of artistic performance you favor, the moods you might invoke, and the themes that inspire your own creations. Are your poems inspired by moments of natural beauty, or are they brooding reflections on loss? Do you prefer lofty hymns or rowdy tavern songs? Are you drawn to laments for the fallen or celebrations of joy? Do you dance merry jigs or perform elaborate interpretive choreography? Do you focus on one style of performance or strive to master them all?",
+          "when": "both",
+          "choices": [],
+          "reskin_reference": {
+            "name": "3. Social Algorithm Analytics (Level 2)",
+            "description": "Your neural interface continuously scrapes trend data, social archives, and street mesh networks, granting you basic competence across all topics.",
+            "features": [
+              {
+                "name": "Mechanics",
+                "description": "You can add half your proficiency bonus (rounded down) to any ability check you make that doesn't already include your proficiency bonus."
+              }
+            ]
+          }
+        },
+        {
+          "id": "spell-selections-2",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "prepared-selection-2",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible level 1+ Bard spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 2,
+        "spells_known_total": null,
+        "prepared_spells_total": 5,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 1,
+        "class_spell_slots": [
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 3,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "bard-subclass-3",
+          "name": "Bard Subclass",
+          "description": "Choose a Bard subclass at this class level. Subclass choices and features will be authored later.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-bard-subclass-3",
+              "name": "Choose a subclass later",
+              "kind": "subclass",
+              "count": 1,
+              "allowed_options": null,
+              "eligibility_rule": "Subclass authoring is deferred; verify available choices.",
+              "selection_effect": "Record the chosen subclass when implemented."
+            }
+          ]
+        },
+        {
+          "id": "spell-selections-3",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "prepared-selection-3",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible level 1+ Bard spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 2,
+        "spells_known_total": null,
+        "prepared_spells_total": 6,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 2,
+        "class_spell_slots": [
+          4,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 4,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "ability-score-improvement-4",
+          "name": "Ability Score Improvement",
+          "description": "You gain the Ability Score Improvement feat (see “Feats”) or another feat of your choice for which you qualify. You gain this feature again at Bard levels 8, 12, and 16.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-ability-score-improvement-4",
+              "name": "Choose an eligible feat or Ability Score Improvement",
+              "kind": "feat",
+              "count": 1,
+              "allowed_options": "Ability Score Improvement or another eligible feat.",
+              "eligibility_rule": "Meet feat prerequisites and verify ability-score limits.",
+              "selection_effect": "Record the feat and apply its selected effects."
+            }
+          ]
+        },
+        {
+          "id": "spell-selections-4",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "cantrip-selection-4",
+              "name": "Choose cantrips",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Cantrips on the Bard spell list.",
+              "eligibility_rule": "Follow the class's cantrip and replacement rules.",
+              "selection_effect": "Record the newly selected class cantrips."
+            },
+            {
+              "id": "prepared-selection-4",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible level 1+ Bard spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 3,
+        "spells_known_total": null,
+        "prepared_spells_total": 7,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 2,
+        "class_spell_slots": [
+          4,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 5,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "font-of-inspiration-5",
+          "name": "Rapid Hype Refresh (Font of Inspiration)",
+          "description": "You now regain all your expended uses of Bardic Inspiration when you finish a Short or Long Rest.\n\nIn addition, you can expend a spell slot (no action required) to regain one expended use of Bardic Inspiration.",
+          "when": "both",
+          "choices": [],
+          "reskin_reference": {
+            "name": "6. Rapid Hype Refresh (Level 5)",
+            "description": "Your viral feed refreshes constantly; short breaks allow you to regain full stream engagement.",
+            "features": [
+              {
+                "name": "Mechanics",
+                "description": "You regain all of your expended uses of Viral Hype (Bardic Inspiration) when you finish a Short or Long Rest."
+              }
+            ]
+          }
+        },
+        {
+          "id": "progression-values-5",
+          "name": "Class progression values",
+          "description": "Bardic Die: D8 (previously D6). These are totals at this class level, not additional grants.",
+          "when": "both",
+          "choices": []
+        },
+        {
+          "id": "spell-selections-5",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "prepared-selection-5",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 2,
+              "allowed_options": "Eligible level 1+ Bard spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 3,
+        "spells_known_total": null,
+        "prepared_spells_total": 9,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 3,
+        "class_spell_slots": [
+          4,
+          3,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 6,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "spell-selections-6",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "prepared-selection-6",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible level 1+ Bard spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 3,
+        "spells_known_total": null,
+        "prepared_spells_total": 10,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 3,
+        "class_spell_slots": [
+          4,
+          3,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Subclass feature deferred. Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 7,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "countercharm-7",
+          "name": "Countercharm",
+          "description": "You can use musical notes or words of power to disrupt mind-influencing effects. If you or a creature within 30 feet of you fails a saving throw against an effect that applies the Charmed or Frightened condition, you can take a Reaction to cause the save to be rerolled, and the new roll has Advantage.",
+          "when": "both",
+          "choices": []
+        },
+        {
+          "id": "spell-selections-7",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "prepared-selection-7",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible level 1+ Bard spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 3,
+        "spells_known_total": null,
+        "prepared_spells_total": 11,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 4,
+        "class_spell_slots": [
+          4,
+          3,
+          3,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 8,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "ability-score-improvement-8",
+          "name": "Ability Score Improvement",
+          "description": "You gain the Ability Score Improvement feat (see “Feats”) or another feat of your choice for which you qualify. You gain this feature again at Bard levels 8, 12, and 16.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-ability-score-improvement-8",
+              "name": "Choose an eligible feat or Ability Score Improvement",
+              "kind": "feat",
+              "count": 1,
+              "allowed_options": "Ability Score Improvement or another eligible feat.",
+              "eligibility_rule": "Meet feat prerequisites and verify ability-score limits.",
+              "selection_effect": "Record the feat and apply its selected effects."
+            }
+          ]
+        },
+        {
+          "id": "spell-selections-8",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "prepared-selection-8",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible level 1+ Bard spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 3,
+        "spells_known_total": null,
+        "prepared_spells_total": 12,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 4,
+        "class_spell_slots": [
+          4,
+          3,
+          3,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 9,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "expertise-9",
+          "name": "Expertise",
+          "description": "You gain Expertise (see the rules glossary) in two of your skill proficiencies of your choice. Performance and Persuasion are recommended if you have proficiency in them.\n\nAt Bard level 9, you gain Expertise in two more of your skill proficiencies of your choice.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-expertise-9",
+              "name": "Choose skill expertise",
+              "kind": "skill_expertise",
+              "count": 2,
+              "allowed_options": "Eligible skill proficiencies in the source feature.",
+              "eligibility_rule": "Follow the feature's specific eligibility and duplication rules.",
+              "selection_effect": "Record Expertise in each selected proficiency."
+            }
+          ]
+        },
+        {
+          "id": "spell-selections-9",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "prepared-selection-9",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 2,
+              "allowed_options": "Eligible level 1+ Bard spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 3,
+        "spells_known_total": null,
+        "prepared_spells_total": 14,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 5,
+        "class_spell_slots": [
+          4,
+          3,
+          3,
+          3,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 10,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "magical-secrets-10",
+          "name": "Cross-Net Code Piracy (Magical Secrets)",
+          "description": "You’ve learned secrets from various magical traditions. Whenever you reach a Bard level (including this level) and the Prepared Spells number in the Bard Features table increases, you can choose any of your new prepared spells from the Bard, Cleric, Druid, and Wizard spell lists, and the chosen spells count as Bard spells for you (see a class’s section for its spell list). In addition, whenever you replace a spell prepared for this class, you can replace it with a spell from those lists.",
+          "when": "both",
+          "choices": null,
+          "reskin_reference": {
+            "name": "8. Cross-Net Code Piracy (Levels 10, 14, 18)",
+            "description": "You hack into rival corporate networks (like KAMI or Kitsune Bio-Magic) to rip off proprietary spell code and compile it into your media rig.",
+            "features": [
+              {
+                "name": "Mechanics",
+                "description": "Choose two spells from any class list (including spells like Global Ghost Signal Broadcast or Hard-Light Aegis Dome). These spells count as Bard spells for you and are included in your known spell list."
+              }
+            ]
+          }
+        },
+        {
+          "id": "progression-values-10",
+          "name": "Class progression values",
+          "description": "Bardic Die: D10 (previously D8). These are totals at this class level, not additional grants.",
+          "when": "both",
+          "choices": []
+        },
+        {
+          "id": "spell-selections-10",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "cantrip-selection-10",
+              "name": "Choose cantrips",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Cantrips on the Bard spell list.",
+              "eligibility_rule": "Follow the class's cantrip and replacement rules.",
+              "selection_effect": "Record the newly selected class cantrips."
+            },
+            {
+              "id": "prepared-selection-10",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible level 1+ Bard spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 4,
+        "spells_known_total": null,
+        "prepared_spells_total": 15,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 5,
+        "class_spell_slots": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 11,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "spell-selections-11",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "prepared-selection-11",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible level 1+ Bard spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 4,
+        "spells_known_total": null,
+        "prepared_spells_total": 16,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 6,
+        "class_spell_slots": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 12,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "ability-score-improvement-12",
+          "name": "Ability Score Improvement",
+          "description": "You gain the Ability Score Improvement feat (see “Feats”) or another feat of your choice for which you qualify. You gain this feature again at Bard levels 8, 12, and 16.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-ability-score-improvement-12",
+              "name": "Choose an eligible feat or Ability Score Improvement",
+              "kind": "feat",
+              "count": 1,
+              "allowed_options": "Ability Score Improvement or another eligible feat.",
+              "eligibility_rule": "Meet feat prerequisites and verify ability-score limits.",
+              "selection_effect": "Record the feat and apply its selected effects."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 4,
+        "spells_known_total": null,
+        "prepared_spells_total": 16,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 6,
+        "class_spell_slots": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 13,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "spell-selections-13",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "prepared-selection-13",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible level 1+ Bard spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 4,
+        "spells_known_total": null,
+        "prepared_spells_total": 17,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 7,
+        "class_spell_slots": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 14,
+      "status": "unfilled",
+      "features": [],
+      "spell_progression": {
+        "cantrips_known_total": 4,
+        "spells_known_total": null,
+        "prepared_spells_total": 17,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 7,
+        "class_spell_slots": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Subclass feature deferred. Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 15,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "progression-values-15",
+          "name": "Class progression values",
+          "description": "Bardic Die: D12 (previously D10). These are totals at this class level, not additional grants.",
+          "when": "both",
+          "choices": []
+        },
+        {
+          "id": "spell-selections-15",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "prepared-selection-15",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible level 1+ Bard spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 4,
+        "spells_known_total": null,
+        "prepared_spells_total": 18,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 8,
+        "class_spell_slots": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          1,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 16,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "ability-score-improvement-16",
+          "name": "Ability Score Improvement",
+          "description": "You gain the Ability Score Improvement feat (see “Feats”) or another feat of your choice for which you qualify. You gain this feature again at Bard levels 8, 12, and 16.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-ability-score-improvement-16",
+              "name": "Choose an eligible feat or Ability Score Improvement",
+              "kind": "feat",
+              "count": 1,
+              "allowed_options": "Ability Score Improvement or another eligible feat.",
+              "eligibility_rule": "Meet feat prerequisites and verify ability-score limits.",
+              "selection_effect": "Record the feat and apply its selected effects."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 4,
+        "spells_known_total": null,
+        "prepared_spells_total": 18,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 8,
+        "class_spell_slots": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          1,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 17,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "spell-selections-17",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "prepared-selection-17",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible level 1+ Bard spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 4,
+        "spells_known_total": null,
+        "prepared_spells_total": 19,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 9,
+        "class_spell_slots": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          1,
+          1
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 18,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "superior-inspiration-18",
+          "name": "Emergency Hype Seed (Superior Inspiration)",
+          "description": "When you roll Initiative, you regain expended uses of Bardic Inspiration until you have two if you have fewer than that.",
+          "when": "both",
+          "choices": [],
+          "reskin_reference": {
+            "name": "9. Emergency Hype Seed (Level 20)",
+            "description": "Even when your stream drops offline, your neural core automatically generates an emergency viral surge when combat erupts.",
+            "features": [
+              {
+                "name": "Mechanics",
+                "description": "When you roll initiative and have no uses of Viral Hype remaining, you immediately regain one use."
+              }
+            ]
+          }
+        },
+        {
+          "id": "spell-selections-18",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "prepared-selection-18",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible level 1+ Bard spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 4,
+        "spells_known_total": null,
+        "prepared_spells_total": 20,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 9,
+        "class_spell_slots": [
+          4,
+          3,
+          3,
+          3,
+          3,
+          1,
+          1,
+          1,
+          1
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 19,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "epic-boon-19",
+          "name": "Epic Boon",
+          "description": "You gain an Epic Boon feat (see “Feats”) or another feat of your choice for which you qualify. Boon of Spell Recall is recommended.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-epic-boon-19",
+              "name": "Choose an Epic Boon or another eligible feat",
+              "kind": "feat",
+              "count": 1,
+              "allowed_options": "An Epic Boon feat or another eligible feat.",
+              "eligibility_rule": "Meet feat prerequisites.",
+              "selection_effect": "Record the feat and its effects."
+            }
+          ]
+        },
+        {
+          "id": "spell-selections-19",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "prepared-selection-19",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible level 1+ Bard spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 4,
+        "spells_known_total": null,
+        "prepared_spells_total": 21,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 9,
+        "class_spell_slots": [
+          4,
+          3,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          1
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 20,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "words-of-creation-20",
+          "name": "Words of Creation",
+          "description": "You have mastered two of the Words of Creation: the words of life and death. You therefore always have the Power Word Heal and Power Word Kill spells prepared. When you cast either spell, you can target a second creature with it if that creature is within 10 feet of the first target.",
+          "when": "both",
+          "choices": []
+        },
+        {
+          "id": "spell-selections-20",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "prepared-selection-20",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible level 1+ Bard spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 4,
+        "spells_known_total": null,
+        "prepared_spells_total": 22,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 9,
+        "class_spell_slots": [
+          4,
+          3,
+          3,
+          3,
+          3,
+          2,
+          2,
+          1,
+          1
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    }
+  ],
+  "subclasses": null,
+  "source_notes": [
+    "Rules basis: _reference/classes/Bard.md, a 2024-style source. Review compatibility with the earlier 2014 multiclass design.",
+    "Class progression and mechanics use the original reference; older reskin mechanics may differ and are thematic reference only, not additional grants.",
+    "The worksheet schema is not supported by the app. Levels remain unfilled pending rules and choice review; null means unresolved or not applicable as described.",
+    "Subclass selection milestones are recorded, but subclass options, features, and spellcasting are intentionally deferred.",
+    "Reskin inspiration: classes/Net-Hype.json. Names may be adapted where source mechanics have changed."
+  ]
+}

@@ -1,0 +1,154 @@
+{
+  "name": "Bio-Tech Specialist",
+  "features": [
+    {
+      "name": "1. Spellcasting: Spirit Conduit",
+      "features": [
+        {
+          "name": "Spellcasting Ability",
+          "description": "You cast spells using Wisdom. Instead of traditional holy symbols or druidic mistletoe, your spellcasting focus is a Spirit Device—a Shinto charm bound with fiber-optic wire, a spirit-attuned cyberdeck, or a talisman-engraved smartphone."
+        },
+        {
+          "name": "The Cyberware Tax Essence Strain",
+          "description": "Excessive cybernetic installation disrupts your spiritual connection to the city's mana. Over-augmenting your body imposes penalties on your spell save DC or reduces spell slot recovery during short rests."
+        }
+      ]
+    },
+    {
+      "name": "2. Channel Divinity / Spirit Communion: Astral Intercept",
+      "description": "You open your third eye to perceive the overlapping Astral Plane and local Matrix data streams simultaneously. Mechanics (1–3 uses/Short Rest):",
+      "features": [
+        {
+          "name": "Astral Sweep",
+          "description": "You scan the area within 60 feet. For 1 minute, you see invisible targets, optical camouflage, digital ghosts, hidden wireless cameras, and astral spirits through walls and physical cover."
+        },
+        {
+          "name": "Turn Exorcise Code And Spirit",
+          "description": "Force rogue AI entities, digital ghosts, or spirit-bound constructs within 30 feet to make a Wisdom saving throw or be rebuked and turned away for 1 minute."
+        }
+      ]
+    },
+    {
+      "name": "3. Spirit Morph",
+      "description": "Rather than turning into woodland beasts, you project your spirit into physical form as an Awakened Urban Critter or manifest a hard-light spirit construct—such as a cyber-fox (Kitsune), a raven drone-spirit, a neon-lit alley panther, or a subterranean sewer serpent.",
+      "features": [
+        {
+          "name": "Mechanics",
+          "description": "Functionally identical to Druid Wild Shape, but your beast forms manifest with glowing neon circuitry, spirit-aura trails, and environmental resistance (such as resistance to Lightning or Bio-Tox/Poison damage)."
+        }
+      ]
+    },
+    {
+      "name": "4.Ley-Line / Great Kami Override (Level 10)",
+      "description": "You petition the ancient dragon spirits, the overarching city intelligence, or the subterranean Shinto ley lines of Neo-Tokyo for direct intervention.",
+      "features": [
+        {
+          "name": "Mechanics",
+          "description": "Roll a d100. If you roll equal to or lower than your Shaman level, a massive surge of spirit-lightning, citywide grid blackout, or spirit sanctuary manifests to save your party."
+        }
+      ]
+    }
+  ],
+  "subclasses": [
+    {
+      "name": "Domain of the City Kami (Urban & Ley-Line Shaman)",
+      "features": [
+        {
+          "name": "Focus",
+          "description": "Harnessing the raw energy of Neo-Tokyo's concrete, lightning, wireless power grids, and subterranean Shinto ley lines.*"
+        },
+        {
+          "name": "Bonus Proficiency And Cantrip Level 1",
+          "description": "You gain proficiency with Street Navigation (Survival) and learn the Data-Siphon or Neon Glitch cantrip."
+        },
+        {
+          "name": "Ley Line Surge Level 1",
+          "description": "When you deal Lightning or Radiant damage with a spell, you can push a target up to 10 feet away as an urban electrical surge erupts around them."
+        },
+        {
+          "name": "Channel Divinity",
+          "description": "Grid Overcharge (Level 2): As an action, you tap into local power lines or ley lines. For 1 minute, whenever an ally within 30 feet deals weapon or spell damage, they deal an additional 1d6 Lightning damage."
+        },
+        {
+          "name": "Concrete Sanctuary Level 6",
+          "description": "You can step through electrical conduits, street shrines, or neon signs to instantly teleport 30 feet as a bonus action."
+        },
+        {
+          "name": "City Storm Level 8 14",
+          "description": "You add your Wisdom modifier to the damage of any Shaman cantrip, and your Spirit Morph attacks deal extra Lightning or Radiant damage."
+        }
+      ]
+    },
+    {
+      "name": "Circle of the Matrix Shaman / Data-Ghost (Digital Medium)",
+      "features": [
+        {
+          "name": "Focus",
+          "description": "Operating at the exact intersection where digital data bleeds into spirit magic—perceiving rogue AIs, digital ghosts, and the Ghost Signal as living astral entities.*"
+        },
+        {
+          "name": "Ghost Code Perception Level 2",
+          "description": "You commune directly with machines, Matrix nodes, and obsolete digital infrastructure without needing a physical cyberdeck. You gain proficiency in Cyber-Arcana (Arcana) and can cast Comprehend Languages at will to decipher encrypted code."
+        },
+        {
+          "name": "Data Spirit Companion Level 2",
+          "description": "You summon a familiar made of flickering code and spirit-light (resembling a cyber-fox or digital sprite). It can deliver touch spells, scout matrix relays, and inflict Optic Glitch (Blinded) on enemies."
+        },
+        {
+          "name": "Matrix Shift Level 6",
+          "description": "When targeted by an attack, you can use your reaction to temporarily dematerialize into the local data stream, gaining Optical Camouflage (Invisible) until the start of your next turn."
+        },
+        {
+          "name": "Ghost Signal Resonance Level 10",
+          "description": "You emit a pulse of the global \"I REMEMBER YOU\" broadcast. Enemies within 30 feet must succeed on an Intelligence saving throw or suffer OS Buffer Overflow (Incapacitated) for 1 round."
+        }
+      ]
+    },
+    {
+      "name": "Domain of Kitsune Bio-Magic (Spirit Essence & Healing)",
+      "features": [
+        {
+          "name": "Focus",
+          "description": "Channeling spirit essence, alchemical reagents, and life-force manipulation—protecting street youth from corporate bio-extraction while providing back-alley miraculous healing.*"
+        },
+        {
+          "name": "Disciple Of Essence Level 1",
+          "description": "Whenever you use a spell of 1st level or higher to restore Hit Points to a creature, the target regains additional Hit Points equal to 2 + the spell's level."
+        },
+        {
+          "name": "Channel Divinity",
+          "description": "Alchemical Preservation (Level 2): As an action, you project a soothing aura of spirit-essence. You restore a pool of Hit Points equal to 5 × your Shaman level, distributed among wounded allies within 30 feet."
+        },
+        {
+          "name": "Essence Shield Level 6",
+          "description": "When you heal an ally, they gain a protective hard-light spirit barrier granting them temporary Hit Points equal to your Wisdom modifier + Shaman level for 1 minute."
+        },
+        {
+          "name": "Bio Tox Purge Level 8",
+          "description": "Your healing spells automatically cure the target of Bio-Toxed (Poisoned), Optic Glitch (Blinded), or Acoustic Scramble (Deafened) conditions."
+        }
+      ]
+    },
+    {
+      "name": "Circle of the Neon Ronin / Ancestral Medium",
+      "features": [
+        {
+          "name": "Focus",
+          "description": "Binding the spirits of fallen street samurai, pre-war warriors, and dead runners to fight corporate oppression on the streets.*"
+        },
+        {
+          "name": "Ancestral Vengeance Level 2",
+          "description": "When you enter combat, phantom blades and spirit armor manifest around you. When an enemy hits an ally within 30 feet, you can use your reaction to unleash an ancestral strike, dealing 1d8 Force or Psychic damage to the attacker."
+        },
+        {
+          "name": "Spirit Guard Level 6",
+          "description": "Your spirit companions protect your party during high-risk operations. Allies within 10 feet of you have advantage on saving throws against Threat-Lock (Frightened) and Subliminal Override (Charmed)."
+        },
+        {
+          "name": "Ghost Samurai Execution Level 10",
+          "description": "Once per turn when you or an ally scores a critical hit within 30 feet of you, a phantom street samurai delivers a follow-up strike dealing 3d8 Force damage and knocking the target Grounded (Prone)."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "schema_status": "draft_authoring_template_not_supported_by_app",
+  "schema_version": 1,
+  "uid": "REPLACE_WITH_STABLE_CLASS_ID",
+  "name": "REPLACE_WITH_CLASS_NAME",
+  "original_class": "REPLACE_WITH_ORIGINAL_CLASS_NAME",
+  "description": "REPLACE_WITH_CLASS_SUMMARY",
+  "hit_die": null,
+  "multiclass_prerequisites": {
+    "description": "Record all alternatives and required ability scores.",
+    "any_of": [
+      {
+        "all_of": [
+          { "ability": "REPLACE_WITH_ABILITY", "minimum": null }
+        ]
+      }
+    ]
+  },
+  "starting_proficiencies": {
+    "armor": null,
+    "weapons": null,
+    "tools": null,
+    "saving_throws": null,
+    "skills": null,
+    "choices": null
+  },
+  "multiclass_proficiencies": {
+    "armor": null,
+    "weapons": null,
+    "tools": null,
+    "skills": null,
+    "choices": null
+  },
+  "starting_equipment": {
+    "description": "Record fixed equipment and each starting equipment choice; do not grant starting equipment when multiclassing.",
+    "grants": null,
+    "choices": null
+  },
+  "spellcasting": {
+    "kind": "REPLACE_WITH_NONE_FULL_HALF_THIRD_OR_PACT",
+    "ability": "REPLACE_WITH_ABILITY_OR_NULL",
+    "starts_at_class_level": null,
+    "spell_list_id": "REPLACE_WITH_SPELL_LIST_ID_OR_NULL",
+    "casting_mode": "REPLACE_WITH_KNOWN_PREPARED_SPELLBOOK_OR_NONE",
+    "preparation_rule": "REPLACE_WITH_RULE_OR_NULL",
+    "ritual_casting_rule": "REPLACE_WITH_RULE_OR_NULL",
+    "focus_rule": "REPLACE_WITH_RULE_OR_NULL",
+    "multiclass_slot_rule": "REPLACE_WITH_MULTICLASS_SLOT_RULE_OR_NULL",
+    "notes": "Record whether individual spells can be replaced, and any restrictions on spell schools or lists."
+  },
+  "resources": [
+    {
+      "id": "REPLACE_WITH_STABLE_RESOURCE_ID",
+      "name": "REPLACE_WITH_RESOURCE_NAME",
+      "description": "REPLACE_WITH_RESOURCE_RULE",
+      "recharge": "REPLACE_WITH_SHORT_LONG_OTHER_OR_NONE",
+      "maximum_rule": "REPLACE_WITH_RULE_USING_CLASS_LEVEL_OR_OTHER_INPUTS"
+    }
+  ],
+  "levels": [
+    {
+      "level": 1,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "REPLACE_WITH_STABLE_FEATURE_ID",
+          "name": "REPLACE_WITH_FEATURE_NAME",
+          "description": "REPLACE_WITH_FEATURE_RULES",
+          "when": "REPLACE_WITH_STARTING_MULTICLASS_OR_BOTH",
+          "choices": [
+            {
+              "id": "REPLACE_WITH_STABLE_CHOICE_ID",
+              "name": "REPLACE_WITH_CHOICE_PROMPT",
+              "kind": "REPLACE_WITH_CHOICE_KIND",
+              "count": null,
+              "allowed_options": null,
+              "eligibility_rule": "REPLACE_WITH_ELIGIBILITY_AND_DUPLICATE_RULE",
+              "selection_effect": "REPLACE_WITH_WHAT_IS_RECORDED_OR_GRANTED"
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": null,
+        "spells_known_total": null,
+        "prepared_spells_total": null,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": null,
+        "class_spell_slots": null,
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": null
+      },
+      "notes": "REPLACE_WITH_ANY_LEVEL_SPECIFIC_RULES"
+    },
+    { "level": 2, "status": "unfilled", "features": null, "spell_progression": null, "notes": null },
+    { "level": 3, "status": "unfilled", "features": null, "spell_progression": null, "notes": null },
+    { "level": 4, "status": "unfilled", "features": null, "spell_progression": null, "notes": null },
+    { "level": 5, "status": "unfilled", "features": null, "spell_progression": null, "notes": null },
+    { "level": 6, "status": "unfilled", "features": null, "spell_progression": null, "notes": null },
+    { "level": 7, "status": "unfilled", "features": null, "spell_progression": null, "notes": null },
+    { "level": 8, "status": "unfilled", "features": null, "spell_progression": null, "notes": null },
+    { "level": 9, "status": "unfilled", "features": null, "spell_progression": null, "notes": null },
+    { "level": 10, "status": "unfilled", "features": null, "spell_progression": null, "notes": null },
+    { "level": 11, "status": "unfilled", "features": null, "spell_progression": null, "notes": null },
+    { "level": 12, "status": "unfilled", "features": null, "spell_progression": null, "notes": null },
+    { "level": 13, "status": "unfilled", "features": null, "spell_progression": null, "notes": null },
+    { "level": 14, "status": "unfilled", "features": null, "spell_progression": null, "notes": null },
+    { "level": 15, "status": "unfilled", "features": null, "spell_progression": null, "notes": null },
+    { "level": 16, "status": "unfilled", "features": null, "spell_progression": null, "notes": null },
+    { "level": 17, "status": "unfilled", "features": null, "spell_progression": null, "notes": null },
+    { "level": 18, "status": "unfilled", "features": null, "spell_progression": null, "notes": null },
+    { "level": 19, "status": "unfilled", "features": null, "spell_progression": null, "notes": null },
+    { "level": 20, "status": "unfilled", "features": null, "spell_progression": null, "notes": null }
+  ],
+  "subclasses": [
+    {
+      "id": "REPLACE_WITH_STABLE_SUBCLASS_ID",
+      "name": "REPLACE_WITH_SUBCLASS_NAME",
+      "description": "REPLACE_WITH_SUBCLASS_SUMMARY",
+      "selected_at_class_level": null,
+      "spellcasting_override": null,
+      "levels": null
+    }
+  ]
+}

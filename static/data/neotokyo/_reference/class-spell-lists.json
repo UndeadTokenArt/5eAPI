@@ -1,6 +1,6 @@
 {
   "title": "Neo-Tokyo Cyberpunk 5e Class Spell List Mappings",
-  "total_spells": 319,
+  "total_spells": 324,
   "classes": [
     "Artificer",
     "Bard",
@@ -3428,6 +3428,54 @@
         "Cleric",
         "Paladin"
       ]
+    },
+    {
+      "original": "Arms of Hadar",
+      "reskinned": "Black-ICE Tendril Burst",
+      "level": 1,
+      "school": "Conjuration",
+      "classes": [
+        "Warlock"
+      ]
+    },
+    {
+      "original": "Dissonant Whispers",
+      "reskinned": "Subsonic Pain Whisper",
+      "level": 1,
+      "school": "Enchantment",
+      "classes": [
+        "Bard"
+      ]
+    },
+    {
+      "original": "Mind Sliver",
+      "reskinned": "Synaptic Spike",
+      "level": 0,
+      "school": "Enchantment",
+      "classes": [
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ]
+    },
+    {
+      "original": "Hunger of Hadar",
+      "reskinned": "Dead-Zone Void Field",
+      "level": 3,
+      "school": "Conjuration",
+      "classes": [
+        "Warlock"
+      ]
+    },
+    {
+      "original": "Summon Aberration",
+      "reskinned": "Escaped Specimen Protocol",
+      "level": 4,
+      "school": "Conjuration",
+      "classes": [
+        "Warlock",
+        "Wizard"
+      ]
     }
   ],
   "class_spell_lists": {
@@ -4530,6 +4578,12 @@
         "original_name": "Zone of Truth",
         "cyberpunk_reskin": "Biometric Truth Scanner",
         "level": 2,
+        "school": "Enchantment"
+      },
+      {
+        "original_name": "Dissonant Whispers",
+        "cyberpunk_reskin": "Subsonic Pain Whisper",
+        "level": 1,
         "school": "Enchantment"
       }
     ],
@@ -6959,6 +7013,12 @@
         "cyberpunk_reskin": "Quantum Matrix Alteration",
         "level": 9,
         "school": "Conjuration"
+      },
+      {
+        "original_name": "Mind Sliver",
+        "cyberpunk_reskin": "Synaptic Spike",
+        "level": 0,
+        "school": "Enchantment"
       }
     ],
     "Warlock": [
@@ -7351,6 +7411,30 @@
         "cyberpunk_reskin": "Neural Hallucinatory Overload",
         "level": 9,
         "school": "Illusion"
+      },
+      {
+        "original_name": "Arms of Hadar",
+        "cyberpunk_reskin": "Black-ICE Tendril Burst",
+        "level": 1,
+        "school": "Conjuration"
+      },
+      {
+        "original_name": "Mind Sliver",
+        "cyberpunk_reskin": "Synaptic Spike",
+        "level": 0,
+        "school": "Enchantment"
+      },
+      {
+        "original_name": "Hunger of Hadar",
+        "cyberpunk_reskin": "Dead-Zone Void Field",
+        "level": 3,
+        "school": "Conjuration"
+      },
+      {
+        "original_name": "Summon Aberration",
+        "cyberpunk_reskin": "Escaped Specimen Protocol",
+        "level": 4,
+        "school": "Conjuration"
       }
     ],
     "Wizard": [
@@ -8576,6 +8660,18 @@
         "original_name": "Wish",
         "cyberpunk_reskin": "Quantum Matrix Alteration",
         "level": 9,
+        "school": "Conjuration"
+      },
+      {
+        "original_name": "Mind Sliver",
+        "cyberpunk_reskin": "Synaptic Spike",
+        "level": 0,
+        "school": "Enchantment"
+      },
+      {
+        "original_name": "Summon Aberration",
+        "cyberpunk_reskin": "Escaped Specimen Protocol",
+        "level": 4,
         "school": "Conjuration"
       }
     ]

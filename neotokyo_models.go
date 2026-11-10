@@ -199,6 +199,7 @@ type Trait struct {
 }
 
 type Class struct {
+	UID               string         `json:"uid,omitempty"`
 	Name              string         `json:"name"`
 	Image             string         `json:"image,omitempty"`
 	Description       string         `json:"description,omitempty"`
@@ -209,7 +210,16 @@ type Class struct {
 	SlashingFlourish  string         `json:"slashing_flourish,omitempty"`
 	MobileFlourish    string         `json:"mobile_flourish,omitempty"`
 	Features          []ClassFeature `json:"features,omitempty"`
+	Levels            []ClassLevel   `json:"levels,omitempty"`
 	Subclasses        []Subclass     `json:"subclasses,omitempty"`
+}
+
+// ClassLevel contains explicitly authored progression; missing levels are not
+// treated as levels without features.
+type ClassLevel struct {
+	Level  int            `json:"level"`
+	HitDie string         `json:"hitdie,omitempty"`
+	Skills []ClassFeature `json:"skills,omitempty"`
 }
 
 // Subclass is a specialisation nested inside its parent Class.

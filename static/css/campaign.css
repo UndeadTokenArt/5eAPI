@@ -38,6 +38,10 @@
 .condition-add { display:flex; gap:.35rem; margin-top:.4rem; }
 .condition-add input { min-height:34px; }
 .member-actions { display:flex; gap:.5rem; margin-top:.5rem; }
+.npc-attacks { display:grid; gap:.3rem; margin-top:.5rem; }
+.npc-attack { display:flex; flex-wrap:wrap; align-items:center; gap:.4rem; }
+.npc-attack-name { flex:1 1 9rem; font:.82rem system-ui, sans-serif; }
+.npc-attack button { min-height:32px; padding:.25rem .6rem; font-size:.78rem; }
 .member-actions button { min-height:32px; padding:.25rem .6rem; font-size:.78rem; }
 .member.is-down { border-color:var(--red); }
 
@@ -82,3 +86,11 @@
 .loot-generator small { flex:1 1 100%; color:var(--muted); }
 .dropbox-send { justify-content:flex-end; padding-top:.7rem; border-top:1px solid var(--line); }
 .dropbox-send .field { flex:1 1 220px; }
+
+.member.is-active { border:4px solid #f5c542; box-shadow:0 0 14px rgba(245,197,66,.35); }
+.member.compact { display:flex; align-items:center; gap:.75rem; padding:.45rem .85rem; }
+.member.compact .member-name { flex:1 1 auto; font-size:1rem; }
+.compact-hp { font:.85rem system-ui, sans-serif; color:var(--muted); }
+.member.compact button, .member-head .fold { min-height:30px; padding:.2rem .6rem; font-size:.78rem; }
+.turn-box { margin-bottom:1rem; }
+.turn-status { margin:.25rem 0 .6rem; font:700 1rem system-ui, sans-serif; color:#f5c542; }

@@ -1,0 +1,253 @@
+{
+  "name": "Kinetic Acrobat",
+  "features": [
+    {
+      "name": "1. Kinetic Reflex Weave (Level 1)",
+      "description": "You rely on sub-dermal kinetic dampeners, fluid reflex predictive routines, or natural spiritual awareness rather than heavy bulky armor.",
+      "features": [
+        {
+          "name": "Mechanics",
+          "description": "While wearing no armor and wielding no shield, your AC equals 10 + your Dexterity modifier + your Wisdom modifier."
+        }
+      ]
+    },
+    {
+      "name": "2. Street Kinetic Combat (Level 1)",
+      "description": "Mastered hand-to-hand combat, sub-dermal knuckle plating, or high-torque wrist servomotors allow for lightning-fast unarmed strikes. Mechanics:",
+      "details": [
+        "You can use Dexterity instead of Strength for attack and damage rolls of your unarmed strikes and monk weapons.",
+        "You can roll a d4 (scaling to d6, d8, d10) in place of normal damage for unarmed strikes/monk weapons.",
+        "When you take the Attack action with an unarmed strike or monk weapon, you can make one unarmed strike as a bonus action."
+      ]
+    },
+    {
+      "name": "3. Neural Flow / Qi Current (Level 2)",
+      "description": "You channel bio-electric current, spiritual Qi, or high-bandwidth neural energy through physical and cybernetic pathways.",
+      "features": [
+        {
+          "name": "Mechanics",
+          "description": "You have a pool of Flow Points equal to your Monk level."
+        },
+        {
+          "name": "High Frequency Overdrive",
+          "description": "Spend 1 Flow point to make two unarmed strikes as a bonus action immediately after taking the Attack action."
+        },
+        {
+          "name": "Predictive Parry Subroutine",
+          "description": "Spend 1 Flow point to take the Dodge action as a bonus action."
+        },
+        {
+          "name": "Vector Boost",
+          "description": "Spend 1 Flow point to take the Disengage or Dash action as a bonus action, doubling your jump distance for the turn."
+        }
+      ]
+    },
+    {
+      "name": "4. Micro-Actuator Mobility (Level 2)",
+      "description": "Sub-dermal leg actuators, magnetic boot soles, or fluid momentum control increase your speed and allow you to run up vertical walls or across flooded waters in Mizu Ward."
+    },
+    {
+      "name": "5. Hard-Light Intercept / Kinetic Deflection (Level 3)",
+      "description": "Your predictive combat optics and rapid reflexes allow you to swat away incoming bullets, laser bolts, or thrown monomolecular blades with your bare hands or a hard-light palm shield.",
+      "features": [
+        {
+          "name": "Mechanics",
+          "description": "You can use your reaction to reduce the damage from a ranged weapon attack by 1d10 + your Dexterity modifier + your Monk level. If reduced to 0, you catch the projectile and can spend 1 Flow point to throw/fire it back."
+        }
+      ]
+    },
+    {
+      "name": "6. Inertial Dampener / Micro-Thrusters (Level 4)",
+      "description": "You engage micro-thrusters, sub-dermal shock absorbers, or kinetic dispersion fields to negate fall damage when plummeting from Kōten sky-arcologies.",
+      "features": [
+        {
+          "name": "Mechanics",
+          "description": "You can use your reaction to reduce fall damage by an amount equal to 5 × your Monk level."
+        }
+      ]
+    },
+    {
+      "name": "7. EMP Palm / Neural Disruption Punch (Level 5)",
+      "description": "You channel a targeted bio-electric pulse or EMP charge directly into an enemy's nerve cluster, cyber-spine port, or internal circuitry.",
+      "features": [
+        {
+          "name": "Mechanics",
+          "description": "When you hit a creature with a melee weapon attack, you can spend 1 Flow point to force the target to make a Constitution saving throw. On a failure, the target suffers Synapse Short (Stunned) until the end of your next turn."
+        }
+      ]
+    },
+    {
+      "name": "8. Monomolecular / High-Frequency Strikes (Level 6)",
+      "description": "Your unarmed strikes vibrate at high frequency or channel pure spirit energy, bypassing non-magical physical armor and structural plating.",
+      "features": [
+        {
+          "name": "Mechanics",
+          "description": "Your unarmed strikes count as magical for the purpose of overcoming resistance and immunity to non-magical attacks."
+        }
+      ]
+    },
+    {
+      "name": "9. Vector Roll / Threat-Dodge (Level 7)",
+      "description": "Predictive hazard algorithms and agility augments allow you to dive clear of explosive blasts and plasma arcs.",
+      "features": [
+        {
+          "name": "Mechanics",
+          "description": "When subjected to a Dexterity save for half damage, you take 0 damage on a success and half damage on a failure."
+        }
+      ]
+    },
+    {
+      "name": "10. Memory Purge / Subconscious Firewall (Level 7)",
+      "description": "You purge neural malware, emotional manipulation, or panic frequencies from your neural pathways.",
+      "features": [
+        {
+          "name": "Mechanics",
+          "description": "You can use your action to end one effect on yourself that is causing you to suffer Subliminal Override (Charmed) or Threat-Lock (Frightened)."
+        }
+      ]
+    },
+    {
+      "name": "11. Bio-Filter Immunity (Level 10)",
+      "description": "Advanced internal bio-filters and spiritual purging make you immune to biological poisons, synthetic combat toxins, and street drugs.",
+      "features": [
+        {
+          "name": "Mechanics",
+          "description": "You are immune to poison damage and the Bio-Toxed (Poisoned) condition."
+        }
+      ]
+    },
+    {
+      "name": "12. Universal Translation Matrix (Level 13)",
+      "description": "Sub-dermal real-time translation subroutines allow you to parse all spoken human languages, matrix data-streams, and spirit speech.",
+      "features": [
+        {
+          "name": "Mechanics",
+          "description": "You understand all spoken languages, and any creature that can understand a language can understand what you say."
+        }
+      ]
+    },
+    {
+      "name": "13. Absolute Neural Hardening (Level 14)",
+      "description": "Master-level firewalls and bio-feedback loops protect your mind and body from all forms of disruption.",
+      "features": [
+        {
+          "name": "Mechanics",
+          "description": "You gain proficiency in all saving throws. Whenever you fail a save, you can spend 1 Flow point to reroll it and take the second result."
+        }
+      ]
+    },
+    {
+      "name": "14. Cellular Stasis / Bio-Maintenance (Level 15)",
+      "description": "Advanced bio-stasis or spiritual harmony prevents biological aging or physical decay.",
+      "features": [
+        {
+          "name": "Mechanics",
+          "description": "You suffer none of the frailty of old age and can't be aged magically, though you can still die of old age. You no longer need food or water."
+        }
+      ]
+    },
+    {
+      "name": "15. Matrix Phase / Thermo-Optic Cloak (Level 18)",
+      "description": "You phase your physical form into the local data-grid or engage an advanced optical camouflage suit.",
+      "features": [
+        {
+          "name": "Mechanics",
+          "description": "As an action, you can spend 4 Flow points to gain Optical Camouflage (Invisible) for 1 minute and gain resistance to all damage except force damage. You can also spend 8 Flow points to cast Astral Projection without material components."
+        }
+      ]
+    },
+    {
+      "name": "16. Core Overclock (Level 20)",
+      "description": "When entering a combat engagement with zero reserves, your neural core automatically dumps emergency reserve energy into your stream.",
+      "features": [
+        {
+          "name": "Mechanics",
+          "description": "When you roll initiative and have no Flow points remaining, you immediately regain 4 Flow points."
+        }
+      ]
+    }
+  ],
+  "subclasses": [
+    {
+      "name": "Order of Sacred Code",
+      "description": "Implements of Mercy (Level 3): Hand of Healing (Level 3): Hand of Harm (Level 3): Flurry of Healing/Harm (Level 11):",
+      "details": [
+        "You gain proficiency in Street Doc (Medicine) and Cyber-Arcana (Arcana).",
+        "You spend 1 Flow point to touch a creature and restore HP equal to 1 roll of your Martial Arts die + your Wisdom modifier. You can also cure the target of Bio-Toxed (Poisoned) or Optic Glitch (Blinded).",
+        "When you hit a creature with an unarmed strike, you can spend 1 Flow point to deal extra Necrotic / Neural-Heat damage equal to 1 roll of your Martial Arts die + your Wisdom modifier.",
+        "When you use Flurry of Blows, you can replace one or both of the unarmed strikes with a Hand of Healing without spending additional Flow points."
+      ],
+      "features": [
+        {
+          "name": "Focus",
+          "description": "Inspired by street healers like Sister Teresa in Mizu Ward; wields bio-nanites, spirit talismans, and field trauma packs to heal refugees or deliver mercy-kills.*"
+        }
+      ]
+    },
+    {
+      "name": "Way of the Street Shinobi",
+      "description": "Shadow-Tech Hacks (Level 3): Shadow Step (Level 6): Thermo-Optic Cloak (Level 11): Opportunist Strike (Level 17):",
+      "details": [
+        "You can spend 2 Flow points to cast Darkness, Pass Without Trace, Silence, or Darkvision as active stealth subroutines without material components. You learn the Neon Glitch cantrip.",
+        "When you are in dim light or darkness, you can use a bonus action to teleport up to 60 feet to an unoccupied space you can see that is also in dim light or darkness. You have advantage on the first melee attack you make before the end of the turn.",
+        "When in dim light or darkness, you can use your action to gain Optical Camouflage (Invisible) until you attack, cast a spell, or enter a brightly lit area.",
+        "Whenever a creature within 5 feet of you is hit by an attack made by someone other than you, you can use your reaction to make a melee attack against that creature."
+      ],
+      "features": [
+        {
+          "name": "Focus",
+          "description": "Operates out of dark alleys, subway tunnels, and ruined arcades; uses thermo-optic cloaks, acoustic dampers, and shadow-stepping.*"
+        }
+      ]
+    },
+    {
+      "name": "Way of the Chrome Kensei",
+      "description": "Path of the Kensei (Level 3): One with the Blade (Level 6): Sharpen the Edge (Level 11):",
+      "details": [
+        "Your Kensei weapons count as magical for overcoming resistance.",
+        "As a bonus action, spend up to 3 Flow points to grant a Kensei weapon a bonus to attack and damage rolls equal to the number of points spent for 1 minute."
+      ],
+      "features": [
+        {
+          "name": "Focus",
+          "description": "Perfected mastery over traditional monomolecular katanas, smart-linked throwing stars, and high-frequency street blades.*"
+        },
+        {
+          "name": "Kensei Weapons",
+          "description": "Choose two weapons (one melee, one ranged) to be your Kensei weapons (e.g., Katana/Longsword, Smart-Pistol/Shortbow)."
+        },
+        {
+          "name": "Parry Blade",
+          "description": "If you make an unarmed strike as part of the Attack action on your turn and hold a Kensei melee weapon, you gain a +2 bonus to AC until the start of your next turn."
+        },
+        {
+          "name": "Kensei Shot",
+          "description": "As a bonus action, add 1d4 damage to your ranged attacks with Kensei weapons until the end of the turn."
+        },
+        {
+          "name": "Deft Strike",
+          "description": "When you hit a target with a Kensei weapon, you can spend 1 Flow point to deal extra damage equal to your Martial Arts die."
+        }
+      ]
+    },
+    {
+      "name": "Way of Kinetic Overdrive",
+      "description": "Open Hand Technique (Level 3): Wholeness of Body (Level 6): Tranquility Subroutine (Level 11): Neural Heart-Stop Strike (Level 17):",
+      "details": [
+        "Whenever you hit a creature with an attack granted by Flurry of Blows, you can impose one of the following effects:",
+        "Knock the target Grounded (Prone) if it fails a Dexterity save.",
+        "Push the target up to 15 feet away if it fails a Strength save.",
+        "It cannot take reactions until the end of your next turn.",
+        "As an action, you execute a rapid internal diagnostic and nanite repair, regaining Hit Points equal to 3 × your Monk level (1/Long Rest).",
+        "At the end of a long rest, you gain the effect of a Sanctuary spell that lasts until the start of your next long rest (DC \\= 8 + Wis mod + Prof).",
+        "When you hit a creature with an unarmed strike, you can spend 3 Flow points to set up lethal sub-dermal vibrations. Within a number of days equal to your Monk level, you can use your action to force the target to make a Constitution save. On a failure, it drops to 0 Hit Points; on a success, it takes 10d10 Necrotic/Force damage."
+      ],
+      "features": [
+        {
+          "name": "Focus",
+          "description": "High-torque physical augmentations, kinetic shockwaves, and disabling bio-mechanical nerve strikes.*"
+        }
+      ]
+    }
+  ]
+}

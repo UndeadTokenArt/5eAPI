@@ -27,6 +27,8 @@ type CharacterOption struct {
 	SpellLevel   *int            `json:"spell_level,omitempty"`
 	SpellClasses []string        `json:"spell_classes,omitempty"`
 	Resources    []ClassResource `json:"resources,omitempty"`
+	Levels       []ClassLevel    `json:"levels,omitempty"`
+	HitDie       int             `json:"hit_die,omitempty"`
 }
 
 type SubclassOption struct {
@@ -212,6 +214,8 @@ func buildCharacterOptions(guide *StarterGuide) CharacterOptions {
 		}
 		option.Spellcasting = spellcastingForClass(class.Name, labels)
 		option.Resources = resourcesForClass(class.Name, labels, classResources)
+		option.Levels = class.Levels
+		option.HitDie = classHitDice[originalClassFor(class.Name, labels)]
 		opts.Classes = append(opts.Classes, option)
 
 		for j, subclass := range class.Subclasses {

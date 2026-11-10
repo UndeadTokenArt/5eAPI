@@ -81,7 +81,7 @@
       "description": "Master programmers and spell casters who encode complex spell subroutines into cyberdecks, optical arrays, and neural focuses."
     }
   ],
-  "total_spells": 319,
+  "total_spells": 324,
   "spells_reskin": [
     {
       "original": "Acid Arrow",
@@ -3488,6 +3488,54 @@
         "Bard",
         "Cleric",
         "Paladin"
+      ]
+    },
+    {
+      "original": "Arms of Hadar",
+      "reskinned": "Black-ICE Tendril Burst",
+      "level": 1,
+      "school": "Conjuration",
+      "classes": [
+        "Warlock"
+      ]
+    },
+    {
+      "original": "Dissonant Whispers",
+      "reskinned": "Subsonic Pain Whisper",
+      "level": 1,
+      "school": "Enchantment",
+      "classes": [
+        "Bard"
+      ]
+    },
+    {
+      "original": "Mind Sliver",
+      "reskinned": "Synaptic Spike",
+      "level": 0,
+      "school": "Enchantment",
+      "classes": [
+        "Sorcerer",
+        "Warlock",
+        "Wizard"
+      ]
+    },
+    {
+      "original": "Hunger of Hadar",
+      "reskinned": "Dead-Zone Void Field",
+      "level": 3,
+      "school": "Conjuration",
+      "classes": [
+        "Warlock"
+      ]
+    },
+    {
+      "original": "Summon Aberration",
+      "reskinned": "Escaped Specimen Protocol",
+      "level": 4,
+      "school": "Conjuration",
+      "classes": [
+        "Warlock",
+        "Wizard"
       ]
     }
   ]

@@ -1,0 +1,725 @@
+{
+  "schema_status": "draft_authoring_template_not_supported_by_app",
+  "schema_version": 1,
+  "uid": "class-decker-draft",
+  "name": "Decker",
+  "original_class": "Rogue",
+  "description": "Infiltrators and data thieves who slip past corporate security, bypass mag-locks, and deal lethal precision damage.",
+  "hit_die": 8,
+  "multiclass_prerequisites": {
+    "description": "2024 multiclass prerequisite: meet this class primary ability requirement when adding a new class; requirements also apply to every current class.",
+    "any_of": [
+      {
+        "all_of": [
+          {
+            "ability": "dexterity",
+            "minimum": 13
+          }
+        ]
+      }
+    ]
+  },
+  "starting_proficiencies": {
+    "armor": [
+      "Light armor"
+    ],
+    "weapons": [
+      "Simple weapons and Martial weapons that have the Finesse or Light property"
+    ],
+    "tools": [
+      "Thieves’ Tools"
+    ],
+    "saving_throws": [
+      "dexterity",
+      "intelligence"
+    ],
+    "skills": [],
+    "choices": [
+      {
+        "id": "starting-skills",
+        "name": "Choose starting skills",
+        "kind": "skill",
+        "count": 4,
+        "allowed_options": [
+          "Acrobatics",
+          "Athletics",
+          "Deception",
+          "Insight",
+          "Intimidation",
+          "Investigation",
+          "Perception",
+          "Persuasion",
+          "Sleight of Hand",
+          "Stealth"
+        ],
+        "eligibility_rule": "Choose distinct skills; verify handling of an already-proficient skill.",
+        "selection_effect": "Record proficiency in the selected skills."
+      }
+    ]
+  },
+  "multiclass_proficiencies": {
+    "armor": [
+      "Light armor"
+    ],
+    "weapons": [],
+    "tools": [
+      "Thieves’ Tools"
+    ],
+    "skills": [],
+    "choices": [
+      {
+        "id": "multiclass-skill",
+        "name": "Choose a multiclass skill",
+        "kind": "skill",
+        "count": 1,
+        "allowed_options": "one skill from the Rogue starting skill list",
+        "eligibility_rule": "Follow the class entry rules and verify handling of already-proficient options.",
+        "selection_effect": "Record the selected proficiency."
+      }
+    ],
+    "description": "Gain the following traits from the Core Rogue Traits table: Hit Point Die, proficiency in one skill of your choice from the Rogue’s skill list, proficiency with Thieves’ Tools, and training with Light armor."
+  },
+  "starting_equipment": {
+    "description": "Choose A or B: (A) Leather Armor, 2 Daggers, Shortsword, Shortbow, 20 Arrows, Quiver, Thieves’ Tools, Burglar’s Pack, and 8 GP; or (B) 100 GP Starting equipment is not granted on multiclass entry.",
+    "grants": [],
+    "choices": [
+      {
+        "id": "starting-equipment",
+        "name": "Choose starting equipment",
+        "kind": "equipment_bundle",
+        "count": 1,
+        "allowed_options": "Choose A or B: (A) Leather Armor, 2 Daggers, Shortsword, Shortbow, 20 Arrows, Quiver, Thieves’ Tools, Burglar’s Pack, and 8 GP; or (B) 100 GP",
+        "eligibility_rule": "Choose one listed bundle when starting as this class.",
+        "selection_effect": "Record the chosen items and currency."
+      }
+    ]
+  },
+  "spellcasting": {
+    "kind": "none",
+    "ability": null,
+    "starts_at_class_level": null,
+    "spell_list_id": null,
+    "casting_mode": "none",
+    "preparation_rule": null,
+    "ritual_casting_rule": null,
+    "focus_rule": null,
+    "multiclass_slot_rule": "No base-class spellcasting slots.",
+    "notes": "Null casting fields are not applicable; subclass spellcasting is deferred."
+  },
+  "resources": [],
+  "levels": [
+    {
+      "level": 1,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "expertise-1",
+          "name": "Specialized Firmware (Expertise)",
+          "description": "You gain Expertise in two of your skill proficiencies of your choice. Sleight of Hand and Stealth are recommended if you have proficiency in them.\n\nAt Rogue level 6, you gain Expertise in two more of your skill proficiencies of your choice.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-expertise-1",
+              "name": "Choose skill expertise",
+              "kind": "skill_expertise",
+              "count": 2,
+              "allowed_options": "Eligible skill proficiencies in the source feature.",
+              "eligibility_rule": "Follow the feature's specific eligibility and duplication rules.",
+              "selection_effect": "Record Expertise in each selected proficiency."
+            }
+          ],
+          "reskin_reference": {
+            "name": "Specialized Firmware (Levels 1 & 6)",
+            "description": "Your neural interface is flashed with custom skill software, allowing you to process specific physical or digital tasks with automated perfection.",
+            "features": [
+              {
+                "name": "Mechanics",
+                "description": "Choose two of your skill proficiencies (or one skill proficiency and your tools proficiency, such as Cyberdeck / Security Tools). Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies. (Choose two more at Level 6)."
+              }
+            ]
+          }
+        },
+        {
+          "id": "sneak-attack-1",
+          "name": "Exploit Vulnerability (Sneak Attack)",
+          "description": "You know how to strike subtly and exploit a foe’s distraction. Once per turn, you can deal an extra 1d6 damage to one creature you hit with an attack roll if you have Advantage on the roll and the attack uses a Finesse or a Ranged weapon. The extra damage’s type is the same as the weapon’s type.\n\nYou don’t need Advantage on the attack roll if at least one of your allies is within 5 feet of the target, the ally doesn’t have the Incapacitated condition, and you don’t have Disadvantage on the attack roll.\n\nThe extra damage increases as you gain Rogue levels, as shown in the Sneak Attack column of the Rogue Features table.",
+          "when": "both",
+          "choices": [],
+          "reskin_reference": {
+            "name": "Exploit Vulnerability (Level 1)",
+            "description": "You use HUD target-lock, sensor scans, or tactical positioning to strike weak seams in sub-dermal armor, unshielded cybernetics, or neural ports.",
+            "features": [
+              {
+                "name": "Mechanics",
+                "description": "Once per turn, you can deal an extra 1d6 damage to one creature you hit with an attack if you have advantage on the attack roll (or if an ally is within 5 feet of the target and you don't have disadvantage). The weapon must be a finesse weapon or a ranged firearm/smart-weapon."
+              },
+              {
+                "name": "Progression",
+                "description": "Increases by +1d6 every two Rogue levels (up to +10d6 at Level 19)."
+              }
+            ]
+          }
+        },
+        {
+          "id": "thieves-cant-1",
+          "name": "Street-Net Slang & Mesh-Cipher (Thieves’ Cant)",
+          "description": "You picked up various languages in the communities where you plied your roguish talents. You know Thieves’ Cant and one other language of your choice, which you choose from the language tables in “Creating a Character”.",
+          "when": "both",
+          "choices": null,
+          "reskin_reference": {
+            "name": "Street-Net Slang & Mesh-Cipher (Level 1)",
+            "description": "A blend of encrypted mesh-net signals, fixer hand-signs, darknet slang, and symbols carved into alleyway conduits by runners in Yoru Market or The Underline.",
+            "features": [
+              {
+                "name": "Mechanics",
+                "description": "You can hide encrypted messages in ordinary digital broadcasts or conversation. Other street runners understand these messages automatically, while unaugmented corporate suits require an Investigation check to decipher them."
+              }
+            ]
+          }
+        },
+        {
+          "id": "weapon-mastery-1",
+          "name": "Weapon Mastery",
+          "description": "Your training with weapons allows you to use the mastery properties of two kinds of weapons of your choice with which you have proficiency, such as Daggers and Shortbows.\n\nWhenever you finish a Long Rest, you can change the kinds of weapons you chose. For example, you could switch to using the mastery properties of Scimitars and Shortswords.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-weapon-mastery-1",
+              "name": "Choose weapon masteries",
+              "kind": "weapon_mastery",
+              "count": 2,
+              "allowed_options": "Eligible weapon kinds as described by the feature.",
+              "eligibility_rule": "Follow proficiency, weapon type, and replacement restrictions in the source feature.",
+              "selection_effect": "Record the selected weapon kinds."
+            }
+          ]
+        },
+        {
+          "id": "progression-values-1",
+          "name": "Class progression values",
+          "description": "Sneak Attack: 1d6. These are totals at this class level, not additional grants.",
+          "when": "both",
+          "choices": []
+        }
+      ],
+      "spell_progression": null,
+      "notes": null
+    },
+    {
+      "level": 2,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "cunning-action-2",
+          "name": "Tactical Overclock (Cunning Action)",
+          "description": "Your quick thinking and agility allow you to move and act quickly. On your turn, you can take one of the following actions as a Bonus Action: Dash, Disengage, or Hide.",
+          "when": "both",
+          "choices": [],
+          "reskin_reference": {
+            "name": "Tactical Overclock (Level 2)",
+            "description": "Your neural reflex boosters allow you to make micro-adjustments in milliseconds.",
+            "features": [
+              {
+                "name": "Mechanics",
+                "description": "You can use a bonus action on each of your turns in combat to take the Dash, Disengage, or Hide action."
+              }
+            ]
+          }
+        }
+      ],
+      "spell_progression": null,
+      "notes": null
+    },
+    {
+      "level": 3,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "rogue-subclass-3",
+          "name": "Rogue Subclass",
+          "description": "Choose a Rogue subclass at this class level. Subclass choices and features will be authored later.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-rogue-subclass-3",
+              "name": "Choose a subclass later",
+              "kind": "subclass",
+              "count": 1,
+              "allowed_options": null,
+              "eligibility_rule": "Subclass authoring is deferred; verify available choices.",
+              "selection_effect": "Record the chosen subclass when implemented."
+            }
+          ]
+        },
+        {
+          "id": "steady-aim-3",
+          "name": "Steady Aim",
+          "description": "As a Bonus Action, you give yourself Advantage on your next attack roll on the current turn. You can use this feature only if you haven’t moved during this turn, and after you use it, your Speed is 0 until the end of the current turn.",
+          "when": "both",
+          "choices": []
+        },
+        {
+          "id": "progression-values-3",
+          "name": "Class progression values",
+          "description": "Sneak Attack: 2d6 (previously 1d6). These are totals at this class level, not additional grants.",
+          "when": "both",
+          "choices": []
+        }
+      ],
+      "spell_progression": null,
+      "notes": null
+    },
+    {
+      "level": 4,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "ability-score-improvement-4",
+          "name": "Ability Score Improvement",
+          "description": "You gain the Ability Score Improvement feat (see “Feats”) or another feat of your choice for which you qualify. You gain this feature again at Rogue levels 8, 10, 12, and 16.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-ability-score-improvement-4",
+              "name": "Choose an eligible feat or Ability Score Improvement",
+              "kind": "feat",
+              "count": 1,
+              "allowed_options": "Ability Score Improvement or another eligible feat.",
+              "eligibility_rule": "Meet feat prerequisites and verify ability-score limits.",
+              "selection_effect": "Record the feat and apply its selected effects."
+            }
+          ]
+        }
+      ],
+      "spell_progression": null,
+      "notes": null
+    },
+    {
+      "level": 5,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "cunning-strike-5",
+          "name": "Cunning Strike",
+          "description": "You’ve developed cunning ways to use your Sneak Attack. When you deal Sneak Attack damage, you can add one of the following Cunning Strike effects. Each effect has a die cost, which is the number of Sneak Attack damage dice you must forgo to add the effect. You remove the die before rolling, and the effect occurs immediately after the attack’s damage is dealt. For example, if you add the Poison effect, remove 1d6 from the Sneak Attack’s damage before rolling.\n\nIf a Cunning Strike effect requires a saving throw, the DC equals 8 plus your Dexterity modifier and Proficiency Bonus.\n\nPoison (Cost: 1d6). You add a toxin to your strike, forcing the target to make a Constitution saving throw. On a failed save, the target has the Poisoned condition for 1 minute. At the end of each of its turns, the Poisoned target repeats the save, ending the effect on itself on a success.\n\nTo use this effect, you must have a Poisoner’s Kit on your person.\n\nTrip (Cost: 1d6). If the target is Large or smaller, it must succeed on a Dexterity saving throw or have the Prone condition.\n\nWithdraw (Cost: 1d6). Immediately after the attack, you move up to half your Speed without provoking Opportunity Attacks.",
+          "when": "both",
+          "choices": []
+        },
+        {
+          "id": "uncanny-dodge-5",
+          "name": "Reflex Mitigator (Uncanny Dodge)",
+          "description": "When an attacker that you can see hits you with an attack roll, you can take a Reaction to halve the attack’s damage against you (round down).",
+          "when": "both",
+          "choices": [],
+          "reskin_reference": {
+            "name": "Reflex Mitigator (Level 5)",
+            "description": "Sub-dermal momentum dampeners or ocular predictive algorithms roll your body with the impact of incoming kinetic strikes.",
+            "features": [
+              {
+                "name": "Mechanics",
+                "description": "When an attacker that you can see hits you with an attack, you can use your reaction to halve the attack's damage against you."
+              }
+            ]
+          }
+        },
+        {
+          "id": "progression-values-5",
+          "name": "Class progression values",
+          "description": "Sneak Attack: 3d6 (previously 2d6). These are totals at this class level, not additional grants.",
+          "when": "both",
+          "choices": []
+        }
+      ],
+      "spell_progression": null,
+      "notes": null
+    },
+    {
+      "level": 6,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "expertise-6",
+          "name": "Specialized Firmware (Expertise)",
+          "description": "You gain Expertise in two of your skill proficiencies of your choice. Sleight of Hand and Stealth are recommended if you have proficiency in them.\n\nAt Rogue level 6, you gain Expertise in two more of your skill proficiencies of your choice.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-expertise-6",
+              "name": "Choose skill expertise",
+              "kind": "skill_expertise",
+              "count": 2,
+              "allowed_options": "Eligible skill proficiencies in the source feature.",
+              "eligibility_rule": "Follow the feature's specific eligibility and duplication rules.",
+              "selection_effect": "Record Expertise in each selected proficiency."
+            }
+          ],
+          "reskin_reference": {
+            "name": "Specialized Firmware (Levels 1 & 6)",
+            "description": "Your neural interface is flashed with custom skill software, allowing you to process specific physical or digital tasks with automated perfection.",
+            "features": [
+              {
+                "name": "Mechanics",
+                "description": "Choose two of your skill proficiencies (or one skill proficiency and your tools proficiency, such as Cyberdeck / Security Tools). Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies. (Choose two more at Level 6)."
+              }
+            ]
+          }
+        }
+      ],
+      "spell_progression": null,
+      "notes": null
+    },
+    {
+      "level": 7,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "evasion-7",
+          "name": "Vector Roll (Evasion)",
+          "description": "You can nimbly dodge out of the way of certain dangers. When you’re subjected to an effect that allows you to make a Dexterity saving throw to take only half damage, you instead take no damage if you succeed on the saving throw and only half damage if you fail. You can’t use this feature if you have the Incapacitated condition.",
+          "when": "both",
+          "choices": [],
+          "reskin_reference": {
+            "name": "Vector Roll (Level 7)",
+            "description": "Micro-thrusters, sub-dermal agility augments, or instant hazard detection allow you to dive clear of explosive blasts and plasma arcs.",
+            "features": [
+              {
+                "name": "Mechanics",
+                "description": "When subjected to an effect that allows you to make a Dexterity saving throw to take only half damage (such as Blackout Arc or an EMP grenade), you take no damage if you succeed, and only half damage if you fail."
+              }
+            ]
+          }
+        },
+        {
+          "id": "reliable-talent-7",
+          "name": "Optimized Routine (Reliable Talent)",
+          "description": "Whenever you make an ability check that uses one of your skill or tool proficiencies, you can treat a d20 roll of 9 or lower as a 10.",
+          "when": "both",
+          "choices": [],
+          "reskin_reference": {
+            "name": "Optimized Routine (Level 11)",
+            "description": "Your neural subroutines execute routine tasks with zero margin for human error.",
+            "features": [
+              {
+                "name": "Mechanics",
+                "description": "Whenever you make an ability check that lets you add your proficiency bonus, you can treat a d20 roll of 9 or lower as a 10."
+              }
+            ]
+          }
+        },
+        {
+          "id": "progression-values-7",
+          "name": "Class progression values",
+          "description": "Sneak Attack: 4d6 (previously 3d6). These are totals at this class level, not additional grants.",
+          "when": "both",
+          "choices": []
+        }
+      ],
+      "spell_progression": null,
+      "notes": null
+    },
+    {
+      "level": 8,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "ability-score-improvement-8",
+          "name": "Ability Score Improvement",
+          "description": "You gain the Ability Score Improvement feat (see “Feats”) or another feat of your choice for which you qualify. You gain this feature again at Rogue levels 8, 10, 12, and 16.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-ability-score-improvement-8",
+              "name": "Choose an eligible feat or Ability Score Improvement",
+              "kind": "feat",
+              "count": 1,
+              "allowed_options": "Ability Score Improvement or another eligible feat.",
+              "eligibility_rule": "Meet feat prerequisites and verify ability-score limits.",
+              "selection_effect": "Record the feat and apply its selected effects."
+            }
+          ]
+        }
+      ],
+      "spell_progression": null,
+      "notes": null
+    },
+    {
+      "level": 9,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "progression-values-9",
+          "name": "Class progression values",
+          "description": "Sneak Attack: 5d6 (previously 4d6). These are totals at this class level, not additional grants.",
+          "when": "both",
+          "choices": []
+        }
+      ],
+      "spell_progression": null,
+      "notes": "Subclass feature deferred."
+    },
+    {
+      "level": 10,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "ability-score-improvement-10",
+          "name": "Ability Score Improvement",
+          "description": "You gain the Ability Score Improvement feat (see “Feats”) or another feat of your choice for which you qualify. You gain this feature again at Rogue levels 8, 10, 12, and 16.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-ability-score-improvement-10",
+              "name": "Choose an eligible feat or Ability Score Improvement",
+              "kind": "feat",
+              "count": 1,
+              "allowed_options": "Ability Score Improvement or another eligible feat.",
+              "eligibility_rule": "Meet feat prerequisites and verify ability-score limits.",
+              "selection_effect": "Record the feat and apply its selected effects."
+            }
+          ]
+        }
+      ],
+      "spell_progression": null,
+      "notes": null
+    },
+    {
+      "level": 11,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "improved-cunning-strike-11",
+          "name": "Improved Cunning Strike",
+          "description": "You can use up to two Cunning Strike effects when you deal Sneak Attack damage, paying the die cost for each effect.",
+          "when": "both",
+          "choices": []
+        },
+        {
+          "id": "progression-values-11",
+          "name": "Class progression values",
+          "description": "Sneak Attack: 6d6 (previously 5d6). These are totals at this class level, not additional grants.",
+          "when": "both",
+          "choices": []
+        }
+      ],
+      "spell_progression": null,
+      "notes": null
+    },
+    {
+      "level": 12,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "ability-score-improvement-12",
+          "name": "Ability Score Improvement",
+          "description": "You gain the Ability Score Improvement feat (see “Feats”) or another feat of your choice for which you qualify. You gain this feature again at Rogue levels 8, 10, 12, and 16.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-ability-score-improvement-12",
+              "name": "Choose an eligible feat or Ability Score Improvement",
+              "kind": "feat",
+              "count": 1,
+              "allowed_options": "Ability Score Improvement or another eligible feat.",
+              "eligibility_rule": "Meet feat prerequisites and verify ability-score limits.",
+              "selection_effect": "Record the feat and apply its selected effects."
+            }
+          ]
+        }
+      ],
+      "spell_progression": null,
+      "notes": null
+    },
+    {
+      "level": 13,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "progression-values-13",
+          "name": "Class progression values",
+          "description": "Sneak Attack: 7d6 (previously 6d6). These are totals at this class level, not additional grants.",
+          "when": "both",
+          "choices": []
+        }
+      ],
+      "spell_progression": null,
+      "notes": "Subclass feature deferred."
+    },
+    {
+      "level": 14,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "devious-strikes-14",
+          "name": "Devious Strikes",
+          "description": "You’ve practiced new ways to use your Sneak Attack deviously. The following effects are now among your Cunning Strike options.\n\nDaze (Cost: 2d6). The target must succeed on a Constitution saving throw, or on its next turn, it can do only one of the following: move or take an action or a Bonus Action.\n\nKnock Out (Cost: 6d6). The target must succeed on a Constitution saving throw, or it has the Unconscious condition for 1 minute or until it takes any damage. The Unconscious target repeats the save at the end of each of its turns, ending the effect on itself on a success.\n\nObscure (Cost: 3d6). The target must succeed on a Dexterity saving throw, or it has the Blinded condition until the end of its next turn.",
+          "when": "both",
+          "choices": []
+        }
+      ],
+      "spell_progression": null,
+      "notes": null
+    },
+    {
+      "level": 15,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "slippery-mind-15",
+          "name": "Firewall Memory-Lock (Slippery Mind)",
+          "description": "Your cunning mind is exceptionally difficult to control. You gain proficiency in Wisdom and Charisma saving throws.",
+          "when": "both",
+          "choices": [],
+          "reskin_reference": {
+            "name": "Firewall Memory-Lock (Level 15)",
+            "description": "Your brain is protected by hard-light mental firewalls that reject neural intruding malware and mind control.",
+            "features": [
+              {
+                "name": "Mechanics",
+                "description": "You gain proficiency in Wisdom saving throws."
+              }
+            ]
+          }
+        },
+        {
+          "id": "progression-values-15",
+          "name": "Class progression values",
+          "description": "Sneak Attack: 8d6 (previously 7d6). These are totals at this class level, not additional grants.",
+          "when": "both",
+          "choices": []
+        }
+      ],
+      "spell_progression": null,
+      "notes": null
+    },
+    {
+      "level": 16,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "ability-score-improvement-16",
+          "name": "Ability Score Improvement",
+          "description": "You gain the Ability Score Improvement feat (see “Feats”) or another feat of your choice for which you qualify. You gain this feature again at Rogue levels 8, 10, 12, and 16.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-ability-score-improvement-16",
+              "name": "Choose an eligible feat or Ability Score Improvement",
+              "kind": "feat",
+              "count": 1,
+              "allowed_options": "Ability Score Improvement or another eligible feat.",
+              "eligibility_rule": "Meet feat prerequisites and verify ability-score limits.",
+              "selection_effect": "Record the feat and apply its selected effects."
+            }
+          ]
+        }
+      ],
+      "spell_progression": null,
+      "notes": null
+    },
+    {
+      "level": 17,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "progression-values-17",
+          "name": "Class progression values",
+          "description": "Sneak Attack: 9d6 (previously 8d6). These are totals at this class level, not additional grants.",
+          "when": "both",
+          "choices": []
+        }
+      ],
+      "spell_progression": null,
+      "notes": "Subclass feature deferred."
+    },
+    {
+      "level": 18,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "elusive-18",
+          "name": "Threat-Nullification Algorithm (Elusive)",
+          "description": "You’re so evasive that attackers rarely gain the upper hand against you. No attack roll can have Advantage against you unless you have the Incapacitated condition.",
+          "when": "both",
+          "choices": [],
+          "reskin_reference": {
+            "name": "Threat-Nullification Algorithm (Level 18)",
+            "description": "Your predictive combat HUD recalculates incoming attack trajectories instantly.",
+            "features": [
+              {
+                "name": "Mechanics",
+                "description": "No attack roll can have advantage against you while you aren't incapacitated."
+              }
+            ]
+          }
+        }
+      ],
+      "spell_progression": null,
+      "notes": null
+    },
+    {
+      "level": 19,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "epic-boon-19",
+          "name": "Epic Boon",
+          "description": "You gain an Epic Boon feat (see “Feats”) or another feat of your choice for which you qualify. Boon of the Night Spirit is recommended.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-epic-boon-19",
+              "name": "Choose an Epic Boon or another eligible feat",
+              "kind": "feat",
+              "count": 1,
+              "allowed_options": "An Epic Boon feat or another eligible feat.",
+              "eligibility_rule": "Meet feat prerequisites.",
+              "selection_effect": "Record the feat and its effects."
+            }
+          ]
+        },
+        {
+          "id": "progression-values-19",
+          "name": "Class progression values",
+          "description": "Sneak Attack: 10d6 (previously 9d6). These are totals at this class level, not additional grants.",
+          "when": "both",
+          "choices": []
+        }
+      ],
+      "spell_progression": null,
+      "notes": null
+    },
+    {
+      "level": 20,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "stroke-of-luck-20",
+          "name": "Fail-Safe Override (Stroke of Luck)",
+          "description": "You have a marvelous knack for succeeding when you need to. If you fail a D20 Test, you can turn the roll into a 20.\n\nOnce you use this feature, you can’t use it again until you finish a Short or Long Rest.",
+          "when": "both",
+          "choices": [],
+          "reskin_reference": {
+            "name": "Fail-Safe Override (Level 20)",
+            "description": "You force a critical system bypass or luck-spike to turn a total failure into a decisive victory.",
+            "features": [
+              {
+                "name": "Mechanics",
+                "description": "If your attack misses a target, you can turn the miss into a hit. Alternatively, if you fail an ability check, you can treat the d20 roll as a 20. (1/Short or Long Rest)."
+              }
+            ]
+          }
+        }
+      ],
+      "spell_progression": null,
+      "notes": null
+    }
+  ],
+  "subclasses": null,
+  "source_notes": [
+    "Rules basis: _reference/classes/Rogue.md, a 2024-style source. Review compatibility with the earlier 2014 multiclass design.",
+    "Class progression and mechanics use the original reference; older reskin mechanics may differ and are thematic reference only, not additional grants.",
+    "The worksheet schema is not supported by the app. Levels remain unfilled pending rules and choice review; null means unresolved or not applicable as described.",
+    "Subclass selection milestones are recorded, but subclass options, features, and spellcasting are intentionally deferred.",
+    "Reskin inspiration: classes/Decker.json. Names may be adapted where source mechanics have changed."
+  ]
+}

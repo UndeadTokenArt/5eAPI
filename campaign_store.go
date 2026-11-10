@@ -573,6 +573,7 @@ func (c *Campaign) npcIndex(id string) int {
 // NPCInput creates or edits a non-player entity; nil fields are left unchanged on edit.
 type NPCInput struct {
 	Name            *string   `json:"name"`
+	Entity          string    `json:"entity"` // only used when adding
 	CurrentHP       *int      `json:"current_hp"`
 	MaxHP           *int      `json:"max_hp"`
 	Initiative      *int      `json:"initiative"`
@@ -588,6 +589,9 @@ func (n NPCInput) validate() error {
 		if hp != nil && (*hp < 0 || *hp > 9999) {
 			return fmt.Errorf("%w: hit points are outside the supported range", errCampaignInvalid)
 		}
+	}
+	if len(n.Entity) > 80 {
+		return fmt.Errorf("%w: entity name is too long", errCampaignInvalid)
 	}
 	if n.Initiative != nil && (*n.Initiative < -20 || *n.Initiative > 50) {
 		return fmt.Errorf("%w: initiative is outside the supported range", errCampaignInvalid)
@@ -642,6 +646,7 @@ func (s *campaignStore) addNPC(id, actor string, input NPCInput) (Campaign, erro
 		}
 		npc := CampaignNPC{ID: npcID, Conditions: []string{}}
 		input.apply(&npc)
+		npc.Entity = strings.TrimSpace(input.Entity)
 		if input.MaxHP != nil && input.CurrentHP == nil {
 			npc.CurrentHP = npc.MaxHP
 		}
@@ -1043,7 +1048,7 @@ func (s *campaignStore) respondToDelivery(id, actor, characterID, deliveryID str
 				c.DropboxYen += response.Yen
 			} else {
 				sender := c.Members[senderIndex]
-				_, err := savedCharacters.patchChecked(sender.Owner, sender.CharacterID, func(sheet *CharacterSheet) error {
+				returned, err := savedCharacters.patchChecked(sender.Owner, sender.CharacterID, func(sheet *CharacterSheet) error {
 					if addErr := addInventoryItems(sheet, response.Items); addErr != nil {
 						return addErr
 					}
@@ -1056,6 +1061,7 @@ func (s *campaignStore) respondToDelivery(id, actor, characterID, deliveryID str
 				if err != nil {
 					return err
 				}
+				c.Members[senderIndex] = refreshMemberFromSheet(sender, returned)
 			}
 		}
 		c.Deliveries = append(c.Deliveries[:deliveryIndex], c.Deliveries[deliveryIndex+1:]...)
@@ -1099,6 +1105,61 @@ func (s *campaignStore) rollInCampaign(id, actor, sourceID string, roll RollInpu
 		if len(c.Rolls) > maxCampaignRolls {
 			c.Rolls = c.Rolls[len(c.Rolls)-maxCampaignRolls:]
 		}
+		return nil
+	})
+}
+
+// advanceTurn starts combat or moves to the next combatant that has an initiative score.
+// The creator, or the owner of the character whose turn it is, may advance.
+func (s *campaignStore) advanceTurn(id, actor string) (Campaign, error) {
+	return s.mutate(id, func(c *Campaign) error {
+		var order []CampaignMember
+		for _, member := range campaignCombatants(*c) {
+			if member.Initiative != nil {
+				order = append(order, member)
+			}
+		}
+		if len(order) == 0 {
+			return errCampaignInvalid
+		}
+		if !turnActive(*c) {
+			if actor != c.Owner {
+				return errCampaignForbid
+			}
+			if c.Round < 1 {
+				c.Round = 1
+			}
+			c.ActiveID = order[0].CharacterID
+			return nil
+		}
+		if actor != c.Owner {
+			index := c.memberIndex(c.ActiveID)
+			if index < 0 || c.Members[index].Owner != actor {
+				return errCampaignForbid
+			}
+		}
+		next := 0
+		for i, member := range order {
+			if member.CharacterID == c.ActiveID {
+				next = i + 1
+				break
+			}
+		}
+		if next >= len(order) {
+			next = 0
+			c.Round++
+		}
+		c.ActiveID = order[next].CharacterID
+		return nil
+	})
+}
+
+func (s *campaignStore) endCombat(id, actor string) (Campaign, error) {
+	return s.mutate(id, func(c *Campaign) error {
+		if actor != c.Owner {
+			return errCampaignForbid
+		}
+		c.Round, c.ActiveID = 0, ""
 		return nil
 	})
 }

@@ -1,0 +1,1271 @@
+{
+  "schema_status": "draft_authoring_template_not_supported_by_app",
+  "schema_version": 1,
+  "uid": "class-recon-drone-master-draft",
+  "name": "Recon Drone Master",
+  "original_class": "Ranger",
+  "description": "Scouts and snipers who track targets across Neo-Tokyo vertical layers using smart-link tags, thermal optics, and scout drones.",
+  "hit_die": 10,
+  "multiclass_prerequisites": {
+    "description": "2024 multiclass prerequisite: meet this class primary ability requirement when adding a new class; requirements also apply to every current class.",
+    "any_of": [
+      {
+        "all_of": [
+          {
+            "ability": "dexterity",
+            "minimum": 13
+          },
+          {
+            "ability": "wisdom",
+            "minimum": 13
+          }
+        ]
+      }
+    ]
+  },
+  "starting_proficiencies": {
+    "armor": [
+      "Light and Medium armor and Shields"
+    ],
+    "weapons": [
+      "Simple and Martial weapons"
+    ],
+    "tools": null,
+    "saving_throws": [
+      "strength",
+      "dexterity"
+    ],
+    "skills": [],
+    "choices": [
+      {
+        "id": "starting-skills",
+        "name": "Choose starting skills",
+        "kind": "skill",
+        "count": 3,
+        "allowed_options": [
+          "Animal Handling",
+          "Athletics",
+          "Insight",
+          "Investigation",
+          "Nature",
+          "Perception",
+          "Stealth",
+          "Survival"
+        ],
+        "eligibility_rule": "Choose distinct skills; verify handling of an already-proficient skill.",
+        "selection_effect": "Record proficiency in the selected skills."
+      }
+    ]
+  },
+  "multiclass_proficiencies": {
+    "armor": [
+      "Light armor",
+      "Medium armor",
+      "Shields"
+    ],
+    "weapons": [
+      "Martial weapons"
+    ],
+    "tools": [],
+    "skills": [],
+    "choices": [
+      {
+        "id": "multiclass-skill",
+        "name": "Choose a multiclass skill",
+        "kind": "skill",
+        "count": 1,
+        "allowed_options": "one skill from the Ranger starting skill list",
+        "eligibility_rule": "Follow the class entry rules and verify handling of already-proficient options.",
+        "selection_effect": "Record the selected proficiency."
+      }
+    ],
+    "description": "Gain the following traits from the Core Ranger Traits table: Hit Point Die, proficiency with Martial weapons, proficiency in one skill of your choice from the Ranger’s skill list, and training with Light and Medium armor and Shields."
+  },
+  "starting_equipment": {
+    "description": "Choose A or B: (A) Studded Leather Armor, Scimitar, Shortsword, Longbow, 20 Arrows, Quiver, Druidic Focus (sprig of mistletoe), Explorer’s Pack, and 7 GP; or (B) 150 GP Starting equipment is not granted on multiclass entry.",
+    "grants": [],
+    "choices": [
+      {
+        "id": "starting-equipment",
+        "name": "Choose starting equipment",
+        "kind": "equipment_bundle",
+        "count": 1,
+        "allowed_options": "Choose A or B: (A) Studded Leather Armor, Scimitar, Shortsword, Longbow, 20 Arrows, Quiver, Druidic Focus (sprig of mistletoe), Explorer’s Pack, and 7 GP; or (B) 150 GP",
+        "eligibility_rule": "Choose one listed bundle when starting as this class.",
+        "selection_effect": "Record the chosen items and currency."
+      }
+    ]
+  },
+  "spellcasting": {
+    "kind": "half",
+    "ability": "wisdom",
+    "starts_at_class_level": 1,
+    "spell_list_id": "Ranger",
+    "casting_mode": "prepared",
+    "preparation_rule": "Changing Your Prepared Spells. Whenever you finish a Long Rest, you can replace one spell on your list with another Ranger spell for which you have spell slots.",
+    "ritual_casting_rule": null,
+    "focus_rule": "Spellcasting Focus. You can use a Druidic Focus as a Spellcasting Focus for your Ranger spells.",
+    "multiclass_slot_rule": "Half caster; verify rounding and shared multiclass slot calculation under the chosen edition.",
+    "notes": "See the level 1 Spellcasting or Pact Magic feature for casting, preparation, focus, and replacement rules. Null fields require review; the reference spell mapping may not be a complete 2024 spell list."
+  },
+  "resources": [
+    {
+      "id": "resource-favored-enemy",
+      "name": "Specialized Contract Target",
+      "description": "See the Favored Enemy feature for costs, use, and recovery. You always have the Hunter’s Mark spell prepared. You can cast it twice without expending a spell slot, and you regain all expended uses of this ability when you finish a Long Rest.\n\nThe number of times you can cast the spell without a spell slot increases when you reach certain Ranger levels, as shown in the Favored Enemy column of the Ranger Features table.",
+      "recharge": "other",
+      "maximum_rule": "See the feature and level table; resolve structured maximum and recovery rules before implementation."
+    },
+    {
+      "id": "resource-nature-s-veil",
+      "name": "Optical Camouflage",
+      "description": "See the Nature’s Veil feature for costs, use, and recovery. You invoke spirits of nature to magically hide yourself. As a Bonus Action, you can give yourself the Invisible condition until the end of your next turn.\n\nYou can use this feature a number of times equal to your Wisdom modifier (minimum of once), and you regain all expended uses when you finish a Long Rest.",
+      "recharge": "other",
+      "maximum_rule": "See the feature and level table; resolve structured maximum and recovery rules before implementation."
+    }
+  ],
+  "levels": [
+    {
+      "level": 1,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "spellcasting-1",
+          "name": "Spellcasting: Tactical Routines & Field Tech (Spellcasting)",
+          "description": "You have learned to channel the magical essence of nature to cast spells. See “Spells” for the rules on spellcasting. The information below details how you use those rules with Ranger spells, which appear in the Ranger spell list later in the class’s description.\n\nSpell Slots. The Ranger Features table shows how many spell slots you have to cast your level 1+ spells. You regain all expended slots when you finish a Long Rest.\n\nPrepared Spells of Level 1+. You prepare the list of level 1+ spells that are available for you to cast with this feature. To start, choose two level 1 Ranger spells. Cure Wounds and Ensnaring Strike are recommended.\n\nThe number of spells on your list increases as you gain Ranger levels, as shown in the Prepared Spells column of the Ranger Features table. Whenever that number increases, choose additional Ranger spells until the number of spells on your list matches the number in the Ranger Features table. The chosen spells must be of a level for which you have spell slots. For example, if you’re a level 5 Ranger, your list of prepared spells can include six Ranger spells of level 1 or 2 in any combination.\n\nIf another Ranger feature gives you spells that you always have prepared, those spells don’t count against the number of spells you can prepare with this feature, but those spells otherwise count as Ranger spells for you.\n\nChanging Your Prepared Spells. Whenever you finish a Long Rest, you can replace one spell on your list with another Ranger spell for which you have spell slots.\n\nSpellcasting Ability. Wisdom is your spellcasting ability for your Ranger spells.\n\nSpellcasting Focus. You can use a Druidic Focus as a Spellcasting Focus for your Ranger spells.",
+          "when": "both",
+          "choices": null,
+          "reskin_reference": {
+            "name": "4. Spellcasting: Tactical Routines & Field Tech (Level 2)",
+            "description": null,
+            "features": [
+              {
+                "name": "Spellcasting Ability",
+                "description": "You cast spells using Wisdom (representing tactical awareness, sensor interpretation, and zone instinct)."
+              },
+              {
+                "name": "Tactical Scanner Field Kit",
+                "description": "A wrist-mounted sensor array, laser-designator visor, or spirit-attuned tracking charm."
+              }
+            ]
+          }
+        },
+        {
+          "id": "favored-enemy-1",
+          "name": "Specialized Contract Target (Favored Enemy)",
+          "description": "You always have the Hunter’s Mark spell prepared. You can cast it twice without expending a spell slot, and you regain all expended uses of this ability when you finish a Long Rest.\n\nThe number of times you can cast the spell without a spell slot increases when you reach certain Ranger levels, as shown in the Favored Enemy column of the Ranger Features table.",
+          "when": "both",
+          "choices": [],
+          "reskin_reference": {
+            "name": "1. Specialized Contract Target (Level 1)",
+            "description": "You install specialized biometric databases, combat algorithms, and threat-analysis firmware tailored to track and execute specific quarry.",
+            "features": [
+              {
+                "name": "Mechanics",
+                "description": "Choose a target category: Corporate Strike Teams / Mercenaries, Cybernetically Augmented Humans, Awakened Spirits / Street Shamans, Rogue AIs / Constructs, or Mutated Urban Critters. You have advantage on Street Navigation (Survival) checks to track your target and System Forensics (Investigation) checks to recall data about them. (Choose additional target types at Levels 6 & 14)."
+              }
+            ]
+          }
+        },
+        {
+          "id": "weapon-mastery-1",
+          "name": "Weapon Mastery",
+          "description": "Your training with weapons allows you to use the mastery properties of two kinds of weapons of your choice with which you have proficiency, such as Longbows and Shortswords.\n\nWhenever you finish a Long Rest, you can change the kinds of weapons you chose. For example, you could switch to using the mastery properties of Scimitars and Longswords.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-weapon-mastery-1",
+              "name": "Choose weapon masteries",
+              "kind": "weapon_mastery",
+              "count": 2,
+              "allowed_options": "Eligible weapon kinds as described by the feature.",
+              "eligibility_rule": "Follow proficiency, weapon type, and replacement restrictions in the source feature.",
+              "selection_effect": "Record the selected weapon kinds."
+            }
+          ]
+        },
+        {
+          "id": "progression-values-1",
+          "name": "Class progression values",
+          "description": "Favored Enemy: 2. These are totals at this class level, not additional grants.",
+          "when": "both",
+          "choices": []
+        },
+        {
+          "id": "spell-selections-1",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "prepared-selection-1",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 2,
+              "allowed_options": "Eligible level 1+ Ranger spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": null,
+        "spells_known_total": null,
+        "prepared_spells_total": 2,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 1,
+        "class_spell_slots": [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 2,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "deft-explorer-2",
+          "name": "Deft Explorer",
+          "description": "Thanks to your travels, you gain the following benefits.\n\nExpertise. Choose one of your skill proficiencies with which you lack Expertise. You gain Expertise in that skill.\n\nLanguages. You know two languages of your choice from the language tables in “Creating a Character”.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-deft-explorer-2",
+              "name": "Choose skill expertise",
+              "kind": "skill_expertise",
+              "count": 1,
+              "allowed_options": "Eligible skill proficiencies in the source feature.",
+              "eligibility_rule": "Follow the feature's specific eligibility and duplication rules.",
+              "selection_effect": "Record Expertise in each selected proficiency."
+            },
+            {
+              "id": "deft-explorer-languages",
+              "name": "Choose languages",
+              "kind": "language",
+              "count": 2,
+              "allowed_options": "Languages from the character creation language tables.",
+              "eligibility_rule": "Follow the language choice rules.",
+              "selection_effect": "Record both selected languages."
+            }
+          ]
+        },
+        {
+          "id": "fighting-style-2",
+          "name": "Combat Augment Protocol (Fighting Style)",
+          "description": "You gain a Fighting Style feat of your choice (see “Feats”). Instead of choosing one of those feats, you can choose the option below.\n\nDruidic Warrior. You learn two Druid cantrips of your choice (see the Druid class’s section for a list of Druid spells). Guidance and Starry Wisp are recommended. The chosen cantrips count as Ranger spells for you, and Wisdom is your spellcasting ability for them. Whenever you gain a Ranger level, you can replace one of these cantrips with another Druid cantrip.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-fighting-style-2",
+              "name": "Choose a Fighting Style feat",
+              "kind": "feat",
+              "count": 1,
+              "allowed_options": "Eligible Fighting Style feats; Paladin and Ranger may instead select their cantrip-granting option described in the feature.",
+              "eligibility_rule": "Meet feat prerequisites and apply any replacement rule in the feature.",
+              "selection_effect": "Record the selected feat."
+            }
+          ],
+          "reskin_reference": {
+            "name": "3. Combat Augment Protocol (Level 2)",
+            "description": "Select a specialized combat doctrine:",
+            "features": [
+              {
+                "name": "Smart Link Targeting Archery",
+                "description": "+2 bonus to attack rolls with ranged smart-weapons and firearms."
+              },
+              {
+                "name": "Sub Dermal Plating Defense",
+                "description": "+1 bonus to AC while wearing armor or sub-dermal weave."
+              },
+              {
+                "name": "Dual Rotor Actuators Two Weapon Fighting",
+                "description": "Add your ability modifier to the damage of off-hand attacks."
+              },
+              {
+                "name": "Monomolecular Edge Tuning Dueling",
+                "description": "+2 bonus to damage rolls with one-handed melee weapons."
+              }
+            ]
+          }
+        },
+        {
+          "id": "spell-selections-2",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "prepared-selection-2",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible level 1+ Ranger spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": null,
+        "spells_known_total": null,
+        "prepared_spells_total": 3,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 1,
+        "class_spell_slots": [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 3,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "ranger-subclass-3",
+          "name": "Ranger Subclass",
+          "description": "Choose a Ranger subclass at this class level. Subclass choices and features will be authored later.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-ranger-subclass-3",
+              "name": "Choose a subclass later",
+              "kind": "subclass",
+              "count": 1,
+              "allowed_options": null,
+              "eligibility_rule": "Subclass authoring is deferred; verify available choices.",
+              "selection_effect": "Record the chosen subclass when implemented."
+            }
+          ]
+        },
+        {
+          "id": "spell-selections-3",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "prepared-selection-3",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible level 1+ Ranger spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": null,
+        "spells_known_total": null,
+        "prepared_spells_total": 4,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 1,
+        "class_spell_slots": [
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 4,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "ability-score-improvement-4",
+          "name": "Ability Score Improvement",
+          "description": "You gain the Ability Score Improvement feat (see “Feats”) or another feat of your choice for which you qualify. You gain this feature again at Ranger levels 8, 12, and 16.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-ability-score-improvement-4",
+              "name": "Choose an eligible feat or Ability Score Improvement",
+              "kind": "feat",
+              "count": 1,
+              "allowed_options": "Ability Score Improvement or another eligible feat.",
+              "eligibility_rule": "Meet feat prerequisites and verify ability-score limits.",
+              "selection_effect": "Record the feat and apply its selected effects."
+            }
+          ]
+        },
+        {
+          "id": "spell-selections-4",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "prepared-selection-4",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible level 1+ Ranger spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": null,
+        "spells_known_total": null,
+        "prepared_spells_total": 5,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 1,
+        "class_spell_slots": [
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 5,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "extra-attack-5",
+          "name": "Rapid Fire Protocol (Extra Attack)",
+          "description": "You can attack twice instead of once whenever you take the Attack action on your turn.",
+          "when": "both",
+          "choices": [],
+          "reskin_reference": {
+            "name": "6. Rapid Fire Protocol (Level 5)",
+            "description": null,
+            "features": [
+              {
+                "name": "Mechanics",
+                "description": "You can attack twice whenever you take the Attack action on your turn."
+              }
+            ]
+          }
+        },
+        {
+          "id": "progression-values-5",
+          "name": "Class progression values",
+          "description": "Favored Enemy: 3 (previously 2). These are totals at this class level, not additional grants.",
+          "when": "both",
+          "choices": []
+        },
+        {
+          "id": "spell-selections-5",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "prepared-selection-5",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible level 1+ Ranger spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": null,
+        "spells_known_total": null,
+        "prepared_spells_total": 6,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 2,
+        "class_spell_slots": [
+          4,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 6,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "roving-6",
+          "name": "Roving",
+          "description": "Your Speed increases by 10 feet while you aren’t wearing Heavy armor. You also have a Climb Speed and a Swim Speed equal to your Speed.",
+          "when": "both",
+          "choices": []
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": null,
+        "spells_known_total": null,
+        "prepared_spells_total": 6,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 2,
+        "class_spell_slots": [
+          4,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 7,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "spell-selections-7",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "prepared-selection-7",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible level 1+ Ranger spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": null,
+        "spells_known_total": null,
+        "prepared_spells_total": 7,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 2,
+        "class_spell_slots": [
+          4,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Subclass feature deferred. Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 8,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "ability-score-improvement-8",
+          "name": "Ability Score Improvement",
+          "description": "You gain the Ability Score Improvement feat (see “Feats”) or another feat of your choice for which you qualify. You gain this feature again at Ranger levels 8, 12, and 16.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-ability-score-improvement-8",
+              "name": "Choose an eligible feat or Ability Score Improvement",
+              "kind": "feat",
+              "count": 1,
+              "allowed_options": "Ability Score Improvement or another eligible feat.",
+              "eligibility_rule": "Meet feat prerequisites and verify ability-score limits.",
+              "selection_effect": "Record the feat and apply its selected effects."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": null,
+        "spells_known_total": null,
+        "prepared_spells_total": 7,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 2,
+        "class_spell_slots": [
+          4,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 9,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "expertise-9",
+          "name": "Expertise",
+          "description": "Choose two of your skill proficiencies with which you lack Expertise. You gain Expertise in those skills.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-expertise-9",
+              "name": "Choose skill expertise",
+              "kind": "skill_expertise",
+              "count": 2,
+              "allowed_options": "Eligible skill proficiencies in the source feature.",
+              "eligibility_rule": "Follow the feature's specific eligibility and duplication rules.",
+              "selection_effect": "Record Expertise in each selected proficiency."
+            }
+          ]
+        },
+        {
+          "id": "progression-values-9",
+          "name": "Class progression values",
+          "description": "Favored Enemy: 4 (previously 3). These are totals at this class level, not additional grants.",
+          "when": "both",
+          "choices": []
+        },
+        {
+          "id": "spell-selections-9",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "prepared-selection-9",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 2,
+              "allowed_options": "Eligible level 1+ Ranger spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": null,
+        "spells_known_total": null,
+        "prepared_spells_total": 9,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 3,
+        "class_spell_slots": [
+          4,
+          3,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 10,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "tireless-10",
+          "name": "Tireless",
+          "description": "Primal forces now help fuel you on your journeys, granting you the following benefits.\n\nTemporary Hit Points. As a Magic action, you can give yourself a number of Temporary Hit Points equal to 1d8 plus your Wisdom modifier (minimum of 1). You can use this action a number of times equal to your Wisdom modifier (minimum of once), and you regain all expended uses when you finish a Long Rest.\n\nDecrease Exhaustion. Whenever you finish a Short Rest, your Exhaustion level, if any, decreases by 1.",
+          "when": "both",
+          "choices": []
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": null,
+        "spells_known_total": null,
+        "prepared_spells_total": 9,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 3,
+        "class_spell_slots": [
+          4,
+          3,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 11,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "spell-selections-11",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "prepared-selection-11",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible level 1+ Ranger spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": null,
+        "spells_known_total": null,
+        "prepared_spells_total": 10,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 3,
+        "class_spell_slots": [
+          4,
+          3,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Subclass feature deferred. Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 12,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "ability-score-improvement-12",
+          "name": "Ability Score Improvement",
+          "description": "You gain the Ability Score Improvement feat (see “Feats”) or another feat of your choice for which you qualify. You gain this feature again at Ranger levels 8, 12, and 16.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-ability-score-improvement-12",
+              "name": "Choose an eligible feat or Ability Score Improvement",
+              "kind": "feat",
+              "count": 1,
+              "allowed_options": "Ability Score Improvement or another eligible feat.",
+              "eligibility_rule": "Meet feat prerequisites and verify ability-score limits.",
+              "selection_effect": "Record the feat and apply its selected effects."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": null,
+        "spells_known_total": null,
+        "prepared_spells_total": 10,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 3,
+        "class_spell_slots": [
+          4,
+          3,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 13,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "relentless-hunter-13",
+          "name": "Relentless Hunter",
+          "description": "Taking damage can’t break your Concentration on Hunter’s Mark.",
+          "when": "both",
+          "choices": []
+        },
+        {
+          "id": "progression-values-13",
+          "name": "Class progression values",
+          "description": "Favored Enemy: 5 (previously 4). These are totals at this class level, not additional grants.",
+          "when": "both",
+          "choices": []
+        },
+        {
+          "id": "spell-selections-13",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "prepared-selection-13",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible level 1+ Ranger spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": null,
+        "spells_known_total": null,
+        "prepared_spells_total": 11,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 4,
+        "class_spell_slots": [
+          4,
+          3,
+          3,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 14,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "nature-s-veil-14",
+          "name": "Optical Camouflage (Nature’s Veil)",
+          "description": "You invoke spirits of nature to magically hide yourself. As a Bonus Action, you can give yourself the Invisible condition until the end of your next turn.\n\nYou can use this feature a number of times equal to your Wisdom modifier (minimum of once), and you regain all expended uses when you finish a Long Rest.",
+          "when": "both",
+          "choices": [],
+          "reskin_reference": {
+            "name": "8. Optical Camouflage Scrub (Level 10)",
+            "description": "Given 1 minute, you apply thermo-optic camouflage spray, street-chaff, and signal-dampening mesh to blend seamlessly into walls and alleyways.",
+            "features": [
+              {
+                "name": "Mechanics",
+                "description": "You gain a +10 bonus to Low-Signature (Stealth) checks as long as you remain motionless against a solid surface."
+              }
+            ]
+          }
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": null,
+        "spells_known_total": null,
+        "prepared_spells_total": 11,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 4,
+        "class_spell_slots": [
+          4,
+          3,
+          3,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 15,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "spell-selections-15",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "prepared-selection-15",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible level 1+ Ranger spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": null,
+        "spells_known_total": null,
+        "prepared_spells_total": 12,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 4,
+        "class_spell_slots": [
+          4,
+          3,
+          3,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Subclass feature deferred. Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 16,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "ability-score-improvement-16",
+          "name": "Ability Score Improvement",
+          "description": "You gain the Ability Score Improvement feat (see “Feats”) or another feat of your choice for which you qualify. You gain this feature again at Ranger levels 8, 12, and 16.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-ability-score-improvement-16",
+              "name": "Choose an eligible feat or Ability Score Improvement",
+              "kind": "feat",
+              "count": 1,
+              "allowed_options": "Ability Score Improvement or another eligible feat.",
+              "eligibility_rule": "Meet feat prerequisites and verify ability-score limits.",
+              "selection_effect": "Record the feat and apply its selected effects."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": null,
+        "spells_known_total": null,
+        "prepared_spells_total": 12,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 4,
+        "class_spell_slots": [
+          4,
+          3,
+          3,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 17,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "precise-hunter-17",
+          "name": "Precise Hunter",
+          "description": "You have Advantage on attack rolls against the creature currently marked by your Hunter’s Mark.",
+          "when": "both",
+          "choices": []
+        },
+        {
+          "id": "progression-values-17",
+          "name": "Class progression values",
+          "description": "Favored Enemy: 6 (previously 5). These are totals at this class level, not additional grants.",
+          "when": "both",
+          "choices": []
+        },
+        {
+          "id": "spell-selections-17",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "prepared-selection-17",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 2,
+              "allowed_options": "Eligible level 1+ Ranger spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": null,
+        "spells_known_total": null,
+        "prepared_spells_total": 14,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 5,
+        "class_spell_slots": [
+          4,
+          3,
+          3,
+          3,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 18,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "feral-senses-18",
+          "name": "Motion Tracker / Sensor Mesh (Feral Senses)",
+          "description": "Your connection to the forces of nature grants you Blindsight with a range of 30 feet.",
+          "when": "both",
+          "choices": [],
+          "reskin_reference": {
+            "name": "10. Motion Tracker / Sensor Mesh (Level 18)",
+            "description": "Cybernetic audio-dampeners, motion trackers, and thermal optics render physical cover and darkness irrelevant.",
+            "features": [
+              {
+                "name": "Mechanics",
+                "description": "You do not suffer disadvantage on attack rolls against targets you can't see, and you are aware of the location of any invisible creature within 30 feet unless it is successfully hiding from you."
+              }
+            ]
+          }
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": null,
+        "spells_known_total": null,
+        "prepared_spells_total": 14,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 5,
+        "class_spell_slots": [
+          4,
+          3,
+          3,
+          3,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 19,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "epic-boon-19",
+          "name": "Epic Boon",
+          "description": "You gain an Epic Boon feat (see “Feats”) or another feat of your choice for which you qualify. Boon of Dimensional Travel is recommended.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-epic-boon-19",
+              "name": "Choose an Epic Boon or another eligible feat",
+              "kind": "feat",
+              "count": 1,
+              "allowed_options": "An Epic Boon feat or another eligible feat.",
+              "eligibility_rule": "Meet feat prerequisites.",
+              "selection_effect": "Record the feat and its effects."
+            }
+          ]
+        },
+        {
+          "id": "spell-selections-19",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "prepared-selection-19",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible level 1+ Ranger spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": null,
+        "spells_known_total": null,
+        "prepared_spells_total": 15,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 5,
+        "class_spell_slots": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 20,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "foe-slayer-20",
+          "name": "Target Execution Protocol (Foe Slayer)",
+          "description": "The damage die of your Hunter’s Mark is a d10 rather than a d6.",
+          "when": "both",
+          "choices": [],
+          "reskin_reference": {
+            "name": "11. Target Execution Protocol (Level 20)",
+            "description": "Your HUD calculates lethal weak points in real time.",
+            "features": [
+              {
+                "name": "Mechanics",
+                "description": "Once on each of your turns, you can add your Wisdom modifier to the attack roll or damage roll of an attack made against one of your specialized contract targets."
+              }
+            ]
+          }
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": null,
+        "spells_known_total": null,
+        "prepared_spells_total": 15,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 5,
+        "class_spell_slots": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    }
+  ],
+  "subclasses": null,
+  "source_notes": [
+    "Rules basis: _reference/classes/Ranger.md, a 2024-style source. Review compatibility with the earlier 2014 multiclass design.",
+    "Class progression and mechanics use the original reference; older reskin mechanics may differ and are thematic reference only, not additional grants.",
+    "The worksheet schema is not supported by the app. Levels remain unfilled pending rules and choice review; null means unresolved or not applicable as described.",
+    "Subclass selection milestones are recorded, but subclass options, features, and spellcasting are intentionally deferred.",
+    "Reskin inspiration: classes/Recon Drone Master.json. Names may be adapted where source mechanics have changed."
+  ]
+}

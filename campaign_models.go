@@ -78,6 +78,8 @@ type Campaign struct {
 	Deliveries       []CampaignDelivery `json:"deliveries"`
 	NextMemberNumber int                `json:"next_member_number"`
 	NextRollID       int                `json:"next_roll_id"`
+	Round            int                `json:"round"`
+	ActiveID         string             `json:"active_id"`
 	Version          int                `json:"version"`
 	CreatedAt        time.Time          `json:"created_at"`
 	LastActivity     time.Time          `json:"last_activity"`
@@ -90,6 +92,7 @@ const maxYen = 999999999
 type CampaignNPC struct {
 	ID         string   `json:"id"`
 	Name       string   `json:"name"`
+	Entity     string   `json:"entity,omitempty"` // stat block this was added from; survives renaming
 	CurrentHP  int      `json:"current_hp"`
 	MaxHP      int      `json:"max_hp"`
 	Initiative *int     `json:"initiative"`

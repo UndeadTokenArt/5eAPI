@@ -8,15 +8,20 @@
   <link rel="stylesheet" href="/static/css/editor.css">
   <link rel="stylesheet" href="/static/css/account.css">
   <link rel="stylesheet" href="/static/css/areas.css">
+  <link rel="stylesheet" href="/static/css/navigation.css">
+  <script src="/static/js/navigation.js" defer></script>
 </head>
 <body class="area-wiki">
-  <nav class="sheet-nav" aria-label="Main navigation">
+  <nav class="sheet-nav site-nav" aria-label="Main navigation">
     <a class="sheet-brand" href="/">D&amp;D 5e SRD</a>
+    <button class="nav-toggle" type="button" aria-controls="main-nav-links" aria-expanded="false" aria-label="Open navigation menu"><span aria-hidden="true">&#9776;</span></button>
+    <div class="nav-links" id="main-nav-links">
     <span class="area-tag">Wiki editor</span>
     <a href="/neotokyo">NeoTokyo</a>
     <a href="/characters">Characters</a>
     <a href="/campaigns">Campaigns</a>
     {{template "account_nav" .}}
+    </div>
   </nav>
   <main>
     <h1>Guide editor</h1>

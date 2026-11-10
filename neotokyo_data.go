@@ -130,7 +130,14 @@ func loadGuideFromDir(dir string) (*StarterGuide, error) {
 		if err != nil {
 			return nil, err
 		}
-		sort.Slice(files, func(i, j int) bool { return files[i].Name() < files[j].Name() })
+		sort.Slice(files, func(i, j int) bool {
+			// a legacy combined classes.json loads first so per-class files override it
+			a, b := strings.EqualFold(files[i].Name(), "classes.json"), strings.EqualFold(files[j].Name(), "classes.json")
+			if a != b {
+				return a
+			}
+			return files[i].Name() < files[j].Name()
+		})
 		for _, file := range files {
 			if file.IsDir() || !strings.HasSuffix(strings.ToLower(file.Name()), ".json") || strings.HasPrefix(file.Name(), ".") {
 				continue
@@ -143,6 +150,7 @@ func loadGuideFromDir(dir string) (*StarterGuide, error) {
 			merged[key] = append(merged[key], entries...)
 		}
 	}
+	merged["classes"] = dedupeClassEntries(merged["classes"])
 	subclassAdditions := merged[subclassesFolder]
 	delete(merged, subclassesFolder)
 	raw := make(map[string]json.RawMessage, len(merged))
@@ -167,6 +175,26 @@ func loadGuideFromDir(dir string) (*StarterGuide, error) {
 	}
 	attachSubclassAdditions(&guide, subclassAdditions)
 	return &guide, nil
+}
+
+// dedupeClassEntries keeps one entry per class name; a later entry replaces an earlier one in place.
+func dedupeClassEntries(entries []json.RawMessage) []json.RawMessage {
+	var out []json.RawMessage
+	seen := map[string]int{}
+	for _, raw := range entries {
+		var head struct {
+			Name string `json:"name"`
+		}
+		_ = json.Unmarshal(raw, &head)
+		key := strings.ToLower(strings.TrimSpace(head.Name))
+		if i, ok := seen[key]; ok && key != "" {
+			out[i] = raw
+			continue
+		}
+		seen[key] = len(out)
+		out = append(out, raw)
+	}
+	return out
 }
 
 // subclassesFolder holds subclass additions; each entry names its parent class

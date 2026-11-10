@@ -1,0 +1,152 @@
+{
+  "name": "Net-Hype",
+  "features": [
+    {
+      "name": "1. Spellcasting: Mesh Broadcast & Neural Tuning",
+      "features": [
+        {
+          "name": "Spellcasting Ability",
+          "description": "You cast spells using Charisma (representing your viral presence, audience engagement, and neural broadcast authority)."
+        },
+        {
+          "name": "Media Focus",
+          "description": "A holographic micro-deck, a neural neck-mic, a spirit-attuned synthesizer, a laser-display instrument, or a high-end Amaterasu streaming rig."
+        }
+      ]
+    },
+    {
+      "name": "2. Viral Hype / Subliminal Boost (Level 1)",
+      "description": "You broadcast a tailored hype-track, motivational neural ping, or tactical combat audio cue that overclocks an ally's confidence and reaction time.",
+      "features": [
+        {
+          "name": "Mechanics",
+          "description": "As a bonus action, target one creature within 60 feet that can hear or receive your signal. That creature gains a Hype Die (d6, scaling to d8, d10, d12). Within the next 10 minutes, the target can add the die to one ability check, attack roll, or saving throw it makes."
+        }
+      ]
+    },
+    {
+      "name": "3. Social Algorithm Analytics (Level 2)",
+      "description": "Your neural interface continuously scrapes trend data, social archives, and street mesh networks, granting you basic competence across all topics.",
+      "features": [
+        {
+          "name": "Mechanics",
+          "description": "You can add half your proficiency bonus (rounded down) to any ability check you make that doesn't already include your proficiency bonus."
+        }
+      ]
+    },
+    {
+      "name": "4. Defrag Stream / Chill-Vibe Lounge (Level 2)",
+      "description": "During a short rest, you broadcast soothing synthwave ambient tracks or low-frequency lo-fi beats that accelerate cellular repair and calm fried neural pathways.",
+      "features": [
+        {
+          "name": "Mechanics",
+          "description": "If you or any friendly creatures regain Hit Points at the end of a short rest by spending Hit Dice, each creature regains an extra 1d6 Hit Points (scaling to 1d8, 1d10, 1d12)."
+        }
+      ]
+    },
+    {
+      "name": "5. Viral Brand Mastery (Levels 3 & 10)",
+      "description": "You master specific public manipulation tools—such as Idol Presence (Performance), Deep Fake (Deception), or Fixer Negotiation (Persuasion).",
+      "features": [
+        {
+          "name": "Mechanics",
+          "description": "Choose two of your skill proficiencies. Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies. (Choose two more at Level 10)."
+        }
+      ]
+    },
+    {
+      "name": "6. Rapid Hype Refresh (Level 5)",
+      "description": "Your viral feed refreshes constantly; short breaks allow you to regain full stream engagement.",
+      "features": [
+        {
+          "name": "Mechanics",
+          "description": "You regain all of your expended uses of Viral Hype (Bardic Inspiration) when you finish a Short or Long Rest."
+        }
+      ]
+    },
+    {
+      "name": "7. Signal-Jacker / Static Scrub (Level 6)",
+      "description": "You emit a localized white-noise jammer or anti-propaganda frequency that shields nearby minds from mind control and dread.",
+      "features": [
+        {
+          "name": "Mechanics",
+          "description": "As an action, you begin a broadcast that lasts until the end of your next turn. You and friendly creatures within 30 feet have advantage on saving throws against suffering Threat-Lock (Frightened) or Subliminal Override (Charmed)."
+        }
+      ]
+    },
+    {
+      "name": "8. Cross-Net Code Piracy (Levels 10, 14, 18)",
+      "description": "You hack into rival corporate networks (like KAMI or Kitsune Bio-Magic) to rip off proprietary spell code and compile it into your media rig.",
+      "features": [
+        {
+          "name": "Mechanics",
+          "description": "Choose two spells from any class list (including spells like Global Ghost Signal Broadcast or Hard-Light Aegis Dome). These spells count as Bard spells for you and are included in your known spell list."
+        }
+      ]
+    },
+    {
+      "name": "9. Emergency Hype Seed (Level 20)",
+      "description": "Even when your stream drops offline, your neural core automatically generates an emergency viral surge when combat erupts.",
+      "features": [
+        {
+          "name": "Mechanics",
+          "description": "When you roll initiative and have no uses of Viral Hype remaining, you immediately regain one use."
+        }
+      ]
+    }
+  ],
+  "subclasses": [
+    {
+      "name": "College of the Cyber Idol",
+      "description": "Hologram Glamour (Level 3): Subliminal Enthrallment (Level 3): Idol Presence (Level 6): Unstoppable Viral Hype (Level 14):",
+      "details": [
+        "As a bonus action, spend 1 use of Viral Hype to project a hard-light avatar sequence. Choose a number of allies within 60 feet up to your Charisma modifier. Each ally gains temporary Hit Points equal to your Hype Die result and can immediately use their reaction to move up to their speed without provoking opportunity attacks.",
+        "If you perform or stream for at least 1 minute, you can force humanoids watching you to make a Wisdom saving throw against your spell save DC. On a failure, targets suffer Subliminal Override (Charmed) for 1 hour, idolizing you and ignoring non-violent environment distractions.",
+        "As a bonus action, project an aura of absolute celebrity for 1 minute. As long as the aura is active, whenever a creature attempts to attack you on its turn, it must make a Wisdom save. On a failure, it loses its attack against you and must choose a new target.",
+        "As an action, enter a dazzling hard-light transformation for 1 minute. You project bright neon light in a 30-foot radius, and whenever a creature hits you for the first time on a turn, it must succeed on a Charisma saving throw or suffer Optic Glitch (Blinded) until the end of its next turn."
+      ],
+      "features": [
+        {
+          "name": "Focus",
+          "description": "Pop stars, holographic idols in Neon Shinjuku, and sponsored icons of Amaterasu Media; uses dazzling hard-light aesthetics and overwhelming audience devotion.*"
+        }
+      ]
+    },
+    {
+      "name": "College of the Pirate Broadcaster",
+      "description": "Cutting Counter-Troll (Level 3): Pirate Mesh Intelligence (Level 3): Leaked Code Clearance (Level 6): Peerless Analytics (Level 14):",
+      "focus": "Inspired by independent street journalists like Daisuke \"Radio\" and hacktivists in The 404s; uncovers corporate cover-ups, broadcasts raw street truth, and trolls enemy comms.*",
+      "details": [
+        "When a creature you can see within 60 feet makes an attack roll, ability check, or damage roll, you can use your reaction and spend 1 use of Viral Hype to roll the die and subtract the number from the creature's roll.",
+        "You gain proficiency in 3 additional skills of your choice (e.g., System Forensics [Investigation], Cyber-Arcana [Arcana], or Deep Fake [Deception]).",
+        "You learn two additional Cross-Net Code Piracy spells from any class list at 6th level instead of waiting for 10th level.",
+        "When you make an ability check, you can expend 1 use of Viral Hype to roll the Hype Die and add the number to your check."
+      ]
+    },
+    {
+      "name": "College of Chrome & Blades",
+      "description": "Combat Streamer Training (Level 3): Blade-Flourish Stream Subroutines (Level 3): Extra Attack (Level 6): Master Flourish (Level 14):",
+      "focus": "Gladiatorial battle-streamers, street samurai influencers, and duelists who perform high-lethality combat for live subscriber feeds.*",
+      "defensive_flourish": "Add the Hype Die to the damage dealt and to your AC until the start of your next turn.",
+      "slashing_flourish": "Add the Hype Die to the damage dealt, and deal that same amount of damage to another creature within 5 feet.",
+      "mobile_flourish": "Add the Hype Die to damage and push the target up to 5 + Hype Die feet away, using your reaction to move adjacent to them.",
+      "details": [
+        "You gain proficiency with medium armor, shields, and martial weapons (such as monomolecular katanas and smart-pistols).",
+        "Whenever you take the Attack action, your walking speed increases by 10 feet until the end of the turn. When you hit with a melee attack, you can expend 1 use of Viral Hype to execute a flourish:",
+        "You can attack twice whenever you take the Attack action on your turn.",
+        "Whenever you execute a Blade Flourish subroutine, you can roll a d6 instead of expending a Viral Hype die."
+      ]
+    },
+    {
+      "name": "College of Subliminal Propaganda",
+      "description": "Neural Venom Strike (Level 3): Subliminal Dread (Level 3): Steal Memory Persona (Level 6): Shadow Whispers (Level 14):",
+      "focus": "Amaterasu Media psychological operatives and host-club manipulators like Madame Yumi's Velvet Dolls; extracts executive secrets, implants false memories, and weaponizes fear.*",
+      "details": [
+        "When you hit a creature with a weapon attack, you can spend 1 use of Viral Hype to inject a wave of psychological terror code, dealing an extra 2d6 Psychic damage (scaling to 3d6, 5d6, 8d6).",
+        "If you speak to a humanoid alone for at least 1 minute, you can plant a hidden neural seed. The target must succeed on a Wisdom save or suffer Threat-Lock (Frightened) of you or a designated creature for 1 hour.",
+        "When a humanoid dies within 30 feet of you, you can use your reaction to capture its memory profile into a blank chip. As an action, you can wear the persona for 1 hour—gaining its voice, accent, surface memories, and Deep Fake (Deception) advantage to impersonate them flawlessly.",
+        "As an action, whisper a corrupted neural phrase to a creature within 30 feet. It must succeed on a Wisdom save or become paranoia-ridden, suffering Subliminal Override (Charmed) by you while viewing all its allies as lethal enemies for 8 hours."
+      ]
+    }
+  ]
+}

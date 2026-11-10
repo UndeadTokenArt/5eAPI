@@ -149,6 +149,10 @@ func setupRouter() *http.ServeMux {
 	}
 	mux.HandleFunc("GET /characters", charactersPageHandler)
 	mux.HandleFunc("GET /api/character-options", characterOptionsHandler)
+	mux.HandleFunc("GET /api/awakened-mutant-progression", awakenedProgressionHandler)
+	mux.HandleFunc("GET /api/class-progression-preview", classProgressionPreviewHandler)
+	mux.HandleFunc("POST /api/character-spellcasting", multiclassSpellcastingHandler)
+	mux.HandleFunc("POST /api/multiclass-eligibility", multiclassEligibilityHandler)
 	mux.HandleFunc("GET /api/characters", charactersAPIHandler)
 	mux.HandleFunc("POST /api/characters", charactersAPIHandler)
 	mux.HandleFunc("PUT /api/characters/{id}", characterAPIHandler)

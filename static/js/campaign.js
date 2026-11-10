@@ -137,8 +137,27 @@
       return input;
     }
 
+    var expanded = {};
+
+    function renderCompact(member) {
+      var li = el('li', 'member compact');
+      if (member.max_hp > 0 && member.current_hp === 0) li.classList.add('is-down');
+      li.appendChild(el('h3', 'member-name', member.name));
+      li.appendChild(el('span', 'compact-hp', 'HP ' + member.current_hp + (member.max_hp > 0 ? ' / ' + member.max_hp : '')));
+      var open = el('button', '', 'Expand');
+      open.type = 'button';
+      open.setAttribute('aria-label', 'Expand ' + member.name);
+      open.addEventListener('click', function () { expanded[member.character_id] = true; render(latest); });
+      li.appendChild(open);
+      return li;
+    }
+
     function renderMember(member) {
+      var turnOn = !!(latest && latest.active_id);
+      var isActive = turnOn && member.character_id === latest.active_id;
+      if (turnOn && !isActive && !expanded[member.character_id]) return renderCompact(member);
       var li = el('li', 'member');
+      if (isActive) li.classList.add('is-active');
       if (member.max_hp > 0 && member.current_hp === 0) li.classList.add('is-down');
       if (member.portrait) {
         var img = el('img', 'member-portrait');
@@ -154,6 +173,12 @@
       var head = el('div', 'member-head');
       head.appendChild(el('h3', 'member-name', member.name));
       head.appendChild(el('span', 'member-sub', member.kind === 'npc' ? 'Non-player entity' : [member.species, member['class']].filter(Boolean).join(' · ') + ' — ' + member.player));
+      if (turnOn && !isActive) {
+        var fold = el('button', 'fold', 'Collapse');
+        fold.type = 'button';
+        fold.addEventListener('click', function () { delete expanded[member.character_id]; render(latest); });
+        head.appendChild(fold);
+      }
       body.appendChild(head);
 
       var stats = el('div', 'member-stats');
@@ -228,6 +253,7 @@
       });
       body.appendChild(conditions);
 
+      if (member.kind === 'npc' && member.can_roll && (member.attacks || []).length) body.appendChild(renderAttacks(member));
       if (member.can_edit) {
         var add = el('div', 'condition-add');
         var input = document.createElement('select');
@@ -255,6 +281,78 @@
       return li;
     }
 
+    // ---- non-player entity attacks ----
+    // Shift-click rolls with advantage, Alt-click with disadvantage. A natural 20 on the to-hit
+    // roll doubles the dice on that attack's next damage roll.
+    var critPending = {};
+
+    function signedNumber(n) { return (n < 0 ? '- ' : '+ ') + Math.abs(n); }
+
+    function parseDice(text) {
+      var m = /^\s*(\d+)d(\d+)\s*(?:([+-])\s*(\d+))?\s*$/i.exec(text);
+      if (!m || Number(m[1]) < 1 || Number(m[1]) > 50 || Number(m[2]) < 2) return null;
+      return { count: Number(m[1]), sides: Number(m[2]), bonus: m[3] ? (m[3] === '-' ? -1 : 1) * Number(m[4]) : 0 };
+    }
+
+    async function postRoll(member, label, detail, total, note) {
+      try {
+        await api('/api/campaigns/' + encodeURIComponent(id) + '/rolls', { method: 'POST', body: { character_id: member.character_id, label: label, detail: detail, total: total, note: note || '' } });
+        setStatus('');
+      } catch (error) { setStatus(error.message, true); }
+    }
+
+    function rollToHit(member, attack, event) {
+      var first = rollDie(20);
+      var mode = event.shiftKey ? 'advantage' : event.altKey ? 'disadvantage' : 'normal';
+      var second = mode === 'normal' ? null : rollDie(20);
+      var kept = second === null ? first : mode === 'advantage' ? Math.max(first, second) : Math.min(first, second);
+      var dice = second === null ? 'd20 [' + first + ']' : 'd20 [' + first + ', ' + second + '] keep ' + kept + ' (' + mode + ')';
+      var total = kept + attack.attack_bonus;
+      critPending[member.character_id + '|' + attack.name] = kept === 20;
+      postRoll(member, attack.name + ' attack', dice + ' ' + signedNumber(attack.attack_bonus) + ' = ' + total, total, kept === 20 ? 'Natural 20' : kept === 1 ? 'Natural 1' : '');
+    }
+
+    function rollAttackDamage(member, attack) {
+      var key = member.character_id + '|' + attack.name;
+      var crit = Boolean(critPending[key]);
+      delete critPending[key];
+      var total = 0;
+      var parts = [];
+      for (var i = 0; i < attack.damage.length; i++) {
+        var spec = parseDice(attack.damage[i].dice);
+        if (!spec) { setStatus('Cannot roll "' + attack.damage[i].dice + '" automatically.', true); return; }
+        var count = spec.count * (crit ? 2 : 1);
+        var rolls = [];
+        var sum = spec.bonus;
+        for (var n = 0; n < count; n++) { var value = rollDie(spec.sides); rolls.push(value); sum += value; }
+        total += sum;
+        parts.push(count + 'd' + spec.sides + ' [' + rolls.join(', ') + ']' + (spec.bonus ? ' ' + signedNumber(spec.bonus) : '') + ' ' + (attack.damage[i].type || '').toLowerCase());
+      }
+      postRoll(member, attack.name + ' damage', parts.join(' + ').replace(/\s+/g, ' ').trim() + ' = ' + total, total, crit ? 'Critical dice doubled' : '');
+    }
+
+    function renderAttacks(member) {
+      var box = el('div', 'npc-attacks');
+      member.attacks.forEach(function (attack) {
+        var row = el('div', 'npc-attack');
+        row.appendChild(el('span', 'npc-attack-name', attack.name));
+        var tip = (attack.description || attack.name) + '\n(Shift-click to hit: advantage. Alt-click: disadvantage.)';
+        var hit = el('button', '', 'Hit ' + (attack.attack_bonus < 0 ? '' : '+') + attack.attack_bonus);
+        hit.type = 'button';
+        hit.title = tip;
+        hit.setAttribute('aria-label', attack.name + ' attack roll, ' + (attack.attack_bonus < 0 ? '' : '+') + attack.attack_bonus + '. ' + (attack.description || ''));
+        hit.addEventListener('click', function (event) { rollToHit(member, attack, event); });
+        var dmg = el('button', '', 'Dmg ' + attack.damage.map(function (d) { return d.dice; }).join(' + '));
+        dmg.type = 'button';
+        dmg.title = (attack.description || attack.name) + '\nDamage: ' + attack.damage.map(function (d) { return d.dice + (d.type ? ' ' + d.type.toLowerCase() : ''); }).join(' + ') + '\n(After a natural 20 the dice are doubled.)';
+        dmg.setAttribute('aria-label', attack.name + ' damage roll. ' + (attack.description || ''));
+        dmg.addEventListener('click', function () { rollAttackDamage(member, attack); });
+        row.append(hit, dmg);
+        box.appendChild(row);
+      });
+      return box;
+    }
+
     function renderRolls(rolls) {
       var log = document.getElementById('dice-log');
       log.replaceChildren();
@@ -267,6 +365,23 @@
         if (roll.detail) li.appendChild(el('small', '', roll.detail));
         log.appendChild(li);
       });
+    }
+
+    function renderTurn(state) {
+      var box = document.getElementById('turn-box');
+      var next = document.getElementById('turn-next');
+      var end = document.getElementById('turn-end');
+      var current = state.members.filter(function (m) { return m.character_id === state.active_id; })[0];
+      var mine = !!current && current.kind === 'pc' && current.can_roll;
+      var canAdvance = state.is_owner || mine;
+      var hasInit = state.members.some(function (m) { return m.initiative != null; });
+      box.hidden = !(state.round > 0 || (state.is_owner && hasInit));
+      document.getElementById('turn-status').textContent = state.round > 0
+        ? 'Round ' + state.round + (current ? ' · ' + current.name + '\u2019s turn' : '')
+        : 'Combat has not started.';
+      next.textContent = state.round > 0 ? 'Next turn' : 'Start combat';
+      next.hidden = !canAdvance;
+      end.hidden = !(state.is_owner && state.round > 0);
     }
 
     function render(state) {
@@ -282,6 +397,7 @@
       state.members.forEach(function (member) { party.appendChild(renderMember(member)); });
       document.getElementById('party-empty').hidden = state.members.length > 0;
       renderRolls(state.rolls);
+      renderTurn(state);
       document.getElementById('expiry').textContent = 'Shared info is refreshed from character sheets after 48 hours of inactivity (next: ' + new Date(state.expires_at).toLocaleString() + ').';
       document.getElementById('npc-form').hidden = !state.is_owner;
       updateRollers(state);
@@ -534,8 +650,10 @@
         .slice(0, 8).map(function (m) { return m.entry; });
     }
     function closeSuggestions() { suggestions.hidden = true; npcName.setAttribute('aria-expanded', 'false'); activeSuggestion = -1; }
+    var pickedEntity = '';
     function pickSuggestion(entry) {
       npcName.value = entry.name;
+      pickedEntity = entry.name;
       npcHp.value = entry.hit_points || '';
       closeSuggestions();
     }
@@ -571,12 +689,13 @@
       event.preventDefault();
       var name = document.getElementById('npc-name');
       var hp = document.getElementById('npc-hp');
-      var body = { name: name.value };
+      var body = { name: name.value, entity: pickedEntity || name.value };
       if (hp.value !== '') body.max_hp = Number(hp.value);
       try {
         await api('/api/campaigns/' + encodeURIComponent(id) + '/npcs', { method: 'POST', body: body });
         name.value = '';
         hp.value = '';
+        pickedEntity = '';
         setStatus('');
       } catch (error) { setStatus(error.message, true); }
     });
@@ -636,6 +755,14 @@
         renderHand();
       });
       diceTray.appendChild(button);
+    });
+    async function turnRequest(method) {
+      try { await api('/api/campaigns/' + encodeURIComponent(id) + '/turn', { method: method }); setStatus(''); }
+      catch (error) { setStatus(error.message, true); }
+    }
+    document.getElementById('turn-next').addEventListener('click', function () { turnRequest('POST'); });
+    document.getElementById('turn-end').addEventListener('click', function () {
+      if (window.confirm('End combat and reset the round counter?')) turnRequest('DELETE');
     });
     document.getElementById('dice-clear').addEventListener('click', function () { hand = {}; renderHand(); });
     rollAs.addEventListener('change', renderHand);

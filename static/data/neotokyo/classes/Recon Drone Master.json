@@ -1,0 +1,236 @@
+{
+  "name": "Recon Drone Master",
+  "features": [
+    {
+      "name": "1. Specialized Contract Target (Level 1)",
+      "description": "You install specialized biometric databases, combat algorithms, and threat-analysis firmware tailored to track and execute specific quarry.",
+      "features": [
+        {
+          "name": "Mechanics",
+          "description": "Choose a target category: Corporate Strike Teams / Mercenaries, Cybernetically Augmented Humans, Awakened Spirits / Street Shamans, Rogue AIs / Constructs, or Mutated Urban Critters. You have advantage on Street Navigation (Survival) checks to track your target and System Forensics (Investigation) checks to recall data about them. (Choose additional target types at Levels 6 & 14)."
+        }
+      ]
+    },
+    {
+      "name": "2. District Attunement (Level 1)",
+      "description": "You master navigating specific vertical layers and hazardous environments across Neo-Tokyo.",
+      "features": [
+        {
+          "name": "Mechanics",
+          "description": "Choose a district environment type: The Crown (Sky Arcologies), The Neon Layer (Commercial/Nightlife), The Undercity (Flooded Ruins & Tunnels), or The Dead City (Quarantine & Glitch Zones)."
+        }
+      ],
+      "details": [
+        "Difficult terrain in your chosen environment doesn't slow your group's travel.",
+        "Your group can't become lost except by magical or high-tier matrix distortion.",
+        "When tracking targets, you learn their exact numbers, size, and how long ago they passed through the zone."
+      ]
+    },
+    {
+      "name": "3. Combat Augment Protocol (Level 2)",
+      "description": "Select a specialized combat doctrine:",
+      "features": [
+        {
+          "name": "Smart Link Targeting Archery",
+          "description": "+2 bonus to attack rolls with ranged smart-weapons and firearms."
+        },
+        {
+          "name": "Sub Dermal Plating Defense",
+          "description": "+1 bonus to AC while wearing armor or sub-dermal weave."
+        },
+        {
+          "name": "Dual Rotor Actuators Two Weapon Fighting",
+          "description": "Add your ability modifier to the damage of off-hand attacks."
+        },
+        {
+          "name": "Monomolecular Edge Tuning Dueling",
+          "description": "+2 bonus to damage rolls with one-handed melee weapons."
+        }
+      ]
+    },
+    {
+      "name": "4. Spellcasting: Tactical Routines & Field Tech (Level 2)",
+      "features": [
+        {
+          "name": "Spellcasting Ability",
+          "description": "You cast spells using Wisdom (representing tactical awareness, sensor interpretation, and zone instinct)."
+        },
+        {
+          "name": "Tactical Scanner Field Kit",
+          "description": "A wrist-mounted sensor array, laser-designator visor, or spirit-attuned tracking charm."
+        }
+      ]
+    },
+    {
+      "name": "5. Threat Sensor Sweep (Level 3)",
+      "description": "You ping local wireless frequencies, sonar grids, and astral currents to detect nearby targets.",
+      "features": [
+        {
+          "name": "Mechanics",
+          "description": "Spend one spell slot to execute an environmental sensor sweep. For 1 minute per level of the slot used, you sense whether any specialized contract targets (constructs, spirits, augmented humans, or rogue AIs) are within 1 mile of you (or up to 6 miles within your attuned district)."
+        }
+      ]
+    },
+    {
+      "name": "6. Rapid Fire Protocol (Level 5)",
+      "features": [
+        {
+          "name": "Mechanics",
+          "description": "You can attack twice whenever you take the Attack action on your turn."
+        }
+      ]
+    },
+    {
+      "name": "7. Environmental Bypass (Level 8)",
+      "description": "Micro-thrusters, sub-dermal leg actuators, and hazard-shielding allow you to move unimpeded through urban hazards.",
+      "features": [
+        {
+          "name": "Mechanics",
+          "description": "Moving through non-magical difficult terrain (flooded streets, fallen rubble, barbed wire) costs no extra movement. You also have advantage on saving throws against environmental bio-hazards, acid fog, and toxic spills."
+        }
+      ]
+    },
+    {
+      "name": "8. Optical Camouflage Scrub (Level 10)",
+      "description": "Given 1 minute, you apply thermo-optic camouflage spray, street-chaff, and signal-dampening mesh to blend seamlessly into walls and alleyways.",
+      "features": [
+        {
+          "name": "Mechanics",
+          "description": "You gain a +10 bonus to Low-Signature (Stealth) checks as long as you remain motionless against a solid surface."
+        }
+      ]
+    },
+    {
+      "name": "9. Phantom Step (Level 14)",
+      "description": "You purge your physical radar cross-section and digital trace on the fly.",
+      "features": [
+        {
+          "name": "Mechanics",
+          "description": "You can use the Hide action as a bonus action on your turn. You can't be tracked by non-magical means or corporate camera algorithms unless you choose to leave a digital trail."
+        }
+      ]
+    },
+    {
+      "name": "10. Motion Tracker / Sensor Mesh (Level 18)",
+      "description": "Cybernetic audio-dampeners, motion trackers, and thermal optics render physical cover and darkness irrelevant.",
+      "features": [
+        {
+          "name": "Mechanics",
+          "description": "You do not suffer disadvantage on attack rolls against targets you can't see, and you are aware of the location of any invisible creature within 30 feet unless it is successfully hiding from you."
+        }
+      ]
+    },
+    {
+      "name": "11. Target Execution Protocol (Level 20)",
+      "description": "Your HUD calculates lethal weak points in real time.",
+      "features": [
+        {
+          "name": "Mechanics",
+          "description": "Once on each of your turns, you can add your Wisdom modifier to the attack roll or damage roll of an attack made against one of your specialized contract targets."
+        }
+      ]
+    }
+  ],
+  "subclasses": [
+    {
+      "name": "Street Tracker",
+      "features": [
+        {
+          "name": "Focus",
+          "description": "Precision bounty hunting, neutralizing high-value targets, and surviving brutal street skirmishes.*"
+        },
+        {
+          "name": "Hunter S Tech Level 3",
+          "description": "Choose one tactical subroutine:"
+        },
+        {
+          "name": "Colossus Takedown",
+          "description": "Deal an extra 1d8 damage once per turn when hitting a target below its HP maximum."
+        },
+        {
+          "name": "Crowd Control Spray",
+          "description": "When you make a ranged attack, you can make a secondary attack against a target within 5 feet of the primary target."
+        },
+        {
+          "name": "Counter Strike Parry",
+          "description": "When a creature misses you with a melee attack, use your reaction to make an immediate counter-attack."
+        },
+        {
+          "name": "Defensive Augments Level 7",
+          "description": "Choose one defensive upgrade:"
+        },
+        {
+          "name": "Sub Dermal Blast Plating",
+          "description": "Gain resistance to area-effect damage (like grenades or plasma blasts)."
+        },
+        {
+          "name": "Target Lock Evasion",
+          "description": "Opportunistic attacks against you are made with disadvantage."
+        },
+        {
+          "name": "Multi Target Lock Level 11",
+          "description": "Use your action to execute a rapid salvo, making a ranged or melee attack against any number of targets within 10 feet of a point you can see."
+        },
+        {
+          "name": "Reflex Counter Level 15",
+          "description": "When a target hits or misses you with an attack, use your reaction to deliver an immediate counter-strike."
+        }
+      ]
+    },
+    {
+      "name": "Bio-Drone Handler",
+      "description": "Bio-Drone Companion (Level 3): Coordination Strike (Level 7): Bio-Force Overclock (Level 11): Shared Augments (Level 15):",
+      "details": [
+        "You gain a loyal Bio-Drone Companion—such as a cyber-enhanced Doberman (Hoshi Biodyne hound), an autonomous military quad-copter drone, or an awakened spirit-critter from Kitsune-cho.",
+        "The companion uses a specialized stat block (Bio-Drone of the Land, Air, or Water). It obeys your mental commands, takes its turn on your initiative, and adds your Proficiency Bonus to its AC, attack rolls, and damage rolls.",
+        "When you take the Attack action, you can command your companion to use its reaction to make one melee or ranged attack.",
+        "When your companion takes the Attack action, it can make two attacks or use a high-voltage EMP discharge.",
+        "When you cast a spell targeting yourself (such as Optical Camouflage or Overclock Reflexes), the spell also affects your Bio-Drone companion if it is within 30 feet."
+      ],
+      "features": [
+        {
+          "name": "Focus",
+          "description": "Operating genetically engineered guard beasts, cyber-enhanced hounds, or military surveillance drones.*"
+        }
+      ]
+    },
+    {
+      "name": "Ghost-Zone Infiltrator",
+      "description": "Ghost-Zone Specialist (Level 3): Optic Scrub (Level 3): Iron Mind Firewall (Level 7): Stalking Counter (Level 11): Shadow Dodge (Level 15):",
+      "details": [
+        "You learn the Disguise Self spell and gain Thermal-Optics (Darkvision) up to 60 feet (or extend existing darkvision by 30 feet).",
+        "You are invisible to creatures and camera drones that rely on darkvision/thermal optics to see in total darkness.",
+        "You gain proficiency in Wisdom saving throws (protecting your mind from neural probes and Black ICE).",
+        "Once on each of your turns when you miss with a weapon attack, you can make another weapon attack as part of the same action.",
+        "Whenever a creature makes an attack roll against you without advantage, you can use your reaction to impose disadvantage on the roll."
+      ],
+      "features": [
+        {
+          "name": "Focus",
+          "description": "Operating in total darkness, underground subway tunnels in The Underline, and the erased ruins of Shiba Void; striking from the shadows before targets realize you're there.*"
+        },
+        {
+          "name": "Dread Strike",
+          "description": "You add your Wisdom modifier to Initiative rolls. On your first turn in combat, your speed increases by 10 feet, and your first successful attack deals an extra 1d8 weapon damage."
+        }
+      ]
+    },
+    {
+      "name": "Cyber-Zone Guardian",
+      "description": "Data-Glitch Sensor (Level 3): Phase-Strike Converter (Level 3): Matrix Phase Step (Level 7): Spatial Teleport Strike (Level 11): Data Shift Defense (Level 15):",
+      "details": [
+        "You can detect matrix phase-shifts, spirit portals, and spatial glitches within 1 mile as an action.",
+        "As a bonus action, target a creature within 30 feet. For the rest of the turn, all damage you deal converts to pure Force / Psychic damage, and your first strike deals an extra 1d6 Force damage (scaling to 2d6 at Level 11).",
+        "When you take the Dodge action, you temporarily phase into the local data grid, gaining resistance to all damage until the start of your next turn.",
+        "When you take the Attack action, you can teleport up to 10 feet before each attack. If you attack at least two different targets, you can make a third attack for free.",
+        "When you take damage, you can use your reaction to phase out of reality, gaining resistance to all damage from that instance."
+      ],
+      "features": [
+        {
+          "name": "Focus",
+          "description": "Hunting targets across phase-shifted matrix anomalies, subterranean energy nodes, and spatial data-glitches in Shiba Void.*"
+        }
+      ]
+    }
+  ]
+}

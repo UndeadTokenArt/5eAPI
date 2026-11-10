@@ -32,6 +32,14 @@ type CharacterEntry struct {
 	Detail     string `json:"detail,omitempty"`
 	Proficient bool   `json:"proficient,omitempty"`
 	Quantity   int    `json:"quantity,omitempty"`
+	SpellClass string `json:"spell_class,omitempty"`
+}
+
+// CharacterClass records levels in an individual class, in the order acquired.
+type CharacterClass struct {
+	Name     string `json:"name"`
+	Subclass string `json:"subclass,omitempty"`
+	Level    int    `json:"level"`
 }
 
 // ResourceUse stores the remaining uses of a class resource; the maximum comes from class and level.
@@ -54,6 +62,7 @@ type CharacterSheet struct {
 	Species            string           `json:"species,omitempty"`
 	Class              string           `json:"class,omitempty"`
 	Subclass           string           `json:"subclass,omitempty"`
+	Classes            []CharacterClass `json:"classes,omitempty"`
 	Background         string           `json:"background,omitempty"`
 	Level              int              `json:"level"`
 	ExperiencePoints   int              `json:"experience_points,omitempty"`
@@ -61,6 +70,7 @@ type CharacterSheet struct {
 	AbilityScores      AbilityScores    `json:"ability_scores"`
 	SaveProficiencies  []string         `json:"save_proficiencies,omitempty"`
 	SpellSlots         []SpellSlot      `json:"spell_slots,omitempty"`
+	PactSlots          *SpellSlot       `json:"pact_slots,omitempty"`
 	ClassResources     []ResourceUse    `json:"class_resources,omitempty"`
 	SkillProficiencies []string         `json:"skill_proficiencies,omitempty"`
 	ArmorClass         int              `json:"armor_class,omitempty"`
@@ -544,6 +554,28 @@ func validateCharacter(character CharacterSheet) error {
 	if character.Level < 1 || character.Level > 20 {
 		return errors.New("level must be between 1 and 20")
 	}
+	if len(character.Classes) > 20 {
+		return errors.New("too many classes")
+	}
+	if len(character.Classes) > 0 {
+		total := 0
+		names := make(map[string]bool)
+		for _, class := range character.Classes {
+			name := strings.TrimSpace(class.Name)
+			if name == "" || len(name) > 150 || len(class.Subclass) > 150 || class.Level < 1 || class.Level > 20 {
+				return errors.New("invalid class progression")
+			}
+			key := strings.ToLower(name)
+			if names[key] {
+				return errors.New("class progression contains a duplicate class")
+			}
+			names[key] = true
+			total += class.Level
+		}
+		if total != character.Level || character.Class != character.Classes[0].Name || character.Subclass != character.Classes[0].Subclass {
+			return errors.New("class progression must match the total level and primary class")
+		}
+	}
 	if character.ExperiencePoints < 0 || character.ExperiencePoints > 10000000 {
 		return errors.New("experience points are outside the supported range")
 	}
@@ -577,11 +609,14 @@ func validateCharacter(character CharacterSheet) error {
 			return errors.New("spell slot values are outside the supported range")
 		}
 	}
+	if slot := character.PactSlots; slot != nil && (slot.Level < 1 || slot.Level > 5 || slot.Current < 0 || slot.Max < 0 || slot.Current > slot.Max || slot.Max > 99) {
+		return errors.New("pact slot values are outside the supported range")
+	}
 	if len(character.ClassResources) > 20 {
 		return errors.New("too many class resources")
 	}
 	for _, resource := range character.ClassResources {
-		if len(resource.ID) == 0 || len(resource.ID) > 60 || resource.Current < 0 || resource.Current > 99 {
+		if len(resource.ID) == 0 || len(resource.ID) > 60 || resource.Current < 0 || resource.Current > 100 {
 			return errors.New("class resource values are outside the supported range")
 		}
 	}
@@ -599,7 +634,7 @@ func validateCharacter(character CharacterSheet) error {
 			return errors.New("each character list may contain at most 100 entries")
 		}
 		for _, entry := range entries {
-			if len(entry.Name) > 150 || len(entry.Detail) > 2000 || entry.Quantity < 0 || entry.Quantity > 9999 {
+			if len(entry.Name) > 150 || len(entry.Detail) > 2000 || len(entry.SpellClass) > 150 || entry.Quantity < 0 || entry.Quantity > 9999 {
 				return errors.New("entry names must be at most 150 characters, details at most 2000 characters, and quantities between 0 and 9999")
 			}
 		}

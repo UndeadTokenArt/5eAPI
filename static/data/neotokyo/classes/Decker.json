@@ -1,0 +1,202 @@
+{
+  "name": "Decker",
+  "features": [
+    {
+      "name": "Specialized Firmware (Levels 1 & 6)",
+      "description": "Your neural interface is flashed with custom skill software, allowing you to process specific physical or digital tasks with automated perfection.",
+      "features": [
+        {
+          "name": "Mechanics",
+          "description": "Choose two of your skill proficiencies (or one skill proficiency and your tools proficiency, such as Cyberdeck / Security Tools). Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies. (Choose two more at Level 6)."
+        }
+      ]
+    },
+    {
+      "name": "Exploit Vulnerability (Level 1)",
+      "description": "You use HUD target-lock, sensor scans, or tactical positioning to strike weak seams in sub-dermal armor, unshielded cybernetics, or neural ports.",
+      "features": [
+        {
+          "name": "Mechanics",
+          "description": "Once per turn, you can deal an extra 1d6 damage to one creature you hit with an attack if you have advantage on the attack roll (or if an ally is within 5 feet of the target and you don't have disadvantage). The weapon must be a finesse weapon or a ranged firearm/smart-weapon."
+        },
+        {
+          "name": "Progression",
+          "description": "Increases by +1d6 every two Rogue levels (up to +10d6 at Level 19)."
+        }
+      ]
+    },
+    {
+      "name": "Street-Net Slang & Mesh-Cipher (Level 1)",
+      "description": "A blend of encrypted mesh-net signals, fixer hand-signs, darknet slang, and symbols carved into alleyway conduits by runners in Yoru Market or The Underline.",
+      "features": [
+        {
+          "name": "Mechanics",
+          "description": "You can hide encrypted messages in ordinary digital broadcasts or conversation. Other street runners understand these messages automatically, while unaugmented corporate suits require an Investigation check to decipher them."
+        }
+      ]
+    },
+    {
+      "name": "Tactical Overclock (Level 2)",
+      "description": "Your neural reflex boosters allow you to make micro-adjustments in milliseconds.",
+      "features": [
+        {
+          "name": "Mechanics",
+          "description": "You can use a bonus action on each of your turns in combat to take the Dash, Disengage, or Hide action."
+        }
+      ]
+    },
+    {
+      "name": "Reflex Mitigator (Level 5)",
+      "description": "Sub-dermal momentum dampeners or ocular predictive algorithms roll your body with the impact of incoming kinetic strikes.",
+      "features": [
+        {
+          "name": "Mechanics",
+          "description": "When an attacker that you can see hits you with an attack, you can use your reaction to halve the attack's damage against you."
+        }
+      ]
+    },
+    {
+      "name": "Vector Roll (Level 7)",
+      "description": "Micro-thrusters, sub-dermal agility augments, or instant hazard detection allow you to dive clear of explosive blasts and plasma arcs.",
+      "features": [
+        {
+          "name": "Mechanics",
+          "description": "When subjected to an effect that allows you to make a Dexterity saving throw to take only half damage (such as Blackout Arc or an EMP grenade), you take no damage if you succeed, and only half damage if you fail."
+        }
+      ]
+    },
+    {
+      "name": "Optimized Routine (Level 11)",
+      "description": "Your neural subroutines execute routine tasks with zero margin for human error.",
+      "features": [
+        {
+          "name": "Mechanics",
+          "description": "Whenever you make an ability check that lets you add your proficiency bonus, you can treat a d20 roll of 9 or lower as a 10."
+        }
+      ]
+    },
+    {
+      "name": "Sonar Sweep / Sensor Ping (Level 14)",
+      "description": "Cybernetic audio-dampeners, motion trackers, or electromagnetic pings register invisible physical signatures and optical camouflage.",
+      "features": [
+        {
+          "name": "Mechanics",
+          "description": "If you are able to hear/process sensor feeds, you aware of the location of any hidden or invisible creature within 10 feet of you."
+        }
+      ]
+    },
+    {
+      "name": "Firewall Memory-Lock (Level 15)",
+      "description": "Your brain is protected by hard-light mental firewalls that reject neural intruding malware and mind control.",
+      "features": [
+        {
+          "name": "Mechanics",
+          "description": "You gain proficiency in Wisdom saving throws."
+        }
+      ]
+    },
+    {
+      "name": "Threat-Nullification Algorithm (Level 18)",
+      "description": "Your predictive combat HUD recalculates incoming attack trajectories instantly.",
+      "features": [
+        {
+          "name": "Mechanics",
+          "description": "No attack roll can have advantage against you while you aren't incapacitated."
+        }
+      ]
+    },
+    {
+      "name": "Fail-Safe Override (Level 20)",
+      "description": "You force a critical system bypass or luck-spike to turn a total failure into a decisive victory.",
+      "features": [
+        {
+          "name": "Mechanics",
+          "description": "If your attack misses a target, you can turn the miss into a hit. Alternatively, if you fail an ability check, you can treat the d20 roll as a 20. (1/Short or Long Rest)."
+        }
+      ]
+    }
+  ],
+  "subclasses": [
+    {
+      "name": "The Decker (Matrix Specialist / Hacker)",
+      "description": "Wireless Cyberdeck Sync (Level 3): ICE-Breaker Infiltration (Level 3): System Lockout (Level 9): Ghost in the Shell (Level 13): Black ICE Counter-Strike (Level 17):",
+      "details": [
+        "You install a cyberdeck integrated into your nervous system. You gain proficiency with Cyberdecks (Security Tools) and System Forensics (Investigation).",
+        "You can use your Tactical Overclock (Cunning Action) to make a remote Palm-Hack (Sleight of Hand) or disable an electronic device up to 30 feet away via wireless signal.",
+        "You learn digital hack-routines (treated as spells using Intelligence as your hacking stat):",
+        "When you deal Exploit Vulnerability (Sneak Attack) damage, you can choose to deal Lightning or Psychic damage as you upload rogue code into the target's neural port.",
+        "When you hit an augmented target or construct with a Sneak Attack, you can force them to make a Constitution saving throw (DC \\= 8 + your Int modifier + Proficiency Bonus). On a failure, one of their cybernetic weapons or augments is disabled, inflicting OS Buffer Overflow (Incapacitated) or Optic Glitch (Blinded) until the end of their next turn.",
+        "You can project a digital avatar into physical space using local hologram projectors or direct neural feeds. You can cast Hard-Light Decoy Array or Matrix Ghosting once per long rest without expending a spell slot.",
+        "When a target within 30 feet targets you with a spell, hack, or ranged attack, you can use your reaction to unleash a wave of Black ICE code. The attacker takes 5d10 Psychic damage and must succeed on an Intelligence saving throw or be Neural Frozen (Paralyzed) until the start of your next turn."
+      ],
+      "features": [
+        {
+          "name": "Focus",
+          "description": "Infiltrating digital networks, deploying Black ICE remotely, overriding enemy cyberware, and manipulating camera feeds in real time.*"
+        },
+        {
+          "name": "Cantrips",
+          "description": "Data-Siphon, Neon Glitch."
+        },
+        {
+          "name": "1st Level Hacks",
+          "description": "Overclock Reflexes, Blackout Arc."
+        }
+      ]
+    },
+    {
+      "name": "Corporate Operative (Infiltrator & Black-Ops Specialist)",
+      "description": "Deep Fake Credentials (Level 3): Assassination Protocol (Level 3): Misdirection & Subliminal Cue (Level 9): Impenetrable Cover (Level 13): Lethal Extraction Strike (Level 17):",
+      "details": [
+        "You excel at forging corporate passes, biometric spoofing, and social infiltration. You gain proficiency with Deception (Deep Fake) and Insight (Subtext Scan).",
+        "Given 1 hour and access to a terminal, you can construct a flawless corporate identity (complete with employee ID, biometric clearance, and backdated email trails) for any of the 8 Megacorps.",
+        "You have advantage on attack rolls against any creature that hasn't taken a turn in combat yet. In addition, any hit you score against a creature that is surprised is a critical hit.",
+        "As a bonus action, you can issue a coded phrase or visual gesture that forces a target to make a Wisdom saving throw. On a failure, the target suffers Subliminal Override (Charmed) for 1 minute or until attacked, making them ignore your presence while you bypass security checkpoints.",
+        "Your mind cannot be read by neural probes, truth drugs, or spirit magic unless you allow it. Biometric scanners and facial recognition drones identify you as your current false identity unless an investigator succeeds on a System Forensics check against your passive Deception score.",
+        "When you hit a creature that is surprised with an attack, it must make a Constitution saving throw (DC \\= 8 + Dex modifier + Proficiency Bonus). On a failed save, double the damage of your attack against the target."
+      ],
+      "features": [
+        {
+          "name": "Focus",
+          "description": "Social engineering, deep-cover identities, targeted assassinations, and manipulating corporate power dynamics.*"
+        }
+      ]
+    },
+    {
+      "name": "Ghost-Runner (Street Phantom & Parkour Specialist)",
+      "description": "Vector Parkour (Level 3): Second-Story Hack (Level 3): Optical Cloak Burst (Level 9): Reflex Surge (Level 13): Ghost-Walk (Level 17):",
+      "details": [
+        "You gain a climbing speed and swimming speed equal to your walking speed.",
+        "When you make a running jump, the distance you cover increases by a number of feet equal to your Dexterity modifier. You can use Dexterity instead of Strength for Hydraulic Prowess (Athletics) checks.",
+        "You can use the Palm-Hack (Sleight of Hand) skill to pick physical and electronic mag-locks in half the normal time, and climbing doesn't cost you extra movement.",
+        "When you take the Hide action on your turn, you can engage a temporary thermo-optic cloak, gaining Optical Camouflage (Invisible) until the start of your next turn or until you attack/cast a spell.",
+        "You can take two turns during the first round of any combat. You take your first turn at your normal initiative and your second turn at your initiative minus 10.",
+        "Your movement speed increases by 10 feet, and you can move through solid objects and physical barriers as if they were difficult terrain (phasing through corporate security walls or vault doors). If you end your turn inside an object, you take 1d10 Force damage and are pushed to the nearest open space."
+      ],
+      "features": [
+        {
+          "name": "Focus",
+          "description": "Extreme urban mobility, bypassing physical security, climbing arcologies, and harvesting lost data from the Undercity.*"
+        }
+      ]
+    },
+    {
+      "name": "Chrome Duelist (Cyber-Swashbuckler)",
+      "description": "Monomolecular Footwork (Level 3): Solo Engagement (Level 3): Chrome Flash (Level 9): Elegant Riposte (Level 13): High-Speed Execution (Level 17):",
+      "details": [
+        "You add your Charisma modifier to your Initiative rolls.",
+        "During your turn, if you make a melee attack against a creature, that creature cannot make opportunity attacks against you for the rest of your turn.",
+        "You don't need advantage on your attack roll to use Exploit Vulnerability (Sneak Attack) against a creature if you are within 5 feet of it, no other creatures are within 5 feet of you, and you don't have disadvantage on the roll.",
+        "As an action, you can flash your cyber-blades or ocular optics in a blinding display. Each creature within 15 feet that can see you must succeed on a Wisdom saving throw or suffer Threat-Lock (Frightened) or Optic Glitch (Blinded) until the end of your next turn.",
+        "When a creature misses you with a melee attack, you can use your reaction to make an immediate melee weapon attack against that creature.",
+        "Once per turn, if you miss with an attack roll, you can instantly execute a follow-up strike with advantage."
+      ],
+      "features": [
+        {
+          "name": "Focus",
+          "description": "High-speed 1v1 melee combat with monomolecular katanas, flashing cyber-blades, and intimidating street presence.*"
+        }
+      ]
+    }
+  ]
+}

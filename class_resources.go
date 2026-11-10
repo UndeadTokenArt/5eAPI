@@ -8,7 +8,7 @@ import (
 	"sync"
 )
 
-// ClassResource is a limited-use class feature (such as Channel Divinity) tracked on the sheet.
+// ClassResource is a limited-use class feature (such as the Bio-Nanite Injector) tracked on the sheet.
 type ClassResource struct {
 	ID          string `json:"id"`
 	Name        string `json:"name"`

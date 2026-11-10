@@ -8,15 +8,20 @@
   <link rel="stylesheet" href="/static/css/characters.css">
   <link rel="stylesheet" href="/static/css/account.css">
   <link rel="stylesheet" href="/static/css/areas.css">
+  <link rel="stylesheet" href="/static/css/navigation.css">
+  <script src="/static/js/navigation.js" defer></script>
 </head>
 <body class="area-character">
-  <nav class="sheet-nav" aria-label="Main navigation">
+  <nav class="sheet-nav site-nav" aria-label="Main navigation">
     <a class="sheet-brand" href="/">D&amp;D 5e SRD</a>
+    <button class="nav-toggle" type="button" aria-controls="main-nav-links" aria-expanded="false" aria-label="Open navigation menu"><span aria-hidden="true">&#9776;</span></button>
+    <div class="nav-links" id="main-nav-links">
     <span class="area-tag">Character sheet</span>
     <a href="/neotokyo">NeoTokyo</a>
     <a href="/characters" aria-current="page">Characters</a>
     <a href="/campaigns">Campaigns</a>
     {{template "account_nav" .}}
+    </div>
   </nav>
   <main class="sheet-page">
     <header class="page-head">
@@ -24,6 +29,7 @@
       <div class="account">{{if .Guest}}{{.User}}{{else}}Signed in as {{.User}}{{end}}</div>
     </header>
     {{if .Guest}}<div class="guest-notice" role="status">Temporary guest access is enabled. Sheets are saved in this browser and may be lost if its guest cookie is cleared. This mode is not a substitute for Authelia.</div>{{end}}
+    <div id="progression-warning" class="guest-notice" role="alert" hidden>Multiclass or separate pact-slot data cannot yet be edited in this version of the sheet. Saving is disabled to protect the character's data.</div>
     <div class="character-toolbar">
       <div class="field" id="character-picker">
         <label for="saved-characters">Saved characters</label>
@@ -38,9 +44,16 @@
     </div>
     <div id="save-status" class="status" role="status" aria-live="polite"></div>
 
+    <div class="sheet-tabs" role="tablist" aria-label="Character sheet sections">
+      <button type="button" role="tab" id="tab-btn-character" aria-controls="tab-character" data-tab="character">Character</button>
+      <button type="button" role="tab" id="tab-btn-combat" aria-controls="tab-combat" data-tab="combat">Combat</button>
+      <button type="button" role="tab" id="tab-btn-inventory" aria-controls="tab-inventory" data-tab="inventory">Inventory</button>
+    </div>
+
     <form id="character-form" autocomplete="off">
+      <div class="tab-panel" role="tabpanel" id="tab-character" aria-labelledby="tab-btn-character">
       <section class="sheet-section" aria-labelledby="identity-title">
-        <div class="section-head"><h2 id="identity-title">Identity</h2></div>
+        <div class="section-head"><h2 id="identity-title">Identity</h2><button id="level-up-open" type="button">Level up</button></div>
         <div class="identity-grid">
           <div class="field name-field"><label for="name">Character name</label><input id="name" name="name" maxlength="100" required></div>
           <div class="field"><label for="species">Species</label><select id="species" name="species"><option value=""></option></select></div>
@@ -48,21 +61,8 @@
           <div class="field"><label for="subclass">Subclass</label><select id="subclass" name="subclass" disabled><option value=""></option></select></div>
           <div class="field"><label for="background">Background</label><select id="background" name="background"><option value=""></option></select></div>
           <div class="field"><label for="level">Level</label><input id="level" name="level" type="number" min="1" max="20" value="1" required></div>
-          <div class="field"><label for="yen">Yen (¥)</label><input id="yen" name="yen" type="number" min="0" max="999999999" value="0"></div>
           <div class="field"><label for="experience-points">Experience points</label><input id="experience-points" name="experience_points" type="number" min="0" max="10000000" value="0"></div>
           <div class="field"><label for="alignment">Alignment</label><input id="alignment" name="alignment" maxlength="80"></div>
-        </div>
-      </section>
-
-      <section class="sheet-section" id="rolls-section" aria-labelledby="rolls-title">
-        <div class="section-head"><h2 id="rolls-title">Dice rolls</h2></div>
-        <div class="roll-bar">
-          <div class="field"><label for="roll-mode">Roll with</label><select id="roll-mode"><option value="normal">Normal</option><option value="advantage">Advantage</option><option value="disadvantage">Disadvantage</option></select></div>
-          <div id="roll-result" class="roll-result">Use the Check, Save, Attack and Damage buttons to roll.</div>
-          <div class="history-wrap">
-            <button type="button" id="roll-history-toggle" aria-expanded="false" aria-controls="roll-log">Roll history</button>
-            <ol id="roll-log" class="roll-log" aria-label="Recent rolls" hidden></ol>
-          </div>
         </div>
       </section>
 
@@ -79,6 +79,18 @@
         <div class="skill-grid" id="skill-grid"><h3>Skill checks</h3></div>
       </section>
 
+      <section class="sheet-section reference-section" id="reference-section" hidden>
+        <div class="section-head"><h2>Class &amp; Origin Notes</h2></div>
+        <p class="reference-hint">Rules summary from your chosen species, class, subclass and background. Read-only; it updates when you change them.</p>
+        <div id="reference-list"></div>
+      </section>
+      <section class="sheet-section" data-list-section="feats">
+        <div class="section-head"><h2>Feats</h2><button type="button" data-add-entry="feats">Add feat</button></div>
+        <div class="entry-list" data-entry-list="feats"></div>
+      </section>
+      </div>
+
+      <div class="tab-panel" role="tabpanel" id="tab-combat" aria-labelledby="tab-btn-combat" hidden>
       <section class="sheet-section" aria-labelledby="combat-title">
         <div class="section-head"><h2 id="combat-title">Combat</h2></div>
         <div class="combat-grid">
@@ -113,7 +125,7 @@
             <button type="button" id="short-rest" hidden>Short rest (pact slots)</button>
             <button type="button" id="reset-slots">Set slots from class level</button>
             <button type="button" id="spell-attack">Spell attack</button>
-            <label><input type="checkbox" id="spell-filter"> Only suggest spells on my class list that I can cast</label>
+            <label><input type="checkbox" id="spell-filter" checked> Only suggest spells on my class list that I can cast</label>
           </div>
         </div>
         <div class="entry-list" data-entry-list="spells"></div>
@@ -127,13 +139,28 @@
           <button type="button" id="resource-long-rest">Long rest</button>
         </div>
       </section>
-      <section class="sheet-section" data-list-section="feats">
-        <div class="section-head"><h2>Feats</h2><button type="button" data-add-entry="feats">Add feat</button></div>
-        <div class="entry-list" data-entry-list="feats"></div>
+      <section class="sheet-section" id="rolls-section" aria-labelledby="rolls-title">
+        <div class="section-head"><h2 id="rolls-title">Dice rolls</h2></div>
+        <div class="roll-bar">
+          <div class="field"><label for="roll-mode">Roll with</label><select id="roll-mode"><option value="normal">Normal</option><option value="advantage">Advantage</option><option value="disadvantage">Disadvantage</option></select></div>
+          <div id="roll-result" class="roll-result">Use the Check, Save, Attack and Damage buttons to roll.</div>
+          <div class="history-wrap">
+            <button type="button" id="roll-history-toggle" aria-expanded="false" aria-controls="roll-log">Roll history</button>
+            <ol id="roll-log" class="roll-log" aria-label="Recent rolls" hidden></ol>
+          </div>
+        </div>
       </section>
+      </div>
+
+      <div class="tab-panel" role="tabpanel" id="tab-inventory" aria-labelledby="tab-btn-inventory" hidden>
       <section class="sheet-section" data-list-section="equipment">
         <div class="section-head"><h2>Inventory</h2><button type="button" data-add-entry="equipment">Add item</button></div>
+        <div class="field yen-field"><label for="yen">Yen (¥)</label><input id="yen" name="yen" type="number" min="0" max="999999999" value="0"></div>
         <div class="entry-list" data-entry-list="equipment"></div>
+      </section>
+      <section class="sheet-section">
+        <div class="section-head"><h2>Notes</h2></div>
+        <div class="field notes-field"><label for="notes">Notes</label><textarea id="notes" name="notes" maxlength="20000"></textarea></div>
       </section>
       <section id="inventory-trade" class="sheet-section inventory-trade" hidden>
         <div class="section-head"><h2>Trade from Inventory</h2></div>
@@ -150,15 +177,7 @@
           <button type="button" class="primary" id="trade-send">Send trade offer</button>
         </div>
       </section>
-      <section class="sheet-section reference-section" id="reference-section" hidden>
-        <div class="section-head"><h2>Class &amp; Origin Notes</h2></div>
-        <p class="reference-hint">Rules summary from your chosen species, class, subclass and background. Read-only; it updates when you change them.</p>
-        <div id="reference-list"></div>
-      </section>
-      <section class="sheet-section">
-        <div class="section-head"><h2>Notes</h2></div>
-        <div class="field notes-field"><label for="notes">Notes</label><textarea id="notes" name="notes" maxlength="20000"></textarea></div>
-      </section>
+      </div>
     </form>
   </main>
   <div id="roll-toast" class="roll-toast" role="status" aria-live="polite" hidden></div>
@@ -168,6 +187,16 @@
     <ul id="delivery-items"></ul>
     <p id="delivery-yen"></p>
     <div class="dialog-actions"><button type="button" id="delivery-deny">Deny</button><button type="button" class="primary" id="delivery-accept">Accept</button></div>
+  </dialog>
+  <dialog id="level-up-dialog" class="delivery-dialog" aria-labelledby="level-up-title">
+    <h2 id="level-up-title">Level up</h2>
+    <p class="reference-hint">Preview the next level. Class features and choices may be incomplete; consult the guide and record your decisions below.</p>
+    <div class="field"><label for="level-up-class">Class to advance</label><select id="level-up-class"></select></div>
+    <div id="level-up-summary" aria-live="polite"></div>
+    <p id="level-up-eligibility" role="status"></p>
+    <p id="level-up-multiclass-spells" role="status"></p>
+    <p id="level-up-error" class="status error" role="alert"></p>
+    <div class="dialog-actions"><button type="button" id="level-up-cancel">Close</button><button type="button" id="level-up-apply" class="primary" disabled>Apply level</button></div>
   </dialog>
   <footer>Character sheets are private to your authenticated account.</footer>
   <script src="/static/js/swipe-nav.js"></script>
@@ -187,6 +216,9 @@
     var draftKey = 'dnd5e-character-draft:' + {{.User}};
     var restoring = true;
     var draftTimer = null;
+    var unsupportedProgression = false;
+    var storedClasses = [];
+    var storedPactSlots = null;
 
     function setSelectValue(select, value) {
       if (value && !Array.prototype.some.call(select.options, function (o) { return o.value === value; })) {
@@ -302,7 +334,7 @@
 
     function buildCollapsibleSections() {
       var saved = readCollapsed();
-      var sections = Array.prototype.slice.call(document.querySelectorAll('#character-form > .sheet-section'));
+      var sections = Array.prototype.slice.call(document.querySelectorAll('#character-form .sheet-section'));
       sections.forEach(function (section, index) {
         var head = section.querySelector('.section-head');
         var heading = head.querySelector('h2');
@@ -322,18 +354,97 @@
         head.insertBefore(toggle, head.firstChild);
         setCollapsed(section, Boolean(saved[key]), false);
       });
-      var tools = document.createElement('div');
-      tools.className = 'collapse-tools';
-      [['Collapse all', true], ['Expand all', false]].forEach(function (pair) {
-        var button = document.createElement('button');
-        button.type = 'button';
-        button.textContent = pair[0];
-        button.addEventListener('click', function () {
-          sections.forEach(function (section) { setCollapsed(section, pair[1], true); });
+      document.querySelectorAll('#character-form .tab-panel').forEach(function (panel) {
+        var panelSections = Array.prototype.slice.call(panel.querySelectorAll('.sheet-section'));
+        var tools = document.createElement('div');
+        tools.className = 'collapse-tools';
+        [['Collapse all', true], ['Expand all', false]].forEach(function (pair) {
+          var button = document.createElement('button');
+          button.type = 'button';
+          button.textContent = pair[0];
+          button.addEventListener('click', function () {
+            panelSections.forEach(function (section) { setCollapsed(section, pair[1], true); });
+          });
+          tools.appendChild(button);
         });
-        tools.appendChild(button);
+        panel.insertBefore(tools, panel.firstChild);
       });
-      form.insertBefore(tools, form.firstChild);
+    }
+
+    var tabKey = 'dnd5e-character-tab:' + {{.User}};
+
+    function showTab(name) {
+      document.querySelectorAll('.sheet-tabs [data-tab]').forEach(function (button) {
+        var active = button.dataset.tab === name;
+        button.setAttribute('aria-selected', String(active));
+        button.tabIndex = active ? 0 : -1;
+      });
+      document.querySelectorAll('#character-form .tab-panel').forEach(function (panel) {
+        panel.hidden = panel.id !== 'tab-' + name;
+      });
+      try { localStorage.setItem(tabKey, name); } catch (error) { /* storage unavailable */ }
+    }
+
+    function buildTabs() {
+      var buttons = Array.prototype.slice.call(document.querySelectorAll('.sheet-tabs [data-tab]'));
+      buttons.forEach(function (button, index) {
+        button.addEventListener('click', function () { showTab(button.dataset.tab); });
+        button.addEventListener('keydown', function (event) {
+          var step = event.key === 'ArrowRight' ? 1 : event.key === 'ArrowLeft' ? -1 : 0;
+          if (!step) return;
+          var next = buttons[(index + step + buttons.length) % buttons.length];
+          next.focus();
+          showTab(next.dataset.tab);
+        });
+      });
+      var saved = '';
+      try { saved = localStorage.getItem(tabKey) || ''; } catch (error) { /* storage unavailable */ }
+      showTab(buttons.some(function (b) { return b.dataset.tab === saved; }) ? saved : 'character');
+    }
+
+    // Touch devices cannot hover, so a tap opens this popover; only its link icon leaves for the guide.
+    var tipPopover = null;
+    var touchOnly = window.matchMedia('(hover: none)');
+
+    function closeTipPopover() {
+      if (tipPopover) tipPopover.hidden = true;
+    }
+
+    function openTipPopover(anchor, name, tip, href) {
+      if (!tipPopover) {
+        tipPopover = document.createElement('div');
+        tipPopover.className = 'tip-popover';
+        tipPopover.setAttribute('role', 'dialog');
+        document.body.appendChild(tipPopover);
+        document.addEventListener('click', function (event) {
+          if (!tipPopover.hidden && !tipPopover.contains(event.target) && !event.target.closest('.has-tip')) closeTipPopover();
+        });
+        document.addEventListener('keydown', function (event) { if (event.key === 'Escape') closeTipPopover(); });
+      }
+      tipPopover.replaceChildren();
+      tipPopover.setAttribute('aria-label', name);
+      if (href) {
+        var open = document.createElement('a');
+        open.className = 'tip-open';
+        open.href = href;
+        open.target = '_blank';
+        open.rel = 'noopener';
+        open.textContent = '\uD83D\uDD17';
+        open.setAttribute('aria-label', 'Open ' + name + ' in the starter guide');
+        tipPopover.appendChild(open);
+      }
+      var heading = document.createElement('strong');
+      heading.textContent = name;
+      var body = document.createElement('div');
+      body.className = 'tip-body';
+      body.textContent = tip;
+      tipPopover.append(heading, body);
+      tipPopover.hidden = false;
+      var rect = anchor.getBoundingClientRect();
+      var width = Math.min(340, window.innerWidth - 16);
+      tipPopover.style.width = width + 'px';
+      tipPopover.style.left = Math.max(8, Math.min(rect.left, window.innerWidth - width - 8)) + window.scrollX + 'px';
+      tipPopover.style.top = rect.bottom + window.scrollY + 6 + 'px';
     }
 
     function rollD20(label, bonus) {
@@ -369,6 +480,7 @@
     }
 
     function activeSpellcasting() {
+      if (unsupportedProgression) return null;
       var sub = (options.subclasses || []).filter(function (item) { return item.class === classSelect.value && item.name === subclassSelect.value; })[0];
       var cls = (options.classes || []).filter(function (item) { return item.name === classSelect.value; })[0];
       var sc = (sub && sub.spellcasting) || (cls && cls.spellcasting);
@@ -404,6 +516,7 @@
     var resourceCurrent = {};
 
     function activeResources() {
+      if (unsupportedProgression) return [];
       var cls = (options.classes || []).filter(function (item) { return item.name === classSelect.value; })[0];
       var level = Math.min(20, Math.max(1, Number(levelInput.value) || 1));
       return ((cls && cls.resources) || []).map(function (res) {
@@ -418,7 +531,7 @@
       var info = document.getElementById('resource-info');
       var cls = (options.classes || []).filter(function (item) { return item.name === classSelect.value; })[0];
       var hasAny = cls && cls.resources && cls.resources.length;
-      info.textContent = items.length ? '' : (hasAny ? 'Your class gains tracked features at a higher level.' : 'Tracked class features (such as Channel Divinity) appear here when your class has them.');
+      info.textContent = items.length ? '' : (hasAny ? 'Your class gains tracked features at a higher level.' : 'Tracked class features (such as the Bio-Nanite Injector) appear here when your class has them.');
       document.getElementById('resource-short-rest').hidden = !items.length;
       document.getElementById('resource-long-rest').hidden = !items.length;
       items.forEach(function (item) {
@@ -430,27 +543,37 @@
         box.dataset.resource = id;
         var title = document.createElement('strong');
         title.textContent = item.res.name;
-        var values = document.createElement('div');
-        values.className = 'resource-values';
-        var current = document.createElement('input');
-        current.type = 'number'; current.min = 0; current.max = item.max; current.value = resourceCurrent[id];
-        current.setAttribute('aria-label', item.res.name + ' uses remaining');
-        current.addEventListener('input', function () {
-          resourceCurrent[id] = Math.min(item.max, Math.max(0, Math.floor(Number(current.value) || 0)));
+        var dots = document.createElement('div');
+        dots.className = 'slot-dots';
+        function drawDots() {
+          dots.replaceChildren();
+          for (var i = 1; i <= item.max; i++) {
+            var filled = i <= resourceCurrent[id];
+            var dot = document.createElement('button');
+            dot.type = 'button';
+            dot.className = 'slot-dot' + (filled ? ' is-filled' : '');
+            dot.dataset.dot = i;
+            dot.setAttribute('aria-pressed', String(filled));
+            dot.setAttribute('aria-label', item.res.name + ' ' + i + ' of ' + item.max + (filled ? ', available' : ', used'));
+            dots.appendChild(dot);
+          }
+        }
+        dots.addEventListener('click', function (event) {
+          var dot = event.target.closest('[data-dot]');
+          if (!dot) return;
+          var index = Number(dot.dataset.dot);
+          resourceCurrent[id] = index <= resourceCurrent[id] ? index - 1 : index;
+          drawDots();
+          count.textContent = resourceCurrent[id] + ' / ' + item.max;
           scheduleDraft();
         });
-        var use = document.createElement('button');
-        use.type = 'button';
-        use.textContent = 'Use';
-        use.addEventListener('click', function () {
-          resourceCurrent[id] = Math.max(0, resourceCurrent[id] - 1);
-          current.value = resourceCurrent[id];
-          scheduleDraft();
-        });
-        values.append(current, '/ ' + item.max, use);
+        var count = document.createElement('span');
+        count.className = 'resource-count';
+        count.textContent = resourceCurrent[id] + ' / ' + item.max;
+        drawDots();
         var note = document.createElement('p');
         note.textContent = (item.res.description || '') + ' Recharges on a ' + (item.res.recharge === 'long' ? 'long rest.' : 'short or long rest.');
-        box.append(title, values, note);
+        box.append(title, count, dots, note);
         list.appendChild(box);
       });
     }
@@ -475,10 +598,12 @@
       var parts = [titleCase(active.sc.ability) + ' casting', 'Spell save DC ' + (8 + profBonus() + mod), 'Spell attack ' + signed(profBonus() + mod)];
       if (active.row.cantrips) parts.push('Cantrips known ' + active.row.cantrips);
       if (active.row.known) parts.push('Spells known ' + active.row.known);
+      if (active.row.prepared) parts.push('Prepared spells ' + active.row.prepared);
       if (active.sc.prepared_mode === 'full_level') parts.push('Prepare ' + Math.max(1, mod + active.level));
       if (active.sc.prepared_mode === 'half_level') parts.push('Prepare ' + Math.max(1, mod + Math.floor(active.level / 2)));
       if (active.row.pact_slots) parts.push('Pact slots ' + active.row.pact_slots + ' at level ' + active.row.pact_level);
       parts.push(active.row.max_spell_level ? 'Highest spell level ' + active.row.max_spell_level : 'No spell slots yet at this level');
+      if (classSelect.value === 'Awakened Mutant') parts.push('2024 pilot: review existing spells and subclass manually');
       info.textContent = parts.join(' \u00b7 ');
     }
 
@@ -659,9 +784,10 @@
       var items = options[listName] || [];
       if (listName === 'spells' && spellFilter.checked) {
         var active = activeSpellcasting();
-        if (active && (active.row.max_spell_level || active.row.cantrips)) {
+        if (active) {
+          var maxLevel = active.row.max_spell_level || 0;
           items = items.filter(function (item) {
-            return (item.spell_classes || []).indexOf(active.sc.spell_list_from) >= 0 && item.spell_level != null && item.spell_level <= active.row.max_spell_level;
+            return (item.spell_classes || []).indexOf(active.sc.spell_list_from) >= 0 && item.spell_level != null && item.spell_level <= maxLevel;
           });
         }
       }
@@ -795,9 +921,9 @@
     function writeDraft() {
       window.clearTimeout(draftTimer);
       draftTimer = null;
-      if (restoring) return;
+      if (restoring || unsupportedProgression) return;
       try {
-        localStorage.setItem(draftKey, JSON.stringify({ id: activeID, character: serializeForm(), savedAt: Date.now() }));
+        localStorage.setItem(draftKey, JSON.stringify({ id: activeID, character: serializeForm(), base: serverInventory, savedAt: Date.now() }));
       } catch (error) { /* storage unavailable or full; the saved sheet is unaffected */ }
     }
 
@@ -843,6 +969,8 @@
       if (!draft) return false;
       var known = draft.id && Array.prototype.some.call(picker.options, function (option) { return option.value === draft.id; });
       fillForm(Object.assign({}, draft.character, { id: known ? draft.id : '' }));
+      serverInventory = known && draft.base ? draft.base : null;
+      if (serverInventory) refreshIncomingDelivery();
       return true;
     }
 
@@ -853,10 +981,172 @@
 
     function setBusy(value) {
       busy = value;
-      saveButton.disabled = value;
+      saveButton.disabled = value || unsupportedProgression;
       picker.disabled = value;
       document.querySelectorAll('[data-add-entry], .remove-entry').forEach(function (button) { button.disabled = value; });
     }
+
+    var levelDialog = document.getElementById('level-up-dialog');
+    var levelClass = document.getElementById('level-up-class');
+    var levelError = document.getElementById('level-up-error');
+    var levelSummary = document.getElementById('level-up-summary');
+    var progressionPreviews = new Map();
+    var progressionLoads = new Map();
+    var progressionErrors = new Map();
+    var eligibilitySequence = 0;
+
+    function previewEligibility(name) {
+      var seq = ++eligibilitySequence;
+      var output = document.getElementById('level-up-eligibility');
+      output.textContent = 'Checking 2024 multiclass prerequisites…';
+      var scores = {};
+      ABILITIES.forEach(function (ability) { scores[ability] = Number(scoreInput(ability).value); });
+      var classes = [{ name: classSelect.value, subclass: subclassSelect.value, level: Number(levelInput.value) }];
+      fetch('/api/multiclass-eligibility', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          classes: classes,
+          new_class: name,
+          ability_scores: scores
+        })
+      }).then(function (response) {
+        if (!response.ok) throw new Error('Prerequisite check failed. Verify the class and ability scores, then try again.');
+        return response.json();
+      }).then(function (result) {
+        if (seq !== eligibilitySequence) return;
+        var requirements = result.requirements.map(function (entry) {
+          var alternatives = entry.any_of.map(function (alternative) {
+            return alternative.all_of.map(function (item) { return titleCase(item.ability) + ' ' + item.minimum; }).join(' and ');
+          }).join(' or ');
+          return entry.class + ': ' + alternatives;
+        }).join('; ');
+        output.textContent = (result.eligible ? 'Ability prerequisites met.' :
+          'Ability prerequisites not met for: ' + result.unqualified_classes.join(', ') + '.') + ' Required: ' + requirements + '.';
+      }).catch(function (error) {
+        if (seq === eligibilitySequence) output.textContent = error.message;
+      });
+      var spellOutput = document.getElementById('level-up-multiclass-spells');
+      spellOutput.textContent = 'Calculating 2024 spell slots…';
+      fetch('/api/character-spellcasting', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ classes: classes.concat([{ name: name, level: 1 }]) })
+      }).then(function (response) {
+        return response.json().then(function (data) {
+          if (!response.ok) throw new Error(data.error || 'Could not calculate 2024 spell slots.');
+          return data;
+        });
+      }).then(function (result) {
+        if (seq !== eligibilitySequence) return;
+        var slots = result.slots.map(function (count, index) {
+          return count ? 'level ' + (index + 1) + ': ' + count : '';
+        }).filter(Boolean);
+        var pact = result.pact ? '; pact: ' + result.pact.max + ' level ' + result.pact.level : '';
+        var spellClasses = (result.classes || []).map(function (item) {
+          return item.class + ': ' + item.row.cantrips + ' cantrips, ' + (item.row.prepared || 0) +
+            ' prepared, highest class spell level ' + item.row.max_spell_level;
+        });
+        spellOutput.textContent = '2024 preview — shared slots: ' + (slots.join(', ') || 'none') + pact + '.' +
+          (spellClasses.length ? ' ' + spellClasses.join('; ') + '.' : '') +
+          ' Slot use is not changed by this preview.';
+      }).catch(function (error) {
+        if (seq === eligibilitySequence) spellOutput.textContent = 'Spellcasting preview unavailable: ' + error.message;
+      });
+    }
+
+    function loadProgressionPreview(name) {
+      if (progressionLoads.has(name) || progressionPreviews.has(name) || progressionErrors.has(name)) return;
+      var loading = fetch('/api/class-progression-preview?class=' + encodeURIComponent(name), { cache: 'no-store' }).then(function (response) {
+        return response.json().then(function (data) {
+          if (!response.ok) throw new Error(data.error || 'Could not load class progression.');
+          return data;
+        });
+      }).then(function (data) {
+        progressionPreviews.set(name, data);
+      }).catch(function (error) {
+        progressionErrors.set(name, error.message);
+      }).finally(function () {
+        progressionLoads.delete(name);
+        if (levelDialog.open && levelClass.value === name) previewLevel();
+      });
+      progressionLoads.set(name, loading);
+    }
+
+    function previewLevel() {
+      var name = levelClass.value;
+      var choice = (options.classes || []).find(function (item) { return item.name === name; });
+      var level = Number(levelInput.value);
+      var current = name === classSelect.value && !unsupportedProgression;
+      eligibilitySequence++;
+      document.getElementById('level-up-eligibility').textContent = '';
+      document.getElementById('level-up-multiclass-spells').textContent = '';
+      levelError.textContent = '';
+      levelSummary.replaceChildren();
+      var statusLine = document.createElement('p');
+      statusLine.textContent = current ? name + ' level ' + level + ' → ' + (level + 1) : name + ': new class, level 1.';
+      levelSummary.appendChild(statusLine);
+      levelError.textContent = 'Preview only: 2024 progression and choice effects are not fully authored or implemented. Applying levels is disabled until they can be handled safely.';
+      if (!current && !unsupportedProgression && name !== classSelect.value) previewEligibility(name);
+      if (!choice) {
+        levelError.textContent = 'Class information is unavailable. Select a class from the guide.';
+        return;
+      }
+      var next = current ? level + 1 : 1;
+      var progression = progressionPreviews.get(name);
+      if (!progression) {
+        var loadingInfo = document.createElement('p');
+        loadingInfo.textContent = progressionErrors.get(name) || 'Loading 2024 class progression…';
+        levelSummary.appendChild(loadingInfo);
+        loadProgressionPreview(name);
+        return;
+      }
+      var preview = progression.levels[next - 1];
+      if (!preview) {
+        levelError.textContent = 'No progression is available for this level.';
+        return;
+      }
+      var warning = document.createElement('p');
+      warning.textContent = 'Draft 2024 worksheet (' + preview.status + '); features and choices may be incomplete. Subclass features are not included. Hit die: d' + progression.hit_die + '.';
+      levelSummary.appendChild(warning);
+      preview.features.forEach(function (feature) {
+          var details = document.createElement('details');
+          var heading = document.createElement('summary');
+          heading.textContent = feature.name;
+          var description = document.createElement('p');
+          description.style.whiteSpace = 'pre-line';
+          description.textContent = feature.description;
+          details.append(heading, description);
+          (feature.choices || []).forEach(function (choice) {
+            var prompt = document.createElement('p');
+            var allowed = Array.isArray(choice.allowed_options) ? choice.allowed_options.join(', ') : choice.allowed_options;
+            prompt.textContent = choice.name + (choice.count != null ? ' (' + choice.count + ')' : '') + ': ' +
+              (allowed ? 'Options: ' + allowed + '. ' : '') + choice.eligibility_rule + ' ' + choice.selection_effect;
+            details.appendChild(prompt);
+          });
+        levelSummary.appendChild(details);
+      });
+      if (preview.notes) {
+        var notes = document.createElement('p');
+        notes.textContent = preview.notes;
+        levelSummary.appendChild(notes);
+      }
+    }
+
+    document.getElementById('level-up-open').addEventListener('click', function () {
+      if (!classSelect.value || !Number.isInteger(Number(levelInput.value)) || Number(levelInput.value) < 1 || Number(levelInput.value) >= 20) {
+        setStatus('Choose a class and a level between 1 and 19 before leveling up.', true);
+        return;
+      }
+      levelClass.replaceChildren();
+      (options.classes || []).forEach(function (item) { levelClass.add(new Option(item.name, item.name)); });
+      setSelectValue(levelClass, classSelect.value);
+      progressionErrors.clear();
+      previewLevel();
+      levelDialog.showModal();
+    });
+    levelClass.addEventListener('change', previewLevel);
+    document.getElementById('level-up-cancel').addEventListener('click', function () { levelDialog.close(); });
 
     function updateModifiers() {
       document.querySelectorAll('[data-score]').forEach(function (input) {
@@ -873,7 +1163,7 @@
       SKILLS.forEach(function (skill) {
         document.querySelector('[data-skill-roll="' + skill[0] + '"]').textContent = 'Roll ' + signed(skillBonus(skill));
       });
-      syncSlots();
+      if (!unsupportedProgression) syncSlots();
       updateSpellInfo();
       renderResources();
       document.querySelectorAll('.entry-row').forEach(function (row) { if (row.refreshRolls) row.refreshRolls(); });
@@ -883,6 +1173,7 @@
       var container = document.querySelector('[data-entry-list="' + listName + '"]');
       var row = document.createElement('div');
       row.className = 'entry-row';
+      row.spellClass = entry && entry.spell_class || '';
       var nameField = document.createElement('div');
 
       var detailField = document.createElement('div');
@@ -945,6 +1236,11 @@
           nameField.dataset.tip = option.tip;
           link.setAttribute('aria-label', option.name + '. ' + option.tip.replace(/\n/g, '. '));
           if (!option.link) link.tabIndex = 0;
+          link.addEventListener('click', function (event) {
+            if (!touchOnly.matches) return;
+            event.preventDefault();
+            openTipPopover(link, option.name, option.tip, option.link);
+          });
         }
         nameField.append(label, link);
         row.getName = function () { return option.name; };
@@ -1027,11 +1323,17 @@
       document.querySelectorAll('[data-save-toggle], [data-skill-toggle]').forEach(function (button) { button.setAttribute('aria-pressed', 'false'); });
       for (var level = 1; level <= 9; level++) { var inputs = slotInputs(level); inputs.current.value = 0; inputs.max.value = 0; autoMax[level] = 0; }
       resourceCurrent = {};
+      storedClasses = [];
+      storedPactSlots = null;
+      unsupportedProgression = false;
+      document.getElementById('progression-warning').hidden = true;
+      saveButton.disabled = busy;
       ['strength', 'dexterity', 'constitution', 'intelligence', 'wisdom', 'charisma'].forEach(function (ability) {
         document.querySelector('[data-score="' + ability + '"]').value = 10;
       });
       lists.forEach(function (listName) { document.querySelector('[data-entry-list="' + listName + '"]').replaceChildren(); });
       activeID = '';
+      serverInventory = null;
       deleteButton.hidden = true;
       picker.value = '';
       populateSubclasses('', '');
@@ -1041,6 +1343,11 @@
 
     function fillForm(character) {
       clearForm();
+      storedClasses = character.classes || [];
+      storedPactSlots = character.pact_slots || null;
+      unsupportedProgression = storedClasses.length > 1 || storedPactSlots !== null;
+      document.getElementById('progression-warning').hidden = !unsupportedProgression;
+      saveButton.disabled = busy || unsupportedProgression;
       activeID = character.id || '';
       ['name', 'species', 'class', 'background', 'alignment', 'hit_dice', 'notes', 'portrait'].forEach(function (key) {
         var input = form.elements.namedItem(key);
@@ -1080,6 +1387,7 @@
       }
       deleteButton.hidden = !activeID;
       picker.value = activeID;
+      serverInventory = character.updated_at ? inventoryStamp(character) : null;
       updateModifiers();
       scheduleDraft();
       refreshTradeUI();
@@ -1098,12 +1406,19 @@
         cyber_strain: number('cyber_strain'), portrait: value('portrait'),
         conditions: value('conditions').split(',').map(function (item) { return item.trim(); }).filter(Boolean)
       };
+      if (unsupportedProgression) {
+        character.classes = storedClasses;
+        if (storedPactSlots) character.pact_slots = storedPactSlots;
+      } else if (character.class) {
+        character.classes = [{ name: character.class, subclass: character.subclass, level: character.level }];
+      }
       ['strength', 'dexterity', 'constitution', 'intelligence', 'wisdom', 'charisma'].forEach(function (ability) {
         character.ability_scores[ability] = Number(document.querySelector('[data-score="' + ability + '"]').value) || 10;
       });
       lists.forEach(function (listName) {
         character[listName] = Array.prototype.map.call(document.querySelectorAll('[data-entry-list="' + listName + '"] .entry-row'), function (row) {
           var entry = { name: row.getName(), detail: row.querySelector('[data-entry-detail]').value.trim() };
+          if (listName === 'spells' && row.spellClass) entry.spell_class = row.spellClass;
           if (listName === 'equipment') entry.quantity = Math.max(1, Number(row.querySelector('[data-entry-quantity]').value) || 1);
           if (listName === 'weapons' && row.proficient) entry.proficient = true;
           return entry;
@@ -1235,11 +1550,29 @@
       } catch (error) { setStatus(error.message, true); }
     });
 
+    function inventoryStamp(character) {
+      return JSON.stringify([character.yen || 0, (character.equipment || []).map(function (e) { return [e.name, e.quantity]; })]);
+    }
+
+    // Trades change the saved Inventory/Yen behind an open sheet (e.g. a declined offer coming back);
+    // pull those in so the next save does not overwrite them.
+    var serverInventory = null;
+
+    async function syncInventoryFromServer() {
+      var characterID = activeID;
+      if (!characterID || serverInventory === null) return;
+      var saved = (await request('/api/characters')).find(function (character) { return character.id === characterID; });
+      if (!saved || characterID !== activeID || inventoryStamp(saved) === serverInventory) return;
+      applyInventoryUpdate(saved);
+      setStatus('Your Inventory and Yen were updated by a trade.', false);
+    }
+
     function applyInventoryUpdate(character) {
       var list = document.querySelector('[data-entry-list="equipment"]');
       list.replaceChildren();
       (character.equipment || []).forEach(function (entry) { addEntry('equipment', entry); });
       form.elements.namedItem('yen').value = character.yen || 0;
+      serverInventory = inventoryStamp(character);
       refreshTradeUI();
       scheduleDraft();
     }
@@ -1249,6 +1582,7 @@
         if (deliveryDialog.open) deliveryDialog.close();
         return;
       }
+      try { await syncInventoryFromServer(); } catch (error) { /* the delivery check below reports connection problems */ }
       var characterID = activeID;
       try {
         var deliveries = await request('/api/characters/' + encodeURIComponent(characterID) + '/deliveries');
@@ -1323,7 +1657,7 @@
     });
 
     saveButton.addEventListener('click', async function () {
-      if (!form.reportValidity() || busy) return;
+      if (!form.reportValidity() || busy || unsupportedProgression) return;
       setBusy(true);
       setStatus('Saving character...');
       try {
@@ -1384,6 +1718,7 @@
 
     buildRollUI();
     buildCollapsibleSections();
+    buildTabs();
     clearForm();
     fetch('/api/character-options', { cache: 'reload' }).then(function (r) { return r.ok ? r.json() : {}; }).catch(function () { return {}; })
       .then(function (data) {

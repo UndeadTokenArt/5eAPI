@@ -1,0 +1,763 @@
+{
+  "schema_status": "draft_authoring_template_not_supported_by_app",
+  "schema_version": 1,
+  "uid": "class-kinetic-acrobat-draft",
+  "name": "Kinetic Acrobat",
+  "original_class": "Monk",
+  "description": "Martial artists utilizing high-torque servo-limbs, sub-dermal kinetic discharge, and neural speed routines to bypass heavy armor.",
+  "hit_die": 8,
+  "multiclass_prerequisites": {
+    "description": "2024 multiclass prerequisite: meet this class primary ability requirement when adding a new class; requirements also apply to every current class.",
+    "any_of": [
+      {
+        "all_of": [
+          {
+            "ability": "dexterity",
+            "minimum": 13
+          },
+          {
+            "ability": "wisdom",
+            "minimum": 13
+          }
+        ]
+      }
+    ]
+  },
+  "starting_proficiencies": {
+    "armor": [],
+    "weapons": [
+      "Simple weapons and Martial weapons that have the Light property"
+    ],
+    "tools": [],
+    "saving_throws": [
+      "strength",
+      "dexterity"
+    ],
+    "skills": [],
+    "choices": [
+      {
+        "id": "starting-skills",
+        "name": "Choose starting skills",
+        "kind": "skill",
+        "count": 2,
+        "allowed_options": [
+          "Acrobatics",
+          "Athletics",
+          "History",
+          "Insight",
+          "Religion",
+          "Stealth"
+        ],
+        "eligibility_rule": "Choose distinct skills; verify handling of an already-proficient skill.",
+        "selection_effect": "Record proficiency in the selected skills."
+      },
+      {
+        "id": "starting-tools",
+        "name": "Choose starting tool proficiencies",
+        "kind": "tool",
+        "count": 1,
+        "allowed_options": "Choose one type of Artisan’s Tools or Musical Instrument (see “Equipment”)",
+        "eligibility_rule": "Follow the source trait's choice count and eligible tool types.",
+        "selection_effect": "Record selected tool proficiencies."
+      }
+    ]
+  },
+  "multiclass_proficiencies": {
+    "armor": [],
+    "weapons": [],
+    "tools": [],
+    "skills": [],
+    "choices": [],
+    "description": "Gain the Hit Point Die trait from the Core Monk Traits table."
+  },
+  "starting_equipment": {
+    "description": "Choose A or B: (A) Spear, 5 Daggers, Artisan’s Tools or Musical Instrument chosen for the tool proficiency above, Explorer’s Pack, and 11 GP; or (B) 50 GP Starting equipment is not granted on multiclass entry.",
+    "grants": [],
+    "choices": [
+      {
+        "id": "starting-equipment",
+        "name": "Choose starting equipment",
+        "kind": "equipment_bundle",
+        "count": 1,
+        "allowed_options": "Choose A or B: (A) Spear, 5 Daggers, Artisan’s Tools or Musical Instrument chosen for the tool proficiency above, Explorer’s Pack, and 11 GP; or (B) 50 GP",
+        "eligibility_rule": "Choose one listed bundle when starting as this class.",
+        "selection_effect": "Record the chosen items and currency."
+      }
+    ]
+  },
+  "spellcasting": {
+    "kind": "none",
+    "ability": null,
+    "starts_at_class_level": null,
+    "spell_list_id": null,
+    "casting_mode": "none",
+    "preparation_rule": null,
+    "ritual_casting_rule": null,
+    "focus_rule": null,
+    "multiclass_slot_rule": "No base-class spellcasting slots.",
+    "notes": "Null casting fields are not applicable; subclass spellcasting is deferred."
+  },
+  "resources": [
+    {
+      "id": "resource-monk-s-focus",
+      "name": "Neural Flow / Qi Current",
+      "description": "See the Monk’s Focus feature for costs, use, and recovery. Your focus and martial training allow you to harness a well of extraordinary energy within yourself. This energy is represented by Focus Points. Your Monk level determines the number of points you have, as shown in the Focus Points column of the Monk Features table.\n\nYou can expend these points to enhance or fuel certain Monk features. You start knowing three such features: Flurry of Blows, Patient Defense, and Step of the Wind, each of which is detailed below.\n\nWhen you expend a Focus Point, it is unavailable until you finish a Short or Long Rest, at the end of which you regain all your expended points.\n\nSome features that use Focus Points require your target to make a saving throw. The save DC equals 8 plus your Wisdom modifier and Proficiency Bonus.\n\nFlurry of Blows. You can expend 1 Focus Point to make two Unarmed Strikes as a Bonus Action.\n\nPatient Defense. You can take the Disengage action as a Bonus Action. Alternatively, you can expend 1 Focus Point to take both the Disengage and the Dodge actions as a Bonus Action.\n\nStep of the Wind. You can take the Dash action as a Bonus Action. Alternatively, you can expend 1 Focus Point to take both the Disengage and Dash actions as a Bonus Action, and your jump distance is doubled for the turn.",
+      "recharge": "other",
+      "maximum_rule": "See the feature and level table; resolve structured maximum and recovery rules before implementation."
+    },
+    {
+      "id": "resource-uncanny-metabolism",
+      "name": "Uncanny Metabolism",
+      "description": "See the Uncanny Metabolism feature for costs, use, and recovery. When you roll Initiative, you can regain all expended Focus Points. When you do so, roll your Martial Arts die, and regain a number of Hit Points equal to your Monk level plus the number rolled.\n\nOnce you use this feature, you can’t use it again until you finish a Long Rest.",
+      "recharge": "other",
+      "maximum_rule": "See the feature and level table; resolve structured maximum and recovery rules before implementation."
+    }
+  ],
+  "levels": [
+    {
+      "level": 1,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "martial-arts-1",
+          "name": "Street Kinetic Combat (Martial Arts)",
+          "description": "Your practice of martial arts gives you mastery of combat styles that use your Unarmed Strike and Monk weapons, which are the following:\n\nSimple Melee weapons\nMartial Melee weapons that have the Light property\nYou gain the following benefits while you are unarmed or wielding only Monk weapons and you aren’t wearing armor or wielding a Shield.\n\nBonus Unarmed Strike. You can make an Unarmed Strike as a Bonus Action.\n\nMartial Arts Die. You can roll 1d6 in place of the normal damage of your Unarmed Strike or Monk weapons. This die changes as you gain Monk levels, as shown in the Martial Arts column of the Monk Features table.\n\nDexterous Attacks. You can use your Dexterity modifier instead of your Strength modifier for the attack and damage rolls of your Unarmed Strikes and Monk weapons. In addition, when you use the Grapple or Shove option of your Unarmed Strike, you can use your Dexterity modifier instead of your Strength modifier to determine the save DC.",
+          "when": "both",
+          "choices": [],
+          "reskin_reference": {
+            "name": "2. Street Kinetic Combat (Level 1)",
+            "description": "Mastered hand-to-hand combat, sub-dermal knuckle plating, or high-torque wrist servomotors allow for lightning-fast unarmed strikes. Mechanics:",
+            "features": []
+          }
+        },
+        {
+          "id": "unarmored-defense-1",
+          "name": "Kinetic Reflex Weave (Unarmored Defense)",
+          "description": "While you aren’t wearing armor or wielding a Shield, your base Armor Class equals 10 plus your Dexterity and Wisdom modifiers.",
+          "when": "both",
+          "choices": [],
+          "reskin_reference": {
+            "name": "1. Kinetic Reflex Weave (Level 1)",
+            "description": "You rely on sub-dermal kinetic dampeners, fluid reflex predictive routines, or natural spiritual awareness rather than heavy bulky armor.",
+            "features": [
+              {
+                "name": "Mechanics",
+                "description": "While wearing no armor and wielding no shield, your AC equals 10 + your Dexterity modifier + your Wisdom modifier."
+              }
+            ]
+          }
+        },
+        {
+          "id": "progression-values-1",
+          "name": "Class progression values",
+          "description": "Martial Arts: 1d6; Focus Points: —; Unarmored Movement: —. These are totals at this class level, not additional grants.",
+          "when": "both",
+          "choices": []
+        }
+      ],
+      "spell_progression": null,
+      "notes": null
+    },
+    {
+      "level": 2,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "monk-s-focus-2",
+          "name": "Neural Flow / Qi Current (Monk’s Focus)",
+          "description": "Your focus and martial training allow you to harness a well of extraordinary energy within yourself. This energy is represented by Focus Points. Your Monk level determines the number of points you have, as shown in the Focus Points column of the Monk Features table.\n\nYou can expend these points to enhance or fuel certain Monk features. You start knowing three such features: Flurry of Blows, Patient Defense, and Step of the Wind, each of which is detailed below.\n\nWhen you expend a Focus Point, it is unavailable until you finish a Short or Long Rest, at the end of which you regain all your expended points.\n\nSome features that use Focus Points require your target to make a saving throw. The save DC equals 8 plus your Wisdom modifier and Proficiency Bonus.\n\nFlurry of Blows. You can expend 1 Focus Point to make two Unarmed Strikes as a Bonus Action.\n\nPatient Defense. You can take the Disengage action as a Bonus Action. Alternatively, you can expend 1 Focus Point to take both the Disengage and the Dodge actions as a Bonus Action.\n\nStep of the Wind. You can take the Dash action as a Bonus Action. Alternatively, you can expend 1 Focus Point to take both the Disengage and Dash actions as a Bonus Action, and your jump distance is doubled for the turn.",
+          "when": "both",
+          "choices": [],
+          "reskin_reference": {
+            "name": "3. Neural Flow / Qi Current (Level 2)",
+            "description": "You channel bio-electric current, spiritual Qi, or high-bandwidth neural energy through physical and cybernetic pathways.",
+            "features": [
+              {
+                "name": "Mechanics",
+                "description": "You have a pool of Flow Points equal to your Monk level."
+              },
+              {
+                "name": "High Frequency Overdrive",
+                "description": "Spend 1 Flow point to make two unarmed strikes as a bonus action immediately after taking the Attack action."
+              },
+              {
+                "name": "Predictive Parry Subroutine",
+                "description": "Spend 1 Flow point to take the Dodge action as a bonus action."
+              },
+              {
+                "name": "Vector Boost",
+                "description": "Spend 1 Flow point to take the Disengage or Dash action as a bonus action, doubling your jump distance for the turn."
+              }
+            ]
+          }
+        },
+        {
+          "id": "unarmored-movement-2",
+          "name": "Micro-Actuator Mobility (Unarmored Movement)",
+          "description": "Your speed increases by 10 feet while you aren’t wearing armor or wielding a Shield. This bonus increases when you reach certain Monk levels, as shown on the Monk Features table.",
+          "when": "both",
+          "choices": [],
+          "reskin_reference": {
+            "name": "4. Micro-Actuator Mobility (Level 2)",
+            "description": "Sub-dermal leg actuators, magnetic boot soles, or fluid momentum control increase your speed and allow you to run up vertical walls or across flooded waters in Mizu Ward.",
+            "features": []
+          }
+        },
+        {
+          "id": "uncanny-metabolism-2",
+          "name": "Uncanny Metabolism",
+          "description": "When you roll Initiative, you can regain all expended Focus Points. When you do so, roll your Martial Arts die, and regain a number of Hit Points equal to your Monk level plus the number rolled.\n\nOnce you use this feature, you can’t use it again until you finish a Long Rest.",
+          "when": "both",
+          "choices": []
+        },
+        {
+          "id": "progression-values-2",
+          "name": "Class progression values",
+          "description": "Focus Points: 2 (previously —); Unarmored Movement: +10 ft. (previously —). These are totals at this class level, not additional grants.",
+          "when": "both",
+          "choices": []
+        }
+      ],
+      "spell_progression": null,
+      "notes": null
+    },
+    {
+      "level": 3,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "deflect-attacks-3",
+          "name": "Hard-Light Intercept / Kinetic Deflection (Deflect Attacks)",
+          "description": "When an attack roll hits you and its damage includes Bludgeoning, Piercing, or Slashing damage, you can take a Reaction to reduce the attack’s total damage against you. The reduction equals 1d10 plus your Dexterity modifier and Monk level.\n\nIf you reduce the damage to 0, you can expend 1 Focus Point to redirect some of the attack’s force. If you do so, choose a creature you can see within 5 feet of yourself if the attack was a melee attack or a creature you can see within 60 feet of yourself that isn’t behind Total Cover if the attack was a ranged attack. That creature must succeed on a Dexterity saving throw or take damage equal to two rolls of your Martial Arts die plus your Dexterity modifier. The damage is the same type dealt by the attack.",
+          "when": "both",
+          "choices": null,
+          "reskin_reference": {
+            "name": "5. Hard-Light Intercept / Kinetic Deflection (Level 3)",
+            "description": "Your predictive combat optics and rapid reflexes allow you to swat away incoming bullets, laser bolts, or thrown monomolecular blades with your bare hands or a hard-light palm shield.",
+            "features": [
+              {
+                "name": "Mechanics",
+                "description": "You can use your reaction to reduce the damage from a ranged weapon attack by 1d10 + your Dexterity modifier + your Monk level. If reduced to 0, you catch the projectile and can spend 1 Flow point to throw/fire it back."
+              }
+            ]
+          }
+        },
+        {
+          "id": "monk-subclass-3",
+          "name": "Monk Subclass",
+          "description": "Choose a Monk subclass at this class level. Subclass choices and features will be authored later.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-monk-subclass-3",
+              "name": "Choose a subclass later",
+              "kind": "subclass",
+              "count": 1,
+              "allowed_options": null,
+              "eligibility_rule": "Subclass authoring is deferred; verify available choices.",
+              "selection_effect": "Record the chosen subclass when implemented."
+            }
+          ]
+        },
+        {
+          "id": "progression-values-3",
+          "name": "Class progression values",
+          "description": "Focus Points: 3 (previously 2). These are totals at this class level, not additional grants.",
+          "when": "both",
+          "choices": []
+        }
+      ],
+      "spell_progression": null,
+      "notes": null
+    },
+    {
+      "level": 4,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "ability-score-improvement-4",
+          "name": "Ability Score Improvement",
+          "description": "You gain the Ability Score Improvement feat (see “Feats”) or another feat of your choice for which you qualify. You gain this feature again at Monk levels 8, 12, and 16.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-ability-score-improvement-4",
+              "name": "Choose an eligible feat or Ability Score Improvement",
+              "kind": "feat",
+              "count": 1,
+              "allowed_options": "Ability Score Improvement or another eligible feat.",
+              "eligibility_rule": "Meet feat prerequisites and verify ability-score limits.",
+              "selection_effect": "Record the feat and apply its selected effects."
+            }
+          ]
+        },
+        {
+          "id": "slow-fall-4",
+          "name": "Inertial Dampener / Micro-Thrusters (Slow Fall)",
+          "description": "You can take a Reaction when you fall to reduce any damage you take from the fall by an amount equal to five times your Monk level.",
+          "when": "both",
+          "choices": [],
+          "reskin_reference": {
+            "name": "6. Inertial Dampener / Micro-Thrusters (Level 4)",
+            "description": "You engage micro-thrusters, sub-dermal shock absorbers, or kinetic dispersion fields to negate fall damage when plummeting from Kōten sky-arcologies.",
+            "features": [
+              {
+                "name": "Mechanics",
+                "description": "You can use your reaction to reduce fall damage by an amount equal to 5 × your Monk level."
+              }
+            ]
+          }
+        },
+        {
+          "id": "progression-values-4",
+          "name": "Class progression values",
+          "description": "Focus Points: 4 (previously 3). These are totals at this class level, not additional grants.",
+          "when": "both",
+          "choices": []
+        }
+      ],
+      "spell_progression": null,
+      "notes": null
+    },
+    {
+      "level": 5,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "extra-attack-5",
+          "name": "Extra Attack",
+          "description": "You can attack twice instead of once whenever you take the Attack action on your turn.",
+          "when": "both",
+          "choices": []
+        },
+        {
+          "id": "stunning-strike-5",
+          "name": "EMP Palm / Neural Disruption Punch (Stunning Strike)",
+          "description": "Once per turn when you hit a creature with a Monk weapon or an Unarmed Strike, you can expend 1 Focus Point to attempt a stunning strike. The target must make a Constitution saving throw. On a failed save, the target has the Stunned condition until the start of your next turn. On a successful save, the target’s Speed is halved until the start of your next turn, and the next attack roll made against the target before then has Advantage.",
+          "when": "both",
+          "choices": [],
+          "reskin_reference": {
+            "name": "7. EMP Palm / Neural Disruption Punch (Level 5)",
+            "description": "You channel a targeted bio-electric pulse or EMP charge directly into an enemy's nerve cluster, cyber-spine port, or internal circuitry.",
+            "features": [
+              {
+                "name": "Mechanics",
+                "description": "When you hit a creature with a melee weapon attack, you can spend 1 Flow point to force the target to make a Constitution saving throw. On a failure, the target suffers Synapse Short (Stunned) until the end of your next turn."
+              }
+            ]
+          }
+        },
+        {
+          "id": "progression-values-5",
+          "name": "Class progression values",
+          "description": "Martial Arts: 1d8 (previously 1d6); Focus Points: 5 (previously 4). These are totals at this class level, not additional grants.",
+          "when": "both",
+          "choices": []
+        }
+      ],
+      "spell_progression": null,
+      "notes": null
+    },
+    {
+      "level": 6,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "empowered-strikes-6",
+          "name": "High-Frequency Strikes (Empowered Strikes)",
+          "description": "Whenever you deal damage with your Unarmed Strike, it can deal your choice of Force damage or its normal damage type.",
+          "when": "both",
+          "choices": null,
+          "reskin_reference": {
+            "name": "8. Monomolecular / High-Frequency Strikes (Level 6)",
+            "description": "Your unarmed strikes vibrate at high frequency or channel pure spirit energy, bypassing non-magical physical armor and structural plating.",
+            "features": [
+              {
+                "name": "Mechanics",
+                "description": "Your unarmed strikes count as magical for the purpose of overcoming resistance and immunity to non-magical attacks."
+              }
+            ]
+          }
+        },
+        {
+          "id": "progression-values-6",
+          "name": "Class progression values",
+          "description": "Focus Points: 6 (previously 5); Unarmored Movement: +15 ft. (previously +10 ft.). These are totals at this class level, not additional grants.",
+          "when": "both",
+          "choices": []
+        }
+      ],
+      "spell_progression": null,
+      "notes": "Subclass feature deferred."
+    },
+    {
+      "level": 7,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "evasion-7",
+          "name": "Vector Roll / Threat-Dodge (Evasion)",
+          "description": "When you’re subjected to an effect that allows you to make a Dexterity saving throw to take only half damage, you instead take no damage if you succeed on the saving throw and only half damage if you fail.\n\nYou don’t benefit from this feature if you have the Incapacitated condition.",
+          "when": "both",
+          "choices": [],
+          "reskin_reference": {
+            "name": "9. Vector Roll / Threat-Dodge (Level 7)",
+            "description": "Predictive hazard algorithms and agility augments allow you to dive clear of explosive blasts and plasma arcs.",
+            "features": [
+              {
+                "name": "Mechanics",
+                "description": "When subjected to a Dexterity save for half damage, you take 0 damage on a success and half damage on a failure."
+              }
+            ]
+          }
+        },
+        {
+          "id": "progression-values-7",
+          "name": "Class progression values",
+          "description": "Focus Points: 7 (previously 6). These are totals at this class level, not additional grants.",
+          "when": "both",
+          "choices": []
+        }
+      ],
+      "spell_progression": null,
+      "notes": null
+    },
+    {
+      "level": 8,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "ability-score-improvement-8",
+          "name": "Ability Score Improvement",
+          "description": "You gain the Ability Score Improvement feat (see “Feats”) or another feat of your choice for which you qualify. You gain this feature again at Monk levels 8, 12, and 16.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-ability-score-improvement-8",
+              "name": "Choose an eligible feat or Ability Score Improvement",
+              "kind": "feat",
+              "count": 1,
+              "allowed_options": "Ability Score Improvement or another eligible feat.",
+              "eligibility_rule": "Meet feat prerequisites and verify ability-score limits.",
+              "selection_effect": "Record the feat and apply its selected effects."
+            }
+          ]
+        },
+        {
+          "id": "progression-values-8",
+          "name": "Class progression values",
+          "description": "Focus Points: 8 (previously 7). These are totals at this class level, not additional grants.",
+          "when": "both",
+          "choices": []
+        }
+      ],
+      "spell_progression": null,
+      "notes": null
+    },
+    {
+      "level": 9,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "acrobatic-movement-9",
+          "name": "Acrobatic Movement",
+          "description": "While you aren’t wearing armor or wielding a Shield, you gain the ability to move along vertical surfaces and across liquids on your turn without falling during the movement.",
+          "when": "both",
+          "choices": []
+        },
+        {
+          "id": "progression-values-9",
+          "name": "Class progression values",
+          "description": "Focus Points: 9 (previously 8). These are totals at this class level, not additional grants.",
+          "when": "both",
+          "choices": []
+        }
+      ],
+      "spell_progression": null,
+      "notes": null
+    },
+    {
+      "level": 10,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "heightened-focus-10",
+          "name": "Heightened Focus",
+          "description": "Your Flurry of Blows, Patient Defense, and Step of the Wind gain the following benefits.\n\nFlurry of Blows. You can expend 1 Focus Point to use Flurry of Blows and make three Unarmed Strikes with it instead of two.\n\nPatient Defense. When you expend a Focus Point to use Patient Defense, you gain a number of Temporary Hit Points equal to two rolls of your Martial Arts die.\n\nStep of the Wind. When you expend a Focus Point to use Step of the Wind, you can choose a willing creature within 5 feet of yourself that is Large or smaller. You move the creature with you until the end of your turn. The creature’s movement doesn’t provoke Opportunity Attacks.",
+          "when": "both",
+          "choices": null
+        },
+        {
+          "id": "self-restoration-10",
+          "name": "Self-Restoration",
+          "description": "Through sheer force of will, you can remove one of the following conditions from yourself at the end of each of your turns: Charmed, Frightened, or Poisoned.\n\nIn addition, forgoing food and drink doesn’t give you levels of Exhaustion.",
+          "when": "both",
+          "choices": []
+        },
+        {
+          "id": "progression-values-10",
+          "name": "Class progression values",
+          "description": "Focus Points: 10 (previously 9); Unarmored Movement: +20 ft. (previously +15 ft.). These are totals at this class level, not additional grants.",
+          "when": "both",
+          "choices": []
+        }
+      ],
+      "spell_progression": null,
+      "notes": null
+    },
+    {
+      "level": 11,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "progression-values-11",
+          "name": "Class progression values",
+          "description": "Martial Arts: 1d10 (previously 1d8); Focus Points: 11 (previously 10). These are totals at this class level, not additional grants.",
+          "when": "both",
+          "choices": []
+        }
+      ],
+      "spell_progression": null,
+      "notes": "Subclass feature deferred."
+    },
+    {
+      "level": 12,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "ability-score-improvement-12",
+          "name": "Ability Score Improvement",
+          "description": "You gain the Ability Score Improvement feat (see “Feats”) or another feat of your choice for which you qualify. You gain this feature again at Monk levels 8, 12, and 16.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-ability-score-improvement-12",
+              "name": "Choose an eligible feat or Ability Score Improvement",
+              "kind": "feat",
+              "count": 1,
+              "allowed_options": "Ability Score Improvement or another eligible feat.",
+              "eligibility_rule": "Meet feat prerequisites and verify ability-score limits.",
+              "selection_effect": "Record the feat and apply its selected effects."
+            }
+          ]
+        },
+        {
+          "id": "progression-values-12",
+          "name": "Class progression values",
+          "description": "Focus Points: 12 (previously 11). These are totals at this class level, not additional grants.",
+          "when": "both",
+          "choices": []
+        }
+      ],
+      "spell_progression": null,
+      "notes": null
+    },
+    {
+      "level": 13,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "deflect-energy-13",
+          "name": "Deflect Energy",
+          "description": "You can now use your Deflect Attacks feature against attacks that deal any damage type, not just Bludgeoning, Piercing, or Slashing.",
+          "when": "both",
+          "choices": []
+        },
+        {
+          "id": "progression-values-13",
+          "name": "Class progression values",
+          "description": "Focus Points: 13 (previously 12). These are totals at this class level, not additional grants.",
+          "when": "both",
+          "choices": []
+        }
+      ],
+      "spell_progression": null,
+      "notes": null
+    },
+    {
+      "level": 14,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "disciplined-survivor-14",
+          "name": "Absolute Neural Hardening (Disciplined Survivor)",
+          "description": "Your physical and mental discipline grant you proficiency in all saving throws.\n\nAdditionally, whenever you make a saving throw and fail, you can expend 1 Focus Point to reroll it, and you must use the new roll.",
+          "when": "both",
+          "choices": [],
+          "reskin_reference": {
+            "name": "13. Absolute Neural Hardening (Level 14)",
+            "description": "Master-level firewalls and bio-feedback loops protect your mind and body from all forms of disruption.",
+            "features": [
+              {
+                "name": "Mechanics",
+                "description": "You gain proficiency in all saving throws. Whenever you fail a save, you can spend 1 Flow point to reroll it and take the second result."
+              }
+            ]
+          }
+        },
+        {
+          "id": "progression-values-14",
+          "name": "Class progression values",
+          "description": "Focus Points: 14 (previously 13); Unarmored Movement: +25 ft. (previously +20 ft.). These are totals at this class level, not additional grants.",
+          "when": "both",
+          "choices": []
+        }
+      ],
+      "spell_progression": null,
+      "notes": null
+    },
+    {
+      "level": 15,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "perfect-focus-15",
+          "name": "Perfect Focus",
+          "description": "When you roll Initiative and don’t use Uncanny Metabolism, you regain expended Focus Points until you have 4 if you have 3 or fewer.",
+          "when": "both",
+          "choices": []
+        },
+        {
+          "id": "progression-values-15",
+          "name": "Class progression values",
+          "description": "Focus Points: 15 (previously 14). These are totals at this class level, not additional grants.",
+          "when": "both",
+          "choices": []
+        }
+      ],
+      "spell_progression": null,
+      "notes": null
+    },
+    {
+      "level": 16,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "ability-score-improvement-16",
+          "name": "Ability Score Improvement",
+          "description": "You gain the Ability Score Improvement feat (see “Feats”) or another feat of your choice for which you qualify. You gain this feature again at Monk levels 8, 12, and 16.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-ability-score-improvement-16",
+              "name": "Choose an eligible feat or Ability Score Improvement",
+              "kind": "feat",
+              "count": 1,
+              "allowed_options": "Ability Score Improvement or another eligible feat.",
+              "eligibility_rule": "Meet feat prerequisites and verify ability-score limits.",
+              "selection_effect": "Record the feat and apply its selected effects."
+            }
+          ]
+        },
+        {
+          "id": "progression-values-16",
+          "name": "Class progression values",
+          "description": "Focus Points: 16 (previously 15). These are totals at this class level, not additional grants.",
+          "when": "both",
+          "choices": []
+        }
+      ],
+      "spell_progression": null,
+      "notes": null
+    },
+    {
+      "level": 17,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "progression-values-17",
+          "name": "Class progression values",
+          "description": "Martial Arts: 1d12 (previously 1d10); Focus Points: 17 (previously 16). These are totals at this class level, not additional grants.",
+          "when": "both",
+          "choices": []
+        }
+      ],
+      "spell_progression": null,
+      "notes": "Subclass feature deferred."
+    },
+    {
+      "level": 18,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "superior-defense-18",
+          "name": "Superior Defense",
+          "description": "At the start of your turn, you can expend 3 Focus Points to bolster yourself against harm for 1 minute or until you have the Incapacitated condition. During that time, you have Resistance to all damage except Force damage.",
+          "when": "both",
+          "choices": []
+        },
+        {
+          "id": "progression-values-18",
+          "name": "Class progression values",
+          "description": "Focus Points: 18 (previously 17); Unarmored Movement: +30 ft. (previously +25 ft.). These are totals at this class level, not additional grants.",
+          "when": "both",
+          "choices": []
+        }
+      ],
+      "spell_progression": null,
+      "notes": null
+    },
+    {
+      "level": 19,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "epic-boon-19",
+          "name": "Epic Boon",
+          "description": "You gain an Epic Boon feat (see “Feats”) or another feat of your choice for which you qualify. Boon of Irresistible Offense is recommended.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-epic-boon-19",
+              "name": "Choose an Epic Boon or another eligible feat",
+              "kind": "feat",
+              "count": 1,
+              "allowed_options": "An Epic Boon feat or another eligible feat.",
+              "eligibility_rule": "Meet feat prerequisites.",
+              "selection_effect": "Record the feat and its effects."
+            }
+          ]
+        },
+        {
+          "id": "progression-values-19",
+          "name": "Class progression values",
+          "description": "Focus Points: 19 (previously 18). These are totals at this class level, not additional grants.",
+          "when": "both",
+          "choices": []
+        }
+      ],
+      "spell_progression": null,
+      "notes": null
+    },
+    {
+      "level": 20,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "body-and-mind-20",
+          "name": "Body and Mind",
+          "description": "You have developed your body and mind to new heights. Your Dexterity and Wisdom scores increase by 4, to a maximum of 25.",
+          "when": "both",
+          "choices": []
+        },
+        {
+          "id": "progression-values-20",
+          "name": "Class progression values",
+          "description": "Focus Points: 20 (previously 19). These are totals at this class level, not additional grants.",
+          "when": "both",
+          "choices": []
+        }
+      ],
+      "spell_progression": null,
+      "notes": null
+    }
+  ],
+  "subclasses": null,
+  "source_notes": [
+    "Rules basis: _reference/classes/Monk.md, a 2024-style source. Review compatibility with the earlier 2014 multiclass design.",
+    "Class progression and mechanics use the original reference; older reskin mechanics may differ and are thematic reference only, not additional grants.",
+    "The worksheet schema is not supported by the app. Levels remain unfilled pending rules and choice review; null means unresolved or not applicable as described.",
+    "Subclass selection milestones are recorded, but subclass options, features, and spellcasting are intentionally deferred.",
+    "Reskin inspiration: classes/Kinetic Acrobat.json. Names may be adapted where source mechanics have changed."
+  ]
+}

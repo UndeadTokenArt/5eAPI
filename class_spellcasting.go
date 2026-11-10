@@ -15,6 +15,7 @@ type SpellcastingRow struct {
 	Level         int   `json:"level"`
 	Cantrips      int   `json:"cantrips"`
 	Known         int   `json:"known,omitempty"`
+	Prepared      int   `json:"prepared,omitempty"`
 	Slots         []int `json:"slots"`
 	PactSlots     int   `json:"pact_slots,omitempty"`
 	PactLevel     int   `json:"pact_level,omitempty"`
@@ -37,6 +38,7 @@ type spellProfile struct {
 	cantripBase  int
 	cantripStart int
 	known        []int
+	prepared     []int
 	preparedMode string
 	summary      string
 	slots        [][]int
@@ -62,17 +64,17 @@ var (
 	// Warlock Mystic Arcanum: class level at which each 6th-9th level spell unlocks.
 	warlockArcanum = map[int]int{11: 6, 13: 7, 15: 8, 17: 9}
 
-	bardKnown     = []int{4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 15, 15, 16, 18, 19, 19, 20, 22, 22, 22}
-	sorcererKnown = []int{2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 12, 13, 13, 14, 14, 15, 15, 15, 15}
-	warlockKnown  = []int{2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 11, 11, 12, 12, 13, 13, 14, 14, 15, 15}
-	rangerKnown   = []int{0, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11}
-	thirdKnown    = []int{0, 0, 3, 4, 4, 4, 5, 6, 6, 7, 8, 8, 9, 10, 10, 11, 11, 11, 12, 13}
+	bardKnown        = []int{4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 15, 15, 16, 18, 19, 19, 20, 22, 22, 22}
+	sorcererPrepared = []int{2, 4, 6, 7, 9, 10, 11, 12, 14, 15, 16, 16, 17, 17, 18, 18, 19, 20, 21, 22}
+	warlockKnown     = []int{2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 11, 11, 12, 12, 13, 13, 14, 14, 15, 15}
+	rangerKnown      = []int{0, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11}
+	thirdKnown       = []int{0, 0, 3, 4, 4, 4, 5, 6, 6, 7, 8, 8, 9, 10, 10, 11, 11, 11, 12, 13}
 
 	spellProfiles = map[string]spellProfile{
 		"Bard":     {ability: "charisma", kind: "full", cantripBase: 2, cantripStart: 1, known: bardKnown, slots: fullCasterSlots, summary: "Spells known are fixed per level; swap one when you gain a level."},
 		"Cleric":   {ability: "wisdom", kind: "full", cantripBase: 3, cantripStart: 1, preparedMode: "full_level", slots: fullCasterSlots, summary: "Prepare Wisdom modifier + class level spells (minimum 1) after each long rest."},
 		"Druid":    {ability: "wisdom", kind: "full", cantripBase: 2, cantripStart: 1, preparedMode: "full_level", slots: fullCasterSlots, summary: "Prepare Wisdom modifier + class level spells (minimum 1) after each long rest."},
-		"Sorcerer": {ability: "charisma", kind: "full", cantripBase: 4, cantripStart: 1, known: sorcererKnown, slots: fullCasterSlots, summary: "Spells known are fixed per level; swap one when you gain a level."},
+		"Sorcerer": {ability: "charisma", kind: "full", cantripBase: 4, cantripStart: 1, prepared: sorcererPrepared, slots: fullCasterSlots, summary: "2024-style Sorcerer progression: prepared spell totals follow the class table; replace one prepared spell when gaining a Sorcerer level."},
 		"Wizard":   {ability: "intelligence", kind: "full", cantripBase: 3, cantripStart: 1, preparedMode: "full_level", slots: fullCasterSlots, summary: "Prepare Intelligence modifier + class level spells (minimum 1) from your spellbook, which holds 6 spells at level 1 and gains 2 per level."},
 		"Paladin":  {ability: "charisma", kind: "half", preparedMode: "half_level", slots: halfCasterSlots, summary: "Prepare Charisma modifier + half your class level (rounded down, minimum 1) spells after each long rest. Spellcasting starts at level 2."},
 		"Ranger":   {ability: "wisdom", kind: "half", known: rangerKnown, slots: halfCasterSlots, summary: "Spells known are fixed per level. Spellcasting starts at level 2."},
@@ -115,6 +117,9 @@ func buildSpellcasting(profile spellProfile, spellListFrom string) *Spellcasting
 		}
 		if profile.known != nil {
 			row.Known = profile.known[level-1]
+		}
+		if profile.prepared != nil {
+			row.Prepared = profile.prepared[level-1]
 		}
 		if profile.kind == "pact" {
 			row.PactSlots = warlockPactCount[level-1]
@@ -194,6 +199,28 @@ func originalClassFor(label string, labels map[string]string) string {
 			return original
 		}
 	}
+	// Class files may add a parenthetical such as "Cyber-Mage (Net-Wizard)", and data folders
+	// seeded before the class rename carry combined names such as "Street Shaman / Bio-Tech
+	// Specialist"; match the base name and any " / " segment against a label.
+	if i := strings.Index(label, " ("); i > 0 {
+		label = label[:i]
+		for original, reskinned := range labels {
+			if strings.EqualFold(strings.TrimSpace(label), reskinned) {
+				return original
+			}
+		}
+	}
+	segments := strings.Split(label, " / ")
+	if len(segments) < 2 {
+		return ""
+	}
+	for original, reskinned := range labels {
+		for _, segment := range segments {
+			if strings.EqualFold(strings.TrimSpace(segment), reskinned) {
+				return original
+			}
+		}
+	}
 	return ""
 }
 
@@ -245,6 +272,10 @@ func progressionTable(sc *Spellcasting) SectionTable {
 	if known {
 		table.Headers = append(table.Headers, "Spells Known")
 	}
+	prepared := sc.Rows[19].Prepared > 0
+	if prepared {
+		table.Headers = append(table.Headers, "Prepared Spells")
+	}
 	for spellLevel := 1; spellLevel <= maxLevel; spellLevel++ {
 		table.Headers = append(table.Headers, ordinal(spellLevel))
 	}
@@ -255,6 +286,9 @@ func progressionTable(sc *Spellcasting) SectionTable {
 		cells := []string{strconv.Itoa(row.Level), strconv.Itoa(row.Cantrips)}
 		if known {
 			cells = append(cells, strconv.Itoa(row.Known))
+		}
+		if prepared {
+			cells = append(cells, strconv.Itoa(row.Prepared))
 		}
 		for spellLevel := 1; spellLevel <= maxLevel; spellLevel++ {
 			cells = append(cells, spellColumn(row, spellLevel))

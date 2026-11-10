@@ -49,7 +49,7 @@ func TestGuideClassesListSpells(t *testing.T) {
 	labels, _ := classLabels()
 	found := false
 	for _, class := range classes.Children {
-		if class.Title != labels["Wizard"] {
+		if originalClassFor(class.Title, labels) != "Wizard" {
 			continue
 		}
 		for _, child := range class.Children {
@@ -84,5 +84,21 @@ func TestValidateSpellSlots(t *testing.T) {
 	sheet := CharacterSheet{SpellSlots: []SpellSlot{{Level: 10, Max: 1}}}
 	if err := validateCharacter(sheet); err == nil {
 		t.Error("slot level 10 should be rejected")
+	}
+}
+
+func TestOriginalClassForLegacyCombinedNames(t *testing.T) {
+	labels := map[string]string{"Wizard": "Cyber-Mage", "Rogue": "Decker", "Fighter": "Corporate Enforcer"}
+	cases := map[string]string{
+		"Cyber-Mage":                              "Wizard",
+		"Corporate Decker / Cyber-Mage":           "Wizard",
+		"Street Operative / Decker / Infiltrator": "Rogue",
+		"Street Samurai / Corporate Enforcer":     "Fighter",
+		"Unknown / Thing":                         "",
+	}
+	for label, want := range cases {
+		if got := originalClassFor(label, labels); got != want {
+			t.Errorf("originalClassFor(%q) = %q, want %q", label, got, want)
+		}
 	}
 }

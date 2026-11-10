@@ -1,0 +1,1168 @@
+{
+  "schema_status": "draft_authoring_template_not_supported_by_app",
+  "schema_version": 1,
+  "uid": "class-ai-host-draft",
+  "name": "AI Host",
+  "original_class": "Warlock",
+  "description": "Operatives who trade their neural autonomy to rogue AIs, dragon banks, or extra-dimensional corporate boards for dark code abilities.",
+  "hit_die": 8,
+  "multiclass_prerequisites": {
+    "description": "2024 multiclass prerequisite: meet this class primary ability requirement when adding a new class; requirements also apply to every current class.",
+    "any_of": [
+      {
+        "all_of": [
+          {
+            "ability": "charisma",
+            "minimum": 13
+          }
+        ]
+      }
+    ]
+  },
+  "starting_proficiencies": {
+    "armor": [
+      "Light armor"
+    ],
+    "weapons": [
+      "Simple weapons"
+    ],
+    "tools": null,
+    "saving_throws": [
+      "wisdom",
+      "charisma"
+    ],
+    "skills": [],
+    "choices": [
+      {
+        "id": "starting-skills",
+        "name": "Choose starting skills",
+        "kind": "skill",
+        "count": 2,
+        "allowed_options": [
+          "Arcana",
+          "Deception",
+          "History",
+          "Intimidation",
+          "Investigation",
+          "Nature",
+          "Religion"
+        ],
+        "eligibility_rule": "Choose distinct skills; verify handling of an already-proficient skill.",
+        "selection_effect": "Record proficiency in the selected skills."
+      }
+    ]
+  },
+  "multiclass_proficiencies": {
+    "armor": [
+      "Light armor"
+    ],
+    "weapons": [],
+    "tools": [],
+    "skills": [],
+    "choices": [],
+    "description": "Gain the following traits from the Core Warlock Traits table: Hit Point Die and training with Light armor."
+  },
+  "starting_equipment": {
+    "description": "Choose A or B: (A) Leather Armor, Sickle, 2 Daggers, Arcane Focus (orb), Book (occult lore), Scholar’s Pack, and 15 GP; or (B) 100 GP Starting equipment is not granted on multiclass entry.",
+    "grants": [],
+    "choices": [
+      {
+        "id": "starting-equipment",
+        "name": "Choose starting equipment",
+        "kind": "equipment_bundle",
+        "count": 1,
+        "allowed_options": "Choose A or B: (A) Leather Armor, Sickle, 2 Daggers, Arcane Focus (orb), Book (occult lore), Scholar’s Pack, and 15 GP; or (B) 100 GP",
+        "eligibility_rule": "Choose one listed bundle when starting as this class.",
+        "selection_effect": "Record the chosen items and currency."
+      }
+    ]
+  },
+  "spellcasting": {
+    "kind": "pact",
+    "ability": "charisma",
+    "starts_at_class_level": 1,
+    "spell_list_id": "Warlock",
+    "casting_mode": "prepared",
+    "preparation_rule": "Changing Your Prepared Spells. Whenever you gain a Warlock level, you can replace one spell on your list with another Warlock spell of an eligible level.",
+    "ritual_casting_rule": null,
+    "focus_rule": "Spellcasting Focus. You can use an Arcane Focus as a Spellcasting Focus for your Warlock spells.",
+    "multiclass_slot_rule": "Pact slots are separate from shared Spellcasting slots; verify multiclass rules.",
+    "notes": "See the level 1 Spellcasting or Pact Magic feature for casting, preparation, focus, and replacement rules. Null fields require review; the reference spell mapping may not be a complete 2024 spell list."
+  },
+  "resources": [
+    {
+      "id": "resource-pact-magic",
+      "name": "Encrypted Contract Firmware",
+      "description": "See the Pact Magic feature for costs, use, and recovery. Through occult ceremony, you have formed a pact with a mysterious entity to gain magical powers. The entity is a voice in the shadows—its identity unclear—but its boon to you is concrete: the ability to cast spells. See “Spells” for the rules on spellcasting. The information below details how you use those rules with Warlock spells, which appear in the Warlock spell list later in the class’s description.\n\nCantrips. You know two Warlock cantrips of your choice. Eldritch Blast and Prestidigitation are recommended. Whenever you gain a Warlock level, you can replace one of your cantrips from this feature with another Warlock cantrip of your choice.\n\nWhen you reach Warlock levels 4 and 10, you learn another Warlock cantrip of your choice, as shown in the Cantrips column of the Warlock Features table.\n\nSpell Slots. The Warlock Features table shows how many spell slots you have to cast your Warlock spells of levels 1–5. The table also shows the level of those slots, all of which are the same level. You regain all expended Pact Magic spell slots when you finish a Short or Long Rest.\n\nFor example, when you’re a level 5 Warlock, you have two level 3 spell slots. To cast the level 1 spell Witch Bolt, you must spend one of those slots, and you cast it as a level 3 spell.\n\nPrepared Spells of Level 1+. You prepare the list of level 1+ spells that are available for you to cast with this feature. To start, choose two level 1 Warlock spells. Charm Person and Hex are recommended.\n\nThe number of spells on your list increases as you gain Warlock levels, as shown in the Prepared Spells column of the Warlock Features table. Whenever that number increases, choose additional Warlock spells until the number of spells on your list matches the number in the table. The chosen spells must be of a level no higher than what’s shown in the table’s Slot Level column for your level. When you reach level 6, for example, you learn a new Warlock spell, which can be of levels 1–3.\n\nIf another Warlock feature gives you spells that you always have prepared, those spells don’t count against the number of spells you can prepare with this feature, but those spells otherwise count as Warlock spells for you.\n\nChanging Your Prepared Spells. Whenever you gain a Warlock level, you can replace one spell on your list with another Warlock spell of an eligible level.\n\nSpellcasting Ability. Charisma is the spellcasting ability for your Warlock spells.\n\nSpellcasting Focus. You can use an Arcane Focus as a Spellcasting Focus for your Warlock spells.",
+      "recharge": "other",
+      "maximum_rule": "See the feature and level table; resolve structured maximum and recovery rules before implementation."
+    },
+    {
+      "id": "resource-magical-cunning",
+      "name": "Magical Cunning",
+      "description": "See the Magical Cunning feature for costs, use, and recovery. You can perform an esoteric rite for 1 minute. At the end of it, you regain expended Pact Magic spell slots but no more than a number equal to half your maximum (round up). Once you use this feature, you can’t do so again until you finish a Long Rest.",
+      "recharge": "other",
+      "maximum_rule": "See the feature and level table; resolve structured maximum and recovery rules before implementation."
+    },
+    {
+      "id": "resource-mystic-arcanum",
+      "name": "Executive Mystic Arcanum",
+      "description": "See the Mystic Arcanum feature for costs, use, and recovery. Your patron grants you a magical secret called an arcanum. Choose one level 6 Warlock spell as this arcanum.\n\nYou can cast your arcanum spell once without expending a spell slot, and you must finish a Long Rest before you can cast it in this way again.\n\nAs shown in the Warlock Features table, you gain another Warlock spell of your choice that can be cast in this way when you reach Warlock levels 13 (level 7 spell), 15 (level 8 spell), and 17 (level 9 spell).\n\nWhenever you gain a Warlock level, you can replace one of your arcanum spells with another Warlock spell of the same level.",
+      "recharge": "other",
+      "maximum_rule": "See the feature and level table; resolve structured maximum and recovery rules before implementation."
+    }
+  ],
+  "levels": [
+    {
+      "level": 1,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "eldritch-invocations-1",
+          "name": "Black-Market Firmware Patches (Eldritch Invocations)",
+          "description": "You have unearthed Eldritch Invocations, pieces of forbidden knowledge that imbue you with an abiding magical ability or other lessons. You gain one invocation of your choice, such as Pact of the Tome. Invocations are described in the “Eldritch Invocation Options” section later in this class’s description.\n\nPrerequisites. If an invocation has a prerequisite, you must meet it to learn that invocation. For example, if an invocation requires you to be a level 5+ Warlock, you can select the invocation once you reach Warlock level 5.\n\nReplacing and Gaining Invocations. Whenever you gain a Warlock level, you can replace one of your invocations with another one for which you qualify. You can’t replace an invocation if it’s a prerequisite for another invocation that you have.\n\nWhen you gain certain Warlock levels, you gain more invocations of your choice, as shown in the Invocations column of the Warlock Features table.\n\nYou can’t pick the same invocation more than once unless its description says otherwise.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-eldritch-invocations-1",
+              "name": "Choose Eldritch Invocations",
+              "kind": "feature_option",
+              "count": 1,
+              "allowed_options": "See the source feature and its option list.",
+              "eligibility_rule": "Follow the feature's count, prerequisites, and replacement rules.",
+              "selection_effect": "Record selections and effects; structured details require review."
+            }
+          ],
+          "reskin_reference": {
+            "name": "3. Black-Market Firmware Patches (Eldritch Invocations - Level 2)",
+            "description": "You install custom cybernetic and neural firmware modifications provided by your corporate contract:",
+            "features": [
+              {
+                "name": "Overclocked Beam Agonizing Blast",
+                "description": "Add your Charisma modifier to the damage roll of your Ghost-Byte or Eldritch Blast* cantrip."
+              },
+              {
+                "name": "Thermal Optic Vision Devil S Sight",
+                "description": "You can see normally in non-magical and magical darkness (or optical smoke/glitch zones) up to 120 feet."
+              },
+              {
+                "name": "Sub Dermal Kinetic Weave Armor Of Shadows",
+                "description": "You can cast Mage Armor* on yourself at will without expending a spell slot or material components."
+              },
+              {
+                "name": "Neural Translator Eyes Of The Rune Keeper",
+                "description": "You can read all writing, encrypted digital codes, and matrix data streams automatically."
+              },
+              {
+                "name": "Voice Spoofing Modulator Beast Speech Mask Of Many Faces",
+                "description": "You can cast Disguise Self* at will to spoof facial-recognition drones and corporate ID scans."
+              }
+            ]
+          }
+        },
+        {
+          "id": "pact-magic-1",
+          "name": "Encrypted Contract Firmware (Pact Magic)",
+          "description": "Through occult ceremony, you have formed a pact with a mysterious entity to gain magical powers. The entity is a voice in the shadows—its identity unclear—but its boon to you is concrete: the ability to cast spells. See “Spells” for the rules on spellcasting. The information below details how you use those rules with Warlock spells, which appear in the Warlock spell list later in the class’s description.\n\nCantrips. You know two Warlock cantrips of your choice. Eldritch Blast and Prestidigitation are recommended. Whenever you gain a Warlock level, you can replace one of your cantrips from this feature with another Warlock cantrip of your choice.\n\nWhen you reach Warlock levels 4 and 10, you learn another Warlock cantrip of your choice, as shown in the Cantrips column of the Warlock Features table.\n\nSpell Slots. The Warlock Features table shows how many spell slots you have to cast your Warlock spells of levels 1–5. The table also shows the level of those slots, all of which are the same level. You regain all expended Pact Magic spell slots when you finish a Short or Long Rest.\n\nFor example, when you’re a level 5 Warlock, you have two level 3 spell slots. To cast the level 1 spell Witch Bolt, you must spend one of those slots, and you cast it as a level 3 spell.\n\nPrepared Spells of Level 1+. You prepare the list of level 1+ spells that are available for you to cast with this feature. To start, choose two level 1 Warlock spells. Charm Person and Hex are recommended.\n\nThe number of spells on your list increases as you gain Warlock levels, as shown in the Prepared Spells column of the Warlock Features table. Whenever that number increases, choose additional Warlock spells until the number of spells on your list matches the number in the table. The chosen spells must be of a level no higher than what’s shown in the table’s Slot Level column for your level. When you reach level 6, for example, you learn a new Warlock spell, which can be of levels 1–3.\n\nIf another Warlock feature gives you spells that you always have prepared, those spells don’t count against the number of spells you can prepare with this feature, but those spells otherwise count as Warlock spells for you.\n\nChanging Your Prepared Spells. Whenever you gain a Warlock level, you can replace one spell on your list with another Warlock spell of an eligible level.\n\nSpellcasting Ability. Charisma is the spellcasting ability for your Warlock spells.\n\nSpellcasting Focus. You can use an Arcane Focus as a Spellcasting Focus for your Warlock spells.",
+          "when": "both",
+          "choices": null,
+          "reskin_reference": {
+            "name": "2. Encrypted Contract Firmware (Pact Magic - Level 1)",
+            "description": null,
+            "features": [
+              {
+                "name": "Spellcasting Ability",
+                "description": "You cast spells using Charisma (representing your contract negotiation leverage, force of personality, and neural clearance)."
+              },
+              {
+                "name": "Bandwidth Refresh Short Rest Recovery",
+                "description": "Unlike standard mages who memorize long algorithms, your spell slots represent allocated corporate bandwidth. Your spell slots are always cast at the highest available level and recharge completely whenever you finish a Short Rest (as your system executes a rapid corporate bandwidth refresh)."
+              }
+            ]
+          }
+        },
+        {
+          "id": "progression-values-1",
+          "name": "Class progression values",
+          "description": "Eldritch Invocations: 1. These are totals at this class level, not additional grants.",
+          "when": "both",
+          "choices": []
+        },
+        {
+          "id": "spell-selections-1",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "cantrip-selection-1",
+              "name": "Choose cantrips",
+              "kind": "spell",
+              "count": 2,
+              "allowed_options": "Cantrips on the Warlock spell list.",
+              "eligibility_rule": "Follow the class's cantrip and replacement rules.",
+              "selection_effect": "Record the newly selected class cantrips."
+            },
+            {
+              "id": "prepared-selection-1",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 2,
+              "allowed_options": "Eligible level 1+ Warlock spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 2,
+        "spells_known_total": null,
+        "prepared_spells_total": 2,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 1,
+        "class_spell_slots": null,
+        "pact_slot_count": 1,
+        "pact_slot_level": 1,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 2,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "magical-cunning-2",
+          "name": "Magical Cunning",
+          "description": "You can perform an esoteric rite for 1 minute. At the end of it, you regain expended Pact Magic spell slots but no more than a number equal to half your maximum (round up). Once you use this feature, you can’t do so again until you finish a Long Rest.",
+          "when": "both",
+          "choices": []
+        },
+        {
+          "id": "progression-values-2",
+          "name": "Class progression values",
+          "description": "Eldritch Invocations: 3 (previously 1). These are totals at this class level, not additional grants.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "invocation-increase-2",
+              "name": "Choose additional invocations",
+              "kind": "feature_option",
+              "count": 2,
+              "allowed_options": "Eldritch Invocation options in the Warlock source.",
+              "eligibility_rule": "Meet prerequisites, repeatability, and replacement restrictions in Eldritch Invocations.",
+              "selection_effect": "Record the selected invocations."
+            }
+          ]
+        },
+        {
+          "id": "spell-selections-2",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "prepared-selection-2",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible level 1+ Warlock spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 2,
+        "spells_known_total": null,
+        "prepared_spells_total": 3,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 1,
+        "class_spell_slots": null,
+        "pact_slot_count": 2,
+        "pact_slot_level": 1,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 3,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "warlock-subclass-3",
+          "name": "Warlock Subclass",
+          "description": "Choose a Warlock subclass at this class level. Subclass choices and features will be authored later.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-warlock-subclass-3",
+              "name": "Choose a subclass later",
+              "kind": "subclass",
+              "count": 1,
+              "allowed_options": null,
+              "eligibility_rule": "Subclass authoring is deferred; verify available choices.",
+              "selection_effect": "Record the chosen subclass when implemented."
+            }
+          ]
+        },
+        {
+          "id": "spell-selections-3",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "prepared-selection-3",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible level 1+ Warlock spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 2,
+        "spells_known_total": null,
+        "prepared_spells_total": 4,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 2,
+        "class_spell_slots": null,
+        "pact_slot_count": 2,
+        "pact_slot_level": 2,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 4,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "ability-score-improvement-4",
+          "name": "Ability Score Improvement",
+          "description": "You gain the Ability Score Improvement feat (see “Feats”) or another feat of your choice for which you qualify. You gain this feature again at Warlock levels 8, 12, and 16.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-ability-score-improvement-4",
+              "name": "Choose an eligible feat or Ability Score Improvement",
+              "kind": "feat",
+              "count": 1,
+              "allowed_options": "Ability Score Improvement or another eligible feat.",
+              "eligibility_rule": "Meet feat prerequisites and verify ability-score limits.",
+              "selection_effect": "Record the feat and apply its selected effects."
+            }
+          ]
+        },
+        {
+          "id": "spell-selections-4",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "cantrip-selection-4",
+              "name": "Choose cantrips",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Cantrips on the Warlock spell list.",
+              "eligibility_rule": "Follow the class's cantrip and replacement rules.",
+              "selection_effect": "Record the newly selected class cantrips."
+            },
+            {
+              "id": "prepared-selection-4",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible level 1+ Warlock spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 3,
+        "spells_known_total": null,
+        "prepared_spells_total": 5,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 2,
+        "class_spell_slots": null,
+        "pact_slot_count": 2,
+        "pact_slot_level": 2,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 5,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "progression-values-5",
+          "name": "Class progression values",
+          "description": "Eldritch Invocations: 5 (previously 3). These are totals at this class level, not additional grants.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "invocation-increase-5",
+              "name": "Choose additional invocations",
+              "kind": "feature_option",
+              "count": 2,
+              "allowed_options": "Eldritch Invocation options in the Warlock source.",
+              "eligibility_rule": "Meet prerequisites, repeatability, and replacement restrictions in Eldritch Invocations.",
+              "selection_effect": "Record the selected invocations."
+            }
+          ]
+        },
+        {
+          "id": "spell-selections-5",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "prepared-selection-5",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible level 1+ Warlock spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 3,
+        "spells_known_total": null,
+        "prepared_spells_total": 6,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 3,
+        "class_spell_slots": null,
+        "pact_slot_count": 2,
+        "pact_slot_level": 3,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 6,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "spell-selections-6",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "prepared-selection-6",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible level 1+ Warlock spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 3,
+        "spells_known_total": null,
+        "prepared_spells_total": 7,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 3,
+        "class_spell_slots": null,
+        "pact_slot_count": 2,
+        "pact_slot_level": 3,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Subclass feature deferred. Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 7,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "progression-values-7",
+          "name": "Class progression values",
+          "description": "Eldritch Invocations: 6 (previously 5). These are totals at this class level, not additional grants.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "invocation-increase-7",
+              "name": "Choose additional invocations",
+              "kind": "feature_option",
+              "count": 1,
+              "allowed_options": "Eldritch Invocation options in the Warlock source.",
+              "eligibility_rule": "Meet prerequisites, repeatability, and replacement restrictions in Eldritch Invocations.",
+              "selection_effect": "Record the selected invocations."
+            }
+          ]
+        },
+        {
+          "id": "spell-selections-7",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "prepared-selection-7",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible level 1+ Warlock spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 3,
+        "spells_known_total": null,
+        "prepared_spells_total": 8,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 4,
+        "class_spell_slots": null,
+        "pact_slot_count": 2,
+        "pact_slot_level": 4,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 8,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "ability-score-improvement-8",
+          "name": "Ability Score Improvement",
+          "description": "You gain the Ability Score Improvement feat (see “Feats”) or another feat of your choice for which you qualify. You gain this feature again at Warlock levels 8, 12, and 16.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-ability-score-improvement-8",
+              "name": "Choose an eligible feat or Ability Score Improvement",
+              "kind": "feat",
+              "count": 1,
+              "allowed_options": "Ability Score Improvement or another eligible feat.",
+              "eligibility_rule": "Meet feat prerequisites and verify ability-score limits.",
+              "selection_effect": "Record the feat and apply its selected effects."
+            }
+          ]
+        },
+        {
+          "id": "spell-selections-8",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "prepared-selection-8",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible level 1+ Warlock spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 3,
+        "spells_known_total": null,
+        "prepared_spells_total": 9,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 4,
+        "class_spell_slots": null,
+        "pact_slot_count": 2,
+        "pact_slot_level": 4,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 9,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "contact-patron-9",
+          "name": "Contact Patron",
+          "description": "In the past, you usually contacted your patron through intermediaries. Now you can communicate directly; you always have the Contact Other Plane spell prepared. With this feature, you can cast the spell without expending a spell slot to contact your patron, and you automatically succeed on the spell’s saving throw.\n\nOnce you cast the spell with this feature, you can’t do so in this way again until you finish a Long Rest.",
+          "when": "both",
+          "choices": []
+        },
+        {
+          "id": "progression-values-9",
+          "name": "Class progression values",
+          "description": "Eldritch Invocations: 7 (previously 6). These are totals at this class level, not additional grants.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "invocation-increase-9",
+              "name": "Choose additional invocations",
+              "kind": "feature_option",
+              "count": 1,
+              "allowed_options": "Eldritch Invocation options in the Warlock source.",
+              "eligibility_rule": "Meet prerequisites, repeatability, and replacement restrictions in Eldritch Invocations.",
+              "selection_effect": "Record the selected invocations."
+            }
+          ]
+        },
+        {
+          "id": "spell-selections-9",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "prepared-selection-9",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible level 1+ Warlock spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 3,
+        "spells_known_total": null,
+        "prepared_spells_total": 10,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 5,
+        "class_spell_slots": null,
+        "pact_slot_count": 2,
+        "pact_slot_level": 5,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 10,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "spell-selections-10",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "cantrip-selection-10",
+              "name": "Choose cantrips",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Cantrips on the Warlock spell list.",
+              "eligibility_rule": "Follow the class's cantrip and replacement rules.",
+              "selection_effect": "Record the newly selected class cantrips."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 4,
+        "spells_known_total": null,
+        "prepared_spells_total": 10,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 5,
+        "class_spell_slots": null,
+        "pact_slot_count": 2,
+        "pact_slot_level": 5,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Subclass feature deferred. Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 11,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "mystic-arcanum-11",
+          "name": "Executive Mystic Arcanum (Mystic Arcanum)",
+          "description": "Your patron grants you a magical secret called an arcanum. Choose one level 6 Warlock spell as this arcanum.\n\nYou can cast your arcanum spell once without expending a spell slot, and you must finish a Long Rest before you can cast it in this way again.\n\nAs shown in the Warlock Features table, you gain another Warlock spell of your choice that can be cast in this way when you reach Warlock levels 13 (level 7 spell), 15 (level 8 spell), and 17 (level 9 spell).\n\nWhenever you gain a Warlock level, you can replace one of your arcanum spells with another Warlock spell of the same level.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-mystic-arcanum-11",
+              "name": "Choose a level 6 arcanum spell",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "A level 6 Warlock spell.",
+              "eligibility_rule": "On gaining a Warlock level, one arcanum may be replaced by a Warlock spell of the same level.",
+              "selection_effect": "Record the separate once-per-long-rest arcanum; do not add a spell slot."
+            }
+          ],
+          "reskin_reference": {
+            "name": "5. Executive Mystic Arcanum (Level 11)",
+            "description": "Your patron unlocks classified, high-level corporate clearance code (granting one 6th, 7th, 8th, and 9th-level spell slot) that executes once per Long Rest without consuming standard bandwidth.",
+            "features": []
+          }
+        },
+        {
+          "id": "spell-selections-11",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "prepared-selection-11",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible level 1+ Warlock spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 4,
+        "spells_known_total": null,
+        "prepared_spells_total": 11,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 5,
+        "class_spell_slots": null,
+        "pact_slot_count": 3,
+        "pact_slot_level": 5,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 12,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "ability-score-improvement-12",
+          "name": "Ability Score Improvement",
+          "description": "You gain the Ability Score Improvement feat (see “Feats”) or another feat of your choice for which you qualify. You gain this feature again at Warlock levels 8, 12, and 16.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-ability-score-improvement-12",
+              "name": "Choose an eligible feat or Ability Score Improvement",
+              "kind": "feat",
+              "count": 1,
+              "allowed_options": "Ability Score Improvement or another eligible feat.",
+              "eligibility_rule": "Meet feat prerequisites and verify ability-score limits.",
+              "selection_effect": "Record the feat and apply its selected effects."
+            }
+          ]
+        },
+        {
+          "id": "progression-values-12",
+          "name": "Class progression values",
+          "description": "Eldritch Invocations: 8 (previously 7). These are totals at this class level, not additional grants.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "invocation-increase-12",
+              "name": "Choose additional invocations",
+              "kind": "feature_option",
+              "count": 1,
+              "allowed_options": "Eldritch Invocation options in the Warlock source.",
+              "eligibility_rule": "Meet prerequisites, repeatability, and replacement restrictions in Eldritch Invocations.",
+              "selection_effect": "Record the selected invocations."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 4,
+        "spells_known_total": null,
+        "prepared_spells_total": 11,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 5,
+        "class_spell_slots": null,
+        "pact_slot_count": 3,
+        "pact_slot_level": 5,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 13,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "mystic-arcanum-13",
+          "name": "Executive Mystic Arcanum (Mystic Arcanum)",
+          "description": "Your patron grants you a magical secret called an arcanum. Choose one level 6 Warlock spell as this arcanum.\n\nYou can cast your arcanum spell once without expending a spell slot, and you must finish a Long Rest before you can cast it in this way again.\n\nAs shown in the Warlock Features table, you gain another Warlock spell of your choice that can be cast in this way when you reach Warlock levels 13 (level 7 spell), 15 (level 8 spell), and 17 (level 9 spell).\n\nWhenever you gain a Warlock level, you can replace one of your arcanum spells with another Warlock spell of the same level.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-mystic-arcanum-13",
+              "name": "Choose a level 7 arcanum spell",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "A level 7 Warlock spell.",
+              "eligibility_rule": "On gaining a Warlock level, one arcanum may be replaced by a Warlock spell of the same level.",
+              "selection_effect": "Record the separate once-per-long-rest arcanum; do not add a spell slot."
+            }
+          ],
+          "reskin_reference": {
+            "name": "5. Executive Mystic Arcanum (Level 11)",
+            "description": "Your patron unlocks classified, high-level corporate clearance code (granting one 6th, 7th, 8th, and 9th-level spell slot) that executes once per Long Rest without consuming standard bandwidth.",
+            "features": []
+          }
+        },
+        {
+          "id": "spell-selections-13",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "prepared-selection-13",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible level 1+ Warlock spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 4,
+        "spells_known_total": null,
+        "prepared_spells_total": 12,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 5,
+        "class_spell_slots": null,
+        "pact_slot_count": 3,
+        "pact_slot_level": 5,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 14,
+      "status": "unfilled",
+      "features": [],
+      "spell_progression": {
+        "cantrips_known_total": 4,
+        "spells_known_total": null,
+        "prepared_spells_total": 12,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 5,
+        "class_spell_slots": null,
+        "pact_slot_count": 3,
+        "pact_slot_level": 5,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Subclass feature deferred. Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 15,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "mystic-arcanum-15",
+          "name": "Executive Mystic Arcanum (Mystic Arcanum)",
+          "description": "Your patron grants you a magical secret called an arcanum. Choose one level 6 Warlock spell as this arcanum.\n\nYou can cast your arcanum spell once without expending a spell slot, and you must finish a Long Rest before you can cast it in this way again.\n\nAs shown in the Warlock Features table, you gain another Warlock spell of your choice that can be cast in this way when you reach Warlock levels 13 (level 7 spell), 15 (level 8 spell), and 17 (level 9 spell).\n\nWhenever you gain a Warlock level, you can replace one of your arcanum spells with another Warlock spell of the same level.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-mystic-arcanum-15",
+              "name": "Choose a level 8 arcanum spell",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "A level 8 Warlock spell.",
+              "eligibility_rule": "On gaining a Warlock level, one arcanum may be replaced by a Warlock spell of the same level.",
+              "selection_effect": "Record the separate once-per-long-rest arcanum; do not add a spell slot."
+            }
+          ],
+          "reskin_reference": {
+            "name": "5. Executive Mystic Arcanum (Level 11)",
+            "description": "Your patron unlocks classified, high-level corporate clearance code (granting one 6th, 7th, 8th, and 9th-level spell slot) that executes once per Long Rest without consuming standard bandwidth.",
+            "features": []
+          }
+        },
+        {
+          "id": "progression-values-15",
+          "name": "Class progression values",
+          "description": "Eldritch Invocations: 9 (previously 8). These are totals at this class level, not additional grants.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "invocation-increase-15",
+              "name": "Choose additional invocations",
+              "kind": "feature_option",
+              "count": 1,
+              "allowed_options": "Eldritch Invocation options in the Warlock source.",
+              "eligibility_rule": "Meet prerequisites, repeatability, and replacement restrictions in Eldritch Invocations.",
+              "selection_effect": "Record the selected invocations."
+            }
+          ]
+        },
+        {
+          "id": "spell-selections-15",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "prepared-selection-15",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible level 1+ Warlock spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 4,
+        "spells_known_total": null,
+        "prepared_spells_total": 13,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 5,
+        "class_spell_slots": null,
+        "pact_slot_count": 3,
+        "pact_slot_level": 5,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 16,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "ability-score-improvement-16",
+          "name": "Ability Score Improvement",
+          "description": "You gain the Ability Score Improvement feat (see “Feats”) or another feat of your choice for which you qualify. You gain this feature again at Warlock levels 8, 12, and 16.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-ability-score-improvement-16",
+              "name": "Choose an eligible feat or Ability Score Improvement",
+              "kind": "feat",
+              "count": 1,
+              "allowed_options": "Ability Score Improvement or another eligible feat.",
+              "eligibility_rule": "Meet feat prerequisites and verify ability-score limits.",
+              "selection_effect": "Record the feat and apply its selected effects."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 4,
+        "spells_known_total": null,
+        "prepared_spells_total": 13,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 5,
+        "class_spell_slots": null,
+        "pact_slot_count": 3,
+        "pact_slot_level": 5,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 17,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "mystic-arcanum-17",
+          "name": "Executive Mystic Arcanum (Mystic Arcanum)",
+          "description": "Your patron grants you a magical secret called an arcanum. Choose one level 6 Warlock spell as this arcanum.\n\nYou can cast your arcanum spell once without expending a spell slot, and you must finish a Long Rest before you can cast it in this way again.\n\nAs shown in the Warlock Features table, you gain another Warlock spell of your choice that can be cast in this way when you reach Warlock levels 13 (level 7 spell), 15 (level 8 spell), and 17 (level 9 spell).\n\nWhenever you gain a Warlock level, you can replace one of your arcanum spells with another Warlock spell of the same level.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-mystic-arcanum-17",
+              "name": "Choose a level 9 arcanum spell",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "A level 9 Warlock spell.",
+              "eligibility_rule": "On gaining a Warlock level, one arcanum may be replaced by a Warlock spell of the same level.",
+              "selection_effect": "Record the separate once-per-long-rest arcanum; do not add a spell slot."
+            }
+          ],
+          "reskin_reference": {
+            "name": "5. Executive Mystic Arcanum (Level 11)",
+            "description": "Your patron unlocks classified, high-level corporate clearance code (granting one 6th, 7th, 8th, and 9th-level spell slot) that executes once per Long Rest without consuming standard bandwidth.",
+            "features": []
+          }
+        },
+        {
+          "id": "spell-selections-17",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "prepared-selection-17",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible level 1+ Warlock spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 4,
+        "spells_known_total": null,
+        "prepared_spells_total": 14,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 5,
+        "class_spell_slots": null,
+        "pact_slot_count": 4,
+        "pact_slot_level": 5,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 18,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "progression-values-18",
+          "name": "Class progression values",
+          "description": "Eldritch Invocations: 10 (previously 9). These are totals at this class level, not additional grants.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "invocation-increase-18",
+              "name": "Choose additional invocations",
+              "kind": "feature_option",
+              "count": 1,
+              "allowed_options": "Eldritch Invocation options in the Warlock source.",
+              "eligibility_rule": "Meet prerequisites, repeatability, and replacement restrictions in Eldritch Invocations.",
+              "selection_effect": "Record the selected invocations."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 4,
+        "spells_known_total": null,
+        "prepared_spells_total": 14,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 5,
+        "class_spell_slots": null,
+        "pact_slot_count": 4,
+        "pact_slot_level": 5,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 19,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "epic-boon-19",
+          "name": "Epic Boon",
+          "description": "You gain an Epic Boon feat (see “Feats”) or another feat of your choice for which you qualify. Boon of Fate is recommended.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-epic-boon-19",
+              "name": "Choose an Epic Boon or another eligible feat",
+              "kind": "feat",
+              "count": 1,
+              "allowed_options": "An Epic Boon feat or another eligible feat.",
+              "eligibility_rule": "Meet feat prerequisites.",
+              "selection_effect": "Record the feat and its effects."
+            }
+          ]
+        },
+        {
+          "id": "spell-selections-19",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "prepared-selection-19",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible level 1+ Warlock spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 4,
+        "spells_known_total": null,
+        "prepared_spells_total": 15,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 5,
+        "class_spell_slots": null,
+        "pact_slot_count": 4,
+        "pact_slot_level": 5,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 20,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "eldritch-master-20",
+          "name": "Unlimited Bandwidth Override (Eldritch Master)",
+          "description": "When you use your Magical Cunning feature, you regain all your expended Pact Magic spell slots.",
+          "when": "both",
+          "choices": [],
+          "reskin_reference": {
+            "name": "6. Unlimited Bandwidth Override (Eldritch Master - Level 20)",
+            "description": "You issue an emergency contract override, demanding an immediate full-bandwidth replenishment from your patron's deep server core.",
+            "features": [
+              {
+                "name": "Mechanics",
+                "description": "You can spend 1 minute petitioning your patron to instantly regain all your expended Pact Magic spell slots (1/Long Rest)."
+              }
+            ]
+          }
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 4,
+        "spells_known_total": null,
+        "prepared_spells_total": 15,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 5,
+        "class_spell_slots": null,
+        "pact_slot_count": 4,
+        "pact_slot_level": 5,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    }
+  ],
+  "subclasses": null,
+  "source_notes": [
+    "Rules basis: _reference/classes/Warlock.md, a 2024-style source. Review compatibility with the earlier 2014 multiclass design.",
+    "Class progression and mechanics use the original reference; older reskin mechanics may differ and are thematic reference only, not additional grants.",
+    "The worksheet schema is not supported by the app. Levels remain unfilled pending rules and choice review; null means unresolved or not applicable as described.",
+    "Subclass selection milestones are recorded, but subclass options, features, and spellcasting are intentionally deferred.",
+    "Reskin inspiration: classes/AI Host.json. Names may be adapted where source mechanics have changed."
+  ]
+}

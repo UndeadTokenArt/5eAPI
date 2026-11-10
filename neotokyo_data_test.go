@@ -100,3 +100,18 @@ func TestSpellLevelAcceptsNumberOrString(t *testing.T) {
 		t.Fatalf("levels = %q", got)
 	}
 }
+
+func TestPerClassFilesAndLegacyOverride(t *testing.T) {
+	dir := t.TempDir()
+	writeFile(t, filepath.Join(dir, "classes", "classes.json"), `[{"name":"Old","features":[{"name":"Stale"}]}]`)
+	writeFile(t, filepath.Join(dir, "classes", "Old.json"), `{"name":"Old","features":[{"name":"Fresh"}]}`)
+	writeFile(t, filepath.Join(dir, "classes", "SuperStud.json"), `{"name":"SuperStud"}`)
+	guide, err := loadGuideFromDir(dir)
+	if err != nil {
+		t.Fatal(err)
+	}
+	classes := guide.Category.Classes
+	if len(classes) != 2 || classes[0].Name != "Old" || classes[0].Features[0].Name != "Fresh" || classes[1].Name != "SuperStud" {
+		t.Fatalf("classes = %+v", classes)
+	}
+}

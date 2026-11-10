@@ -2,12 +2,71 @@
   "class_resources": {
     "Paladin": [
       {
-        "id": "channel-divinity",
-        "name": "Channel Divinity",
-        "recharge": "short",
-        "min_level": 3,
-        "uses": [0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-        "description": "Use the Channel Divinity option from your Sacred Oath. Regain your use on a short or long rest."
+        "id": "bio-nanite-injector",
+        "name": "Bio-Nanite Injector",
+        "recharge": "long",
+        "uses": [
+          5,
+          10,
+          15,
+          20,
+          25,
+          30,
+          35,
+          40,
+          45,
+          50,
+          55,
+          60,
+          65,
+          70,
+          75,
+          80,
+          85,
+          90,
+          95,
+          100
+        ],
+        "description": "Points equal to 5 x your Vow-Bound Operative level. Regain all points on a long rest."
+      }
+    ],
+    "Sorcerer": [
+      {
+        "id": "innate-sorcery",
+        "name": "Innate Sorcery",
+        "recharge": "long",
+        "min_level": 1,
+        "uses": [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+        "description": "As a bonus action unleash innate magic for 1 minute: your Sorcerer spell save DC increases by 1 and you have advantage on Sorcerer spell attack rolls. At class level 7, you may activate it with 2 mutation points when no uses remain."
+      },
+      {
+        "id": "mutation-points",
+        "name": "Mutation Points",
+        "recharge": "long",
+        "min_level": 2,
+        "uses": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20
+        ],
+        "description": "You gain 2 mutation points at 2nd level and one more at each Awakened Mutant level thereafter. Regain all points on a long rest. Spend points to create spell slots or expend slots to regain points (see Font of Mutation)."
       }
     ]
   }

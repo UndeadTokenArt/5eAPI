@@ -94,14 +94,19 @@ const mapPageTemplate = `
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Map Generator — D&amp;D 5e SRD</title>
   <link rel="stylesheet" href="/static/css/map.css">
+  <link rel="stylesheet" href="/static/css/navigation.css">
+  <script src="/static/js/navigation.js" defer></script>
 </head>
 <body>
-<nav>
+<nav class="site-nav" aria-label="Main navigation">
   <a href="/" class="brand">⚔ D&amp;D 5e SRD</a>
+  <button class="nav-toggle" type="button" aria-controls="main-nav-links" aria-expanded="false" aria-label="Open navigation menu"><span aria-hidden="true">&#9776;</span></button>
+  <div class="nav-links" id="main-nav-links">
   <span class="nav-sub">System Reference Document Explorer</span>
   <a href="/encounter" class="nav-enc">🎲 Encounter Generator</a>
   <a href="/map" class="nav-enc">🗺 Map Generator</a>
   <a href="/map/editor" class="nav-enc">🛠 Tile Editor</a>
+  </div>
 </nav>
 
 <div class="map-page">
@@ -220,13 +225,18 @@ const mapEditorPageTemplate = `
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tile Editor — D&amp;D 5e SRD</title>
   <link rel="stylesheet" href="/static/css/map-editor.css">
+  <link rel="stylesheet" href="/static/css/navigation.css">
+  <script src="/static/js/navigation.js" defer></script>
 </head>
 <body>
-<nav>
+<nav class="site-nav" aria-label="Main navigation">
   <a href="/" class="brand">⚔ D&amp;D 5e SRD</a>
+  <button class="nav-toggle" type="button" aria-controls="main-nav-links" aria-expanded="false" aria-label="Open navigation menu"><span aria-hidden="true">&#9776;</span></button>
+  <div class="nav-links" id="main-nav-links">
   <span class="nav-sub">Tile authoring workspace</span>
   <a href="/encounter" class="nav-enc">🎲 Encounter Generator</a>
   <a href="/map" class="nav-enc">🗺 Map Generator</a>
+  </div>
 </nav>
 
 <div class="editor-page">

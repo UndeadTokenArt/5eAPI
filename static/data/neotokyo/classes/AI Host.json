@@ -1,0 +1,154 @@
+{
+  "name": "AI Host",
+  "features": [
+    {
+      "name": "1. Contracting Entity (Otherworldly Patron - Level 1)",
+      "description": "You sign a binding operational agreement with a mega-scale entity in Neo-Tokyo's hierarchy. In exchange for your field services, your patron routes encrypted power, black-budget funds, and neural subroutines directly into your optic feed."
+    },
+    {
+      "name": "2. Encrypted Contract Firmware (Pact Magic - Level 1)",
+      "features": [
+        {
+          "name": "Spellcasting Ability",
+          "description": "You cast spells using Charisma (representing your contract negotiation leverage, force of personality, and neural clearance)."
+        },
+        {
+          "name": "Bandwidth Refresh Short Rest Recovery",
+          "description": "Unlike standard mages who memorize long algorithms, your spell slots represent allocated corporate bandwidth. Your spell slots are always cast at the highest available level and recharge completely whenever you finish a Short Rest (as your system executes a rapid corporate bandwidth refresh)."
+        }
+      ]
+    },
+    {
+      "name": "3. Black-Market Firmware Patches (Eldritch Invocations - Level 2)",
+      "description": "You install custom cybernetic and neural firmware modifications provided by your corporate contract:",
+      "features": [
+        {
+          "name": "Overclocked Beam Agonizing Blast",
+          "description": "Add your Charisma modifier to the damage roll of your Ghost-Byte or Eldritch Blast* cantrip."
+        },
+        {
+          "name": "Thermal Optic Vision Devil S Sight",
+          "description": "You can see normally in non-magical and magical darkness (or optical smoke/glitch zones) up to 120 feet."
+        },
+        {
+          "name": "Sub Dermal Kinetic Weave Armor Of Shadows",
+          "description": "You can cast Mage Armor* on yourself at will without expending a spell slot or material components."
+        },
+        {
+          "name": "Neural Translator Eyes Of The Rune Keeper",
+          "description": "You can read all writing, encrypted digital codes, and matrix data streams automatically."
+        },
+        {
+          "name": "Voice Spoofing Modulator Beast Speech Mask Of Many Faces",
+          "description": "You can cast Disguise Self* at will to spoof facial-recognition drones and corporate ID scans."
+        }
+      ]
+    },
+    {
+      "name": "4. Corporate Retainer Asset (Pact Boon - Level 3)",
+      "description": "Your employer grants you a specialized operational asset:",
+      "features": [
+        {
+          "name": "Asset",
+          "description": "Biometric Priority Pass (Pact of the Talisman): You wear a corporate priority pass or dragon-engraved talisman. When the wearer fails an ability check or saving throw, they can add a 1d4* to the roll."
+        }
+      ]
+    },
+    {
+      "name": "5. Executive Mystic Arcanum (Level 11)",
+      "description": "Your patron unlocks classified, high-level corporate clearance code (granting one 6th, 7th, 8th, and 9th-level spell slot) that executes once per Long Rest without consuming standard bandwidth."
+    },
+    {
+      "name": "6. Unlimited Bandwidth Override (Eldritch Master - Level 20)",
+      "description": "You issue an emergency contract override, demanding an immediate full-bandwidth replenishment from your patron's deep server core.",
+      "features": [
+        {
+          "name": "Mechanics",
+          "description": "You can spend 1 minute petitioning your patron to instantly regain all your expended Pact Magic spell slots (1/Long Rest)."
+        }
+      ]
+    }
+  ],
+  "subclasses": [
+    {
+      "name": "The Dragon Boardroom",
+      "description": "Dragon Hoard Dividend (Level 1): Market Leverage (Level 6): Scales of Wealth & Resistance (Level 10): Dragon-Fire Market Crash (Level 14):",
+      "details": [
+        "When you reduce a hostile creature to 0 Hit Points, you gain temporary Hit Points equal to your Charisma modifier + your Warlock level as raw spirit-energy and wealth dividend recharges your aura.",
+        "When you make an ability check or saving throw, you can call upon your dragon patron's probability algorithms to add a 1d10 to the roll (1/Short or Long Rest).",
+        "At the end of a short or long rest, choose one damage type (e.g., Fire, Lightning, Psychic). You gain resistance to that damage type until you choose a different one.",
+        "When you hit a creature with an attack, you can instantly transport the target through a hallucinatory digital dragon hoard in the deep Matrix. The target vanishes and takes 10d10 Psychic / Fire damage as its mind burns under dragon-fire. It reappears at the end of your next turn (1/Long Rest)."
+      ],
+      "features": [
+        {
+          "name": "Focus",
+          "description": "Contracted to dragon-backed financial institutions like Ryujin Trust; channels ancient dragon-fire, market leverage, and ruthless wealth reserves.*"
+        },
+        {
+          "name": "Expanded Contract Spells",
+          "description": "Command, Burning Hands, Scorching Ray, Fireball, Wall of Fire, Flame Strike."
+        }
+      ]
+    },
+    {
+      "name": "Ghost Signal",
+      "description": "Neural Mesh Telepathy (Level 1): Subconscious Glitch Shield (Level 6): Firewall Thought Shield (Level 10): Digital Thrall Override (Level 14):",
+      "details": [
+        "You can telepathically communicate with any creature you can see within 30 feet without needing a physical cyberdeck or comms link. The target understands you as long as it speaks at least one language.",
+        "When a creature makes an attack roll against you, you can use your reaction to project a local optic glitch, imposing disadvantage on the roll. If the attack misses, your next attack against that creature before the end of your next turn has advantage (1/Short or Long Rest).",
+        "Your thoughts cannot be read by neural probes or magic unless you allow it. You gain resistance to Psychic damage, and whenever a creature deals Psychic damage to you, that creature takes the same amount of damage back.",
+        "You use a touch to upload a permanent neural override into an Incapacitated human or construct. The target suffers Subliminal Override (Charmed) by you indefinitely, obeying your mental commands until cured by Remove Curse or a firewall scrub."
+      ],
+      "features": [
+        {
+          "name": "Focus",
+          "description": "Bound to autonomous deep-net AIs, Project ECHO, or the broadcast source of the 2089 Ghost Signal (\"I REMEMBER YOU\").*"
+        },
+        {
+          "name": "Expanded Contract Spells",
+          "description": "Dissonant Whispers, Neural Feedback Loop, Detect Thoughts, Neural Hijack, Global Ghost Signal Broadcast."
+        }
+      ]
+    },
+    {
+      "name": "The Corporate Arch-Executive",
+      "description": "Broadcast Glamour (Level 1): Optical Escape (Level 6): Subliminal Immunity (Level 10): Mass Recommendation Loop (Level 14):",
+      "details": [
+        "As an action, you emit a wave of subliminal media glamour. Each creature in a 10-foot cube centered on you must succeed on a Wisdom saving throw or suffer Subliminal Override (Charmed) or Threat-Lock (Frightened) until the end of your next turn (1/Short or Long Rest).",
+        "When you take damage, you can use your reaction to turn Optically Camouflaged (Invisible) and instantly teleport up to 60 feet to an unoccupied space you can see. You remain invisible until the start of your next turn (1/Short or Long Rest).",
+        "You are immune to being Subliminally Overridden (Charmed). When another creature attempts to charm or neural-control you, you can use your reaction to reflect the attempt back at the caster.",
+        "As an action, target a creature within 60 feet. It must succeed on a Wisdom save or be plunged into an immersive holographic VR loop for 1 minute. While trapped, the target is Optic Glitched (Blinded) and Acoustic Scrambled (Deafened), suffering Subliminal Override (Charmed) or Threat-Lock (Frightened) (1/Long Rest)."
+      ],
+      "features": [
+        {
+          "name": "Focus",
+          "description": "Contracted to media conglomerates (Amaterasu Media), high-society glitz lords of The Garden, or syndicate bosses like Madame Yumi; uses subliminal charm, optical cloaks, and media dominance.*"
+        },
+        {
+          "name": "Expanded Contract Spells",
+          "description": "Faerie Fire, Sleep, Phantasmal Force, Hard-Light Decoy Array, Synthetic Memory Rewrite."
+        }
+      ]
+    },
+    {
+      "name": "Subterranean Ley-Line Entity",
+      "description": "Ley-Line Plasma Conduit (Level 1): Sub-Dermal Aquifer / Electrical Shield (Level 6): Electrolyte Defense (Level 10): Ley-Line Grid Gate (Level 14):",
+      "details": [
+        "As a bonus action, you summon a 10-foot spectral conduit or high-voltage plasma tentacle at a point you can see within 60 feet. You can make a melee spell attack against a target within 10 feet of it, dealing 1d8 Lightning or Cold damage on a hit and reducing their speed by 10 feet.",
+        "You gain a swimming speed of 30 feet and can breathe underwater (navigating flooded Mizu Ward). Additionally, when taking Cold or Lightning damage, you can use your reaction to gain resistance to that instance of damage and deal 1d8 Lightning damage back to the attacker.",
+        "You project a protective aura of electrified mist or spirit-data. You and allies within 10 feet gain resistance to Fire damage, and you can cast Evard's Black Tentacles (flavored as high-voltage copper cable bundles) once per long rest without spending a spell slot.",
+        "As an action, you submerge yourself into a local power conduit or flooded drainage grate, instantly teleporting up to 1 mile to another power node or body of water you have seen. A massive lightning surge blasts outward at the destination, dealing 6d10 Lightning damage to surrounding enemies."
+      ],
+      "features": [
+        {
+          "name": "Focus",
+          "description": "Contracted to the ancient digital-magical entity sleeping beneath the Dead City and tapped by Izanagi Grid; manipulates high-voltage conduits, water-slicked cabling, and ley-line plasma.*"
+        },
+        {
+          "name": "Expanded Contract Spells",
+          "description": "Thunderwave, Create or Destroy Water, Blackout Arc, Lightning Bolt, Izanagi Grid Overload."
+        }
+      ]
+    }
+  ]
+}

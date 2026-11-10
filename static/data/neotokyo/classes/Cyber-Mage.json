@@ -1,0 +1,251 @@
+{
+  "name": "Cyber-Mage",
+  "features": [
+    {
+      "name": "1. Hardware Base & System Proficiencies (Level 1)",
+      "description": "Your biological chassis and cyberdeck hardware dictate your physical resilience, operational tools, and interface proficiencies.",
+      "features": [
+        {
+          "name": "Hit Points",
+          "description": "Hit Dice: 1d6 per Cyber-Mage level. Hit Points at 1st Level: 6 + your Constitution modifier. Hit Points at Higher Levels: 1d6 (or 4) + your Constitution modifier per level after 1st."
+        },
+        {
+          "name": "Proficiencies",
+          "description": "Armor: None. Weapons: Daggers (Monomolecular Blades), Darts (Needle Darts), Slings (Micro-Grenade Slingers), Quarterstaffs (Shock Staves), Light Crossbows (Kinetic Flechette Launchers). Tools: None. Saving Throws: System Architecture (Intelligence), Threat Scan (Wisdom). Skills: Choose two from Cyber-Arcana (Arcana), Data Archives (History), Subtext Scan (Insight), System Forensics (Investigation), Street Doc (Medicine), and Spirit & Tech Cults (Religion)."
+        },
+        {
+          "name": "Equipment",
+          "description": "You start with: (a) a Shock Staff or (b) a Monomolecular Dagger; (a) a Sub-Dermal Component Pouch or (b) a Cyberdeck Interface Focus; (a) a Hacker's Pack or (b) an Explorer's Pack; and a Cyberdeck (Spellbook)."
+        }
+      ]
+    },
+    {
+      "name": "2. Spellcasting: Digital Architecture & Executable Modules (Level 1)",
+      "description": "As a practitioner of Matrix code manipulation and digital sorcery, you operate a customized Cyberdeck containing compiled code modules and daemon scripts.",
+      "features": [
+        {
+          "name": "Low-Bandwidth Utilities (Cantrips)",
+          "description": "At 1st level, you know three low-bandwidth utility scripts of your choice from the Cyber-Mage module list. These micro-programs require minimal clock cycles and are permanently cached in your active RAM for instant execution without expending deck power cells. You learn additional utility scripts at higher levels (4 at 4th level, 5 at 10th level)."
+        },
+        {
+          "name": "Cyberdeck / Neural Memory Matrix (Spellbook)",
+          "description": "At 1st level, you possess a Cyberdeck pre-loaded with six 1st-level executable code modules of your choice. Your Cyberdeck is the secure repository of all complex programs you know, excluding your cached utilities. The code modules you add as you gain levels reflect your independent signal research, dark-web data digs, and system breakthroughs."
+        },
+        {
+          "name": "Caching & Program Allocation (Preparing and Casting Spells)",
+          "description": "The Cyber-Mage table shows how many Deck Power Cells (spell slots) you have to launch programs of 1st level and higher. To run a compiled program, you must consume a Deck Power Cell of that program's level or higher. You fully recharge all depleted power cells when you finish a System Power Cycle (Long Rest). You mount a curated list of programs into active RAM equal to your Intelligence modifier + your Cyber-Mage level (minimum 1). Re-mounting a new list requires spending 1 minute per program level after a System Power Cycle."
+        },
+        {
+          "name": "Primary Processing Ability: System Architecture (Spellcasting Ability)",
+          "description": "Intelligence is your primary System Architecture ability for Cyber-Mage programs, as your digital sorcery relies on advanced logic, network topology, and code execution. Program Firewall Save DC = 8 + Proficiency Bonus + Intelligence modifier. Program Attack Modifier = Proficiency Bonus + Intelligence modifier."
+        },
+        {
+          "name": "Background Daemon Execution (Ritual Casting)",
+          "description": "You can launch a program as an Offline Background Daemon if that module carries the [Daemon] tag and is compiled within your Cyberdeck. You do not need to mount the program into active RAM, but launching a daemon adds 10 extra minutes of system compile time."
+        },
+        {
+          "name": "Interface Focus (Spellcasting Focus)",
+          "description": "You can use a specialized Hardware Focus—such as a neural interface wrist-rig, a high-frequency signal wand, a sub-dermal coprocessor, or your Cyberdeck chassis—as a system focus for executing your programs."
+        },
+        {
+          "name": "Compiling Code & System Backups (Copying Spells & Replacement)",
+          "description": "When you find a Cyber-Mage program of 1st level or higher, you can compile it into your Cyberdeck if you can process its level. For each level of the program, the process takes 2 hours and costs 50 credits (gp) for diagnostic solder, thermal paste, and decryption licenses. Duplicating your own programs to a backup drive requires 1 hour and 10 credits per program level."
+        }
+      ]
+    },
+    {
+      "name": "3. RAM Defrag & Buffer Flush (Arcane Recovery) (Level 1)",
+      "description": "You have learned to purge temporary cache files and clear thermal throttling during a Quick Diagnostic Pause.",
+      "features": [
+        {
+          "name": "Mechanics",
+          "description": "Once per day when you finish a Quick Diagnostic Pause (Short Rest), you can execute an automated RAM defragmentation cycle to recover depleted Deck Power Cells. The recovered power cells can have a combined level equal to or less than half your Cyber-Mage level (rounded up), and none of the recovered cells can be 6th level or higher."
+        }
+      ]
+    },
+    {
+      "name": "4. Cyberdeck Sub-Routine Archetype (Level 2)",
+      "description": "When you reach 2nd level, you choose a specialized Cyberdeck Sub-Routine Archetype (Arcane Tradition), shaping your digital practice through a dedicated software engineering focus. Your choice grants you features at 2nd, 6th, 10th, and 14th level."
+    },
+    {
+      "name": "5. Modular Utility Swap (Cantrip Formulas - Optional) (Level 3)",
+      "description": "You have scribed a set of modular utility subroutines into your deck BIOS.",
+      "features": [
+        {
+          "name": "Mechanics",
+          "description": "Whenever you finish a System Power Cycle (Long Rest) and consult your deck BIOS, you can swap one cached low-bandwidth utility script (cantrip) you know with another utility script from the Cyber-Mage list."
+        }
+      ]
+    },
+    {
+      "name": "6. Hardware & Neural Enhancement (Level 4)",
+      "description": "When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can upgrade your biological hardware or neural architecture.",
+      "features": [
+        {
+          "name": "Mechanics",
+          "description": "You can increase one ability score of your choice by 2, or increase two ability scores of your choice by 1 (max 20). Alternatively, you can select a Cyberpunk Combat Feat."
+        }
+      ]
+    },
+    {
+      "name": "7. Permanent Neural Kernel Caching (Spell Mastery) (Level 18)",
+      "description": "You have achieved such complete mastery over core programs that you can execute them at will.",
+      "features": [
+        {
+          "name": "Mechanics",
+          "description": "Choose a 1st-level program and a 2nd-level program compiled in your Cyberdeck. You can execute those programs at their lowest level without expending a Deck Power Cell whenever you have them mounted in active RAM. By spending 8 hours in diagnostic simulation, you can exchange one or both chosen programs for different ones of the same levels."
+        }
+      ]
+    },
+    {
+      "name": "8. Command-Line Directives (Signature Spells) (Level 20)",
+      "description": "You gain total mastery over two high-tier operational programs, executing them with minimal clock cycles.",
+      "features": [
+        {
+          "name": "Mechanics",
+          "description": "Choose two 3rd-level programs in your Cyberdeck as your signature directives. You always have these programs mounted in active RAM without counting against your preparation limit. You can execute each of them once at 3rd level without expending a Deck Power Cell (recharges on a Short or Long Rest)."
+        }
+      ]
+    }
+  ],
+  "subclasses": [
+    {
+      "name": "School of Technomancy",
+      "description": "Master programmers who specialize in offensive signal overrides, high-frequency energy discharges, and raw Matrix code warfare.",
+      "details": [
+        "Technomancy Compiler Savant (Level 2): The time and credit cost to compile Technomancy modules into your Cyberdeck is halved.",
+        "Friendly Signal Filter (Level 2): When you launch a Technomancy program that affects an area, you can isolate up to 1 + program level friendly neural links. Isolated allies automatically succeed on their saving throws and take no damage if they would normally take half.",
+        "Potent Diagnostic Feedback (Level 6): Your offensive utility scripts (cantrips) deal half damage on a successful saving throw.",
+        "High-Frequency Signal Overclock (Level 10): Add your Intelligence modifier to one damage roll of any Technomancy program you execute.",
+        "System Overburn Protocol (Level 14): When you launch a 1st through 5th-level program, you can maximize its damage output. The first use causes no harm, but subsequent uses before a System Power Cycle deal 2d12 necrotic/system strain damage to you per program level."
+      ],
+      "features": [
+        {
+          "name": "Focus",
+          "description": "Focused on raw computational power, high-decibel energy discharges, and tactical squad firewall protection."
+        },
+        {
+          "name": "Technomancy Compiler Savant",
+          "description": "Gold and time required to compile Technomancy code modules into your deck is reduced by 50%."
+        },
+        {
+          "name": "Friendly Signal Filter",
+          "description": "Isolate squadmate neural links so area-of-effect offensive code automatically passes through allies without inflicting harm."
+        },
+        {
+          "name": "Potent Diagnostic Feedback",
+          "description": "Targets taking saving throws against your utility cantrips still suffer half damage on a successful save."
+        },
+        {
+          "name": "High-Frequency Signal Overclock",
+          "description": "Add your System Architecture (Intelligence) modifier to damage rolls of Technomancy programs."
+        },
+        {
+          "name": "System Overburn Protocol",
+          "description": "Maximize damage on 1st-5th level offensive programs at the cost of taking direct system strain feedback on repeated uses."
+        }
+      ]
+    },
+    {
+      "name": "School of Black ICE Defense",
+      "description": "Cyber-security experts specializing in counter-hacking, neural firewalls, and hard-light protective barriers.",
+      "details": [
+        "Firewalled Aegis (Level 2): When you execute a 1st-level or higher Defensive program, you generate a digital ward that absorbs damage equal to (2 × Cyber-Mage level) + Int modifier. Executing Defensive code restores HP to the ward.",
+        "Squad Intercept Link (Level 6): When an ally within 30 feet takes damage, you can use your reaction to interpose your Firewalled Aegis to absorb the incoming damage instead.",
+        "Counter-Hack Overdrive (Level 10): Add your Proficiency bonus to Intelligence checks made for Counter-Hack (Counterspell) and System Scrub (Dispel Magic).",
+        "Sub-Dermal Hardening Field (Level 14): You gain advantage on saving throws against all programs and digital hacks, as well as resistance to damage dealt by programs."
+      ],
+      "features": [
+        {
+          "name": "Focus",
+          "description": "Specializes in counter-hacking, Black ICE deployment, and squad-wide neural firewall defense."
+        },
+        {
+          "name": "Firewalled Aegis",
+          "description": "Creates a protective digital barrier absorbing damage equal to twice your level + Int modifier whenever you launch defensive code."
+        },
+        {
+          "name": "Squad Intercept Link",
+          "description": "Use your reaction to transfer your Firewalled Aegis shield to absorb incoming damage aimed at an ally within 30 feet."
+        },
+        {
+          "name": "Counter-Hack Overdrive",
+          "description": "Add your proficiency bonus to System Forensics checks for Counter-Hack and System Scrub routines."
+        },
+        {
+          "name": "Sub-Dermal Hardening Field",
+          "description": "Gain advantage on saving throws against hostile programs and resistance to all program-based damage."
+        }
+      ]
+    },
+    {
+      "name": "School of System Forensics & Neural Analysis",
+      "description": "Data analysts and predictive netrunners who calculate battlefield probabilities and parse future timelines.",
+      "details": [
+        "Predictive Algorithm Matrix (Level 2): After a System Power Cycle, roll two d20s and record the results. You can replace any attack roll, saving throw, or ability check made by you or a creature you can see with one of these predictive rolls (2/Long Rest).",
+        "Recycled Signal Cycles (Level 6): Executing a 2nd-level or higher Analysis (Divination) program refunds a depleted Deck Power Cell of a lower level.",
+        "Full Spectrum Threat Scan (Level 10): As an action, gain one sensory benefit until incapacitated: Darkvision (60 ft), Optics Penetration (Ethereal/Ghost Sight 60 ft), or Neural Translation (read all languages).",
+        "Quantum Probability Cascade (Level 14): Your Predictive Algorithm Matrix gains a third d20 prediction roll after each System Power Cycle."
+      ],
+      "features": [
+        {
+          "name": "Focus",
+          "description": "Predictive analytics, deep data mining, and battlefield probability manipulation."
+        },
+        {
+          "name": "Predictive Algorithm Matrix",
+          "description": "Record two d20 rolls after a long rest to substitute for any attack, check, or save made on the grid."
+        },
+        {
+          "name": "Recycled Signal Cycles",
+          "description": "Executing Analysis programs refunds a lower-level Deck Power Cell back into active RAM."
+        },
+        {
+          "name": "Full Spectrum Threat Scan",
+          "description": "Activate advanced cybereye modes granting darkvision, ghost sight, or universal neural translation."
+        },
+        {
+          "name": "Quantum Probability Cascade",
+          "description": "Record three predictive d20 rolls instead of two after each System Power Cycle."
+        }
+      ]
+    },
+    {
+      "name": "School of Neural Overdrive & Cyber-Warfare",
+      "description": "Tactical battle-deckers combining defensive reflexes with offensive code bursts to dominate high-intensity firefights.",
+      "details": [
+        "Tactical Reflex Deflection (Level 2): When hit by an attack or failing a save, use your reaction to gain +2 AC against that attack or +4 to that saving throw. Doing so prevents casting 1st-level or higher spells until the end of your next turn.",
+        "High-Frequency Initiative Boost (Level 2): Add your System Architecture (Intelligence) modifier to your Initiative rolls.",
+        "Feedback Disruption Surge (Level 6): Successfully countering or dispelling a program grants a Power Surge. You can spend surges to deal extra force/lightning damage equal to half your Cyber-Mage level on hit.",
+        "Tactical Overclock Armor (Level 10): Gain +2 AC and +2 to all saving throws while actively maintaining Concentration on a program.",
+        "Deflective Discharge Grid (Level 14): Using Tactical Reflex Deflection discharges kinetic shockwaves dealing force damage equal to half your level to up to 3 nearby hostile units."
+      ],
+      "features": [
+        {
+          "name": "Focus",
+          "description": "Combines tactical kinetic defense, initiative acceleration, and disruptive code feedback."
+        },
+        {
+          "name": "Tactical Reflex Deflection",
+          "description": "Reaction to gain +2 AC or +4 on a saving throw against an incoming strike or hack."
+        },
+        {
+          "name": "High-Frequency Initiative Boost",
+          "description": "Add your Intelligence modifier to Initiative rolls."
+        },
+        {
+          "name": "Feedback Disruption Surge",
+          "description": "Gain power surges when countering or dispelling code to unleash extra force damage on subsequent attacks."
+        },
+        {
+          "name": "Tactical Overclock Armor",
+          "description": "Gain +2 AC and +2 to all saves while maintaining concentration on an active code module."
+        },
+        {
+          "name": "Deflective Discharge Grid",
+          "description": "Deflection reaction releases a kinetic discharge dealing force damage to up to three adjacent enemies."
+        }
+      ]
+    }
+  ]
+}
