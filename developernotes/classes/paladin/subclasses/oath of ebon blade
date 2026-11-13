@@ -1,0 +1,79 @@
+Wield the Power of Death Against the Scourge
+
+The Oath of the Ebon Blade unites the free death knights of Azeroth. No longer directly under the Lich King’s control, they still serve Bolvar Fordragon - first as agents of the new Lich King, and later, after the destruction of the Helm of Domination, as troops devoted to stopping the Scourge’s spread.
+
+Level 1: Death Coil
+This feature replaces the Lay On Hands feature of the Paladin class.
+
+Your creature type becomes Undead.
+
+You also gain the ability to manipulate negative energy. You have a pool of d8s to fuel this ability. The number of dice in the pool equals one plus your Charisma modifier (minimum of one die).
+
+As a Bonus Action, you can target a creature you can see within 60 feet of yourself and force it to make a Constitution saving throw, expending dice from the pool. The maximum number of dice you can expend at once equals your Charisma modifier (minimum of one die). Roll the dice you expend. The target takes Necrotic damage equal to the roll’s total on a failed save or half as much damage on a successful one. If the target is an Undead, you can choose to have it regain Hit Points equal to the roll’s total instead. Your pool regains all expended dice when you finish a Long Rest.
+
+Level 2: Runic Smite
+This feature replaces the Paladin’s Smite feature of the Paladin class.
+
+You always have the Rune Strike spell prepared. You can cast it once without a spell slot, and you regain the ability to cast it in that way when you finish a Long Rest.
+
+Level 3: Oath of the Ebon Blade Spells
+The magic of your oath and your Runeforging feature (see below) ensure you always have certain spells ready; when you reach a Paladin level specified in the Oath of the Ebon Blade Spells table, you thereafter always have the spell in the Spells (All) column prepared. You also have the additional spells listed in the column matching the rune you have inscribed on your weapon, if any.
+
+Oath of the Ebon Blade Spells
+Paladin Level	Spells (All)	Spells (Blood)	Spells (Frost)	Spells (Unholy)
+3	Death Grip	Vampiric Blood	Chains of Ice	Scourge Strike
+5	Death and Decay	Spiritual Weapon	Frostscythe	Ray of Enfeeblement
+9	Summon Undead	Leeching Strike	Remorseless Winter	Bestow Curse
+13	Freedom of Movement	Evard's Black Tentacles	Ice Storm	Blight
+17	Circle of Power	Bonestorm	Cone of Cold	Contagion
+Level 3: Runeforging
+When you finish a Long Rest, you can inscribe one of the following runes on a melee weapon you are holding, or you can transfer the rune to a different weapon. Whenever you gain a level, you can replace it with a different rune.
+
+Blood. When you inscribe this rune on your weapon, and whenever you finish a Long Rest while the rune is inscribed on your weapon, you gain Temporary Hit Points equal to your Charisma modifier plus your Paladin level. While you are wielding your inscribed weapon, you gain these Temporary Hit Points whenever you reduce an enemy to 0 Hit Points.
+
+Frost. While you are wielding your inscribed weapon, damage from your weapon attacks, Paladin spells, and Paladin features ignores Resistance to Cold damage. When you make the extra attack of the Light property and hit while wielding your inscribed weapon, you deal an extra 1d4 Cold damage.
+
+Unholy. While you are wielding your inscribed weapon, damage from your weapon attacks, Paladin spells, and Paladin features ignores Resistance to Necrotic damage. If your inscribed weapon has the Heavy property, the first creature you hit with it each turn takes extra Necrotic damage equal to your Charisma modifier (minimum of 1).
+
+Level 3: Runic Power
+Immediately after you cast Rune Strike, you can expend one use of your Channel Divinity to gain one of the following benefits based on the rune inscribed on your weapon.
+
+Blood. You regain a number of Hit Points equal to the Necrotic damage dealt with your Rune Strike.
+
+Frost. Frost covers your weapon and shatters on impact. The target of your Rune Strike and each enemy in a 10-foot Emanation originating from the target take 2d6 Cold damage.
+
+Unholy. The target of your Rune Strike is cursed until the end of your next turn. The next time the cursed target makes a saving throw, it subtracts 1d6 from the roll, and the curse ends.
+
+Level 5: Faithful Steed
+In addition to the benefits of the Paladin’s Faithful Steed feature, when you cast Find Steed, the Otherworldly Steed can be Undead. An Undead steed deals Necrotic damage with its Otherworldly Slam action and has this Bonus Action:
+
+Ghostly Stride (Undead Only; Recharges After a Long Rest). The steed and its rider can move through other creatures and objects this turn as if they were Difficult Terrain. Both steed and rider take 5 (1d10) Force damage if they end their turn inside an object.
+
+Level 7: Aura of Deathly Endurance
+You and your allies have Resistance to Cold, Necrotic, and Psychic damage while in your Aura of Protection.
+
+Level 11: Runic Strikes
+This feature replaces the Paladin’s Radiant Strikes feature.
+
+When you hit a target with an attack roll using a Melee weapon or an Unarmed Strike, the target takes an extra 1d8 Necrotic damage.
+
+Level 14: Improved Death Coil
+This feature replaces the Paladin’s Restoring Touch feature.
+
+When you use Death Coil to deal damage, the target takes extra Necrotic damage equal to your Charisma modifier (minimum of 1) whether or not it fails its saving throw. If the target is an Undead, and you have it regain Hit Points, it regains additional Hit Points equal to your Paladin level.
+
+Level 15: Runic Mastery
+You can invoke the power of the rune inscribed on your weapon. Once you use this feature, you can’t do so again until you finish a Long Rest. The effect depends on the rune you have inscribed.
+
+Blood. When a creature hits another creature you can see within 10 feet of you with an attack roll, you can take a Reaction to reduce the damage the target takes by your Paladin level. You then lose a number of Hit Points equal to your Paladin level.
+
+Frost. When you take the Attack action on your turn, you can replace one attack with an exhalation of frost magic in a 30-foot Cone. Each creature in that area makes a Dexterity saving throw against your spell save DC. A creature takes 8d6 Cold damage on a failed save or half as much damage on a successful one.
+
+Unholy. When you cast Summon Undead, you can modify it so that the spell doesn’t require Concentration. If you do so, the spell’s duration becomes 1 minute for that casting, and when summoned, the Undead Spirit has a number of Temporary Hit Points equal to your Paladin level plus your Charisma modifier. In addition, the first time each turn the spirit hits a creature, the spirit deals extra Necrotic damage equal to half your Paladin level (round up).
+
+Level 20: Aspect of the Horsemen
+As a Bonus Action, you gain the benefits below for 10 minutes or until you end them (no action required). Once you use this feature, you can’t use it again until you finish a Long Rest. You can also restore your use of it by expending a level 5 spell slot (no action required).
+
+Generate Runic Power. You can restore a use of your Runic Mastery by expending a level 4 spell slot (no action required).
+
+Runeforging. When you use your Runic Power and Runic Mastery features, you can choose any effect, not just the one that corresponds to the rune inscribed on your weapon.

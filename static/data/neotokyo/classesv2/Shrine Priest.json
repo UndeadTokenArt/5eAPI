@@ -1,0 +1,1428 @@
+{
+  "schema_status": "draft_authoring_template_not_supported_by_app",
+  "schema_version": 1,
+  "uid": "class-bio-medic-shrine-priest-draft",
+  "name": "Shrine Priest",
+  "original_class": "Cleric",
+  "description": "Field medics deploying trauma-surge nanites or traditional Shinto mediums invoking ancient spirit wards against corporate incursions.",
+  "hit_die": 8,
+  "multiclass_prerequisites": {
+    "description": "2024 multiclass prerequisite: meet this class primary ability requirement when adding a new class; requirements also apply to every current class.",
+    "any_of": [
+      {
+        "all_of": [
+          {
+            "ability": "wisdom",
+            "minimum": 13
+          }
+        ]
+      }
+    ]
+  },
+  "starting_proficiencies": {
+    "armor": [
+      "Light and Medium armor and Shields"
+    ],
+    "weapons": [
+      "Simple weapons"
+    ],
+    "tools": null,
+    "saving_throws": [
+      "wisdom",
+      "charisma"
+    ],
+    "skills": [],
+    "choices": [
+      {
+        "id": "starting-skills",
+        "name": "Choose starting skills",
+        "kind": "skill",
+        "count": 2,
+        "allowed_options": [
+          "History",
+          "Insight",
+          "Medicine",
+          "Persuasion",
+          "Religion"
+        ],
+        "eligibility_rule": "Choose distinct skills; verify handling of an already-proficient skill.",
+        "selection_effect": "Record proficiency in the selected skills."
+      }
+    ]
+  },
+  "multiclass_proficiencies": {
+    "armor": [
+      "Light armor",
+      "Medium armor",
+      "Shields"
+    ],
+    "weapons": [],
+    "tools": [],
+    "skills": [],
+    "choices": [],
+    "description": "Gain the following traits from the Core Cleric Traits table: Hit Point Die and training with Light and Medium armor and Shields."
+  },
+  "starting_equipment": {
+    "description": "Choose A or B: (A) Chain Shirt, Shield, Mace, Holy Symbol, Priest’s Pack, and 7 GP; or (B) 110 GP Starting equipment is not granted on multiclass entry.",
+    "grants": [],
+    "choices": [
+      {
+        "id": "starting-equipment",
+        "name": "Choose starting equipment",
+        "kind": "equipment_bundle",
+        "count": 1,
+        "allowed_options": "Choose A or B: (A) Chain Shirt, Shield, Mace, Holy Symbol, Priest’s Pack, and 7 GP; or (B) 110 GP",
+        "eligibility_rule": "Choose one listed bundle when starting as this class.",
+        "selection_effect": "Record the chosen items and currency."
+      }
+    ]
+  },
+  "spellcasting": {
+    "kind": "full",
+    "ability": "wisdom",
+    "starts_at_class_level": 1,
+    "spell_list_id": "Cleric",
+    "casting_mode": "prepared",
+    "preparation_rule": "Changing Your Prepared Spells. Whenever you finish a Long Rest, you can change your list of prepared spells, replacing any of the spells there with other Cleric spells for which you have spell slots.",
+    "ritual_casting_rule": null,
+    "focus_rule": "Spellcasting Focus. You can use a Holy Symbol as a Spellcasting Focus for your Cleric spells.",
+    "multiclass_slot_rule": "Full caster; verify shared multiclass slot calculation under the chosen edition.",
+    "notes": "See the level 1 Spellcasting or Pact Magic feature for casting, preparation, focus, and replacement rules. Null fields require review; the reference spell mapping may not be a complete 2024 spell list."
+  },
+  "resources": [
+    {
+      "id": "resource-channel-divinity",
+      "name": "Channel Divinity",
+      "description": "See the Channel Divinity feature for costs, use, and recovery. You can channel divine energy directly from the Outer Planes to fuel magical effects. You start with two such effects: Divine Spark and Turn Undead, each of which is described below. Each time you use this class’s Channel Divinity, choose which Channel Divinity effect from this class to create. You gain additional effect options at higher Cleric levels.\n\nYou can use this class’s Channel Divinity twice. You regain one of its expended uses when you finish a Short Rest, and you regain all expended uses when you finish a Long Rest. You gain additional uses when you reach certain Cleric levels, as shown in the Channel Divinity column of the Cleric Features table.\n\nIf a Channel Divinity effect requires a saving throw, the DC equals the spell save DC from this class’s Spellcasting feature.\n\nDivine Spark. As a Magic action, you point your Holy Symbol at another creature you can see within 30 feet of yourself and focus divine energy at it. Roll 1d8 and add your Wisdom modifier. You either restore Hit Points to the creature equal to that total or force the creature to make a Constitution saving throw. On a failed save, the creature takes Necrotic or Radiant damage (your choice) equal to that total. On a successful save, the creature takes half as much damage (round down).\n\nYou roll an additional d8 when you reach Cleric levels 7 (2d8), 13 (3d8), and 18 (4d8).\n\nTurn Undead. As a Magic action, you present your Holy Symbol and censure Undead creatures. Each Undead of your choice within 30 feet of you must make a Wisdom saving throw. If the creature fails its save, it has the Frightened and Incapacitated conditions for 1 minute. For that duration, it tries to move as far from you as it can on its turns. This effect ends early on the creature if it takes any damage, if you have the Incapacitated condition, or if you die.",
+      "recharge": "other",
+      "maximum_rule": "See the feature and level table; resolve structured maximum and recovery rules before implementation."
+    },
+    {
+      "id": "resource-divine-intervention",
+      "name": "Divine Intervention",
+      "description": "See the Divine Intervention feature for costs, use, and recovery. You can call on your deity or pantheon to intervene on your behalf. As a Magic action, choose any Cleric spell of level 5 or lower that doesn’t require a Reaction to cast. As part of the same action, you cast that spell without expending a spell slot or needing Material components. You can’t use this feature again until you finish a Long Rest.",
+      "recharge": "other",
+      "maximum_rule": "See the feature and level table; resolve structured maximum and recovery rules before implementation."
+    }
+  ],
+  "levels": [
+    {
+      "level": 1,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "spellcasting-1",
+          "name": "Shrine Priest Spellcasting (Spellcasting)",
+          "description": "You have learned to cast spells through prayer and meditation. See “Spells” for the rules on spellcasting. The information below details how you use those rules with Cleric spells, which appear on the Cleric spell list later in the class’s description.\n\nCantrips. You know three cantrips of your choice from the Cleric spell list. Guidance, Sacred Flame, and Thaumaturgy are recommended.\n\nWhenever you gain a Cleric level, you can replace one of your cantrips with another cantrip of your choice from the Cleric spell list.\n\nWhen you reach Cleric levels 4 and 10, you learn another cantrip of your choice from the Cleric spell list, as shown in the Cantrips column of the Cleric Features table.\n\nSpell Slots. The Cleric Features table shows how many spell slots you have to cast your level 1+ spells. You regain all expended slots when you finish a Long Rest.\n\nPrepared Spells of Level 1+. You prepare the list of level 1+ spells that are available for you to cast with this feature. To start, choose four level 1 spells from the Cleric spell list. Bless, Cure Wounds, Guiding Bolt, and Shield of Faith are recommended.\n\nThe number of spells on your list increases as you gain Cleric levels, as shown in the Prepared Spells column of the Cleric Features table. Whenever that number increases, choose additional spells from the Cleric spell list until the number of spells on your list matches the number on the table. The chosen spells must be of a level for which you have spell slots. For example, if you’re a level 3 Cleric, your list of prepared spells can include six spells of levels 1 and 2 in any combination.\n\nIf another Cleric feature gives you spells that you always have prepared, those spells don’t count against the number of spells you can prepare with this feature, but those spells otherwise count as Cleric spells for you.\n\nChanging Your Prepared Spells. Whenever you finish a Long Rest, you can change your list of prepared spells, replacing any of the spells there with other Cleric spells for which you have spell slots.\n\nSpellcasting Ability. Wisdom is your spellcasting ability for your Cleric spells.\n\nSpellcasting Focus. You can use a Holy Symbol as a Spellcasting Focus for your Cleric spells.",
+          "when": "both",
+          "choices": null
+        },
+        {
+          "id": "divine-order-1",
+          "name": "Divine Order",
+          "description": "You have dedicated yourself to one of the following sacred roles of your choice.\n\nProtector. Trained for battle, you gain proficiency with Martial weapons and training with Heavy armor.\n\nThaumaturge. You know one extra cantrip from the Cleric spell list. In addition, your mystical connection to the divine gives you a bonus to your Intelligence (Arcana or Religion) checks. The bonus equals your Wisdom modifier (minimum of +1).",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-divine-order-1",
+              "name": "Choose Divine Order",
+              "kind": "feature_option",
+              "count": 1,
+              "allowed_options": "See the source feature and its option list.",
+              "eligibility_rule": "Follow the feature's count, prerequisites, and replacement rules.",
+              "selection_effect": "Record selections and effects; structured details require review."
+            }
+          ]
+        },
+        {
+          "id": "progression-values-1",
+          "name": "Class progression values",
+          "description": "Channel Divinity: —. These are totals at this class level, not additional grants.",
+          "when": "both",
+          "choices": []
+        },
+        {
+          "id": "spell-selections-1",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "cantrip-selection-1",
+              "name": "Choose cantrips",
+              "kind": "spell",
+              "count": 3,
+              "allowed_options": "Cantrips on the Cleric spell list.",
+              "eligibility_rule": "Follow the class's cantrip and replacement rules.",
+              "selection_effect": "Record the newly selected class cantrips."
+            },
+            {
+              "id": "prepared-selection-1",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 4,
+              "allowed_options": "Eligible level 1+ Cleric spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 3,
+        "spells_known_total": null,
+        "prepared_spells_total": 4,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 1,
+        "class_spell_slots": [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 2,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "channel-divinity-2",
+          "name": "Channel Divinity",
+          "description": "You can channel divine energy directly from the Outer Planes to fuel magical effects. You start with two such effects: Divine Spark and Turn Undead, each of which is described below. Each time you use this class’s Channel Divinity, choose which Channel Divinity effect from this class to create. You gain additional effect options at higher Cleric levels.\n\nYou can use this class’s Channel Divinity twice. You regain one of its expended uses when you finish a Short Rest, and you regain all expended uses when you finish a Long Rest. You gain additional uses when you reach certain Cleric levels, as shown in the Channel Divinity column of the Cleric Features table.\n\nIf a Channel Divinity effect requires a saving throw, the DC equals the spell save DC from this class’s Spellcasting feature.\n\nDivine Spark. As a Magic action, you point your Holy Symbol at another creature you can see within 30 feet of yourself and focus divine energy at it. Roll 1d8 and add your Wisdom modifier. You either restore Hit Points to the creature equal to that total or force the creature to make a Constitution saving throw. On a failed save, the creature takes Necrotic or Radiant damage (your choice) equal to that total. On a successful save, the creature takes half as much damage (round down).\n\nYou roll an additional d8 when you reach Cleric levels 7 (2d8), 13 (3d8), and 18 (4d8).\n\nTurn Undead. As a Magic action, you present your Holy Symbol and censure Undead creatures. Each Undead of your choice within 30 feet of you must make a Wisdom saving throw. If the creature fails its save, it has the Frightened and Incapacitated conditions for 1 minute. For that duration, it tries to move as far from you as it can on its turns. This effect ends early on the creature if it takes any damage, if you have the Incapacitated condition, or if you die.",
+          "when": "both",
+          "choices": null
+        },
+        {
+          "id": "progression-values-2",
+          "name": "Class progression values",
+          "description": "Channel Divinity: 2 (previously —). These are totals at this class level, not additional grants.",
+          "when": "both",
+          "choices": []
+        },
+        {
+          "id": "spell-selections-2",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "prepared-selection-2",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible level 1+ Cleric spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 3,
+        "spells_known_total": null,
+        "prepared_spells_total": 5,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 1,
+        "class_spell_slots": [
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 3,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "cleric-subclass-3",
+          "name": "Shrine Domain (Cleric Subclass)",
+          "description": "Choose a Shrine Priest domain and gain its level 3 features. Additional subclass features arrive at class levels 6 and 17.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-cleric-subclass-3",
+              "name": "Choose a shrine domain",
+              "kind": "subclass",
+              "count": 1,
+              "allowed_options": ["Arcane Circuit Domain", "Twin-Signal Discipline Domain", "Threshold Guardian Domain", "Data Shrine Knowledge Domain", "Trauma Care Life Domain", "Neon Radiance Domain", "Void Signal Domain", "Ghost-Image Trickery Domain", "Battle Shrine Domain"],
+              "eligibility_rule": "Choose one of the authored Shrine Priest domains.",
+              "selection_effect": "Record the chosen domain, its level 3 features, and its granted spells and choices."
+            }
+          ]
+        },
+        {
+          "id": "spell-selections-3",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "prepared-selection-3",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible level 1+ Cleric spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 3,
+        "spells_known_total": null,
+        "prepared_spells_total": 6,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 2,
+        "class_spell_slots": [
+          4,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 4,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "ability-score-improvement-4",
+          "name": "Ability Score Improvement",
+          "description": "You gain the Ability Score Improvement feat (see “Feats”) or another feat of your choice for which you qualify. You gain this feature again at Cleric levels 8, 12, and 16.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-ability-score-improvement-4",
+              "name": "Choose an eligible feat or Ability Score Improvement",
+              "kind": "feat",
+              "count": 1,
+              "allowed_options": "Ability Score Improvement or another eligible feat.",
+              "eligibility_rule": "Meet feat prerequisites and verify ability-score limits.",
+              "selection_effect": "Record the feat and apply its selected effects."
+            }
+          ]
+        },
+        {
+          "id": "spell-selections-4",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "cantrip-selection-4",
+              "name": "Choose cantrips",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Cantrips on the Cleric spell list.",
+              "eligibility_rule": "Follow the class's cantrip and replacement rules.",
+              "selection_effect": "Record the newly selected class cantrips."
+            },
+            {
+              "id": "prepared-selection-4",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible level 1+ Cleric spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 4,
+        "spells_known_total": null,
+        "prepared_spells_total": 7,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 2,
+        "class_spell_slots": [
+          4,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 5,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "sear-undead-5",
+          "name": "Sear Undead",
+          "description": "Whenever you use Turn Undead, you can roll a number of d8s equal to your Wisdom modifier (minimum of 1d8) and add the rolls together. Each Undead that fails its saving throw against that use of Turn Undead takes Radiant damage equal to the roll’s total. This damage doesn’t end the turn effect.",
+          "when": "both",
+          "choices": []
+        },
+        {
+          "id": "spell-selections-5",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "prepared-selection-5",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 2,
+              "allowed_options": "Eligible level 1+ Cleric spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 4,
+        "spells_known_total": null,
+        "prepared_spells_total": 9,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 3,
+        "class_spell_slots": [
+          4,
+          3,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 6,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "progression-values-6",
+          "name": "Class progression values",
+          "description": "Channel Divinity: 3 (previously 2). These are totals at this class level, not additional grants.",
+          "when": "both",
+          "choices": []
+        },
+        {
+          "id": "spell-selections-6",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "prepared-selection-6",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible level 1+ Cleric spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 4,
+        "spells_known_total": null,
+        "prepared_spells_total": 10,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 3,
+        "class_spell_slots": [
+          4,
+          3,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "See the chosen domain for its level 6 feature. Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 7,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "blessed-strikes-7",
+          "name": "Blessed Strikes",
+          "description": "Divine power infuses you in battle. You gain one of the following options of your choice (if you get either option from a Cleric subclass in an older book, use only the option you choose for this feature).\n\nDivine Strike. Once on each of your turns when you hit a creature with an attack roll using a weapon, you can cause the target to take an extra 1d8 Necrotic or Radiant damage (your choice).\n\nPotent Spellcasting. Add your Wisdom modifier to the damage you deal with any Cleric cantrip.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-blessed-strikes-7",
+              "name": "Choose Blessed Strikes option",
+              "kind": "feature_option",
+              "count": 1,
+              "allowed_options": "See the source feature and its option list.",
+              "eligibility_rule": "Follow the feature's count, prerequisites, and replacement rules.",
+              "selection_effect": "Record selections and effects; structured details require review."
+            }
+          ]
+        },
+        {
+          "id": "divine-spark-scaling-7",
+          "name": "Divine Spark improvement",
+          "description": "Divine Spark rolls 2d8 rather than 1d8. Follow the Channel Divinity feature's other rules.",
+          "when": "both",
+          "choices": []
+        },
+        {
+          "id": "spell-selections-7",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "prepared-selection-7",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible level 1+ Cleric spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 4,
+        "spells_known_total": null,
+        "prepared_spells_total": 11,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 4,
+        "class_spell_slots": [
+          4,
+          3,
+          3,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 8,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "ability-score-improvement-8",
+          "name": "Ability Score Improvement",
+          "description": "You gain the Ability Score Improvement feat (see “Feats”) or another feat of your choice for which you qualify. You gain this feature again at Cleric levels 8, 12, and 16.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-ability-score-improvement-8",
+              "name": "Choose an eligible feat or Ability Score Improvement",
+              "kind": "feat",
+              "count": 1,
+              "allowed_options": "Ability Score Improvement or another eligible feat.",
+              "eligibility_rule": "Meet feat prerequisites and verify ability-score limits.",
+              "selection_effect": "Record the feat and apply its selected effects."
+            }
+          ]
+        },
+        {
+          "id": "spell-selections-8",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "prepared-selection-8",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible level 1+ Cleric spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 4,
+        "spells_known_total": null,
+        "prepared_spells_total": 12,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 4,
+        "class_spell_slots": [
+          4,
+          3,
+          3,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 9,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "spell-selections-9",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "prepared-selection-9",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 2,
+              "allowed_options": "Eligible level 1+ Cleric spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 4,
+        "spells_known_total": null,
+        "prepared_spells_total": 14,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 5,
+        "class_spell_slots": [
+          4,
+          3,
+          3,
+          3,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 10,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "divine-intervention-10",
+          "name": "Divine Intervention",
+          "description": "You can call on your deity or pantheon to intervene on your behalf. As a Magic action, choose any Cleric spell of level 5 or lower that doesn’t require a Reaction to cast. As part of the same action, you cast that spell without expending a spell slot or needing Material components. You can’t use this feature again until you finish a Long Rest.",
+          "when": "both",
+          "choices": null
+        },
+        {
+          "id": "spell-selections-10",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "cantrip-selection-10",
+              "name": "Choose cantrips",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Cantrips on the Cleric spell list.",
+              "eligibility_rule": "Follow the class's cantrip and replacement rules.",
+              "selection_effect": "Record the newly selected class cantrips."
+            },
+            {
+              "id": "prepared-selection-10",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible level 1+ Cleric spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 5,
+        "spells_known_total": null,
+        "prepared_spells_total": 15,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 5,
+        "class_spell_slots": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 11,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "spell-selections-11",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "prepared-selection-11",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible level 1+ Cleric spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 5,
+        "spells_known_total": null,
+        "prepared_spells_total": 16,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 6,
+        "class_spell_slots": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 12,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "ability-score-improvement-12",
+          "name": "Ability Score Improvement",
+          "description": "You gain the Ability Score Improvement feat (see “Feats”) or another feat of your choice for which you qualify. You gain this feature again at Cleric levels 8, 12, and 16.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-ability-score-improvement-12",
+              "name": "Choose an eligible feat or Ability Score Improvement",
+              "kind": "feat",
+              "count": 1,
+              "allowed_options": "Ability Score Improvement or another eligible feat.",
+              "eligibility_rule": "Meet feat prerequisites and verify ability-score limits.",
+              "selection_effect": "Record the feat and apply its selected effects."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 5,
+        "spells_known_total": null,
+        "prepared_spells_total": 16,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 6,
+        "class_spell_slots": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          0,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 13,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "divine-spark-scaling-13",
+          "name": "Divine Spark improvement",
+          "description": "Divine Spark rolls 3d8 rather than 2d8. Follow the Channel Divinity feature's other rules.",
+          "when": "both",
+          "choices": []
+        },
+        {
+          "id": "spell-selections-13",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "prepared-selection-13",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible level 1+ Cleric spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 5,
+        "spells_known_total": null,
+        "prepared_spells_total": 17,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 7,
+        "class_spell_slots": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 14,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "improved-blessed-strikes-14",
+          "name": "Improved Blessed Strikes",
+          "description": "The option you chose for Blessed Strikes grows more powerful.\n\nDivine Strike. The extra damage of your Divine Strike increases to 2d8.\n\nPotent Spellcasting. When you cast a Cleric cantrip and deal damage to a creature with it, you can give vitality to yourself or another creature within 60 feet of yourself, granting a number of Temporary Hit Points equal to twice your Wisdom modifier.",
+          "when": "both",
+          "choices": []
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 5,
+        "spells_known_total": null,
+        "prepared_spells_total": 17,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 7,
+        "class_spell_slots": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          0,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 15,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "spell-selections-15",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "prepared-selection-15",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible level 1+ Cleric spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 5,
+        "spells_known_total": null,
+        "prepared_spells_total": 18,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 8,
+        "class_spell_slots": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          1,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 16,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "ability-score-improvement-16",
+          "name": "Ability Score Improvement",
+          "description": "You gain the Ability Score Improvement feat (see “Feats”) or another feat of your choice for which you qualify. You gain this feature again at Cleric levels 8, 12, and 16.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-ability-score-improvement-16",
+              "name": "Choose an eligible feat or Ability Score Improvement",
+              "kind": "feat",
+              "count": 1,
+              "allowed_options": "Ability Score Improvement or another eligible feat.",
+              "eligibility_rule": "Meet feat prerequisites and verify ability-score limits.",
+              "selection_effect": "Record the feat and apply its selected effects."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 5,
+        "spells_known_total": null,
+        "prepared_spells_total": 18,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 8,
+        "class_spell_slots": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          1,
+          0
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 17,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "spell-selections-17",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "prepared-selection-17",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible level 1+ Cleric spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 5,
+        "spells_known_total": null,
+        "prepared_spells_total": 19,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 9,
+        "class_spell_slots": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          1,
+          1
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "See the chosen domain for its level 17 feature. Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 18,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "progression-values-18",
+          "name": "Class progression values",
+          "description": "Channel Divinity: 4 (previously 3). These are totals at this class level, not additional grants.",
+          "when": "both",
+          "choices": []
+        },
+        {
+          "id": "divine-spark-scaling-18",
+          "name": "Divine Spark improvement",
+          "description": "Divine Spark rolls 4d8 rather than 3d8. Follow the Channel Divinity feature's other rules.",
+          "when": "both",
+          "choices": []
+        },
+        {
+          "id": "spell-selections-18",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "prepared-selection-18",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible level 1+ Cleric spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 5,
+        "spells_known_total": null,
+        "prepared_spells_total": 20,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 9,
+        "class_spell_slots": [
+          4,
+          3,
+          3,
+          3,
+          3,
+          1,
+          1,
+          1,
+          1
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 19,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "epic-boon-19",
+          "name": "Epic Boon",
+          "description": "You gain an Epic Boon feat (see “Feats”) or another feat of your choice for which you qualify. Boon of Fate is recommended.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "choice-epic-boon-19",
+              "name": "Choose an Epic Boon or another eligible feat",
+              "kind": "feat",
+              "count": 1,
+              "allowed_options": "An Epic Boon feat or another eligible feat.",
+              "eligibility_rule": "Meet feat prerequisites.",
+              "selection_effect": "Record the feat and its effects."
+            }
+          ]
+        },
+        {
+          "id": "spell-selections-19",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "prepared-selection-19",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible level 1+ Cleric spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 5,
+        "spells_known_total": null,
+        "prepared_spells_total": 21,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 9,
+        "class_spell_slots": [
+          4,
+          3,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          1
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    },
+    {
+      "level": 20,
+      "status": "unfilled",
+      "features": [
+        {
+          "id": "greater-divine-intervention-20",
+          "name": "Greater Divine Intervention",
+          "description": "You can call on even more powerful divine intervention. When you use your Divine Intervention feature, you can choose Wish when you select a spell. If you do so, you can’t use Divine Intervention again until you finish 2d4 Long Rests.",
+          "when": "both",
+          "choices": null
+        },
+        {
+          "id": "spell-selections-20",
+          "name": "Spell selections",
+          "description": "Class spell selections implied by the progression table; spell access and preparation follow the class feature.",
+          "when": "both",
+          "choices": [
+            {
+              "id": "prepared-selection-20",
+              "name": "Choose additional prepared spells",
+              "kind": "spell",
+              "count": 1,
+              "allowed_options": "Eligible level 1+ Cleric spells.",
+              "eligibility_rule": "Follow the class's preparation, spell level, and replacement rules.",
+              "selection_effect": "Record additional class spells prepared; exclude separately always-prepared spells where applicable."
+            }
+          ]
+        }
+      ],
+      "spell_progression": {
+        "cantrips_known_total": 5,
+        "spells_known_total": null,
+        "prepared_spells_total": 22,
+        "spellbook_spells_gained": null,
+        "max_class_spell_level": 9,
+        "class_spell_slots": [
+          4,
+          3,
+          3,
+          3,
+          3,
+          2,
+          2,
+          1,
+          1
+        ],
+        "pact_slot_count": null,
+        "pact_slot_level": null,
+        "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
+      },
+      "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+    }
+  ],
+  "subclasses": [
+    {
+      "id": "arcane-circuit-domain",
+      "name": "Arcane Circuit Domain",
+      "description": "A shrine technomancer shares and refines sacred code. Reskin of the supplied Arcana Domain.",
+      "selected_at_class_level": 3,
+      "spellcasting_override": null,
+      "resources": [
+        {"id": "dispelling-recovery-use", "name": "Purging Recovery", "description": "Cast Dispel Magic as part of a qualifying healing or condition-ending spell without a slot.", "recharge": "other", "maximum_rule": "One use from class level 6; regain it on a short or long rest or by expending a Shrine Priest Channel Divinity use without an action."}
+      ],
+      "levels": [
+        {"level": 3, "status": "unfilled", "features": [
+          {"id": "arcana-spells-3", "name": "Arcane Circuit Spells (Arcana Domain Spells)", "description": "Detect Magic, Magic Missile, Magic Weapon, and Nystul's Magic Aura are always prepared Shrine Priest spells. They use Wisdom and do not count against the class's prepared-spell limit.", "when": "both", "always_prepared_spells": ["Detect Magic", "Magic Missile", "Magic Weapon", "Nystul's Magic Aura"], "choices": []},
+          {"id": "modify-magic", "name": "Sacred Code Patch (Modify Magic)", "description": "When you cast a spell, expend one use of Shrine Priest Channel Divinity without an action to choose one modification. Fortifying Spell: one target gains temporary hit points equal to 2d8 plus your Shrine Priest level. Tenacious Spell: when a creature you can see succeeds on a saving throw forced by the spell, roll 1d6 and subtract it from that target's first saving throw against the spell's effect.", "when": "both", "choices": []},
+          {"id": "student-of-arcana", "name": "Arcane Systems Student (Student of Arcana)", "description": "Gain proficiency in Arcana or one skill of your choice from the Shrine Priest's level 1 skill list. Learn two Wizard cantrips; whenever you gain a Shrine Priest level, you may replace one of them with another Wizard cantrip.", "when": "both", "choices": [
+            {"id": "arcana-student-skill", "name": "Choose an arcane studies skill", "kind": "skill", "count": 1, "allowed_options": ["Arcana", "History", "Insight", "Medicine", "Persuasion", "Religion"], "eligibility_rule": "Choose one listed skill; the source does not specify a substitute for an already-proficient skill.", "selection_effect": "Record proficiency in the selected skill."},
+            {"id": "arcana-student-cantrips", "name": "Choose two Wizard cantrips", "kind": "spell", "count": 2, "allowed_options": "Wizard cantrips.", "eligibility_rule": "Choose two distinct Wizard cantrips; at each Shrine Priest level you may replace one with another Wizard cantrip.", "selection_effect": "Record the two separately learned cantrips; the source does not specify their casting ability or whether they count as Cleric spells."}
+          ]}
+        ], "notes": "Wizard cantrip casting ability and class association are not specified by the supplied subclass source; resolve before automation."},
+        {"level": 5, "status": "unfilled", "features": [{"id": "arcana-spells-5", "name": "Arcane Circuit Spells", "description": "Counterspell and Dispel Magic become always prepared Shrine Priest spells using Wisdom; they do not count against the class prepared-spell limit.", "when": "both", "always_prepared_spells": ["Counterspell", "Dispel Magic"], "choices": []}], "notes": "Fixed spell grants, not free castings."},
+        {"level": 6, "status": "unfilled", "features": [
+          {"id": "dispelling-recovery", "name": "Purging Recovery (Dispelling Recovery)", "description": "Immediately after casting a spell with a spell slot that restores hit points to a creature or ends a condition on one, you can cast Dispel Magic as part of that same action, bonus action, or reaction without a spell slot. Once used, regain it on a short or long rest or by expending a Shrine Priest Channel Divinity use without an action.", "when": "both", "choices": []}
+        ], "notes": null},
+        {"level": 7, "status": "unfilled", "features": [{"id": "arcana-spells-7", "name": "Arcane Circuit Spells", "description": "Arcane Eye and Leomund's Secret Chest become always prepared Shrine Priest spells using Wisdom; they do not count against the class prepared-spell limit.", "when": "both", "always_prepared_spells": ["Arcane Eye", "Leomund's Secret Chest"], "choices": []}], "notes": "Fixed spell grants, not free castings."},
+        {"level": 9, "status": "unfilled", "features": [{"id": "arcana-spells-9", "name": "Arcane Circuit Spells", "description": "Bigby's Hand and Teleportation Circle become always prepared Shrine Priest spells using Wisdom; they do not count against the class prepared-spell limit.", "when": "both", "always_prepared_spells": ["Bigby's Hand", "Teleportation Circle"], "choices": []}], "notes": "Fixed spell grants, not free castings."},
+        {"level": 17, "status": "unfilled", "features": [
+          {"id": "magical-mastery", "name": "Master Compiler (Magical Mastery)", "description": "Learn four Wizard spells, one each of levels 6, 7, 8, and 9; they are always prepared as Shrine Priest spells using Wisdom and do not count against the class prepared-spell limit. Whenever you gain a Shrine Priest level, you can replace one with another Wizard spell of the same level.", "when": "both", "choices": [
+            {"id": "master-compiler-spells", "name": "Choose four Wizard spells", "kind": "spell", "count": 4, "allowed_options": "Wizard spells: one each of levels 6, 7, 8, and 9.", "eligibility_rule": "Choose exactly one spell at each of levels 6 through 9. On gaining a Shrine Priest level, replace at most one with a Wizard spell of the same level.", "selection_effect": "Record the four always-prepared Shrine Priest spells separately from ordinary preparation."}
+          ]}
+        ], "notes": null}
+      ]
+    },
+    {
+      "id": "twin-signal-discipline-domain",
+      "name": "Twin-Signal Discipline Domain",
+      "description": "A field priest balances restorative light with destructive void signals. Reskin of the supplied Discipline Domain.",
+      "selected_at_class_level": 3,
+      "spellcasting_override": null,
+      "resources": [],
+      "levels": [
+        {"level": 3, "status": "unfilled", "features": [
+          {"id": "discipline-spells-3", "name": "Twin-Signal Spells (Discipline Spells)", "description": "Arcane Vigor, Guiding Bolt, Magic Weapon, and Shield of Faith are always prepared Shrine Priest spells. They use Wisdom and do not count against the class prepared-spell limit.", "when": "both", "always_prepared_spells": ["Arcane Vigor", "Guiding Bolt", "Magic Weapon", "Shield of Faith"], "choices": []},
+          {"id": "holy-bolt", "name": "Radiant Pulse (Holy Bolt)", "description": "As a bonus action, present your holy symbol and expend one Shrine Priest Channel Divinity use to make a ranged spell attack against one creature within 60 feet. On a hit, it takes 2d10 plus your Wisdom modifier radiant damage, and you may choose a creature you can see within 60 feet to regain 1d10 plus your Wisdom modifier hit points.", "when": "both", "choices": []},
+          {"id": "atonement", "name": "Restorative Signal (Atonement)", "description": "When a level 1 or higher spell you cast restores hit points to one or more creatures, each gains a blessing until the end of your next turn. Whenever you cast a spell using a spell slot that deals damage to a creature, each blessed creature regains additional hit points equal to the slot level.", "when": "both", "choices": []}
+        ], "notes": "Holy Bolt and Luminous Barrier use the shared base-class Channel Divinity pool."},
+        {"level": 5, "status": "unfilled", "features": [{"id": "discipline-spells-5", "name": "Twin-Signal Spells", "description": "Prayer of Mending and Protection from Energy become always prepared Shrine Priest spells using Wisdom; they do not count against the class prepared-spell limit.", "when": "both", "always_prepared_spells": ["Prayer of Mending", "Protection from Energy"], "choices": []}], "notes": "Fixed spell grants, not free castings."},
+        {"level": 6, "status": "unfilled", "features": [{"id": "luminous-barrier", "name": "Luminous Mesh Barrier (Luminous Barrier)", "description": "As a bonus action, expend a Shrine Priest Channel Divinity use to ward each creature blessed by your Restorative Signal. Each gains temporary hit points equal to your Shrine Priest level plus Wisdom modifier. While it has temporary hit points from this feature, it has resistance to all damage.", "when": "both", "choices": []}], "notes": null},
+        {"level": 7, "status": "unfilled", "features": [{"id": "discipline-spells-7", "name": "Twin-Signal Spells", "description": "Guardian of Faith and Stoneskin become always prepared Shrine Priest spells using Wisdom; they do not count against the class prepared-spell limit.", "when": "both", "always_prepared_spells": ["Guardian of Faith", "Stoneskin"], "choices": []}], "notes": "Fixed spell grants, not free castings."},
+        {"level": 9, "status": "unfilled", "features": [{"id": "discipline-spells-9", "name": "Twin-Signal Spells", "description": "Circle of Power and Destructive Wave become always prepared Shrine Priest spells using Wisdom; they do not count against the class prepared-spell limit.", "when": "both", "always_prepared_spells": ["Circle of Power", "Destructive Wave"], "choices": []}], "notes": "Fixed spell grants, not free castings."},
+        {"level": 17, "status": "unfilled", "features": [{"id": "ultimate-penitence", "name": "Ascending Pulse Array (Ultimate Penitence)", "description": "When using Radiant Pulse, you may teleport to an unoccupied space you can see within 30 feet before making an attack roll. As part of the same bonus action, you may also expend a spell slot to hurl additional bolts equal to the slot's level, directed at one creature or several; make a separate attack roll for each bolt.", "when": "both", "choices": []}], "notes": "The source does not explicitly state whether additional bolts repeat the healing effect or change the attack's range after teleportation; review before automation."}
+      ]
+    },
+    {
+      "id": "threshold-guardian-domain",
+      "name": "Threshold Guardian Domain",
+      "description": "A guardian of the boundary between life, death, and digital ghosts. Reskin of the supplied Grave Domain.",
+      "selected_at_class_level": 3,
+      "spellcasting_override": null,
+      "resources": [
+        {"id": "sentinel-at-deaths-door-uses", "name": "Mortality Intercept", "description": "Use the level 6 damage-halving reaction.", "recharge": "long", "maximum_rule": "Wisdom modifier uses, minimum 1, from class level 6; regain all uses on a long rest."},
+        {"id": "keeper-of-souls-use", "name": "Soul-Signal Recovery", "description": "Use the level 17 healing response when an enemy dies.", "recharge": "other", "maximum_rule": "One use from class level 17; regain it on a short or long rest or restore it by expending a level 6 or higher spell slot without an action."}
+      ],
+      "levels": [
+        {"level": 3, "status": "unfilled", "features": [
+          {"id": "grave-spells-3", "name": "Threshold Spells (Grave Domain Spells)", "description": "Detect Evil and Good, False Life, Gentle Repose, Ray of Enfeeblement, and the Spare the Dying cantrip are always prepared Shrine Priest spells using Wisdom. Level 1+ spells do not count against the class prepared-spell limit; the cantrip is separately granted, not a class cantrip selection.", "when": "both", "always_prepared_spells": ["Detect Evil and Good", "False Life", "Gentle Repose", "Ray of Enfeeblement", "Spare the Dying"], "choices": []},
+          {"id": "circle-of-mortality", "name": "Mortality Circuit (Circle of Mortality)", "description": "Once per turn, when you deal damage to a creature missing any hit points by casting a spell or hitting with an attack roll, deal it an extra 1d4 necrotic damage; this increases to 1d6 at Shrine Priest level 11. You can cast Spare the Dying as a bonus action. When a spell or Channel Divinity would roll healing dice for a creature at 0 hit points, use each die's maximum instead.", "when": "both", "choices": []},
+          {"id": "path-to-the-grave", "name": "Terminal Signal (Path to the Grave)", "description": "As a bonus action, present your holy symbol and expend a Shrine Priest Channel Divinity use to curse one creature you can see within 30 feet until the start of your next turn. It has disadvantage on attack rolls and saving throws. When you or an ally you can see hits it with an attack roll, you can end the curse without an action to add necrotic or radiant damage, your choice, equal to your Shrine Priest level.", "when": "both", "choices": []}
+        ], "notes": null},
+        {"level": 5, "status": "unfilled", "features": [{"id": "grave-spells-5", "name": "Threshold Spells", "description": "Revivify and Vampiric Touch become always prepared Shrine Priest spells using Wisdom; they do not count against the class prepared-spell limit.", "when": "both", "always_prepared_spells": ["Revivify", "Vampiric Touch"], "choices": []}], "notes": "Fixed spell grants, not free castings."},
+        {"level": 6, "status": "unfilled", "features": [{"id": "sentinel-at-deaths-door", "name": "Mortality Intercept (Sentinel at Death's Door)", "description": "When you or a bloodied creature you can see within 60 feet is hit with an attack roll, use a reaction to halve the attack's damage, rounding down. If the triggering roll was a critical hit, cancel effects triggered by a critical hit. Uses equal your Wisdom modifier, minimum 1, restored on a long rest.", "when": "both", "choices": []}], "notes": null},
+        {"level": 7, "status": "unfilled", "features": [{"id": "grave-spells-7", "name": "Threshold Spells", "description": "Blight and Death Ward become always prepared Shrine Priest spells using Wisdom; they do not count against the class prepared-spell limit.", "when": "both", "always_prepared_spells": ["Blight", "Death Ward"], "choices": []}], "notes": "Fixed spell grants, not free castings."},
+        {"level": 9, "status": "unfilled", "features": [{"id": "grave-spells-9", "name": "Threshold Spells", "description": "Dispel Evil and Good and Raise Dead become always prepared Shrine Priest spells using Wisdom; they do not count against the class prepared-spell limit.", "when": "both", "always_prepared_spells": ["Dispel Evil and Good", "Raise Dead"], "choices": []}], "notes": "Fixed spell grants, not free castings."},
+        {"level": 11, "status": "unfilled", "features": [{"id": "circle-of-mortality-improvement", "name": "Mortality Circuit Improvement", "description": "The extra necrotic damage from Mortality Circuit increases from 1d4 to 1d6.", "when": "both", "choices": []}], "notes": "Scaling of the level 3 feature, not a separate subclass feature."},
+        {"level": 17, "status": "unfilled", "features": [{"id": "divine-reaper", "name": "Threshold Reaper (Divine Reaper)", "description": "Enhanced Necromancy: when casting a Necromancy spell of level 5 or lower that targets one creature, or a spell from the Grave Domain Spells table, expend one Shrine Priest Channel Divinity use to target a second creature within the spell's range. Provide costly or consumed material components for each target. Keeper of Souls: when an enemy dies within 60 feet, you or one creature you can see within 60 feet regains hit points equal to twice your Shrine Priest level. You cannot use this benefit while incapacitated. Once used, regain it on a short or long rest or restore it by expending a level 6 or higher spell slot without an action.", "when": "both", "choices": []}], "notes": "The provided Keeper of Souls sentence is truncated after 'restore your use of'; the recovery is recorded as applying to Keeper of Souls."}
+      ]
+    },
+    {
+      "id": "data-shrine-knowledge-domain",
+      "name": "Data Shrine Knowledge Domain",
+      "description": "A keeper of archives, hidden systems, and neural insight. Reskin of the supplied Knowledge Domain.",
+      "selected_at_class_level": 3,
+      "spellcasting_override": null,
+      "resources": [{"id": "divine-foreknowledge-use", "name": "Predictive Archive", "description": "Activate the level 17 foresight state.", "recharge": "other", "maximum_rule": "One use from class level 17; regain on a long rest or restore by expending a level 6 or higher spell slot without an action."}],
+      "levels": [
+        {"level": 3, "status": "unfilled", "features": [
+          {"id": "blessings-of-knowledge", "name": "Archive Training (Blessings of Knowledge)", "description": "Gain proficiency with one type of artisan's tools and proficiency and expertise in two chosen skills from Arcana, History, Nature, and Religion.", "when": "both", "choices": [
+            {"id": "archive-artisan-tools", "name": "Choose artisan's tools", "kind": "tool", "count": 1, "allowed_options": "One type of artisan's tools.", "eligibility_rule": "Choose one type; the source does not specify a replacement for existing proficiency.", "selection_effect": "Record proficiency with the chosen tools."},
+            {"id": "archive-expertise", "name": "Choose two knowledge skills", "kind": "skill", "count": 2, "allowed_options": ["Arcana", "History", "Nature", "Religion"], "eligibility_rule": "Choose two distinct listed skills; the feature grants proficiency and expertise.", "selection_effect": "Record proficiency and expertise in each chosen skill."}
+          ]},
+          {"id": "knowledge-spells-3", "name": "Archive Spells (Knowledge Domain Spells)", "description": "Command, Comprehend Languages, Detect Magic, Detect Thoughts, Identify, and Mind Spike are always prepared Shrine Priest spells. They use Wisdom and do not count against the class prepared-spell limit. The five spells other than Command are Divination spells for Mind Magic.", "when": "both", "always_prepared_spells": ["Command", "Comprehend Languages", "Detect Magic", "Detect Thoughts", "Identify", "Mind Spike"], "choices": []},
+          {"id": "mind-magic", "name": "Archive Query (Mind Magic)", "description": "As a Magic action, expend one Shrine Priest Channel Divinity use to cast one prepared Divination spell from the Knowledge Domain Spells table as part of the same action, without a spell slot or material components.", "when": "both", "choices": [{"id": "archive-query-spell", "name": "Choose an archive query when used", "kind": "spell", "count": 1, "allowed_options": ["Comprehend Languages", "Detect Magic", "Detect Thoughts", "Identify", "Mind Spike", "Tongues", "Arcane Eye", "Legend Lore", "Scrying"], "eligibility_rule": "Choose a listed Divination spell only if it is prepared and its domain unlock level has been reached.", "selection_effect": "Cast it as part of the Magic action without a slot or material components; this is not a permanent level-up choice."}]}
+        ], "notes": null},
+        {"level": 5, "status": "unfilled", "features": [{"id": "knowledge-spells-5", "name": "Archive Spells", "description": "Dispel Magic, Nondetection, and Tongues become always prepared Shrine Priest spells using Wisdom; they do not count against the class prepared-spell limit. Tongues is marked Divination in the supplied domain table.", "when": "both", "always_prepared_spells": ["Dispel Magic", "Nondetection", "Tongues"], "choices": []}], "notes": "Fixed spell grants, not free castings."},
+        {"level": 6, "status": "unfilled", "features": [{"id": "unfettered-mind", "name": "Open Neural Network (Unfettered Mind)", "description": "Gain telepathy to 60 feet and contact up to your Wisdom modifier creatures simultaneously, minimum one. Gain Intelligence saving throw proficiency; if already proficient, instead gain saving throw proficiency in one ability in which you lack it.", "when": "both", "choices": [{"id": "neural-network-save", "name": "Choose a replacement saving throw proficiency if needed", "kind": "saving_throw", "count": 1, "allowed_options": ["Strength", "Dexterity", "Constitution", "Intelligence", "Wisdom", "Charisma"], "eligibility_rule": "Only choose if already proficient in Intelligence saves; the chosen ability must lack saving throw proficiency.", "selection_effect": "Record proficiency in the chosen saving throw instead of the redundant Intelligence proficiency."}]}], "notes": null},
+        {"level": 7, "status": "unfilled", "features": [{"id": "knowledge-spells-7", "name": "Archive Spells", "description": "Arcane Eye, Banishment, and Confusion become always prepared Shrine Priest spells using Wisdom; they do not count against the class prepared-spell limit. Arcane Eye is a Divination spell for Archive Query.", "when": "both", "always_prepared_spells": ["Arcane Eye", "Banishment", "Confusion"], "choices": []}], "notes": "Fixed spell grants, not free castings."},
+        {"level": 9, "status": "unfilled", "features": [{"id": "knowledge-spells-9", "name": "Archive Spells", "description": "Legend Lore, Scrying, and Synaptic Static become always prepared Shrine Priest spells using Wisdom; they do not count against the class prepared-spell limit. Legend Lore and Scrying are Divination spells for Archive Query.", "when": "both", "always_prepared_spells": ["Legend Lore", "Scrying", "Synaptic Static"], "choices": []}], "notes": "Fixed spell grants, not free castings."},
+        {"level": 17, "status": "unfilled", "features": [{"id": "divine-foreknowledge", "name": "Predictive Archive (Divine Foreknowledge)", "description": "As a bonus action, gain advantage on D20 Tests for 1 hour. Once used, regain the use on a long rest or restore it by expending a level 6 or higher spell slot without an action.", "when": "both", "choices": []}], "notes": null}
+      ]
+    },
+    {
+      "id": "trauma-care-life-domain",
+      "name": "Trauma Care Life Domain",
+      "description": "A shrine medic channels life-sustaining nanites and spirit energy. Reskin of the supplied Life Domain.",
+      "selected_at_class_level": 3,
+      "spellcasting_override": null,
+      "resources": [],
+      "levels": [
+        {"level": 3, "status": "unfilled", "features": [
+          {"id": "disciple-of-life", "name": "Trauma Care Specialist (Disciple of Life)", "description": "When a spell you cast with a spell slot restores hit points to a creature, it regains additional hit points on the turn you cast the spell equal to 2 plus the spell slot's level.", "when": "both", "choices": []},
+          {"id": "life-spells-3", "name": "Trauma Care Spells (Life Domain Spells)", "description": "Aid, Bless, Cure Wounds, and Lesser Restoration are always prepared Shrine Priest spells. They use Wisdom and do not count against the class prepared-spell limit.", "when": "both", "always_prepared_spells": ["Aid", "Bless", "Cure Wounds", "Lesser Restoration"], "choices": []},
+          {"id": "preserve-life", "name": "Emergency Nanite Field (Preserve Life)", "description": "As a Magic action, present your holy symbol and expend a Shrine Priest Channel Divinity use to restore a pool of hit points equal to five times your Shrine Priest level. Divide them among bloodied creatures you choose within 30 feet, including yourself if eligible. No creature can be healed above half its hit point maximum by this feature.", "when": "both", "choices": []}
+        ], "notes": null},
+        {"level": 5, "status": "unfilled", "features": [{"id": "life-spells-5", "name": "Trauma Care Spells", "description": "Mass Healing Word and Revivify become always prepared Shrine Priest spells using Wisdom; they do not count against the class prepared-spell limit.", "when": "both", "always_prepared_spells": ["Mass Healing Word", "Revivify"], "choices": []}], "notes": "Fixed spell grants, not free castings."},
+        {"level": 6, "status": "unfilled", "features": [{"id": "blessed-healer", "name": "Feedback Healing (Blessed Healer)", "description": "Immediately after casting a spell with a spell slot that restores hit points to one or more creatures other than yourself, you regain hit points equal to 2 plus the slot level.", "when": "both", "choices": []}], "notes": null},
+        {"level": 7, "status": "unfilled", "features": [{"id": "life-spells-7", "name": "Trauma Care Spells", "description": "Aura of Life and Death Ward become always prepared Shrine Priest spells using Wisdom; they do not count against the class prepared-spell limit.", "when": "both", "always_prepared_spells": ["Aura of Life", "Death Ward"], "choices": []}], "notes": "Fixed spell grants, not free castings."},
+        {"level": 9, "status": "unfilled", "features": [{"id": "life-spells-9", "name": "Trauma Care Spells", "description": "Greater Restoration and Mass Cure Wounds become always prepared Shrine Priest spells using Wisdom; they do not count against the class prepared-spell limit.", "when": "both", "always_prepared_spells": ["Greater Restoration", "Mass Cure Wounds"], "choices": []}], "notes": "Fixed spell grants, not free castings."},
+        {"level": 17, "status": "unfilled", "features": [{"id": "supreme-healing", "name": "Maximum Recovery Protocol (Supreme Healing)", "description": "When a spell or Channel Divinity would roll one or more dice to restore a creature's hit points, use the highest possible number for each healing die instead.", "when": "both", "choices": []}], "notes": null}
+      ]
+    },
+    {
+      "id": "neon-radiance-domain",
+      "name": "Neon Radiance Domain",
+      "description": "A luminous shrine guardian burns away deception and darkness with hard-light radiance. Reskin of the supplied Light Domain.",
+      "selected_at_class_level": 3,
+      "spellcasting_override": null,
+      "resources": [
+        {"id": "warding-flare-uses", "name": "Flash Intercept", "description": "Use the level 3 attack-disrupting reaction; at class level 6 the recovery improves.", "recharge": "other", "maximum_rule": "Wisdom modifier uses, minimum 1; regain all on a long rest at level 3, or on a short or long rest starting at class level 6."},
+        {"id": "corona-of-light-uses", "name": "Solar Neon Corona", "description": "Activate the level 17 sunlight aura.", "recharge": "long", "maximum_rule": "Wisdom modifier uses, minimum 1, from class level 17; regain all on a long rest."}
+      ],
+      "levels": [
+        {"level": 3, "status": "unfilled", "features": [
+          {"id": "light-spells-3", "name": "Neon Radiance Spells (Light Domain Spells)", "description": "Burning Hands, Faerie Fire, Scorching Ray, and See Invisibility are always prepared Shrine Priest spells. They use Wisdom and do not count against the class prepared-spell limit.", "when": "both", "always_prepared_spells": ["Burning Hands", "Faerie Fire", "Scorching Ray", "See Invisibility"], "choices": []},
+          {"id": "radiance-of-the-dawn", "name": "Dawn Flash (Radiance of the Dawn)", "description": "As a Magic action, present your holy symbol and expend one Shrine Priest Channel Divinity use to flash a 30-foot emanation originating from you. Dispel magical darkness in the area. Each creature you choose there makes a Constitution saving throw against your Shrine Priest spell save DC, taking 2d10 plus your Shrine Priest level radiant damage on a failure or half on a success.", "when": "both", "choices": []},
+          {"id": "warding-flare", "name": "Flash Intercept (Warding Flare)", "description": "When a creature you can see within 30 feet makes an attack roll, use a reaction before it hits or misses to impose disadvantage on the roll. Uses equal your Wisdom modifier, minimum 1; regain all on a long rest, or on a short or long rest starting at class level 6.", "when": "both", "choices": []}
+        ], "notes": null},
+        {"level": 5, "status": "unfilled", "features": [{"id": "light-spells-5", "name": "Neon Radiance Spells", "description": "Daylight and Fireball become always prepared Shrine Priest spells using Wisdom; they do not count against the class prepared-spell limit.", "when": "both", "always_prepared_spells": ["Daylight", "Fireball"], "choices": []}], "notes": "Fixed spell grants, not free castings."},
+        {"level": 6, "status": "unfilled", "features": [{"id": "improved-warding-flare", "name": "Improved Flash Intercept (Improved Warding Flare)", "description": "Regain all Flash Intercept uses on a short or long rest. Whenever you use it, you can give the triggering attack's target temporary hit points equal to 2d6 plus your Wisdom modifier.", "when": "both", "choices": []}], "notes": null},
+        {"level": 7, "status": "unfilled", "features": [{"id": "light-spells-7", "name": "Neon Radiance Spells", "description": "Arcane Eye and Wall of Fire become always prepared Shrine Priest spells using Wisdom; they do not count against the class prepared-spell limit.", "when": "both", "always_prepared_spells": ["Arcane Eye", "Wall of Fire"], "choices": []}], "notes": "Fixed spell grants, not free castings."},
+        {"level": 9, "status": "unfilled", "features": [{"id": "light-spells-9", "name": "Neon Radiance Spells", "description": "Flame Strike and Scrying become always prepared Shrine Priest spells using Wisdom; they do not count against the class prepared-spell limit.", "when": "both", "always_prepared_spells": ["Flame Strike", "Scrying"], "choices": []}], "notes": "Fixed spell grants, not free castings."},
+        {"level": 17, "status": "unfilled", "features": [{"id": "corona-of-light", "name": "Solar Neon Corona (Corona of Light)", "description": "As a Magic action, emit sunlight for 1 minute or until dismissed without an action: bright light in a 60-foot radius and dim light for 30 feet beyond. Enemies in the bright light have disadvantage on saves against Dawn Flash and any spell that deals fire or radiant damage. Uses equal your Wisdom modifier, minimum 1, restored on a long rest.", "when": "both", "choices": []}], "notes": null}
+      ]
+    },
+    {
+      "id": "void-signal-domain",
+      "name": "Void Signal Domain",
+      "description": "A shadow-channeling priest weakens enemies through a hungry void signal. Reskin of the supplied Shadow Domain.",
+      "selected_at_class_level": 3,
+      "spellcasting_override": null,
+      "resources": [
+        {"id": "devouring-plague-uses", "name": "Signal Drain", "description": "Use the level 3 necrotic drain when a visible creature fails a saving throw.", "recharge": "long", "maximum_rule": "Wisdom modifier uses, minimum 1, from class level 3; regain all on a long rest."},
+        {"id": "dispersion-use", "name": "Void Dispersion", "description": "Use the level 6 defensive reaction.", "recharge": "short", "maximum_rule": "One use from class level 6; regain it on a short or long rest."}
+      ],
+      "levels": [
+        {"level": 3, "status": "unfilled", "features": [
+          {"id": "shadow-domain-spells-3", "name": "Void Signal Spells (Shadow Spells)", "description": "Crown of Madness, Dissonant Whispers, Mind Spike, and Shadow Word: Pain are always prepared Shrine Priest spells. They use Wisdom and do not count against the class prepared-spell limit.", "when": "both", "always_prepared_spells": ["Crown of Madness", "Dissonant Whispers", "Mind Spike", "Shadow Word: Pain"], "choices": []},
+          {"id": "shadowform", "name": "Void Signal Form (Shadowform)", "description": "As a bonus action, expend a Shrine Priest Channel Divinity use to assume shadow form for 1 minute. While in dim light or darkness you can take the Hide action as a bonus action. When you cast a spell using a spell slot that deals psychic or necrotic damage, add 1d6 to one of that spell's damage rolls. The form ends early if dismissed without an action, you become incapacitated, or you deal radiant damage with a spell.", "when": "both", "choices": []},
+          {"id": "devouring-plague", "name": "Signal Drain (Devouring Plague)", "description": "When a creature you can see within 30 feet fails a saving throw, you can cause it to take 1d10 necrotic damage and regain hit points equal to the necrotic damage dealt. Uses equal your Wisdom modifier, minimum 1, restored on a long rest.", "when": "both", "choices": []}
+        ], "notes": null},
+        {"level": 5, "status": "unfilled", "features": [{"id": "shadow-domain-spells-5", "name": "Void Signal Spells", "description": "Summon Undead and Vampiric Touch become always prepared Shrine Priest spells using Wisdom; they do not count against the class prepared-spell limit.", "when": "both", "always_prepared_spells": ["Summon Undead", "Vampiric Touch"], "choices": []}], "notes": "Fixed spell grants, not free castings."},
+        {"level": 6, "status": "unfilled", "features": [{"id": "dispersion", "name": "Void Dispersion (Dispersion)", "description": "When an attack roll hits you, use a reaction to disperse until the end of your next turn. You resist all damage, including the triggering attack, cannot take an action, bonus action, or reaction, and have a fly speed of 40 feet. When it ends, you may spend up to half your total Hit Point Dice to regain hit points as if finishing a short rest. Once used, regain it on a short or long rest.", "when": "both", "choices": []}], "notes": "The source does not state rounding for half your total Hit Point Dice; review before automation."},
+        {"level": 7, "status": "unfilled", "features": [{"id": "shadow-domain-spells-7", "name": "Void Signal Spells", "description": "Evard's Black Tentacles and Psychic Horror become always prepared Shrine Priest spells using Wisdom; they do not count against the class prepared-spell limit.", "when": "both", "always_prepared_spells": ["Evard's Black Tentacles", "Psychic Horror"], "choices": []}], "notes": "The mapping uses the shorter name Black Tentacles for Evard's Black Tentacles."},
+        {"level": 9, "status": "unfilled", "features": [{"id": "shadow-domain-spells-9", "name": "Void Signal Spells", "description": "Dominate Person and Void Eruption become always prepared Shrine Priest spells using Wisdom; they do not count against the class prepared-spell limit.", "when": "both", "always_prepared_spells": ["Dominate Person", "Void Eruption"], "choices": []}], "notes": "Fixed spell grants, not free castings."},
+        {"level": 17, "status": "unfilled", "features": [{"id": "vampiric-embrace", "name": "Vampiric Feedback (Vampiric Embrace)", "description": "While Void Signal Form is active, whenever you roll 1d6 to add extra damage to a spell, one creature of your choice within 30 feet regains that many hit points.", "when": "both", "choices": []}], "notes": "The source says whenever you roll 1d6 to add extra damage to a spell; it does not limit this benefit to the form's own 1d6."}
+      ]
+    },
+    {
+      "id": "ghost-image-trickery-domain",
+      "name": "Ghost-Image Trickery Domain",
+      "description": "A shrine infiltrator uses spirit holograms to misdirect and undermine oppressive powers. Reskin of the supplied Trickery Domain.",
+      "selected_at_class_level": 3,
+      "spellcasting_override": null,
+      "resources": [],
+      "levels": [
+        {"level": 3, "status": "unfilled", "features": [
+          {"id": "blessing-of-the-trickster", "name": "Stealth Signal Blessing (Blessing of the Trickster)", "description": "As a Magic action, choose yourself or one willing creature within 30 feet to gain advantage on Dexterity (Stealth) checks until you finish a long rest or use this feature again.", "when": "both", "choices": []},
+          {"id": "trickery-spells-3", "name": "Ghost-Image Spells (Trickery Domain Spells)", "description": "Charm Person, Disguise Self, Invisibility, and Pass without Trace are always prepared Shrine Priest spells. They use Wisdom and do not count against the class prepared-spell limit.", "when": "both", "always_prepared_spells": ["Charm Person", "Disguise Self", "Invisibility", "Pass without Trace"], "choices": []},
+          {"id": "invoke-duplicity", "name": "Ghost-Image Projection (Invoke Duplicity)", "description": "As a bonus action, expend a Shrine Priest Channel Divinity use to create an animated perfect visual illusion of yourself in an unoccupied space you can see within 30 feet. It is intangible, does not occupy its space, and lasts 1 minute, ending early if you dismiss it without an action or are incapacitated. You can cast spells as if in its space using your own senses. When both you and the illusion are within 5 feet of a creature that can see it, you have advantage on attack rolls against that creature. As a bonus action, move the illusion up to 30 feet to an unoccupied space you can see within 120 feet of you.", "when": "both", "choices": []}
+        ], "notes": null},
+        {"level": 5, "status": "unfilled", "features": [{"id": "trickery-spells-5", "name": "Ghost-Image Spells", "description": "Hypnotic Pattern and Nondetection become always prepared Shrine Priest spells using Wisdom; they do not count against the class prepared-spell limit.", "when": "both", "always_prepared_spells": ["Hypnotic Pattern", "Nondetection"], "choices": []}], "notes": "Fixed spell grants, not free castings."},
+        {"level": 6, "status": "unfilled", "features": [{"id": "tricksters-transposition", "name": "Ghost Swap (Trickster's Transposition)", "description": "Whenever you take the bonus action to create or move your Ghost-Image Projection, you can teleport, swapping places with the illusion.", "when": "both", "choices": []}], "notes": null},
+        {"level": 7, "status": "unfilled", "features": [{"id": "trickery-spells-7", "name": "Ghost-Image Spells", "description": "Confusion and Dimension Door become always prepared Shrine Priest spells using Wisdom; they do not count against the class prepared-spell limit.", "when": "both", "always_prepared_spells": ["Confusion", "Dimension Door"], "choices": []}], "notes": "Fixed spell grants, not free castings."},
+        {"level": 9, "status": "unfilled", "features": [{"id": "trickery-spells-9", "name": "Ghost-Image Spells", "description": "Dominate Person and Modify Memory become always prepared Shrine Priest spells using Wisdom; they do not count against the class prepared-spell limit.", "when": "both", "always_prepared_spells": ["Dominate Person", "Modify Memory"], "choices": []}], "notes": "Fixed spell grants, not free castings."},
+        {"level": 17, "status": "unfilled", "features": [{"id": "improved-duplicity", "name": "Improved Ghost Projection (Improved Duplicity)", "description": "You and your allies have advantage on attack rolls against a creature within 5 feet of your Ghost-Image Projection. When the illusion ends, you or a creature you choose within 5 feet of it regains hit points equal to your Shrine Priest level.", "when": "both", "choices": []}], "notes": null}
+      ]
+    },
+    {
+      "id": "battle-shrine-domain",
+      "name": "Battle Shrine Domain",
+      "description": "A combat shrine priest directs allies and channels sacred strikes in battle. Reskin of the supplied War Domain.",
+      "selected_at_class_level": 3,
+      "spellcasting_override": null,
+      "resources": [{"id": "war-priest-uses", "name": "Combat Shrine Strike", "description": "Use the level 3 bonus action weapon or unarmed attack.", "recharge": "short", "maximum_rule": "Wisdom modifier uses, minimum 1, from class level 3; regain all on a short or long rest."}],
+      "levels": [
+        {"level": 3, "status": "unfilled", "features": [
+          {"id": "guided-strike", "name": "Tactical Guidance (Guided Strike)", "description": "When you or a creature within 30 feet misses with an attack roll, expend one Shrine Priest Channel Divinity use to add +10 to that roll, potentially making it hit. Benefiting another creature requires your reaction.", "when": "both", "choices": []},
+          {"id": "war-spells-3", "name": "Battle Shrine Spells (War Domain Spells)", "description": "Guiding Bolt, Magic Weapon, Shield of Faith, and Spiritual Weapon are always prepared Shrine Priest spells. They use Wisdom and do not count against the class prepared-spell limit.", "when": "both", "always_prepared_spells": ["Guiding Bolt", "Magic Weapon", "Shield of Faith", "Spiritual Weapon"], "choices": []},
+          {"id": "war-priest", "name": "Combat Shrine Strike (War Priest)", "description": "As a bonus action, make one weapon attack or unarmed strike. Use this bonus action a number of times equal to your Wisdom modifier, minimum 1; regain all uses on a short or long rest.", "when": "both", "choices": []}
+        ], "notes": null},
+        {"level": 5, "status": "unfilled", "features": [{"id": "war-spells-5", "name": "Battle Shrine Spells", "description": "Crusader's Mantle and Spirit Guardians become always prepared Shrine Priest spells using Wisdom; they do not count against the class prepared-spell limit.", "when": "both", "always_prepared_spells": ["Crusader's Mantle", "Spirit Guardians"], "choices": []}], "notes": "Fixed spell grants, not free castings."},
+        {"level": 6, "status": "unfilled", "features": [{"id": "war-gods-blessing", "name": "Combat Shrine Blessing (War God's Blessing)", "description": "Expend one Shrine Priest Channel Divinity use instead of a spell slot to cast Shield of Faith or Spiritual Weapon. A spell cast this way requires no concentration and lasts 1 minute, ending early if you cast that spell again, become incapacitated, or die.", "when": "both", "choices": []}], "notes": null},
+        {"level": 7, "status": "unfilled", "features": [{"id": "war-spells-7", "name": "Battle Shrine Spells", "description": "Fire Shield and Freedom of Movement become always prepared Shrine Priest spells using Wisdom; they do not count against the class prepared-spell limit.", "when": "both", "always_prepared_spells": ["Fire Shield", "Freedom of Movement"], "choices": []}], "notes": "Fixed spell grants, not free castings."},
+        {"level": 9, "status": "unfilled", "features": [{"id": "war-spells-9", "name": "Battle Shrine Spells", "description": "Hold Monster and Steel Wind Strike become always prepared Shrine Priest spells using Wisdom; they do not count against the class prepared-spell limit.", "when": "both", "always_prepared_spells": ["Hold Monster", "Steel Wind Strike"], "choices": []}], "notes": "Fixed spell grants, not free castings."},
+        {"level": 17, "status": "unfilled", "features": [{"id": "avatar-of-battle", "name": "Battle Shrine Avatar (Avatar of Battle)", "description": "You have resistance to bludgeoning, piercing, and slashing damage.", "when": "both", "choices": []}], "notes": null}
+      ]
+    }
+  ],
+  "source_notes": [
+    "Rules basis: _reference/classes/Cleric.md, a 2024-style source. Review compatibility with the earlier 2014 multiclass design.",
+    "Class progression and mechanics use the original reference; older reskin mechanics may differ and are thematic reference only, not additional grants.",
+    "The worksheet schema is not supported by the app. Levels remain unfilled pending rules and choice review; null means unresolved or not applicable as described.",
+    "Nine domains are authored from developernotes/classes/cleric/subclasses. Their features, choices, resources, and fixed spells are draft data and are not applied by the app.",
+    "All subclass Channel Divinity uses expend the Shrine Priest's shared 2024 pool; spell grant names use original reference names pending matching to spell data. Nystul's Magic Aura, Leomund's Secret Chest, Bigby's Hand, and Evard's Black Tentacles need matching to Arcanist's Magic Aura, Secret Chest, Arcane Hand, and Black Tentacles respectively.",
+    "The spell-reskin reference has no exact original-name match for Arcane Vigor, Circle of Power, Destructive Wave, Prayer of Mending, Mind Spike, Synaptic Static, Aura of Life, Crown of Madness, Psychic Horror, Shadow Word: Pain, Summon Undead, Void Eruption, Crusader's Mantle, or Steel Wind Strike; review aliases and missing spell data before integration.",
+    "No existing Cleric reskin file was supplied; the class description uses the original Bio-Medic / Shrine Priest theme."
+  ]
+}

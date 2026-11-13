@@ -34,10 +34,54 @@ The dialog can preview another class but **cannot apply a multiclass level**. Th
 `GET /api/class-progression-preview?class=...` returns the draft base-class
 features for a mapped class. It requires a character identity and does not
 apply or validate a level-up. It supports the twelve supplied worksheets,
-including Cyber-Berserker / Aug-Brute (Barbarian) and Corporate Enforcer
-(Fighter), though the class selector still comes from the existing guide.
+including Cyber-Berserker (Barbarian) and Corporate Enforcer
+(Fighter), and Shrine Priest (Cleric), though the class selector still comes
+from the existing guide.
+
+The Cyber-Mage worksheet also authors Neon Bladesinger, System Forensics
+Diviner, and Ghost Protocol Necromancer from the supplied Wizard subclass
+references. It records their features, resources, and choices, including
+recurring Savant spellbook additions. These subclass entries are not returned
+by the preview or applied to sheets; the current guide's older subclasses
+are unchanged. The source does not settle whether a Savant also gains an
+extra spell when its level-3 feature and level-2 slots are gained together,
+so that interaction needs review before automation.
+
+The Vow-Bound Operative worksheet authors the Aegis Enforcer, Chrome Samurai,
+and Civic Sentinel vows from the supplied Paladin references. Their fixed oath
+spells are recorded at each unlock as always prepared, separately from the
+class preparation limit. Civic Sentinel adapts the 2014 Oath of the Crown to
+the 2024 class's shared Channel Divinity pool, while retaining the source
+features and capstone recharge. The supplied Crown text does not specify a
+maximum duration for Champion Challenge, so that requires review before
+automation. Compelled Duel, Aura of Vitality, and Circle of Power are absent
+from the current spell-reskin reference and spell data and will need entries
+before the Crown spell list can be connected. Like the Cyber-Mage subclasses,
+these entries are draft data:
+the preview and character sheet do not consume them, and older guide
+subclasses are unchanged.
+
+The Shrine Priest worksheet records nine reskinned domains from the supplied
+Cleric references, including their fixed domain spells, choices, shared
+Channel Divinity effects, and limited-use resources. These entries are also
+draft-only: the preview and sheet do not return or apply subclass effects.
+Some domain spell names have no exact match in the existing reskin mapping;
+the worksheet's source notes list the names and likely aliases to review before
+integration. The supplied Grave reference truncates the final Keeper of Souls
+recovery sentence; the worksheet records that recovery as applying to Keeper
+of Souls.
 
 ### Awakened Mutant 2024 pilot
+
+The Awakened Mutant worksheet now records six reskinned origins from the
+supplied Sorcerer references, including fixed spells, choices, resources, and
+the Wild Signal Surge table. These are **draft data only**: neither progression
+endpoint returns subclass entries, and the sheet does not apply or track their
+effects. The existing guide's origins remain older rules. Evard's Black
+Tentacles and Rary's Telepathic Bond need matching to the shorter names in the
+spell mapping. The mapping lacks Summon Construct, Chromatic Orb, Dragon's
+Breath, Charm Monster, Summon Dragon, and Aura of Vitality; these need matching
+spell data before integration.
 
 Awakened Mutant uses the supplied 2024-style Sorcerer prepared-spell totals,
 including on existing sheets. Its level-up preview reads its draft worksheet
@@ -66,8 +110,10 @@ For an existing `NEOTOKYO_DATA_DIR` volume, deploy the updated
 Deploy the updated `classesv2/` worksheets there for 2024 prerequisites and
 slot calculations; existing volume files override bundled worksheets.
 The Barbarian and Fighter worksheets are now named
-`Cyber-Berserker - Aug-Brute.json` and `Corporate Enforcer.json`; older files
+`Cyber-Berserker.json` and `Corporate Enforcer.json`; older files
 under their previous names will not override these worksheets.
+The Cleric worksheet is now named `Shrine Priest.json`; its previous filename
+will not override the renamed worksheet either.
 If the v2 worksheet is absent from that volume, the preview uses the bundled
 copy; a present but invalid worksheet produces an error instead of silently
 falling back.

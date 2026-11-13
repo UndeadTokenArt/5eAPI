@@ -290,18 +290,18 @@
       "features": [
         {
           "id": "sorcerer-subclass-3",
-          "name": "Sorcerer Subclass",
-          "description": "Choose a Sorcerer subclass at this class level. Subclass choices and features will be authored later.",
+          "name": "Mutant Origin (Sorcerer Subclass)",
+          "description": "Choose an Awakened Mutant origin and gain its level 3 features. Additional subclass features arrive at class levels 6, 14, and 18.",
           "when": "both",
           "choices": [
             {
               "id": "choice-sorcerer-subclass-3",
-              "name": "Choose a subclass later",
+              "name": "Choose a mutant origin",
               "kind": "subclass",
               "count": 1,
-              "allowed_options": null,
-              "eligibility_rule": "Subclass authoring is deferred; verify available choices.",
-              "selection_effect": "Record the chosen subclass when implemented."
+              "allowed_options": ["Sector 17 Bio-Mutant", "KAMI Synthetic Soul Vessel", "Dragon-Blood Replicant", "Shadow Signal Mutant", "Spellfire Reactor Mutant", "Wild Signal Mutant"],
+              "eligibility_rule": "Choose one of the authored Awakened Mutant origins.",
+              "selection_effect": "Record the chosen origin, its level 3 features, and any granted spells."
             }
           ]
         },
@@ -540,7 +540,7 @@
         "pact_slot_level": null,
         "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
       },
-      "notes": "Subclass feature deferred. Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+      "notes": "See the chosen origin for its level 6 features. Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
     },
     {
       "level": 7,
@@ -989,7 +989,7 @@
         "pact_slot_level": null,
         "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
       },
-      "notes": "Subclass feature deferred. Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+      "notes": "See the chosen origin for its level 14 feature. Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
     },
     {
       "level": 15,
@@ -1214,7 +1214,7 @@
         "pact_slot_level": null,
         "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
       },
-      "notes": "Subclass feature deferred. Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+      "notes": "See the chosen origin for its level 18 feature. Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
     },
     {
       "level": 19,
@@ -1345,12 +1345,253 @@
       "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
     }
   ],
-  "subclasses": null,
+  "subclasses": [
+    {
+      "id": "sector-17-bio-mutant",
+      "name": "Sector 17 Bio-Mutant",
+      "description": "An experimental mutation connects the mind to alien signals and reshapes the body. Reskin of Aberrant Sorcery; older guide mechanics are thematic only.",
+      "selected_at_class_level": 3,
+      "spellcasting_override": null,
+      "resources": [
+        {"id": "warping-implosion-use", "name": "Spatial Collapse", "description": "Use the level 18 teleport and implosion once; the use can also be restored by spending 5 mutation points without an action.", "recharge": "other", "maximum_rule": "One use at class level 18; regain it on a long rest or restore it by spending 5 mutation points."}
+      ],
+      "levels": [
+        {
+          "level": 3, "status": "unfilled",
+          "features": [
+            {"id": "psionic-spells-3", "name": "Ghost Signal Spells (Psionic Spells)", "description": "Arms of Hadar, Calm Emotions, Detect Thoughts, Dissonant Whispers, and the Mind Sliver cantrip are always prepared as Awakened Mutant spells. They use Charisma; the level 1+ spells do not count against the class's prepared-spell limit. The cantrip is separately granted, not a selection from the class cantrip total.", "when": "both", "always_prepared_spells": ["Arms of Hadar", "Calm Emotions", "Detect Thoughts", "Dissonant Whispers", "Mind Sliver"], "choices": []},
+            {"id": "telepathic-speech", "name": "Neural Link (Telepathic Speech)", "description": "As a bonus action, link with one creature you can see within 30 feet. You can communicate telepathically while within a number of miles equal to your Charisma modifier, minimum 1 mile; each participant must mentally use a language the other understands. The link lasts for minutes equal to your Awakened Mutant level, ending early if you form a link with another creature.", "when": "both", "choices": []}
+          ], "notes": null
+        },
+        {"level": 5, "status": "unfilled", "features": [
+          {"id": "psionic-spells-5", "name": "Ghost Signal Spells", "description": "Hunger of Hadar and Sending become always prepared Awakened Mutant spells, using Charisma and not counting against the class prepared-spell limit.", "when": "both", "always_prepared_spells": ["Hunger of Hadar", "Sending"], "choices": []}
+        ], "notes": "Fixed spell grants, not choices or free castings."},
+        {"level": 6, "status": "unfilled", "features": [
+          {"id": "psionic-sorcery", "name": "Direct Neural Casting (Psionic Sorcery)", "description": "Cast a level 1 or higher spell granted by Ghost Signal Spells using a spell slot normally or mutation points equal to its spell level. When using points, the spell needs no verbal or somatic components and no material components unless they are consumed or have a specified cost.", "when": "both", "choices": []},
+          {"id": "psychic-defenses", "name": "Cognitive Firewall (Psychic Defenses)", "description": "You have resistance to psychic damage and advantage on saving throws to avoid or end the charmed or frightened conditions.", "when": "both", "choices": []}
+        ], "notes": "Mutation points are the base class's Sorcery Points, not a separate pool."},
+        {"level": 7, "status": "unfilled", "features": [
+          {"id": "psionic-spells-7", "name": "Ghost Signal Spells", "description": "Evard's Black Tentacles and Summon Aberration become always prepared Awakened Mutant spells, using Charisma and not counting against the class prepared-spell limit.", "when": "both", "always_prepared_spells": ["Evard's Black Tentacles", "Summon Aberration"], "choices": []}
+        ], "notes": "Fixed spell grants, not choices or free castings. The existing spell mapping uses the shorter name Black Tentacles for Evard's Black Tentacles."},
+        {"level": 9, "status": "unfilled", "features": [
+          {"id": "psionic-spells-9", "name": "Ghost Signal Spells", "description": "Rary's Telepathic Bond and Telekinesis become always prepared Awakened Mutant spells, using Charisma and not counting against the class prepared-spell limit.", "when": "both", "always_prepared_spells": ["Rary's Telepathic Bond", "Telekinesis"], "choices": []}
+        ], "notes": "Fixed spell grants, not choices or free castings. The existing spell mapping uses the shorter name Telepathic Bond for Rary's Telepathic Bond."},
+        {"level": 14, "status": "unfilled", "features": [
+          {"id": "revelation-in-flesh", "name": "Adaptive Mutation (Revelation in Flesh)", "description": "As a bonus action, spend one or more mutation points to alter your body for 10 minutes, choosing one benefit per point spent. Aquatic Adaptation: swim speed twice your speed and breathe underwater. Glistening Flight: fly speed equal to your speed and hover. See the Invisible: see invisible creatures within 60 feet that are not behind total cover. Wormlike Movement: your body and worn or carried equipment fit through spaces as narrow as 1 inch; spend 5 feet of movement to escape nonmagical restraints or the grappled condition. Benefits last until the alteration ends.", "when": "both", "choices": [
+            {"id": "adaptive-mutation-benefits", "name": "Choose mutation benefits when activated", "kind": "feature_option", "count": null, "allowed_options": ["Aquatic Adaptation", "Glistening Flight", "See the Invisible", "Wormlike Movement"], "eligibility_rule": "Choose one benefit per mutation point spent on this activation. The source does not specify whether a benefit may be chosen more than once; review before automation.", "selection_effect": "Apply the chosen benefits for 10 minutes; do not save as a permanent level-up choice."}
+          ]}
+        ], "notes": null},
+        {"level": 18, "status": "unfilled", "features": [
+          {"id": "warping-implosion", "name": "Spatial Collapse (Warping Implosion)", "description": "As a Magic action, teleport to an unoccupied space you can see within 120 feet. Immediately after you disappear, every creature within 30 feet of your former space makes a Strength save against your spell save DC. On failure it takes 3d10 force damage and is pulled straight toward your former space, ending in an unoccupied space as close to it as possible; on success it takes half damage only. Once used, regain the use on a long rest or restore it by spending 5 mutation points without an action.", "when": "both", "choices": []}
+        ], "notes": null}
+      ]
+    },
+    {
+      "id": "kami-synthetic-soul-vessel",
+      "name": "KAMI Synthetic Soul Vessel",
+      "description": "Orderly synthetic instincts and arcane computation regulate the mutant's powers. Reskin of Clockwork Sorcery; older guide mechanics are thematic only.",
+      "selected_at_class_level": 3,
+      "spellcasting_override": null,
+      "resources": [
+        {"id": "restore-balance-uses", "name": "Signal Equalizer", "description": "Spend one use to cancel advantage and disadvantage on an eligible d20 roll.", "recharge": "long", "maximum_rule": "Charisma modifier uses, minimum 1, beginning at class level 3; regain all uses on a long rest."},
+        {"id": "trance-of-order-use", "name": "Perfect Calibration", "description": "Activate the level 14 trance; spending 5 mutation points without an action restores the use.", "recharge": "other", "maximum_rule": "One use at class level 14; regain it on a long rest or restore it by spending 5 mutation points."},
+        {"id": "clockwork-cavalcade-use", "name": "Calibration Cascade", "description": "Activate the level 18 cascade; spending 7 mutation points without an action restores the use.", "recharge": "other", "maximum_rule": "One use at class level 18; regain it on a long rest or restore it by spending 7 mutation points."}
+      ],
+      "levels": [
+        {"level": 3, "status": "unfilled", "features": [
+          {"id": "clockwork-spells-3", "name": "Synthetic Soul Spells (Clockwork Spells)", "description": "Aid, Alarm, Lesser Restoration, and Protection from Evil and Good are always prepared Awakened Mutant spells, use Charisma, and do not count against the class prepared-spell limit. Choose or randomly determine a visible or audible manifestation of order that appears when casting your Awakened Mutant spells.", "when": "both", "always_prepared_spells": ["Aid", "Alarm", "Lesser Restoration", "Protection from Evil and Good"], "choices": [
+            {"id": "order-manifestation", "name": "Choose or roll an order manifestation", "kind": "feature_option", "count": 1, "allowed_options": ["Spectral cogwheels", "Clock hands in eyes", "Brassy skin glow", "Floating equations and geometry", "Focus becomes a Tiny clockwork mechanism", "Audible ticking or clock chime"], "eligibility_rule": "Choose one or roll a d6; this is a cosmetic manifestation while casting Awakened Mutant spells.", "selection_effect": "Record the manifestation; it grants no additional mechanical effect."}
+          ]},
+          {"id": "restore-balance", "name": "Signal Equalizer (Restore Balance)", "description": "When a creature you can see within 60 feet is about to roll a d20 with advantage or disadvantage, use your reaction to prevent both advantage and disadvantage affecting that roll. Use this a number of times equal to your Charisma modifier, minimum once; regain all uses on a long rest.", "when": "both", "choices": []}
+        ], "notes": null},
+        {"level": 5, "status": "unfilled", "features": [
+          {"id": "clockwork-spells-5", "name": "Synthetic Soul Spells", "description": "Dispel Magic and Protection from Energy become always prepared Awakened Mutant spells, using Charisma and not counting against the class prepared-spell limit.", "when": "both", "always_prepared_spells": ["Dispel Magic", "Protection from Energy"], "choices": []}
+        ], "notes": "Fixed spell grants, not choices or free castings."},
+        {"level": 6, "status": "unfilled", "features": [
+          {"id": "bastion-of-law", "name": "Bulwark of Law (Bastion of Law)", "description": "As a Magic action, spend 1 to 5 mutation points to ward yourself or a creature you can see within 30 feet. The ward holds one d8 per point spent. When the warded creature takes damage, it can spend any number of those dice, roll them, and reduce the damage by their total. The ward lasts until you finish a long rest or use this feature again.", "when": "both", "choices": []}
+        ], "notes": "Ward dice and mutation points require separate tracking; spending dice does not spend additional mutation points."},
+        {"level": 7, "status": "unfilled", "features": [
+          {"id": "clockwork-spells-7", "name": "Synthetic Soul Spells", "description": "Freedom of Movement and Summon Construct become always prepared Awakened Mutant spells, using Charisma and not counting against the class prepared-spell limit.", "when": "both", "always_prepared_spells": ["Freedom of Movement", "Summon Construct"], "choices": []}
+        ], "notes": "Fixed spell grants, not choices or free castings."},
+        {"level": 9, "status": "unfilled", "features": [
+          {"id": "clockwork-spells-9", "name": "Synthetic Soul Spells", "description": "Greater Restoration and Wall of Force become always prepared Awakened Mutant spells, using Charisma and not counting against the class prepared-spell limit.", "when": "both", "always_prepared_spells": ["Greater Restoration", "Wall of Force"], "choices": []}
+        ], "notes": "Fixed spell grants, not choices or free castings."},
+        {"level": 14, "status": "unfilled", "features": [
+          {"id": "trance-of-order", "name": "Perfect Calibration (Trance of Order)", "description": "As a bonus action, enter a 1-minute trance. Attack rolls against you cannot benefit from advantage, and you may treat a d20 roll of 9 or lower on your D20 Tests as a 10. Once used, regain the use on a long rest or restore it by spending 5 mutation points without an action.", "when": "both", "choices": []}
+        ], "notes": null},
+        {"level": 18, "status": "unfilled", "features": [
+          {"id": "clockwork-cavalcade", "name": "Calibration Cascade (Clockwork Cavalcade)", "description": "As a Magic action, summon intangible, invulnerable spirits resembling modrons or other constructs of your choice in a 30-foot cube originating from you. Before vanishing, they distribute up to 100 hit points among any chosen creatures in the cube, repair damaged objects entirely inside it, and end every spell of level 6 or lower on chosen creatures and objects in it. Once used, regain the use on a long rest or restore it by spending 7 mutation points without an action.", "when": "both", "choices": []}
+        ], "notes": null}
+      ]
+    },
+    {
+      "id": "dragon-blood-replicant",
+      "name": "Dragon-Blood Replicant",
+      "description": "A draconic genome splice manifests as plated skin, elemental energy, and bioengineered wings. Reskin of Draconic Sorcery; older guide mechanics are thematic only.",
+      "selected_at_class_level": 3,
+      "spellcasting_override": null,
+      "resources": [
+        {"id": "dragon-wings-use", "name": "Grafted Wings", "description": "Manifest wings at level 14; spending 3 mutation points without an action restores the use.", "recharge": "other", "maximum_rule": "One use at class level 14; regain it on a long rest or restore it by spending 3 mutation points."},
+        {"id": "dragon-companion-free-cast", "name": "Wyrm Companion", "description": "Cast Summon Dragon once without a spell slot.", "recharge": "long", "maximum_rule": "One free casting at class level 18; regain it on a long rest."}
+      ],
+      "levels": [
+        {"level": 3, "status": "unfilled", "features": [
+          {"id": "draconic-resilience", "name": "Dermal Plating (Draconic Resilience)", "description": "Your hit point maximum increases by 3 now and by 1 for each later Awakened Mutant level. While not wearing armor, your base AC is 10 plus your Dexterity modifier plus your Charisma modifier.", "when": "both", "choices": []},
+          {"id": "draconic-spells-3", "name": "Wyrm Genome Spells (Draconic Spells)", "description": "Alter Self, Chromatic Orb, Command, and Dragon's Breath are always prepared Awakened Mutant spells, use Charisma, and do not count against the class prepared-spell limit.", "when": "both", "always_prepared_spells": ["Alter Self", "Chromatic Orb", "Command", "Dragon's Breath"], "choices": []}
+        ], "notes": "The hit point increase uses Awakened Mutant class level, not total character level."},
+        {"level": 5, "status": "unfilled", "features": [
+          {"id": "draconic-spells-5", "name": "Wyrm Genome Spells", "description": "Fear and Fly become always prepared Awakened Mutant spells, using Charisma and not counting against the class prepared-spell limit.", "when": "both", "always_prepared_spells": ["Fear", "Fly"], "choices": []}
+        ], "notes": "Fixed spell grants, not choices or free castings."},
+        {"level": 6, "status": "unfilled", "features": [
+          {"id": "elemental-affinity", "name": "Genome Elemental Affinity", "description": "Choose acid, cold, fire, lightning, or poison damage. You have resistance to the chosen type. When you cast a spell that deals that type, you can add your Charisma modifier to one damage roll of the spell.", "when": "both", "choices": [
+            {"id": "genome-damage-type", "name": "Choose an elemental affinity", "kind": "feature_option", "count": 1, "allowed_options": ["Acid", "Cold", "Fire", "Lightning", "Poison"], "eligibility_rule": "Choose one listed damage type when gaining this feature; no replacement rule is specified.", "selection_effect": "Record the selected damage type, its resistance, and the matching spell damage bonus."}
+          ]}
+        ], "notes": null},
+        {"level": 7, "status": "unfilled", "features": [
+          {"id": "draconic-spells-7", "name": "Wyrm Genome Spells", "description": "Arcane Eye and Charm Monster become always prepared Awakened Mutant spells, using Charisma and not counting against the class prepared-spell limit.", "when": "both", "always_prepared_spells": ["Arcane Eye", "Charm Monster"], "choices": []}
+        ], "notes": "Fixed spell grants, not choices or free castings."},
+        {"level": 9, "status": "unfilled", "features": [
+          {"id": "draconic-spells-9", "name": "Wyrm Genome Spells", "description": "Legend Lore and Summon Dragon become always prepared Awakened Mutant spells, using Charisma and not counting against the class prepared-spell limit.", "when": "both", "always_prepared_spells": ["Legend Lore", "Summon Dragon"], "choices": []}
+        ], "notes": "Fixed spell grants, not choices or free castings."},
+        {"level": 14, "status": "unfilled", "features": [
+          {"id": "dragon-wings", "name": "Grafted Wings (Dragon Wings)", "description": "As a bonus action, manifest wings for 1 hour or until dismissed without an action; you have a fly speed of 60 feet while they last. Once used, regain the use on a long rest or restore it by spending 3 mutation points without an action.", "when": "both", "choices": []}
+        ], "notes": null},
+        {"level": 18, "status": "unfilled", "features": [
+          {"id": "dragon-companion", "name": "Wyrm Companion (Dragon Companion)", "description": "You can cast Summon Dragon without a material component, and once without a spell slot per long rest. Whenever you start casting it, you can remove its concentration requirement; for that casting its duration becomes 1 minute.", "when": "both", "choices": []}
+        ], "notes": "Summon Dragon is already always prepared from level 9; the free casting is a separate level 18 benefit."}
+      ]
+    },
+    {
+      "id": "shadow-signal-mutant",
+      "name": "Shadow Signal Mutant",
+      "description": "Exposure to a dark ghost signal lets a mutant move through shadows and call shadow beasts. Reskin of Shadow Sorcery.",
+      "selected_at_class_level": 3,
+      "spellcasting_override": null,
+      "resources": [
+        {"id": "strength-of-the-grave-use", "name": "Grave-Signal Override", "description": "After successfully using the level 3 survival save, the benefit cannot be used again until a long rest; failed saves do not expend the successful-use allowance.", "recharge": "long", "maximum_rule": "One successful use at class level 3; regain it on a long rest."},
+        {"id": "umbral-form-use", "name": "Umbral Signal Form", "description": "Adopt the level 18 form when using Innate Sorcery; spending 6 mutation points without an action restores the use.", "recharge": "other", "maximum_rule": "One use at class level 18; regain it on a long rest or restore it by spending 6 mutation points."}
+      ],
+      "levels": [
+        {"level": 3, "status": "unfilled", "features": [
+          {"id": "shadow-spells-3", "name": "Shadow Signal Spells (Shadow Spells)", "description": "Bane, Darkness, Inflict Wounds, and Pass Without Trace are always prepared Awakened Mutant spells, use Charisma, and do not count against the class prepared-spell limit.", "when": "both", "always_prepared_spells": ["Bane", "Darkness", "Inflict Wounds", "Pass Without Trace"], "choices": []},
+          {"id": "power-of-shadow", "name": "Ghost Optics and Grave-Signal Override (Power of Shadow)", "description": "You have darkvision to 120 feet and blindsight to 10 feet; you can see normally through darkness created by a spell you cast. If damage would reduce you to 0 hit points without killing you outright, you can make a Charisma saving throw against DC 5 plus the damage taken. On success, your hit points instead become your Charisma modifier plus your Awakened Mutant level. After a successful save, you cannot use this benefit again until a long rest.", "when": "both", "choices": []}
+        ], "notes": "The source does not specify a minimum for the hit points after a successful survival save; review before automation."},
+        {"level": 5, "status": "unfilled", "features": [
+          {"id": "shadow-spells-5", "name": "Shadow Signal Spells", "description": "Hunger of Hadar and Nondetection become always prepared Awakened Mutant spells, using Charisma and not counting against the class prepared-spell limit.", "when": "both", "always_prepared_spells": ["Hunger of Hadar", "Nondetection"], "choices": []}
+        ], "notes": "Fixed spell grants, not choices or free castings."},
+        {"level": 6, "status": "unfilled", "features": [
+          {"id": "beasts-of-ill-omen", "name": "Ghost Hound Protocol (Beasts of Ill Omen)", "description": "Spend 3 mutation points to cast Summon Beast as a bonus action without a spell slot, preparation, or material components. The beast appears to be made of shadow; enemies within 5 feet of it have disadvantage on saves against spells you cast. Whenever you cast the spell, you can remove its concentration requirement; if you do, its duration becomes 1 minute and it ends early if you cast the spell again.", "when": "both", "choices": []}
+        ], "notes": "The source does not specify the spell level for the point-funded casting; review before automation."},
+        {"level": 7, "status": "unfilled", "features": [
+          {"id": "shadow-spells-7", "name": "Shadow Signal Spells", "description": "Greater Invisibility and Phantasmal Killer become always prepared Awakened Mutant spells, using Charisma and not counting against the class prepared-spell limit.", "when": "both", "always_prepared_spells": ["Greater Invisibility", "Phantasmal Killer"], "choices": []}
+        ], "notes": "Fixed spell grants, not choices or free castings."},
+        {"level": 9, "status": "unfilled", "features": [
+          {"id": "shadow-spells-9", "name": "Shadow Signal Spells", "description": "Contagion and Creation become always prepared Awakened Mutant spells, using Charisma and not counting against the class prepared-spell limit.", "when": "both", "always_prepared_spells": ["Contagion", "Creation"], "choices": []}
+        ], "notes": "Fixed spell grants, not choices or free castings."},
+        {"level": 14, "status": "unfilled", "features": [
+          {"id": "shadow-walk", "name": "Dark-Signal Jump (Shadow Walk)", "description": "While in dim light or darkness, use a bonus action to teleport up to 120 feet to an unoccupied space you can see that is also in dim light or darkness.", "when": "both", "choices": []}
+        ], "notes": null},
+        {"level": 18, "status": "unfilled", "features": [
+          {"id": "umbral-form", "name": "Umbral Signal Form (Umbral Form)", "description": "When you use Innate Sorcery, adopt a shadow form lasting while that use is active or until you end the form without an action. You move through creatures and objects as difficult terrain, taking 1d10 force damage if you end your turn inside one. You resist all damage except force and radiant. Once used, regain the use on a long rest or restore it by spending 6 mutation points without an action.", "when": "both", "choices": []}
+        ], "notes": null}
+      ]
+    },
+    {
+      "id": "spellfire-reactor-mutant",
+      "name": "Spellfire Reactor Mutant",
+      "description": "An unstable arcane reactor in the mutant's body absorbs hostile magic and releases healing or destructive spellfire. Reskin of Spellfire Sorcery.",
+      "selected_at_class_level": 3,
+      "spellcasting_override": null,
+      "resources": [
+        {"id": "crown-of-spellfire-use", "name": "Reactor Crown", "description": "Alter Innate Sorcery at level 18; spending 5 mutation points without an action restores the use.", "recharge": "other", "maximum_rule": "One use at class level 18; regain it on a long rest or restore it by spending 5 mutation points."}
+      ],
+      "levels": [
+        {"level": 3, "status": "unfilled", "features": [
+          {"id": "spellfire-burst", "name": "Reactor Burst (Spellfire Burst)", "description": "Once per turn, when you spend at least 1 mutation point as part of a Magic action or bonus action on your turn, choose one effect. Bolstering Flames gives you or a creature you can see within 30 feet temporary hit points equal to 1d4 plus your Charisma modifier. Radiant Fire deals 1d4 fire or radiant damage, your choice, to one creature you can see within 30 feet.", "when": "both", "choices": []},
+          {"id": "spellfire-spells-3", "name": "Reactor Spells (Spellfire Spells)", "description": "Cure Wounds, Guiding Bolt, Lesser Restoration, and Scorching Ray are always prepared Awakened Mutant spells, use Charisma, and do not count against the class prepared-spell limit.", "when": "both", "always_prepared_spells": ["Cure Wounds", "Guiding Bolt", "Lesser Restoration", "Scorching Ray"], "choices": []}
+        ], "notes": null},
+        {"level": 5, "status": "unfilled", "features": [
+          {"id": "spellfire-spells-5", "name": "Reactor Spells", "description": "Aura of Vitality and Dispel Magic become always prepared Awakened Mutant spells, using Charisma and not counting against the class prepared-spell limit.", "when": "both", "always_prepared_spells": ["Aura of Vitality", "Dispel Magic"], "choices": []}
+        ], "notes": "Fixed spell grants, not choices or free castings."},
+        {"level": 6, "status": "unfilled", "features": [
+          {"id": "absorb-spells", "name": "Hostile Code Absorption (Absorb Spells)", "description": "Counterspell is always prepared as an Awakened Mutant spell, uses Charisma, and does not count against the class prepared-spell limit. Whenever a target fails its saving throw against a Counterspell you cast, regain 1d4 mutation points, subject to your normal point maximum.", "when": "both", "always_prepared_spells": ["Counterspell"], "choices": []}
+        ], "notes": "Counterspell is not a free casting; recovery uses the base mutation-point pool."},
+        {"level": 7, "status": "unfilled", "features": [
+          {"id": "spellfire-spells-7", "name": "Reactor Spells", "description": "Fire Shield and Wall of Fire become always prepared Awakened Mutant spells, using Charisma and not counting against the class prepared-spell limit.", "when": "both", "always_prepared_spells": ["Fire Shield", "Wall of Fire"], "choices": []}
+        ], "notes": "Fixed spell grants, not choices or free castings."},
+        {"level": 9, "status": "unfilled", "features": [
+          {"id": "spellfire-spells-9", "name": "Reactor Spells", "description": "Greater Restoration and Flame Strike become always prepared Awakened Mutant spells, using Charisma and not counting against the class prepared-spell limit.", "when": "both", "always_prepared_spells": ["Greater Restoration", "Flame Strike"], "choices": []}
+        ], "notes": "Fixed spell grants, not choices or free castings."},
+        {"level": 14, "status": "unfilled", "features": [
+          {"id": "honed-spellfire", "name": "Honed Reactor Burst (Honed Spellfire)", "description": "Add your Awakened Mutant level to the temporary hit points from Bolstering Flames. Radiant Fire's damage die increases from 1d4 to 1d8.", "when": "both", "choices": []}
+        ], "notes": null},
+        {"level": 18, "status": "unfilled", "features": [
+          {"id": "crown-of-spellfire", "name": "Reactor Crown (Crown of Spellfire)", "description": "When you use Innate Sorcery, alter that use to gain the following while it remains active: once per turn when hit by an attack roll, expend up to your Charisma modifier Hit Point Dice (minimum maximum 1), roll them, and reduce the attack's damage by their total; gain a fly speed of 60 feet and hover; and when a spell or magical effect offers a save for half damage, take no damage on a success and half on a failure, unless incapacitated. Once used, regain the use on a long rest or restore it by spending 5 mutation points without an action.", "when": "both", "choices": []}
+        ], "notes": null}
+      ]
+    },
+    {
+      "id": "wild-signal-mutant",
+      "name": "Wild Signal Mutant",
+      "description": "A chaotic ghost signal destabilizes the mutant's magic, producing unpredictable surges. Reskin of Wild Magic Sorcery.",
+      "selected_at_class_level": 3,
+      "spellcasting_override": null,
+      "resources": [
+        {"id": "tides-of-chaos-use", "name": "Chaos Bias", "description": "Gain advantage on one D20 Test before rolling; regain the use by casting an Awakened Mutant spell with a spell slot or finishing a long rest.", "recharge": "other", "maximum_rule": "One use at class level 3; the qualifying spell cast before a long rest also triggers a surge-table roll."},
+        {"id": "tamed-surge-use", "name": "Directed Signal Surge", "description": "Select an eligible surge effect after a qualifying spell cast.", "recharge": "long", "maximum_rule": "One use at class level 18; regain it on a long rest."}
+      ],
+      "levels": [
+        {"level": 3, "status": "unfilled", "features": [
+          {"id": "wild-magic-surge", "name": "Wild Signal Surge (Wild Magic Surge)", "description": "Once per turn, immediately after casting an Awakened Mutant spell with a spell slot, you can roll 1d20; on a 20, roll on the surge table below. A spell produced by a surge cannot be modified by your Metamagic. The numbered outcomes below preserve the supplied table; any spell effect uses that spell's own rules except where the outcome says otherwise.", "when": "both", "choices": [],
+           "surge_table": [
+             {"roll": "01-04", "effect": "For 1 minute, roll on this table at the start of each of your turns; ignore this result on those subsequent rolls."},
+             {"roll": "05-08", "effect": "A friendly creature appears in a random unoccupied space within 60 feet, controlled by the DM, and disappears after 1 minute. Roll 1d4: 1 Modron Duodrone, 2 Flumph, 3 Modron Monodrone, 4 Unicorn; use the relevant stat block."},
+             {"roll": "09-12", "effect": "For 1 minute, regain 5 hit points at the start of each of your turns."},
+             {"roll": "13-16", "effect": "Creatures have disadvantage on saves against the next spell you cast within 1 minute that requires a saving throw."},
+             {"roll": "17-20", "effect": "Roll 1d8 for an effect lasting 1 minute unless noted: 1 faint music audible only to you and creatures within 5 feet; 2 your size increases one category; 3 a feather beard remains until a sneeze makes the feathers explode and vanish; 4 you must shout when speaking; 5 illusory butterflies flutter within 10 feet; 6 a forehead eye gives advantage on Wisdom (Perception) checks; 7 pink bubbles emerge when you speak; 8 blue skin for 24 hours or until Remove Curse ends it."},
+             {"roll": "21-24", "effect": "For 1 minute, your spells with an action casting time instead have a bonus action casting time."},
+             {"roll": "25-28", "effect": "Travel to the Astral Plane until the end of your next turn, then return to your former space or its nearest unoccupied space."},
+             {"roll": "29-32", "effect": "For the next spell you cast within 1 minute that deals damage, use the maximum value of each damage die instead of rolling it."},
+             {"roll": "33-36", "effect": "You have resistance to all damage for 1 minute."},
+             {"roll": "37-40", "effect": "Become a potted plant until the start of your next turn. While a plant, you are incapacitated and vulnerable to all damage; at 0 hit points the pot breaks and your form reverts."},
+             {"roll": "41-44", "effect": "For 1 minute, you can teleport up to 20 feet as a bonus action on each of your turns."},
+             {"roll": "45-48", "effect": "You and up to three creatures you choose within 30 feet are invisible for 1 minute. A creature's invisibility ends immediately after it makes an attack roll, deals damage, or casts a spell."},
+             {"roll": "49-52", "effect": "For 1 minute a spectral shield grants you +2 AC and immunity to Magic Missile."},
+             {"roll": "53-56", "effect": "You can take one extra action on this turn."},
+             {"roll": "57-60", "effect": "Cast a random spell; if it normally requires concentration, it instead lasts its full duration without concentration. Roll 1d10: 1 Confusion; 2 Fireball; 3 Fog Cloud; 4 Fly on a random creature within 60 feet; 5 Grease; 6 Levitate on yourself; 7 Magic Missile at level 5; 8 Mirror Image; 9 Polymorph on yourself, becoming a Goat on a failed save; 10 See Invisibility."},
+             {"roll": "61-64", "effect": "For 1 minute, flammable nonmagical objects you touch that are not worn or carried by another creature ignite, take 1d4 fire damage, and burn."},
+             {"roll": "65-68", "effect": "If you die within 1 hour, immediately revive as if by Reincarnate."},
+             {"roll": "69-72", "effect": "You are frightened until the end of your next turn; the DM determines the source."},
+             {"roll": "73-76", "effect": "Teleport up to 60 feet to an unoccupied space you can see."},
+             {"roll": "77-80", "effect": "A random creature within 60 feet is poisoned for 1d4 hours."},
+             {"roll": "81-84", "effect": "Emit bright light in a 30-foot radius for 1 minute; creatures ending their turn within 5 feet are blinded until the end of their next turn."},
+             {"roll": "85-88", "effect": "Up to three creatures of your choice you can see within 30 feet take 1d10 necrotic damage; you regain hit points equal to the total necrotic damage dealt."},
+             {"roll": "89-92", "effect": "Up to three creatures of your choice you can see within 30 feet take 4d10 lightning damage."},
+             {"roll": "93-96", "effect": "You and every creature within 30 feet have vulnerability to piercing damage for 1 minute."},
+             {"roll": "97-00", "effect": "Roll 1d6: 1 regain 2d10 hit points; 2 one chosen ally within 300 feet regains 2d10 hit points; 3 regain your lowest-level expended spell slot; 4 one chosen ally within 300 feet regains their lowest-level expended spell slot; 5 regain all expended mutation points; 6 all effects from row 17-20 affect you simultaneously."}
+           ]},
+          {"id": "tides-of-chaos", "name": "Chaos Bias (Tides of Chaos)", "description": "Before rolling a D20 Test, give yourself advantage on it. You cannot use this again until you cast an Awakened Mutant spell with a spell slot or finish a long rest. If you cast such a spell before finishing a long rest, automatically roll on the Wild Signal Surge table.", "when": "both", "choices": []}
+        ], "notes": "Tides of Chaos's automatic surge is distinct from the optional d20 check of Wild Magic Surge; the source does not specify how simultaneous triggers interact."},
+        {"level": 6, "status": "unfilled", "features": [
+          {"id": "bend-luck", "name": "Probability Glitch (Bend Luck)", "description": "Immediately after another creature you can see rolls the d20 for a D20 Test, use your reaction and spend 1 mutation point to roll 1d4 and add or subtract the result from that d20 roll, your choice.", "when": "both", "choices": []}
+        ], "notes": null},
+        {"level": 14, "status": "unfilled", "features": [
+          {"id": "controlled-chaos", "name": "Signal Steering (Controlled Chaos)", "description": "Whenever you roll on the Wild Signal Surge table, you can roll twice and choose which result to use.", "when": "both", "choices": []}
+        ], "notes": null},
+        {"level": 18, "status": "unfilled", "features": [
+          {"id": "tamed-surge", "name": "Directed Signal Surge (Tamed Surge)", "description": "Immediately after casting an Awakened Mutant spell with a spell slot, choose an effect from the Wild Signal Surge table instead of rolling on it. You may choose any row except 97-00; if that effect calls for a roll, make it. Once used, regain this feature on a long rest.", "when": "both", "choices": [
+            {"id": "directed-surge-effect", "name": "Choose a surge effect when used", "kind": "feature_option", "count": 1, "allowed_options": "Any Wild Signal Surge table row except 97-00.", "eligibility_rule": "Choose after a qualifying spell cast; make any rolls required by the chosen outcome.", "selection_effect": "Apply the chosen effect; this is not a permanent level-up selection."}
+          ]}
+        ], "notes": null}
+      ]
+    }
+  ],
   "source_notes": [
     "Rules basis: _reference/classes/Sorcerer.md, a 2024-style source. Review compatibility with the earlier 2014 multiclass design.",
     "Class progression and mechanics use the original reference; older reskin mechanics may differ and are thematic reference only, not additional grants.",
     "The worksheet schema is not supported by the app. Levels remain unfilled pending rules and choice review; null means unresolved or not applicable as described.",
-    "Subclass selection milestones are recorded, but subclass options, features, and spellcasting are intentionally deferred.",
+    "Six origins are authored from developernotes/classes/Sorcerer/subclasses. Their features, spell grants, choices, resources, and surge table are draft data and are not applied by the app.",
+    "Mutation points refer to the base class Sorcery Points pool. Spell grant names use original source names pending matching to the spell data; the guide's older origin rules are not additional grants.",
     "Reskin inspiration: classes/Awakened Mutant.json. Names may be adapted where source mechanics have changed."
   ]
 }

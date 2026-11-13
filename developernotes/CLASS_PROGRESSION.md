@@ -39,9 +39,9 @@ cannot yet apply multiclass levels.
 The worksheets in [`classesv2/`](../static/data/neotokyo/classesv2/) instead
 use the supplied **2024-style** class reference files. They are drafts for
 review and are not yet a complete app-supported multiclass schema. Cyber-Berserker
-/ Aug-Brute is the Barbarian worksheet and Corporate Enforcer is the Fighter
+is the Barbarian worksheet and Corporate Enforcer is the Fighter
 worksheet. Subclass automation remains incomplete. Artificer is omitted because its source material was not supplied.
-The Cleric worksheet uses the mapping's theme because no corresponding live
+The Shrine Priest (Cleric) worksheet uses the original mapping's theme because no corresponding live
 reskin file was supplied.
 The level-up dialog previews worksheets for available guide classes, but does
 not apply levels or choice effects while the implementation is incomplete. See
@@ -373,6 +373,21 @@ behavior. Record future subclass features at the class levels where they are
 gained, not all at the selection level. If a feature grants additional spells,
 specify whether they are always prepared, count against limits, or use a
 particular class's casting ability.
+
+The Vow-Bound Operative worksheet uses an `always_prepared_spells` array on
+individual subclass features for fixed oath-spell grants at each class level.
+The entries use original reference names; the feature description records
+their class, casting ability, and preparation-limit rules. This draft field is
+not consumed by the app and still needs matching to available spell data.
+Awakened Mutant uses the same draft field for origin spells, including a
+separately granted cantrip and a fixed spell outside an origin's spell table.
+Its `surge_table` on Wild Signal Surge records inclusive d100 row labels and
+effect descriptions; neither the table nor its nested random effects are
+executable automation.
+Shrine Priest uses `always_prepared_spells` for domain grants as well, including
+the Grave Domain's separately granted cantrip. Channel Divinity options spend
+the base class pool rather than creating a separate subclass pool. Refer to
+choice eligibility text for conditional selections and spell unlocks.
 
 ## 9. Review checklist
 

@@ -1,0 +1,70 @@
+Channel Despair and Darkness to Protect Others
+
+Sorrow knights suffuse their opponents with grief and misery from the gloomy plane called the Shadowfell. These fighters harness their past despair to forge a connection with others and protect themselves. A sorrow knight’s intense loss - whether the loss of love, faith, or something equally profound - is the weapon they wield against their foes and their motivator to ensure that no one experiences that same pain.
+
+Embracing the Gloom
+Sorrow knights deploy the gloom and sadness inherent to the Shadowfell, whether or not they have ever been to that grim place.
+
+Roll on or choose a result from the Shadowfell Connection table to inspire the event that forged your connection to the Shadowfell.
+
+Shadowfell Connection
+1d6	The Despair of the Shadowfell Claimed You After…
+1	You arrived too late to save your home from monsters that destroyed it.
+2	You realized a good-aligned god never intends to answer your prayers.
+3	You were not strong enough to save the love of your life from their untimely death.
+4	A shadow crossing opened beneath your bed as a child.
+5	You understood your parents were never returning to save you.
+6	You fell into an open grave.
+Level 3: Despairing Strikes
+Each sorrow knight bears an emotional wound like a deep scar, through which they channel despair against their enemies. This misery is fueled by special dice called Despairing Strike Dice.
+
+The Despairing Strike Dice table shows the die size and number of these dice you have when you reach certain Fighter levels. A Despairing Strike Die is expended when you use it. You regain all expended Despairing Strike Dice when you finish a Short or Long Rest.
+
+Despairing Strike Dice
+
+Fighter Level	Dice Size	Number
+3	D8	3
+10	D10	4
+15	D12	5
+When you hit a creature with an attack roll using a weapon, you can expend a Despairing Strike Die and roll that die. You deal additional Psychic damage equal to the roll and can also add one of the following effects. You can’t expend more than one die per attack.
+
+If a Despairing Strike effect requires a saving throw, the DC equals 8 plus your Wisdom modifier and Proficiency Bonus.
+
+Abandoned. The target must succeed on an Intelligence saving throw or have the Deafened condition until the end of your next turn. While Deafened, the target regards all creatures it can see as enemies until the end of your next turn.
+
+Dread. The target has Disadvantage on the next saving throw it makes before the start of your next turn.
+
+Level 3: Solemn Gaze
+You can see through the darkness around you and recognize the darkness in others. You gain the following benefits.
+
+Darkvision. You gain Darkvision with a range of 60 feet. If you already have Darkvision, its range increases by 60 feet.
+
+Empathetic Inquiry. As a Magic action, you can attempt to search the mind of a creature you can see within 30 feet. The target must succeed on a Wisdom saving throw (DC equals 8 plus your Wisdom modifier and Proficiency Bonus) or you learn an emotion that looms large in its mind, such as a worry, love, or hate. If the target can see you, it knows you have read its emotions. You can use this feature a number of times equal to your Wisdom modifier (minimum of once). You regain all expended uses when you finish a Long Rest.
+
+Level 7: Dreaded Appearance
+When you use Tactical Shift, you can teleport to an unoccupied space you can see within 30 feet of yourself instead of moving.
+
+Immediately after you reappear, you can briefly take on the appearance of creatures’ fears, visible only to those creatures. Each creature of your choice within a 10-foot Emanation originating from you makes a Wisdom saving throw (DC equals 8 plus your Wisdom modifier and your Proficiency Bonus). On a failed save, a target takes Psychic damage equal to a roll of your Despairing Strike die and has the Frightened condition until the end of your next turn. On a successful save, it takes half damage only.
+
+Once you take on this appearance, you can’t do so again until you finish a Short or Long Rest.
+
+Level 10: Unsettled Strikes
+You further channel the pathos of the Shadowfell through your fighting abilities. The following effects are now among your Despairing Strike options.
+
+Apathetic. The target must succeed on a Wisdom saving throw or have the Incapacitated condition until the start of your next turn. While Incapacitated in this way, the target can give only one-word responses when spoken to.
+
+Lost. The target makes a Charisma saving throw. On a failed save, the target has the Blinded condition, and its Speed is reduced to 0 until the end of its next turn. On a successful save, the target’s Speed is halved until the end of its next turn.
+
+Weary. The target must succeed on a Constitution saving throw or gain 1 Exhaustion level. This effect can’t increase the target’s Exhaustion level above 2. Exhaustion levels gained from this effect are removed at the end of your next turn.
+
+Level 15: Grim Constitution
+You have Resistance to Necrotic and Psychic damage.
+
+In addition, when you are subjected to an effect that reduces your Hit Point maximum, you can make a DC 15 Constitution saving throw. If you succeed, your Hit Point maximum isn’t decreased. Each time you make this Constitution saving throw after the first, the DC increases by 5. When you finish a Short or Long Rest, the DC resets to 15.
+
+Level 18: Grieving Mantle
+When you use your Action Surge, you attune yourself to the Shadowfell for 1 minute or until you have the Incapacitated condition. For the duration, you gain the following benefits.
+
+Shade Form. When you are hit by an attack roll, you can take a Reaction to become insubstantial for a moment and reduce the attack’s total damage against you to 0.
+
+Unwavering Resolve. You have Immunity to the Charmed and Frightened conditions. If you’re Charmed or Frightened when you activate your Grieving Mantle, the condition ends on you.

@@ -1,0 +1,68 @@
+Embrace the Magic of Demons to Fight Fire with Fire
+
+Most Demon Hunters joined Illidan on Outland as he marshaled his forces to battle the Burning Legion. You might have followed a different path, inspired by Illidan rather than directly trained by him, but the result is the same: You have embraced the magic of the Burning Legion with the singular goal of defeating it on Azeroth and every other world.
+
+Level 1: Spellcasting
+You can use an Arcane Focus (not a Druidic Focus) as a Spellcasting Focus for your Ranger spells.
+
+Level 2: Deft Explorer
+When you choose languages for the Deft Explorer class feature, choose from the language tables in chapter 2. Eredun and Nathrezim are recommended.
+
+Level 2: Fighting Style
+As a Demon Hunter, you can choose a Fighting Style feat, the Druidic Warrior option in the Player’s Handbook, or the Void Warrior option below.
+
+Void Warrior. You learn two Warlock cantrips of your choice. Chill Touch and Mind Sliver are recommended. The chosen cantrips count as Ranger spells for you, and Wisdom is your spellcasting ability for them. Whenever you gain a Ranger level, you can replace one of these cantrips with another Warlock cantrip.
+
+Level 3: Demon Hunter Spells
+When you reach a Ranger level specified in the Demon Hunter Spells table, you thereafter always have the spell in the Spells (All) column prepared. You also have the additional spells listed in one other column of your choice.
+
+Demon Hunter Spells
+Ranger Level	Spells (All)	Spells (Devourer)	Spells (Havoc)	Spells (Vengeance)
+3	Throw Glaive	Consume Soul	Fel Rush	Infernal Strike
+5	Sigil of Flame	Misty Step	Eye Beam	Fiery Brand
+9	Metamorphosis	Soul Reap	Blink	Demon Spikes
+13	Chaos Nova	Collapsing Star	Fire Shield	Banishment
+17	Destructive Wave	Steel Wind Strike	Conjure Volley	Sigil of Chains
+Level 3: Soul Fragments
+You harvest the energy of souls to fuel some of your special powers. Whenever you finish a Long Rest, you gain a number of soul fragments equal to your Wisdom modifier (minimum of one fragment); each soul fragment is a Tiny object in the form of a crystal. These fragments last until you finish another Long Rest, at which point they disintegrate. If you ever move more than 30 feet from a fragment, the fragment immediately teleports to you, appearing somewhere on your person.
+
+If a soul fragment effect requires a saving throw, the DC equals your Ranger spell save DC.
+
+The number of soul fragments you gain when you finish a Long Rest increases when you reach Ranger levels 13 (Wisdom modifier plus one soul fragment) and 17 (Wisdom modifier plus two soul fragments).
+
+Using Soul Fragments. You can use soul fragments in the following ways:
+
+Double Jump. You can expend one soul fragment to cast Feather Fall or Jump without expending a spell slot.
+
+Soul Cleave. Once on each of your turns, when you take the Attack action, you can expend one soul fragment and replace one of your attacks with a whirlwind of soul energy. Each creature in a 10-foot Emanation originating from you makes a Dexterity saving throw. On a failed save, a creature takes Psychic damage equal to 1d12 plus your Wisdom modifier, and you regain Hit Points equal to your Wisdom modifier.
+
+Regaining Soul Fragments. When an enemy you can see within 30 feet of you dies, you can take a Reaction to regain one expended soul fragment.
+
+Level 3: Spectral Sight
+You have Blindsight with a range of 10 feet.
+
+Level 7: Torment
+A creature marked by your Hunter’s Mark spell has Disadvantage on attack rolls against targets other than you.
+
+Additionally, once per turn when you hit a creature marked by your Hunter’s Mark with an attack roll with a weapon or a Ranger spell, you can impose one of the following effects on the target (your choice):
+
+Aura of Pain. The target subtracts 1d4 from the next saving throw it makes before the end of your next turn.
+
+Chaos Strike. The target takes an extra 1d8 Fire damage.
+
+Level 11: Illidari Knowledge
+You gain new mastery over souls, granting you new ways to use soul fragments:
+
+Disrupt. You can expend two soul fragments to cast Counterspell in response to that spell’s trigger, using your spellcasting ability.
+
+Warglaive Mastery. As a Bonus Action, you can expend one soul fragment to cast Throw Glaive without expending a spell slot.
+
+Level 15: Soul Shatter
+Your mastery of fel magic reaches new heights. When you use the Soul Cleave option of Soul Fragments, the damage increases to 2d12 plus your Wisdom modifier.
+
+In addition, when you roll Initiative, you regain one soul fragment if you have none.
+
+Level 18: Improved Spectral Sight
+This feature replaces the Ranger’s Feral Senses feature.
+
+You have Truesight with a range of 30 feet.

@@ -318,18 +318,18 @@
         },
         {
           "id": "paladin-subclass-3",
-          "name": "Paladin Subclass",
-          "description": "Choose a Paladin subclass at this class level. Subclass choices and features will be authored later.",
+          "name": "Operational Vow (Paladin Subclass)",
+          "description": "Choose an operational vow at this class level and gain its level 3 features. Additional subclass features arrive at class levels 7, 15, and 20.",
           "when": "both",
           "choices": [
             {
               "id": "choice-paladin-subclass-3",
-              "name": "Choose a subclass later",
+              "name": "Choose an operational vow",
               "kind": "subclass",
               "count": 1,
-              "allowed_options": null,
-              "eligibility_rule": "Subclass authoring is deferred; verify available choices.",
-              "selection_effect": "Record the chosen subclass when implemented."
+              "allowed_options": ["Oath of the Aegis Enforcer", "Oath of the Chrome Samurai", "Oath of the Civic Sentinel"],
+              "eligibility_rule": "Choose one of the authored Vow-Bound Operative subclasses.",
+              "selection_effect": "Record the chosen vow and its level 3 features and always-prepared spells."
             }
           ]
         },
@@ -600,7 +600,7 @@
         "pact_slot_level": null,
         "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
       },
-      "notes": "Subclass feature deferred. Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+      "notes": "See the chosen subclass for its level 7 feature. Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
     },
     {
       "level": 8,
@@ -991,7 +991,7 @@
         "pact_slot_level": null,
         "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
       },
-      "notes": "Subclass feature deferred. Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+      "notes": "See the chosen subclass for its level 15 feature. Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
     },
     {
       "level": 16,
@@ -1205,15 +1205,451 @@
         "pact_slot_level": null,
         "choices_and_replacements": "Follow the class Spellcasting or Pact Magic feature; select new cantrips and spells when totals increase, respecting class list, level restrictions, and replacement rules. Prepared totals exclude always-prepared spells where the feature says so."
       },
-      "notes": "Subclass feature deferred. Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
+      "notes": "See the chosen subclass for its level 20 feature. Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
     }
   ],
-  "subclasses": null,
+  "subclasses": [
+    {
+      "id": "aegis-enforcer",
+      "name": "Oath of the Aegis Enforcer",
+      "description": "An operative whose code of honor demands keeping promises, protecting the vulnerable, and setting an example through just action. A reskin of the supplied 2024-style Oath of Devotion; older guide mechanics are thematic only.",
+      "selected_at_class_level": 3,
+      "spellcasting_override": null,
+      "resources": [
+        {
+          "id": "holy-nimbus-use",
+          "name": "Aegis Prime Manifestation",
+          "description": "Activate the level 20 manifestation once; the use can also be restored by expending a level 5 spell slot without an action.",
+          "recharge": "other",
+          "maximum_rule": "One use at class level 20; regain it on a long rest or by expending a level 5 spell slot without an action."
+        }
+      ],
+      "levels": [
+        {
+          "level": 3,
+          "status": "unfilled",
+          "features": [
+            {
+              "id": "devotion-oath-spells-3",
+              "name": "Aegis Directive Spells (Oath of Devotion Spells)",
+              "description": "Protection from Evil and Good and Shield of Faith are always prepared as Vow-Bound Operative spells. They do not count against the class's prepared-spell limit and use Charisma as their spellcasting ability.",
+              "when": "both",
+              "always_prepared_spells": ["Protection from Evil and Good", "Shield of Faith"],
+              "choices": []
+            },
+            {
+              "id": "sacred-weapon",
+              "name": "Neural Lock Weapon (Sacred Weapon)",
+              "description": "When you take the Attack action, expend one use of this class's Channel Divinity to imbue one melee weapon you are holding. For 10 minutes or until you use this feature again, add your Charisma modifier to attack rolls with that weapon (minimum +1), and each time you hit with it you choose whether it deals its normal damage type or radiant damage. It emits bright light in a 20-foot radius and dim light for another 20 feet. You can end the effect without an action; it also ends if you stop carrying the weapon.",
+              "when": "both",
+              "choices": []
+            }
+          ],
+          "notes": "Sacred Weapon shares the base class Channel Divinity pool; it does not grant extra uses."
+        },
+        {
+          "level": 5,
+          "status": "unfilled",
+          "features": [
+            {
+              "id": "devotion-oath-spells-5",
+              "name": "Aegis Directive Spells",
+              "description": "Aid and Zone of Truth become always prepared Vow-Bound Operative spells. They do not count against the class's prepared-spell limit and use Charisma as their spellcasting ability.",
+              "when": "both",
+              "always_prepared_spells": ["Aid", "Zone of Truth"],
+              "choices": []
+            }
+          ],
+          "notes": "These are additional fixed oath spells, not choices or free castings."
+        },
+        {
+          "level": 7,
+          "status": "unfilled",
+          "features": [
+            {
+              "id": "aura-of-devotion",
+              "name": "Anti-Override Firewall (Aura of Devotion)",
+              "description": "You and your allies have immunity to the charmed condition while in your Aura of Protection. A charmed ally entering the aura is unaffected by that condition while there.",
+              "when": "both",
+              "choices": []
+            }
+          ],
+          "notes": "Uses the base class Aura of Protection, including its level 18 expansion."
+        },
+        {
+          "level": 9,
+          "status": "unfilled",
+          "features": [
+            {
+              "id": "devotion-oath-spells-9",
+              "name": "Aegis Directive Spells",
+              "description": "Beacon of Hope and Dispel Magic become always prepared Vow-Bound Operative spells. They do not count against the class's prepared-spell limit and use Charisma as their spellcasting ability.",
+              "when": "both",
+              "always_prepared_spells": ["Beacon of Hope", "Dispel Magic"],
+              "choices": []
+            }
+          ],
+          "notes": "These are additional fixed oath spells, not choices or free castings."
+        },
+        {
+          "level": 13,
+          "status": "unfilled",
+          "features": [
+            {
+              "id": "devotion-oath-spells-13",
+              "name": "Aegis Directive Spells",
+              "description": "Freedom of Movement and Guardian of Faith become always prepared Vow-Bound Operative spells. They do not count against the class's prepared-spell limit and use Charisma as their spellcasting ability.",
+              "when": "both",
+              "always_prepared_spells": ["Freedom of Movement", "Guardian of Faith"],
+              "choices": []
+            }
+          ],
+          "notes": "These are additional fixed oath spells, not choices or free castings."
+        },
+        {
+          "level": 15,
+          "status": "unfilled",
+          "features": [
+            {
+              "id": "smite-of-protection",
+              "name": "Smite Sentinel (Smite of Protection)",
+              "description": "Whenever you cast Divine Smite, you and your allies have half cover while in your Aura of Protection until the start of your next turn.",
+              "when": "both",
+              "choices": []
+            }
+          ],
+          "notes": null
+        },
+        {
+          "level": 17,
+          "status": "unfilled",
+          "features": [
+            {
+              "id": "devotion-oath-spells-17",
+              "name": "Aegis Directive Spells",
+              "description": "Commune and Flame Strike become always prepared Vow-Bound Operative spells. They do not count against the class's prepared-spell limit and use Charisma as their spellcasting ability.",
+              "when": "both",
+              "always_prepared_spells": ["Commune", "Flame Strike"],
+              "choices": []
+            }
+          ],
+          "notes": "These are additional fixed oath spells, not choices or free castings."
+        },
+        {
+          "level": 20,
+          "status": "unfilled",
+          "features": [
+            {
+              "id": "holy-nimbus",
+              "name": "Aegis Prime Manifestation (Holy Nimbus)",
+              "description": "As a bonus action, empower your Aura of Protection for 10 minutes or until you end the effect without an action. You have advantage on saving throws forced by a Fiend or Undead. An enemy that starts its turn in the aura takes radiant damage equal to your Charisma modifier plus proficiency bonus. The aura is filled with bright light that is sunlight. After use, regain the feature on a long rest or restore its use by expending a level 5 spell slot without an action.",
+              "when": "both",
+              "choices": []
+            }
+          ],
+          "notes": null
+        }
+      ]
+    },
+    {
+      "id": "chrome-samurai",
+      "name": "Oath of the Chrome Samurai",
+      "description": "A relentless street-code avenger who punishes wrongdoing, fights its causes, and aids its victims. A reskin of the supplied 2024-style Oath of Vengeance; older guide mechanics are thematic only.",
+      "selected_at_class_level": 3,
+      "spellcasting_override": null,
+      "resources": [
+        {
+          "id": "avenging-angel-use",
+          "name": "Avenging Oni",
+          "description": "Activate the level 20 manifestation once; the use can also be restored by expending a level 5 spell slot without an action.",
+          "recharge": "other",
+          "maximum_rule": "One use at class level 20; regain it on a long rest or by expending a level 5 spell slot without an action."
+        }
+      ],
+      "levels": [
+        {
+          "level": 3,
+          "status": "unfilled",
+          "features": [
+            {
+              "id": "vengeance-oath-spells-3",
+              "name": "Retribution Directive Spells (Oath of Vengeance Spells)",
+              "description": "Bane and Hunter's Mark are always prepared as Vow-Bound Operative spells. They do not count against the class's prepared-spell limit and use Charisma as their spellcasting ability.",
+              "when": "both",
+              "always_prepared_spells": ["Bane", "Hunter's Mark"],
+              "choices": []
+            },
+            {
+              "id": "vow-of-enmity",
+              "name": "Target Lock Vow (Vow of Enmity)",
+              "description": "When you take the Attack action, expend one use of this class's Channel Divinity to mark a creature you can see within 30 feet. You have advantage on attack rolls against it for 1 minute or until you use this feature again. If it drops to 0 hit points before the vow ends, you can transfer the vow to a different creature within 30 feet without an action.",
+              "when": "both",
+              "choices": []
+            }
+          ],
+          "notes": "Vow of Enmity shares the base class Channel Divinity pool; it does not grant extra uses."
+        },
+        {
+          "level": 5,
+          "status": "unfilled",
+          "features": [
+            {
+              "id": "vengeance-oath-spells-5",
+              "name": "Retribution Directive Spells",
+              "description": "Hold Person and Misty Step become always prepared Vow-Bound Operative spells. They do not count against the class's prepared-spell limit and use Charisma as their spellcasting ability.",
+              "when": "both",
+              "always_prepared_spells": ["Hold Person", "Misty Step"],
+              "choices": []
+            }
+          ],
+          "notes": "These are additional fixed oath spells, not choices or free castings."
+        },
+        {
+          "level": 7,
+          "status": "unfilled",
+          "features": [
+            {
+              "id": "relentless-avenger",
+              "name": "Relentless Pursuit (Relentless Avenger)",
+              "description": "When you hit a creature with an opportunity attack, you can reduce its speed to 0 until the end of the current turn. You can then move up to half your speed as part of the same reaction without provoking opportunity attacks.",
+              "when": "both",
+              "choices": []
+            }
+          ],
+          "notes": null
+        },
+        {
+          "level": 9,
+          "status": "unfilled",
+          "features": [
+            {
+              "id": "vengeance-oath-spells-9",
+              "name": "Retribution Directive Spells",
+              "description": "Haste and Protection from Energy become always prepared Vow-Bound Operative spells. They do not count against the class's prepared-spell limit and use Charisma as their spellcasting ability.",
+              "when": "both",
+              "always_prepared_spells": ["Haste", "Protection from Energy"],
+              "choices": []
+            }
+          ],
+          "notes": "These are additional fixed oath spells, not choices or free castings."
+        },
+        {
+          "level": 13,
+          "status": "unfilled",
+          "features": [
+            {
+              "id": "vengeance-oath-spells-13",
+              "name": "Retribution Directive Spells",
+              "description": "Banishment and Dimension Door become always prepared Vow-Bound Operative spells. They do not count against the class's prepared-spell limit and use Charisma as their spellcasting ability.",
+              "when": "both",
+              "always_prepared_spells": ["Banishment", "Dimension Door"],
+              "choices": []
+            }
+          ],
+          "notes": "These are additional fixed oath spells, not choices or free castings."
+        },
+        {
+          "level": 15,
+          "status": "unfilled",
+          "features": [
+            {
+              "id": "soul-of-vengeance",
+              "name": "Retribution Reflex (Soul of Vengeance)",
+              "description": "Immediately after a creature under your Target Lock Vow hits or misses with an attack roll, you can use your reaction to make a melee attack against it if it is within range.",
+              "when": "both",
+              "choices": []
+            }
+          ],
+          "notes": null
+        },
+        {
+          "level": 17,
+          "status": "unfilled",
+          "features": [
+            {
+              "id": "vengeance-oath-spells-17",
+              "name": "Retribution Directive Spells",
+              "description": "Hold Monster and Scrying become always prepared Vow-Bound Operative spells. They do not count against the class's prepared-spell limit and use Charisma as their spellcasting ability.",
+              "when": "both",
+              "always_prepared_spells": ["Hold Monster", "Scrying"],
+              "choices": []
+            }
+          ],
+          "notes": "These are additional fixed oath spells, not choices or free castings."
+        },
+        {
+          "level": 20,
+          "status": "unfilled",
+          "features": [
+            {
+              "id": "avenging-angel",
+              "name": "Avenging Oni (Avenging Angel)",
+              "description": "As a bonus action, manifest spectral wings and a fly speed of 60 feet with hover for 10 minutes or until you end the effect without an action. Whenever an enemy starts its turn in your Aura of Protection during this effect, it makes a Wisdom saving throw; on a failure it is frightened for 1 minute or until it takes any damage, and attack rolls against that frightened creature have advantage. After use, regain the feature on a long rest or restore its use by expending a level 5 spell slot without an action.",
+              "when": "both",
+              "choices": []
+            }
+          ],
+          "notes": "Uses the base class Aura of Protection, including its level 18 expansion."
+        }
+      ]
+    },
+    {
+      "id": "civic-sentinel",
+      "name": "Oath of the Civic Sentinel",
+      "description": "A guardian of communities and just institutions, bound to law, loyalty, courage, and responsibility rather than necessarily to a corporation. Reskin of the supplied 2014 Oath of the Crown, adapted to the 2024 base class.",
+      "selected_at_class_level": 3,
+      "spellcasting_override": null,
+      "resources": [
+        {
+          "id": "exalted-champion-use",
+          "name": "Sentinel Command State",
+          "description": "Activate the level 20 manifestation once.",
+          "recharge": "long",
+          "maximum_rule": "One use at class level 20; regain it on a long rest. No spell-slot restoration is granted by the supplied Crown source."
+        }
+      ],
+      "levels": [
+        {
+          "level": 3,
+          "status": "unfilled",
+          "features": [
+            {
+              "id": "crown-oath-spells-3",
+              "name": "Civic Directive Spells (Oath of the Crown Spells)",
+              "description": "Command and Compelled Duel are always prepared as Vow-Bound Operative spells. They do not count against the class's prepared-spell limit and use Charisma as their spellcasting ability.",
+              "when": "both",
+              "always_prepared_spells": ["Command", "Compelled Duel"],
+              "choices": []
+            },
+            {
+              "id": "champion-challenge",
+              "name": "Sentinel Challenge (Champion Challenge)",
+              "description": "As a bonus action, expend one use of this class's Channel Divinity. Each creature of your choice that you can see within 30 feet makes a Wisdom saving throw against your Vow-Bound Operative spell save DC. On a failure, it cannot willingly move more than 30 feet away from you. The effect ends on a creature if you are incapacitated or die, or if it is more than 30 feet away from you.",
+              "when": "both",
+              "choices": []
+            },
+            {
+              "id": "turn-the-tide",
+              "name": "Emergency Rally Signal (Turn the Tide)",
+              "description": "As a bonus action, expend one use of this class's Channel Divinity. Each creature of your choice that can hear you within 30 feet and has no more than half its hit points regains 1d6 plus your Charisma modifier hit points (minimum 1).",
+              "when": "both",
+              "choices": []
+            }
+          ],
+          "notes": "Both options share the 2024 base class Channel Divinity pool and spell save DC. The supplied Crown text specifies the listed ending conditions but no maximum duration for Sentinel Challenge; review the duration before automation."
+        },
+        {
+          "level": 5,
+          "status": "unfilled",
+          "features": [
+            {
+              "id": "crown-oath-spells-5",
+              "name": "Civic Directive Spells",
+              "description": "Warding Bond and Zone of Truth become always prepared Vow-Bound Operative spells. They do not count against the class's prepared-spell limit and use Charisma as their spellcasting ability.",
+              "when": "both",
+              "always_prepared_spells": ["Warding Bond", "Zone of Truth"],
+              "choices": []
+            }
+          ],
+          "notes": "These are additional fixed oath spells, not choices or free castings."
+        },
+        {
+          "level": 7,
+          "status": "unfilled",
+          "features": [
+            {
+              "id": "divine-allegiance",
+              "name": "Guardian Intercept (Divine Allegiance)",
+              "description": "When a creature within 5 feet of you takes damage, you can use your reaction to take that damage instead, so that creature does not take it. Damage transferred to you this way cannot be reduced or prevented in any way.",
+              "when": "both",
+              "choices": []
+            }
+          ],
+          "notes": null
+        },
+        {
+          "level": 9,
+          "status": "unfilled",
+          "features": [
+            {
+              "id": "crown-oath-spells-9",
+              "name": "Civic Directive Spells",
+              "description": "Aura of Vitality and Spirit Guardians become always prepared Vow-Bound Operative spells. They do not count against the class's prepared-spell limit and use Charisma as their spellcasting ability.",
+              "when": "both",
+              "always_prepared_spells": ["Aura of Vitality", "Spirit Guardians"],
+              "choices": []
+            }
+          ],
+          "notes": "These are additional fixed oath spells, not choices or free castings."
+        },
+        {
+          "level": 13,
+          "status": "unfilled",
+          "features": [
+            {
+              "id": "crown-oath-spells-13",
+              "name": "Civic Directive Spells",
+              "description": "Banishment and Guardian of Faith become always prepared Vow-Bound Operative spells. They do not count against the class's prepared-spell limit and use Charisma as their spellcasting ability.",
+              "when": "both",
+              "always_prepared_spells": ["Banishment", "Guardian of Faith"],
+              "choices": []
+            }
+          ],
+          "notes": "These are additional fixed oath spells, not choices or free castings."
+        },
+        {
+          "level": 15,
+          "status": "unfilled",
+          "features": [
+            {
+              "id": "unyielding-saint",
+              "name": "Unyielding Governor (Unyielding Saint)",
+              "description": "You have advantage on saving throws to avoid becoming paralyzed or stunned.",
+              "when": "both",
+              "choices": []
+            }
+          ],
+          "notes": null
+        },
+        {
+          "level": 17,
+          "status": "unfilled",
+          "features": [
+            {
+              "id": "crown-oath-spells-17",
+              "name": "Civic Directive Spells",
+              "description": "Circle of Power and Geas become always prepared Vow-Bound Operative spells. They do not count against the class's prepared-spell limit and use Charisma as their spellcasting ability.",
+              "when": "both",
+              "always_prepared_spells": ["Circle of Power", "Geas"],
+              "choices": []
+            }
+          ],
+          "notes": "These are additional fixed oath spells, not choices or free castings."
+        },
+        {
+          "level": 20,
+          "status": "unfilled",
+          "features": [
+            {
+              "id": "exalted-champion",
+              "name": "Sentinel Command State (Exalted Champion)",
+              "description": "As an action, gain the following benefits for 1 hour, ending early if you are incapacitated or die: you have resistance to bludgeoning, piercing, and slashing damage from nonmagical weapons; your allies within 30 feet have advantage on death saving throws; and you and your allies within 30 feet have advantage on Wisdom saving throws. Once used, this feature cannot be used again until you finish a long rest.",
+              "when": "both",
+              "choices": []
+            }
+          ],
+          "notes": "The original Crown capstone's action, duration, damage restriction, fixed 30-foot range, and long-rest recharge are retained; unlike the 2024 oath capstones it has no spell-slot recovery."
+        }
+      ]
+    }
+  ],
   "source_notes": [
     "Rules basis: _reference/classes/Paladin.md, a 2024-style source. Review compatibility with the earlier 2014 multiclass design.",
     "Class progression and mechanics use the original reference; older reskin mechanics may differ and are thematic reference only, not additional grants.",
     "The worksheet schema is not supported by the app. Levels remain unfilled pending rules and choice review; null means unresolved or not applicable as described.",
-    "Subclass selection milestones are recorded, but subclass options, features, and spellcasting are intentionally deferred.",
+    "Three vows are authored from developernotes/classes/paladin/subclasses. Their features, fixed oath spells, and resources are draft data and are not applied by the app.",
+    "Oath of the Crown uses the supplied 2014 features and oath spells with the 2024 base class's shared Channel Divinity uses, recovery, and spell save DC. The source does not specify a maximum Champion Challenge duration.",
+    "The always_prepared_spells arrays use original spell names; Compelled Duel, Aura of Vitality, and Circle of Power are absent from the current spell-reskin mapping and spell data and need entries before integration.",
     "Reskin inspiration: classes/Vow-Bound Operative.json. Names may be adapted where source mechanics have changed."
   ]
 }

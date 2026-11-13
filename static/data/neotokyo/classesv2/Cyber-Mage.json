@@ -300,18 +300,18 @@
       "features": [
         {
           "id": "wizard-subclass-3",
-          "name": "Wizard Subclass",
-          "description": "Choose a Wizard subclass at this class level. Subclass choices and features will be authored later.",
+          "name": "Cyber-Mage Subclass",
+          "description": "Choose a Cyber-Mage subclass at this class level and gain its level 3 features. Additional subclass features arrive at class levels 6, 10, and 14.",
           "when": "both",
           "choices": [
             {
               "id": "choice-wizard-subclass-3",
-              "name": "Choose a subclass later",
+              "name": "Choose a Cyber-Mage subclass",
               "kind": "subclass",
               "count": 1,
-              "allowed_options": null,
-              "eligibility_rule": "Subclass authoring is deferred; verify available choices.",
-              "selection_effect": "Record the chosen subclass when implemented."
+              "allowed_options": ["Neon Bladesinger", "System Forensics Diviner", "Ghost Protocol Necromancer"],
+              "eligibility_rule": "Choose one subclass from the authored Cyber-Mage options.",
+              "selection_effect": "Record the chosen subclass and its level 3 features and choices."
             }
           ]
         },
@@ -1479,12 +1479,523 @@
       "notes": "Prepared spells are a total, not spells known. Null spellbook/pact fields are not applicable unless stated otherwise."
     }
   ],
-  "subclasses": null,
+  "subclasses": [
+    {
+      "id": "neon-bladesinger",
+      "name": "Neon Bladesinger",
+      "description": "A spellblade who combines precise weapon work with a cybernetically enhanced arcane combat rhythm. Reskin of the supplied Bladesinger.",
+      "selected_at_class_level": 3,
+      "spellcasting_override": null,
+      "resources": [
+        {
+          "id": "bladesong-uses",
+          "name": "Neon Combat Rhythm",
+          "description": "Each activation of Neon Combat Rhythm expends one use.",
+          "recharge": "long",
+          "maximum_rule": "Intelligence modifier, minimum 1; regain all expended uses on a long rest."
+        }
+      ],
+      "levels": [
+        {
+          "level": 3,
+          "status": "unfilled",
+          "features": [
+            {
+              "id": "bladesong",
+              "name": "Neon Combat Rhythm (Bladesong)",
+              "description": "As a bonus action, activate the rhythm if you wear no armor and use no shield. It lasts 1 minute; it ends early if you are incapacitated, put on armor or a shield, or make a weapon attack using two hands. You can dismiss it at any time without an action. While active, add your Intelligence modifier to AC (minimum +1), increase your speed by 10 feet, and add your Intelligence modifier to Constitution saving throws to maintain concentration. When attacking with a weapon you are proficient with, you can use Intelligence instead of Strength or Dexterity for both attack and damage rolls. Uses equal your Intelligence modifier (minimum 1), restored on a long rest.",
+              "when": "both",
+              "choices": []
+            },
+            {
+              "id": "training-in-war-and-song",
+              "name": "Street Combat Training (Training in War and Song)",
+              "description": "Gain proficiency with all martial melee weapons without the Heavy or Two-Handed property. You can use a melee weapon you are proficient with as a spellcasting focus for your Cyber-Mage spells. Gain proficiency in one listed skill.",
+              "when": "both",
+              "choices": [
+                {
+                  "id": "street-combat-skill",
+                  "name": "Choose a combat training skill",
+                  "kind": "skill",
+                  "count": 1,
+                  "allowed_options": ["Acrobatics", "Athletics", "Performance", "Persuasion"],
+                  "eligibility_rule": "Choose one listed skill; the supplied source does not specify a replacement for an already-proficient skill.",
+                  "selection_effect": "Record proficiency in the selected skill."
+                }
+              ]
+            }
+          ],
+          "notes": null
+        },
+        {
+          "level": 6,
+          "status": "unfilled",
+          "features": [
+            {
+              "id": "extra-attack",
+              "name": "Spellblade Weave (Extra Attack)",
+              "description": "When you take the Attack action on your turn, you can attack twice instead of once. You can replace one of those attacks with a Cyber-Mage cantrip that has a casting time of an action.",
+              "when": "both",
+              "choices": []
+            }
+          ],
+          "notes": null
+        },
+        {
+          "level": 10,
+          "status": "unfilled",
+          "features": [
+            {
+              "id": "song-of-defense",
+              "name": "Defensive Feedback (Song of Defense)",
+              "description": "When you take damage while Neon Combat Rhythm is active, use a reaction and expend a spell slot to reduce that damage by five times the slot's level.",
+              "when": "both",
+              "choices": []
+            }
+          ],
+          "notes": null
+        },
+        {
+          "level": 14,
+          "status": "unfilled",
+          "features": [
+            {
+              "id": "song-of-victory",
+              "name": "Finishing Sequence (Song of Victory)",
+              "description": "After casting a spell with a casting time of an action, you can make one weapon attack as a bonus action.",
+              "when": "both",
+              "choices": []
+            }
+          ],
+          "notes": null
+        }
+      ]
+    },
+    {
+      "id": "system-forensics-diviner",
+      "name": "System Forensics Diviner",
+      "description": "A predictive analyst who extracts arcane intelligence from signals and possible futures. Reskin of the supplied Diviner.",
+      "selected_at_class_level": 3,
+      "spellcasting_override": null,
+      "resources": [
+        {
+          "id": "portent-rolls",
+          "name": "Predictive Algorithm Matrix",
+          "description": "Roll and record the foretelling d20s after a long rest; each recorded result can replace one eligible D20 Test. Discard unused results at the next long rest.",
+          "recharge": "long",
+          "maximum_rule": "Two recorded rolls at class level 3; three instead at class level 14. Roll new results after each long rest."
+        },
+        {
+          "id": "third-eye-use",
+          "name": "Full Spectrum Threat Scan",
+          "description": "Activate one sensory benefit; it lasts until you start a short or long rest.",
+          "recharge": "short",
+          "maximum_rule": "One use beginning at class level 10; regain it after a short or long rest."
+        }
+      ],
+      "levels": [
+        {
+          "level": 3,
+          "status": "unfilled",
+          "features": [
+            {
+              "id": "divination-savant",
+              "name": "Analysis Compiler Savant (Divination Savant)",
+              "description": "Add two eligible Divination Wizard spells of level 1 or 2 to your spellbook for free. Whenever you gain access to a new spell-slot level in this class, add one eligible Divination Wizard spell of a level for which you have spell slots to your spellbook for free. These additions are in addition to the normal class spellbook selections.",
+              "when": "both",
+              "choices": [
+                {
+                  "id": "divination-savant-initial-spells",
+                  "name": "Choose two Divination spells for the spellbook",
+                  "kind": "spell",
+                  "count": 2,
+                  "allowed_options": "Level 1 or 2 Wizard spells of the Divination school.",
+                  "eligibility_rule": "Choose two distinct eligible spells not already in your spellbook.",
+                  "selection_effect": "Add both spells to the spellbook for free; these are not automatically prepared."
+                }
+              ]
+            },
+            {
+              "id": "portent",
+              "name": "Predictive Algorithm Matrix (Portent)",
+              "description": "After a long rest, roll two d20s and record the results. Before a D20 Test by you or a creature you can see is rolled, you can replace that roll with one recorded result, at most once per turn. Each result is used once; discard unused results when you finish a long rest. At Cyber-Mage level 14, roll three d20s instead.",
+              "when": "both",
+              "choices": []
+            }
+          ],
+          "notes": "The initial Savant grant includes spells of level 2. The supplied source does not resolve whether gaining the feature at the same level as level 2 slots also triggers an additional Savant spell; review before automation."
+        },
+        {
+          "level": 5,
+          "status": "unfilled",
+          "features": [
+            {
+              "id": "divination-savant-slot-level-3",
+              "name": "Analysis Compiler Savant: New Slot Level",
+              "description": "On gaining access to level 3 Cyber-Mage spell slots, add one eligible Divination Wizard spell to your spellbook for free.",
+              "when": "both",
+              "choices": [{"id": "divination-savant-spell-5", "name": "Choose a Divination spell", "kind": "spell", "count": 1, "allowed_options": "Wizard Divination spells of a level for which you have spell slots.", "eligibility_rule": "Choose a spell not already in your spellbook; it need not be of the newly unlocked level.", "selection_effect": "Add it to the spellbook for free, in addition to normal class selections; it is not automatically prepared."}]
+            }
+          ],
+          "notes": "This is a recurring benefit of the level 3 Savant feature, not a new subclass feature."
+        },
+        {
+          "level": 6,
+          "status": "unfilled",
+          "features": [
+            {
+              "id": "expert-divination",
+              "name": "Recycled Signal Cycles (Expert Divination)",
+              "description": "When you cast a Divination spell using a spell slot of level 2 or higher, regain one expended spell slot. The recovered slot must be lower than the slot expended and no higher than level 5.",
+              "when": "both",
+              "choices": []
+            }
+          ],
+          "notes": null
+        },
+        {
+          "level": 7,
+          "status": "unfilled",
+          "features": [
+            {
+              "id": "divination-savant-slot-level-4",
+              "name": "Analysis Compiler Savant: New Slot Level",
+              "description": "On gaining access to level 4 Cyber-Mage spell slots, add one eligible Divination Wizard spell to your spellbook for free.",
+              "when": "both",
+              "choices": [{"id": "divination-savant-spell-7", "name": "Choose a Divination spell", "kind": "spell", "count": 1, "allowed_options": "Wizard Divination spells of a level for which you have spell slots.", "eligibility_rule": "Choose a spell not already in your spellbook; it need not be of the newly unlocked level.", "selection_effect": "Add it to the spellbook for free, in addition to normal class selections; it is not automatically prepared."}]
+            }
+          ],
+          "notes": "Recurring benefit of the level 3 Savant feature."
+        },
+        {
+          "level": 9,
+          "status": "unfilled",
+          "features": [
+            {
+              "id": "divination-savant-slot-level-5",
+              "name": "Analysis Compiler Savant: New Slot Level",
+              "description": "On gaining access to level 5 Cyber-Mage spell slots, add one eligible Divination Wizard spell to your spellbook for free.",
+              "when": "both",
+              "choices": [{"id": "divination-savant-spell-9", "name": "Choose a Divination spell", "kind": "spell", "count": 1, "allowed_options": "Wizard Divination spells of a level for which you have spell slots.", "eligibility_rule": "Choose a spell not already in your spellbook; it need not be of the newly unlocked level.", "selection_effect": "Add it to the spellbook for free, in addition to normal class selections; it is not automatically prepared."}]
+            }
+          ],
+          "notes": "Recurring benefit of the level 3 Savant feature."
+        },
+        {
+          "level": 10,
+          "status": "unfilled",
+          "features": [
+            {
+              "id": "third-eye",
+              "name": "Full Spectrum Threat Scan (The Third Eye)",
+              "description": "As a bonus action, choose one benefit lasting until you start a short or long rest: darkvision out to 120 feet, the ability to read any language, or the ability to cast See Invisibility without a spell slot. Once activated, regain this feature after a short or long rest.",
+              "when": "both",
+              "choices": [
+                {
+                  "id": "third-eye-benefit",
+                  "name": "Choose a threat scan benefit when activated",
+                  "kind": "feature_option",
+                  "count": 1,
+                  "allowed_options": ["Darkvision", "Greater Comprehension", "See Invisibility"],
+                  "eligibility_rule": "Choose one benefit each time you activate the feature, not as a permanent level-up choice.",
+                  "selection_effect": "Apply the chosen benefit until starting a short or long rest."
+                }
+              ]
+            }
+          ],
+          "notes": null
+        },
+        {
+          "level": 11,
+          "status": "unfilled",
+          "features": [
+            {
+              "id": "divination-savant-slot-level-6",
+              "name": "Analysis Compiler Savant: New Slot Level",
+              "description": "On gaining access to level 6 Cyber-Mage spell slots, add one eligible Divination Wizard spell to your spellbook for free.",
+              "when": "both",
+              "choices": [{"id": "divination-savant-spell-11", "name": "Choose a Divination spell", "kind": "spell", "count": 1, "allowed_options": "Wizard Divination spells of a level for which you have spell slots.", "eligibility_rule": "Choose a spell not already in your spellbook; it need not be of the newly unlocked level.", "selection_effect": "Add it to the spellbook for free, in addition to normal class selections; it is not automatically prepared."}]
+            }
+          ],
+          "notes": "Recurring benefit of the level 3 Savant feature."
+        },
+        {
+          "level": 13,
+          "status": "unfilled",
+          "features": [
+            {
+              "id": "divination-savant-slot-level-7",
+              "name": "Analysis Compiler Savant: New Slot Level",
+              "description": "On gaining access to level 7 Cyber-Mage spell slots, add one eligible Divination Wizard spell to your spellbook for free.",
+              "when": "both",
+              "choices": [{"id": "divination-savant-spell-13", "name": "Choose a Divination spell", "kind": "spell", "count": 1, "allowed_options": "Wizard Divination spells of a level for which you have spell slots.", "eligibility_rule": "Choose a spell not already in your spellbook; it need not be of the newly unlocked level.", "selection_effect": "Add it to the spellbook for free, in addition to normal class selections; it is not automatically prepared."}]
+            }
+          ],
+          "notes": "Recurring benefit of the level 3 Savant feature."
+        },
+        {
+          "level": 14,
+          "status": "unfilled",
+          "features": [
+            {
+              "id": "greater-portent",
+              "name": "Quantum Probability Cascade (Greater Portent)",
+              "description": "Roll three d20s for Predictive Algorithm Matrix after a long rest instead of two.",
+              "when": "both",
+              "choices": []
+            }
+          ],
+          "notes": null
+        },
+        {
+          "level": 15,
+          "status": "unfilled",
+          "features": [
+            {
+              "id": "divination-savant-slot-level-8",
+              "name": "Analysis Compiler Savant: New Slot Level",
+              "description": "On gaining access to level 8 Cyber-Mage spell slots, add one eligible Divination Wizard spell to your spellbook for free.",
+              "when": "both",
+              "choices": [{"id": "divination-savant-spell-15", "name": "Choose a Divination spell", "kind": "spell", "count": 1, "allowed_options": "Wizard Divination spells of a level for which you have spell slots.", "eligibility_rule": "Choose a spell not already in your spellbook; it need not be of the newly unlocked level.", "selection_effect": "Add it to the spellbook for free, in addition to normal class selections; it is not automatically prepared."}]
+            }
+          ],
+          "notes": "Recurring benefit of the level 3 Savant feature."
+        },
+        {
+          "level": 17,
+          "status": "unfilled",
+          "features": [
+            {
+              "id": "divination-savant-slot-level-9",
+              "name": "Analysis Compiler Savant: New Slot Level",
+              "description": "On gaining access to level 9 Cyber-Mage spell slots, add one eligible Divination Wizard spell to your spellbook for free.",
+              "when": "both",
+              "choices": [{"id": "divination-savant-spell-17", "name": "Choose a Divination spell", "kind": "spell", "count": 1, "allowed_options": "Wizard Divination spells of a level for which you have spell slots.", "eligibility_rule": "Choose a spell not already in your spellbook; it need not be of the newly unlocked level.", "selection_effect": "Add it to the spellbook for free, in addition to normal class selections; it is not automatically prepared."}]
+            }
+          ],
+          "notes": "Recurring benefit of the level 3 Savant feature."
+        }
+      ]
+    },
+    {
+      "id": "ghost-protocol-necromancer",
+      "name": "Ghost Protocol Necromancer",
+      "description": "A forbidden-code researcher who channels necrotic energy and commands undead through a deathly cyberdeck. Reskin of the supplied Necromancer; its undead remain Undead creatures.",
+      "selected_at_class_level": 3,
+      "spellcasting_override": null,
+      "resources": [
+        {
+          "id": "animate-dead-free-cast",
+          "name": "Ghost Protocol Deployment",
+          "description": "Cast Animate Dead once without expending a spell slot.",
+          "recharge": "long",
+          "maximum_rule": "One free cast beginning at class level 6; regain it after a long rest."
+        },
+        {
+          "id": "bolster-undead-use",
+          "name": "Ghost Network Reinforcement",
+          "description": "Use the Bolster Undead bonus action of Death's Master.",
+          "recharge": "long",
+          "maximum_rule": "One use beginning at class level 14; regain it after a long rest."
+        }
+      ],
+      "levels": [
+        {
+          "level": 3,
+          "status": "unfilled",
+          "features": [
+            {
+              "id": "necromancy-savant",
+              "name": "Ghost Code Compiler Savant (Necromancy Savant)",
+              "description": "Add two eligible Necromancy Wizard spells of level 1 or 2 to your spellbook for free. Whenever you gain access to a new spell-slot level in this class, add one eligible Necromancy Wizard spell of a level for which you have spell slots to your spellbook for free. These additions are in addition to the normal class spellbook selections.",
+              "when": "both",
+              "choices": [
+                {
+                  "id": "necromancy-savant-initial-spells",
+                  "name": "Choose two Necromancy spells for the spellbook",
+                  "kind": "spell",
+                  "count": 2,
+                  "allowed_options": "Level 1 or 2 Wizard spells of the Necromancy school.",
+                  "eligibility_rule": "Choose two distinct eligible spells not already in your spellbook.",
+                  "selection_effect": "Add both spells to the spellbook for free; these are not automatically prepared."
+                }
+              ]
+            },
+            {
+              "id": "necromancy-spellbook",
+              "name": "Ghost Code Archive (Necromancy Spellbook)",
+              "description": "You gain resistance to necrotic damage, and Find Familiar appears in your spellbook. When casting it, you can choose a normal familiar form or the Skeleton or Zombie special form; a normal form can instead have the Undead creature type. When you take the Attack action, you can forgo one of your attacks to let your familiar make one attack using its reaction. When you cast a Necromancy spell using a spell slot, you can choose an Undead creature you can see within 60 feet; it regains hit points equal to the slot level plus your Cyber-Mage level.",
+              "when": "both",
+              "choices": [
+                {
+                  "id": "ghost-familiar-form",
+                  "name": "Choose a familiar form when casting Find Familiar",
+                  "kind": "feature_option",
+                  "count": 1,
+                  "allowed_options": "A normal Find Familiar form, Skeleton, or Zombie; a normal form may have the Undead creature type.",
+                  "eligibility_rule": "Choose when casting Find Familiar; use the supplied special familiar stat blocks for Skeleton and Zombie.",
+                  "selection_effect": "Record the familiar's form and creature type; the choice is made when casting, not permanently at level-up."
+                }
+              ]
+            }
+          ],
+          "notes": "Find Familiar is added to the spellbook, not automatically prepared. The supplied source does not resolve whether gaining Savant at the same level as level 2 slots also triggers an additional Savant spell; review before automation."
+        },
+        {
+          "level": 5,
+          "status": "unfilled",
+          "features": [
+            {
+              "id": "necromancy-savant-slot-level-3",
+              "name": "Ghost Code Compiler Savant: New Slot Level",
+              "description": "On gaining access to level 3 Cyber-Mage spell slots, add one eligible Necromancy Wizard spell to your spellbook for free.",
+              "when": "both",
+              "choices": [{"id": "necromancy-savant-spell-5", "name": "Choose a Necromancy spell", "kind": "spell", "count": 1, "allowed_options": "Wizard Necromancy spells of a level for which you have spell slots.", "eligibility_rule": "Choose a spell not already in your spellbook; it need not be of the newly unlocked level.", "selection_effect": "Add it to the spellbook for free, in addition to normal class selections; it is not automatically prepared."}]
+            }
+          ],
+          "notes": "This is a recurring benefit of the level 3 Savant feature, not a new subclass feature."
+        },
+        {
+          "level": 6,
+          "status": "unfilled",
+          "features": [
+            {
+              "id": "grave-power",
+              "name": "Grave Circuit Power (Grave Power)",
+              "description": "While holding your spellbook, reduce your exhaustion level by 1, if any, when you use RAM Defrag & Buffer Flush (Arcane Recovery). Damage from your Cyber-Mage spells and features ignores resistance to necrotic damage.",
+              "when": "both",
+              "choices": []
+            },
+            {
+              "id": "undead-thralls",
+              "name": "Ghost Protocol Deployment (Undead Thralls)",
+              "description": "Animate Dead is always prepared and can be cast once without a spell slot per long rest. Whenever you start casting it, you can increase its effective level by 1. While holding your spellbook, each Undead created or summoned by a Necromancy spell you cast gains maximum and current hit points equal to your Intelligence modifier plus half your Cyber-Mage level, rounded down. Also while holding your spellbook, when an Undead you control within 60 feet hits a creature with an attack roll, it deals extra necrotic damage equal to your Intelligence modifier (minimum 1).",
+              "when": "both",
+              "choices": []
+            }
+          ],
+          "notes": "Animate Dead does not count against the class's prepared-spell limit."
+        },
+        {
+          "level": 7,
+          "status": "unfilled",
+          "features": [
+            {
+              "id": "necromancy-savant-slot-level-4",
+              "name": "Ghost Code Compiler Savant: New Slot Level",
+              "description": "On gaining access to level 4 Cyber-Mage spell slots, add one eligible Necromancy Wizard spell to your spellbook for free.",
+              "when": "both",
+              "choices": [{"id": "necromancy-savant-spell-7", "name": "Choose a Necromancy spell", "kind": "spell", "count": 1, "allowed_options": "Wizard Necromancy spells of a level for which you have spell slots.", "eligibility_rule": "Choose a spell not already in your spellbook; it need not be of the newly unlocked level.", "selection_effect": "Add it to the spellbook for free, in addition to normal class selections; it is not automatically prepared."}]
+            }
+          ],
+          "notes": "Recurring benefit of the level 3 Savant feature."
+        },
+        {
+          "level": 9,
+          "status": "unfilled",
+          "features": [
+            {
+              "id": "necromancy-savant-slot-level-5",
+              "name": "Ghost Code Compiler Savant: New Slot Level",
+              "description": "On gaining access to level 5 Cyber-Mage spell slots, add one eligible Necromancy Wizard spell to your spellbook for free.",
+              "when": "both",
+              "choices": [{"id": "necromancy-savant-spell-9", "name": "Choose a Necromancy spell", "kind": "spell", "count": 1, "allowed_options": "Wizard Necromancy spells of a level for which you have spell slots.", "eligibility_rule": "Choose a spell not already in your spellbook; it need not be of the newly unlocked level.", "selection_effect": "Add it to the spellbook for free, in addition to normal class selections; it is not automatically prepared."}]
+            }
+          ],
+          "notes": "Recurring benefit of the level 3 Savant feature."
+        },
+        {
+          "level": 10,
+          "status": "unfilled",
+          "features": [
+            {
+              "id": "harvest-undead",
+              "name": "Emergency Ghost Harvest (Harvest Undead)",
+              "description": "Immediately after damage leaves you bloodied but not at 0 hit points, you can use a reaction to reduce an Undead creature you control and can see to 0 hit points. You immediately regain hit points equal to your Cyber-Mage level.",
+              "when": "both",
+              "choices": []
+            }
+          ],
+          "notes": null
+        },
+        {
+          "level": 11,
+          "status": "unfilled",
+          "features": [
+            {
+              "id": "necromancy-savant-slot-level-6",
+              "name": "Ghost Code Compiler Savant: New Slot Level",
+              "description": "On gaining access to level 6 Cyber-Mage spell slots, add one eligible Necromancy Wizard spell to your spellbook for free.",
+              "when": "both",
+              "choices": [{"id": "necromancy-savant-spell-11", "name": "Choose a Necromancy spell", "kind": "spell", "count": 1, "allowed_options": "Wizard Necromancy spells of a level for which you have spell slots.", "eligibility_rule": "Choose a spell not already in your spellbook; it need not be of the newly unlocked level.", "selection_effect": "Add it to the spellbook for free, in addition to normal class selections; it is not automatically prepared."}]
+            }
+          ],
+          "notes": "Recurring benefit of the level 3 Savant feature."
+        },
+        {
+          "level": 13,
+          "status": "unfilled",
+          "features": [
+            {
+              "id": "necromancy-savant-slot-level-7",
+              "name": "Ghost Code Compiler Savant: New Slot Level",
+              "description": "On gaining access to level 7 Cyber-Mage spell slots, add one eligible Necromancy Wizard spell to your spellbook for free.",
+              "when": "both",
+              "choices": [{"id": "necromancy-savant-spell-13", "name": "Choose a Necromancy spell", "kind": "spell", "count": 1, "allowed_options": "Wizard Necromancy spells of a level for which you have spell slots.", "eligibility_rule": "Choose a spell not already in your spellbook; it need not be of the newly unlocked level.", "selection_effect": "Add it to the spellbook for free, in addition to normal class selections; it is not automatically prepared."}]
+            }
+          ],
+          "notes": "Recurring benefit of the level 3 Savant feature."
+        },
+        {
+          "level": 14,
+          "status": "unfilled",
+          "features": [
+            {
+              "id": "deaths-master",
+              "name": "Ghost Network Mastery (Death's Master)",
+              "description": "While holding your spellbook, you gain both benefits. Bolster Undead: as a bonus action, choose any number of Undead within 60 feet that you created or summoned with a Necromancy spell; each gains temporary hit points equal to your Cyber-Mage level. Use this bonus action once per long rest. Extinguish Undead: when an Undead you can see is reduced to 0 hit points, you can make it explode. Roll a number of d6s equal to half its unexpended Hit Dice, rounded up (minimum 1d6). Each creature in a 10-foot emanation from it makes a Dexterity saving throw; on a failure it takes necrotic damage equal to the roll and cannot take reactions until the start of its next turn, and on a success it takes half damage only. To explode an Undead you do not control, you must also use a reaction and expend a level 5 or higher spell slot.",
+              "when": "both",
+              "choices": []
+            }
+          ],
+          "notes": "The source does not specify a separate saving throw DC for Extinguish Undead; resolve this against the intended rules before automation."
+        },
+        {
+          "level": 15,
+          "status": "unfilled",
+          "features": [
+            {
+              "id": "necromancy-savant-slot-level-8",
+              "name": "Ghost Code Compiler Savant: New Slot Level",
+              "description": "On gaining access to level 8 Cyber-Mage spell slots, add one eligible Necromancy Wizard spell to your spellbook for free.",
+              "when": "both",
+              "choices": [{"id": "necromancy-savant-spell-15", "name": "Choose a Necromancy spell", "kind": "spell", "count": 1, "allowed_options": "Wizard Necromancy spells of a level for which you have spell slots.", "eligibility_rule": "Choose a spell not already in your spellbook; it need not be of the newly unlocked level.", "selection_effect": "Add it to the spellbook for free, in addition to normal class selections; it is not automatically prepared."}]
+            }
+          ],
+          "notes": "Recurring benefit of the level 3 Savant feature."
+        },
+        {
+          "level": 17,
+          "status": "unfilled",
+          "features": [
+            {
+              "id": "necromancy-savant-slot-level-9",
+              "name": "Ghost Code Compiler Savant: New Slot Level",
+              "description": "On gaining access to level 9 Cyber-Mage spell slots, add one eligible Necromancy Wizard spell to your spellbook for free.",
+              "when": "both",
+              "choices": [{"id": "necromancy-savant-spell-17", "name": "Choose a Necromancy spell", "kind": "spell", "count": 1, "allowed_options": "Wizard Necromancy spells of a level for which you have spell slots.", "eligibility_rule": "Choose a spell not already in your spellbook; it need not be of the newly unlocked level.", "selection_effect": "Add it to the spellbook for free, in addition to normal class selections; it is not automatically prepared."}]
+            }
+          ],
+          "notes": "Recurring benefit of the level 3 Savant feature."
+        }
+      ]
+    }
+  ],
   "source_notes": [
     "Rules basis: _reference/classes/Wizard.md, a 2024-style source. Review compatibility with the earlier 2014 multiclass design.",
     "Class progression and mechanics use the original reference; older reskin mechanics may differ and are thematic reference only, not additional grants.",
     "The worksheet schema is not supported by the app. Levels remain unfilled pending rules and choice review; null means unresolved or not applicable as described.",
-    "Subclass selection milestones are recorded, but subclass options, features, and spellcasting are intentionally deferred.",
+    "Three subclasses are authored from developernotes/wizard/subclasses; their features, choices, resources, and spell grants remain draft data and are not applied by the app.",
     "Reskin inspiration: classes/Cyber-Mage.json. Names may be adapted where source mechanics have changed."
   ]
 }

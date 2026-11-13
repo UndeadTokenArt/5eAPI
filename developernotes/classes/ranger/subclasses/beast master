@@ -1,0 +1,142 @@
+Bond with a Primal Beast
+A Beast Master forms a mystical bond with a special animal, drawing on primal magic and a deep connection to the natural world.
+
+Level 3: Primal Companion
+You magically summon a primal beast, which draws strength from your bond with nature. Choose its stat block: Beast of the Land, Beast of the Sea or Beast of the Sky. You also determine the kind of animal it is, choosing a kind appropriate for the stat block. Whatever beast you choose, it bears primal markings indicating its supernatural origin.
+
+The beast is Friendly to you and your allies and obeys your commands. It vanishes if you die.
+
+The Beast in Combat. In Combat, the beast acts during your turn. It can move and use its Reaction on its own, but the only action it takes is the Dodge action unless you take a Bonus Action to command it to take an action in its stat block or some other action. You can also sacrifice one of your attacks when you take the Attack action to command the beast to take the Beast's Strike action. If you have the Incapacitated condition, the beast acts on its own and isn't limited to the dodge action.
+
+Restoring or Replacing the Beast. If the beast has died within the last hour, you can take a Magic action to touch it and expend a spell slot. The beast returns to life after 1 minute with all its Hit Points restored.
+Whenever you finish a Long Rest, you can summon a different primal beast, which appears in an unoccupied space within 5 feet of you. You choose its stat block and appearance. If you already have a beast from this feature, the old one vanishes when the new one appears.
+
+Beast of the Land
+Beast of the Land
+Medium Beast, Neutral
+Armor Class: 13 plus your Wisdom modifier
+Hit Points: 5 + five times your ranger level (the beast has a number of hit dice [d8s] equal to your ranger level)
+Speed: 40 ft., Climb 40 ft
+STR (Mod/Save)	DEX (Mod/Save)	CON (Mod/Save)	INT (Mod/Save)	WIS (Mod/Save)	CHA (Mod/Save)
+14 (+2/+2)	14 (+2/+2)	15 (+2/+2)	8 (−1/-1)	14 (+2/+2)	11 (+0/+0)
+Senses: Darkvision 60 ft., Passive Perception 12
+Languages: Understands the languages that you know
+Challenge Rating: None (XP 0; PB equals your Proficiency Bonus)
+Traits
+Primal Bond. Add your Proficiency Bonus to any ability check or saving throw the beast makes.
+Actions
+Beast's Strike. Melee Attack Roll: Bonus equals your spell attack modifier, reach 5 ft. Hit: 1d8 + 2 plus your Wisdom modifier Bludgeoning, Piercing, or Slashing damage (Your choice when you summon the beast). If the beast moved at least 20 feet straight toward the target before the hit, the target takes an extra 1d6 damage of the same type, and the target has the Prone condition if it is a Large or smaller creature.
+Beast of the Sky
+Beast of the Sky
+Small Beast, Neutral
+Armor Class: 13 plus your Wisdom modifier
+Hit Points: 4 + four times your ranger level (the beast has a number of hit dice [d6s] equal to your ranger level)
+Speed: 10 ft., Fly 60 ft
+STR (Mod/Save)	DEX (Mod/Save)	CON (Mod/Save)	INT (Mod/Save)	WIS (Mod/Save)	CHA (Mod/Save)
+6 (-2/-2)	16 (+3/+3)	13 (+1/+1)	8 (−1/-1)	14 (+2/+2)	11 (+0/+0)
+Senses: Darkvision 60 ft., Passive Perception 12
+Languages: Understands the languages that you know
+Challenge Rating: None (XP 0; PB equals your Proficiency Bonus)
+Traits
+Flyby. The beast doesn't provoke Opportunity Attacks when it flies out of an enemy's reach.
+Primal Bond. Add your Proficiency Bonus to any ability check or saving throw the beast makes.
+Actions
+Beast's Strike. Melee Attack Roll: Bonus equals your spell attack modifier, reach 5 ft. Hit: 1d4 + 3 plus your Wisdom modifier Slashing damage.
+Beast of the Sea
+Beast of the Sea
+Medium Beast, Neutral
+Armor Class: 13 plus your Wisdom modifier
+Hit Points: 5 + five times your ranger level (the beast has a number of hit dice [d8s] equal to your ranger level)
+Speed: 5 ft., Swim 60 ft
+STR (Mod/Save)	DEX (Mod/Save)	CON (Mod/Save)	INT (Mod/Save)	WIS (Mod/Save)	CHA (Mod/Save)
+14 (+2/+2)	14 (+2/+2)	15 (+2/+2)	8 (−1/-1)	14 (+2/+2)	11 (+0/+0)
+Senses: Darkvision 90 ft., Passive Perception 12
+Languages: Understands the languages that you know
+Challenge Rating: None (XP 0; PB equals your Proficiency Bonus)
+Traits
+Amphibious. The beast can breathe air and water
+Primal Bond. Add your Proficiency Bonus to any ability check or saving throw the beast makes.
+Actions
+Beast's Strike. Melee Attack Roll: Bonus equals your spell attack modifier, reach 5 ft. Hit: 1d6 + 2 plus your Wisdom modifier Bludgeoning or Piercing damage (Your choice when you summon the beast), and the target has the Grappled condition (escape DC equals your spell save DC).
+Level 7: Exceptional Training
+When you take a Bonus Action to command your Primal Companion beast to take an action, you can also command it to take the Dash, Disengage, Dodge, or Help action using its Bonus Action.
+
+In addition, whenever it hits with an attack roll and deals damage, it can deal your choice of Force damage or its normal damage type.
+
+Level 11: Bestial Fury
+When you command your Primal Companion beast to take the Beast's Strike action, the beast can use it twice.
+
+In addition, the first time each turn it hits a creature under the effect of your Hunter's Mark spell, the beast deals extra Force damage equal to the bonus damage of that spell.
+
+Level 15: Share Spells
+When you cast a spell targeting yourself, you can also affect your Primal Companion beast with the spell if the beast is within 30 feet of you.
+
+(Variant Feature - Replaces Roving) Level 6: Pet Specialization
+Source: World of Warcraft
+While the beast from your Primal Companion feature is within 60 feet of you, you gain one of the following benefits, depending on the beast’s pet family and its specialization (see “Hunter Pets”).
+
+Cunning. Your Speed and all of your primal beast’s speeds increase by 10 feet. In addition, your primal beast can use its action to cast Freedom of Movement without any spell components, affecting itself and you (if you are within range). Once it does so, it can’t do so again until you finish a Long Rest.
+
+Ferocity. When your primal beast is Bloodied and it hits with its Beast’s Strike attack, you and your primal beast each regain Hit Points equal to your Wisdom modifier. In addition, your primal beast can use its action to cast Haste without any spell components, affecting itself and you (if you are within range). Once it does so, it can’t do so again until you finish a Long Rest.
+
+Tenacity. Your Hit Point maximum increases by 6. Whenever you gain a Ranger level, your Hit Point maximum increases by an additional 1 Hit Point. Your primal beast’s Hit Point maximum also increases by your Ranger level. In addition, your primal beast can use its action to cast Stoneskin without any spell components, affecting itself and you (if you are within range). Once it does so, it can’t do so again until you finish a Long Rest.
+
+(Variant Feature) Hunter Pets
+As a Beast Master, when you use your Primal Companion feature to summon a primal beast, you choose the form it takes from among the pet families shown on the table below. Each family has three characteristics:
+
+Stat Block. Your primal beast’s family determines which one of the stat blocks in the Player’s Handbook it uses: Beast of the Land, Beast of the Sea, or Beast of the Sky.
+
+Specialization (Spec.). Each pet family has a specialization - Cunning (C), Ferocity (F), or Tenacity (T) - that comes into play only if you have the Pet Specialization feature.
+
+Mastery Property (Mastery). When you gain the Primal Companion feature and whenever you finish a Long Rest, you can choose your pet’s family as one of the weapons for your Weapon Mastery feature. Then its mastery property applies to your primal companion’s Beast’s Strike attack.
+
+Pet Families
+Family	Stat Block	Spec.	Mastery
+Basilisk	Land	C	Slow
+Bat	Sky	F	Vex
+Bear	Land	T	Push
+Beetle	Land	T	Sap
+Bird of Prey	Sky	C	Slow
+Blood Beast* (Stirge)	Sky	T	Slow
+Boar	Land	C	Sap
+Camel	Land	C	Push
+Carrion Bird	Sky	F	Cleave
+Cat	Land	F	Graze
+Courser (Horses)	Land	F	Graze
+Crab	Land	T	Slow
+Crocolisk	Land	F	Slow
+Direhorn* (Triceratops)	Land	T	Cleave
+Dolphin	Sea	T	Vex
+Dragonhawk	Sky	T	Graze
+Feathermane* (Gryphon)	Sky	T	Graze
+Fox	Land	C	Graze
+Frenzy (Piranha-like fish)	Sea	F	Cleave
+Gorilla	Land	F	Push
+Gruffhorn (Goats)	Land	C	Push
+Hopper (Frogs, Toads)	Land	T	Graze
+Hound	Land	C	Slow
+Hydra	Land	T	Cleave
+Hyena	Land	C	Cleave
+Lizard	Land	T	Cleave
+Mammoth	Land	T	Slow
+Mechanized animal*	Land	C	Sap
+Monkey	Land	C	Graze
+Moth	Sky	C	Vex
+Oxen	Land	T	Push
+Raptor (Allosaurus)	Land	C	Cleave
+Ray	Sky	F	Vex
+Riverbeast (Hippo)	Land	T	Cleave
+Rodent	Land	C	Cleave
+Scalehide (Ankylosaurus)	Land	F	Sap
+Scorpid	Land	F	Cleave
+Serpent	Land or Sea	C	Graze
+Shark	Sea	C	Graze
+Spider	Land	F	Slow
+Stag	Land	T	Vex
+Tallstrider (Flightless bird)	Land	F	Slow
+Threshadon* (Plesiosaur)	Sea	T	Sap
+Turtle	Land	T	Sap
+Wasp	Sky	F	Cleave
+Waterfowl	Land	T	Vex
+Wolf	Land	F	Slow
+*Unusual pet family; a hunter must acquire a special ability (typically by reading a magical tome) to tame an unusual pet.

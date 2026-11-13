@@ -12,8 +12,8 @@ import (
 )
 
 var progressionFiles2024 = map[string]string{
-	"Barbarian": "Cyber-Berserker - Aug-Brute.json",
-	"Bard":      "Net-Hype.json", "Cleric": "Bio-Medic - Shrine Priest.json",
+	"Barbarian": "Cyber-Berserker.json",
+	"Bard":      "Net-Hype.json", "Cleric": "Shrine Priest.json",
 	"Druid": "Bio-Tech Specialist.json", "Fighter": "Corporate Enforcer.json",
 	"Monk": "Kinetic Acrobat.json", "Paladin": "Vow-Bound Operative.json",
 	"Ranger": "Recon Drone Master.json", "Rogue": "Decker.json",

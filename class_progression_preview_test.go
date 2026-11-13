@@ -26,11 +26,14 @@ func TestClassProgressionPreviews(t *testing.T) {
 			if originalClassFor(labels[original], labels) != original {
 				t.Fatalf("mapping %q does not resolve to %s", labels[original], original)
 			}
-			if original == "Barbarian" && preview.Name != "Cyber-Berserker / Aug-Brute" {
+			if original == "Barbarian" && preview.Name != "Cyber-Berserker" {
 				t.Errorf("wrong Barbarian identity: %s", preview.Name)
 			}
 			if original == "Fighter" && preview.Name != "Corporate Enforcer" {
 				t.Errorf("wrong Fighter identity: %s", preview.Name)
+			}
+			if original == "Cleric" && preview.Name != "Shrine Priest" {
+				t.Errorf("wrong Cleric identity: %s", preview.Name)
 			}
 		})
 	}
@@ -47,7 +50,8 @@ func TestClassProgressionPreviewEndpoint(t *testing.T) {
 		{"Awakened Mutant", "", http.StatusUnauthorized},
 		{"not a class", "alice", http.StatusBadRequest},
 		{"Corporate Enforcer", "alice", http.StatusOK},
-		{"Cyber-Berserker / Aug-Brute", "alice", http.StatusOK},
+		{"Cyber-Berserker", "alice", http.StatusOK},
+		{"Shrine Priest", "alice", http.StatusOK},
 	} {
 		req := httptest.NewRequest(http.MethodGet, "/api/class-progression-preview?class="+url.QueryEscape(tt.class), nil)
 		req.Header.Set("Remote-User", tt.user)

@@ -1,0 +1,28 @@
+Cure Allies’ Wounds While Smiting Enemies
+
+The Discipline Domain focuses on the balance between the Holy Light and its shadowy mirror, the Void. Wielding both powers at once, Clerics who embrace this domain aid their allies and harm their foes, often with a single spell.
+
+Level 3: Discipline Spells
+Your connection to this domain ensures you always have certain spells ready. When you reach a Cleric level specified in the Discipline Domain Spells table, you thereafter always have the listed spells prepared.
+
+Discipline Domain Spells
+Cleric Level	Spells
+3	Arcane Vigor, Guiding Bolt, Magic Weapon, Shield of Faith
+5	Prayer of Mending, Protection from Energy
+7	Guardian of Faith, Stoneskin
+9	Circle of Power, Destructive Wave
+Level 3: Holy Bolt
+As a Bonus Action, you present your Holy Symbol and expend a use of your Channel Divinity to make a ranged spell attack, hurling a bolt of holy energy targeting one creature within 60 feet of yourself. On a hit, the target takes Radiant damage equal to 2d10 plus your Wisdom modifier, and you can choose a creature you can see within 60 feet of yourself to regain Hit Points equal to 1d10 plus your Wisdom modifier.
+
+Level 3: Atonement
+When a level 1+ spell you cast restores Hit Points to one or more creatures, each of those creatures gains a blessing that lasts until the end of your next turn. Whenever you cast a spell that deals damage to a creature using a spell slot, each blessed creature regains additional Hit Points equal to the level of the spell slot you used to cast the damaging spell.
+
+Level 6: Luminous Barrier
+As a Bonus Action, you can expend a use of your Channel Divinity to place a magical ward of glowing light on each creature blessed by your Atonement. Each affected creature gains a number of Temporary Hit Points equal to your Cleric level plus your Wisdom modifier. While a creature has Temporary Hit Points gained from this feature, it has Resistance to all damage.
+
+Level 17: Ultimate Penitence
+Your Holy Bolt grows more powerful as detailed below.
+
+Ascending Step. When you use Holy Bolt, you can teleport to an unoccupied space you can see within 30 feet before you make an attack roll.
+
+Ascending Volley. When you use Holy Bolt, you can expend a spell slot as part of the Bonus Action to hurl a number of additional bolts equal to the spell slot level expended. You can direct the bolts to hit one creature or several. Make a separate attack roll for each bolt.

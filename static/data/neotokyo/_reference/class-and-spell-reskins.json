@@ -10,7 +10,7 @@
     },
     {
       "original_class": "Barbarian",
-      "reskinned_class": "Cyber-Berserker / Aug-Brute",
+      "reskinned_class": "Cyber-Berserker",
       "primary_role": "Heavy Shock Trooper & Kinetic Tank",
       "description": "Heavy combatants who trigger sub-dermal adrenaline pumps, muscle fiber overclocks, and dermal armor plating to absorb lethal damage."
     },
@@ -22,7 +22,7 @@
     },
     {
       "original_class": "Cleric",
-      "reskinned_class": "Bio-Medic / Shrine Priest",
+      "reskinned_class": "Shrine Priest",
       "primary_role": "Combat Triage, Cellular Restoration, & Ley-Line Wards",
       "description": "Field medics deploying trauma-surge nanites or traditional Shinto mediums invoking ancient spirit wards against corporate incursions."
     },
